@@ -496,19 +496,11 @@ class App {
   }
 
   async _fetchKnownSeries() {
-    const base = 'https://raw.githubusercontent.com/bsntas/melody-miracle/main/data';
     const series = new Set(this.sessions.knownSeries?.() || []);
     try {
-      const [sessRes, serRes] = await Promise.all([
-        fetch(`${base}/sessions.json`),
-        fetch(`${base}/series.json`),
-      ]);
-      if (sessRes.ok) {
-        const sessions = await sessRes.json();
-        sessions.forEach(s => { if (s.series) series.add(s.series); });
-      }
-      if (serRes.ok) {
-        const defaults = await serRes.json();
+      const res = await fetch('./data/series.json');
+      if (res.ok) {
+        const defaults = await res.json();
         if (Array.isArray(defaults)) defaults.forEach(s => series.add(s));
       }
     } catch {}
@@ -1046,8 +1038,15 @@ class App {
 
   _resumeDraftSession(draft) {
     const sessionData = { ...draft, status: 'live' };
-    // Create a new room (new code since old one is gone)
+    const savedPhase = sessionData.phase; // preserve playing/setup phase
     this._startLiveSession(sessionData);
+    // _startLiveSession resets phase to 'setup'; restore the saved phase
+    if (savedPhase && savedPhase !== 'setup') {
+      this.liveState = { ...this.liveState, phase: savedPhase };
+      this.live.updateState(this.liveState);
+      this.sessions.saveDraft(this.liveState);
+      this._renderSession();
+    }
     this._toast('Session resumed with a new code', 'success');
   }
 
@@ -1292,12 +1291,6 @@ class App {
     this._renderSession();
   }
 
-  _setCurrentBhajan(entryId) {
-    const updated = { ...this.liveState, currentBhajan: entryId };
-    this.liveState = updated;
-    this.live.updateState(updated);
-    this._renderSession();
-  }
 
   // ─── End Session ──────────────────────────────────────────────────────────
 
