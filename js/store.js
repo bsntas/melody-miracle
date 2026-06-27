@@ -81,19 +81,26 @@ export class SessionStore {
 
   // Fetch public sessions.json (served via GitHub Pages) and merge with local.
   // Used by non-PAT users so they can see history saved by the PAT user.
+  // Returns true if any new sessions were merged in.
   async load() {
     try {
-      const res = await fetch('./data/sessions.json');
-      if (!res.ok) return;
+      const abort = new AbortController();
+      const timer = setTimeout(() => abort.abort(), 5000);
+      const res = await fetch('./data/sessions.json', { signal: abort.signal });
+      clearTimeout(timer);
+      if (!res.ok) return false;
       const remote = await res.json();
-      if (!Array.isArray(remote) || !remote.length) return;
+      if (!Array.isArray(remote) || !remote.length) return false;
       // Remote (GitHub) wins on ID conflict; keep any local-only sessions too
       const map = new Map();
       for (const s of remote) map.set(s.id, s);
       for (const s of this._sessions) if (!map.has(s.id)) map.set(s.id, s);
       this._sessions = [...map.values()].sort((a, b) => b.date.localeCompare(a.date));
       this._save();
-    } catch {}
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   _save() {

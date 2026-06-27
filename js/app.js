@@ -38,9 +38,8 @@ class App {
       document.getElementById('loading-text').textContent = 'Syncing sessions…';
       await this.sessions.load();
     } else {
-      // No PAT: fetch the public sessions.json so shared history is visible
-      document.getElementById('loading-text').textContent = 'Loading sessions…';
-      await this.sessions.load();
+      // No PAT: load public sessions.json in the background — never block app startup
+      this.sessions.load().then(changed => { if (changed) this._route(); });
     }
 
     this._populateFilters();
