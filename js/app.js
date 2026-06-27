@@ -832,25 +832,15 @@ class App {
           </div>
         </div>
 
-        ${isPlaying ? `
-        <div class="now-singing-section">
-          <div class="now-singing-label">Now Playing</div>
-          <div class="now-singing-card" id="now-singing-card">
-            ${this._nowSingingHTML(st)}
-          </div>
-        </div>` : ''}
-
         ${!isPlaying ? `<div class="session-add-btn-row">
           <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
           ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
           <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
-        </div>` : `<div class="session-add-btn-row">
+        </div>` : `<div class="playing-controls-strip">
           ${isHost ? `
-          <button class="btn btn-outline" id="btn-prev-bhajan" ${(st.bhajans || []).findIndex(e => e.id === st.currentBhajan) <= 0 ? 'disabled' : ''}>← Prev</button>
-          <button class="btn btn-primary" id="btn-next-bhajan">Next →</button>
-          <button class="btn btn-ghost" id="btn-exit-play" title="Return to setup">↩ Setup</button>
-          <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
-          <button class="btn btn-ghost btn-aarati" id="btn-mangala-aarati" title="View Mangala Aarati lyrics">🪔 Mangala Aarati</button>
+          <button class="btn btn-ghost btn-icon" id="btn-exit-play" title="Return to setup">↩</button>
+          <button class="btn btn-ghost btn-icon" id="btn-end-session" title="End session">⏹</button>` : ''}
+          <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati">🪔</button>
         </div>`}
 
         <div class="section-header" style="margin-top:.5rem">
@@ -921,10 +911,10 @@ class App {
         document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       }
     } else {
-      // Playing phase
+      // Playing phase — Prev/Next are now inside the expanded list entry
       if (isHost) {
-        document.getElementById('btn-prev-bhajan').addEventListener('click', () => this._prevBhajan());
-        document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+        document.getElementById('btn-prev-bhajan')?.addEventListener('click', () => this._prevBhajan());
+        document.getElementById('btn-next-bhajan')?.addEventListener('click', () => this._nextBhajan());
         document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
         document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       }
@@ -971,8 +961,38 @@ class App {
       const canGoEarlier = i > 0;
       const canGoLater   = i < bhajans.length - 1;
       const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
+
+      if (isCurrent) {
+        const bhajanRec = this.bhajans.getById(e.bhajan_id);
+        const lyrics = bhajanRec?.lyrics || '';
+        const pitchDisplay = e.pitch
+          ? [e.pitch_indian || e.pitch.split(' / ')[0], e.pitch_western || e.pitch.split(' / ')[1], eScale]
+              .filter(Boolean).join(' · ')
+          : '';
+        return `
+        <div class="session-bhajan-entry session-entry-current session-entry-playing">
+          <div class="playing-entry-header">
+            <span class="entry-num entry-num-playing">▶</span>
+            <div class="entry-main">
+              <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
+              <div class="entry-meta">
+                ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
+                ${e.singer && pitchDisplay ? ' · ' : ''}
+                ${pitchDisplay ? `🎵 ${escHtml(pitchDisplay)}` : ''}
+                ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
+              </div>
+            </div>
+            ${isHost ? `<div class="playing-nav-btns">
+              <button class="btn btn-nav-compact" id="btn-prev-bhajan" ${canGoEarlier ? '' : 'disabled'} title="Previous">‹</button>
+              <button class="btn btn-nav-compact" id="btn-next-bhajan" title="Next">›</button>
+            </div>` : ''}
+          </div>
+          ${lyrics ? `<div class="playing-entry-lyrics">${escHtml(lyrics)}</div>` : ''}
+        </div>`;
+      }
+
       return `
-      <div class="session-bhajan-entry${isCurrent ? ' session-entry-current' : ''}">
+      <div class="session-bhajan-entry">
         <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
