@@ -496,19 +496,11 @@ class App {
   }
 
   async _fetchKnownSeries() {
-    const base = 'https://raw.githubusercontent.com/bsntas/melody-miracle/main/data';
     const series = new Set(this.sessions.knownSeries?.() || []);
     try {
-      const [sessRes, serRes] = await Promise.all([
-        fetch(`${base}/sessions.json`),
-        fetch(`${base}/series.json`),
-      ]);
-      if (sessRes.ok) {
-        const sessions = await sessRes.json();
-        sessions.forEach(s => { if (s.series) series.add(s.series); });
-      }
-      if (serRes.ok) {
-        const defaults = await serRes.json();
+      const res = await fetch('./data/series.json');
+      if (res.ok) {
+        const defaults = await res.json();
         if (Array.isArray(defaults)) defaults.forEach(s => series.add(s));
       }
     } catch {}
