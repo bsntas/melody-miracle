@@ -340,26 +340,16 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label class="form-label">Series Name</label>
-          <input type="text" id="mjoin-series" class="form-input"
-            placeholder="e.g. Thursday Satsang"
-            list="mjoin-series-list" autocomplete="off">
-          <datalist id="mjoin-series-list"></datalist>
+          <label class="form-label">Series</label>
+          <select id="mjoin-series" class="form-input">
+            <option value="">Loading…</option>
+          </select>
         </div>
         <div class="form-group">
           <label class="form-label">Date</label>
           <input type="date" id="mjoin-date" class="form-input">
         </div>
-        <div class="join-or-row">
-          <span class="join-or-line"></span>
-          <span class="join-or-text">or join by code</span>
-          <span class="join-or-line"></span>
-        </div>
-        <div class="form-group">
-          <input type="text" id="mjoin-code" class="form-input mono"
-            placeholder="Session code (e.g. thursday-satsang-2026-06-27)"
-            autocomplete="off" autocorrect="off" spellcheck="false">
-        </div>
+        <div id="mjoin-fetch-error" class="form-hint hidden" style="color:var(--error)"></div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-mjoin-cancel">Cancel</button>

@@ -174,12 +174,6 @@ class App {
     document.getElementById('mjoin-close').addEventListener('click', () => this._closeModal('modal-join-session'));
     document.getElementById('btn-mjoin-cancel').addEventListener('click', () => this._closeModal('modal-join-session'));
     document.getElementById('btn-mjoin-join').addEventListener('click', () => this._joinSession());
-    document.getElementById('mjoin-code').addEventListener('keydown', e => {
-      if (e.key === 'Enter') this._joinSession();
-    });
-    document.getElementById('mjoin-date').addEventListener('keydown', e => {
-      if (e.key === 'Enter') this._joinSession();
-    });
     document.getElementById('modal-join-session').addEventListener('click', e => {
       if (e.target === document.getElementById('modal-join-session')) this._closeModal('modal-join-session');
     });
@@ -997,35 +991,58 @@ class App {
 
   // ─── Join Session ─────────────────────────────────────────────────────────
 
-  _openJoinModal() {
-    document.getElementById('mjoin-series').value = '';
-    document.getElementById('mjoin-code').value = '';
+  async _openJoinModal() {
+    const sel     = document.getElementById('mjoin-series');
+    const errEl   = document.getElementById('mjoin-fetch-error');
+    const joinBtn = document.getElementById('btn-mjoin-join');
+
+    sel.innerHTML = '<option value="">Loading series…</option>';
+    sel.disabled  = true;
+    joinBtn.disabled = true;
+    errEl.classList.add('hidden');
     document.getElementById('mjoin-date').value = todayISO();
 
-    // Populate series datalist
-    const knownSeries = this.sessions.knownSeries?.() || [];
-    const datalist = document.getElementById('mjoin-series-list');
-    datalist.innerHTML = knownSeries.map(s => `<option value="${escHtml(s)}">`).join('');
-
     this._openModal('modal-join-session');
-    setTimeout(() => document.getElementById('mjoin-series').focus(), 100);
-  }
 
-  async _joinSession() {
-    const series    = document.getElementById('mjoin-series').value.trim();
-    const date      = document.getElementById('mjoin-date').value.trim();
-    const codeInput = document.getElementById('mjoin-code').value.trim();
+    // Fetch committed sessions from the public repo (no auth needed)
+    let series = [];
+    try {
+      const res = await fetch(
+        'https://raw.githubusercontent.com/bsntas/melody-miracle/main/data/sessions.json'
+      );
+      if (res.ok) {
+        const sessions = await res.json();
+        series = [...new Set(sessions.map(s => s.series).filter(Boolean))].sort();
+      }
+    } catch {}
 
-    let code;
-    if (series && date) {
-      code = this._sessionRoomCode(series, date);
-    } else if (codeInput) {
-      code = codeInput;
+    // Fall back to locally known series
+    if (!series.length) series = this.sessions.knownSeries?.() || [];
+
+    sel.disabled  = false;
+    joinBtn.disabled = false;
+
+    if (series.length) {
+      sel.innerHTML = '<option value="">— select series —</option>' +
+        series.map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+      errEl.classList.add('hidden');
     } else {
-      this._toast('Enter a series name + date, or a session code', 'error');
-      return;
+      sel.innerHTML = '<option value="">No series found</option>';
+      errEl.textContent = 'No sessions committed yet. Ask the host to sync to GitHub.';
+      errEl.classList.remove('hidden');
     }
 
+    sel.focus();
+  }
+
+  _joinSession() {
+    const series = document.getElementById('mjoin-series').value.trim();
+    const date   = document.getElementById('mjoin-date').value.trim();
+
+    if (!series) { this._toast('Please select a series', 'error'); return; }
+    if (!date)   { this._toast('Please select a date', 'error');   return; }
+
+    const code = this._sessionRoomCode(series, date);
     this._closeModal('modal-join-session');
     this._joinSessionWithCode(code);
   }
