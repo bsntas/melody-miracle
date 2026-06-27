@@ -843,7 +843,7 @@ class App {
           <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati">🪔</button>
         </div>`}
 
-        <div class="section-header" style="margin-top:.5rem">
+        <div class="section-header section-header-flush">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
@@ -1001,8 +1001,8 @@ class App {
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
           ${e.singer ? `<div class="entry-singer-row">
             <span class="entry-singer-chip">👤 ${escHtml(e.singer)}</span>
-            ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes" style="font-size:0.75rem;color:var(--text-3);margin-left:.4rem">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em style="font-size:0.75rem;color:var(--text-3);margin-left:.4rem">${escHtml(e.notes)}</em>` : '')}
-          </div>` : (e.notes || !isPlaying ? `<div class="entry-meta" style="margin-top:.15rem">
+            ${!isPlaying ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
+          </div>` : (e.notes || !isPlaying ? `<div class="entry-meta">
             ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
           </div>` : '')}
           <div class="entry-pitch-row">
@@ -1736,14 +1736,14 @@ class App {
                     ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
                     : (e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : '')}
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.3rem">
+                <div class="tl-actions">
                   <span class="tl-time">${formatTime(e.addedAt)}</span>
                   ${canEdit ? `
-                  <div class="reorder-btns" style="flex-direction:row">
+                  <div class="reorder-btns reorder-btns-row">
                     <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${i > 0 ? '' : 'disabled'} title="Move up">↑</button>
                     <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${i < (s.bhajans.length - 1) ? '' : 'disabled'} title="Move down">↓</button>
                   </div>
-                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" style="color:var(--text-3);font-size:.75rem">✕</button>` : ''}
+                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}">✕</button>` : ''}
                 </div>
               </div>`;
             }).join('')}
@@ -1889,7 +1889,7 @@ class App {
         : `<div class="empty-state"><p class="text-muted">No bhajans recorded for ${escHtml(name)} yet</p></div>`}
 
       ${sessions.length ? `
-        <div class="section-header" style="margin-top:1.5rem">
+        <div class="section-header section-header-spaced">
           <h3 class="section-title">Sessions</h3>
         </div>
         ${sessions.slice(0, 10).map(s => this._sessionCardHTML(s)).join('')}` : ''}
