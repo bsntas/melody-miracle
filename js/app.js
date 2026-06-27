@@ -654,36 +654,21 @@ class App {
       <div class="session-home">
         <div class="session-home-icon">🎵</div>
         <div class="session-home-title">Bhajan Session</div>
-        <div class="session-home-desc">Start a session to record bhajans. Share the code so others can follow along live.</div>
+        <div class="session-home-desc">Start a session to record bhajans. Others can join by selecting the series and date.</div>
         <div class="session-home-actions">
           <button class="btn btn-primary btn-lg btn-block" id="btn-session-new">+ Start New Session</button>
           ${draft ? `<div style="width:100%">
             <button class="btn btn-warning btn-block" id="btn-session-resume">↩ Resume "${escHtml(draft.label || 'Previous Session')}"</button>
           </div>` : ''}
           <span class="session-home-or">— or join an existing one —</span>
-          <div class="session-join-row">
-            <input type="text" id="session-join-code" class="form-input code-input"
-              placeholder="Enter code" maxlength="6" autocapitalize="characters"
-              autocomplete="off" spellcheck="false">
-            <button class="btn btn-outline" id="btn-session-join">Join →</button>
-          </div>
+          <button class="btn btn-outline btn-block" id="btn-session-join">Join Session →</button>
         </div>
       </div>`;
   }
 
   _bindSessionHome(draft) {
     document.getElementById('btn-session-new').addEventListener('click', () => this._openNewSession());
-    document.getElementById('btn-session-join').addEventListener('click', () => {
-      const code = document.getElementById('session-join-code').value.trim();
-      if (code) this._joinSessionWithCode(code);
-      else this._openJoinModal();
-    });
-    document.getElementById('session-join-code').addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        const code = e.target.value.trim();
-        if (code) this._joinSessionWithCode(code);
-      }
-    });
+    document.getElementById('btn-session-join').addEventListener('click', () => this._openJoinModal());
     if (draft) {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
     }
