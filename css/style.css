@@ -334,6 +334,10 @@ img { max-width: 100%; }
 .pitch-ladies { background: #fce7f3; color: #9d174d; }
 .pitch-western { opacity: 0.65; font-weight: 400; }
 .pitch-scale   { opacity: 0.55; font-weight: 400; font-style: italic; }
+
+/* Larger pitch badge in session entry rows */
+.session-pitch-badge { font-size: 0.82rem; padding: 0.25rem 0.65rem; border-radius: var(--radius); }
+.entry-pitch-row { margin-top: 0.3rem; }
 .pitch-editable { cursor: pointer; }
 .pitch-editable:hover .pitch-badge { opacity: 0.75; }
 .pitch-unset { font-size: 0.72rem; color: var(--text-3); }
@@ -462,6 +466,24 @@ img { max-width: 100%; }
 }
 .btn-nav-compact:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
 .btn-nav-compact:disabled { opacity: .3; pointer-events: none; }
+.playing-pitch-display {
+  display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap;
+  margin: 0.6rem 0 0.1rem 2rem;
+}
+.playing-pitch-indian {
+  font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
+  background: #dbeafe; padding: 0.2rem 0.7rem; border-radius: var(--radius);
+  letter-spacing: 0.01em;
+}
+.playing-pitch-sep { color: var(--text-3); font-size: 1rem; }
+.playing-pitch-western {
+  font-size: 1.1rem; font-weight: 700; color: #1e3a8a; opacity: 0.75;
+  background: #dbeafe; padding: 0.15rem 0.6rem; border-radius: var(--radius);
+}
+.playing-pitch-scale {
+  font-size: 0.8rem; font-weight: 500; color: var(--text-2);
+  font-style: italic; align-self: center;
+}
 .playing-entry-lyrics {
   margin-top: 0.65rem; padding: 0.65rem 0 0.75rem;
   border-top: 1px solid var(--saffron-light);

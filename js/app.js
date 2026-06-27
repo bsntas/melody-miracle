@@ -965,48 +965,47 @@ class App {
       if (isCurrent) {
         const bhajanRec = this.bhajans.getById(e.bhajan_id);
         const lyrics = bhajanRec?.lyrics || '';
-        const pitchDisplay = e.pitch
-          ? [e.pitch_indian || e.pitch.split(' / ')[0], e.pitch_western || e.pitch.split(' / ')[1], eScale]
-              .filter(Boolean).join(' · ')
-          : '';
+        const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
+        const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
         return `
         <div class="session-bhajan-entry session-entry-current session-entry-playing">
           <div class="playing-entry-header">
             <span class="entry-num entry-num-playing">▶</span>
             <div class="entry-main">
               <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
-              <div class="entry-meta">
-                ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
-                ${e.singer && pitchDisplay ? ' · ' : ''}
-                ${pitchDisplay ? `🎵 ${escHtml(pitchDisplay)}` : ''}
-                ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
-              </div>
+              ${e.singer ? `<div class="entry-meta">👤 ${escHtml(e.singer)}${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}</div>` : (e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : '')}
             </div>
             ${isHost ? `<div class="playing-nav-btns">
               <button class="btn btn-nav-compact" id="btn-prev-bhajan" ${canGoEarlier ? '' : 'disabled'} title="Previous">‹</button>
               <button class="btn btn-nav-compact" id="btn-next-bhajan" title="Next">›</button>
             </div>` : ''}
           </div>
+          ${e.pitch ? `<div class="playing-pitch-display">
+            <span class="playing-pitch-indian">${escHtml(pitchIndian)}</span>
+            ${pitchWestern ? `<span class="playing-pitch-sep">·</span><span class="playing-pitch-western">${escHtml(pitchWestern)}</span>` : ''}
+            ${eScale ? `<span class="playing-pitch-scale">${escHtml(eScale)}</span>` : ''}
+          </div>` : ''}
           ${lyrics ? `<div class="playing-entry-lyrics">${escHtml(lyrics)}</div>` : ''}
         </div>`;
       }
 
+      const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
+      const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
       <div class="session-bhajan-entry">
         <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
-          <div class="entry-meta">
+          ${e.singer || e.notes ? `<div class="entry-meta">
             ${e.singer ? escHtml(e.singer) : ''}
-            ${e.singer ? ' · ' : ''}
-            <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit pitch' : ''}">
+            ${!isPlaying ? ` · <span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? ` · <em>${escHtml(e.notes)}</em>` : '')}
+          </div>` : ''}
+          <div class="entry-pitch-row">
+            <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Tap to edit pitch' : ''}">
               ${e.pitch
-                ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
+                ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}<span class="pitch-western"> ${escHtml(pitchWestern)}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                 : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
-            ${!isPlaying
-              ? ` · <span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>`
-              : (e.notes ? ` · <em>${escHtml(e.notes)}</em>` : '')}
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
