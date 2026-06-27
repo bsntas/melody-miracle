@@ -187,7 +187,7 @@ img { max-width: 100%; }
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem; margin-bottom: 1.25rem;
 }
-@media (max-width: 400px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
 
 .stat-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -277,6 +277,7 @@ img { max-width: 100%; }
 .search-input:focus { outline: none; border-color: var(--border-focus); }
 
 .filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filter-select { flex: 1 1 120px; }
 .filter-select {
   padding: 0.4rem 0.65rem; border: 1.5px solid var(--border);
   border-radius: var(--radius-sm); font-size: 0.8rem;
@@ -344,6 +345,13 @@ img { max-width: 100%; }
 
 /* Singer chip in session list entries */
 .entry-singer-row { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem; flex-wrap: wrap; }
+/* Notes text alongside singer chip or as standalone meta */
+.entry-notes-inline { font-size: 0.75rem; color: var(--text-3); }
+
+/* Section header spacing variants */
+.section-header-flush { margin-top: 0.5rem; }
+.section-header-spaced { margin-top: 1.5rem; }
+
 .entry-singer-chip {
   font-size: 0.78rem; font-weight: 700;
   background: var(--gold-light); color: #78350f;
@@ -447,14 +455,14 @@ img { max-width: 100%; }
 .playing-controls-strip .btn-aarati { color: var(--gold); border-color: var(--gold-light); }
 
 /* ─── Inline expanded "Now Playing" entry ────────────────────────────────── */
-.session-entry-playing {
-  flex-direction: column !important;
-  align-items: stretch !important;
-  padding: 0.75rem 0.75rem 0 !important;
-  background: linear-gradient(135deg, var(--saffron-bg), var(--cream)) !important;
-  border: 2px solid var(--saffron-light) !important;
-  border-radius: var(--radius) !important;
-  margin: 0 -0.5rem 0.5rem !important;
+.session-bhajan-entry.session-entry-playing {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.75rem 0.75rem 0;
+  background: linear-gradient(135deg, var(--saffron-bg), var(--cream));
+  border: 2px solid var(--saffron-light);
+  border-radius: var(--radius);
+  margin: 0 0 0.5rem;
 }
 .playing-entry-header {
   display: flex; align-items: flex-start; gap: 0.6rem;
@@ -479,17 +487,18 @@ img { max-width: 100%; }
 .btn-nav-compact:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
 .btn-nav-compact:disabled { opacity: .3; pointer-events: none; }
 /* Singer pill in expanded playing entry */
-.playing-singer-display { margin: 0.55rem 0 0 2rem; }
+.playing-singer-display { margin: 0.55rem 0 0 calc(24px + 0.6rem); }
 .playing-singer-pill {
   display: inline-block;
   font-size: 1rem; font-weight: 700;
   background: var(--gold-light); color: #78350f;
   padding: 0.2rem 0.75rem; border-radius: var(--radius);
+  white-space: nowrap;
 }
 
 .playing-pitch-display {
   display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
-  margin: 0.45rem 0 0.1rem 2rem;
+  margin: 0.45rem 0 0.1rem calc(24px + 0.6rem);
 }
 .playing-pitch-indian {
   font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
@@ -521,7 +530,7 @@ img { max-width: 100%; }
 .session-entry-current {
   background: var(--saffron-bg);
   border-radius: var(--radius-sm);
-  border-bottom-color: transparent !important;
+  border-bottom-color: transparent;
   margin: 0 -0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -567,7 +576,7 @@ img { max-width: 100%; }
 .end-stat-label { font-size: 0.75rem; color: var(--text-2); }
 
 /* ─── History View ───────────────────────────────────────────────────────── */
-.history-month { font-size: 0.78rem; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; margin: 1.25rem 0 0.5rem; }
+.history-month { font-size: 0.82rem; font-weight: 700; color: var(--text-2); text-transform: uppercase; letter-spacing: .04em; margin: 1.25rem 0 0.5rem; }
 .history-month:first-child { margin-top: 0; }
 
 /* ─── Session Detail ─────────────────────────────────────────────────────── */
@@ -598,7 +607,11 @@ img { max-width: 100%; }
 .tl-title { font-weight: 600; font-size: 0.9rem; }
 .tl-meta { font-size: 0.78rem; color: var(--text-2); margin-top: 0.15rem; }
 .tl-notes { font-size: 0.78rem; color: var(--text-3); font-style: italic; margin-top: 0.1rem; }
-.tl-time { font-size: 0.72rem; color: var(--text-3); margin-top: 0.2rem; flex-shrink: 0; }
+.tl-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
+/* Session detail timeline action column */
+.tl-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+.reorder-btns-row { flex-direction: row; }
+
 
 /* ─── Singer Profile ─────────────────────────────────────────────────────── */
 .singer-header {
@@ -681,7 +694,7 @@ img { max-width: 100%; }
   position: fixed; inset: 0; z-index: 200;
   background: rgba(0,0,0,.45); backdrop-filter: blur(2px);
   display: flex; align-items: flex-end; justify-content: center;
-  padding: 0;
+  padding: 0 0 env(safe-area-inset-bottom, 0);
   animation: fadeIn .15s ease;
 }
 @media (min-width: 480px) { .modal-overlay { align-items: center; padding: 1rem; } }
@@ -834,5 +847,6 @@ img { max-width: 100%; }
   .page-header { flex-direction: column; }
   .dash-quick-actions { align-self: stretch; }
   .dash-quick-actions .btn { flex: 1; }
-  .bhajan-item-pitches { display: none; }
+  .bhajan-item-pitches { gap: 0.15rem; }
+  .bhajan-item-pitches .pitch-badge { font-size: 0.62rem; padding: 0.1rem 0.3rem; }
 }
