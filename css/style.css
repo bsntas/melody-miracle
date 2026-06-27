@@ -333,6 +333,7 @@ img { max-width: 100%; }
 .pitch-gents { background: #dbeafe; color: #1e3a8a; }
 .pitch-ladies { background: #fce7f3; color: #9d174d; }
 .pitch-western { opacity: 0.65; font-weight: 400; }
+.pitch-scale   { opacity: 0.55; font-weight: 400; font-style: italic; }
 .pitch-editable { cursor: pointer; }
 .pitch-editable:hover .pitch-badge { opacity: 0.75; }
 .pitch-unset { font-size: 0.72rem; color: var(--text-3); }
