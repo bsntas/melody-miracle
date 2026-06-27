@@ -306,37 +306,54 @@
               <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-gents">Gents</button>
               <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-ladies">Ladies</button>
             </div>
-            <select id="mab-pitch" class="form-input">
-              <option value="">— not set —</option>
-              <optgroup label="Pancham (Sa = C)">
-                <option>1 Pancham / C</option>
-                <option>1.5 Pancham / C#</option>
-                <option>2 Pancham / D</option>
-                <option>2.5 Pancham / E</option>
-                <option>3 Pancham / E</option>
-                <option>4 Pancham / F</option>
-                <option>4.5 Pancham / F#</option>
-                <option>5 Pancham / G</option>
-                <option>5.5 Pancham / G#</option>
-                <option>6 Pancham / A</option>
-                <option>6.5 Pancham / A#</option>
-                <option>7 Pancham / B</option>
-              </optgroup>
-              <optgroup label="Madhyam (Sa = F)">
-                <option>1 Madhyam / F</option>
-                <option>1.5 Madhyam / F#</option>
-                <option>2 Madhyam / G</option>
-                <option>2.5 Madhyam / G#</option>
-                <option>3 Madhyam / A</option>
-                <option>4 Madhyam / A#</option>
-                <option>4.5 Madhyam / B</option>
-                <option>5 Madhyam / C</option>
-                <option>5.5 Madhyam / C#</option>
-                <option>6 Madhyam / D</option>
-                <option>6.5 Madhyam / E</option>
-                <option>7 Madhyam / E</option>
-              </optgroup>
-            </select>
+            <div class="pitch-dual">
+              <select id="mab-pitch-indian" class="form-input pitch-dual-sel">
+                <option value="">Indian…</option>
+                <optgroup label="Pancham (Sa = C)">
+                  <option>1 Pancham</option>
+                  <option>1.5 Pancham</option>
+                  <option>2 Pancham</option>
+                  <option>2.5 Pancham</option>
+                  <option>3 Pancham</option>
+                  <option>4 Pancham</option>
+                  <option>4.5 Pancham</option>
+                  <option>5 Pancham</option>
+                  <option>5.5 Pancham</option>
+                  <option>6 Pancham</option>
+                  <option>6.5 Pancham</option>
+                  <option>7 Pancham</option>
+                </optgroup>
+                <optgroup label="Madhyam (Sa = F)">
+                  <option>1 Madhyam</option>
+                  <option>1.5 Madhyam</option>
+                  <option>2 Madhyam</option>
+                  <option>2.5 Madhyam</option>
+                  <option>3 Madhyam</option>
+                  <option>4 Madhyam</option>
+                  <option>4.5 Madhyam</option>
+                  <option>5 Madhyam</option>
+                  <option>5.5 Madhyam</option>
+                  <option>6 Madhyam</option>
+                  <option>6.5 Madhyam</option>
+                  <option>7 Madhyam</option>
+                </optgroup>
+              </select>
+              <select id="mab-pitch-western" class="form-input pitch-dual-sel">
+                <option value="">Western…</option>
+                <option>C</option>
+                <option>C#</option>
+                <option>D</option>
+                <option>E</option>
+                <option>F</option>
+                <option>F#</option>
+                <option>G</option>
+                <option>G#</option>
+                <option>A</option>
+                <option>A#</option>
+                <option>B</option>
+              </select>
+              <input type="hidden" id="mab-pitch">
+            </div>
             <div class="pitch-hint" id="mab-pitch-hint"></div>
           </div>
           <div class="form-group">

@@ -135,7 +135,9 @@ export class LiveSession {
         return { ...state, bhajans: arr };
       }
       case 'update-pitch':
-        return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? { ...e, pitch: action.pitch } : e) };
+        return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? {
+          ...e, pitch: action.pitch, pitch_indian: action.pitch_indian || null, pitch_western: action.pitch_western || null,
+        } : e) };
       case 'update-notes':
         return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? { ...e, notes: action.notes } : e) };
       default:
