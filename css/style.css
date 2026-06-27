@@ -427,6 +427,14 @@ img { max-width: 100%; }
   padding: 0.65rem 0; border-bottom: 1px solid var(--border);
 }
 .session-bhajan-entry:last-child { border-bottom: none; }
+.session-entry-current {
+  background: var(--saffron-bg);
+  border-radius: var(--radius-sm);
+  border-bottom-color: transparent !important;
+  margin: 0 -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .entry-num {
   width: 24px; height: 24px; border-radius: 50%;
   background: var(--surface-2); color: var(--text-2);

@@ -718,6 +718,8 @@ class App {
   _renderLiveSession(el) {
     const st = this.liveState;
     const isHost = this.live?.isHost;
+    const phase = st.phase || 'setup';
+    const isPlaying = phase === 'playing';
 
     el.innerHTML = `
       <div class="live-session-view">
@@ -742,82 +744,85 @@ class App {
           </div>
         </div>
 
+        ${isPlaying ? `
         <div class="now-singing-section">
-          <div class="now-singing-label">Now Singing</div>
+          <div class="now-singing-label">Now Playing</div>
           <div class="now-singing-card" id="now-singing-card">
             ${this._nowSingingHTML(st)}
           </div>
-        </div>
+        </div>` : ''}
 
         ${isHost ? `<div class="session-add-btn-row">
-          <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
+          ${!isPlaying ? `<button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>` : ''}
+          ${!isPlaying
+            ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>`
+            : `<button class="btn btn-primary" id="btn-next-bhajan">Next →</button>`}
           <button class="btn btn-outline" id="btn-end-session">End Session</button>
         </div>` : ''}
 
         <div class="section-header" style="margin-top:.5rem">
-          <h3 class="section-title">Bhajans Sung (${(st.bhajans || []).length})</h3>
+          <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
-          ${this._sessionBhajansHTML(st.bhajans || [], isHost)}
+          ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase)}
         </div>
 
         ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
       </div>`;
 
-    // Bind events
-document.querySelectorAll('.singer-chip.clickable').forEach(el => {
-      el.addEventListener('click', () => {
-        location.hash = `#singer/${encodeURIComponent(el.dataset.singer)}`;
+    // Singer chip clicks
+    document.querySelectorAll('.singer-chip.clickable').forEach(chip => {
+      chip.addEventListener('click', () => {
+        location.hash = `#singer/${encodeURIComponent(chip.dataset.singer)}`;
       });
     });
 
     // Clickable bhajan titles (all users)
-    document.querySelectorAll('#live-bhajans-list .entry-title-link').forEach(el => {
-      el.addEventListener('click', () => {
+    document.querySelectorAll('#live-bhajans-list .entry-title-link').forEach(link => {
+      link.addEventListener('click', () => {
         const bhajanIds = (st.bhajans || []).map(e => e.bhajan_id);
-        const idx = parseInt(el.dataset.entryIdx);
-        this._openBhajanModal(el.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
+        const idx = parseInt(link.dataset.entryIdx);
+        this._openBhajanModal(link.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
       });
     });
 
     if (isHost) {
-      document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
 
-      document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
-          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
-          const updated = { ...this.liveState, bhajans: newBhajans };
-          this.liveState = updated;
-          this.live.updateState(updated);
-          this._renderSession();
-        });
-      });
+      if (!isPlaying) {
+        document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+        document.getElementById('btn-start-playing').addEventListener('click', () => this._startPlaying());
 
-      document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          this._removeBhajanEntry(btn.dataset.entryId);
+        document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.stopPropagation();
+            const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
+            const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
+            const updated = { ...this.liveState, bhajans: newBhajans };
+            this.liveState = updated;
+            this.live.updateState(updated);
+            this._renderSession();
+          });
         });
-      });
-      document.querySelectorAll('.entry-action-btn[data-action="now"]').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          this._setCurrentBhajan(btn.dataset.entryId);
-        });
-      });
 
-      document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(el => {
-        el.addEventListener('click', e => {
-          e.stopPropagation();
-          this._inlinePitchEdit(el, el.dataset.entryId, 'live');
+        document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.stopPropagation();
+            this._removeBhajanEntry(btn.dataset.entryId);
+          });
         });
-      });
+
+        document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
+          pitchEl.addEventListener('click', e => {
+            e.stopPropagation();
+            this._inlinePitchEdit(pitchEl, pitchEl.dataset.entryId, 'live');
+          });
+        });
+      } else {
+        document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+      }
     }
 
-    // Update live indicator in nav
     document.getElementById('bnav-session-icon').classList.add('is-live');
   }
 
@@ -836,37 +841,37 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
     </div>`;
   }
 
-  _sessionBhajansHTML(bhajans, isHost = false) {
+  _sessionBhajansHTML(bhajans, isHost = false, phase = 'setup') {
     if (!bhajans.length) return '<div class="empty-state" style="padding:1.5rem 0"><p class="text-muted">No bhajans added yet</p></div>';
 
-    // Rendered newest-first; origIdx is the position in the original array
-    return [...bhajans].reverse().map((e, revI) => {
-      const origIdx = bhajans.length - 1 - revI;
-      // ↑ moves card up in display = later in session (higher origIdx); ↓ = earlier (lower origIdx)
-      const canGoLater   = origIdx < bhajans.length - 1;
-      const canGoEarlier = origIdx > 0;
+    const isPlaying = phase === 'playing';
+    const currentId = this.liveState?.currentBhajan;
+
+    return bhajans.map((e, i) => {
+      const isCurrent = isPlaying && e.id === currentId;
+      const canGoEarlier = i > 0;
+      const canGoLater   = i < bhajans.length - 1;
       return `
-      <div class="session-bhajan-entry">
-        <div class="entry-num">${origIdx + 1}</div>
+      <div class="session-bhajan-entry${isCurrent ? ' session-entry-current' : ''}">
+        <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
-          <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${origIdx}">${escHtml(e.bhajan_title)}</div>
+          <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
           <div class="entry-meta">
             ${e.singer ? escHtml(e.singer) : ''}
             ${e.singer ? ' · ' : ''}
-            <span class="pitch-editable" data-entry-id="${e.id}" data-mode="live" title="Edit pitch">
-              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : `<span class="pitch-unset">${isHost ? '+ pitch' : ''}</span>`}
+            <span class="${isHost && !isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${isHost && !isPlaying ? 'Edit pitch' : ''}">
+              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (isHost && !isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
             ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
-        ${isHost ? `
+        ${isHost && !isPlaying ? `
         <div class="reorder-btns">
-          <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${canGoLater ? '' : 'disabled'} title="Move up">↑</button>
-          <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${canGoEarlier ? '' : 'disabled'} title="Move down">↓</button>
+          <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${canGoEarlier ? '' : 'disabled'} title="Move up">↑</button>
+          <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${canGoLater ? '' : 'disabled'} title="Move down">↓</button>
         </div>
         <div class="entry-actions">
-          <button class="btn entry-action-btn" data-action="now" data-entry-id="${e.id}" title="Mark as current">▶</button>
           <button class="btn entry-action-btn" data-action="remove" data-entry-id="${e.id}" title="Remove">✕</button>
         </div>` : ''}
       </div>`;
@@ -964,13 +969,42 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
 
     const code = this.live.host(sessionData, sessionData.roomCode || null);
     sessionData.roomCode = code;
+    sessionData.phase = 'setup';
 
     this.liveState = { ...sessionData };
     this.sessions.saveDraft(this.liveState);
 
     location.hash = '#session';
     this._renderSession();
-    this._toast(`Session started! Code: ${code}`, 'success');
+    this._toast('Session started! Add bhajans then tap ▶ Start.', 'success');
+  }
+
+  _startPlaying() {
+    const bhajans = this.liveState?.bhajans || [];
+    if (!bhajans.length) {
+      this._toast('Add at least one bhajan before starting', 'warn');
+      return;
+    }
+    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id };
+    this.liveState = updated;
+    this.live.updateState(updated);
+    this.sessions.saveDraft(updated);
+    this._renderSession();
+  }
+
+  _nextBhajan() {
+    const bhajans = this.liveState?.bhajans || [];
+    const currentIdx = bhajans.findIndex(e => e.id === this.liveState?.currentBhajan);
+    const nextIdx = currentIdx + 1;
+    if (nextIdx >= bhajans.length) {
+      this._confirmEndSession();
+    } else {
+      const updated = { ...this.liveState, currentBhajan: bhajans[nextIdx].id };
+      this.liveState = updated;
+      this.live.updateState(updated);
+      this.sessions.saveDraft(updated);
+      this._renderSession();
+    }
   }
 
   _resumeDraftSession(draft) {
