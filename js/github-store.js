@@ -187,6 +187,12 @@ export class GitHubStore {
     return [...names].sort();
   }
 
+  knownSeries() {
+    const s = new Set();
+    for (const sess of this._sessions) if (sess.series) s.add(sess.series);
+    return [...s].sort();
+  }
+
   // ── GitHub API ────────────────────────────────────────────────────────────────
 
   async _fetchFromGitHub() {

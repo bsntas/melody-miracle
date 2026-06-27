@@ -695,6 +695,43 @@ img { max-width: 100%; }
 
 .settings-last-sync { font-size: 0.75rem; color: var(--text-3); margin-top: 0.35rem; }
 
+/* ─── Form hint ──────────────────────────────────────────────────────────── */
+.form-hint { font-size: 0.75rem; color: var(--text-3); margin-top: 0.3rem; line-height: 1.4; }
+
+/* ─── Session code display (derived, not random) ─────────────────────────── */
+.session-code-derived {
+  font-family: 'Courier New', monospace; font-size: 0.78rem;
+  background: var(--saffron-bg); color: var(--saffron-dark);
+  padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);
+  cursor: pointer; user-select: all; max-width: 100%; word-break: break-all;
+}
+.session-code-label { font-size: 0.7rem; color: var(--text-3); margin-bottom: 0.2rem; }
+
+/* ─── Bhajan modal prev/next footer layout ───────────────────────────────── */
+.mbhajan-footer { justify-content: space-between; }
+.mbhajan-footer-actions { display: flex; gap: 0.5rem; }
+
+/* ─── Reorder buttons ────────────────────────────────────────────────────── */
+.reorder-btns { display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
+.btn-reorder {
+  width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: var(--text-3); border-radius: 3px; padding: 0;
+  line-height: 1;
+}
+.btn-reorder:hover { background: var(--surface-2); color: var(--text); }
+.btn-reorder:disabled { opacity: .25; pointer-events: none; }
+
+/* Bhajan entry title clickable */
+.entry-title-link { cursor: pointer; color: inherit; }
+.entry-title-link:hover { color: var(--saffron); text-decoration: underline; }
+.tl-title-link { cursor: pointer; }
+.tl-title-link:hover { color: var(--saffron); }
+
+/* ─── Join modal series+date ─────────────────────────────────────────────── */
+.join-or-row { display: flex; align-items: center; gap: 0.75rem; margin: 0.75rem 0; }
+.join-or-line { flex: 1; height: 1px; background: var(--border); }
+.join-or-text { font-size: 0.75rem; color: var(--text-3); white-space: nowrap; }
+
 /* ─── Responsive tweaks ──────────────────────────────────────────────────── */
 @media (max-width: 400px) {
   .page-header { flex-direction: column; }

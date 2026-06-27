@@ -228,9 +228,13 @@
         <button class="modal-close" id="mbhajan-close">✕</button>
       </div>
       <div class="modal-body" id="mbhajan-body"></div>
-      <div class="modal-footer">
-        <button class="btn btn-outline btn-sm" id="mbhajan-add-to-session">+ Add to Session</button>
-        <a class="btn btn-ghost btn-sm" id="mbhajan-source-link" target="_blank" rel="noopener">Source ↗</a>
+      <div class="modal-footer mbhajan-footer">
+        <button class="btn btn-ghost btn-sm hidden" id="mbhajan-prev">← Prev</button>
+        <div class="mbhajan-footer-actions">
+          <button class="btn btn-outline btn-sm" id="mbhajan-add-to-session">+ Add to Session</button>
+          <a class="btn btn-ghost btn-sm" id="mbhajan-source-link" target="_blank" rel="noopener">Source ↗</a>
+        </div>
+        <button class="btn btn-ghost btn-sm hidden" id="mbhajan-next">Next →</button>
       </div>
     </div>
   </div>
@@ -245,8 +249,12 @@
       <div class="modal-body">
         <form id="session-form">
           <div class="form-group">
-            <label class="form-label">Session Name (optional)</label>
-            <input type="text" id="sf-label" class="form-input" placeholder="e.g. Morning Bhajans, Thursday Satsang">
+            <label class="form-label">Series Name</label>
+            <input type="text" id="sf-series" class="form-input"
+              placeholder="e.g. Thursday Satsang, Morning Bhajans"
+              list="sf-series-list" autocomplete="off">
+            <datalist id="sf-series-list"></datalist>
+            <div class="form-hint">Becomes the permanent identifier — same name every week makes sessions findable by date</div>
           </div>
           <div class="form-group">
             <label class="form-label">Date</label>
@@ -329,15 +337,26 @@
         <button class="modal-close" id="mjoin-close">✕</button>
       </div>
       <div class="modal-body">
-        <p class="modal-desc">Enter the 6-character session code shared by the host.</p>
         <div class="form-group">
-          <input type="text" id="mjoin-code" class="form-input code-input"
-            placeholder="XXXXXX" maxlength="6" autocomplete="off" autocorrect="off"
-            autocapitalize="characters" spellcheck="false">
+          <label class="form-label">Series Name</label>
+          <input type="text" id="mjoin-series" class="form-input"
+            placeholder="e.g. Thursday Satsang"
+            list="mjoin-series-list" autocomplete="off">
+          <datalist id="mjoin-series-list"></datalist>
         </div>
         <div class="form-group">
-          <label class="form-label">Your name (optional, for display)</label>
-          <input type="text" id="mjoin-name" class="form-input" placeholder="Your name">
+          <label class="form-label">Date</label>
+          <input type="date" id="mjoin-date" class="form-input">
+        </div>
+        <div class="join-or-row">
+          <span class="join-or-line"></span>
+          <span class="join-or-text">or join by code</span>
+          <span class="join-or-line"></span>
+        </div>
+        <div class="form-group">
+          <input type="text" id="mjoin-code" class="form-input mono"
+            placeholder="Session code (e.g. thursday-satsang-2026-06-27)"
+            autocomplete="off" autocorrect="off" spellcheck="false">
         </div>
       </div>
       <div class="modal-footer">

@@ -122,6 +122,12 @@ export class SessionStore {
     try { localStorage.removeItem(DRAFT_KEY); } catch {}
   }
 
+  knownSeries() {
+    const s = new Set();
+    for (const sess of this._sessions) if (sess.series) s.add(sess.series);
+    return [...s].sort();
+  }
+
   // ── Analytics ──────────────────────────────────────────────────────────────
 
   stats() {

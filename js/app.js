@@ -15,6 +15,7 @@ class App {
     this._browseFiltered = [];
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
+    this._bhajanModalContext = null;
 
     this._init();
   }
@@ -125,6 +126,18 @@ class App {
       const bhajan = this.bhajans.getById(id);
       if (bhajan) this._openAddBhajanModal(bhajan);
     });
+    document.getElementById('mbhajan-prev').addEventListener('click', () => {
+      const ctx = this._bhajanModalContext;
+      if (!ctx || ctx.index <= 0) return;
+      const newIdx = ctx.index - 1;
+      this._openBhajanModal(ctx.bhajans[newIdx], { ...ctx, index: newIdx });
+    });
+    document.getElementById('mbhajan-next').addEventListener('click', () => {
+      const ctx = this._bhajanModalContext;
+      if (!ctx || ctx.index >= ctx.bhajans.length - 1) return;
+      const newIdx = ctx.index + 1;
+      this._openBhajanModal(ctx.bhajans[newIdx], { ...ctx, index: newIdx });
+    });
 
     // Session form modal
     document.getElementById('mform-close').addEventListener('click', () => this._closeModal('modal-session-form'));
@@ -162,6 +175,9 @@ class App {
     document.getElementById('btn-mjoin-cancel').addEventListener('click', () => this._closeModal('modal-join-session'));
     document.getElementById('btn-mjoin-join').addEventListener('click', () => this._joinSession());
     document.getElementById('mjoin-code').addEventListener('keydown', e => {
+      if (e.key === 'Enter') this._joinSession();
+    });
+    document.getElementById('mjoin-date').addEventListener('keydown', e => {
       if (e.key === 'Enter') this._joinSession();
     });
     document.getElementById('modal-join-session').addEventListener('click', e => {
@@ -452,6 +468,25 @@ class App {
     return h > 0 ? `${h}h ${m}m` : `${m}m`;
   }
 
+  _seriesSlug(name) {
+    return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 12);
+  }
+
+  _sessionRoomCode(series, date) {
+    const slug = this._seriesSlug(series);
+    return slug ? `${slug}-${date}` : date;
+  }
+
+  _moveBhajanEntry(entryId, direction, bhajansArray) {
+    const idx = bhajansArray.findIndex(e => e.id === entryId);
+    if (idx < 0) return bhajansArray;
+    const newIdx = direction === 'earlier' ? idx - 1 : idx + 1;
+    if (newIdx < 0 || newIdx >= bhajansArray.length) return bhajansArray;
+    const arr = [...bhajansArray];
+    [arr[idx], arr[newIdx]] = [arr[newIdx], arr[idx]];
+    return arr;
+  }
+
   // ─── Browse ───────────────────────────────────────────────────────────────
 
   _populateFilters() {
@@ -533,9 +568,21 @@ class App {
 
   // ─── Bhajan Modal ─────────────────────────────────────────────────────────
 
-  _openBhajanModal(id) {
+  _openBhajanModal(id, context = null) {
     const b = this.bhajans.getById(id);
     if (!b) return;
+
+    this._bhajanModalContext = context;
+
+    const prevBtn = document.getElementById('mbhajan-prev');
+    const nextBtn = document.getElementById('mbhajan-next');
+    if (context && context.bhajans.length > 1) {
+      prevBtn.classList.toggle('hidden', context.index <= 0);
+      nextBtn.classList.toggle('hidden', context.index >= context.bhajans.length - 1);
+    } else {
+      prevBtn.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+    }
 
     document.getElementById('mbhajan-title').textContent = b.title;
     document.getElementById('mbhajan-add-to-session').dataset.bhajanId = id;
@@ -582,8 +629,8 @@ class App {
   }
 
   _closeBhajanModal() {
+    this._bhajanModalContext = null;
     this._closeModal('modal-bhajan');
-    // Pause audio if playing
     document.querySelector('#modal-bhajan audio')?.pause();
   }
 
@@ -706,10 +753,31 @@ class App {
       });
     });
 
+    // Clickable bhajan titles (all users)
+    document.querySelectorAll('#live-bhajans-list .entry-title-link').forEach(el => {
+      el.addEventListener('click', () => {
+        const bhajanIds = (st.bhajans || []).map(e => e.bhajan_id);
+        const idx = parseInt(el.dataset.entryIdx);
+        this._openBhajanModal(el.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
+      });
+    });
+
     if (isHost) {
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       document.getElementById('btn-add-singer-live')?.addEventListener('click', () => this._addSingerLive());
+
+      document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
+          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
+          const updated = { ...this.liveState, bhajans: newBhajans };
+          this.liveState = updated;
+          this.live.updateState(updated);
+          this._renderSession();
+        });
+      });
 
       document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -747,11 +815,17 @@ class App {
   _sessionBhajansHTML(bhajans, isHost = false) {
     if (!bhajans.length) return '<div class="empty-state" style="padding:1.5rem 0"><p class="text-muted">No bhajans added yet</p></div>';
 
-    return [...bhajans].reverse().map((e, i) => `
+    // Rendered newest-first; origIdx is the position in the original array
+    return [...bhajans].reverse().map((e, revI) => {
+      const origIdx = bhajans.length - 1 - revI;
+      // ↑ moves card up in display = later in session (higher origIdx); ↓ = earlier (lower origIdx)
+      const canGoLater   = origIdx < bhajans.length - 1;
+      const canGoEarlier = origIdx > 0;
+      return `
       <div class="session-bhajan-entry">
-        <div class="entry-num">${bhajans.length - i}</div>
+        <div class="entry-num">${origIdx + 1}</div>
         <div class="entry-main">
-          <div class="entry-title">${escHtml(e.bhajan_title)}</div>
+          <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${origIdx}">${escHtml(e.bhajan_title)}</div>
           <div class="entry-meta">
             ${e.singer ? escHtml(e.singer) : ''}
             ${e.singer && e.pitch ? ' · ' : ''}
@@ -760,11 +834,17 @@ class App {
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
-        ${isHost ? `<div class="entry-actions">
+        ${isHost ? `
+        <div class="reorder-btns">
+          <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${canGoLater ? '' : 'disabled'} title="Move up">↑</button>
+          <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${canGoEarlier ? '' : 'disabled'} title="Move down">↓</button>
+        </div>
+        <div class="entry-actions">
           <button class="btn entry-action-btn" data-action="now" data-entry-id="${e.id}" title="Mark as current">▶</button>
           <button class="btn entry-action-btn" data-action="remove" data-entry-id="${e.id}" title="Remove">✕</button>
         </div>` : ''}
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
 
   _copyCode(code) {
@@ -782,23 +862,24 @@ class App {
     this._sfSingers = [];
     this._sfIsBackdated = backdated;
 
-    document.getElementById('sf-label').value = '';
+    document.getElementById('sf-series').value = '';
     document.getElementById('sf-date').value = todayISO();
     document.getElementById('sf-singers-tags').innerHTML = '';
     document.getElementById('sf-singer-input').value = '';
     document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
     document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
+    // Populate series datalist from known series names
+    const knownSeries = this.sessions.knownSeries?.() || [];
+    const datalist = document.getElementById('sf-series-list');
+    datalist.innerHTML = knownSeries.map(s => `<option value="${escHtml(s)}">`).join('');
+
     const submitBtn = document.getElementById('btn-mform-submit');
     submitBtn.textContent = backdated ? 'Add Session' : 'Start Session';
     document.getElementById('mform-title').textContent = backdated ? 'Add Past Session' : 'New Session';
 
-    // Pre-fill known singer names as suggestions
-    const known = this.sessions.allSingerNames();
-    // We'll just show the input — no autocomplete for now to keep it simple
-
     this._openModal('modal-session-form');
-    setTimeout(() => document.getElementById('sf-label').focus(), 100);
+    setTimeout(() => document.getElementById('sf-series').focus(), 100);
   }
 
   _sfAddSinger() {
@@ -825,18 +906,32 @@ class App {
   }
 
   _submitSessionForm() {
-    const label    = document.getElementById('sf-label').value.trim();
+    const series   = document.getElementById('sf-series').value.trim();
     const date     = document.getElementById('sf-date').value;
     const singers  = [...this._sfSingers];
     const backdated = this._sfIsBackdated;
 
     if (!date) { this._toast('Please set a date', 'error'); return; }
-    if (backdated && !date) { this._toast('Date required for backdated session', 'error'); return; }
+    if (!series) { this._toast('Please enter a series name', 'error'); return; }
+
+    // Derive deterministic ID and room code from series + date
+    const roomCode  = this._sessionRoomCode(series, date);
+    const sessionId = roomCode;
+
+    // Prevent duplicate
+    if (this.sessions.get(sessionId)) {
+      this._closeModal('modal-session-form');
+      this._toast('A session for this series on this date already exists', 'warn');
+      location.hash = `#session-detail/${sessionId}`;
+      return;
+    }
 
     const sessionData = {
-      id: genId('sess'),
-      label:  label || 'Bhajan Session',
+      id: sessionId,
+      label: series,
+      series,
       date,
+      roomCode,
       singers,
       bhajans: [],
       status: backdated ? 'completed' : 'live',
@@ -870,7 +965,7 @@ class App {
       onError: (msg) => this._toast(msg, 'error'),
     });
 
-    const code = this.live.host(sessionData);
+    const code = this.live.host(sessionData, sessionData.roomCode || null);
     sessionData.roomCode = code;
 
     this.liveState = { ...sessionData };
@@ -903,15 +998,34 @@ class App {
   // ─── Join Session ─────────────────────────────────────────────────────────
 
   _openJoinModal() {
+    document.getElementById('mjoin-series').value = '';
     document.getElementById('mjoin-code').value = '';
-    document.getElementById('mjoin-name').value = '';
+    document.getElementById('mjoin-date').value = todayISO();
+
+    // Populate series datalist
+    const knownSeries = this.sessions.knownSeries?.() || [];
+    const datalist = document.getElementById('mjoin-series-list');
+    datalist.innerHTML = knownSeries.map(s => `<option value="${escHtml(s)}">`).join('');
+
     this._openModal('modal-join-session');
-    setTimeout(() => document.getElementById('mjoin-code').focus(), 100);
+    setTimeout(() => document.getElementById('mjoin-series').focus(), 100);
   }
 
   async _joinSession() {
-    const code = document.getElementById('mjoin-code').value.trim().toUpperCase();
-    if (!code || code.length < 4) { this._toast('Enter a valid session code', 'error'); return; }
+    const series    = document.getElementById('mjoin-series').value.trim();
+    const date      = document.getElementById('mjoin-date').value.trim();
+    const codeInput = document.getElementById('mjoin-code').value.trim();
+
+    let code;
+    if (series && date) {
+      code = this._sessionRoomCode(series, date);
+    } else if (codeInput) {
+      code = codeInput;
+    } else {
+      this._toast('Enter a series name + date, or a session code', 'error');
+      return;
+    }
+
     this._closeModal('modal-join-session');
     this._joinSessionWithCode(code);
   }
@@ -1249,7 +1363,7 @@ class App {
               <div class="timeline-item">
                 <div class="tl-num">${i + 1}</div>
                 <div class="tl-main">
-                  <div class="tl-title">${escHtml(e.bhajan_title)}</div>
+                  <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
                   <div class="tl-meta">
                     ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
                     ${e.singer && e.pitch ? ' · ' : ''}
@@ -1259,7 +1373,12 @@ class App {
                 </div>
                 <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.3rem">
                   <span class="tl-time">${formatTime(e.addedAt)}</span>
-                  ${canEdit ? `<button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" style="color:var(--text-3);font-size:.75rem">✕</button>` : ''}
+                  ${canEdit ? `
+                  <div class="reorder-btns" style="flex-direction:row">
+                    <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${i > 0 ? '' : 'disabled'} title="Move up">↑</button>
+                    <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${i < (s.bhajans.length - 1) ? '' : 'disabled'} title="Move down">↓</button>
+                  </div>
+                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" style="color:var(--text-3);font-size:.75rem">✕</button>` : ''}
                 </div>
               </div>`).join('')}
           </div>`
@@ -1271,11 +1390,33 @@ class App {
       el.addEventListener('click', () => { location.hash = `#singer/${encodeURIComponent(el.dataset.singer)}`; });
     });
 
+    // Clickable bhajan titles → open modal with session context
+    document.querySelectorAll('#session-detail-content .tl-title-link').forEach(el => {
+      el.addEventListener('click', () => {
+        const bhajanIds = (s.bhajans || []).map(e => e.bhajan_id);
+        const idx = parseInt(el.dataset.entryIdx);
+        this._openBhajanModal(el.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
+      });
+    });
+
     // Add bhajan to completed/backdated session
     if (canEdit) {
       document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', () => {
         this._openDetailAddBhajan(s);
       });
+
+      // Reorder bhajans in session detail
+      document.querySelectorAll('#session-detail-content .btn-reorder').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const current = this.sessions.get(id);
+          if (!current) return;
+          const dir = btn.dataset.action === 'reorder-earlier' ? 'earlier' : 'later';
+          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, current.bhajans || []);
+          this.sessions.save({ ...current, bhajans: newBhajans });
+          this._renderSessionDetail(id);
+        });
+      });
+
       document.querySelectorAll('#session-detail-content .entry-action-btn[data-action="remove"]').forEach(btn => {
         btn.addEventListener('click', () => {
           const updated = { ...s, bhajans: (s.bhajans || []).filter(e => e.id !== btn.dataset.entryId) };
