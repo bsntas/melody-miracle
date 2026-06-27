@@ -841,7 +841,7 @@ class App {
     const entry = currentId ? (st.bhajans || []).find(e => e.id === currentId) : (st.bhajans || []).at(-1);
     if (!entry) return '<span class="now-singing-empty">Session started — add first bhajan</span>';
 
-    const bhajan = this.store.getById(entry.bhajan_id);
+    const bhajan = this.bhajans.getById(entry.bhajan_id);
     const lyrics = bhajan?.lyrics || '';
 
     return `<div class="now-singing-info">
@@ -1390,8 +1390,8 @@ class App {
 
   _pitchOptionsHTML(current) {
     const groups = {
-      'Pancham (Sa = C)': ['1 Pancham / C','1.5 Pancham / C#','2 Pancham / D','2.5 Pancham / E','3 Pancham / E','4 Pancham / F','4.5 Pancham / F#','5 Pancham / G','5.5 Pancham / G#','6 Pancham / A','6.5 Pancham / B','7 Pancham / B'],
-      'Madhyam (Sa = F)': ['1 Madhyam / F','1.5 Madhyam / F#','2 Madhyam / G','2.5 Madhyam / G#','3 Madhyam / A','4 Madhyam / B','4.5 Madhyam / B','5 Madhyam / C','5.5 Madhyam / C#','6 Madhyam / D','6.5 Madhyam / E','7 Madhyam / E'],
+      'Pancham (Sa = C)': ['1 Pancham / C','1.5 Pancham / C#','2 Pancham / D','2.5 Pancham / E','3 Pancham / E','4 Pancham / F','4.5 Pancham / F#','5 Pancham / G','5.5 Pancham / G#','6 Pancham / A','6.5 Pancham / A#','7 Pancham / B'],
+      'Madhyam (Sa = F)': ['1 Madhyam / F','1.5 Madhyam / F#','2 Madhyam / G','2.5 Madhyam / G#','3 Madhyam / A','4 Madhyam / A#','4.5 Madhyam / B','5 Madhyam / C','5.5 Madhyam / C#','6 Madhyam / D','6.5 Madhyam / E','7 Madhyam / E'],
     };
     const sel = v => v === current ? ' selected' : '';
     return `<option value=""${sel('')}>— not set —</option>` +
