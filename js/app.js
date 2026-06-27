@@ -756,7 +756,9 @@ class App {
           ${!isPlaying ? `<button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>` : ''}
           ${!isPlaying
             ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>`
-            : `<button class="btn btn-primary" id="btn-next-bhajan">Next →</button>`}
+            : `<button class="btn btn-outline" id="btn-prev-bhajan" ${(st.bhajans || []).findIndex(e => e.id === st.currentBhajan) <= 0 ? 'disabled' : ''}>← Prev</button>
+               <button class="btn btn-primary" id="btn-next-bhajan">Next →</button>
+               <button class="btn btn-ghost" id="btn-exit-play" title="Return to setup">↩ Setup</button>`}
           <button class="btn btn-outline" id="btn-end-session">End Session</button>
         </div>` : ''}
 
@@ -819,7 +821,9 @@ class App {
           });
         });
       } else {
+        document.getElementById('btn-prev-bhajan').addEventListener('click', () => this._prevBhajan());
         document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+        document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
       }
     }
 
@@ -1005,6 +1009,25 @@ class App {
       this.sessions.saveDraft(updated);
       this._renderSession();
     }
+  }
+
+  _prevBhajan() {
+    const bhajans = this.liveState?.bhajans || [];
+    const currentIdx = bhajans.findIndex(e => e.id === this.liveState?.currentBhajan);
+    if (currentIdx <= 0) return;
+    const updated = { ...this.liveState, currentBhajan: bhajans[currentIdx - 1].id };
+    this.liveState = updated;
+    this.live.updateState(updated);
+    this.sessions.saveDraft(updated);
+    this._renderSession();
+  }
+
+  _exitPlay() {
+    const updated = { ...this.liveState, phase: 'setup' };
+    this.liveState = updated;
+    this.live.updateState(updated);
+    this.sessions.saveDraft(updated);
+    this._renderSession();
   }
 
   _resumeDraftSession(draft) {
