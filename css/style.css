@@ -414,31 +414,60 @@ img { max-width: 100%; }
 .singer-chip.clickable { cursor: pointer; }
 .singer-chip.clickable:hover { background: var(--saffron-light); }
 
-.now-singing-section { margin-bottom: 1rem; }
-.now-singing-label {
-  font-size: 0.72rem; font-weight: 700; color: var(--text-3);
-  text-transform: uppercase; letter-spacing: .05em; margin-bottom: 0.5rem;
-}
-.now-singing-card {
-  background: linear-gradient(135deg, var(--saffron-bg), var(--cream));
-  border: 2px solid var(--saffron-light); border-radius: var(--radius-lg);
-  padding: 1rem 1.25rem; min-height: 90px;
-  display: flex; align-items: flex-start; justify-content: center;
-}
-.now-singing-empty { color: var(--text-3); font-size: 0.9rem; margin: auto; }
-.now-singing-bhajan-title { font-size: 1.15rem; font-weight: 700; color: var(--maroon); }
-.now-singing-bhajan-meta { font-size: 0.85rem; color: var(--saffron-dark); margin-top: 0.4rem; }
-.now-singing-info { width: 100%; }
-.now-singing-lyrics {
-  margin-top: 0.75rem; padding-top: 0.75rem;
-  border-top: 1px solid var(--saffron-light);
-  font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;
-  color: var(--maroon);
-  max-height: 40dvh; overflow-y: auto;
-}
-
 .session-add-btn-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.btn-aarati { color: var(--gold); border: 1px solid var(--gold-light); margin-left: auto; }
+.btn-aarati { color: var(--gold); border: 1px solid var(--gold-light); }
+
+/* ─── Playing-phase compact controls strip ───────────────────────────────── */
+.playing-controls-strip {
+  display: flex; align-items: center; gap: 0.35rem;
+  margin-bottom: 0.75rem; justify-content: flex-end;
+}
+.playing-controls-strip .btn-icon {
+  font-size: 1rem; padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-sm); color: var(--text-2);
+  border: 1px solid var(--border);
+}
+.playing-controls-strip .btn-icon:hover { color: var(--saffron); border-color: var(--saffron-light); }
+.playing-controls-strip .btn-aarati { color: var(--gold); border-color: var(--gold-light); }
+
+/* ─── Inline expanded "Now Playing" entry ────────────────────────────────── */
+.session-entry-playing {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 0.75rem 0.75rem 0 !important;
+  background: linear-gradient(135deg, var(--saffron-bg), var(--cream)) !important;
+  border: 2px solid var(--saffron-light) !important;
+  border-radius: var(--radius) !important;
+  margin: 0 -0.5rem 0.5rem !important;
+}
+.playing-entry-header {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+}
+.entry-num-playing {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--saffron); color: #fff;
+  font-size: 0.75rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.playing-entry-header .entry-title { font-size: 1rem; font-weight: 700; color: var(--maroon); }
+.playing-entry-header .entry-meta  { font-size: 0.83rem; color: var(--saffron-dark); margin-top: 0.2rem; }
+.playing-nav-btns { display: flex; gap: 0.2rem; flex-shrink: 0; margin-top: 0.05rem; }
+.btn-nav-compact {
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm); font-size: 1.2rem; font-weight: 700;
+  color: var(--saffron-dark); border: 1.5px solid var(--saffron-light);
+  background: var(--surface);
+}
+.btn-nav-compact:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+.btn-nav-compact:disabled { opacity: .3; pointer-events: none; }
+.playing-entry-lyrics {
+  margin-top: 0.65rem; padding: 0.65rem 0 0.75rem;
+  border-top: 1px solid var(--saffron-light);
+  font-size: 0.85rem; line-height: 1.9; white-space: pre-wrap;
+  color: var(--maroon); max-height: 40dvh; overflow-y: auto;
+}
 
 .session-bhajans-list { }
 .session-bhajan-entry {
