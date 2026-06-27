@@ -841,7 +841,7 @@ class App {
     const entry = currentId ? (st.bhajans || []).find(e => e.id === currentId) : (st.bhajans || []).at(-1);
     if (!entry) return '<span class="now-singing-empty">Session started — add first bhajan</span>';
 
-    const bhajan = this.store.getById(entry.bhajan_id);
+    const bhajan = this.bhajans.getById(entry.bhajan_id);
     const lyrics = bhajan?.lyrics || '';
 
     return `<div class="now-singing-info">
