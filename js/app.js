@@ -718,10 +718,6 @@ class App {
               <div class="live-session-label">${escHtml(st.label || 'Bhajan Session')}</div>
               <div class="live-session-date">${formatDate(st.date)}</div>
             </div>
-            <div class="session-code-wrap">
-              <div class="session-code" id="live-code" title="Click to copy">${escHtml(st.roomCode || '')}</div>
-              <button class="btn btn-outline btn-sm" id="btn-copy-code">Copy</button>
-            </div>
           </div>
           <div class="observer-count" id="live-observer-count">
             ${isHost ? `${this.live?.peerCount || 0} observer${(this.live?.peerCount || 0) !== 1 ? 's' : ''}` : ''}
@@ -759,10 +755,7 @@ class App {
       </div>`;
 
     // Bind events
-    document.getElementById('live-code').addEventListener('click', () => this._copyCode(st.roomCode));
-    document.getElementById('btn-copy-code').addEventListener('click', () => this._copyCode(st.roomCode));
-
-    document.querySelectorAll('.singer-chip.clickable').forEach(el => {
+document.querySelectorAll('.singer-chip.clickable').forEach(el => {
       el.addEventListener('click', () => {
         location.hash = `#singer/${encodeURIComponent(el.dataset.singer)}`;
       });
@@ -860,12 +853,6 @@ class App {
         </div>` : ''}
       </div>`;
     }).join('');
-  }
-
-  _copyCode(code) {
-    navigator.clipboard.writeText(code)
-      .then(() => this._toast('Code copied!'))
-      .catch(() => this._toast('Code: ' + code));
   }
 
   // ─── New Session Modal ────────────────────────────────────────────────────
