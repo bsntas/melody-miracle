@@ -28,8 +28,8 @@ export class LiveSession {
   }
 
   // ── Host: create a new live room ──────────────────────────────────────────
-  host(sessionState) {
-    const code = genCode();
+  host(sessionState, preferredCode = null) {
+    const code = preferredCode || genCode();
     this.roomCode = code;
     this.isHost = true;
     this._localState = { ...sessionState };
@@ -64,7 +64,7 @@ export class LiveSession {
   // ── Guest: join a room as observer ────────────────────────────────────────
   join(code) {
     return new Promise((resolve, reject) => {
-      this.roomCode = code.toUpperCase();
+      this.roomCode = code;
       this.isHost = false;
 
       this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, this.roomCode);
