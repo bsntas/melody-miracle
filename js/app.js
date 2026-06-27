@@ -841,6 +841,9 @@ class App {
     const entry = currentId ? (st.bhajans || []).find(e => e.id === currentId) : (st.bhajans || []).at(-1);
     if (!entry) return '<span class="now-singing-empty">Session started — add first bhajan</span>';
 
+    const bhajan = this.store.getById(entry.bhajan_id);
+    const lyrics = bhajan?.lyrics || '';
+
     return `<div class="now-singing-info">
       <div class="now-singing-bhajan-title">${escHtml(entry.bhajan_title)}</div>
       <div class="now-singing-bhajan-meta">
@@ -848,6 +851,7 @@ class App {
         ${entry.singer && entry.pitch ? ' · ' : ''}
         ${entry.pitch ? `🎵 ${escHtml(entry.pitch)}` : ''}
       </div>
+      ${lyrics ? `<div class="now-singing-lyrics">${escHtml(lyrics)}</div>` : ''}
     </div>`;
   }
 
