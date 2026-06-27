@@ -816,6 +816,13 @@ class App {
         });
       });
 
+      document.querySelectorAll('#live-bhajans-list .notes-editable').forEach(notesEl => {
+        notesEl.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlineNotesEdit(notesEl, notesEl.dataset.entryId, 'live');
+        });
+      });
+
       // Setup controls: host only
       if (isHost) {
         document.getElementById('btn-start-playing').addEventListener('click', () => this._startPlaying());
@@ -876,7 +883,9 @@ class App {
             <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit pitch' : ''}">
               ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
-            ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
+            ${!isPlaying
+              ? ` · <span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>`
+              : (e.notes ? ` · <em>${escHtml(e.notes)}</em>` : '')}
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
@@ -1445,6 +1454,56 @@ class App {
     });
   }
 
+  // ─── Inline notes edit ────────────────────────────────────────────────────
+
+  _inlineNotesEdit(triggerEl, entryId, mode) {
+    const entries = mode === 'live'
+      ? (this.liveState?.bhajans || [])
+      : (this.sessions.get(this._detailSessionId)?.bhajans || []);
+    const entry = entries.find(e => e.id === entryId);
+    if (!entry) return;
+
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'notes-inline-input form-input';
+    inp.value = entry.notes || '';
+    inp.placeholder = 'Add notes…';
+
+    triggerEl.replaceWith(inp);
+    inp.focus();
+    inp.select();
+
+    const save = () => {
+      const newNotes = inp.value.trim() || null;
+      if (mode === 'live') {
+        const updated = {
+          ...this.liveState,
+          bhajans: (this.liveState.bhajans || []).map(e =>
+            e.id === entryId ? { ...e, notes: newNotes } : e),
+        };
+        this._applyLiveEdit(updated, { type: 'update-notes', entryId, notes: newNotes });
+        this._renderSession();
+      } else {
+        const session = this.sessions.get(this._detailSessionId);
+        if (!session) return;
+        const updated = {
+          ...session,
+          bhajans: session.bhajans.map(e =>
+            e.id === entryId ? { ...e, notes: newNotes } : e),
+        };
+        this.sessions.save(updated);
+        this._renderSessionDetail(this._detailSessionId);
+      }
+    };
+
+    let done = false;
+    inp.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter')  { done = true; inp.blur(); }
+      if (ev.key === 'Escape') { done = true; inp.replaceWith(triggerEl); }
+    });
+    inp.addEventListener('blur', () => { if (!done) { done = true; save(); } });
+  }
+
   // ─── Session Detail ───────────────────────────────────────────────────────
 
   _renderSessionDetail(id) {
@@ -1496,7 +1555,9 @@ class App {
                       ${e.pitch ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
                   </div>
-                  ${e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : ''}
+                  ${canEdit
+                    ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
+                    : (e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : '')}
                 </div>
                 <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.3rem">
                   <span class="tl-time">${formatTime(e.addedAt)}</span>
@@ -1556,6 +1617,13 @@ class App {
         el.addEventListener('click', e => {
           e.stopPropagation();
           this._inlinePitchEdit(el, el.dataset.entryId, 'detail');
+        });
+      });
+
+      document.querySelectorAll('#session-detail-content .notes-editable').forEach(el => {
+        el.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlineNotesEdit(el, el.dataset.entryId, 'detail');
         });
       });
     }

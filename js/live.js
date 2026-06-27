@@ -136,6 +136,8 @@ export class LiveSession {
       }
       case 'update-pitch':
         return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? { ...e, pitch: action.pitch } : e) };
+      case 'update-notes':
+        return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? { ...e, notes: action.notes } : e) };
       default:
         return null;
     }
