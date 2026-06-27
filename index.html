@@ -262,16 +262,6 @@
             <label class="form-label">Date</label>
             <input type="date" id="sf-date" class="form-input">
           </div>
-          <div class="form-group">
-            <label class="form-label">Singers</label>
-            <div class="singers-input-wrap">
-              <div class="singers-tags" id="sf-singers-tags"></div>
-              <div class="singer-add-row">
-                <input type="text" id="sf-singer-input" class="form-input" placeholder="Add singer name…">
-                <button type="button" class="btn btn-outline btn-sm" id="btn-sf-add-singer">Add</button>
-              </div>
-            </div>
-          </div>
           <div class="form-group" id="sf-time-group" style="display:none">
             <label class="form-label">Start Time (optional)</label>
             <input type="time" id="sf-start-time" class="form-input">
@@ -306,7 +296,9 @@
           <div class="mab-selected-bhajan" id="mab-selected-info"></div>
           <div class="form-group">
             <label class="form-label">Singer</label>
-            <select id="mab-singer" class="form-input"></select>
+            <input type="text" id="mab-singer" class="form-input"
+              placeholder="Singer name…" autocomplete="off" list="mab-singer-list">
+            <datalist id="mab-singer-list"></datalist>
           </div>
           <div class="form-group">
             <label class="form-label">Pitch</label>
