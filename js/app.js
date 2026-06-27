@@ -42,6 +42,7 @@ class App {
     this._populateFilters();
     this._bindGlobal();
     this._bindSettings();
+    this._initKeyboardAdjust();
     this._hideLoading();
     this._updateSyncIndicator(pat ? this.sessions.syncStatus : 'local');
     this._route();
@@ -190,6 +191,20 @@ class App {
 
   _closeModal(id) {
     document.getElementById(id).classList.add('hidden');
+  }
+
+  _initKeyboardAdjust() {
+    if (!window.visualViewport) return;
+    window.visualViewport.addEventListener('resize', () => {
+      const vh = window.visualViewport.height;
+      document.querySelectorAll('.modal-overlay:not(.hidden) .modal-box').forEach(box => {
+        box.style.maxHeight = `${Math.floor(vh - 16)}px`;
+      });
+      const focused = document.activeElement;
+      if (focused && focused.closest('.modal-overlay:not(.hidden)')) {
+        setTimeout(() => focused.scrollIntoView({ block: 'center', behavior: 'smooth' }), 100);
+      }
+    });
   }
 
   // ─── Sync indicator ───────────────────────────────────────────────────────
@@ -1298,6 +1313,18 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
 
   // ─── Inline pitch edit ───────────────────────────────────────────────────
 
+  _pitchOptionsHTML(current) {
+    const groups = {
+      'Pancham (Sa = C)': ['1 Pancham / C','1.5 Pancham / C#','2 Pancham / D','2.5 Pancham / E','3 Pancham / E','4 Pancham / F','4.5 Pancham / F#','5 Pancham / G','5.5 Pancham / G#','6 Pancham / A','6.5 Pancham / B','7 Pancham / B'],
+      'Madhyam (Sa = F)': ['1 Madhyam / F','1.5 Madhyam / F#','2 Madhyam / G','2.5 Madhyam / G#','3 Madhyam / A','4 Madhyam / B','4.5 Madhyam / B','5 Madhyam / C','5.5 Madhyam / C#','6 Madhyam / D','6.5 Madhyam / E','7 Madhyam / E'],
+    };
+    const sel = v => v === current ? ' selected' : '';
+    return `<option value=""${sel('')}>— not set —</option>` +
+      Object.entries(groups).map(([label, opts]) =>
+        `<optgroup label="${label}">${opts.map(v => `<option${sel(v)}>${escHtml(v)}</option>`).join('')}</optgroup>`
+      ).join('');
+  }
+
   _inlinePitchEdit(triggerEl, entryId, mode) {
     const entries = mode === 'live'
       ? (this.liveState?.bhajans || [])
@@ -1305,18 +1332,15 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
     const entry = entries.find(e => e.id === entryId);
     if (!entry) return;
 
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = entry.pitch || '';
-    input.className = 'pitch-inline-input';
-    input.placeholder = 'e.g. C#4';
+    const sel = document.createElement('select');
+    sel.className = 'pitch-inline-select form-input';
+    sel.innerHTML = this._pitchOptionsHTML(entry.pitch || '');
 
-    triggerEl.replaceWith(input);
-    input.focus();
-    input.select();
+    triggerEl.replaceWith(sel);
+    sel.focus();
 
     const save = () => {
-      const newPitch = input.value.trim() || null;
+      const newPitch = sel.value || null;
       if (mode === 'live') {
         const updated = {
           ...this.liveState,
@@ -1340,10 +1364,10 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
     };
 
     let done = false;
-    input.addEventListener('blur', () => { if (!done) { done = true; save(); } });
-    input.addEventListener('keydown', ev => {
-      if (ev.key === 'Enter') { ev.preventDefault(); done = true; save(); }
-      if (ev.key === 'Escape') { done = true; input.replaceWith(triggerEl); }
+    sel.addEventListener('change', () => { done = true; save(); });
+    sel.addEventListener('blur', () => { if (!done) { done = true; sel.replaceWith(triggerEl); } });
+    sel.addEventListener('keydown', ev => {
+      if (ev.key === 'Escape') { done = true; sel.replaceWith(triggerEl); }
     });
   }
 
