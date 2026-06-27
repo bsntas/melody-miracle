@@ -146,6 +146,12 @@ class App {
       if (e.target === document.getElementById('modal-session-form')) this._closeModal('modal-session-form');
     });
     document.getElementById('btn-mform-submit').addEventListener('click', () => this._submitSessionForm());
+    document.getElementById('sf-series').addEventListener('change', () => {
+      const newInput = document.getElementById('sf-series-new');
+      const isNew = document.getElementById('sf-series').value === '__new__';
+      newInput.style.display = isNew ? '' : 'none';
+      if (isNew) newInput.focus();
+    });
     document.getElementById('btn-sf-add-singer').addEventListener('click', () => this._sfAddSinger());
     document.getElementById('sf-singer-input').addEventListener('keydown', e => {
       if (e.key === 'Enter') { e.preventDefault(); this._sfAddSinger(); }
@@ -174,9 +180,6 @@ class App {
     document.getElementById('mjoin-close').addEventListener('click', () => this._closeModal('modal-join-session'));
     document.getElementById('btn-mjoin-cancel').addEventListener('click', () => this._closeModal('modal-join-session'));
     document.getElementById('btn-mjoin-join').addEventListener('click', () => this._joinSession());
-    document.getElementById('mjoin-code').addEventListener('keydown', e => {
-      if (e.key === 'Enter') this._joinSession();
-    });
     document.getElementById('mjoin-date').addEventListener('keydown', e => {
       if (e.key === 'Enter') this._joinSession();
     });
@@ -475,6 +478,33 @@ class App {
   _sessionRoomCode(series, date) {
     const slug = this._seriesSlug(series);
     return slug ? `${slug}-${date}` : date;
+  }
+
+  async _fetchKnownSeries() {
+    const base = 'https://raw.githubusercontent.com/bsntas/melody-miracle/main/data';
+    const series = new Set(this.sessions.knownSeries?.() || []);
+    try {
+      const [sessRes, serRes] = await Promise.all([
+        fetch(`${base}/sessions.json`),
+        fetch(`${base}/series.json`),
+      ]);
+      if (sessRes.ok) {
+        const sessions = await sessRes.json();
+        sessions.forEach(s => { if (s.series) series.add(s.series); });
+      }
+      if (serRes.ok) {
+        const defaults = await serRes.json();
+        if (Array.isArray(defaults)) defaults.forEach(s => series.add(s));
+      }
+    } catch {}
+    return [...series].sort();
+  }
+
+  _populateSeriesSelect(select, series, includeNew) {
+    const opts = series.map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+    const newOpt = includeNew ? '<option value="__new__">— New series —</option>' : '';
+    select.innerHTML = opts + newOpt;
+    if (series.length) select.value = series[0];
   }
 
   _moveBhajanEntry(entryId, direction, bhajansArray) {
@@ -843,28 +873,30 @@ class App {
   _sfSingers = [];
   _sfIsBackdated = false;
 
-  _openNewSession(backdated = false) {
+  async _openNewSession(backdated = false) {
     this._sfSingers = [];
     this._sfIsBackdated = backdated;
 
-    document.getElementById('sf-series').value = '';
     document.getElementById('sf-date').value = todayISO();
     document.getElementById('sf-singers-tags').innerHTML = '';
     document.getElementById('sf-singer-input').value = '';
     document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
     document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
-    // Populate series datalist from known series names
-    const knownSeries = this.sessions.knownSeries?.() || [];
-    const datalist = document.getElementById('sf-series-list');
-    datalist.innerHTML = knownSeries.map(s => `<option value="${escHtml(s)}">`).join('');
+    const select   = document.getElementById('sf-series');
+    const newInput = document.getElementById('sf-series-new');
+    select.innerHTML = '<option value="" disabled selected>Loading…</option>';
+    newInput.style.display = 'none';
+    newInput.value = '';
 
     const submitBtn = document.getElementById('btn-mform-submit');
     submitBtn.textContent = backdated ? 'Add Session' : 'Start Session';
     document.getElementById('mform-title').textContent = backdated ? 'Add Past Session' : 'New Session';
 
     this._openModal('modal-session-form');
-    setTimeout(() => document.getElementById('sf-series').focus(), 100);
+
+    const series = await this._fetchKnownSeries();
+    this._populateSeriesSelect(select, series, true);
   }
 
   _sfAddSinger() {
@@ -891,7 +923,10 @@ class App {
   }
 
   _submitSessionForm() {
-    const series   = document.getElementById('sf-series').value.trim();
+    const seriesSelect = document.getElementById('sf-series');
+    const series = seriesSelect.value === '__new__'
+      ? document.getElementById('sf-series-new').value.trim()
+      : seriesSelect.value;
     const date     = document.getElementById('sf-date').value;
     const singers  = [...this._sfSingers];
     const backdated = this._sfIsBackdated;
@@ -982,35 +1017,35 @@ class App {
 
   // ─── Join Session ─────────────────────────────────────────────────────────
 
-  _openJoinModal() {
-    document.getElementById('mjoin-series').value = '';
-    document.getElementById('mjoin-code').value = '';
+  async _openJoinModal() {
+    const select = document.getElementById('mjoin-series');
+    const errEl  = document.getElementById('mjoin-fetch-error');
+    select.innerHTML = '<option value="" disabled selected>Loading…</option>';
+    errEl.style.display = 'none';
     document.getElementById('mjoin-date').value = todayISO();
 
-    // Populate series datalist
-    const knownSeries = this.sessions.knownSeries?.() || [];
-    const datalist = document.getElementById('mjoin-series-list');
-    datalist.innerHTML = knownSeries.map(s => `<option value="${escHtml(s)}">`).join('');
-
     this._openModal('modal-join-session');
-    setTimeout(() => document.getElementById('mjoin-series').focus(), 100);
+    setTimeout(() => select.focus(), 100);
+
+    const series = await this._fetchKnownSeries();
+    if (!series.length) {
+      errEl.textContent = 'No series found yet. Ask the host for the session code.';
+      errEl.style.display = '';
+      select.innerHTML = '<option value="" disabled selected>No series available</option>';
+    } else {
+      this._populateSeriesSelect(select, series, false);
+      errEl.style.display = 'none';
+    }
   }
 
-  async _joinSession() {
-    const series    = document.getElementById('mjoin-series').value.trim();
-    const date      = document.getElementById('mjoin-date').value.trim();
-    const codeInput = document.getElementById('mjoin-code').value.trim();
+  _joinSession() {
+    const series = document.getElementById('mjoin-series').value;
+    const date   = document.getElementById('mjoin-date').value;
 
-    let code;
-    if (series && date) {
-      code = this._sessionRoomCode(series, date);
-    } else if (codeInput) {
-      code = codeInput;
-    } else {
-      this._toast('Enter a series name + date, or a session code', 'error');
-      return;
-    }
+    if (!series) { this._toast('Please select a series', 'error'); return; }
+    if (!date)   { this._toast('Please select a date', 'error'); return; }
 
+    const code = this._sessionRoomCode(series, date);
     this._closeModal('modal-join-session');
     this._joinSessionWithCode(code);
   }
