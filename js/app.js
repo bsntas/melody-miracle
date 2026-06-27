@@ -597,11 +597,12 @@ class App {
           ${b.tempo ? `<span class="bhajan-tag ${tempoClass}">${escHtml(b.tempo)}</span>` : ''}
           ${b.level ? `<span class="bhajan-tag ${levelClass}">${escHtml(b.level)}</span>` : ''}
           ${b.raga ? `<span class="bhajan-tag">${escHtml(b.raga.split('/')[0].trim())}</span>` : ''}
+          ${b.scale ? `<span class="bhajan-tag bhajan-tag-scale-${(b.scale||'').toLowerCase()}">${escHtml(b.scale)}</span>` : ''}
         </div>
       </div>
       <div class="bhajan-item-pitches">
-        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch">${escHtml(b.gents_pitch.split('/')[0].trim())}</span>` : ''}
-        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch">${escHtml(b.ladies_pitch.split('/')[0].trim())}</span>` : ''}
+        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}">♂ ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span></span>` : ''}
+        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span></span>` : ''}
       </div>
     </div>`;
   }
@@ -638,10 +639,17 @@ class App {
       srcEl.style.display = 'none';
     }
 
+    const fmtPitch = (indian, western) => {
+      if (!indian && !western) return '';
+      if (indian && western) return `${indian} · ${western}`;
+      return indian || western;
+    };
     const metaFields = [
       ['Deity', b.deity], ['Language', b.language], ['Raga', b.raga],
+      ['Scale', b.scale],
       ['Beat', b.beat], ['Tempo', b.tempo], ['Level', b.level],
-      ['Gents Pitch', b.gents_pitch], ['Ladies Pitch', b.ladies_pitch],
+      ['Gents Pitch', fmtPitch(b.gents_pitch_indian, b.gents_pitch_western) || b.gents_pitch],
+      ['Ladies Pitch', fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch],
     ].filter(([, v]) => v);
 
     document.getElementById('mbhajan-body').innerHTML = `
@@ -1217,9 +1225,15 @@ class App {
       <div class="mab-sel-title">${escHtml(b.title)}</div>
       <div class="mab-sel-meta">${escHtml([b.deity, b.language, b.tempo].filter(Boolean).join(' · '))}</div>`;
 
-    // Set pitch buttons labels
-    document.getElementById('btn-pitch-gents').textContent = b.gents_pitch ? `Gents: ${b.gents_pitch.split('/')[0].trim()}` : 'Gents';
-    document.getElementById('btn-pitch-ladies').textContent = b.ladies_pitch ? `Ladies: ${b.ladies_pitch.split('/')[0].trim()}` : 'Ladies';
+    // Set pitch buttons labels (show Indian · Western)
+    const gpLabel = b.gents_pitch_indian
+      ? `${b.gents_pitch_indian} · ${b.gents_pitch_western}`
+      : (b.gents_pitch ? b.gents_pitch.split('/')[0].trim() : '');
+    const lpLabel = b.ladies_pitch_indian
+      ? `${b.ladies_pitch_indian} · ${b.ladies_pitch_western}`
+      : (b.ladies_pitch ? b.ladies_pitch.split('/')[0].trim() : '');
+    document.getElementById('btn-pitch-gents').textContent = gpLabel ? `♂ ${gpLabel}` : 'Gents';
+    document.getElementById('btn-pitch-ladies').textContent = lpLabel ? `♀ ${lpLabel}` : 'Ladies';
     document.getElementById('btn-pitch-gents').style.display = b.gents_pitch ? '' : 'none';
     document.getElementById('btn-pitch-ladies').style.display = b.ladies_pitch ? '' : 'none';
 

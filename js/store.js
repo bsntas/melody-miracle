@@ -18,7 +18,7 @@ export class BhajanStore {
   _buildIndex() {
     this._index = this.bhajans.map(b => ({
       id: b.id,
-      searchText: [b.title, b.deity, b.language, b.raga, b.beat].filter(Boolean).join(' ').toLowerCase(),
+      searchText: [b.title, b.deity, b.language, b.raga, b.beat, b.scale].filter(Boolean).join(' ').toLowerCase(),
     }));
   }
 
