@@ -1,1 +1,120 @@
-[]
+[
+  {
+    "id": "weekendbhaja-2026-06-27",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2026-06-27",
+    "roomCode": "weekendbhaja-2026-06-27",
+    "singers": [
+      "Basanta",
+      "Bishal Da",
+      "Karam",
+      "Bhawana Bhauju",
+      "Anisha",
+      "Sayujya",
+      "Ashik Rai",
+      "Pemila",
+      "Gigme"
+    ],
+    "bhajans": [
+      {
+        "id": "e_mqwcpj6q01e4",
+        "bhajan_id": "ganesha-charanam-parama-pavanam",
+        "bhajan_title": "Ganesha Charanam Parama Pavanam",
+        "bhajan_deity": "Ganesha, Guru",
+        "singer": "Basanta",
+        "pitch": "2 Pancham / D",
+        "notes": "Minor",
+        "addedAt": 1782564215138
+      },
+      {
+        "id": "e_mqwdc0kmi36y",
+        "bhajan_id": "hey-ram-bhagawan",
+        "bhajan_title": "Hey Ram Bhagawan",
+        "bhajan_deity": "Rama",
+        "singer": "Bishal Da",
+        "pitch": "4 Pancham / F",
+        "notes": "Minor",
+        "addedAt": 1782565264102
+      },
+      {
+        "id": "e_mqwcbbmvud2c",
+        "bhajan_id": "giridhara-naagara-kunja-vihari",
+        "bhajan_title": "Giridhara Naagara Kunja Vihari",
+        "bhajan_deity": "Krishna",
+        "singer": "Karam",
+        "pitch": "1 Madhyam / F",
+        "notes": "Minor",
+        "addedAt": 1782563552167
+      },
+      {
+        "id": "e_mqwdgblpgljt",
+        "bhajan_id": "aruna-ramana-sri-guru-deva",
+        "bhajan_title": "Aruna Ramana Sri Guru Deva",
+        "bhajan_deity": "Guru",
+        "singer": "Bhawana Bhauju",
+        "pitch": "6.5 Pancham / A#",
+        "notes": null,
+        "addedAt": 1782565465021
+      },
+      {
+        "id": "e_mqw9k0ltzxd9",
+        "bhajan_id": "giridhara-govinda-gopala-ghana-shyama",
+        "bhajan_title": "Giridhara Govinda Gopala Ghana Shyama",
+        "bhajan_deity": "Krishna",
+        "singer": "Anisha",
+        "pitch": "6 Pancham / A",
+        "notes": null,
+        "addedAt": 1782558918929
+      },
+      {
+        "id": "e_mqwdgmpd7rnd",
+        "bhajan_id": "shiva-hara-hey-hara-shiva",
+        "bhajan_title": "Shiva Hara Hey Hara Shiva",
+        "bhajan_deity": "Shiva",
+        "singer": "Sayujya",
+        "pitch": "6 Pancham / A",
+        "notes": "Minor",
+        "addedAt": 1782565479409
+      },
+      {
+        "id": "e_mqwctchhn9sf",
+        "bhajan_id": "sharadey-jaya-sharadey-vaagvilasini-sharadey",
+        "bhajan_title": "Sharadey Jaya Sharadey Vaagvilasini Sharadey",
+        "bhajan_deity": "Devi",
+        "singer": "Ashik Rai",
+        "pitch": "7 Pancham / B",
+        "notes": null,
+        "addedAt": 1782564393077
+      },
+      {
+        "id": "e_mqwc8b679fv0",
+        "bhajan_id": "namah-parvathi-pathayey-hara-hara",
+        "bhajan_title": "Namah Parvathi Pathayey Hara Hara",
+        "bhajan_deity": "Shiva",
+        "singer": "Pemila",
+        "pitch": "2 Pancham / D",
+        "notes": null,
+        "addedAt": 1782563411599
+      },
+      {
+        "id": "e_mqwd58ibwq0y",
+        "bhajan_id": "sarva-dharma-priya-deva",
+        "bhajan_title": "Sarva Dharma Priya Deva",
+        "bhajan_deity": "Sarva Dharma",
+        "singer": "Gigme",
+        "pitch": "6.5 Pancham / A#",
+        "notes": "Minor",
+        "addedAt": 1782564947795
+      }
+    ],
+    "status": "completed",
+    "isBackdated": false,
+    "createdAt": "2026-06-27T11:09:57.513Z",
+    "startTime": null,
+    "duration": 10521,
+    "phase": "playing",
+    "currentBhajan": "e_mqwd58ibwq0y",
+    "endedAt": "2026-06-27T14:05:18.729Z"
+  }
+]
