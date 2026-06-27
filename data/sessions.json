@@ -25,7 +25,9 @@
         "singer": "Basanta",
         "pitch": "2 Pancham / D",
         "notes": "Minor",
-        "addedAt": 1782564215138
+        "addedAt": 1782564215138,
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D"
       },
       {
         "id": "e_mqwdc0kmi36y",
@@ -35,7 +37,9 @@
         "singer": "Bishal Da",
         "pitch": "4 Pancham / F",
         "notes": "Minor",
-        "addedAt": 1782565264102
+        "addedAt": 1782565264102,
+        "pitch_indian": "4 Pancham",
+        "pitch_western": "F"
       },
       {
         "id": "e_mqwcbbmvud2c",
@@ -45,7 +49,9 @@
         "singer": "Karam",
         "pitch": "1 Madhyam / F",
         "notes": "Minor",
-        "addedAt": 1782563552167
+        "addedAt": 1782563552167,
+        "pitch_indian": "1 Madhyam",
+        "pitch_western": "F"
       },
       {
         "id": "e_mqwdgblpgljt",
@@ -55,7 +61,9 @@
         "singer": "Bhawana Bhauju",
         "pitch": "6.5 Pancham / A#",
         "notes": null,
-        "addedAt": 1782565465021
+        "addedAt": 1782565465021,
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#"
       },
       {
         "id": "e_mqw9k0ltzxd9",
@@ -65,7 +73,9 @@
         "singer": "Anisha",
         "pitch": "6 Pancham / A",
         "notes": null,
-        "addedAt": 1782558918929
+        "addedAt": 1782558918929,
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A"
       },
       {
         "id": "e_mqwdgmpd7rnd",
@@ -75,7 +85,9 @@
         "singer": "Sayujya",
         "pitch": "6 Pancham / A",
         "notes": "Minor",
-        "addedAt": 1782565479409
+        "addedAt": 1782565479409,
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A"
       },
       {
         "id": "e_mqwctchhn9sf",
@@ -85,7 +97,9 @@
         "singer": "Ashik Rai",
         "pitch": "7 Pancham / B",
         "notes": null,
-        "addedAt": 1782564393077
+        "addedAt": 1782564393077,
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B"
       },
       {
         "id": "e_mqwc8b679fv0",
@@ -95,7 +109,9 @@
         "singer": "Pemila",
         "pitch": "2 Pancham / D",
         "notes": null,
-        "addedAt": 1782563411599
+        "addedAt": 1782563411599,
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D"
       },
       {
         "id": "e_mqwd58ibwq0y",
@@ -105,7 +121,9 @@
         "singer": "Gigme",
         "pitch": "6.5 Pancham / A#",
         "notes": "Minor",
-        "addedAt": 1782564947795
+        "addedAt": 1782564947795,
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#"
       }
     ],
     "status": "completed",

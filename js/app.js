@@ -2,6 +2,56 @@ import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, mon
 import { GitHubStore } from './github-store.js';
 import { LiveSession } from './live.js';
 
+// ─── Pitch lookup ──────────────────────────────────────────────────────────────
+
+const PITCH_OPTIONS = [
+  { combined:'1 Pancham / C',    indian:'1 Pancham',   western:'C',  series:'Pancham' },
+  { combined:'1.5 Pancham / C#', indian:'1.5 Pancham', western:'C#', series:'Pancham' },
+  { combined:'2 Pancham / D',    indian:'2 Pancham',   western:'D',  series:'Pancham' },
+  { combined:'2.5 Pancham / E',  indian:'2.5 Pancham', western:'E',  series:'Pancham' },
+  { combined:'3 Pancham / E',    indian:'3 Pancham',   western:'E',  series:'Pancham' },
+  { combined:'4 Pancham / F',    indian:'4 Pancham',   western:'F',  series:'Pancham' },
+  { combined:'4.5 Pancham / F#', indian:'4.5 Pancham', western:'F#', series:'Pancham' },
+  { combined:'5 Pancham / G',    indian:'5 Pancham',   western:'G',  series:'Pancham' },
+  { combined:'5.5 Pancham / G#', indian:'5.5 Pancham', western:'G#', series:'Pancham' },
+  { combined:'6 Pancham / A',    indian:'6 Pancham',   western:'A',  series:'Pancham' },
+  { combined:'6.5 Pancham / A#', indian:'6.5 Pancham', western:'A#', series:'Pancham' },
+  { combined:'7 Pancham / B',    indian:'7 Pancham',   western:'B',  series:'Pancham' },
+  { combined:'1 Madhyam / F',    indian:'1 Madhyam',   western:'F',  series:'Madhyam' },
+  { combined:'1.5 Madhyam / F#', indian:'1.5 Madhyam', western:'F#', series:'Madhyam' },
+  { combined:'2 Madhyam / G',    indian:'2 Madhyam',   western:'G',  series:'Madhyam' },
+  { combined:'2.5 Madhyam / G#', indian:'2.5 Madhyam', western:'G#', series:'Madhyam' },
+  { combined:'3 Madhyam / A',    indian:'3 Madhyam',   western:'A',  series:'Madhyam' },
+  { combined:'4 Madhyam / A#',   indian:'4 Madhyam',   western:'A#', series:'Madhyam' },
+  { combined:'4.5 Madhyam / B',  indian:'4.5 Madhyam', western:'B',  series:'Madhyam' },
+  { combined:'5 Madhyam / C',    indian:'5 Madhyam',   western:'C',  series:'Madhyam' },
+  { combined:'5.5 Madhyam / C#', indian:'5.5 Madhyam', western:'C#', series:'Madhyam' },
+  { combined:'6 Madhyam / D',    indian:'6 Madhyam',   western:'D',  series:'Madhyam' },
+  { combined:'6.5 Madhyam / E',  indian:'6.5 Madhyam', western:'E',  series:'Madhyam' },
+  { combined:'7 Madhyam / E',    indian:'7 Madhyam',   western:'E',  series:'Madhyam' },
+];
+
+function pitchByIndian(indian)   { return PITCH_OPTIONS.find(p => p.indian   === indian)   || null; }
+function pitchByCombined(combined) { return PITCH_OPTIONS.find(p => p.combined === combined) || null; }
+
+// When choosing by Western note: prefer given series, take last match in that series
+function pitchByWestern(western, preferredSeries = 'Pancham') {
+  const matches = PITCH_OPTIONS.filter(p => p.western === western);
+  if (!matches.length) return null;
+  const inSeries = matches.filter(p => p.series === preferredSeries);
+  const pool = inSeries.length ? inSeries : matches;
+  return pool[pool.length - 1];
+}
+
+// Split a combined pitch string into { pitch_indian, pitch_western }
+function splitPitchCombined(combined) {
+  if (!combined) return { pitch_indian: null, pitch_western: null };
+  const p = pitchByCombined(combined);
+  if (p) return { pitch_indian: p.indian, pitch_western: p.western };
+  const parts = combined.split(' / ');
+  return { pitch_indian: parts[0]?.trim() || null, pitch_western: parts[1]?.trim() || null };
+}
+
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 class App {
@@ -41,6 +91,7 @@ class App {
       this.sessions.load().then(changed => { if (changed) this._route(); });
     }
 
+    this._migratePitchFields();
     this._populateFilters();
     this._bindGlobal();
     this._bindSettings();
@@ -50,6 +101,24 @@ class App {
     if (!bhajansOk) this._toast('Bhajan catalog failed to load — browse & search unavailable', 'error');
     this._route();
     window.addEventListener('hashchange', () => this._route());
+  }
+
+  // Backfill pitch_indian / pitch_western on any session entries that pre-date this feature
+  _migratePitchFields() {
+    for (const s of this.sessions.all()) {
+      const bhajans = s.bhajans || [];
+      if (!bhajans.some(e => e.pitch && !e.pitch_indian)) continue;
+      this.sessions.save({
+        ...s,
+        bhajans: bhajans.map(e => {
+          if (e.pitch && !e.pitch_indian) {
+            const { pitch_indian, pitch_western } = splitPitchCombined(e.pitch);
+            return { ...e, pitch_indian, pitch_western };
+          }
+          return e;
+        }),
+      });
+    }
   }
 
   _hideLoading() {
@@ -171,11 +240,23 @@ class App {
     document.getElementById('btn-mab-add').addEventListener('click', () => this._mabConfirmAdd());
     document.getElementById('btn-pitch-gents').addEventListener('click', () => {
       const b = this._mabSelected;
-      if (b?.gents_pitch) document.getElementById('mab-pitch').value = b.gents_pitch;
+      if (b?.gents_pitch) this._setMabPitch(b.gents_pitch);
     });
     document.getElementById('btn-pitch-ladies').addEventListener('click', () => {
       const b = this._mabSelected;
-      if (b?.ladies_pitch) document.getElementById('mab-pitch').value = b.ladies_pitch;
+      if (b?.ladies_pitch) this._setMabPitch(b.ladies_pitch);
+    });
+    // Dual pitch selects — bidirectional linking
+    document.getElementById('mab-pitch-indian').addEventListener('change', e => {
+      const p = pitchByIndian(e.target.value);
+      document.getElementById('mab-pitch-western').value = p?.western || '';
+      document.getElementById('mab-pitch').value         = p?.combined || '';
+    });
+    document.getElementById('mab-pitch-western').addEventListener('change', e => {
+      const series = pitchByIndian(document.getElementById('mab-pitch-indian').value)?.series || 'Pancham';
+      const p = pitchByWestern(e.target.value, series);
+      document.getElementById('mab-pitch-indian').value = p?.indian || '';
+      document.getElementById('mab-pitch').value        = p?.combined || '';
     });
     document.getElementById('mab-singer').addEventListener('change', () => this._mabUpdatePitchHint());
     document.getElementById('mab-singer').addEventListener('input', () => this._mabUpdatePitchHint());
@@ -892,7 +973,9 @@ class App {
             ${e.singer ? escHtml(e.singer) : ''}
             ${e.singer ? ' · ' : ''}
             <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit pitch' : ''}">
-              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
+              ${e.pitch
+                ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span></span>`
+                : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
             ${!isPlaying
               ? ` · <span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>`
@@ -1158,6 +1241,8 @@ class App {
     document.getElementById('mab-search').value = '';
     document.getElementById('mab-notes').value = '';
     document.getElementById('mab-pitch').value = '';
+    document.getElementById('mab-pitch-indian').value = '';
+    document.getElementById('mab-pitch-western').value = '';
     document.getElementById('mab-pitch-hint').textContent = '';
 
     // Populate singer autocomplete: session bhajan singers first, then all historical
@@ -1240,31 +1325,36 @@ class App {
     this._mabUpdatePitchHint();
   }
 
+  // Set all three pitch fields (combined, Indian, Western) from a combined string
+  _setMabPitch(combined) {
+    const p = pitchByCombined(combined);
+    document.getElementById('mab-pitch').value         = p?.combined || combined || '';
+    document.getElementById('mab-pitch-indian').value  = p?.indian   || combined.split(' / ')[0]?.trim() || '';
+    document.getElementById('mab-pitch-western').value = p?.western  || combined.split(' / ')[1]?.trim() || '';
+  }
+
   _mabUpdatePitchHint() {
     const singer = document.getElementById('mab-singer').value;
     const b = this._mabSelected;
-    const hintEl = document.getElementById('mab-pitch-hint');
-    const pitchInput = document.getElementById('mab-pitch');
+    const hintEl   = document.getElementById('mab-pitch-hint');
+    const combined = document.getElementById('mab-pitch').value;
 
     if (singer && b) {
-      // Check if singer has sung this bhajan before
       const prevPitch = this.sessions.singerBhajanPitch(singer, b.id);
       if (prevPitch) {
-        pitchInput.value = prevPitch;
+        this._setMabPitch(prevPitch);
         hintEl.textContent = `↺ ${singer} sang this at ${prevPitch} before`;
         return;
       }
-      // Fall back to singer's usual pitch
       const usual = this.sessions.singerUsualPitch(singer);
       if (usual) {
         hintEl.textContent = `💡 ${singer}'s usual pitch: ${usual}`;
-        if (!pitchInput.value) pitchInput.value = usual;
+        if (!combined) this._setMabPitch(usual);
         return;
       }
     }
     hintEl.textContent = '';
-    // Default: gents pitch
-    if (!pitchInput.value && b?.gents_pitch) pitchInput.value = b.gents_pitch;
+    if (!combined && b?.gents_pitch) this._setMabPitch(b.gents_pitch);
   }
 
   _mabConfirmAdd() {
@@ -1274,16 +1364,19 @@ class App {
     const singer = document.getElementById('mab-singer').value;
     const pitch  = document.getElementById('mab-pitch').value.trim();
     const notes  = document.getElementById('mab-notes').value.trim();
+    const { pitch_indian, pitch_western } = splitPitchCombined(pitch);
 
     const entry = {
       id: genId('e'),
       bhajan_id:    b.id,
       bhajan_title: b.title,
       bhajan_deity: b.deity,
-      singer: singer || null,
-      pitch:  pitch || null,
-      notes:  notes || null,
-      addedAt: Date.now(),
+      singer:        singer || null,
+      pitch:         pitch || null,
+      pitch_indian:  pitch_indian || null,
+      pitch_western: pitch_western || null,
+      notes:         notes || null,
+      addedAt:       Date.now(),
     };
 
     const updated = {
@@ -1414,16 +1507,17 @@ class App {
 
   // ─── Inline pitch edit ───────────────────────────────────────────────────
 
-  _pitchOptionsHTML(current) {
-    const groups = {
-      'Pancham (Sa = C)': ['1 Pancham / C','1.5 Pancham / C#','2 Pancham / D','2.5 Pancham / E','3 Pancham / E','4 Pancham / F','4.5 Pancham / F#','5 Pancham / G','5.5 Pancham / G#','6 Pancham / A','6.5 Pancham / A#','7 Pancham / B'],
-      'Madhyam (Sa = F)': ['1 Madhyam / F','1.5 Madhyam / F#','2 Madhyam / G','2.5 Madhyam / G#','3 Madhyam / A','4 Madhyam / A#','4.5 Madhyam / B','5 Madhyam / C','5.5 Madhyam / C#','6 Madhyam / D','6.5 Madhyam / E','7 Madhyam / E'],
-    };
-    const sel = v => v === current ? ' selected' : '';
-    return `<option value=""${sel('')}>— not set —</option>` +
-      Object.entries(groups).map(([label, opts]) =>
-        `<optgroup label="${label}">${opts.map(v => `<option${sel(v)}>${escHtml(v)}</option>`).join('')}</optgroup>`
-      ).join('');
+  _pitchIndianOptionsHTML(current = '') {
+    const mk = (p) => `<option${p.indian === current ? ' selected' : ''}>${escHtml(p.indian)}</option>`;
+    const pancham = PITCH_OPTIONS.filter(p => p.series === 'Pancham').map(mk).join('');
+    const madhyam = PITCH_OPTIONS.filter(p => p.series === 'Madhyam').map(mk).join('');
+    return `<option value="">Indian…</option><optgroup label="Pancham">${pancham}</optgroup><optgroup label="Madhyam">${madhyam}</optgroup>`;
+  }
+
+  _pitchWesternOptionsHTML(current = '') {
+    const notes = ['C','C#','D','E','F','F#','G','G#','A','A#','B'];
+    return `<option value="">Western…</option>` +
+      notes.map(n => `<option${n === current ? ' selected' : ''}>${escHtml(n)}</option>`).join('');
   }
 
   _inlinePitchEdit(triggerEl, entryId, mode) {
@@ -1433,22 +1527,35 @@ class App {
     const entry = entries.find(e => e.id === entryId);
     if (!entry) return;
 
-    const sel = document.createElement('select');
-    sel.className = 'pitch-inline-select form-input';
-    sel.innerHTML = this._pitchOptionsHTML(entry.pitch || '');
+    const currentP = pitchByCombined(entry.pitch || '') || null;
 
-    triggerEl.replaceWith(sel);
-    sel.focus();
+    const container = document.createElement('div');
+    container.className = 'pitch-inline-dual';
+
+    const indianSel = document.createElement('select');
+    indianSel.className = 'pitch-inline-select form-input';
+    indianSel.innerHTML = this._pitchIndianOptionsHTML(currentP?.indian || '');
+
+    const westernSel = document.createElement('select');
+    westernSel.className = 'pitch-inline-select form-input';
+    westernSel.innerHTML = this._pitchWesternOptionsHTML(currentP?.western || '');
+
+    container.append(indianSel, westernSel);
+    triggerEl.replaceWith(container);
+    indianSel.focus();
 
     const save = () => {
-      const newPitch = sel.value || null;
+      const p = pitchByIndian(indianSel.value);
+      const newPitch   = p?.combined || null;
+      const newIndian  = p?.indian   || null;
+      const newWestern = p?.western  || null;
       if (mode === 'live') {
         const updated = {
           ...this.liveState,
           bhajans: (this.liveState.bhajans || []).map(e =>
-            e.id === entryId ? { ...e, pitch: newPitch } : e),
+            e.id === entryId ? { ...e, pitch: newPitch, pitch_indian: newIndian, pitch_western: newWestern } : e),
         };
-        this._applyLiveEdit(updated, { type: 'update-pitch', entryId, pitch: newPitch });
+        this._applyLiveEdit(updated, { type: 'update-pitch', entryId, pitch: newPitch, pitch_indian: newIndian, pitch_western: newWestern });
         this._renderSession();
       } else {
         const session = this.sessions.get(this._detailSessionId);
@@ -1456,18 +1563,35 @@ class App {
         const updated = {
           ...session,
           bhajans: session.bhajans.map(e =>
-            e.id === entryId ? { ...e, pitch: newPitch } : e),
+            e.id === entryId ? { ...e, pitch: newPitch, pitch_indian: newIndian, pitch_western: newWestern } : e),
         };
         this.sessions.save(updated);
         this._renderSessionDetail(this._detailSessionId);
       }
     };
 
-    let done = false;
-    sel.addEventListener('change', () => { done = true; save(); });
-    sel.addEventListener('blur', () => { if (!done) { done = true; sel.replaceWith(triggerEl); } });
-    sel.addEventListener('keydown', ev => {
-      if (ev.key === 'Escape') { done = true; sel.replaceWith(triggerEl); }
+    // Indian → auto-set Western → save
+    indianSel.addEventListener('change', () => {
+      const p = pitchByIndian(indianSel.value);
+      westernSel.value = p?.western || '';
+      save();
+    });
+
+    // Western → keep current series → auto-set Indian → save
+    westernSel.addEventListener('change', () => {
+      const series = pitchByIndian(indianSel.value)?.series || 'Pancham';
+      const p = pitchByWestern(westernSel.value, series);
+      if (p) { indianSel.value = p.indian; save(); }
+    });
+
+    // Escape: cancel without saving
+    container.addEventListener('keydown', ev => {
+      if (ev.key === 'Escape') container.replaceWith(triggerEl);
+    });
+
+    // Blur away from the whole container: cancel
+    container.addEventListener('focusout', () => {
+      setTimeout(() => { if (!container.contains(document.activeElement)) container.replaceWith(triggerEl); }, 0);
     });
   }
 
@@ -1569,7 +1693,9 @@ class App {
                     ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
                     ${e.singer ? ' · ' : ''}
                     <span class="${canEdit ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${canEdit ? 'Edit pitch' : ''}">
-                      ${e.pitch ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
+                      ${e.pitch
+                        ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span></span>`
+                        : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
                   </div>
                   ${canEdit

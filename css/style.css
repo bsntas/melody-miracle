@@ -336,7 +336,10 @@ img { max-width: 100%; }
 .pitch-editable { cursor: pointer; }
 .pitch-editable:hover .pitch-badge { opacity: 0.75; }
 .pitch-unset { font-size: 0.72rem; color: var(--text-3); }
-.pitch-inline-select { font-size: .8rem; padding: .1rem .25rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-1); max-width: 12rem; }
+.pitch-inline-select { font-size: .8rem; padding: .1rem .25rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-1); max-width: 10rem; }
+.pitch-dual { display: flex; gap: .5rem; }
+.pitch-dual-sel { flex: 1; min-width: 0; }
+.pitch-inline-dual { display: flex; gap: .3rem; }
 .notes-editable { cursor: pointer; }
 .notes-editable:hover em, .notes-editable:hover .pitch-unset { text-decoration: underline; }
 .notes-inline-input { font-size: .8rem; padding: .15rem .35rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); width: 100%; max-width: 200px; }
