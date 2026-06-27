@@ -1204,8 +1204,14 @@ class App {
       addedAt: Date.now(),
     };
 
+    // Auto-add singer to session singer list so they appear in the chips
+    const prevSingers = this.liveState.singers || [];
+    const updatedSingers = (singer && !prevSingers.includes(singer))
+      ? [...prevSingers, singer] : prevSingers;
+
     const updated = {
       ...this.liveState,
+      singers: updatedSingers,
       bhajans: [...(this.liveState.bhajans || []), entry],
       currentBhajan: entry.id,
     };
@@ -1251,8 +1257,13 @@ class App {
     const started = this.liveState.createdAt ? new Date(this.liveState.createdAt) : null;
     const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
 
+    // Derive final singers from union of pre-listed + bhajan entry singers
+    const bhajanSingers = (this.liveState.bhajans || []).map(e => e.singer).filter(Boolean);
+    const allSingers = [...new Set([...(this.liveState.singers || []), ...bhajanSingers])];
+
     const finalSession = {
       ...this.liveState,
+      singers: allSingers,
       status: 'completed',
       endedAt: new Date().toISOString(),
       duration,
@@ -1464,7 +1475,10 @@ class App {
         singer: singer || null, pitch: pitch || null, notes: notes || null,
         addedAt: Date.now(),
       };
-      const updated = { ...session, bhajans: [...(session.bhajans || []), entry] };
+      const prevSingers = session.singers || [];
+      const mergedSingers = (singer && !prevSingers.includes(singer))
+        ? [...prevSingers, singer] : prevSingers;
+      const updated = { ...session, singers: mergedSingers, bhajans: [...(session.bhajans || []), entry] };
       this.sessions.save(updated);
 
       this._closeModal('modal-add-bhajan');
