@@ -329,6 +329,10 @@ img { max-width: 100%; }
 }
 .pitch-gents { background: #dbeafe; color: #1e3a8a; }
 .pitch-ladies { background: #fce7f3; color: #9d174d; }
+.pitch-editable { cursor: pointer; }
+.pitch-editable:hover .pitch-badge { opacity: 0.75; }
+.pitch-unset { font-size: 0.72rem; color: var(--text-3); }
+.pitch-inline-input { width: 5rem; padding: .15rem .35rem; font-size: .82rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-1); outline: none; }
 
 /* ─── Bhajan Detail Modal ────────────────────────────────────────────────── */
 .modal-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }

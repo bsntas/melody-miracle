@@ -793,6 +793,13 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
           this._setCurrentBhajan(btn.dataset.entryId);
         });
       });
+
+      document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(el => {
+        el.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlinePitchEdit(el, el.dataset.entryId, 'live');
+        });
+      });
     }
 
     // Update live indicator in nav
@@ -830,8 +837,10 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${origIdx}">${escHtml(e.bhajan_title)}</div>
           <div class="entry-meta">
             ${e.singer ? escHtml(e.singer) : ''}
-            ${e.singer && e.pitch ? ' · ' : ''}
-            ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : ''}
+            ${e.singer ? ' · ' : ''}
+            <span class="pitch-editable" data-entry-id="${e.id}" data-mode="live" title="Edit pitch">
+              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : `<span class="pitch-unset">${isHost ? '+ pitch' : ''}</span>`}
+            </span>
             ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
           </div>
         </div>
@@ -1287,9 +1296,61 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
     });
   }
 
+  // ─── Inline pitch edit ───────────────────────────────────────────────────
+
+  _inlinePitchEdit(triggerEl, entryId, mode) {
+    const entries = mode === 'live'
+      ? (this.liveState?.bhajans || [])
+      : (this.sessions.get(this._detailSessionId)?.bhajans || []);
+    const entry = entries.find(e => e.id === entryId);
+    if (!entry) return;
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = entry.pitch || '';
+    input.className = 'pitch-inline-input';
+    input.placeholder = 'e.g. C#4';
+
+    triggerEl.replaceWith(input);
+    input.focus();
+    input.select();
+
+    const save = () => {
+      const newPitch = input.value.trim() || null;
+      if (mode === 'live') {
+        const updated = {
+          ...this.liveState,
+          bhajans: (this.liveState.bhajans || []).map(e =>
+            e.id === entryId ? { ...e, pitch: newPitch } : e),
+        };
+        this.liveState = updated;
+        this.live?.updateState(updated);
+        this._renderSession();
+      } else {
+        const session = this.sessions.get(this._detailSessionId);
+        if (!session) return;
+        const updated = {
+          ...session,
+          bhajans: session.bhajans.map(e =>
+            e.id === entryId ? { ...e, pitch: newPitch } : e),
+        };
+        this.sessions.save(updated);
+        this._renderSessionDetail(this._detailSessionId);
+      }
+    };
+
+    let done = false;
+    input.addEventListener('blur', () => { if (!done) { done = true; save(); } });
+    input.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter') { ev.preventDefault(); done = true; save(); }
+      if (ev.key === 'Escape') { done = true; input.replaceWith(triggerEl); }
+    });
+  }
+
   // ─── Session Detail ───────────────────────────────────────────────────────
 
   _renderSessionDetail(id) {
+    this._detailSessionId = id;
     const s = this.sessions.get(id);
     if (!s) {
       document.getElementById('session-detail-content').innerHTML =
@@ -1332,8 +1393,10 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
                   <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
                   <div class="tl-meta">
                     ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
-                    ${e.singer && e.pitch ? ' · ' : ''}
-                    ${e.pitch ? `🎵 ${escHtml(e.pitch)}` : ''}
+                    ${e.singer ? ' · ' : ''}
+                    <span class="${canEdit ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${canEdit ? 'Edit pitch' : ''}">
+                      ${e.pitch ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
+                    </span>
                   </div>
                   ${e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : ''}
                 </div>
@@ -1388,6 +1451,13 @@ document.querySelectorAll('.singer-chip.clickable').forEach(el => {
           const updated = { ...s, bhajans: (s.bhajans || []).filter(e => e.id !== btn.dataset.entryId) };
           this.sessions.save(updated);
           this._renderSessionDetail(id);
+        });
+      });
+
+      document.querySelectorAll('#session-detail-content .pitch-editable').forEach(el => {
+        el.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlinePitchEdit(el, el.dataset.entryId, 'detail');
         });
       });
     }
