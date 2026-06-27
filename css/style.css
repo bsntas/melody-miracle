@@ -332,7 +332,7 @@ img { max-width: 100%; }
 .pitch-editable { cursor: pointer; }
 .pitch-editable:hover .pitch-badge { opacity: 0.75; }
 .pitch-unset { font-size: 0.72rem; color: var(--text-3); }
-.pitch-inline-input { width: 5rem; padding: .15rem .35rem; font-size: .82rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-1); outline: none; }
+.pitch-inline-select { font-size: .8rem; padding: .1rem .25rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-1); max-width: 12rem; }
 
 /* ─── Bhajan Detail Modal ────────────────────────────────────────────────── */
 .modal-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }
@@ -568,7 +568,7 @@ img { max-width: 100%; }
 
 /* ─── Add Bhajan modal ───────────────────────────────────────────────────── */
 .modal-add-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }
-.modal-add-bhajan-box .modal-body { overflow-y: auto; flex: 1; padding: 0.75rem 1.25rem 0.5rem; }
+.modal-add-bhajan-box .modal-body { overflow-y: auto; flex: 1; padding: 0.75rem 1.25rem 0.5rem; overscroll-behavior: contain; scroll-padding-bottom: 1rem; }
 .mab-results { max-height: 320px; overflow-y: auto; margin-top: 0.5rem; }
 .mab-selected-bhajan {
   background: var(--saffron-bg); border: 1.5px solid var(--saffron-light);
@@ -593,6 +593,7 @@ img { max-width: 100%; }
   box-shadow: var(--shadow-lg);
   animation: slideUp .2s ease;
   max-height: 90dvh; display: flex; flex-direction: column;
+  transition: max-height .15s ease;
 }
 @media (min-width: 480px) {
   .modal-box { border-radius: var(--radius-lg); animation: fadeIn .15s ease; }
