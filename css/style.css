@@ -381,13 +381,6 @@ img { max-width: 100%; }
 .live-header-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
 .live-session-label { font-weight: 700; font-size: 1rem; }
 .live-session-date { font-size: 0.8rem; color: var(--text-2); margin-top: 0.1rem; }
-.session-code-wrap { display: flex; align-items: center; gap: 0.5rem; }
-.session-code {
-  font-family: 'Courier New', monospace; font-size: 1.1rem; font-weight: 800;
-  color: var(--saffron); letter-spacing: .1em; background: var(--saffron-bg);
-  padding: 0.3rem 0.75rem; border-radius: var(--radius-sm);
-  cursor: pointer; user-select: all;
-}
 .observer-count { font-size: 0.78rem; color: var(--text-2); margin-top: 0.5rem; }
 
 .singers-strip { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
