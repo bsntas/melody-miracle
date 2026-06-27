@@ -37,6 +37,10 @@ class App {
       // Load from GitHub (falls back to localStorage cache on failure)
       document.getElementById('loading-text').textContent = 'Syncing sessions…';
       await this.sessions.load();
+    } else {
+      // No PAT: fetch the public sessions.json so shared history is visible
+      document.getElementById('loading-text').textContent = 'Loading sessions…';
+      await this.sessions.load();
     }
 
     this._populateFilters();
