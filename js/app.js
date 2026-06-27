@@ -120,8 +120,12 @@ class App {
     document.getElementById('mbhajan-add-to-session').addEventListener('click', () => {
       const id = document.getElementById('mbhajan-add-to-session').dataset.bhajanId;
       this._closeBhajanModal();
-      if (!this.liveState || !this.live?.isHost) {
+      if (!this.liveState) {
         this._toast('No active session. Start a session first.', 'warn');
+        return;
+      }
+      if (this.liveState.phase === 'playing') {
+        this._toast('Session is playing — exit play mode to add bhajans.', 'warn');
         return;
       }
       const bhajan = this.bhajans.getById(id);
@@ -628,7 +632,7 @@ class App {
     document.getElementById('mbhajan-title').textContent = b.title;
     document.getElementById('mbhajan-add-to-session').dataset.bhajanId = id;
 
-    const canAdd = !!(this.liveState && this.live?.isHost);
+    const canAdd = !!(this.liveState && this.liveState.phase === 'setup');
     document.getElementById('mbhajan-add-to-session').style.display = canAdd ? '' : 'none';
 
     const srcEl = document.getElementById('mbhajan-source-link');
@@ -723,7 +727,7 @@ class App {
 
     el.innerHTML = `
       <div class="live-session-view">
-        ${!isHost ? '<div class="observer-banner">👁 Observer mode — watching live</div>' : ''}
+        ${!isHost ? `<div class="observer-banner">${isPlaying ? '👁 Observer mode — watching live' : '✏️ Setup mode — add or arrange bhajans'}</div>` : ''}
 
         <div class="live-header">
           <div class="live-header-top">
@@ -752,13 +756,16 @@ class App {
           </div>
         </div>` : ''}
 
-        ${isHost ? `<div class="session-add-btn-row">
-          ${!isPlaying ? `<button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>` : ''}
-          ${!isPlaying
-            ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>`
-            : `<button class="btn btn-primary" id="btn-next-bhajan">Next →</button>`}
+        ${!isPlaying ? `<div class="session-add-btn-row">
+          <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
+          ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
+          <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
+        </div>` : (isHost ? `<div class="session-add-btn-row">
+          <button class="btn btn-outline" id="btn-prev-bhajan" ${(st.bhajans || []).findIndex(e => e.id === st.currentBhajan) <= 0 ? 'disabled' : ''}>← Prev</button>
+          <button class="btn btn-primary" id="btn-next-bhajan">Next →</button>
+          <button class="btn btn-ghost" id="btn-exit-play" title="Return to setup">↩ Setup</button>
           <button class="btn btn-outline" id="btn-end-session">End Session</button>
-        </div>` : ''}
+        </div>` : '')}
 
         <div class="section-header" style="margin-top:.5rem">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
@@ -786,41 +793,46 @@ class App {
       });
     });
 
-    if (isHost) {
-      document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
+    if (!isPlaying) {
+      // Setup mode: all participants can edit
+      document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
 
-      if (!isPlaying) {
-        document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+      document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
+          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
+          const updated = { ...this.liveState, bhajans: newBhajans };
+          this._applyLiveEdit(updated, { type: 'reorder-bhajan', entryId: btn.dataset.entryId, direction: dir });
+          this._renderSession();
+        });
+      });
+
+      document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          this._removeBhajanEntry(btn.dataset.entryId);
+        });
+      });
+
+      document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
+        pitchEl.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlinePitchEdit(pitchEl, pitchEl.dataset.entryId, 'live');
+        });
+      });
+
+      // Setup controls: host only
+      if (isHost) {
         document.getElementById('btn-start-playing').addEventListener('click', () => this._startPlaying());
-
-        document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
-          btn.addEventListener('click', e => {
-            e.stopPropagation();
-            const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
-            const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
-            const updated = { ...this.liveState, bhajans: newBhajans };
-            this.liveState = updated;
-            this.live.updateState(updated);
-            this._renderSession();
-          });
-        });
-
-        document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
-          btn.addEventListener('click', e => {
-            e.stopPropagation();
-            this._removeBhajanEntry(btn.dataset.entryId);
-          });
-        });
-
-        document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
-          pitchEl.addEventListener('click', e => {
-            e.stopPropagation();
-            this._inlinePitchEdit(pitchEl, pitchEl.dataset.entryId, 'live');
-          });
-        });
-      } else {
-        document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+        document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       }
+    } else if (isHost) {
+      // Playing controls: host only
+      document.getElementById('btn-prev-bhajan').addEventListener('click', () => this._prevBhajan());
+      document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+      document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
+      document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
     }
 
     document.getElementById('bnav-session-icon').classList.add('is-live');
@@ -859,14 +871,14 @@ class App {
           <div class="entry-meta">
             ${e.singer ? escHtml(e.singer) : ''}
             ${e.singer ? ' · ' : ''}
-            <span class="${isHost && !isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${isHost && !isPlaying ? 'Edit pitch' : ''}">
-              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (isHost && !isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
+            <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit pitch' : ''}">
+              ${e.pitch ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch)}</span>` : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
             ${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
-        ${isHost && !isPlaying ? `
+        ${!isPlaying ? `
         <div class="reorder-btns">
           <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${canGoEarlier ? '' : 'disabled'} title="Move up">↑</button>
           <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${canGoLater ? '' : 'disabled'} title="Move down">↓</button>
@@ -1005,6 +1017,25 @@ class App {
       this.sessions.saveDraft(updated);
       this._renderSession();
     }
+  }
+
+  _prevBhajan() {
+    const bhajans = this.liveState?.bhajans || [];
+    const currentIdx = bhajans.findIndex(e => e.id === this.liveState?.currentBhajan);
+    if (currentIdx <= 0) return;
+    const updated = { ...this.liveState, currentBhajan: bhajans[currentIdx - 1].id };
+    this.liveState = updated;
+    this.live.updateState(updated);
+    this.sessions.saveDraft(updated);
+    this._renderSession();
+  }
+
+  _exitPlay() {
+    const updated = { ...this.liveState, phase: 'setup' };
+    this.liveState = updated;
+    this.live.updateState(updated);
+    this.sessions.saveDraft(updated);
+    this._renderSession();
   }
 
   _resumeDraftSession(draft) {
@@ -1223,16 +1254,24 @@ class App {
     const updated = {
       ...this.liveState,
       bhajans: [...(this.liveState.bhajans || []), entry],
-      currentBhajan: entry.id,
     };
 
-    this.liveState = updated;
-    this.live.updateState(updated);
-    this.sessions.saveDraft(updated);
-
+    this._applyLiveEdit(updated, { type: 'add-bhajan', entry });
     this._closeModal('modal-add-bhajan');
     this._renderSession();
     this._toast(`Added: ${b.title}`, 'success');
+  }
+
+  // ─── Live edit helper ─────────────────────────────────────────────────────
+
+  _applyLiveEdit(updatedState, action) {
+    this.liveState = updatedState;
+    if (this.live?.isHost) {
+      this.live.updateState(updatedState);
+      this.sessions.saveDraft(updatedState);
+    } else {
+      this.live?.sendAction(action);
+    }
   }
 
   // ─── Remove / set current bhajan ─────────────────────────────────────────
@@ -1243,8 +1282,7 @@ class App {
       bhajans: (this.liveState.bhajans || []).filter(e => e.id !== entryId),
       currentBhajan: this.liveState.currentBhajan === entryId ? null : this.liveState.currentBhajan,
     };
-    this.liveState = updated;
-    this.live.updateState(updated);
+    this._applyLiveEdit(updated, { type: 'remove-bhajan', entryId });
     this._renderSession();
   }
 
@@ -1381,8 +1419,7 @@ class App {
           bhajans: (this.liveState.bhajans || []).map(e =>
             e.id === entryId ? { ...e, pitch: newPitch } : e),
         };
-        this.liveState = updated;
-        this.live?.updateState(updated);
+        this._applyLiveEdit(updated, { type: 'update-pitch', entryId, pitch: newPitch });
         this._renderSession();
       } else {
         const session = this.sessions.get(this._detailSessionId);
