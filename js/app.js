@@ -152,11 +152,6 @@ class App {
       newInput.style.display = isNew ? '' : 'none';
       if (isNew) newInput.focus();
     });
-    document.getElementById('btn-sf-add-singer').addEventListener('click', () => this._sfAddSinger());
-    document.getElementById('sf-singer-input').addEventListener('keydown', e => {
-      if (e.key === 'Enter') { e.preventDefault(); this._sfAddSinger(); }
-    });
-
     // Add Bhajan modal
     document.getElementById('mab-close').addEventListener('click', () => this._closeModal('modal-add-bhajan'));
     document.getElementById('btn-mab-cancel').addEventListener('click', () => this._closeModal('modal-add-bhajan'));
@@ -175,6 +170,7 @@ class App {
       if (b?.ladies_pitch) document.getElementById('mab-pitch').value = b.ladies_pitch;
     });
     document.getElementById('mab-singer').addEventListener('change', () => this._mabUpdatePitchHint());
+    document.getElementById('mab-singer').addEventListener('input', () => this._mabUpdatePitchHint());
 
     // Join modal
     document.getElementById('mjoin-close').addEventListener('click', () => this._closeModal('modal-join-session'));
@@ -718,21 +714,16 @@ class App {
               <div class="live-session-label">${escHtml(st.label || 'Bhajan Session')}</div>
               <div class="live-session-date">${formatDate(st.date)}</div>
             </div>
-            <div class="session-code-wrap">
-              <div class="session-code" id="live-code" title="Click to copy">${escHtml(st.roomCode || '')}</div>
-              <button class="btn btn-outline btn-sm" id="btn-copy-code">Copy</button>
-            </div>
           </div>
           <div class="observer-count" id="live-observer-count">
             ${isHost ? `${this.live?.peerCount || 0} observer${(this.live?.peerCount || 0) !== 1 ? 's' : ''}` : ''}
           </div>
           <div class="singers-strip">
-            ${(st.singers || []).map(name => `
+            ${[...new Set((st.bhajans || []).map(e => e.singer).filter(Boolean))].map(name => `
               <div class="singer-chip clickable" data-singer="${escHtml(name)}" title="View ${escHtml(name)}'s profile">
                 <div class="singer-avatar">${escHtml(name[0]?.toUpperCase() || '?')}</div>
                 ${escHtml(name)}
               </div>`).join('')}
-            ${isHost ? `<button class="btn btn-outline btn-sm" id="btn-add-singer-live" style="border-radius:999px;padding:.2rem .6rem;font-size:.78rem">+ Singer</button>` : ''}
           </div>
         </div>
 
@@ -759,10 +750,7 @@ class App {
       </div>`;
 
     // Bind events
-    document.getElementById('live-code').addEventListener('click', () => this._copyCode(st.roomCode));
-    document.getElementById('btn-copy-code').addEventListener('click', () => this._copyCode(st.roomCode));
-
-    document.querySelectorAll('.singer-chip.clickable').forEach(el => {
+document.querySelectorAll('.singer-chip.clickable').forEach(el => {
       el.addEventListener('click', () => {
         location.hash = `#singer/${encodeURIComponent(el.dataset.singer)}`;
       });
@@ -780,7 +768,6 @@ class App {
     if (isHost) {
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
-      document.getElementById('btn-add-singer-live')?.addEventListener('click', () => this._addSingerLive());
 
       document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -862,24 +849,14 @@ class App {
     }).join('');
   }
 
-  _copyCode(code) {
-    navigator.clipboard.writeText(code)
-      .then(() => this._toast('Code copied!'))
-      .catch(() => this._toast('Code: ' + code));
-  }
-
   // ─── New Session Modal ────────────────────────────────────────────────────
 
-  _sfSingers = [];
   _sfIsBackdated = false;
 
   async _openNewSession(backdated = false) {
-    this._sfSingers = [];
     this._sfIsBackdated = backdated;
 
     document.getElementById('sf-date').value = todayISO();
-    document.getElementById('sf-singers-tags').innerHTML = '';
-    document.getElementById('sf-singer-input').value = '';
     document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
     document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
@@ -899,36 +876,12 @@ class App {
     this._populateSeriesSelect(select, series, true);
   }
 
-  _sfAddSinger() {
-    const input = document.getElementById('sf-singer-input');
-    const name = input.value.trim();
-    if (!name || this._sfSingers.includes(name)) { input.value = ''; return; }
-    this._sfSingers.push(name);
-    input.value = '';
-    this._renderSfSingers();
-  }
-
-  _renderSfSingers() {
-    document.getElementById('sf-singers-tags').innerHTML = this._sfSingers.map(name => `
-      <span class="singer-remove-chip">
-        ${escHtml(name)}
-        <button data-name="${escHtml(name)}" title="Remove">✕</button>
-      </span>`).join('');
-    document.querySelectorAll('#sf-singers-tags .singer-remove-chip button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this._sfSingers = this._sfSingers.filter(n => n !== btn.dataset.name);
-        this._renderSfSingers();
-      });
-    });
-  }
-
   _submitSessionForm() {
     const seriesSelect = document.getElementById('sf-series');
     const series = seriesSelect.value === '__new__'
       ? document.getElementById('sf-series-new').value.trim()
       : seriesSelect.value;
     const date     = document.getElementById('sf-date').value;
-    const singers  = [...this._sfSingers];
     const backdated = this._sfIsBackdated;
 
     if (!date) { this._toast('Please set a date', 'error'); return; }
@@ -952,7 +905,7 @@ class App {
       series,
       date,
       roomCode,
-      singers,
+      singers: [],
       bhajans: [],
       status: backdated ? 'completed' : 'live',
       isBackdated: backdated,
@@ -1078,18 +1031,6 @@ class App {
     }
   }
 
-  // ─── Add Singer during live session ──────────────────────────────────────
-
-  _addSingerLive() {
-    const name = prompt('Singer name:')?.trim();
-    if (!name) return;
-    if ((this.liveState.singers || []).includes(name)) { this._toast('Already added', 'warn'); return; }
-    const updated = { ...this.liveState, singers: [...(this.liveState.singers || []), name] };
-    this.liveState = updated;
-    this.live.updateState(updated);
-    this._renderSession();
-  }
-
   // ─── Add Bhajan Modal ─────────────────────────────────────────────────────
 
   _openAddBhajanModal(preselect = null) {
@@ -1101,11 +1042,13 @@ class App {
     document.getElementById('mab-pitch').value = '';
     document.getElementById('mab-pitch-hint').textContent = '';
 
-    // Populate singer dropdown
-    const singers = this.liveState?.singers || [];
-    const singerSel = document.getElementById('mab-singer');
-    singerSel.innerHTML = `<option value="">— not specified —</option>` +
-      singers.map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+    // Populate singer autocomplete: session bhajan singers first, then all historical
+    document.getElementById('mab-singer').value = '';
+    const sessionSingers = new Set((this.liveState?.bhajans || []).map(e => e.singer).filter(Boolean));
+    const allSingers = this.sessions.allSingerNames?.() || [];
+    const suggestions = [...sessionSingers, ...allSingers.filter(n => !sessionSingers.has(n))];
+    document.getElementById('mab-singer-list').innerHTML =
+      suggestions.map(s => `<option value="${escHtml(s)}">`).join('');
 
     if (preselect) {
       this._mabShowStep2(preselect);
@@ -1266,8 +1209,11 @@ class App {
     const started = this.liveState.createdAt ? new Date(this.liveState.createdAt) : null;
     const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
 
+    const singers = [...new Set((this.liveState.bhajans || []).map(e => e.singer).filter(Boolean))];
+
     const finalSession = {
       ...this.liveState,
+      singers,
       status: 'completed',
       endedAt: new Date().toISOString(),
       duration,
@@ -1479,7 +1425,9 @@ class App {
         singer: singer || null, pitch: pitch || null, notes: notes || null,
         addedAt: Date.now(),
       };
-      const updated = { ...session, bhajans: [...(session.bhajans || []), entry] };
+      const newBhajans = [...(session.bhajans || []), entry];
+      const singers = [...new Set(newBhajans.map(e => e.singer).filter(Boolean))];
+      const updated = { ...session, bhajans: newBhajans, singers };
       this.sessions.save(updated);
 
       this._closeModal('modal-add-bhajan');
