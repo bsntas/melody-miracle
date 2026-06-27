@@ -682,8 +682,8 @@ class App {
         </div>
       </div>
       <div class="bhajan-item-pitches">
-        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}">♂ ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span></span>` : ''}
-        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span></span>` : ''}
+        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}">♂ ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
+        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
       </div>
     </div>`;
   }
@@ -729,8 +729,8 @@ class App {
       ['Deity', b.deity], ['Language', b.language], ['Raga', b.raga],
       ['Scale', b.scale],
       ['Beat', b.beat], ['Tempo', b.tempo], ['Level', b.level],
-      ['Gents Pitch', fmtPitch(b.gents_pitch_indian, b.gents_pitch_western) || b.gents_pitch],
-      ['Ladies Pitch', fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch],
+      ['Gents Pitch', [fmtPitch(b.gents_pitch_indian, b.gents_pitch_western) || b.gents_pitch, b.scale].filter(Boolean).join(' · ')],
+      ['Ladies Pitch', [fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch, b.scale].filter(Boolean).join(' · ')],
     ].filter(([, v]) => v);
 
     document.getElementById('mbhajan-body').innerHTML = `
@@ -942,13 +942,19 @@ class App {
 
     const bhajan = this.bhajans.getById(entry.bhajan_id);
     const lyrics = bhajan?.lyrics || '';
+    const scale  = bhajan?.scale  || '';
+
+    const pitchDisplay = entry.pitch
+      ? [entry.pitch_indian || entry.pitch.split(' / ')[0], entry.pitch_western || entry.pitch.split(' / ')[1], scale]
+          .filter(Boolean).join(' · ')
+      : '';
 
     return `<div class="now-singing-info">
       <div class="now-singing-bhajan-title">${escHtml(entry.bhajan_title)}</div>
       <div class="now-singing-bhajan-meta">
         ${entry.singer ? `👤 ${escHtml(entry.singer)}` : ''}
-        ${entry.singer && entry.pitch ? ' · ' : ''}
-        ${entry.pitch ? `🎵 ${escHtml(entry.pitch)}` : ''}
+        ${entry.singer && pitchDisplay ? ' · ' : ''}
+        ${pitchDisplay ? `🎵 ${escHtml(pitchDisplay)}` : ''}
       </div>
       ${lyrics ? `<div class="now-singing-lyrics">${escHtml(lyrics)}</div>` : ''}
     </div>`;
@@ -964,6 +970,7 @@ class App {
       const isCurrent = isPlaying && e.id === currentId;
       const canGoEarlier = i > 0;
       const canGoLater   = i < bhajans.length - 1;
+      const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
       return `
       <div class="session-bhajan-entry${isCurrent ? ' session-entry-current' : ''}">
         <div class="entry-num">${i + 1}</div>
@@ -974,7 +981,7 @@ class App {
             ${e.singer ? ' · ' : ''}
             <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit pitch' : ''}">
               ${e.pitch
-                ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span></span>`
+                ? `<span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                 : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
             ${!isPlaying
@@ -1310,12 +1317,13 @@ class App {
       <div class="mab-sel-title">${escHtml(b.title)}</div>
       <div class="mab-sel-meta">${escHtml([b.deity, b.language, b.tempo].filter(Boolean).join(' · '))}</div>`;
 
-    // Set pitch buttons labels (show Indian · Western)
+    // Set pitch buttons labels (show Indian · Western · Scale)
+    const scaleSuffix = b.scale ? ` · ${b.scale}` : '';
     const gpLabel = b.gents_pitch_indian
-      ? `${b.gents_pitch_indian} · ${b.gents_pitch_western}`
+      ? `${b.gents_pitch_indian} · ${b.gents_pitch_western}${scaleSuffix}`
       : (b.gents_pitch ? b.gents_pitch.split('/')[0].trim() : '');
     const lpLabel = b.ladies_pitch_indian
-      ? `${b.ladies_pitch_indian} · ${b.ladies_pitch_western}`
+      ? `${b.ladies_pitch_indian} · ${b.ladies_pitch_western}${scaleSuffix}`
       : (b.ladies_pitch ? b.ladies_pitch.split('/')[0].trim() : '');
     document.getElementById('btn-pitch-gents').textContent = gpLabel ? `♂ ${gpLabel}` : 'Gents';
     document.getElementById('btn-pitch-ladies').textContent = lpLabel ? `♀ ${lpLabel}` : 'Ladies';
@@ -1684,7 +1692,9 @@ class App {
 
       ${(s.bhajans || []).length
         ? `<div class="session-bhajan-timeline">
-            ${(s.bhajans).map((e, i) => `
+            ${(s.bhajans).map((e, i) => {
+              const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
+              return `
               <div class="timeline-item">
                 <div class="tl-num">${i + 1}</div>
                 <div class="tl-main">
@@ -1694,7 +1704,7 @@ class App {
                     ${e.singer ? ' · ' : ''}
                     <span class="${canEdit ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${canEdit ? 'Edit pitch' : ''}">
                       ${e.pitch
-                        ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span></span>`
+                        ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                         : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
                   </div>
@@ -1711,7 +1721,8 @@ class App {
                   </div>
                   <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" style="color:var(--text-3);font-size:.75rem">✕</button>` : ''}
                 </div>
-              </div>`).join('')}
+              </div>`;
+            }).join('')}
           </div>`
         : `<div class="empty-state"><p class="text-muted">No bhajans in this session${canEdit ? '. Use "+ Bhajan" to add.' : '.'}</p></div>`}
     `;
