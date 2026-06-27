@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Melody Miracle — Bhajan Sessions</title>
+  <meta name="description" content="Browse bhajans, record sessions and get insights">
+  <meta name="theme-color" content="#ea580c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="loading-logo">🕉</div>
+    <div class="loading-title">Melody Miracle</div>
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading bhajans…</div>
+  </div>
+
+  <!-- App shell (hidden until loaded) -->
+  <div id="app" class="hidden">
+
+    <!-- Header -->
+    <header id="app-header">
+      <div class="header-inner">
+        <a href="#dashboard" class="app-logo">
+          <span class="logo-om">🕉</span>
+          <span class="logo-text">Melody Miracle</span>
+        </a>
+        <nav class="top-nav" id="top-nav">
+          <a href="#dashboard" class="nav-link" data-view="dashboard">Dashboard</a>
+          <a href="#browse" class="nav-link" data-view="browse">Browse</a>
+          <a href="#session" class="nav-link" data-view="session">Session</a>
+          <a href="#history" class="nav-link" data-view="history">History</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content area -->
+    <main id="app-main">
+
+      <!-- Dashboard -->
+      <div id="view-dashboard" class="view">
+        <div class="view-content">
+          <div class="page-header">
+            <div>
+              <h2 class="page-title" id="dash-greeting">Namaste 🙏</h2>
+              <p class="page-subtitle" id="dash-date"></p>
+            </div>
+            <div class="dash-quick-actions">
+              <button class="btn btn-primary btn-sm" id="btn-dash-new-session">+ New Session</button>
+              <button class="btn btn-outline btn-sm" id="btn-dash-join-session">Join</button>
+            </div>
+          </div>
+
+          <!-- Stats row -->
+          <div class="stats-row" id="dash-stats">
+            <div class="stat-card">
+              <div class="stat-num" id="stat-sessions">0</div>
+              <div class="stat-label">Sessions</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="stat-bhajans-sung">0</div>
+              <div class="stat-label">Bhajans Sung</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="stat-singers">0</div>
+              <div class="stat-label">Singers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="stat-this-month">0</div>
+              <div class="stat-label">This Month</div>
+            </div>
+          </div>
+
+          <!-- Live session alert -->
+          <div id="dash-live-alert" class="live-alert hidden">
+            <span class="live-dot"></span>
+            <span id="dash-live-text">Session in progress</span>
+            <button class="btn btn-sm btn-warning" id="btn-dash-goto-live">Go Live →</button>
+          </div>
+
+          <!-- Insights charts -->
+          <div class="section-header">
+            <h3 class="section-title">Insights</h3>
+            <a href="#history" class="section-link">All sessions →</a>
+          </div>
+          <div class="insights-grid">
+            <div class="insight-card" id="insight-recent-sessions">
+              <div class="insight-card-title">Recent Activity</div>
+              <div class="insight-sessions-bars" id="dash-activity-bars"></div>
+            </div>
+            <div class="insight-card" id="insight-top-bhajans">
+              <div class="insight-card-title">Most Sung Bhajans</div>
+              <div id="dash-top-bhajans"></div>
+            </div>
+            <div class="insight-card" id="insight-singers">
+              <div class="insight-card-title">Top Singers</div>
+              <div id="dash-top-singers"></div>
+            </div>
+            <div class="insight-card" id="insight-deities">
+              <div class="insight-card-title">Deity Distribution</div>
+              <div id="dash-deities"></div>
+            </div>
+          </div>
+
+          <!-- Recent sessions -->
+          <div class="section-header" style="margin-top:1.5rem">
+            <h3 class="section-title">Recent Sessions</h3>
+            <a href="#history" class="section-link">View all →</a>
+          </div>
+          <div id="dash-recent-sessions">
+            <div class="empty-state">
+              <div class="empty-icon">📅</div>
+              <p>No sessions yet. Start one!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browse -->
+      <div id="view-browse" class="view">
+        <div class="view-content">
+          <div class="page-header">
+            <h2 class="page-title">Browse Bhajans</h2>
+            <span class="bhajan-count-badge" id="browse-count-badge">1439</span>
+          </div>
+
+          <div class="search-bar-wrap">
+            <input type="search" id="browse-search" class="search-input"
+              placeholder="Search by title, deity, raga…" autocomplete="off" autocorrect="off">
+          </div>
+
+          <div class="filter-row" id="browse-filters">
+            <select class="filter-select" id="filter-deity">
+              <option value="">All Deities</option>
+            </select>
+            <select class="filter-select" id="filter-language">
+              <option value="">All Languages</option>
+            </select>
+            <select class="filter-select" id="filter-tempo">
+              <option value="">All Tempos</option>
+            </select>
+            <select class="filter-select" id="filter-level">
+              <option value="">All Levels</option>
+            </select>
+          </div>
+
+          <div id="browse-list" class="bhajan-list"></div>
+        </div>
+      </div>
+
+      <!-- Session -->
+      <div id="view-session" class="view">
+        <div class="view-content" id="session-content">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- History -->
+      <div id="view-history" class="view">
+        <div class="view-content">
+          <div class="page-header">
+            <h2 class="page-title">Session History</h2>
+            <button class="btn btn-outline btn-sm" id="btn-add-backdated">+ Add Past Session</button>
+          </div>
+          <div id="history-list"></div>
+        </div>
+      </div>
+
+      <!-- Singer profile -->
+      <div id="view-singer" class="view">
+        <div class="view-content">
+          <button class="btn btn-ghost btn-back" id="btn-singer-back">← Back</button>
+          <div id="singer-content"></div>
+        </div>
+      </div>
+
+      <!-- Session detail -->
+      <div id="view-session-detail" class="view">
+        <div class="view-content">
+          <button class="btn btn-ghost btn-back" id="btn-session-detail-back">← History</button>
+          <div id="session-detail-content"></div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bottom nav (mobile) -->
+    <nav id="bottom-nav">
+      <a href="#dashboard" class="bnav-item" data-view="dashboard">
+        <span class="bnav-icon">⊞</span>
+        <span class="bnav-label">Dashboard</span>
+      </a>
+      <a href="#browse" class="bnav-item" data-view="browse">
+        <span class="bnav-icon">📖</span>
+        <span class="bnav-label">Browse</span>
+      </a>
+      <a href="#session" class="bnav-item" data-view="session">
+        <span class="bnav-icon live-session-icon" id="bnav-session-icon">🎵</span>
+        <span class="bnav-label">Session</span>
+      </a>
+      <a href="#history" class="bnav-item" data-view="history">
+        <span class="bnav-icon">📅</span>
+        <span class="bnav-label">History</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ─── Modals ─── -->
+
+  <!-- Bhajan Detail Modal -->
+  <div id="modal-bhajan" class="modal-overlay hidden">
+    <div class="modal-box modal-bhajan-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="mbhajan-title">Bhajan Title</h3>
+        <button class="modal-close" id="mbhajan-close">✕</button>
+      </div>
+      <div class="modal-body" id="mbhajan-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-outline btn-sm" id="mbhajan-add-to-session">+ Add to Session</button>
+        <a class="btn btn-ghost btn-sm" id="mbhajan-source-link" target="_blank" rel="noopener">Source ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- New / Edit Session Modal -->
+  <div id="modal-session-form" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="mform-title">New Session</h3>
+        <button class="modal-close" id="mform-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="session-form">
+          <div class="form-group">
+            <label class="form-label">Session Name (optional)</label>
+            <input type="text" id="sf-label" class="form-input" placeholder="e.g. Morning Bhajans, Thursday Satsang">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input type="date" id="sf-date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Singers</label>
+            <div class="singers-input-wrap">
+              <div class="singers-tags" id="sf-singers-tags"></div>
+              <div class="singer-add-row">
+                <input type="text" id="sf-singer-input" class="form-input" placeholder="Add singer name…">
+                <button type="button" class="btn btn-outline btn-sm" id="btn-sf-add-singer">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" id="sf-time-group" style="display:none">
+            <label class="form-label">Start Time (optional)</label>
+            <input type="time" id="sf-start-time" class="form-input">
+          </div>
+          <div class="form-group" id="sf-backdated-note" style="display:none">
+            <div class="info-banner">📅 Adding a backdated session entry</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mform-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mform-submit">Start Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bhajan to Session Modal -->
+  <div id="modal-add-bhajan" class="modal-overlay hidden">
+    <div class="modal-box modal-add-bhajan-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Bhajan</h3>
+        <button class="modal-close" id="mab-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Step 1: Search -->
+        <div id="mab-step-search">
+          <input type="search" id="mab-search" class="search-input" placeholder="Search bhajans…" autocomplete="off">
+          <div id="mab-search-results" class="bhajan-list mab-results"></div>
+        </div>
+        <!-- Step 2: Details -->
+        <div id="mab-step-details" class="hidden">
+          <div class="mab-selected-bhajan" id="mab-selected-info"></div>
+          <div class="form-group">
+            <label class="form-label">Singer</label>
+            <select id="mab-singer" class="form-input"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pitch</label>
+            <div class="pitch-row">
+              <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-gents">Gents</button>
+              <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-ladies">Ladies</button>
+              <input type="text" id="mab-pitch" class="form-input pitch-input" placeholder="e.g. 5 Pancham / G">
+            </div>
+            <div class="pitch-hint" id="mab-pitch-hint"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes (optional)</label>
+            <input type="text" id="mab-notes" class="form-input" placeholder="Any notes…">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost hidden" id="btn-mab-back">← Back</button>
+        <button class="btn btn-ghost" id="btn-mab-cancel">Cancel</button>
+        <button class="btn btn-primary hidden" id="btn-mab-add">Add to Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Join Session Modal -->
+  <div id="modal-join-session" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Join Session</h3>
+        <button class="modal-close" id="mjoin-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Enter the 6-character session code shared by the host.</p>
+        <div class="form-group">
+          <input type="text" id="mjoin-code" class="form-input code-input"
+            placeholder="XXXXXX" maxlength="6" autocomplete="off" autocorrect="off"
+            autocapitalize="characters" spellcheck="false">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your name (optional, for display)</label>
+          <input type="text" id="mjoin-name" class="form-input" placeholder="Your name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mjoin-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mjoin-join">Join →</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
