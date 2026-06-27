@@ -1,4 +1,5 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js';
+import { GitHubStore } from './github-store.js';
 import { LiveSession } from './live.js';
 
 // ─── App ──────────────────────────────────────────────────────────────────────
@@ -6,7 +7,7 @@ import { LiveSession } from './live.js';
 class App {
   constructor() {
     this.bhajans   = new BhajanStore();
-    this.sessions  = new SessionStore();
+    this.sessions  = new SessionStore();  // replaced by GitHubStore if PAT set
     this.live      = null;  // LiveSession instance when active
     this.liveState = null;  // current live session state (host or observer)
 
@@ -26,9 +27,22 @@ class App {
       return;
     }
 
+    // Upgrade to GitHub-backed store if a PAT is saved
+    const pat = GitHubStore.getPat();
+    if (pat) {
+      const ghStore = new GitHubStore(pat);
+      ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
+      this.sessions = ghStore;
+      // Load from GitHub (falls back to localStorage cache on failure)
+      document.getElementById('loading-text').textContent = 'Syncing sessions…';
+      await this.sessions.load();
+    }
+
     this._populateFilters();
     this._bindGlobal();
+    this._bindSettings();
     this._hideLoading();
+    this._updateSyncIndicator(pat ? this.sessions.syncStatus : 'local');
     this._route();
     window.addEventListener('hashchange', () => this._route());
   }
@@ -161,6 +175,159 @@ class App {
 
   _closeModal(id) {
     document.getElementById(id).classList.add('hidden');
+  }
+
+  // ─── Sync indicator ───────────────────────────────────────────────────────
+
+  _onSyncChange(status, message) {
+    this._updateSyncIndicator(status);
+    if (status === 'error') this._toast(`Sync error: ${message}`, 'error');
+  }
+
+  _updateSyncIndicator(status) {
+    const dot = document.getElementById('sync-indicator');
+    if (!dot) return;
+    dot.className = `sync-dot sync-${status}`;
+    const titles = { idle: 'Not connected', syncing: 'Syncing…', ok: 'Synced to GitHub', error: 'Sync error', local: 'Local storage only' };
+    dot.title = titles[status] || status;
+  }
+
+  // ─── Settings Modal ───────────────────────────────────────────────────────
+
+  _bindSettings() {
+    document.getElementById('btn-settings').addEventListener('click', () => this._openSettings());
+    document.getElementById('msettings-close').addEventListener('click', () => this._closeModal('modal-settings'));
+    document.getElementById('btn-settings-cancel').addEventListener('click', () => this._closeModal('modal-settings'));
+    document.getElementById('modal-settings').addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-settings')) this._closeModal('modal-settings');
+    });
+    document.getElementById('btn-settings-save').addEventListener('click', () => this._savePatSettings());
+    document.getElementById('btn-clear-pat').addEventListener('click', () => this._clearPat());
+    document.getElementById('btn-migrate')?.addEventListener('click', () => this._migrateLocalToGitHub());
+    document.getElementById('btn-settings-toggle-pat').addEventListener('click', () => {
+      const inp = document.getElementById('settings-pat');
+      const btn = document.getElementById('btn-settings-toggle-pat');
+      if (inp.type === 'password') { inp.type = 'text'; btn.textContent = 'Hide token'; }
+      else { inp.type = 'password'; btn.textContent = 'Show token'; }
+    });
+  }
+
+  _openSettings() {
+    const pat = GitHubStore.getPat();
+    document.getElementById('settings-pat').value = pat ? '••••••••••••••••' : '';
+    document.getElementById('settings-pat').dataset.hasExisting = pat ? 'true' : 'false';
+    document.getElementById('settings-pat').type = 'password';
+    document.getElementById('btn-settings-toggle-pat').textContent = 'Show token';
+
+    // Status banner
+    const banner = document.getElementById('sync-status-banner');
+    if (pat) {
+      const last = GitHubStore.lastSynced();
+      const msg = last ? `Connected · Last synced ${last.toLocaleString()}` : 'Connected to GitHub';
+      banner.className = 'sync-banner sync-banner-ok';
+      banner.textContent = `✓ ${msg}`;
+      banner.classList.remove('hidden');
+    } else {
+      banner.className = 'sync-banner sync-banner-info';
+      banner.textContent = 'ℹ Session history is saved locally only on this device';
+      banner.classList.remove('hidden');
+    }
+
+    // Last sync time
+    const last = GitHubStore.lastSynced();
+    document.getElementById('settings-last-sync').textContent = last
+      ? `Last synced: ${last.toLocaleString()}` : '';
+
+    // PAT status
+    const statusEl = document.getElementById('settings-pat-status');
+    statusEl.className = 'pat-status hidden';
+
+    // Migrate row: show if there are local sessions not on GitHub
+    // (show whenever we're not using GitHub store, as a convenience)
+    const migrateRow = document.getElementById('settings-migrate-row');
+    const localSessions = new SessionStore().all();
+    migrateRow.classList.toggle('hidden', !(localSessions.length && !pat));
+
+    this._openModal('modal-settings');
+    if (!pat) setTimeout(() => document.getElementById('settings-pat').focus(), 100);
+  }
+
+  async _savePatSettings() {
+    const input = document.getElementById('settings-pat');
+    const rawVal = input.value.trim();
+    const statusEl = document.getElementById('settings-pat-status');
+
+    // If unchanged placeholder, just close
+    if (rawVal === '••••••••••••••••' && input.dataset.hasExisting === 'true') {
+      this._closeModal('modal-settings');
+      return;
+    }
+
+    if (!rawVal) { this._toast('Please enter a token', 'warn'); return; }
+
+    // Test the PAT
+    statusEl.className = 'pat-status pat-testing';
+    statusEl.textContent = 'Testing token…';
+    statusEl.classList.remove('hidden');
+    document.getElementById('btn-settings-save').disabled = true;
+
+    try {
+      await GitHubStore.testPat(rawVal);
+    } catch (err) {
+      statusEl.className = 'pat-status pat-error';
+      statusEl.textContent = `✗ ${err.message}`;
+      document.getElementById('btn-settings-save').disabled = false;
+      return;
+    }
+
+    statusEl.className = 'pat-status pat-ok';
+    statusEl.textContent = '✓ Token valid!';
+
+    // Save PAT and switch to GitHub store
+    GitHubStore.setPat(rawVal);
+    const ghStore = new GitHubStore(rawVal);
+    ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
+
+    // Migrate any existing local sessions before switching
+    const localStore = new SessionStore();
+    const localSessions = localStore.all();
+
+    this.sessions = ghStore;
+    this._updateSyncIndicator('syncing');
+
+    // Initial load from GitHub (merges with local)
+    await this.sessions.load();
+
+    // Ensure any local sessions that weren't on GitHub are pushed
+    if (localSessions.length) {
+      for (const s of localSessions) {
+        if (!this.sessions.get(s.id)) this.sessions.save(s);
+      }
+    }
+
+    document.getElementById('btn-settings-save').disabled = false;
+    this._closeModal('modal-settings');
+    this._toast('Connected to GitHub — sessions synced!', 'success');
+    this._route(); // re-render current view with fresh data
+  }
+
+  _clearPat() {
+    if (!confirm('Stop syncing to GitHub? Sessions will still be stored locally on this device.')) return;
+    GitHubStore.clearPat();
+    this.sessions = new SessionStore();
+    this._updateSyncIndicator('local');
+    this._closeModal('modal-settings');
+    this._toast('Disconnected from GitHub');
+  }
+
+  async _migrateLocalToGitHub() {
+    const pat = document.getElementById('settings-pat').value.trim();
+    if (!pat || pat === '••••••••••••••••') {
+      this._toast('Save your token first', 'warn');
+      return;
+    }
+    // Just trigger save — handled in _savePatSettings
+    this._savePatSettings();
   }
 
   // ─── Dashboard ────────────────────────────────────────────────────────────

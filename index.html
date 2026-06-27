@@ -37,6 +37,9 @@
           <a href="#session" class="nav-link" data-view="session">Session</a>
           <a href="#history" class="nav-link" data-view="history">History</a>
         </nav>
+        <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
+          <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
+        </button>
       </div>
     </header>
 
@@ -340,6 +343,70 @@
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-mjoin-cancel">Cancel</button>
         <button class="btn btn-primary" id="btn-mjoin-join">Join →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings / Sync Modal -->
+  <div id="modal-settings" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">⚙ Sync Settings</h3>
+        <button class="modal-close" id="msettings-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="sync-status-banner" class="sync-banner hidden"></div>
+
+        <p class="settings-desc">
+          Save session history directly to your GitHub repo so it's never lost
+          and stays in sync across all your devices.
+        </p>
+
+        <div class="settings-how">
+          <div class="settings-step">
+            <span class="step-num">1</span>
+            <span>Go to <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Settings → Fine-grained tokens</a></span>
+          </div>
+          <div class="settings-step">
+            <span class="step-num">2</span>
+            <span>Set repository access to <strong>bsntas/melody-miracle</strong> only, with <strong>Contents: Read and write</strong></span>
+          </div>
+          <div class="settings-step">
+            <span class="step-num">3</span>
+            <span>Paste the token below</span>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem">
+          <label class="form-label">Personal Access Token</label>
+          <input type="password" id="settings-pat" class="form-input"
+            placeholder="github_pat_…" autocomplete="off" spellcheck="false">
+          <button class="btn btn-ghost btn-sm" id="btn-settings-toggle-pat"
+            style="margin-top:.3rem;padding-left:0">Show token</button>
+        </div>
+
+        <div id="settings-pat-status" class="pat-status hidden"></div>
+
+        <div class="settings-last-sync" id="settings-last-sync"></div>
+
+        <div id="settings-migrate-row" class="hidden">
+          <div class="divider"></div>
+          <p class="text-small text-muted" style="margin-bottom:.5rem">
+            You have local sessions not yet on GitHub.
+          </p>
+          <button class="btn btn-outline btn-sm btn-block" id="btn-migrate">
+            Upload local sessions to GitHub
+          </button>
+        </div>
+
+        <div id="settings-clear-row" style="margin-top:1rem">
+          <button class="btn btn-ghost btn-sm" id="btn-clear-pat"
+            style="color:var(--text-3);font-size:.78rem">Remove token and use local storage only</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-settings-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-settings-save">Save &amp; Connect</button>
       </div>
     </div>
   </div>
