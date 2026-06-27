@@ -168,7 +168,7 @@ class App {
       const b = this._mabSelected;
       if (b?.ladies_pitch) document.getElementById('mab-pitch').value = b.ladies_pitch;
     });
-    document.getElementById('mab-singer').addEventListener('change', () => this._mabUpdatePitchHint());
+    document.getElementById('mab-singer').addEventListener('input', () => this._mabUpdatePitchHint());
 
     // Join modal
     document.getElementById('mjoin-close').addEventListener('click', () => this._closeModal('modal-join-session'));
@@ -1081,11 +1081,16 @@ class App {
     document.getElementById('mab-pitch').value = '';
     document.getElementById('mab-pitch-hint').textContent = '';
 
-    // Populate singer dropdown
-    const singers = this.liveState?.singers || [];
-    const singerSel = document.getElementById('mab-singer');
-    singerSel.innerHTML = `<option value="">— not specified —</option>` +
-      singers.map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+    // Populate singer suggestions: session singers first, then all historical names
+    document.getElementById('mab-singer').value = '';
+    const sessionSingers = new Set(this.liveState?.singers || []);
+    const allSingers = this.sessions.allSingerNames();
+    const suggestions = [
+      ...sessionSingers,
+      ...allSingers.filter(n => !sessionSingers.has(n)),
+    ];
+    document.getElementById('mab-singer-list').innerHTML =
+      suggestions.map(s => `<option value="${escHtml(s)}">`).join('');
 
     if (preselect) {
       this._mabShowStep2(preselect);
