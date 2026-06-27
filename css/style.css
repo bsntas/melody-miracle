@@ -337,7 +337,19 @@ img { max-width: 100%; }
 
 /* Larger pitch badge in session entry rows */
 .session-pitch-badge { font-size: 0.82rem; padding: 0.25rem 0.65rem; border-radius: var(--radius); }
+.session-pitch-badge .pitch-western { display: none; } /* replaced by pitch-western-bold */
+.pitch-sep  { opacity: 0.5; font-weight: 400; }
+.pitch-western-bold { font-weight: 700; opacity: 1; }
 .entry-pitch-row { margin-top: 0.3rem; }
+
+/* Singer chip in session list entries */
+.entry-singer-row { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem; flex-wrap: wrap; }
+.entry-singer-chip {
+  font-size: 0.78rem; font-weight: 700;
+  background: var(--gold-light); color: #78350f;
+  padding: 0.15rem 0.55rem; border-radius: 999px;
+  white-space: nowrap;
+}
 .pitch-editable { cursor: pointer; }
 .pitch-editable:hover .pitch-badge { opacity: 0.75; }
 .pitch-unset { font-size: 0.72rem; color: var(--text-3); }
@@ -466,23 +478,32 @@ img { max-width: 100%; }
 }
 .btn-nav-compact:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
 .btn-nav-compact:disabled { opacity: .3; pointer-events: none; }
+/* Singer pill in expanded playing entry */
+.playing-singer-display { margin: 0.55rem 0 0 2rem; }
+.playing-singer-pill {
+  display: inline-block;
+  font-size: 1rem; font-weight: 700;
+  background: var(--gold-light); color: #78350f;
+  padding: 0.2rem 0.75rem; border-radius: var(--radius);
+}
+
 .playing-pitch-display {
-  display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap;
-  margin: 0.6rem 0 0.1rem 2rem;
+  display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;
+  margin: 0.45rem 0 0.1rem 2rem;
 }
 .playing-pitch-indian {
   font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
   background: #dbeafe; padding: 0.2rem 0.7rem; border-radius: var(--radius);
   letter-spacing: 0.01em;
 }
-.playing-pitch-sep { color: var(--text-3); font-size: 1rem; }
+.playing-pitch-sep { color: var(--text-3); font-size: 1.1rem; font-weight: 700; }
 .playing-pitch-western {
-  font-size: 1.1rem; font-weight: 700; color: #1e3a8a; opacity: 0.75;
-  background: #dbeafe; padding: 0.15rem 0.6rem; border-radius: var(--radius);
+  font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
+  background: #dbeafe; padding: 0.2rem 0.7rem; border-radius: var(--radius);
 }
 .playing-pitch-scale {
   font-size: 0.8rem; font-weight: 500; color: var(--text-2);
-  font-style: italic; align-self: center;
+  font-style: italic;
 }
 .playing-entry-lyrics {
   margin-top: 0.65rem; padding: 0.65rem 0 0.75rem;

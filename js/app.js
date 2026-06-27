@@ -973,16 +973,19 @@ class App {
             <span class="entry-num entry-num-playing">▶</span>
             <div class="entry-main">
               <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
-              ${e.singer ? `<div class="entry-meta">👤 ${escHtml(e.singer)}${e.notes ? ` · <em>${escHtml(e.notes)}</em>` : ''}</div>` : (e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : '')}
+              ${e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : ''}
             </div>
             ${isHost ? `<div class="playing-nav-btns">
               <button class="btn btn-nav-compact" id="btn-prev-bhajan" ${canGoEarlier ? '' : 'disabled'} title="Previous">‹</button>
               <button class="btn btn-nav-compact" id="btn-next-bhajan" title="Next">›</button>
             </div>` : ''}
           </div>
+          ${e.singer ? `<div class="playing-singer-display">
+            <span class="playing-singer-pill">👤 ${escHtml(e.singer)}</span>
+          </div>` : ''}
           ${e.pitch ? `<div class="playing-pitch-display">
             <span class="playing-pitch-indian">${escHtml(pitchIndian)}</span>
-            ${pitchWestern ? `<span class="playing-pitch-sep">·</span><span class="playing-pitch-western">${escHtml(pitchWestern)}</span>` : ''}
+            ${pitchWestern ? `<span class="playing-pitch-sep">•</span><span class="playing-pitch-western">${escHtml(pitchWestern)}</span>` : ''}
             ${eScale ? `<span class="playing-pitch-scale">${escHtml(eScale)}</span>` : ''}
           </div>` : ''}
           ${lyrics ? `<div class="playing-entry-lyrics">${escHtml(lyrics)}</div>` : ''}
@@ -996,14 +999,16 @@ class App {
         <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
-          ${e.singer || e.notes ? `<div class="entry-meta">
-            ${e.singer ? escHtml(e.singer) : ''}
-            ${!isPlaying ? ` · <span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? ` · <em>${escHtml(e.notes)}</em>` : '')}
-          </div>` : ''}
+          ${e.singer ? `<div class="entry-singer-row">
+            <span class="entry-singer-chip">👤 ${escHtml(e.singer)}</span>
+            ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes" style="font-size:0.75rem;color:var(--text-3);margin-left:.4rem">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em style="font-size:0.75rem;color:var(--text-3);margin-left:.4rem">${escHtml(e.notes)}</em>` : '')}
+          </div>` : (e.notes || !isPlaying ? `<div class="entry-meta" style="margin-top:.15rem">
+            ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
+          </div>` : '')}
           <div class="entry-pitch-row">
             <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Tap to edit pitch' : ''}">
               ${e.pitch
-                ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}<span class="pitch-western"> ${escHtml(pitchWestern)}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
+                ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                 : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
           </div>
