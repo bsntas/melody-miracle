@@ -1038,8 +1038,15 @@ class App {
 
   _resumeDraftSession(draft) {
     const sessionData = { ...draft, status: 'live' };
-    // Create a new room (new code since old one is gone)
+    const savedPhase = sessionData.phase; // preserve playing/setup phase
     this._startLiveSession(sessionData);
+    // _startLiveSession resets phase to 'setup'; restore the saved phase
+    if (savedPhase && savedPhase !== 'setup') {
+      this.liveState = { ...this.liveState, phase: savedPhase };
+      this.live.updateState(this.liveState);
+      this.sessions.saveDraft(this.liveState);
+      this._renderSession();
+    }
     this._toast('Session resumed with a new code', 'success');
   }
 
@@ -1284,12 +1291,6 @@ class App {
     this._renderSession();
   }
 
-  _setCurrentBhajan(entryId) {
-    const updated = { ...this.liveState, currentBhajan: entryId };
-    this.liveState = updated;
-    this.live.updateState(updated);
-    this._renderSession();
-  }
 
   // ─── End Session ──────────────────────────────────────────────────────────
 

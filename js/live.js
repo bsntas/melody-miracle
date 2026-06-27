@@ -1,7 +1,7 @@
 // ─── LiveSession ─────────────────────────────────────────────────────────────
 // Trystero-based real-time bhajan session sharing.
-// Same host-authoritative model as the Uno app: host holds state and broadcasts
-// to all observers. Observers are read-only.
+// Host-authoritative: host holds state and broadcasts to all observers.
+// In setup phase, observers can send edit actions back to the host.
 
 import { joinRoom } from 'https://esm.sh/trystero@0.21.0/mqtt';
 
