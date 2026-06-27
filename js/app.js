@@ -21,11 +21,11 @@ class App {
   }
 
   async _init() {
+    let bhajansOk = true;
     try {
       await this.bhajans.load();
     } catch (e) {
-      document.getElementById('loading-text').textContent = 'Failed to load. Please refresh.';
-      return;
+      bhajansOk = false;
     }
 
     // Upgrade to GitHub-backed store if a PAT is saved
@@ -34,7 +34,6 @@ class App {
       const ghStore = new GitHubStore(pat);
       ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
       this.sessions = ghStore;
-      // Load from GitHub (falls back to localStorage cache on failure)
       document.getElementById('loading-text').textContent = 'Syncing sessions…';
       await this.sessions.load();
     } else {
@@ -48,6 +47,7 @@ class App {
     this._initKeyboardAdjust();
     this._hideLoading();
     this._updateSyncIndicator(pat ? this.sessions.syncStatus : 'local');
+    if (!bhajansOk) this._toast('Bhajan catalog failed to load — browse & search unavailable', 'error');
     this._route();
     window.addEventListener('hashchange', () => this._route());
   }
