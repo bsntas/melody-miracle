@@ -752,12 +752,14 @@ class App {
           <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
           ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
           <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
-        </div>` : (isHost ? `<div class="session-add-btn-row">
+        </div>` : `<div class="session-add-btn-row">
+          ${isHost ? `
           <button class="btn btn-outline" id="btn-prev-bhajan" ${(st.bhajans || []).findIndex(e => e.id === st.currentBhajan) <= 0 ? 'disabled' : ''}>← Prev</button>
           <button class="btn btn-primary" id="btn-next-bhajan">Next →</button>
           <button class="btn btn-ghost" id="btn-exit-play" title="Return to setup">↩ Setup</button>
-          <button class="btn btn-outline" id="btn-end-session">End Session</button>
-        </div>` : '')}
+          <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
+          <button class="btn btn-ghost btn-aarati" id="btn-mangala-aarati" title="View Mangala Aarati lyrics">🪔 Mangala Aarati</button>
+        </div>`}
 
         <div class="section-header" style="margin-top:.5rem">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
@@ -819,12 +821,16 @@ class App {
         document.getElementById('btn-start-playing').addEventListener('click', () => this._startPlaying());
         document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       }
-    } else if (isHost) {
-      // Playing controls: host only
-      document.getElementById('btn-prev-bhajan').addEventListener('click', () => this._prevBhajan());
-      document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
-      document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
-      document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
+    } else {
+      // Playing phase
+      if (isHost) {
+        document.getElementById('btn-prev-bhajan').addEventListener('click', () => this._prevBhajan());
+        document.getElementById('btn-next-bhajan').addEventListener('click', () => this._nextBhajan());
+        document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
+        document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
+      }
+      // Mangala Aarati visible to all in playing phase
+      document.getElementById('btn-mangala-aarati').addEventListener('click', () => this._openBhajanModal('mangala-aarati'));
     }
 
     document.getElementById('bnav-session-icon').classList.add('is-live');
