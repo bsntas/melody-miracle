@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260630';
-import { GitHubStore } from './github-store.js?v=20260630';
-import { LiveSession } from './live.js?v=20260630';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260701';
+import { GitHubStore } from './github-store.js?v=20260701';
+import { LiveSession } from './live.js?v=20260701';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -63,6 +63,7 @@ class App {
 
     this._toastTimer = null;
     this._browseFiltered = [];
+    this._browsePage     = 0;
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
     this._bhajanModalContext = null;
@@ -640,23 +641,48 @@ class App {
   }
 
   _applyBrowseFilters() {
-    const q       = document.getElementById('browse-search').value;
-    const deity   = document.getElementById('filter-deity').value;
+    const q        = document.getElementById('browse-search').value;
+    const deity    = document.getElementById('filter-deity').value;
     const language = document.getElementById('filter-language').value;
-    const tempo   = document.getElementById('filter-tempo').value;
-    const level   = document.getElementById('filter-level').value;
+    const tempo    = document.getElementById('filter-tempo').value;
+    const level    = document.getElementById('filter-level').value;
 
-    const results = this.bhajans.search(q, { deity, language, tempo, level });
-    this._browseFiltered = results;
+    this._browseFiltered = this.bhajans.search(q, { deity, language, tempo, level });
+    this._browsePage = 0;
+    document.getElementById('browse-count-badge').textContent = this._browseFiltered.length;
+    this._renderBrowsePage();
+  }
 
-    document.getElementById('browse-count-badge').textContent = results.length;
-    this._renderBrowseList(results.slice(0, 100)); // render first 100 for performance
+  _renderBrowsePage(scrollToList = false) {
+    const PAGE = 30;
+    const results = this._browseFiltered;
+    const totalPages = Math.max(1, Math.ceil(results.length / PAGE));
+    const page  = Math.min(this._browsePage, totalPages - 1);
+    const start = page * PAGE;
+    const end   = Math.min(start + PAGE, results.length);
 
-    if (results.length > 100) {
-      document.getElementById('browse-list').insertAdjacentHTML('beforeend',
-        `<p class="text-muted text-small" style="text-align:center;padding:1rem">
-          Showing 100 of ${results.length} — refine your search to see more
-        </p>`);
+    this._renderBrowseList(results.slice(start, end));
+
+    if (results.length > PAGE) {
+      document.getElementById('browse-list').insertAdjacentHTML('beforeend', `
+        <div class="browse-pagination">
+          <button class="btn browse-pg-btn" id="browse-pg-prev" ${page === 0 ? 'disabled' : ''}>&#8249; Prev</button>
+          <span class="browse-pg-info">${start + 1}–${end} of ${results.length}</span>
+          <button class="btn browse-pg-btn" id="browse-pg-next" ${page >= totalPages - 1 ? 'disabled' : ''}>Next &#8250;</button>
+        </div>`);
+
+      document.getElementById('browse-pg-prev')?.addEventListener('click', () => {
+        this._browsePage = Math.max(0, page - 1);
+        this._renderBrowsePage(true);
+      });
+      document.getElementById('browse-pg-next')?.addEventListener('click', () => {
+        this._browsePage = Math.min(totalPages - 1, page + 1);
+        this._renderBrowsePage(true);
+      });
+    }
+
+    if (scrollToList) {
+      document.getElementById('browse-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 

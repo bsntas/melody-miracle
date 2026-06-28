@@ -331,6 +331,21 @@ img { max-width: 100%; }
 .bhajan-tag-scale-mixed { background: #fef3c7; color: #78350f; }
 
 .bhajan-item-pitches { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; flex-shrink: 0; }
+
+/* ─── Browse Pagination ──────────────────────────────────────────────────── */
+.browse-pagination {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.75rem; padding: 1rem 0 0.25rem;
+}
+.browse-pg-btn {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 0.35rem 0.9rem;
+  font-size: 0.85rem; font-weight: 600; color: var(--saffron);
+  transition: all .15s;
+}
+.browse-pg-btn:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+.browse-pg-btn:disabled { opacity: .35; pointer-events: none; }
+.browse-pg-info { font-size: 0.82rem; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .pitch-badge {
   font-size: 0.68rem; padding: 0.15rem 0.45rem;
   border-radius: var(--radius-sm); font-weight: 600; white-space: nowrap;
