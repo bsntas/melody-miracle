@@ -807,6 +807,7 @@ img { max-width: 100%; }
 .sync-ok      { background: var(--green); }
 .sync-error   { background: var(--red); }
 .sync-local   { background: var(--text-3); }
+.sync-pending { background: var(--gold); }
 
 /* ─── Settings modal ─────────────────────────────────────────────────────── */
 .settings-desc { font-size: 0.88rem; color: var(--text-2); margin-bottom: 1rem; line-height: 1.5; }

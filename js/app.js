@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260706';
-import { GitHubStore } from './github-store.js?v=20260706';
-import { LiveSession } from './live.js?v=20260706';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260707';
+import { GitHubStore } from './github-store.js?v=20260707';
+import { LiveSession } from './live.js?v=20260707';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -320,7 +320,7 @@ class App {
     const dot = document.getElementById('sync-indicator');
     if (!dot) return;
     dot.className = `sync-dot sync-${status}`;
-    const titles = { idle: 'Not connected', syncing: 'Syncing…', ok: 'Synced to GitHub', error: 'Sync error', local: 'Local storage only' };
+    const titles = { idle: 'Not connected', syncing: 'Syncing…', ok: 'Synced to GitHub', error: 'Sync error', local: 'Local storage only', pending: 'Unsaved changes — tap Save' };
     dot.title = titles[status] || status;
   }
 
@@ -1537,6 +1537,7 @@ class App {
     };
 
     this.sessions.save(finalSession);
+    this.sessions.commitNow?.('End bhajan session');
     this.sessions.clearDraft();
 
     this.live?.leave();
@@ -1569,7 +1570,7 @@ class App {
   _openBackdatedEntry(sessionData) {
     // Open session detail directly in "edit" mode so user can add bhajans
     // We save the session immediately and open its detail
-    this.sessions.save(sessionData);
+    this.sessions.save(sessionData, { local: true });
     location.hash = `#session-detail/${sessionData.id}`;
     this._toast('Session created. Add bhajans below.', 'success');
   }
@@ -1664,7 +1665,7 @@ class App {
           bhajans: session.bhajans.map(e =>
             e.id === entryId ? { ...e, pitch: newPitch, pitch_indian: newIndian, pitch_western: newWestern } : e),
         };
-        this.sessions.save(updated);
+        this.sessions.save(updated, { local: true });
         this._renderSessionDetail(this._detailSessionId);
       }
     };
@@ -1731,7 +1732,7 @@ class App {
           bhajans: session.bhajans.map(e =>
             e.id === entryId ? { ...e, notes: newNotes } : e),
         };
-        this.sessions.save(updated);
+        this.sessions.save(updated, { local: true });
         this._renderSessionDetail(this._detailSessionId);
       }
     };
@@ -1756,6 +1757,7 @@ class App {
     }
 
     const canEdit = s.status === 'completed' || s.isBackdated;
+    const hasPat  = !!GitHubStore.getPat();
 
     document.getElementById('session-detail-content').innerHTML = `
       <div class="session-detail-header">
@@ -1765,6 +1767,7 @@ class App {
             <div class="session-detail-date">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</div>
           </div>
           <div style="display:flex;gap:.4rem;flex-shrink:0">
+            ${canEdit && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
             ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
             <button class="btn btn-danger btn-sm" id="btn-detail-delete">Delete</button>
           </div>
@@ -1834,6 +1837,11 @@ class App {
 
     // Add bhajan to completed/backdated session
     if (canEdit) {
+      document.getElementById('btn-detail-save')?.addEventListener('click', () => {
+        this.sessions.commitNow?.('Save session to GitHub');
+        this._toast('Saving to GitHub…', 'success');
+      });
+
       document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', () => {
         this._openDetailAddBhajan(s);
       });
@@ -1845,7 +1853,7 @@ class App {
           if (!current) return;
           const dir = btn.dataset.action === 'reorder-earlier' ? 'earlier' : 'later';
           const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, current.bhajans || []);
-          this.sessions.save({ ...current, bhajans: newBhajans });
+          this.sessions.save({ ...current, bhajans: newBhajans }, { local: true });
           this._renderSessionDetail(id);
         });
       });
@@ -1853,7 +1861,7 @@ class App {
       document.querySelectorAll('#session-detail-content .entry-action-btn[data-action="remove"]').forEach(btn => {
         btn.addEventListener('click', () => {
           const updated = { ...s, bhajans: (s.bhajans || []).filter(e => e.id !== btn.dataset.entryId) };
-          this.sessions.save(updated);
+          this.sessions.save(updated, { local: true });
           this._renderSessionDetail(id);
         });
       });
@@ -1909,7 +1917,7 @@ class App {
       const newBhajans = [...(session.bhajans || []), entry];
       const singers = [...new Set(newBhajans.map(e => e.singer).filter(Boolean))];
       const updated = { ...session, bhajans: newBhajans, singers };
-      this.sessions.save(updated);
+      this.sessions.save(updated, { local: true });
 
       this._closeModal('modal-add-bhajan');
       this.liveState = prevLive;
