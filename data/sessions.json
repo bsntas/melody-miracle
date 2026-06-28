@@ -336,5 +336,100 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
+  },
+  {
+    "id": "weekendbhaja-2024-01-20",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2024-01-20",
+    "roomCode": "weekendbhaja-2024-01-20",
+    "singers": [
+      "Suvam",
+      "Karam",
+      "Gigme",
+      "Ashik",
+      "Anisha",
+      "Isha",
+      "Pemila"
+    ],
+    "bhajans": [
+      {
+        "id": "e_mqy3b7qen26o",
+        "bhajan_id": "gajavadana-gananatha-gajavadana-vinayaka",
+        "bhajan_title": "Gajavadana Gananatha Gajavadana Vinayaka",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Suvam"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": null,
+        "addedAt": 1782669362918
+      },
+      {
+        "id": "e_mqy3d5nerze3",
+        "bhajan_id": "anandamaya-bhagawan",
+        "bhajan_title": "Anandamaya Bhagawan",
+        "bhajan_deity": "Sai",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": 1782669453530
+      },
+      {
+        "id": "e_mqy3cb23ld83",
+        "bhajan_id": "allah-ho-tum",
+        "bhajan_title": "Allah Ho Tum",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Gigme",
+          "Ashik"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": 1782669413883
+      },
+      {
+        "id": "e_mqy3e8gj7k4c",
+        "bhajan_id": "jagadodharini-mata-durga-jagadodharini-ma",
+        "bhajan_title": "Jagadodharini Mata Durga Jagadodharini Ma",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Anisha"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1782669503827
+      },
+      {
+        "id": "e_mqy3fc4fwmvm",
+        "bhajan_id": "sai-hamara-hum-sai-ke",
+        "bhajan_title": "Sai Hamara Hum Sai Ke",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Isha",
+          "Pemila"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": 1782669555231
+      }
+    ],
+    "status": "completed",
+    "isBackdated": true,
+    "createdAt": "2026-06-28T17:55:01.077Z",
+    "startTime": null,
+    "duration": null
   }
 ]
