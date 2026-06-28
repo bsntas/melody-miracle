@@ -136,6 +136,20 @@
     "endedAt": "2026-06-27T14:05:18.729Z"
   },
   {
+    "id": "weekendbhaja-2024-01-13",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2024-01-13",
+    "roomCode": "weekendbhaja-2024-01-13",
+    "singers": [],
+    "bhajans": [],
+    "status": "completed",
+    "isBackdated": true,
+    "createdAt": "2026-06-28T15:33:28.689Z",
+    "startTime": null,
+    "duration": null
+  },
+  {
     "id": "weekendbhaja-2024-01-06",
     "label": "Weekend Bhajans E-City HSR",
     "series": "Weekend Bhajans E-City HSR",
