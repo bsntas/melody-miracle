@@ -16,16 +16,36 @@ export class BhajanStore {
   }
 
   _buildIndex() {
-    this._index = this.bhajans.map(b => ({
-      id: b.id,
-      searchText: [b.title, b.deity, b.language, b.raga, b.beat, b.scale].filter(Boolean).join(' ').toLowerCase(),
-    }));
+    this._index = this.bhajans.map(b => {
+      const text = [b.title, b.deity, b.language, b.raga, b.beat, b.scale]
+        .filter(Boolean).join(' ').toLowerCase();
+      return {
+        id: b.id,
+        searchText: text,
+        words: [...new Set(text.split(/\s+/).filter(w => w.length >= 3))],
+      };
+    });
+  }
+
+  // Every space-separated token in q must match the entry.
+  // Fast path: exact substring. Fallback: per-word fuzzy (Levenshtein).
+  _matchQuery(q, entry) {
+    if (entry.searchText.includes(q)) return true;
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return tokens.every(tok => {
+      if (entry.words.some(w => w.startsWith(tok) || tok.startsWith(w))) return true;
+      if (tok.length < 3) return false;
+      const maxDist = tok.length <= 5 ? 1 : 2;
+      return entry.words.some(
+        w => Math.abs(w.length - tok.length) <= maxDist && _lev(tok, w, maxDist) <= maxDist
+      );
+    });
   }
 
   search(query, filters = {}) {
     const q = (query || '').toLowerCase().trim();
     return this.bhajans.filter((b, i) => {
-      if (q && !this._index[i].searchText.includes(q)) return false;
+      if (q && !this._matchQuery(q, this._index[i])) return false;
       if (filters.deity && !(b.deity || '').toLowerCase().includes(filters.deity.toLowerCase())) return false;
       if (filters.language && !(b.language || '').toLowerCase().includes(filters.language.toLowerCase())) return false;
       if (filters.tempo && b.tempo !== filters.tempo) return false;
@@ -313,6 +333,25 @@ export class SessionStore {
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+// Levenshtein distance with early exit when cost exceeds max.
+function _lev(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  const row = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0];
+    row[0] = i;
+    let rowMin = i;
+    for (let j = 1; j <= b.length; j++) {
+      const val = a[i - 1] === b[j - 1] ? prev : 1 + Math.min(prev, row[j], row[j - 1]);
+      prev = row[j];
+      row[j] = val;
+      if (val < rowMin) rowMin = val;
+    }
+    if (rowMin > max) return max + 1;
+  }
+  return row[b.length];
+}
 
 export function genId(prefix = 'id') {
   return `${prefix}_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
