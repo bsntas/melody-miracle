@@ -145,7 +145,7 @@ export class GitHubStore {
           rows.push({
             date: s.date,
             sessionLabel: s.label || '',
-            singer: e.singer || '',
+            singer: e.singers?.join(' · ') || e.singer || '',
             pitch_indian: e.pitch_indian || '',
             pitch_western: e.pitch_western || '',
           });
@@ -159,7 +159,8 @@ export class GitHubStore {
     const counts = {};
     for (const s of this._sessions)
       for (const e of (s.bhajans || []))
-        if (e.singer) counts[e.singer] = (counts[e.singer] || 0) + 1;
+        for (const name of (e.singers || (e.singer ? [e.singer] : [])))
+          counts[name] = (counts[name] || 0) + 1;
     return Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,n)
       .map(([name,count])=>({ name, count }));
   }
@@ -209,11 +210,12 @@ export class GitHubStore {
   }
 
   singerHistory(name) {
+    const hasSinger = e => (e.singers || (e.singer ? [e.singer] : [])).includes(name);
     const sessions = this._sessions
-      .filter(s => (s.singers||[]).includes(name) || (s.bhajans||[]).some(e=>e.singer===name))
+      .filter(s => (s.bhajans||[]).some(hasSinger))
       .sort((a,b)=>b.date.localeCompare(a.date));
     const bhajans = sessions.flatMap(s =>
-      (s.bhajans||[]).filter(e=>e.singer===name)
+      (s.bhajans||[]).filter(hasSinger)
         .map(e=>({ ...e, sessionDate: s.date, sessionLabel: s.label })));
     const pitchCounts = {};
     for (const e of bhajans) if (e.pitch) pitchCounts[e.pitch]=(pitchCounts[e.pitch]||0)+1;
@@ -231,13 +233,15 @@ export class GitHubStore {
     const counts = {};
     for (const s of this._sessions)
       for (const e of (s.bhajans||[]))
-        if (e.singer===name && e.pitch) counts[e.pitch]=(counts[e.pitch]||0)+1;
+        if ((e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.pitch)
+          counts[e.pitch]=(counts[e.pitch]||0)+1;
     return Object.entries(counts).sort((a,b)=>b[1]-a[1])[0]?.[0]||null;
   }
 
   singerBhajanPitch(name, bhajanId) {
     for (const s of [...this._sessions].reverse()) {
-      const e = (s.bhajans||[]).find(e=>e.singer===name && e.bhajan_id===bhajanId);
+      const e = (s.bhajans||[]).find(e=>
+        (e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.bhajan_id===bhajanId);
       if (e?.pitch) return e.pitch;
     }
     return null;
@@ -245,10 +249,9 @@ export class GitHubStore {
 
   allSingerNames() {
     const names = new Set();
-    for (const s of this._sessions) {
-      (s.singers||[]).forEach(n=>names.add(n));
-      (s.bhajans||[]).forEach(e=>{ if(e.singer) names.add(e.singer); });
-    }
+    for (const s of this._sessions)
+      (s.bhajans||[]).forEach(e =>
+        (e.singers || (e.singer ? [e.singer] : [])).forEach(n => names.add(n)));
     return [...names].sort();
   }
 

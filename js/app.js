@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260707';
-import { GitHubStore } from './github-store.js?v=20260707';
-import { LiveSession } from './live.js?v=20260707';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260708';
+import { GitHubStore } from './github-store.js?v=20260708';
+import { LiveSession } from './live.js?v=20260708';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -67,6 +67,7 @@ class App {
     this._browsePage      = 0;
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
+    this._mabSingers   = [];   // currently-selected singers for the entry being added
     this._bhajanModalContext = null;
 
     this._init();
@@ -272,8 +273,27 @@ class App {
       document.getElementById('mab-pitch-indian').value = p?.indian || '';
       document.getElementById('mab-pitch').value        = p?.combined || '';
     });
-    document.getElementById('mab-singer')?.addEventListener('change', () => this._mabUpdatePitchHint());
-    document.getElementById('mab-singer')?.addEventListener('input', () => this._mabUpdatePitchHint());
+    const singerInp = document.getElementById('mab-singer');
+    if (singerInp) {
+      singerInp.addEventListener('keydown', e => {
+        if (e.key === 'Enter') { e.preventDefault(); this._mabAddSingerFromInput(); }
+        if (e.key === 'Backspace' && !singerInp.value && this._mabSingers.length) {
+          this._mabSingers.pop();
+          this._mabRenderSingerChips();
+          this._mabUpdatePitchHint();
+        }
+      });
+      singerInp.addEventListener('input', () => {
+        if (singerInp.value.includes(',')) {
+          singerInp.value = singerInp.value.replace(/,/g, '').trim();
+          this._mabAddSingerFromInput();
+        }
+      });
+      // datalist selection fires 'change' in most browsers
+      singerInp.addEventListener('change', () => {
+        if (singerInp.value.trim()) this._mabAddSingerFromInput();
+      });
+    }
 
     // Join modal
     document.getElementById('mjoin-close')?.addEventListener('click', () => this._closeModal('modal-join-session'));
@@ -891,7 +911,7 @@ class App {
             ${isHost ? `${this.live?.peerCount || 0} observer${(this.live?.peerCount || 0) !== 1 ? 's' : ''}` : ''}
           </div>
           <div class="singers-strip">
-            ${[...new Set((st.bhajans || []).map(e => e.singer).filter(Boolean))].map(name => `
+            ${[...new Set((st.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))].map(name => `
               <div class="singer-chip clickable" data-singer="${escHtml(name)}" title="View ${escHtml(name)}'s profile">
                 <div class="singer-avatar">${escHtml(name[0]?.toUpperCase() || '?')}</div>
                 ${escHtml(name)}
@@ -1009,8 +1029,8 @@ class App {
     return `<div class="now-singing-info">
       <div class="now-singing-bhajan-title">${escHtml(entry.bhajan_title)}</div>
       <div class="now-singing-bhajan-meta">
-        ${entry.singer ? `👤 ${escHtml(entry.singer)}` : ''}
-        ${entry.singer && pitchDisplay ? ' · ' : ''}
+        ${(entry.singers?.join(' · ') || entry.singer) ? `👤 ${escHtml(entry.singers?.join(' · ') || entry.singer)}` : ''}
+        ${(entry.singers?.length || entry.singer) && pitchDisplay ? ' · ' : ''}
         ${pitchDisplay ? `🎵 ${escHtml(pitchDisplay)}` : ''}
       </div>
       ${lyrics ? `<div class="now-singing-lyrics">${escHtml(lyrics)}</div>` : ''}
@@ -1047,8 +1067,8 @@ class App {
               <button class="btn btn-nav-compact" id="btn-next-bhajan" title="Next">›</button>
             </div>` : ''}
           </div>
-          ${e.singer ? `<div class="playing-singer-display">
-            <span class="playing-singer-pill">👤 ${escHtml(e.singer)}</span>
+          ${(e.singers?.length || e.singer) ? `<div class="playing-singer-display">
+            <span class="playing-singer-pill">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
           </div>` : ''}
           ${e.pitch ? `<div class="playing-pitch-display">
             <span class="playing-pitch-indian">${escHtml(pitchIndian)}</span>
@@ -1066,8 +1086,8 @@ class App {
         <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
-          ${e.singer ? `<div class="entry-singer-row">
-            <span class="entry-singer-chip">👤 ${escHtml(e.singer)}</span>
+          ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
+            <span class="entry-singer-chip">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
             ${!isPlaying ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
           </div>` : (e.notes || !isPlaying ? `<div class="entry-meta">
             ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
@@ -1344,8 +1364,9 @@ class App {
     document.getElementById('mab-pitch-hint').textContent = '';
 
     // Populate singer autocomplete: session bhajan singers first, then all historical
-    document.getElementById('mab-singer').value = '';
-    const sessionSingers = new Set((this.liveState?.bhajans || []).map(e => e.singer).filter(Boolean));
+    this._mabSingers = [];
+    this._mabRenderSingerChips();
+    const sessionSingers = new Set((this.liveState?.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])));
     const allSingers = this.sessions.allSingerNames?.() || [];
     const suggestions = [...sessionSingers, ...allSingers.filter(n => !sessionSingers.has(n))];
     document.getElementById('mab-singer-list').innerHTML =
@@ -1432,8 +1453,39 @@ class App {
     document.getElementById('mab-pitch-western').value = p?.western  || combined.split(' / ')[1]?.trim() || '';
   }
 
+  _mabAddSingerFromInput() {
+    const inp = document.getElementById('mab-singer');
+    const name = inp.value.trim();
+    if (name && !this._mabSingers.includes(name)) {
+      this._mabSingers.push(name);
+      this._mabRenderSingerChips();
+      this._mabUpdatePitchHint();
+    }
+    inp.value = '';
+    inp.focus();
+  }
+
+  _mabRenderSingerChips() {
+    const box = document.getElementById('mab-singers-box');
+    const inp = document.getElementById('mab-singer');
+    if (!box || !inp) return;
+    box.querySelectorAll('.singer-chip-sm').forEach(c => c.remove());
+    for (const name of this._mabSingers) {
+      const chip = document.createElement('span');
+      chip.className = 'singer-chip-sm';
+      chip.innerHTML = `${escHtml(name)}<button type="button" class="chip-x" aria-label="Remove ${escHtml(name)}">×</button>`;
+      chip.querySelector('.chip-x').addEventListener('click', () => {
+        this._mabSingers = this._mabSingers.filter(n => n !== name);
+        this._mabRenderSingerChips();
+        this._mabUpdatePitchHint();
+      });
+      box.insertBefore(chip, inp);
+    }
+    inp.placeholder = this._mabSingers.length ? 'Add another…' : 'Add singer…';
+  }
+
   _mabUpdatePitchHint() {
-    const singer = document.getElementById('mab-singer').value;
+    const singer = this._mabSingers[0] || null;
     const b = this._mabSelected;
     const hintEl   = document.getElementById('mab-pitch-hint');
     const combined = document.getElementById('mab-pitch').value;
@@ -1460,7 +1512,11 @@ class App {
     const b = this._mabSelected;
     if (!b) return;
 
-    const singer = document.getElementById('mab-singer').value;
+    // Flush any name still typed but not yet chip-added
+    const typedName = document.getElementById('mab-singer').value.trim();
+    if (typedName && !this._mabSingers.includes(typedName)) this._mabSingers.push(typedName);
+
+    const singers = this._mabSingers.length ? [...this._mabSingers] : null;
     const pitch  = document.getElementById('mab-pitch').value.trim();
     const notes  = document.getElementById('mab-notes').value.trim();
     const { pitch_indian, pitch_western } = splitPitchCombined(pitch);
@@ -1470,7 +1526,7 @@ class App {
       bhajan_id:    b.id,
       bhajan_title: b.title,
       bhajan_deity: b.deity,
-      singer:        singer || null,
+      singers:       singers,
       pitch:         pitch || null,
       pitch_indian:  pitch_indian || null,
       pitch_western: pitch_western || null,
@@ -1526,7 +1582,7 @@ class App {
     const started = this.liveState.createdAt ? new Date(this.liveState.createdAt) : null;
     const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
 
-    const singers = [...new Set((this.liveState.bhajans || []).map(e => e.singer).filter(Boolean))];
+    const singers = [...new Set((this.liveState.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
 
     const finalSession = {
       ...this.liveState,
@@ -1794,8 +1850,8 @@ class App {
                 <div class="tl-main">
                   <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
                   <div class="tl-meta">
-                    ${e.singer ? `👤 ${escHtml(e.singer)}` : ''}
-                    ${e.singer ? ' · ' : ''}
+                    ${(e.singers?.length || e.singer) ? `👤 ${escHtml(e.singers?.join(' · ') || e.singer)}` : ''}
+                    ${(e.singers?.length || e.singer) ? ' · ' : ''}
                     <span class="${canEdit ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${canEdit ? 'Edit pitch' : ''}">
                       ${e.pitch
                         ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
@@ -1915,7 +1971,7 @@ class App {
         addedAt: Date.now(),
       };
       const newBhajans = [...(session.bhajans || []), entry];
-      const singers = [...new Set(newBhajans.map(e => e.singer).filter(Boolean))];
+      const singers = [...new Set(newBhajans.flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
       const updated = { ...session, bhajans: newBhajans, singers };
       this.sessions.save(updated, { local: true });
 
