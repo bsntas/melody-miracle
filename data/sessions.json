@@ -134,5 +134,86 @@
     "phase": "playing",
     "currentBhajan": "e_mqwd58ibwq0y",
     "endedAt": "2026-06-27T14:05:18.729Z"
+  },
+  {
+    "id": "weekendbhaja-2024-01-06",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2024-01-06",
+    "roomCode": "weekendbhaja-2024-01-06",
+    "singers": [
+      "Karam",
+      "Anisha",
+      "Suvam",
+      "Gigme",
+      "Ashik"
+    ],
+    "bhajans": [
+      {
+        "id": "e_mqxf6wuhe3de",
+        "bhajan_id": "vinayaka-vinayaka",
+        "bhajan_title": "Vinayaka Vinayaka",
+        "bhajan_deity": "Ganesha",
+        "singer": "Karam",
+        "pitch": "3 Pancham / E",
+        "notes": null,
+        "addedAt": 1782628851401,
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E"
+      },
+      {
+        "id": "e_mqxf8i3fy811",
+        "bhajan_id": "giridhara-govinda-gopala-ghana-shyama",
+        "bhajan_title": "Giridhara Govinda Gopala Ghana Shyama",
+        "bhajan_deity": "Krishna",
+        "singer": "Suvam",
+        "pitch": "1 Pancham / C",
+        "notes": null,
+        "addedAt": 1782628925595,
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C"
+      },
+      {
+        "id": "e_mqxf7qutyw13",
+        "bhajan_id": "jhulana-mey-jhule-merey-sai-nandalala",
+        "bhajan_title": "Jhulana Mey Jhule Merey Sai Nandalala",
+        "bhajan_deity": "Sai",
+        "singer": "Anisha",
+        "pitch": "7 Pancham / B",
+        "notes": null,
+        "addedAt": 1782628890293,
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B"
+      },
+      {
+        "id": "e_mqxf9uk33mp3",
+        "bhajan_id": "krishna-krishna-yaduvara-krishna",
+        "bhajan_title": "Krishna Krishna Yaduvara Krishna",
+        "bhajan_deity": "Krishna",
+        "singer": "Gigme",
+        "pitch": "6 Pancham / A",
+        "notes": null,
+        "addedAt": 1782628988403,
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A"
+      },
+      {
+        "id": "e_mqxfbwa8rtjd",
+        "bhajan_id": "jai-durga-lakshmi-saraswathi-sai-jaganmata",
+        "bhajan_title": "Jai Durga Lakshmi Saraswathi Sai Jaganmata",
+        "bhajan_deity": "Devi",
+        "singer": "Ashik",
+        "pitch": "5 Pancham / G",
+        "notes": null,
+        "addedAt": 1782629083952,
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G"
+      }
+    ],
+    "status": "completed",
+    "isBackdated": true,
+    "createdAt": "2026-06-28T06:39:50.116Z",
+    "startTime": null,
+    "duration": null
   }
 ]
