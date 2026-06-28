@@ -230,6 +230,26 @@ export class SessionStore {
     return Object.entries(days).map(([date, count]) => ({ date, count }));
   }
 
+  activityByWeek(n = 16) {
+    const now = new Date();
+    const weeks = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const end = new Date(now);
+      end.setDate(end.getDate() - i * 7);
+      const start = new Date(end);
+      start.setDate(start.getDate() - 6);
+      const startKey = start.toISOString().slice(0, 10);
+      const endKey   = end.toISOString().slice(0, 10);
+      const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+      weeks.push({ startKey, endKey, label: fmt(start), count: 0 });
+    }
+    for (const s of this._sessions) {
+      const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
+      if (w) w.count++;
+    }
+    return weeks;
+  }
+
   singerHistory(name) {
     const sessions = this._sessions
       .filter(s => (s.singers || []).includes(name) || (s.bhajans || []).some(e => e.singer === name))

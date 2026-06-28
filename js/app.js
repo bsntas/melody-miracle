@@ -477,15 +477,18 @@ class App {
       liveAlert.classList.add('hidden');
     }
 
-    // Activity chart (last 14 days)
-    const activity = this.sessions.activityLast30Days().slice(-14);
-    const maxCount = Math.max(...activity.map(d => d.count), 1);
+    // Activity chart (last 16 weeks)
+    const activity = this.sessions.activityByWeek(16);
+    const maxCount = Math.max(...activity.map(w => w.count), 1);
     const barsEl = document.getElementById('dash-activity-bars');
     barsEl.innerHTML = `<div class="activity-bars">
-      ${activity.map(d => `
-        <div class="activity-bar ${d.count > 0 ? 'has-data' : ''}"
-          style="height:${Math.max(4, (d.count / maxCount) * 60)}px"
-          title="${d.date}: ${d.count} session${d.count !== 1 ? 's' : ''}"></div>
+      ${activity.map(w => `
+        <div class="activity-bar-wrap">
+          <div class="activity-bar ${w.count > 0 ? 'has-data' : ''}"
+            style="height:${Math.max(4, (w.count / maxCount) * 60)}px"
+            title="Week of ${w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
+          <div class="activity-bar-label">${w.label}</div>
+        </div>
       `).join('')}
     </div>`;
 
