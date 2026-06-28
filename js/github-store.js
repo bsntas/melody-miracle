@@ -32,8 +32,11 @@ export class GitHubStore {
 
   async load() {
     this._setSync('syncing');
+    const abort = new AbortController();
+    const timer = setTimeout(() => abort.abort(), 12000);
     try {
-      const { sessions, sha } = await this._fetchFromGitHub();
+      const { sessions, sha } = await this._fetchFromGitHub(abort.signal);
+      clearTimeout(timer);
       this._sha = sha;
 
       // Merge GitHub sessions with any local-only sessions
@@ -50,6 +53,11 @@ export class GitHubStore {
 
       return merged;
     } catch (err) {
+      clearTimeout(timer);
+      if (err.name === 'AbortError') {
+        this._setSync('error', 'Sync timed out — using local data');
+        return this._sessions;
+      }
       if (err.status === 404) {
         // sessions.json doesn't exist yet — start empty (or use local cache)
         this._sha = null;
@@ -143,6 +151,27 @@ export class GitHubStore {
     return Object.entries(days).map(([date,count])=>({ date, count }));
   }
 
+  activityByWeek(n = 16) {
+    const now = new Date();
+    const weeks = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const end = new Date(now);
+      end.setDate(end.getDate() - i * 7);
+      const start = new Date(end);
+      start.setDate(start.getDate() - 6);
+      const startKey = start.toISOString().slice(0, 10);
+      const endKey   = end.toISOString().slice(0, 10);
+      const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+      const month = start.toLocaleDateString('en-IN', { month: 'short' });
+      weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
+    }
+    for (const s of this._sessions) {
+      const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
+      if (w) w.count++;
+    }
+    return weeks;
+  }
+
   singerHistory(name) {
     const sessions = this._sessions
       .filter(s => (s.singers||[]).includes(name) || (s.bhajans||[]).some(e=>e.singer===name))
@@ -195,8 +224,8 @@ export class GitHubStore {
 
   // ── GitHub API ────────────────────────────────────────────────────────────────
 
-  async _fetchFromGitHub() {
-    const res = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${SESSIONS_PATH}?ref=${BRANCH}`);
+  async _fetchFromGitHub(signal) {
+    const res = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${SESSIONS_PATH}?ref=${BRANCH}`, null, signal);
     if (res.status === 404) { const e = new Error('Not found'); e.status = 404; throw e; }
     if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
     const data = await res.json();
@@ -254,9 +283,10 @@ export class GitHubStore {
       });
   }
 
-  _api(method, path, body) {
+  _api(method, path, body, signal) {
     return fetch(`${API_BASE}${path}`, {
       method,
+      signal,
       headers: {
         'Authorization': `Bearer ${this._pat}`,
         'Accept': 'application/vnd.github+json',
