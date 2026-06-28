@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260701';
-import { GitHubStore } from './github-store.js?v=20260701';
-import { LiveSession } from './live.js?v=20260701';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702';
+import { GitHubStore } from './github-store.js?v=20260702';
+import { LiveSession } from './live.js?v=20260702';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -73,31 +73,37 @@ class App {
 
   async _init() {
     let bhajansOk = true;
+    let pat;
     try {
-      await this.bhajans.load();
+      try {
+        await this.bhajans.load();
+      } catch (e) {
+        bhajansOk = false;
+      }
+
+      // Upgrade to GitHub-backed store if a PAT is saved
+      pat = GitHubStore.getPat();
+      if (pat) {
+        const ghStore = new GitHubStore(pat);
+        ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
+        this.sessions = ghStore;
+        document.getElementById('loading-text').textContent = 'Syncing sessions…';
+        await this.sessions.load(); // timeout handled inside GitHubStore.load()
+      } else {
+        // No PAT: load public sessions.json in the background — never block app startup
+        this.sessions.load().then(changed => { if (changed) this._route(); });
+      }
+
+      this._migratePitchFields();
+      this._populateFilters();
+      this._bindGlobal();
+      this._bindSettings();
+      this._initKeyboardAdjust();
     } catch (e) {
-      bhajansOk = false;
+      console.error('App init error:', e);
+    } finally {
+      this._hideLoading();
     }
-
-    // Upgrade to GitHub-backed store if a PAT is saved
-    const pat = GitHubStore.getPat();
-    if (pat) {
-      const ghStore = new GitHubStore(pat);
-      ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
-      this.sessions = ghStore;
-      document.getElementById('loading-text').textContent = 'Syncing sessions…';
-      await this.sessions.load();
-    } else {
-      // No PAT: load public sessions.json in the background — never block app startup
-      this.sessions.load().then(changed => { if (changed) this._route(); });
-    }
-
-    this._migratePitchFields();
-    this._populateFilters();
-    this._bindGlobal();
-    this._bindSettings();
-    this._initKeyboardAdjust();
-    this._hideLoading();
     this._updateSyncIndicator(pat ? this.sessions.syncStatus : 'local');
     if (!bhajansOk) this._toast('Bhajan catalog failed to load — browse & search unavailable', 'error');
     this._route();
