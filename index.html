@@ -474,6 +474,13 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').catch(() => {});
       });
+      // When a new service worker takes control, reload so the page gets fresh JS.
+      let _swReloading = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (_swReloading) return;
+        _swReloading = true;
+        window.location.reload();
+      });
     }
   </script>
 </body>
