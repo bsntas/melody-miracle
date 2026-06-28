@@ -159,67 +159,85 @@
     "series": "Weekend Bhajans E-City HSR",
     "date": "2024-01-13",
     "roomCode": "weekendbhaja-2024-01-13",
-    "singers": [],
+    "singers": [
+      "Ashik",
+      "Gigme",
+      "Basanta",
+      "Suvam",
+      "Isha",
+      "Karam"
+    ],
     "bhajans": [
       {
-        "id": "e_mqxzlf9rw9fu",
+        "id": "e_mqy20uylmmxr",
         "bhajan_id": "gajavadana-gananatha-natha-0",
         "bhajan_title": "Gajavadana Gananatha Natha",
         "bhajan_deity": "Ganesha",
+        "singers": [
+          "Ashik",
+          "Gigme"
+        ],
         "pitch": "2 Pancham / D",
-        "notes": null,
-        "addedAt": 1782663120783,
         "pitch_indian": "2 Pancham",
         "pitch_western": "D",
-        "singers": []
+        "notes": null,
+        "addedAt": 1782667200189
       },
       {
-        "id": "e_mqxzmrsf53ed",
+        "id": "e_mqy22314p9ju",
         "bhajan_id": "govinda-bolo-gopala-bolo",
         "bhajan_title": "Govinda Bolo Gopala Bolo",
         "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Basanta"
+        ],
         "pitch": "2 Pancham / D",
-        "notes": null,
-        "addedAt": 1782663183663,
         "pitch_indian": "2 Pancham",
         "pitch_western": "D",
-        "singers": []
+        "notes": null,
+        "addedAt": 1782667257304
       },
       {
-        "id": "e_mqxznmlntu66",
+        "id": "e_mqy2301klaqe",
         "bhajan_id": "kausalya-nandana-vaidehi-mohana",
         "bhajan_title": "Kausalya Nandana Vaidehi Mohana",
         "bhajan_deity": "Rama",
+        "singers": [
+          "Suvam"
+        ],
         "pitch": "1 Pancham / C",
-        "notes": null,
-        "addedAt": 1782663223595,
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
-        "singers": []
+        "notes": null,
+        "addedAt": 1782667300088
       },
       {
-        "id": "e_mqxzoxvlsvni",
+        "id": "e_mqy23x5qsuus",
         "bhajan_id": "sai-mata-pitha-deena-bandhu",
         "bhajan_title": "Sai Mata Pitha Deena Bandhu",
         "bhajan_deity": "Sai",
+        "singers": [
+          "Isha"
+        ],
         "pitch": "1 Pancham / C",
-        "notes": null,
-        "addedAt": 1782663284865,
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
-        "singers": []
+        "notes": null,
+        "addedAt": 1782667343006
       },
       {
-        "id": "e_mqxzpmadnyg5",
+        "id": "e_mqy24tet9e9b",
         "bhajan_id": "vittala-vittala-hari-vittala",
         "bhajan_title": "Vittala Vittala Hari Vittala",
         "bhajan_deity": "Vittala",
+        "singers": [
+          "Karam"
+        ],
         "pitch": "6 Pancham / A",
-        "notes": null,
-        "addedAt": 1782663316501,
         "pitch_indian": "6 Pancham",
         "pitch_western": "A",
-        "singers": []
+        "notes": null,
+        "addedAt": 1782667384805
       }
     ],
     "status": "completed",
