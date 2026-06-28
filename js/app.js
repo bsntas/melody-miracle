@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260708';
-import { GitHubStore } from './github-store.js?v=20260708';
-import { LiveSession } from './live.js?v=20260708';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260710';
+import { GitHubStore } from './github-store.js?v=20260710';
+import { LiveSession } from './live.js?v=20260710';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -97,6 +97,7 @@ class App {
       }
 
       this._migratePitchFields();
+      this._migrateSingersFields();
       this._populateFilters();
       this._bindGlobal();
       this._bindSettings();
@@ -123,6 +124,26 @@ class App {
           if (e.pitch && !e.pitch_indian) {
             const { pitch_indian, pitch_western } = splitPitchCombined(e.pitch);
             return { ...e, pitch_indian, pitch_western };
+          }
+          return e;
+        }),
+      });
+    }
+  }
+
+  // Migrate from e.singer (single string) to e.singers (array of strings)
+  _migrateSingersFields() {
+    for (const s of this.sessions.all()) {
+      const bhajans = s.bhajans || [];
+      if (!bhajans.some(e => ('singer' in e))) continue;
+      this.sessions.save({
+        ...s,
+        bhajans: bhajans.map(e => {
+          if ('singer' in e) {
+            const singers = e.singers || (e.singer ? [e.singer] : []);
+            const newEntry = { ...e, singers };
+            delete newEntry.singer;
+            return newEntry;
           }
           return e;
         }),
@@ -1960,19 +1981,31 @@ class App {
     this._mabConfirmAdd = () => {
       const b = this._mabSelected;
       if (!b) return;
-      const singer = document.getElementById('mab-singer').value;
+
+      // Flush any name still typed but not yet chip-added
+      const typedName = document.getElementById('mab-singer').value.trim();
+      if (typedName && !this._mabSingers.includes(typedName)) this._mabSingers.push(typedName);
+
+      const singers = this._mabSingers.length ? [...this._mabSingers] : null;
       const pitch  = document.getElementById('mab-pitch').value.trim();
       const notes  = document.getElementById('mab-notes').value.trim();
+      const { pitch_indian, pitch_western } = splitPitchCombined(pitch);
 
       const entry = {
         id: genId('e'),
-        bhajan_id: b.id, bhajan_title: b.title, bhajan_deity: b.deity,
-        singer: singer || null, pitch: pitch || null, notes: notes || null,
-        addedAt: Date.now(),
+        bhajan_id:    b.id,
+        bhajan_title: b.title,
+        bhajan_deity: b.deity,
+        singers:       singers,
+        pitch:         pitch || null,
+        pitch_indian:  pitch_indian || null,
+        pitch_western: pitch_western || null,
+        notes:         notes || null,
+        addedAt:       Date.now(),
       };
       const newBhajans = [...(session.bhajans || []), entry];
-      const singers = [...new Set(newBhajans.flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
-      const updated = { ...session, bhajans: newBhajans, singers };
+      const sessionSingers = [...new Set(newBhajans.flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
+      const updated = { ...session, bhajans: newBhajans, singers: sessionSingers };
       this.sessions.save(updated, { local: true });
 
       this._closeModal('modal-add-bhajan');

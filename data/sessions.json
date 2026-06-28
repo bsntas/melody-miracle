@@ -22,108 +22,126 @@
         "bhajan_id": "ganesha-charanam-parama-pavanam",
         "bhajan_title": "Ganesha Charanam Parama Pavanam",
         "bhajan_deity": "Ganesha, Guru",
-        "singer": "Basanta",
         "pitch": "2 Pancham / D",
         "notes": "Minor",
         "addedAt": 1782564215138,
         "pitch_indian": "2 Pancham",
-        "pitch_western": "D"
+        "pitch_western": "D",
+        "singers": [
+          "Basanta"
+        ]
       },
       {
         "id": "e_mqwdc0kmi36y",
         "bhajan_id": "hey-ram-bhagawan",
         "bhajan_title": "Hey Ram Bhagawan",
         "bhajan_deity": "Rama",
-        "singer": "Bishal Da",
         "pitch": "4 Pancham / F",
         "notes": "Minor",
         "addedAt": 1782565264102,
         "pitch_indian": "4 Pancham",
-        "pitch_western": "F"
+        "pitch_western": "F",
+        "singers": [
+          "Bishal Da"
+        ]
       },
       {
         "id": "e_mqwcbbmvud2c",
         "bhajan_id": "giridhara-naagara-kunja-vihari",
         "bhajan_title": "Giridhara Naagara Kunja Vihari",
         "bhajan_deity": "Krishna",
-        "singer": "Karam",
         "pitch": "1 Madhyam / F",
         "notes": "Minor",
         "addedAt": 1782563552167,
         "pitch_indian": "1 Madhyam",
-        "pitch_western": "F"
+        "pitch_western": "F",
+        "singers": [
+          "Karam"
+        ]
       },
       {
         "id": "e_mqwdgblpgljt",
         "bhajan_id": "aruna-ramana-sri-guru-deva",
         "bhajan_title": "Aruna Ramana Sri Guru Deva",
         "bhajan_deity": "Guru",
-        "singer": "Bhawana Bhauju",
         "pitch": "6.5 Pancham / A#",
         "notes": null,
         "addedAt": 1782565465021,
         "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#"
+        "pitch_western": "A#",
+        "singers": [
+          "Bhawana Bhauju"
+        ]
       },
       {
         "id": "e_mqw9k0ltzxd9",
         "bhajan_id": "giridhara-govinda-gopala-ghana-shyama",
         "bhajan_title": "Giridhara Govinda Gopala Ghana Shyama",
         "bhajan_deity": "Krishna",
-        "singer": "Anisha",
         "pitch": "6 Pancham / A",
         "notes": null,
         "addedAt": 1782558918929,
         "pitch_indian": "6 Pancham",
-        "pitch_western": "A"
+        "pitch_western": "A",
+        "singers": [
+          "Anisha"
+        ]
       },
       {
         "id": "e_mqwdgmpd7rnd",
         "bhajan_id": "shiva-hara-hey-hara-shiva",
         "bhajan_title": "Shiva Hara Hey Hara Shiva",
         "bhajan_deity": "Shiva",
-        "singer": "Sayujya",
         "pitch": "6 Pancham / A",
         "notes": "Minor",
         "addedAt": 1782565479409,
         "pitch_indian": "6 Pancham",
-        "pitch_western": "A"
+        "pitch_western": "A",
+        "singers": [
+          "Sayujya"
+        ]
       },
       {
         "id": "e_mqwctchhn9sf",
         "bhajan_id": "sharadey-jaya-sharadey-vaagvilasini-sharadey",
         "bhajan_title": "Sharadey Jaya Sharadey Vaagvilasini Sharadey",
         "bhajan_deity": "Devi",
-        "singer": "Ashik Rai",
         "pitch": "7 Pancham / B",
         "notes": null,
         "addedAt": 1782564393077,
         "pitch_indian": "7 Pancham",
-        "pitch_western": "B"
+        "pitch_western": "B",
+        "singers": [
+          "Ashik Rai"
+        ]
       },
       {
         "id": "e_mqwc8b679fv0",
         "bhajan_id": "namah-parvathi-pathayey-hara-hara",
         "bhajan_title": "Namah Parvathi Pathayey Hara Hara",
         "bhajan_deity": "Shiva",
-        "singer": "Pemila",
         "pitch": "2 Pancham / D",
         "notes": null,
         "addedAt": 1782563411599,
         "pitch_indian": "2 Pancham",
-        "pitch_western": "D"
+        "pitch_western": "D",
+        "singers": [
+          "Pemila"
+        ]
       },
       {
         "id": "e_mqwd58ibwq0y",
         "bhajan_id": "sarva-dharma-priya-deva",
         "bhajan_title": "Sarva Dharma Priya Deva",
         "bhajan_deity": "Sarva Dharma",
-        "singer": "Gigme",
         "pitch": "6.5 Pancham / A#",
         "notes": "Minor",
         "addedAt": 1782564947795,
         "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#"
+        "pitch_western": "A#",
+        "singers": [
+          "Gigme"
+        ]
       }
     ],
     "status": "completed",
@@ -148,60 +166,60 @@
         "bhajan_id": "gajavadana-gananatha-natha-0",
         "bhajan_title": "Gajavadana Gananatha Natha",
         "bhajan_deity": "Ganesha",
-        "singer": null,
         "pitch": "2 Pancham / D",
         "notes": null,
         "addedAt": 1782663120783,
         "pitch_indian": "2 Pancham",
-        "pitch_western": "D"
+        "pitch_western": "D",
+        "singers": []
       },
       {
         "id": "e_mqxzmrsf53ed",
         "bhajan_id": "govinda-bolo-gopala-bolo",
         "bhajan_title": "Govinda Bolo Gopala Bolo",
         "bhajan_deity": "Sarva Dharma",
-        "singer": null,
         "pitch": "2 Pancham / D",
         "notes": null,
         "addedAt": 1782663183663,
         "pitch_indian": "2 Pancham",
-        "pitch_western": "D"
+        "pitch_western": "D",
+        "singers": []
       },
       {
         "id": "e_mqxznmlntu66",
         "bhajan_id": "kausalya-nandana-vaidehi-mohana",
         "bhajan_title": "Kausalya Nandana Vaidehi Mohana",
         "bhajan_deity": "Rama",
-        "singer": null,
         "pitch": "1 Pancham / C",
         "notes": null,
         "addedAt": 1782663223595,
         "pitch_indian": "1 Pancham",
-        "pitch_western": "C"
+        "pitch_western": "C",
+        "singers": []
       },
       {
         "id": "e_mqxzoxvlsvni",
         "bhajan_id": "sai-mata-pitha-deena-bandhu",
         "bhajan_title": "Sai Mata Pitha Deena Bandhu",
         "bhajan_deity": "Sai",
-        "singer": null,
         "pitch": "1 Pancham / C",
         "notes": null,
         "addedAt": 1782663284865,
         "pitch_indian": "1 Pancham",
-        "pitch_western": "C"
+        "pitch_western": "C",
+        "singers": []
       },
       {
         "id": "e_mqxzpmadnyg5",
         "bhajan_id": "vittala-vittala-hari-vittala",
         "bhajan_title": "Vittala Vittala Hari Vittala",
         "bhajan_deity": "Vittala",
-        "singer": null,
         "pitch": "6 Pancham / A",
         "notes": null,
         "addedAt": 1782663316501,
         "pitch_indian": "6 Pancham",
-        "pitch_western": "A"
+        "pitch_western": "A",
+        "singers": []
       }
     ],
     "status": "completed",
@@ -229,60 +247,70 @@
         "bhajan_id": "vinayaka-vinayaka",
         "bhajan_title": "Vinayaka Vinayaka",
         "bhajan_deity": "Ganesha",
-        "singer": "Karam",
         "pitch": "3 Pancham / E",
         "notes": null,
         "addedAt": 1782628851401,
         "pitch_indian": "3 Pancham",
-        "pitch_western": "E"
+        "pitch_western": "E",
+        "singers": [
+          "Karam"
+        ]
       },
       {
         "id": "e_mqxf8i3fy811",
         "bhajan_id": "giridhara-govinda-gopala-ghana-shyama",
         "bhajan_title": "Giridhara Govinda Gopala Ghana Shyama",
         "bhajan_deity": "Krishna",
-        "singer": "Suvam",
         "pitch": "1 Pancham / C",
         "notes": null,
         "addedAt": 1782628925595,
         "pitch_indian": "1 Pancham",
-        "pitch_western": "C"
+        "pitch_western": "C",
+        "singers": [
+          "Suvam"
+        ]
       },
       {
         "id": "e_mqxf7qutyw13",
         "bhajan_id": "jhulana-mey-jhule-merey-sai-nandalala",
         "bhajan_title": "Jhulana Mey Jhule Merey Sai Nandalala",
         "bhajan_deity": "Sai",
-        "singer": "Anisha",
         "pitch": "7 Pancham / B",
         "notes": null,
         "addedAt": 1782628890293,
         "pitch_indian": "7 Pancham",
-        "pitch_western": "B"
+        "pitch_western": "B",
+        "singers": [
+          "Anisha"
+        ]
       },
       {
         "id": "e_mqxf9uk33mp3",
         "bhajan_id": "krishna-krishna-yaduvara-krishna",
         "bhajan_title": "Krishna Krishna Yaduvara Krishna",
         "bhajan_deity": "Krishna",
-        "singer": "Gigme",
         "pitch": "6 Pancham / A",
         "notes": null,
         "addedAt": 1782628988403,
         "pitch_indian": "6 Pancham",
-        "pitch_western": "A"
+        "pitch_western": "A",
+        "singers": [
+          "Gigme"
+        ]
       },
       {
         "id": "e_mqxfbwa8rtjd",
         "bhajan_id": "jai-durga-lakshmi-saraswathi-sai-jaganmata",
         "bhajan_title": "Jai Durga Lakshmi Saraswathi Sai Jaganmata",
         "bhajan_deity": "Devi",
-        "singer": "Ashik",
         "pitch": "5 Pancham / G",
         "notes": null,
         "addedAt": 1782629083952,
         "pitch_indian": "5 Pancham",
-        "pitch_western": "G"
+        "pitch_western": "G",
+        "singers": [
+          "Ashik"
+        ]
       }
     ],
     "status": "completed",
