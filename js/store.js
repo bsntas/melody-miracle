@@ -241,7 +241,8 @@ export class SessionStore {
       const startKey = start.toISOString().slice(0, 10);
       const endKey   = end.toISOString().slice(0, 10);
       const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-      weeks.push({ startKey, endKey, label: fmt(start), count: 0 });
+      const month = start.toLocaleDateString('en-IN', { month: 'short' });
+      weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
     }
     for (const s of this._sessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);

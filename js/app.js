@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260628';
-import { GitHubStore } from './github-store.js?v=20260628';
-import { LiveSession } from './live.js?v=20260628';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260629';
+import { GitHubStore } from './github-store.js?v=20260629';
+import { LiveSession } from './live.js?v=20260629';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -482,14 +482,15 @@ class App {
     const maxCount = Math.max(...activity.map(w => w.count), 1);
     const barsEl = document.getElementById('dash-activity-bars');
     barsEl.innerHTML = `<div class="activity-bars">
-      ${activity.map(w => `
-        <div class="activity-bar-wrap">
+      ${activity.map((w, i) => {
+        const showLabel = i === 0 || activity[i - 1].month !== w.month;
+        return `<div class="activity-bar-wrap">
           <div class="activity-bar ${w.count > 0 ? 'has-data' : ''}"
             style="height:${Math.max(4, (w.count / maxCount) * 60)}px"
             title="Week of ${w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
-          <div class="activity-bar-label">${w.label}</div>
-        </div>
-      `).join('')}
+          ${showLabel ? `<div class="activity-bar-label">${w.month}</div>` : ''}
+        </div>`;
+      }).join('')}
     </div>`;
 
     // Top bhajans
