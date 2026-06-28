@@ -205,6 +205,32 @@ export class SessionStore {
       .map(([id, count]) => ({ id, title: titles[id], count }));
   }
 
+  bhajanSungCounts() {
+    const counts = {};
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || []))
+        if (e.bhajan_id) counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
+    return counts;
+  }
+
+  bhajanHistory(bhajanId) {
+    const rows = [];
+    for (const s of [...this._sessions].sort((a, b) => b.date.localeCompare(a.date))) {
+      for (const e of (s.bhajans || [])) {
+        if (e.bhajan_id === bhajanId) {
+          rows.push({
+            date: s.date,
+            sessionLabel: s.label || '',
+            singer: e.singer || '',
+            pitch_indian: e.pitch_indian || '',
+            pitch_western: e.pitch_western || '',
+          });
+        }
+      }
+    }
+    return rows;
+  }
+
   topSingers(n = 10) {
     const counts = {};
     for (const s of this._sessions) {

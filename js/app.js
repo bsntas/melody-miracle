@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702';
-import { GitHubStore } from './github-store.js?v=20260702';
-import { LiveSession } from './live.js?v=20260702';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703';
+import { GitHubStore } from './github-store.js?v=20260703';
+import { LiveSession } from './live.js?v=20260703';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -461,7 +461,7 @@ class App {
     // Date / greeting
     const now = new Date();
     const hour = now.getHours();
-    const greeting = hour < 12 ? 'Good Morning 🙏' : hour < 17 ? 'Namaste 🙏' : 'Good Evening 🙏';
+    const greeting = hour < 12 ? 'Good Morning 🙏' : hour < 17 ? 'Sairam 🙏' : 'Good Evening 🙏';
     document.getElementById('dash-greeting').textContent = greeting;
     document.getElementById('dash-date').textContent = now.toLocaleDateString('en-IN', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
@@ -643,6 +643,7 @@ class App {
   }
 
   _renderBrowse() {
+    this._bhajanCounts = this.sessions.bhajanSungCounts();
     this._applyBrowseFilters();
   }
 
@@ -709,6 +710,7 @@ class App {
       ? 'bhajan-tag-tempo-' + (b.tempo.toLowerCase().includes('fast') ? 'fast' : b.tempo.toLowerCase().includes('slow') ? 'slow' : 'medium')
       : '';
     const levelClass = b.level ? 'bhajan-tag-level-' + b.level.toLowerCase() : '';
+    const sungCount  = this._bhajanCounts?.[b.id] || 0;
 
     return `<div class="bhajan-item" data-id="${b.id}">
       <div class="bhajan-item-main">
@@ -719,6 +721,7 @@ class App {
           ${b.level ? `<span class="bhajan-tag ${levelClass}">${escHtml(b.level)}</span>` : ''}
           ${b.raga ? `<span class="bhajan-tag">${escHtml(b.raga.split('/')[0].trim())}</span>` : ''}
           ${b.scale ? `<span class="bhajan-tag bhajan-tag-scale-${(b.scale||'').toLowerCase()}">${escHtml(b.scale)}</span>` : ''}
+          ${sungCount ? `<span class="bhajan-tag bhajan-tag-sung">${sungCount}× sung</span>` : ''}
         </div>
       </div>
       <div class="bhajan-item-pitches">
@@ -773,6 +776,8 @@ class App {
       ['Ladies Pitch', [fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch, b.scale].filter(Boolean).join(' · ')],
     ].filter(([, v]) => v);
 
+    const history = this.sessions.bhajanHistory(b.id);
+
     document.getElementById('mbhajan-body').innerHTML = `
       <div class="bhajan-detail-meta">
         ${metaFields.map(([k, v]) => `
@@ -792,6 +797,21 @@ class App {
       ${b.meaning ? `
         <div class="bhajan-section-title">Meaning</div>
         <div class="bhajan-meaning">${escHtml(b.meaning)}</div>` : ''}
+      <div class="bhajan-section-title">Session History${history.length ? ` (${history.length})` : ''}</div>
+      ${history.length ? `
+        <div class="bhajan-history">
+          ${history.map(h => {
+            const pitch = [h.pitch_indian, h.pitch_western].filter(Boolean).join(' · ');
+            return `<div class="bhajan-history-item">
+              <span class="bh-date">${escHtml(formatDate(h.date))}${h.sessionLabel ? ` — ${escHtml(h.sessionLabel)}` : ''}</span>
+              <div class="bh-details">
+                ${h.singer ? `<span class="bh-singer">👤 ${escHtml(h.singer)}</span>` : ''}
+                ${pitch    ? `<span class="bh-pitch">${escHtml(pitch)}</span>` : ''}
+              </div>
+            </div>`;
+          }).join('')}
+        </div>` :
+        `<p class="text-muted text-small">Not recorded in any session yet</p>`}
     `;
 
     this._openModal('modal-bhajan');
