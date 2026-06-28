@@ -37,13 +37,14 @@
   --safe-bottom:    env(safe-area-inset-bottom, 0px);
 }
 
-html { font-size: 16px; }
+html { font-size: 16px; overflow-x: hidden; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--cream);
   color: var(--text);
   line-height: 1.5;
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 a { color: var(--saffron); text-decoration: none; }
@@ -237,11 +238,11 @@ img { max-width: 100%; }
 .rank-bar-wrap { flex: 1; height: 4px; background: var(--surface-2); border-radius: 2px; }
 .rank-bar { height: 100%; border-radius: 2px; background: var(--saffron); }
 
-.activity-bars { display: flex; align-items: flex-end; gap: 2px; height: 78px; padding-bottom: 18px; }
-.activity-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px; height: 100%; }
+.activity-bars { display: flex; align-items: flex-end; gap: 2px; height: 78px; padding-bottom: 18px; overflow: hidden; }
+.activity-bar-wrap { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px; height: 100%; overflow: hidden; }
 .activity-bar { width: 100%; background: var(--saffron-light); border-radius: 2px 2px 0 0; min-height: 2px; transition: height .3s; }
 .activity-bar.has-data { background: var(--saffron); }
-.activity-bar-label { font-size: 0.55rem; color: var(--text-3); white-space: nowrap; text-align: center; line-height: 1; }
+.activity-bar-label { font-size: 0.55rem; color: var(--text-3); text-align: center; line-height: 1; white-space: nowrap; }
 
 /* ─── Session Cards (recent/history) ────────────────────────────────────── */
 .session-card {
@@ -494,7 +495,7 @@ img { max-width: 100%; }
   font-size: 1rem; font-weight: 700;
   background: var(--gold-light); color: #78350f;
   padding: 0.2rem 0.75rem; border-radius: var(--radius);
-  white-space: nowrap;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis;
 }
 
 .playing-pitch-display {
