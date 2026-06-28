@@ -247,12 +247,12 @@ class App {
       if (b?.ladies_pitch) this._setMabPitch(b.ladies_pitch);
     });
     // Dual pitch selects — bidirectional linking
-    document.getElementById('mab-pitch-indian').addEventListener('change', e => {
+    document.getElementById('mab-pitch-indian')?.addEventListener('change', e => {
       const p = pitchByIndian(e.target.value);
       document.getElementById('mab-pitch-western').value = p?.western || '';
       document.getElementById('mab-pitch').value         = p?.combined || '';
     });
-    document.getElementById('mab-pitch-western').addEventListener('change', e => {
+    document.getElementById('mab-pitch-western')?.addEventListener('change', e => {
       const series = pitchByIndian(document.getElementById('mab-pitch-indian').value)?.series || 'Pancham';
       const p = pitchByWestern(e.target.value, series);
       document.getElementById('mab-pitch-indian').value = p?.indian || '';
