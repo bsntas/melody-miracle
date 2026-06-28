@@ -24,7 +24,9 @@ export class GitHubStore {
     this._sha         = null;   // current file SHA on GitHub
     this._busy        = false;  // commit in-flight?
     this._dirty       = false;  // changed while commit was in-flight?
-    this.syncStatus   = 'idle'; // 'idle' | 'syncing' | 'ok' | 'error'
+    this._commitTimer = null;   // debounce timer for auto-commit
+    this._pendingMsg  = null;   // commit message accumulated during debounce
+    this.syncStatus   = 'idle'; // 'idle' | 'syncing' | 'ok' | 'error' | 'pending'
     this.onSyncChange = null;   // (status, message?) => void
   }
 
@@ -75,18 +77,26 @@ export class GitHubStore {
   all()  { return [...this._sessions].sort((a, b) => b.date.localeCompare(a.date)); }
   get(id) { return this._sessions.find(s => s.id === id) || null; }
 
-  save(session) {
+  // local:true → write to localStorage only; caller must call commitNow() when ready.
+  save(session, { local = false } = {}) {
     const idx = this._sessions.findIndex(s => s.id === session.id);
     if (idx >= 0) this._sessions[idx] = { ...session };
     else          this._sessions.push({ ...session });
     this._saveCache();
-    this._scheduleCommit();
+    if (local) { this._setSync('pending'); } else { this._scheduleCommit(30000); }
   }
 
   delete(id) {
     this._sessions = this._sessions.filter(s => s.id !== id);
     this._saveCache();
-    this._scheduleCommit();
+    this._scheduleCommit(0);  // immediate — user explicitly confirmed
+  }
+
+  // Force an immediate GitHub commit (cancels any pending debounce timer).
+  commitNow(msg) {
+    clearTimeout(this._commitTimer);
+    this._commitTimer = null;
+    this._runCommit(msg);
   }
 
   // Draft (session in progress) — local only, no commit needed
@@ -286,20 +296,31 @@ export class GitHubStore {
     try { localStorage.setItem(SYNC_META_KEY, JSON.stringify({ ts: Date.now() })); } catch {}
   }
 
-  // Serialised commit queue: don't overlap commits (avoids SHA race)
-  _scheduleCommit(msg) {
+  // Debounced commit scheduler. delay=0 commits immediately.
+  _scheduleCommit(delay, msg) {
+    if (msg) this._pendingMsg = msg;
+    clearTimeout(this._commitTimer);
+    if (delay === 0) {
+      this._runCommit();
+    } else {
+      this._commitTimer = setTimeout(() => this._runCommit(), delay);
+    }
+  }
+
+  _runCommit(msg) {
+    const message = msg || this._pendingMsg || 'Update bhajan sessions';
+    this._pendingMsg = null;
     if (this._busy) { this._dirty = true; return; }
     this._busy = true;
+    this._dirty = false;
     this._setSync('syncing');
-    this._commitToGitHub(msg)
+    this._commitToGitHub(message)
       .then(() => {
         this._setSync('ok', `Saved ${new Date().toLocaleTimeString()}`);
+        this._busy = false;
         if (this._dirty) {
           this._dirty = false;
-          this._busy = false;
-          this._scheduleCommit();
-        } else {
-          this._busy = false;
+          this._scheduleCommit(30000);
         }
       })
       .catch(err => {
