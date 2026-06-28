@@ -44,7 +44,7 @@ export class BhajanStore {
 
   search(query, filters = {}) {
     const q = (query || '').toLowerCase().trim();
-    return this.bhajans.filter((b, i) => {
+    const results = this.bhajans.filter((b, i) => {
       if (q && !this._matchQuery(q, this._index[i])) return false;
       if (filters.deity && !(b.deity || '').toLowerCase().includes(filters.deity.toLowerCase())) return false;
       if (filters.language && !(b.language || '').toLowerCase().includes(filters.language.toLowerCase())) return false;
@@ -52,6 +52,21 @@ export class BhajanStore {
       if (filters.level && b.level !== filters.level) return false;
       return true;
     });
+    if (!q) return results;
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return results.sort((a, b) => this._scoreQuery(tokens, b) - this._scoreQuery(tokens, a));
+  }
+
+  // Score by how many times query tokens appear in the title (weight 3).
+  // Higher score = more relevant. Bhajans with repeated title words rank above partial matches.
+  _scoreQuery(tokens, bhajan) {
+    const title = (bhajan.title || '').toLowerCase();
+    let score = 0;
+    for (const tok of tokens) {
+      let idx = 0;
+      while ((idx = title.indexOf(tok, idx)) !== -1) { score += 3; idx += tok.length; }
+    }
+    return score;
   }
 
   getById(id) {
@@ -203,6 +218,32 @@ export class SessionStore {
       .sort((a, b) => b[1] - a[1])
       .slice(0, n)
       .map(([id, count]) => ({ id, title: titles[id], count }));
+  }
+
+  bhajanSungCounts() {
+    const counts = {};
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || []))
+        if (e.bhajan_id) counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
+    return counts;
+  }
+
+  bhajanHistory(bhajanId) {
+    const rows = [];
+    for (const s of [...this._sessions].sort((a, b) => b.date.localeCompare(a.date))) {
+      for (const e of (s.bhajans || [])) {
+        if (e.bhajan_id === bhajanId) {
+          rows.push({
+            date: s.date,
+            sessionLabel: s.label || '',
+            singer: e.singer || '',
+            pitch_indian: e.pitch_indian || '',
+            pitch_western: e.pitch_western || '',
+          });
+        }
+      }
+    }
+    return rows;
   }
 
   topSingers(n = 10) {

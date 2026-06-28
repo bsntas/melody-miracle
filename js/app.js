@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702';
-import { GitHubStore } from './github-store.js?v=20260702';
-import { LiveSession } from './live.js?v=20260702';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704';
+import { GitHubStore } from './github-store.js?v=20260704';
+import { LiveSession } from './live.js?v=20260704';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -173,30 +173,30 @@ class App {
 
   _bindGlobal() {
     // Dashboard
-    document.getElementById('btn-dash-new-session').addEventListener('click', () => this._openNewSession());
-    document.getElementById('btn-dash-join-session').addEventListener('click', () => this._openJoinModal());
-    document.getElementById('btn-dash-goto-live').addEventListener('click', () => { location.hash = '#session'; });
+    document.getElementById('btn-dash-new-session')?.addEventListener('click', () => this._openNewSession());
+    document.getElementById('btn-dash-join-session')?.addEventListener('click', () => this._openJoinModal());
+    document.getElementById('btn-dash-goto-live')?.addEventListener('click', () => { location.hash = '#session'; });
 
     // Browse
-    document.getElementById('browse-search').addEventListener('input', () => this._applyBrowseFilters());
-    document.getElementById('filter-deity').addEventListener('change', () => this._applyBrowseFilters());
-    document.getElementById('filter-language').addEventListener('change', () => this._applyBrowseFilters());
-    document.getElementById('filter-tempo').addEventListener('change', () => this._applyBrowseFilters());
-    document.getElementById('filter-level').addEventListener('change', () => this._applyBrowseFilters());
+    document.getElementById('browse-search')?.addEventListener('input', () => this._applyBrowseFilters());
+    document.getElementById('filter-deity')?.addEventListener('change', () => this._applyBrowseFilters());
+    document.getElementById('filter-language')?.addEventListener('change', () => this._applyBrowseFilters());
+    document.getElementById('filter-tempo')?.addEventListener('change', () => this._applyBrowseFilters());
+    document.getElementById('filter-level')?.addEventListener('change', () => this._applyBrowseFilters());
 
     // History
-    document.getElementById('btn-add-backdated').addEventListener('click', () => this._openNewSession(true));
+    document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(true));
 
     // Singer back
-    document.getElementById('btn-singer-back').addEventListener('click', () => history.back());
-    document.getElementById('btn-session-detail-back').addEventListener('click', () => { location.hash = '#history'; });
+    document.getElementById('btn-singer-back')?.addEventListener('click', () => history.back());
+    document.getElementById('btn-session-detail-back')?.addEventListener('click', () => { location.hash = '#history'; });
 
     // Bhajan modal
-    document.getElementById('mbhajan-close').addEventListener('click', () => this._closeBhajanModal());
-    document.getElementById('modal-bhajan').addEventListener('click', e => {
+    document.getElementById('mbhajan-close')?.addEventListener('click', () => this._closeBhajanModal());
+    document.getElementById('modal-bhajan')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-bhajan')) this._closeBhajanModal();
     });
-    document.getElementById('mbhajan-add-to-session').addEventListener('click', () => {
+    document.getElementById('mbhajan-add-to-session')?.addEventListener('click', () => {
       const id = document.getElementById('mbhajan-add-to-session').dataset.bhajanId;
       this._closeBhajanModal();
       if (!this.liveState) {
@@ -210,13 +210,13 @@ class App {
       const bhajan = this.bhajans.getById(id);
       if (bhajan) this._openAddBhajanModal(bhajan);
     });
-    document.getElementById('mbhajan-prev').addEventListener('click', () => {
+    document.getElementById('mbhajan-prev')?.addEventListener('click', () => {
       const ctx = this._bhajanModalContext;
       if (!ctx || ctx.index <= 0) return;
       const newIdx = ctx.index - 1;
       this._openBhajanModal(ctx.bhajans[newIdx], { ...ctx, index: newIdx });
     });
-    document.getElementById('mbhajan-next').addEventListener('click', () => {
+    document.getElementById('mbhajan-next')?.addEventListener('click', () => {
       const ctx = this._bhajanModalContext;
       if (!ctx || ctx.index >= ctx.bhajans.length - 1) return;
       const newIdx = ctx.index + 1;
@@ -224,32 +224,32 @@ class App {
     });
 
     // Session form modal
-    document.getElementById('mform-close').addEventListener('click', () => this._closeModal('modal-session-form'));
-    document.getElementById('btn-mform-cancel').addEventListener('click', () => this._closeModal('modal-session-form'));
-    document.getElementById('modal-session-form').addEventListener('click', e => {
+    document.getElementById('mform-close')?.addEventListener('click', () => this._closeModal('modal-session-form'));
+    document.getElementById('btn-mform-cancel')?.addEventListener('click', () => this._closeModal('modal-session-form'));
+    document.getElementById('modal-session-form')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-session-form')) this._closeModal('modal-session-form');
     });
-    document.getElementById('btn-mform-submit').addEventListener('click', () => this._submitSessionForm());
-    document.getElementById('sf-series').addEventListener('change', () => {
+    document.getElementById('btn-mform-submit')?.addEventListener('click', () => this._submitSessionForm());
+    document.getElementById('sf-series')?.addEventListener('change', () => {
       const newInput = document.getElementById('sf-series-new');
       const isNew = document.getElementById('sf-series').value === '__new__';
       newInput.style.display = isNew ? '' : 'none';
       if (isNew) newInput.focus();
     });
     // Add Bhajan modal
-    document.getElementById('mab-close').addEventListener('click', () => this._closeModal('modal-add-bhajan'));
-    document.getElementById('btn-mab-cancel').addEventListener('click', () => this._closeModal('modal-add-bhajan'));
-    document.getElementById('modal-add-bhajan').addEventListener('click', e => {
+    document.getElementById('mab-close')?.addEventListener('click', () => this._closeModal('modal-add-bhajan'));
+    document.getElementById('btn-mab-cancel')?.addEventListener('click', () => this._closeModal('modal-add-bhajan'));
+    document.getElementById('modal-add-bhajan')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-add-bhajan')) this._closeModal('modal-add-bhajan');
     });
-    document.getElementById('mab-search').addEventListener('input', () => this._mabSearch());
-    document.getElementById('btn-mab-back').addEventListener('click', () => this._mabGoStep(1));
-    document.getElementById('btn-mab-add').addEventListener('click', () => this._mabConfirmAdd());
-    document.getElementById('btn-pitch-gents').addEventListener('click', () => {
+    document.getElementById('mab-search')?.addEventListener('input', () => this._mabSearch());
+    document.getElementById('btn-mab-back')?.addEventListener('click', () => this._mabGoStep(1));
+    document.getElementById('btn-mab-add')?.addEventListener('click', () => this._mabConfirmAdd());
+    document.getElementById('btn-pitch-gents')?.addEventListener('click', () => {
       const b = this._mabSelected;
       if (b?.gents_pitch) this._setMabPitch(b.gents_pitch);
     });
-    document.getElementById('btn-pitch-ladies').addEventListener('click', () => {
+    document.getElementById('btn-pitch-ladies')?.addEventListener('click', () => {
       const b = this._mabSelected;
       if (b?.ladies_pitch) this._setMabPitch(b.ladies_pitch);
     });
@@ -265,17 +265,17 @@ class App {
       document.getElementById('mab-pitch-indian').value = p?.indian || '';
       document.getElementById('mab-pitch').value        = p?.combined || '';
     });
-    document.getElementById('mab-singer').addEventListener('change', () => this._mabUpdatePitchHint());
-    document.getElementById('mab-singer').addEventListener('input', () => this._mabUpdatePitchHint());
+    document.getElementById('mab-singer')?.addEventListener('change', () => this._mabUpdatePitchHint());
+    document.getElementById('mab-singer')?.addEventListener('input', () => this._mabUpdatePitchHint());
 
     // Join modal
-    document.getElementById('mjoin-close').addEventListener('click', () => this._closeModal('modal-join-session'));
-    document.getElementById('btn-mjoin-cancel').addEventListener('click', () => this._closeModal('modal-join-session'));
-    document.getElementById('btn-mjoin-join').addEventListener('click', () => this._joinSession());
-    document.getElementById('mjoin-date').addEventListener('keydown', e => {
+    document.getElementById('mjoin-close')?.addEventListener('click', () => this._closeModal('modal-join-session'));
+    document.getElementById('btn-mjoin-cancel')?.addEventListener('click', () => this._closeModal('modal-join-session'));
+    document.getElementById('btn-mjoin-join')?.addEventListener('click', () => this._joinSession());
+    document.getElementById('mjoin-date')?.addEventListener('keydown', e => {
       if (e.key === 'Enter') this._joinSession();
     });
-    document.getElementById('modal-join-session').addEventListener('click', e => {
+    document.getElementById('modal-join-session')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-join-session')) this._closeModal('modal-join-session');
     });
   }
@@ -461,7 +461,7 @@ class App {
     // Date / greeting
     const now = new Date();
     const hour = now.getHours();
-    const greeting = hour < 12 ? 'Good Morning 🙏' : hour < 17 ? 'Namaste 🙏' : 'Good Evening 🙏';
+    const greeting = hour < 12 ? 'Good Morning 🙏' : hour < 17 ? 'Sairam 🙏' : 'Good Evening 🙏';
     document.getElementById('dash-greeting').textContent = greeting;
     document.getElementById('dash-date').textContent = now.toLocaleDateString('en-IN', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
@@ -643,6 +643,7 @@ class App {
   }
 
   _renderBrowse() {
+    this._bhajanCounts = this.sessions.bhajanSungCounts();
     this._applyBrowseFilters();
   }
 
@@ -709,6 +710,7 @@ class App {
       ? 'bhajan-tag-tempo-' + (b.tempo.toLowerCase().includes('fast') ? 'fast' : b.tempo.toLowerCase().includes('slow') ? 'slow' : 'medium')
       : '';
     const levelClass = b.level ? 'bhajan-tag-level-' + b.level.toLowerCase() : '';
+    const sungCount  = this._bhajanCounts?.[b.id] || 0;
 
     return `<div class="bhajan-item" data-id="${b.id}">
       <div class="bhajan-item-main">
@@ -719,6 +721,7 @@ class App {
           ${b.level ? `<span class="bhajan-tag ${levelClass}">${escHtml(b.level)}</span>` : ''}
           ${b.raga ? `<span class="bhajan-tag">${escHtml(b.raga.split('/')[0].trim())}</span>` : ''}
           ${b.scale ? `<span class="bhajan-tag bhajan-tag-scale-${(b.scale||'').toLowerCase()}">${escHtml(b.scale)}</span>` : ''}
+          ${sungCount ? `<span class="bhajan-tag bhajan-tag-sung">${sungCount}× sung</span>` : ''}
         </div>
       </div>
       <div class="bhajan-item-pitches">
@@ -773,6 +776,8 @@ class App {
       ['Ladies Pitch', [fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch, b.scale].filter(Boolean).join(' · ')],
     ].filter(([, v]) => v);
 
+    const history = this.sessions.bhajanHistory(b.id);
+
     document.getElementById('mbhajan-body').innerHTML = `
       <div class="bhajan-detail-meta">
         ${metaFields.map(([k, v]) => `
@@ -792,6 +797,21 @@ class App {
       ${b.meaning ? `
         <div class="bhajan-section-title">Meaning</div>
         <div class="bhajan-meaning">${escHtml(b.meaning)}</div>` : ''}
+      <div class="bhajan-section-title">Session History${history.length ? ` (${history.length})` : ''}</div>
+      ${history.length ? `
+        <div class="bhajan-history">
+          ${history.map(h => {
+            const pitch = [h.pitch_indian, h.pitch_western].filter(Boolean).join(' · ');
+            return `<div class="bhajan-history-item">
+              <span class="bh-date">${escHtml(formatDate(h.date))}${h.sessionLabel ? ` — ${escHtml(h.sessionLabel)}` : ''}</span>
+              <div class="bh-details">
+                ${h.singer ? `<span class="bh-singer">👤 ${escHtml(h.singer)}</span>` : ''}
+                ${pitch    ? `<span class="bh-pitch">${escHtml(pitch)}</span>` : ''}
+              </div>
+            </div>`;
+          }).join('')}
+        </div>` :
+        `<p class="text-muted text-small">Not recorded in any session yet</p>`}
     `;
 
     this._openModal('modal-bhajan');
