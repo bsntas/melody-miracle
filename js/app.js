@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704';
-import { GitHubStore } from './github-store.js?v=20260704';
-import { LiveSession } from './live.js?v=20260704';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260705';
+import { GitHubStore } from './github-store.js?v=20260705';
+import { LiveSession } from './live.js?v=20260705';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -61,9 +61,10 @@ class App {
     this.live      = null;  // LiveSession instance when active
     this.liveState = null;  // current live session state (host or observer)
 
-    this._toastTimer = null;
-    this._browseFiltered = [];
-    this._browsePage     = 0;
+    this._toastTimer      = null;
+    this._browseSearchTimer = null;
+    this._browseFiltered  = [];
+    this._browsePage      = 0;
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
     this._bhajanModalContext = null;
@@ -177,8 +178,14 @@ class App {
     document.getElementById('btn-dash-join-session')?.addEventListener('click', () => this._openJoinModal());
     document.getElementById('btn-dash-goto-live')?.addEventListener('click', () => { location.hash = '#session'; });
 
-    // Browse
-    document.getElementById('browse-search')?.addEventListener('input', () => this._applyBrowseFilters());
+    // Browse — debounce typing to avoid Levenshtein search on every keystroke;
+    // 'search' covers the clear-X button which should respond immediately.
+    const browseSearch = document.getElementById('browse-search');
+    browseSearch?.addEventListener('input', () => {
+      clearTimeout(this._browseSearchTimer);
+      this._browseSearchTimer = setTimeout(() => this._applyBrowseFilters(), 220);
+    });
+    browseSearch?.addEventListener('search', () => this._applyBrowseFilters());
     document.getElementById('filter-deity')?.addEventListener('change', () => this._applyBrowseFilters());
     document.getElementById('filter-language')?.addEventListener('change', () => this._applyBrowseFilters());
     document.getElementById('filter-tempo')?.addEventListener('change', () => this._applyBrowseFilters());
