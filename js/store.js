@@ -44,7 +44,7 @@ export class BhajanStore {
 
   search(query, filters = {}) {
     const q = (query || '').toLowerCase().trim();
-    return this.bhajans.filter((b, i) => {
+    const results = this.bhajans.filter((b, i) => {
       if (q && !this._matchQuery(q, this._index[i])) return false;
       if (filters.deity && !(b.deity || '').toLowerCase().includes(filters.deity.toLowerCase())) return false;
       if (filters.language && !(b.language || '').toLowerCase().includes(filters.language.toLowerCase())) return false;
@@ -52,6 +52,21 @@ export class BhajanStore {
       if (filters.level && b.level !== filters.level) return false;
       return true;
     });
+    if (!q) return results;
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return results.sort((a, b) => this._scoreQuery(tokens, b) - this._scoreQuery(tokens, a));
+  }
+
+  // Score by how many times query tokens appear in the title (weight 3).
+  // Higher score = more relevant. Bhajans with repeated title words rank above partial matches.
+  _scoreQuery(tokens, bhajan) {
+    const title = (bhajan.title || '').toLowerCase();
+    let score = 0;
+    for (const tok of tokens) {
+      let idx = 0;
+      while ((idx = title.indexOf(tok, idx)) !== -1) { score += 3; idx += tok.length; }
+    }
+    return score;
   }
 
   getById(id) {

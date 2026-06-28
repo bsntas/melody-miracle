@@ -1,6 +1,6 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260703';
+const CACHE = 'melody-miracle-20260704';
 
 // App shell: always cached on install.
 const PRECACHE = [
