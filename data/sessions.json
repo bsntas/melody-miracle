@@ -151,7 +151,9 @@
         "singer": null,
         "pitch": "2 Pancham / D",
         "notes": null,
-        "addedAt": 1782663120783
+        "addedAt": 1782663120783,
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D"
       },
       {
         "id": "e_mqxzmrsf53ed",
@@ -161,7 +163,9 @@
         "singer": null,
         "pitch": "2 Pancham / D",
         "notes": null,
-        "addedAt": 1782663183663
+        "addedAt": 1782663183663,
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D"
       },
       {
         "id": "e_mqxznmlntu66",
@@ -171,7 +175,9 @@
         "singer": null,
         "pitch": "1 Pancham / C",
         "notes": null,
-        "addedAt": 1782663223595
+        "addedAt": 1782663223595,
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C"
       },
       {
         "id": "e_mqxzoxvlsvni",
@@ -181,7 +187,9 @@
         "singer": null,
         "pitch": "1 Pancham / C",
         "notes": null,
-        "addedAt": 1782663284865
+        "addedAt": 1782663284865,
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C"
       },
       {
         "id": "e_mqxzpmadnyg5",
@@ -191,7 +199,9 @@
         "singer": null,
         "pitch": "6 Pancham / A",
         "notes": null,
-        "addedAt": 1782663316501
+        "addedAt": 1782663316501,
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A"
       }
     ],
     "status": "completed",
