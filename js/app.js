@@ -481,16 +481,20 @@ class App {
     const activity = this.sessions.activityByWeek(16);
     const maxCount = Math.max(...activity.map(w => w.count), 1);
     const barsEl = document.getElementById('dash-activity-bars');
-    barsEl.innerHTML = `<div class="activity-bars">
-      ${activity.map((w, i) => {
-        const showLabel = i === 0 || activity[i - 1].month !== w.month;
-        return `<div class="activity-bar-wrap">
+    barsEl.innerHTML = `<div class="activity-chart-wrap">
+      <div class="activity-bars">
+        ${activity.map(w => `<div class="activity-bar-col">
           <div class="activity-bar ${w.count > 0 ? 'has-data' : ''}"
-            style="height:${Math.max(4, (w.count / maxCount) * 60)}px"
+            style="height:${Math.max(4, (w.count / maxCount) * 56)}px"
             title="Week of ${w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
-          ${showLabel ? `<div class="activity-bar-label">${w.month}</div>` : ''}
-        </div>`;
-      }).join('')}
+        </div>`).join('')}
+      </div>
+      <div class="activity-bar-labels">
+        ${activity.map((w, i) => {
+          const showLabel = i === 0 || activity[i - 1].month !== w.month;
+          return `<div class="activity-bar-label-col">${showLabel ? w.month : ''}</div>`;
+        }).join('')}
+      </div>
     </div>`;
 
     // Top bhajans
