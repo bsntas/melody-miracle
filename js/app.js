@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260705';
-import { GitHubStore } from './github-store.js?v=20260705';
-import { LiveSession } from './live.js?v=20260705';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260706';
+import { GitHubStore } from './github-store.js?v=20260706';
+import { LiveSession } from './live.js?v=20260706';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -89,7 +89,7 @@ class App {
         ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
         this.sessions = ghStore;
         document.getElementById('loading-text').textContent = 'Syncing sessions…';
-        await this.sessions.load(); // timeout handled inside GitHubStore.load()
+        try { await this.sessions.load(); } catch (e) { console.warn('GitHub sync failed on startup:', e); }
       } else {
         // No PAT: load public sessions.json in the background — never block app startup
         this.sessions.load().then(changed => { if (changed) this._route(); });
