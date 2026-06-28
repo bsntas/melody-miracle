@@ -142,7 +142,58 @@
     "date": "2024-01-13",
     "roomCode": "weekendbhaja-2024-01-13",
     "singers": [],
-    "bhajans": [],
+    "bhajans": [
+      {
+        "id": "e_mqxzlf9rw9fu",
+        "bhajan_id": "gajavadana-gananatha-natha-0",
+        "bhajan_title": "Gajavadana Gananatha Natha",
+        "bhajan_deity": "Ganesha",
+        "singer": null,
+        "pitch": "2 Pancham / D",
+        "notes": null,
+        "addedAt": 1782663120783
+      },
+      {
+        "id": "e_mqxzmrsf53ed",
+        "bhajan_id": "govinda-bolo-gopala-bolo",
+        "bhajan_title": "Govinda Bolo Gopala Bolo",
+        "bhajan_deity": "Sarva Dharma",
+        "singer": null,
+        "pitch": "2 Pancham / D",
+        "notes": null,
+        "addedAt": 1782663183663
+      },
+      {
+        "id": "e_mqxznmlntu66",
+        "bhajan_id": "kausalya-nandana-vaidehi-mohana",
+        "bhajan_title": "Kausalya Nandana Vaidehi Mohana",
+        "bhajan_deity": "Rama",
+        "singer": null,
+        "pitch": "1 Pancham / C",
+        "notes": null,
+        "addedAt": 1782663223595
+      },
+      {
+        "id": "e_mqxzoxvlsvni",
+        "bhajan_id": "sai-mata-pitha-deena-bandhu",
+        "bhajan_title": "Sai Mata Pitha Deena Bandhu",
+        "bhajan_deity": "Sai",
+        "singer": null,
+        "pitch": "1 Pancham / C",
+        "notes": null,
+        "addedAt": 1782663284865
+      },
+      {
+        "id": "e_mqxzpmadnyg5",
+        "bhajan_id": "vittala-vittala-hari-vittala",
+        "bhajan_title": "Vittala Vittala Hari Vittala",
+        "bhajan_deity": "Vittala",
+        "singer": null,
+        "pitch": "6 Pancham / A",
+        "notes": null,
+        "addedAt": 1782663316501
+      }
+    ],
     "status": "completed",
     "isBackdated": true,
     "createdAt": "2026-06-28T15:33:28.689Z",
