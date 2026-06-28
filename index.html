@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260707">
+  <link rel="stylesheet" href="css/style.css?v=20260708">
 </head>
 <body>
 
@@ -302,10 +302,13 @@
         <div id="mab-step-details" class="hidden">
           <div class="mab-selected-bhajan" id="mab-selected-info"></div>
           <div class="form-group">
-            <label class="form-label">Singer</label>
-            <input type="text" id="mab-singer" class="form-input"
-              placeholder="Singer name…" autocomplete="off" list="mab-singer-list">
+            <label class="form-label">Singer(s)</label>
+            <div id="mab-singers-box" class="singers-box">
+              <input type="text" id="mab-singer" class="singers-text-input"
+                placeholder="Add singer…" autocomplete="off" list="mab-singer-list">
+            </div>
             <datalist id="mab-singer-list"></datalist>
+            <div class="singers-hint">Enter or , to add · tap chip to remove</div>
           </div>
           <div class="form-group">
             <label class="form-label">Pitch</label>
@@ -468,7 +471,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260707"></script>
+  <script type="module" src="js/app.js?v=20260708"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

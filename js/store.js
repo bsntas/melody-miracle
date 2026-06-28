@@ -236,7 +236,7 @@ export class SessionStore {
           rows.push({
             date: s.date,
             sessionLabel: s.label || '',
-            singer: e.singer || '',
+            singer: e.singers?.join(' · ') || e.singer || '',
             pitch_indian: e.pitch_indian || '',
             pitch_western: e.pitch_western || '',
           });
@@ -248,11 +248,10 @@ export class SessionStore {
 
   topSingers(n = 10) {
     const counts = {};
-    for (const s of this._sessions) {
-      for (const e of (s.bhajans || [])) {
-        if (e.singer) counts[e.singer] = (counts[e.singer] || 0) + 1;
-      }
-    }
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || []))
+        for (const name of (e.singers || (e.singer ? [e.singer] : [])))
+          counts[name] = (counts[name] || 0) + 1;
     return Object.entries(counts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, n)
@@ -313,13 +312,14 @@ export class SessionStore {
   }
 
   singerHistory(name) {
+    const hasSinger = e => (e.singers || (e.singer ? [e.singer] : [])).includes(name);
     const sessions = this._sessions
-      .filter(s => (s.singers || []).includes(name) || (s.bhajans || []).some(e => e.singer === name))
+      .filter(s => (s.bhajans || []).some(hasSinger))
       .sort((a, b) => b.date.localeCompare(a.date));
 
     const bhajans = sessions.flatMap(s =>
       (s.bhajans || [])
-        .filter(e => e.singer === name)
+        .filter(hasSinger)
         .map(e => ({ ...e, sessionDate: s.date, sessionLabel: s.label }))
     );
 
@@ -344,20 +344,18 @@ export class SessionStore {
   // Return the pitch a given singer most commonly uses (from all history)
   singerUsualPitch(singerName) {
     const counts = {};
-    for (const s of this._sessions) {
-      for (const e of (s.bhajans || [])) {
-        if (e.singer === singerName && e.pitch) {
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || []))
+        if ((e.singers || (e.singer ? [e.singer] : [])).includes(singerName) && e.pitch)
           counts[e.pitch] = (counts[e.pitch] || 0) + 1;
-        }
-      }
-    }
     return Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
   }
 
   // Return pitch a singer used for a specific bhajan
   singerBhajanPitch(singerName, bhajanId) {
     for (const s of [...this._sessions].reverse()) {
-      const e = (s.bhajans || []).find(e => e.singer === singerName && e.bhajan_id === bhajanId);
+      const e = (s.bhajans || []).find(e =>
+        (e.singers || (e.singer ? [e.singer] : [])).includes(singerName) && e.bhajan_id === bhajanId);
       if (e?.pitch) return e.pitch;
     }
     return null;
@@ -365,10 +363,9 @@ export class SessionStore {
 
   allSingerNames() {
     const names = new Set();
-    for (const s of this._sessions) {
-      (s.singers || []).forEach(n => names.add(n));
-      (s.bhajans || []).forEach(e => { if (e.singer) names.add(e.singer); });
-    }
+    for (const s of this._sessions)
+      (s.bhajans || []).forEach(e =>
+        (e.singers || (e.singer ? [e.singer] : [])).forEach(n => names.add(n)));
     return [...names].sort();
   }
 }

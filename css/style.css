@@ -809,6 +809,36 @@ img { max-width: 100%; }
 .sync-local   { background: var(--text-3); }
 .sync-pending { background: var(--gold); }
 
+/* ─── Multi-singer chip input ───────────────────────────────────────────── */
+.singers-box {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 0.35rem 0.5rem; min-height: 2.6rem;
+  background: var(--surface); cursor: text;
+  transition: border-color 0.15s;
+}
+.singers-box:focus-within { border-color: var(--border-focus); }
+.singer-chip-sm {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  background: var(--saffron-light); color: var(--saffron-dark);
+  font-size: 0.82rem; font-weight: 500;
+  padding: 0.18rem 0.4rem; border-radius: var(--radius-sm);
+  white-space: nowrap; cursor: pointer;
+}
+.chip-x {
+  border: none; background: none; padding: 0 0.1rem;
+  color: inherit; font-weight: 700; font-size: 0.9em;
+  opacity: 0.55; cursor: pointer; line-height: 1;
+}
+.chip-x:hover { opacity: 1; }
+.singers-text-input {
+  flex: 1; min-width: 80px; border: none; outline: none;
+  background: transparent; padding: 0.2rem 0;
+  font-size: inherit; font-family: inherit; color: var(--text);
+}
+.singers-text-input::placeholder { color: var(--text-3); }
+.singers-hint { font-size: 0.78rem; color: var(--text-3); margin-top: 0.3rem; }
+
 /* ─── Settings modal ─────────────────────────────────────────────────────── */
 .settings-desc { font-size: 0.88rem; color: var(--text-2); margin-bottom: 1rem; line-height: 1.5; }
 
