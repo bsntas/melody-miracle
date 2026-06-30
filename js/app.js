@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260712';
-import { GitHubStore } from './github-store.js?v=20260712';
-import { LiveSession } from './live.js?v=20260712';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260713';
+import { GitHubStore } from './github-store.js?v=20260713';
+import { LiveSession } from './live.js?v=20260713';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -1086,7 +1086,8 @@ class App {
         ${!isPlaying ? `<div class="session-add-btn-row">
           <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
           ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
-          <button class="btn btn-outline" id="btn-end-session">End Session</button>` : ''}
+          <button class="btn btn-outline" id="btn-end-session">End Session</button>
+          <button class="btn btn-ghost btn-danger-ghost" id="btn-discard-session" title="Discard session without saving">Discard</button>` : ''}
         </div>` : `<div class="playing-controls-strip">
           ${isHost ? `
           <button class="btn btn-ghost btn-icon" id="btn-exit-play" title="Return to setup">↩</button>
@@ -1123,6 +1124,7 @@ class App {
     if (!isPlaying) {
       // Setup mode: all participants can edit
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+      if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
 
       document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -1768,12 +1770,26 @@ class App {
   }
 
 
-  // ─── End Session ──────────────────────────────────────────────────────────
+  // ─── End / Discard Session ────────────────────────────────────────────────
 
   _confirmEndSession() {
     const bhCount = (this.liveState?.bhajans || []).length;
     if (!confirm(`End session? ${bhCount} bhajans will be saved.`)) return;
     this._endSession();
+  }
+
+  _discardSession() {
+    const label = this.liveState?.label || 'this session';
+    if (!confirm(`Discard "${label}"? Nothing will be saved.`)) return;
+
+    this.sessions.clearDraft();
+    this.live?.leave();
+    this.live = null;
+    this.liveState = null;
+
+    document.getElementById('bnav-session-icon').classList.remove('is-live');
+    location.hash = '#dashboard';
+    this._toast('Session discarded');
   }
 
   _endSession() {
