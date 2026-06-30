@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260710';
-import { GitHubStore } from './github-store.js?v=20260710';
-import { LiveSession } from './live.js?v=20260710';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260711';
+import { GitHubStore } from './github-store.js?v=20260711';
+import { LiveSession } from './live.js?v=20260711';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -68,7 +68,13 @@ class App {
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
     this._mabSingers   = [];   // currently-selected singers for the entry being added
+    this._mabSuggestions = []; // full suggestion list for quick-select chips
     this._bhajanModalContext = null;
+
+    // Singer aliases: { aliasName -> canonicalName }
+    try {
+      this._singerAliases = JSON.parse(localStorage.getItem('mm-singer-aliases') || '{}');
+    } catch { this._singerAliases = {}; }
 
     this._init();
   }
@@ -154,6 +160,77 @@ class App {
   _hideLoading() {
     document.getElementById('loading-screen').style.display = 'none';
     document.getElementById('app').classList.remove('hidden');
+  }
+
+  // ─── Singer alias helpers ─────────────────────────────────────────────────
+
+  _canonName(name) {
+    return this._singerAliases[name] || name;
+  }
+
+  _allAliasesOf(canonName) {
+    const result = [canonName];
+    for (const [alias, canon] of Object.entries(this._singerAliases)) {
+      if (canon === canonName && !result.includes(alias)) result.push(alias);
+    }
+    return result;
+  }
+
+  _singerHistoryMerged(canonName) {
+    const names = this._allAliasesOf(canonName);
+    if (names.length === 1) return this.sessions.singerHistory(canonName);
+    const allSessionsMap = new Map();
+    const allBhajans = [];
+    for (const n of names) {
+      const { sessions, bhajans } = this.sessions.singerHistory(n);
+      for (const s of sessions) allSessionsMap.set(s.id, s);
+      allBhajans.push(...bhajans);
+    }
+    const sessions = [...allSessionsMap.values()].sort((a, b) => b.date.localeCompare(a.date));
+    const pitchCounts = {};
+    for (const e of allBhajans) {
+      if (e.pitch) pitchCounts[e.pitch] = (pitchCounts[e.pitch] || 0) + 1;
+    }
+    const usualPitch = Object.entries(pitchCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
+    const bhajansById = {};
+    for (const e of allBhajans) {
+      if (!bhajansById[e.bhajan_id]) {
+        bhajansById[e.bhajan_id] = { id: e.bhajan_id, title: e.bhajan_title, count: 0, lastPitch: e.pitch };
+      }
+      bhajansById[e.bhajan_id].count++;
+    }
+    const uniqueBhajans = Object.values(bhajansById).sort((a, b) => b.count - a.count);
+    return { sessions, bhajans: allBhajans, usualPitch, uniqueBhajans };
+  }
+
+  _saveAliases() {
+    localStorage.setItem('mm-singer-aliases', JSON.stringify(this._singerAliases));
+  }
+
+  _addAlias(fromName, toName) {
+    if (!fromName || !toName || fromName === toName) return false;
+    // Prevent cycles: if toName is already an alias of fromName
+    if (this._canonName(toName) === fromName) return false;
+    this._singerAliases[fromName] = toName;
+    this._saveAliases();
+    return true;
+  }
+
+  _removeAlias(fromName) {
+    delete this._singerAliases[fromName];
+    this._saveAliases();
+  }
+
+  // Return singer names with aliases applied (canonical names only, merged counts)
+  _canonSingers(rawList) {
+    const merged = {};
+    for (const { name, count } of rawList) {
+      const canon = this._canonName(name);
+      merged[canon] = (merged[canon] || 0) + count;
+    }
+    return Object.entries(merged)
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, count]) => ({ name, count }));
   }
 
   // ─── Routing ──────────────────────────────────────────────────────────────
@@ -302,6 +379,7 @@ class App {
           this._mabSingers.pop();
           this._mabRenderSingerChips();
           this._mabUpdatePitchHint();
+          this._mabUpdateSuggChips();
         }
       });
       singerInp.addEventListener('input', () => {
@@ -376,6 +454,17 @@ class App {
     });
     document.getElementById('btn-settings-save').addEventListener('click', () => this._savePatSettings());
     document.getElementById('btn-clear-pat').addEventListener('click', () => this._clearPat());
+    document.getElementById('btn-add-alias')?.addEventListener('click', () => {
+      const from = document.getElementById('alias-from').value.trim();
+      const to   = document.getElementById('alias-to').value.trim();
+      if (!from || !to) { this._toast('Enter both variant and canonical name', 'warn'); return; }
+      if (from === to) { this._toast('Names must be different', 'warn'); return; }
+      if (!this._addAlias(from, to)) { this._toast('Cannot add alias — would create a cycle', 'warn'); return; }
+      document.getElementById('alias-from').value = '';
+      document.getElementById('alias-to').value = '';
+      this._renderAliasList();
+      this._toast(`"${from}" will now count as "${to}"`, 'success');
+    });
     document.getElementById('btn-migrate')?.addEventListener('click', () => this._migrateLocalToGitHub());
     document.getElementById('btn-settings-toggle-pat').addEventListener('click', () => {
       const inp = document.getElementById('settings-pat');
@@ -421,8 +510,39 @@ class App {
     const localSessions = new SessionStore().all();
     migrateRow.classList.toggle('hidden', !(localSessions.length && !pat));
 
+    // Singer alias management
+    this._renderAliasList();
+    const allSingers = this.sessions.allSingerNames?.() || [];
+    const canonSingers = [...new Set(allSingers.map(n => this._canonName(n)))].sort();
+    const datalistOpts = singerNames => singerNames.map(n => `<option value="${escHtml(n)}">`).join('');
+    document.getElementById('alias-from-list').innerHTML = datalistOpts(allSingers);
+    document.getElementById('alias-to-list').innerHTML = datalistOpts(canonSingers);
+
     this._openModal('modal-settings');
     if (!pat) setTimeout(() => document.getElementById('settings-pat').focus(), 100);
+  }
+
+  _renderAliasList() {
+    const listEl = document.getElementById('settings-alias-list');
+    if (!listEl) return;
+    const entries = Object.entries(this._singerAliases);
+    if (!entries.length) {
+      listEl.innerHTML = '<div class="alias-empty">No aliases set</div>';
+      return;
+    }
+    listEl.innerHTML = entries.map(([from, to]) => `
+      <div class="alias-item" data-from="${escHtml(from)}">
+        <span class="alias-from-name">${escHtml(from)}</span>
+        <span class="alias-arrow">→</span>
+        <span class="alias-canonical">${escHtml(to)}</span>
+        <button class="alias-delete" data-from="${escHtml(from)}" title="Remove alias">×</button>
+      </div>`).join('');
+    listEl.querySelectorAll('.alias-delete').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this._removeAlias(btn.dataset.from);
+        this._renderAliasList();
+      });
+    });
   }
 
   async _savePatSettings() {
@@ -565,8 +685,8 @@ class App {
           </li>`).join('')}</ul>`
       : '<p class="text-muted text-small">No sessions yet</p>';
 
-    // Top singers
-    const singers = this.sessions.topSingers(5);
+    // Top singers (merge aliases into canonical names)
+    const singers = this._canonSingers(this.sessions.topSingers(20)).slice(0, 5);
     const maxSinger = singers[0]?.count || 1;
     document.getElementById('dash-top-singers').innerHTML = singers.length
       ? `<ul class="rank-list">${singers.map((s, i) => `
@@ -596,20 +716,28 @@ class App {
       ? recent.map(s => this._sessionCardHTML(s)).join('')
       : `<div class="empty-state"><div class="empty-icon">📅</div><p>No sessions recorded yet. Start one!</p></div>`;
 
-    // Click on session cards
+    // Click on session cards (singer links inside handle their own navigation)
     document.querySelectorAll('#dash-recent-sessions .session-card').forEach(el => {
-      el.addEventListener('click', () => { location.hash = `#session-detail/${el.dataset.id}`; });
+      el.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        location.hash = `#session-detail/${el.dataset.id}`;
+      });
     });
   }
 
   _sessionCardHTML(s) {
-    const singerList = (s.singers || []).slice(0, 3).join(', ') + (s.singers?.length > 3 ? ` +${s.singers.length - 3}` : '');
+    const singers = s.singers || [];
     const bCount = (s.bhajans || []).length;
     const badge = s.status === 'live'
       ? `<span class="session-card-badge badge-live">LIVE</span>`
       : s.isBackdated
       ? `<span class="session-card-badge badge-backdated">Backdated</span>`
       : `<span class="session-card-badge badge-completed">${bCount} bhajans</span>`;
+
+    const singerLinks = singers.slice(0, 3)
+      .map(n => `<a href="#singer/${encodeURIComponent(this._canonName(n))}" class="singer-link">${escHtml(n)}</a>`)
+      .join(', ');
+    const singerExtra = singers.length > 3 ? ` +${singers.length - 3}` : '';
 
     return `<div class="session-card" data-id="${s.id}">
       <div class="session-card-header">
@@ -620,7 +748,7 @@ class App {
         ${badge}
       </div>
       <div class="session-card-meta">
-        ${singerList ? `<span class="session-meta-item">👥 ${escHtml(singerList)}</span>` : ''}
+        ${singerLinks ? `<span class="session-meta-item session-meta-singers">👥 ${singerLinks}${singerExtra}</span>` : ''}
         <span class="session-meta-item">🎵 ${bCount} bhajan${bCount !== 1 ? 's' : ''}</span>
         ${s.duration ? `<span class="session-meta-item">⏱ ${this._formatDuration(s.duration)}</span>` : ''}
       </div>
@@ -1389,9 +1517,35 @@ class App {
     this._mabRenderSingerChips();
     const sessionSingers = new Set((this.liveState?.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])));
     const allSingers = this.sessions.allSingerNames?.() || [];
-    const suggestions = [...sessionSingers, ...allSingers.filter(n => !sessionSingers.has(n))];
+    // Deduplicate by canonical name, prefer canonical form in suggestions
+    const seenCanon = new Set();
+    const suggestions = [];
+    for (const n of [...sessionSingers, ...allSingers.filter(n => !sessionSingers.has(n))]) {
+      const canon = this._canonName(n);
+      if (!seenCanon.has(canon)) { seenCanon.add(canon); suggestions.push(canon); }
+    }
+    this._mabSuggestions = suggestions.slice(0, 10);
     document.getElementById('mab-singer-list').innerHTML =
       suggestions.map(s => `<option value="${escHtml(s)}">`).join('');
+
+    // Quick-select suggestion chips
+    const suggEl = document.getElementById('mab-singer-suggestions');
+    if (suggEl) {
+      suggEl.innerHTML = this._mabSuggestions.map(n =>
+        `<button type="button" class="singer-sugg-chip" data-name="${escHtml(n)}">${escHtml(n)}</button>`
+      ).join('');
+      suggEl.querySelectorAll('.singer-sugg-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.dataset.name;
+          if (!this._mabSingers.includes(name)) {
+            this._mabSingers.push(name);
+            this._mabRenderSingerChips();
+            this._mabUpdatePitchHint();
+          }
+          this._mabUpdateSuggChips();
+        });
+      });
+    }
 
     if (preselect) {
       this._mabShowStep2(preselect);
@@ -1481,6 +1635,7 @@ class App {
       this._mabSingers.push(name);
       this._mabRenderSingerChips();
       this._mabUpdatePitchHint();
+      this._mabUpdateSuggChips();
     }
     inp.value = '';
     inp.focus();
@@ -1499,10 +1654,17 @@ class App {
         this._mabSingers = this._mabSingers.filter(n => n !== name);
         this._mabRenderSingerChips();
         this._mabUpdatePitchHint();
+        this._mabUpdateSuggChips();
       });
       box.insertBefore(chip, inp);
     }
     inp.placeholder = this._mabSingers.length ? 'Add another…' : 'Add singer…';
+  }
+
+  _mabUpdateSuggChips() {
+    document.querySelectorAll('#mab-singer-suggestions .singer-sugg-chip').forEach(btn => {
+      btn.classList.toggle('hidden', this._mabSingers.includes(btn.dataset.name));
+    });
   }
 
   _mabUpdatePitchHint() {
@@ -1678,7 +1840,10 @@ class App {
     `).join('');
 
     el.querySelectorAll('.session-card').forEach(card => {
-      card.addEventListener('click', () => { location.hash = `#session-detail/${card.dataset.id}`; });
+      card.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        location.hash = `#session-detail/${card.dataset.id}`;
+      });
     });
   }
 
@@ -2020,13 +2185,17 @@ class App {
   // ─── Singer Profile ───────────────────────────────────────────────────────
 
   _renderSinger(name) {
-    const { sessions, bhajans, usualPitch, uniqueBhajans } = this.sessions.singerHistory(name);
+    // Resolve to canonical name and load merged history (including aliases)
+    const canonName = this._canonName(name);
+    const aliases = this._allAliasesOf(canonName).filter(n => n !== canonName);
+    const { sessions, bhajans, usualPitch, uniqueBhajans } = this._singerHistoryMerged(canonName);
 
     document.getElementById('singer-content').innerHTML = `
       <div class="singer-header">
-        <div class="singer-big-avatar">${escHtml(name[0]?.toUpperCase() || '?')}</div>
+        <div class="singer-big-avatar">${escHtml(canonName[0]?.toUpperCase() || '?')}</div>
         <div>
-          <div class="singer-info-name">${escHtml(name)}</div>
+          <div class="singer-info-name">${escHtml(canonName)}</div>
+          ${aliases.length ? `<div class="text-small text-muted" style="margin-top:.15rem">Also: ${aliases.map(a => escHtml(a)).join(', ')}</div>` : ''}
           <div class="singer-stats-row">
             <span>${sessions.length} session${sessions.length !== 1 ? 's' : ''}</span>
             <span>${bhajans.length} bhajans sung</span>

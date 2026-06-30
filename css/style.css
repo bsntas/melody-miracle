@@ -904,6 +904,51 @@ img { max-width: 100%; }
 .join-or-line { flex: 1; height: 1px; background: var(--border); }
 .join-or-text { font-size: 0.75rem; color: var(--text-3); white-space: nowrap; }
 
+/* ─── Singer suggestion chips (Add Bhajan modal) ────────────────────────── */
+.singer-suggestions {
+  display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.5rem;
+}
+.singer-sugg-chip {
+  font-size: 0.8rem; padding: 0.22rem 0.65rem; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--bg-2, var(--saffron-bg));
+  color: var(--text-2); cursor: pointer; transition: background 0.13s, border-color 0.13s;
+  line-height: 1.4;
+}
+.singer-sugg-chip:hover { background: var(--saffron-light); border-color: var(--saffron); color: var(--saffron-dark); }
+.singer-sugg-chip.hidden { display: none; }
+
+/* ─── Singer links in session cards ─────────────────────────────────────── */
+.session-meta-singers a.singer-link {
+  color: var(--text-2); text-decoration: none; font-size: inherit;
+}
+.session-meta-singers a.singer-link:hover { color: var(--saffron); text-decoration: underline; }
+
+/* ─── Singer alias management (settings) ────────────────────────────────── */
+.settings-section-title {
+  font-size: 0.78rem; font-weight: 700; color: var(--text-2);
+  text-transform: uppercase; letter-spacing: .04em; margin: 0.75rem 0 0.4rem;
+}
+.alias-list { display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 0.5rem; }
+.alias-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.83rem; color: var(--text-2); padding: 0.2rem 0;
+}
+.alias-arrow { color: var(--text-3); font-size: 0.9em; }
+.alias-canonical { font-weight: 600; color: var(--text); }
+.alias-from-name { color: var(--text-2); }
+.alias-delete {
+  margin-left: auto; background: none; border: none; color: var(--text-3);
+  cursor: pointer; padding: 0 0.2rem; font-size: 1rem; line-height: 1;
+  opacity: 0.7;
+}
+.alias-delete:hover { color: var(--red, #ef4444); opacity: 1; }
+.alias-form {
+  display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; margin-top: 0.25rem;
+}
+.alias-form .form-input { flex: 1; min-width: 90px; font-size: 0.83rem; }
+.alias-form-arrow { color: var(--text-3); font-size: 1.1rem; flex-shrink: 0; }
+.alias-empty { font-size: 0.8rem; color: var(--text-3); font-style: italic; }
+
 /* ─── Responsive tweaks ──────────────────────────────────────────────────── */
 @media (max-width: 400px) {
   .page-header { flex-direction: column; }
