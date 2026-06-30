@@ -1277,9 +1277,9 @@
       },
       {
         "id": "e_back2026032905",
-        "bhajan_id": "amba-bhavani-shiva-shambhu-kumara",
-        "bhajan_title": "Amba Bhavani Shiva Shambhu Kumara",
-        "bhajan_deity": "Ganesha",
+        "bhajan_id": "amba-bhavani-tribhuvana-mohini",
+        "bhajan_title": "Amba Bhavani Tribhuvana Mohini",
+        "bhajan_deity": "Devi",
         "singers": [
           "Bhawana Bhauju"
         ],
@@ -1844,8 +1844,8 @@
     "duration": null
   },
   {
-    "id": "weekendbhaja-2026-02-21",
-    "date": "2026-02-21",
+    "id": "weekendbhaja-2026-02-28",
+    "date": "2026-02-28",
     "label": "Weekend Bhajans E-City HSR",
     "series": "Weekend Bhajans E-City HSR",
     "isBackdated": true,
@@ -1861,7 +1861,7 @@
     ],
     "bhajans": [
       {
-        "id": "e_back2026022101",
+        "id": "e_back2026022801",
         "bhajan_id": "jai-ganaraya-sri-ganaraya",
         "bhajan_title": "Jai Ganaraya Sri Ganaraya",
         "bhajan_deity": "Ganesha",
@@ -1875,7 +1875,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022102",
+        "id": "e_back2026022802",
         "bhajan_id": "govinda-bolo-gopala-bolo",
         "bhajan_title": "Govinda Bolo Gopala Bolo",
         "bhajan_deity": "Sarva Dharma",
@@ -1889,7 +1889,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022103",
+        "id": "e_back2026022803",
         "bhajan_id": "madhusudana-hey-murali-dhara",
         "bhajan_title": "Madhusudana Hey Murali Dhara",
         "bhajan_deity": null,
@@ -1903,7 +1903,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022104",
+        "id": "e_back2026022804",
         "bhajan_id": "rajeeva-lochana-jaya-jaya-rama",
         "bhajan_title": "Rajeeva Lochana Jaya Jaya Rama",
         "bhajan_deity": "Rama",
@@ -1917,7 +1917,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022105",
+        "id": "e_back2026022805",
         "bhajan_id": "durga-vabhavari-ma-jaya-jaya-sai-ma",
         "bhajan_title": "Durga Vabhavari Ma Jaya Jaya Sai Ma",
         "bhajan_deity": null,
@@ -1931,7 +1931,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022106",
+        "id": "e_back2026022806",
         "bhajan_id": "bhajo-sita-ram-bhajo-radhey-shyam",
         "bhajan_title": "Bhajo Sita Ram Bhajo Radhey Shyam",
         "bhajan_deity": "Krishna",
@@ -1945,7 +1945,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2026022107",
+        "id": "e_back2026022807",
         "bhajan_id": "shankara-sadashiva-chandrashekara",
         "bhajan_title": "Shankara Sadashiva Chandrashekara",
         "bhajan_deity": "Shiva",
@@ -1956,6 +1956,128 @@
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
         "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
+    "id": "weekendbhaja-2026-02-21",
+    "date": "2026-02-21",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Ashik",
+      "Bhawana Bhauju",
+      "Bishal Da",
+      "Gigme",
+      "Isha",
+      "Karam",
+      "Pemila",
+      "Sayujya"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back202602201",
+        "bhajan_id": "jaya-sri-ganesha-vighna-nasha",
+        "bhajan_title": "Jaya Sri Ganesha Vighna Nasha",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602202",
+        "bhajan_id": "jaya-jaya-jaya-hey-madhusudhana",
+        "bhajan_title": "Jaya Jaya Jaya Hey Madhusudhana",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602203",
+        "bhajan_id": "shambho-mahadeva",
+        "bhajan_title": "Shambho Mahadeva",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602204",
+        "bhajan_id": "shyamala-komala-krishna-murari",
+        "bhajan_title": "Shyamala Komala Krishna Murari",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602205",
+        "bhajan_id": "nataraja-nataraja-natana-shekara-raja",
+        "bhajan_title": "Nataraja Nataraja Natana Shekara Raja",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Isha",
+          "Pemila"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602206",
+        "bhajan_id": "daasharathey-rama-jaya-jaya-rama",
+        "bhajan_title": "Daasharathey Rama Jaya Jaya Rama",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back202602207",
+        "bhajan_id": "mrutyunjayaya-namo-om",
+        "bhajan_title": "Mrutyunjayaya Namo Om",
+        "bhajan_deity": null,
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": "Minor",
         "addedAt": null
       }
     ],
@@ -1978,7 +2100,6 @@
       "Bishal Da",
       "Gigme",
       "Isha",
-      "Karam",
       "Pemila",
       "Sayujya"
     ],
@@ -2110,105 +2231,6 @@
         "pitch_indian": "4 Pancham",
         "pitch_western": "F",
         "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021410",
-        "bhajan_id": "jaya-sri-ganesha-vighna-nasha",
-        "bhajan_title": "Jaya Sri Ganesha Vighna Nasha",
-        "bhajan_deity": "Ganesha",
-        "singers": [
-          "Ashik"
-        ],
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021411",
-        "bhajan_id": "jaya-jaya-jaya-hey-madhusudhana",
-        "bhajan_title": "Jaya Jaya Jaya Hey Madhusudhana",
-        "bhajan_deity": "Krishna",
-        "singers": [
-          "Bishal Da"
-        ],
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021412",
-        "bhajan_id": "shambho-mahadeva",
-        "bhajan_title": "Shambho Mahadeva",
-        "bhajan_deity": "Shiva",
-        "singers": [
-          "Karam"
-        ],
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021413",
-        "bhajan_id": "shyamala-komala-krishna-murari",
-        "bhajan_title": "Shyamala Komala Krishna Murari",
-        "bhajan_deity": "Krishna",
-        "singers": [
-          "Bhawana Bhauju"
-        ],
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021414",
-        "bhajan_id": "nataraja-nataraja-natana-shekara-raja",
-        "bhajan_title": "Nataraja Nataraja Natana Shekara Raja",
-        "bhajan_deity": "Shiva",
-        "singers": [
-          "Isha",
-          "Pemila"
-        ],
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021415",
-        "bhajan_id": "daasharathey-rama-jaya-jaya-rama",
-        "bhajan_title": "Daasharathey Rama Jaya Jaya Rama",
-        "bhajan_deity": "Rama",
-        "singers": [
-          "Sayujya"
-        ],
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026021416",
-        "bhajan_id": "mrutyunjayaya-namo-om",
-        "bhajan_title": "Mrutyunjayaya Namo Om",
-        "bhajan_deity": null,
-        "singers": [
-          "Gigme"
-        ],
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "notes": "Minor",
         "addedAt": null
       }
     ],
