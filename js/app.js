@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260630';
-import { GitHubStore } from './github-store.js?v=20260630';
-import { LiveSession } from './live.js?v=20260630';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260701';
+import { GitHubStore } from './github-store.js?v=20260701';
+import { LiveSession } from './live.js?v=20260701';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -242,7 +242,7 @@ class App {
     const hash = location.hash.slice(1) || 'dashboard';
     const [view, param] = hash.split('/');
 
-    const views = ['dashboard', 'browse', 'session', 'history', 'singers', 'singer', 'session-detail'];
+    const views = ['dashboard', 'browse', 'session', 'history', 'singers', 'sung', 'singer', 'session-detail'];
     views.forEach(v => document.getElementById(`view-${v}`)?.classList.remove('active'));
 
     const viewEl = document.getElementById(`view-${view}`);
@@ -258,6 +258,7 @@ class App {
       case 'session':       this._renderSession(); break;
       case 'history':       this._renderHistory(); break;
       case 'singers':       this._renderSingers(); break;
+      case 'sung':          this._renderSung(); break;
       case 'singer':        if (param) this._renderSinger(decodeURIComponent(param)); break;
       case 'session-detail': if (param) this._renderSessionDetail(param); break;
     }
@@ -300,6 +301,12 @@ class App {
 
     // Singers directory back
     document.getElementById('btn-singers-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+
+    // Sung bhajans back
+    document.getElementById('btn-sung-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+
+    // Browse sung/singer filter
+    document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
 
     // Singer profile back
     document.getElementById('btn-singer-back')?.addEventListener('click', () => history.back());
@@ -652,6 +659,7 @@ class App {
 
     // Stat cards → navigate to respective views
     document.getElementById('stat-sessions-card')?.addEventListener('click', () => { location.hash = '#history'; }, { once: true });
+    document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
     // Live alert
@@ -843,6 +851,20 @@ class App {
 
   _renderBrowse() {
     this._bhajanCounts = this.sessions.bhajanSungCounts();
+
+    // Populate sung/singer filter (dynamic — depends on session data)
+    const sungEl = document.getElementById('filter-sung');
+    if (sungEl) {
+      const prev = sungEl.value;
+      const singers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
+      sungEl.innerHTML = `<option value="">All Bhajans</option>
+        <option value="sung">Sung Bhajans</option>
+        <optgroup label="By Singer">
+          ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}
+        </optgroup>`;
+      if (prev) sungEl.value = prev;
+    }
+
     this._applyBrowseFilters();
   }
 
@@ -852,11 +874,43 @@ class App {
     const language = document.getElementById('filter-language').value;
     const tempo    = document.getElementById('filter-tempo').value;
     const level    = document.getElementById('filter-level').value;
+    const sung     = document.getElementById('filter-sung')?.value || '';
 
     this._browseFiltered = this.bhajans.search(q, { deity, language, tempo, level });
+
+    if (sung) {
+      const sungIds = this._sungIdsForFilter(sung);
+      this._browseFiltered = this._browseFiltered.filter(b => sungIds.has(b.id));
+      // Sort by sung count (most first) when no text query
+      if (!q) {
+        const counts = this._bhajanCounts || {};
+        this._browseFiltered.sort((a, b) => (counts[b.id] || 0) - (counts[a.id] || 0));
+      }
+    }
+
     this._browsePage = 0;
     document.getElementById('browse-count-badge').textContent = this._browseFiltered.length;
     this._renderBrowsePage();
+  }
+
+  _sungIdsForFilter(value) {
+    const ids = new Set();
+    if (value === 'sung') {
+      for (const s of this.sessions.all())
+        for (const e of (s.bhajans || []))
+          if (e.bhajan_id) ids.add(e.bhajan_id);
+    } else {
+      // Specific canonical singer — include all alias names
+      const aliases = Object.entries(this._singerAliases)
+        .filter(([, canon]) => canon === value)
+        .map(([alias]) => alias);
+      const allNames = new Set([value, ...aliases]);
+      for (const s of this.sessions.all())
+        for (const e of (s.bhajans || []))
+          if ((e.singers || (e.singer ? [e.singer] : [])).some(n => allNames.has(n)))
+            if (e.bhajan_id) ids.add(e.bhajan_id);
+    }
+    return ids;
   }
 
   _renderBrowsePage(scrollToList = false) {
@@ -928,6 +982,28 @@ class App {
         ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
       </div>
     </div>`;
+  }
+
+  // ─── Sung Bhajans ─────────────────────────────────────────────────────────
+
+  _renderSung() {
+    this._bhajanCounts = this.sessions.bhajanSungCounts();
+    const counts = this._bhajanCounts;
+    const sorted = Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([id]) => this.bhajans.getById(id))
+      .filter(Boolean);
+
+    document.getElementById('sung-count-badge').textContent = sorted.length;
+    const el = document.getElementById('sung-list');
+    if (!sorted.length) {
+      el.innerHTML = `<div class="empty-state"><div class="empty-icon">🎵</div><p>No bhajans sung yet. Start a session!</p></div>`;
+      return;
+    }
+    el.innerHTML = sorted.map(b => this._bhajanItemHTML(b)).join('');
+    el.querySelectorAll('.bhajan-item').forEach(item => {
+      item.addEventListener('click', () => this._openBhajanModal(item.dataset.id));
+    });
   }
 
   // ─── Bhajan Modal ─────────────────────────────────────────────────────────
