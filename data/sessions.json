@@ -1351,169 +1351,6 @@
     "duration": null
   },
   {
-    "id": "weekendbhaja-2026-03-28",
-    "date": "2026-03-28",
-    "label": "Weekend Bhajans E-City HSR",
-    "series": "Weekend Bhajans E-City HSR",
-    "isBackdated": true,
-    "status": "completed",
-    "singers": [
-      "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
-      "Gigme",
-      "Karam",
-      "Pemila",
-      "Sayujya",
-      "Sudhaan"
-    ],
-    "bhajans": [
-      {
-        "id": "e_back2026032801",
-        "bhajan_id": "bhajo-gananayaka-gajavadana",
-        "bhajan_title": "Bhajo Gananayaka Gajavadana",
-        "bhajan_deity": "Ganesha",
-        "singers": [
-          "Karam"
-        ],
-        "pitch": "3 Pancham / E",
-        "pitch_indian": "3 Pancham",
-        "pitch_western": "E",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032802",
-        "bhajan_id": "yuga-avatara-sai-rama",
-        "bhajan_title": "Yuga Avatara Sai Rama",
-        "bhajan_deity": "Rama",
-        "singers": [
-          "Sayujya"
-        ],
-        "pitch": "6.5 Pancham / A#",
-        "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032803",
-        "bhajan_id": "mathura-natha-gopala",
-        "bhajan_title": "Mathura Natha Gopala",
-        "bhajan_deity": "Krishna",
-        "singers": [
-          "Basanta"
-        ],
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032804",
-        "bhajan_id": "akhila-jagat-ke-daata-sai",
-        "bhajan_title": "Akhila Jagat Ke Daata Sai",
-        "bhajan_deity": "Sai",
-        "singers": [
-          "Bishal Da"
-        ],
-        "pitch": "3 Pancham / E",
-        "pitch_indian": "3 Pancham",
-        "pitch_western": "E",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032805",
-        "bhajan_id": "vanamali-vasudeva-jaganmohana-radha-ramana",
-        "bhajan_title": "Vanamali Vasudeva Jaganmohana Radha Ramana",
-        "bhajan_deity": "Krishna",
-        "singers": [
-          "Sudhaan"
-        ],
-        "pitch": "3 Pancham / E",
-        "pitch_indian": "3 Pancham",
-        "pitch_western": "E",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032806",
-        "bhajan_id": "madura-puri-nilayey-meenakshi",
-        "bhajan_title": "Madura Puri Nilayey Meenakshi",
-        "bhajan_deity": "Devi",
-        "singers": [
-          "Bhawana Bhauju"
-        ],
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032807",
-        "bhajan_id": "sharadey-jaya-sharadey-vaagvilasini-sharadey",
-        "bhajan_title": "Sharadey Jaya Sharadey Vaagvilasini Sharadey",
-        "bhajan_deity": "Devi",
-        "singers": [
-          "Sayujya"
-        ],
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032808",
-        "bhajan_id": "om-shivaya-om-shivaya",
-        "bhajan_title": "Om Shivaya Om Shivaya",
-        "bhajan_deity": "Shiva",
-        "singers": [
-          "Pemila"
-        ],
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "notes": null,
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032809",
-        "bhajan_id": "bhajo-radhey-govinda-bhajo-shyama",
-        "bhajan_title": "Bhajo Radhey Govinda Bhajo Shyama",
-        "bhajan_deity": "Krishna",
-        "singers": [
-          "Gigme"
-        ],
-        "pitch": "3 Pancham / E",
-        "pitch_indian": "3 Pancham",
-        "pitch_western": "E",
-        "notes": "Minor",
-        "addedAt": null
-      },
-      {
-        "id": "e_back2026032810",
-        "bhajan_id": "jai-jai-hanuman-jaya-hanuman",
-        "bhajan_title": "Jai Jai Hanuman Jaya Hanuman",
-        "bhajan_deity": "Anjaneya",
-        "singers": [
-          "Gigme"
-        ],
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "notes": "Minor",
-        "addedAt": null
-      }
-    ],
-    "createdAt": null,
-    "startTime": null,
-    "duration": null
-  },
-  {
     "id": "weekendbhaja-2026-03-21",
     "date": "2026-03-21",
     "label": "Weekend Bhajans E-City HSR",
@@ -1684,6 +1521,169 @@
         "pitch_indian": "6 Pancham",
         "pitch_western": "A",
         "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
+    "id": "weekendbhaja-2026-03-14",
+    "date": "2026-03-14",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Basanta",
+      "Bhawana Bhauju",
+      "Bishal Da",
+      "Gigme",
+      "Karam",
+      "Pemila",
+      "Sayujya",
+      "Sudhaan"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back2026031401",
+        "bhajan_id": "bhajo-gananayaka-gajavadana",
+        "bhajan_title": "Bhajo Gananayaka Gajavadana",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031402",
+        "bhajan_id": "yuga-avatara-sai-rama",
+        "bhajan_title": "Yuga Avatara Sai Rama",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031403",
+        "bhajan_id": "mathura-natha-gopala",
+        "bhajan_title": "Mathura Natha Gopala",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031404",
+        "bhajan_id": "akhila-jagat-ke-daata-sai",
+        "bhajan_title": "Akhila Jagat Ke Daata Sai",
+        "bhajan_deity": "Sai",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031405",
+        "bhajan_id": "vanamali-vasudeva-jaganmohana-radha-ramana",
+        "bhajan_title": "Vanamali Vasudeva Jaganmohana Radha Ramana",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Sudhaan"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031406",
+        "bhajan_id": "madura-puri-nilayey-meenakshi",
+        "bhajan_title": "Madura Puri Nilayey Meenakshi",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031407",
+        "bhajan_id": "sharadey-jaya-sharadey-vaagvilasini-sharadey",
+        "bhajan_title": "Sharadey Jaya Sharadey Vaagvilasini Sharadey",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031408",
+        "bhajan_id": "om-shivaya-om-shivaya",
+        "bhajan_title": "Om Shivaya Om Shivaya",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Pemila"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031409",
+        "bhajan_id": "bhajo-radhey-govinda-bhajo-shyama",
+        "bhajan_title": "Bhajo Radhey Govinda Bhajo Shyama",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2026031410",
+        "bhajan_id": "jai-jai-hanuman-jaya-hanuman",
+        "bhajan_title": "Jai Jai Hanuman Jaya Hanuman",
+        "bhajan_deity": "Anjaneya",
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": "Minor",
         "addedAt": null
       }
     ],
@@ -5034,6 +5034,486 @@
     "duration": null
   },
   {
+    "id": "weekendbhaja-2025-02-09",
+    "date": "2025-02-09",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Ashik",
+      "Basanta",
+      "Divyankar",
+      "Gigme",
+      "Karam",
+      "Pemila",
+      "Sayujya"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back2025020901",
+        "bhajan_id": "gajavadana-gananatha-gajavadana-vinayaka",
+        "bhajan_title": "Gajavadana Gananatha Gajavadana Vinayaka",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Pemila"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020902",
+        "bhajan_id": "rama-sri-ramachandra-jaya-jaya",
+        "bhajan_title": "Rama Sri Ramachandra Jaya Jaya",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020903",
+        "bhajan_id": "devi-sai-ma-devi-saraswathi",
+        "bhajan_title": "Devi Sai Ma Devi Saraswathi",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020904",
+        "bhajan_id": "manasa-bhajorey-guru-charanam",
+        "bhajan_title": "Manasa Bhajorey Guru Charanam",
+        "bhajan_deity": "Guru",
+        "singers": [
+          "Divyankar"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020905",
+        "bhajan_id": "rama-raghuvara-ram-sita-ram",
+        "bhajan_title": "Rama Raghuvara Ram Sita Ram",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020906",
+        "bhajan_id": "allah-ho-tum",
+        "bhajan_title": "Allah Ho Tum",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025020907",
+        "bhajan_id": "pavana-sutha-hanuman-ki-jai",
+        "bhajan_title": "Pavana Sutha Hanuman Ki Jai",
+        "bhajan_deity": "Anjaneya",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
+    "id": "weekendbhaja-2025-01-26",
+    "date": "2025-01-26",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Anisha",
+      "Ashik",
+      "Basanta",
+      "Bhawana Bhauju",
+      "Bishal Da",
+      "Karam",
+      "Sayujya"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back2025012601",
+        "bhajan_id": "lambodhara-hey-gowri-nandana",
+        "bhajan_title": "Lambodhara Hey Gowri Nandana",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012602",
+        "bhajan_id": "giridhara-govinda-gopala-ghana-shyama",
+        "bhajan_title": "Giridhara Govinda Gopala Ghana Shyama",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012603",
+        "bhajan_id": "nataraja-nataraja-natana-shekara-raja",
+        "bhajan_title": "Nataraja Nataraja Natana Shekara Raja",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012604",
+        "bhajan_id": "vaidehi-priya-vaikunta-rama",
+        "bhajan_title": "Vaidehi Priya Vaikunta Rama",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012605",
+        "bhajan_id": "rama-sri-ramachandra-jaya-jaya",
+        "bhajan_title": "Rama Sri Ramachandra Jaya Jaya",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012606",
+        "bhajan_id": "shirdi-ke-sai-parthi-ke",
+        "bhajan_title": "Shirdi Ke Sai Parthi Ke",
+        "bhajan_deity": "Sai",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025012607",
+        "bhajan_id": "gopala-radha-lola",
+        "bhajan_title": "Gopala Radha Lola",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Anisha"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
+    "id": "weekendbhaja-2025-01-19",
+    "date": "2025-01-19",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Ashik",
+      "Basanta",
+      "Bhawana Bhauju",
+      "Bhawana Bhauju Mom",
+      "Bishal Da",
+      "Karam",
+      "Sayujya"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back2025011901",
+        "bhajan_id": "bhajo-gananayaka-gajavadana",
+        "bhajan_title": "Bhajo Gananayaka Gajavadana",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011902",
+        "bhajan_id": "gowri-manohara-hey-nataraja",
+        "bhajan_title": "Gowri Manohara Hey Nataraja",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011903",
+        "bhajan_id": "akhila-jagat-ke-daata-sai",
+        "bhajan_title": "Akhila Jagat Ke Daata Sai",
+        "bhajan_deity": "Sai",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011904",
+        "bhajan_id": "jai-jai-janani-sai-janani",
+        "bhajan_title": "Jai Jai Janani Sai Janani",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011905",
+        "bhajan_id": "nataraja-hey-tripurari",
+        "bhajan_title": "Nataraja Hey Tripurari",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "4 Pancham / F",
+        "pitch_indian": "4 Pancham",
+        "pitch_western": "F",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011906",
+        "bhajan_id": "krishnam-vande-nanda-kumaram",
+        "bhajan_title": "Krishnam Vande Nanda Kumaram",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011907",
+        "bhajan_id": "anjaneya-veera-hanumantha-shoora",
+        "bhajan_title": "Anjaneya Veera Hanumantha Shoora",
+        "bhajan_deity": "Anjaneya",
+        "singers": [
+          "Bhawana Bhauju Mom"
+        ],
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
+    "id": "weekendbhaja-2025-01-12",
+    "date": "2025-01-12",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "isBackdated": true,
+    "status": "completed",
+    "singers": [
+      "Ashik",
+      "Basanta",
+      "Bhawana Bhauju",
+      "Bishal Da",
+      "Isha",
+      "Karam",
+      "Sayujya"
+    ],
+    "bhajans": [
+      {
+        "id": "e_back2025011201",
+        "bhajan_id": "gajavadana-gananatha-natha",
+        "bhajan_title": "Gajavadana Gananatha Natha",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Isha"
+        ],
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011202",
+        "bhajan_id": "gowri-manohara-hey-nataraja",
+        "bhajan_title": "Gowri Manohara Hey Nataraja",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "notes": "Minor",
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011203",
+        "bhajan_id": "shambho-mahadeva",
+        "bhajan_title": "Shambho Mahadeva",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011204",
+        "bhajan_id": "jagadodharini-mata-durga-jagadodharini-ma",
+        "bhajan_title": "Jagadodharini Mata Durga Jagadodharini Ma",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011205",
+        "bhajan_id": "shyamala-komala-krishna-murari",
+        "bhajan_title": "Shyamala Komala Krishna Murari",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011206",
+        "bhajan_id": "rama-paramasumangala-ram",
+        "bhajan_title": "Rama Paramasumangala Ram",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "2.5 Pancham / D#",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "D#",
+        "notes": null,
+        "addedAt": null
+      },
+      {
+        "id": "e_back2025011207",
+        "bhajan_id": "vanamali-vasudeva-jaganmohana-radha-ramana",
+        "bhajan_title": "Vanamali Vasudeva Jaganmohana Radha Ramana",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": null
+      }
+    ],
+    "createdAt": null,
+    "startTime": null,
+    "duration": null
+  },
+  {
     "id": "weekendbhaja-2025-01-05",
     "date": "2025-01-05",
     "label": "Weekend Bhajans E-City HSR",
@@ -7083,8 +7563,8 @@
     "duration": null
   },
   {
-    "id": "weekendbhaja-2024-06-02",
-    "date": "2024-06-02",
+    "id": "weekendbhaja-2024-06-16",
+    "date": "2024-06-16",
     "label": "Weekend Bhajans E-City HSR",
     "series": "Weekend Bhajans E-City HSR",
     "isBackdated": true,
@@ -7098,7 +7578,7 @@
     ],
     "bhajans": [
       {
-        "id": "e_back2024060201",
+        "id": "e_back2024061601",
         "bhajan_id": "pashupathi-tanaya-bala-gajanana",
         "bhajan_title": "Pashupathi Tanaya Bala Gajanana",
         "bhajan_deity": "Ganesha",
@@ -7112,7 +7592,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2024060202",
+        "id": "e_back2024061602",
         "bhajan_id": "amba-manda-haasa-vadani",
         "bhajan_title": "Amba Manda Haasa Vadani",
         "bhajan_deity": "Devi",
@@ -7127,7 +7607,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2024060203",
+        "id": "e_back2024061603",
         "bhajan_id": "jai-jai-janani-sai-janani",
         "bhajan_title": "Jai Jai Janani Sai Janani",
         "bhajan_deity": "Devi",
@@ -7141,7 +7621,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2024060204",
+        "id": "e_back2024061604",
         "bhajan_id": "punya-naam-pavitra-naam-rama",
         "bhajan_title": "Punya Naam Pavitra Naam Rama",
         "bhajan_deity": "Sai",
@@ -7155,7 +7635,7 @@
         "addedAt": null
       },
       {
-        "id": "e_back2024060205",
+        "id": "e_back2024061605",
         "bhajan_id": "narayana-hari-narayana-hari-narayana",
         "bhajan_title": "Narayana Hari Narayana Hari Narayana",
         "bhajan_deity": "Narayana, Shiva",
