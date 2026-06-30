@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260701';
-import { GitHubStore } from './github-store.js?v=20260701';
-import { LiveSession } from './live.js?v=20260701';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702';
+import { GitHubStore } from './github-store.js?v=20260702';
+import { LiveSession } from './live.js?v=20260702';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -1470,7 +1470,7 @@ class App {
       this._toast('Add at least one bhajan before starting', 'warn');
       return;
     }
-    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id };
+    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id, startedAt: new Date().toISOString() };
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
@@ -1489,6 +1489,7 @@ class App {
       this.live.updateState(updated);
       this.sessions.saveDraft(updated);
       this._renderSession();
+      setTimeout(() => document.querySelector('.session-entry-current')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
     }
   }
 
@@ -1501,6 +1502,7 @@ class App {
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
     this._renderSession();
+    setTimeout(() => document.querySelector('.session-entry-current')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
   }
 
   _exitPlay() {
@@ -1877,7 +1879,8 @@ class App {
   }
 
   _endSession() {
-    const started = this.liveState.createdAt ? new Date(this.liveState.createdAt) : null;
+    const startTs = this.liveState.startedAt || this.liveState.createdAt;
+    const started = startTs ? new Date(startTs) : null;
     const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
 
     const singers = [...new Set((this.liveState.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];

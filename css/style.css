@@ -536,14 +536,14 @@ img { max-width: 100%; }
   margin: 0.45rem 0 0.1rem calc(24px + 0.6rem);
 }
 .playing-pitch-indian {
-  font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
-  background: #dbeafe; padding: 0.2rem 0.7rem; border-radius: var(--radius);
+  font-size: 0.9rem; font-weight: 700; color: #1e3a8a;
+  background: #dbeafe; padding: 0.15rem 0.55rem; border-radius: var(--radius);
   letter-spacing: 0.01em;
 }
-.playing-pitch-sep { color: var(--text-3); font-size: 1.1rem; font-weight: 700; }
+.playing-pitch-sep { color: var(--text-3); font-size: 0.85rem; font-weight: 700; }
 .playing-pitch-western {
-  font-size: 1.25rem; font-weight: 800; color: #1e3a8a;
-  background: #dbeafe; padding: 0.2rem 0.7rem; border-radius: var(--radius);
+  font-size: 0.9rem; font-weight: 700; color: #1e3a8a;
+  background: #dbeafe; padding: 0.15rem 0.55rem; border-radius: var(--radius);
 }
 .playing-pitch-scale {
   font-size: 0.8rem; font-weight: 500; color: var(--text-2);
