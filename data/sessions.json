@@ -183,9 +183,9 @@
       },
       {
         "id": "e_mr00vanhmtur",
-        "bhajan_id": null,
-        "bhajan_title": "Poorna Swaroopini Janani Maa",
-        "bhajan_deity": "",
+        "bhajan_id": "prema-swaroopini-janani-ma",
+        "bhajan_title": "Prema Swaroopini Janani Ma",
+        "bhajan_deity": "Devi",
         "singers": [
           "Karam"
         ],
@@ -576,9 +576,9 @@
     "bhajans": [
       {
         "id": "e_mr00vahnmyeb",
-        "bhajan_id": null,
-        "bhajan_title": "Pali Gajanana",
-        "bhajan_deity": "",
+        "bhajan_id": "paahi-gajanana-deenavana",
+        "bhajan_title": "Paahi Gajanana Deenavana",
+        "bhajan_deity": "Ganesha",
         "singers": [
           "Basanta"
         ],
