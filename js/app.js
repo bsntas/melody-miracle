@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260711';
-import { GitHubStore } from './github-store.js?v=20260711';
-import { LiveSession } from './live.js?v=20260711';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260712';
+import { GitHubStore } from './github-store.js?v=20260712';
+import { LiveSession } from './live.js?v=20260712';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -70,6 +70,9 @@ class App {
     this._mabSingers   = [];   // currently-selected singers for the entry being added
     this._mabSuggestions = []; // full suggestion list for quick-select chips
     this._bhajanModalContext = null;
+
+    // Dashboard period filter
+    this._dashPeriod = 'all';
 
     // Singer aliases: { aliasName -> canonicalName }
     try {
@@ -239,7 +242,7 @@ class App {
     const hash = location.hash.slice(1) || 'dashboard';
     const [view, param] = hash.split('/');
 
-    const views = ['dashboard', 'browse', 'session', 'history', 'singer', 'session-detail'];
+    const views = ['dashboard', 'browse', 'session', 'history', 'singers', 'singer', 'session-detail'];
     views.forEach(v => document.getElementById(`view-${v}`)?.classList.remove('active'));
 
     const viewEl = document.getElementById(`view-${view}`);
@@ -254,6 +257,7 @@ class App {
       case 'browse':        this._renderBrowse(); break;
       case 'session':       this._renderSession(); break;
       case 'history':       this._renderHistory(); break;
+      case 'singers':       this._renderSingers(); break;
       case 'singer':        if (param) this._renderSinger(decodeURIComponent(param)); break;
       case 'session-detail': if (param) this._renderSessionDetail(param); break;
     }
@@ -642,6 +646,9 @@ class App {
     document.getElementById('stat-singers').textContent      = s.singers;
     document.getElementById('stat-this-month').textContent   = s.thisMonth;
 
+    // Singers stat card → navigate to singers directory
+    document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
+
     // Live alert
     const liveAlert = document.getElementById('dash-live-alert');
     if (this.liveState) {
@@ -672,8 +679,16 @@ class App {
       </div>
     </div>`;
 
-    // Top bhajans
-    const top = this.sessions.topBhajans(5);
+    // Period tabs — bind once per render
+    document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.period === this._dashPeriod);
+      btn.onclick = () => { this._dashPeriod = btn.dataset.period; this._renderDashboard(); };
+    });
+
+    const fromDate = this._periodFromDate(this._dashPeriod);
+
+    // Top bhajans (time-filtered)
+    const top = this.sessions.topBhajansFrom(5, fromDate);
     const maxBhajan = top[0]?.count || 1;
     document.getElementById('dash-top-bhajans').innerHTML = top.length
       ? `<ul class="rank-list">${top.map((b, i) => `
@@ -683,10 +698,10 @@ class App {
             <div class="rank-bar-wrap"><div class="rank-bar" style="width:${(b.count / maxBhajan) * 100}%"></div></div>
             <span class="rank-count">${b.count}×</span>
           </li>`).join('')}</ul>`
-      : '<p class="text-muted text-small">No sessions yet</p>';
+      : '<p class="text-muted text-small">No data for this period</p>';
 
-    // Top singers (merge aliases into canonical names)
-    const singers = this._canonSingers(this.sessions.topSingers(20)).slice(0, 5);
+    // Top singers (time-filtered, merge aliases into canonical names)
+    const singers = this._canonSingers(this.sessions.topSingersFrom(20, fromDate)).slice(0, 5);
     const maxSinger = singers[0]?.count || 1;
     document.getElementById('dash-top-singers').innerHTML = singers.length
       ? `<ul class="rank-list">${singers.map((s, i) => `
@@ -696,7 +711,7 @@ class App {
             <div class="rank-bar-wrap"><div class="rank-bar" style="width:${(s.count / maxSinger) * 100}%"></div></div>
             <span class="rank-count">${s.count}</span>
           </li>`).join('')}</ul>`
-      : '<p class="text-muted text-small">No sessions yet</p>';
+      : '<p class="text-muted text-small">No data for this period</p>';
 
     // Deity distribution
     const deities = this.sessions.deityDistribution();
@@ -704,8 +719,8 @@ class App {
     document.getElementById('dash-deities').innerHTML = deities.length
       ? `<ul class="rank-list">${deities.map((d) => `
           <li class="rank-item">
-            <span class="rank-name">${escHtml(d.name)}</span>
-            <div class="rank-bar-wrap"><div class="rank-bar" style="width:${(d.count / maxDeity) * 100}%"></div></div>
+            <span class="rank-name deity-label deity-${this._deitySlug(d.name)}">${escHtml(d.name)}</span>
+            <div class="rank-bar-wrap"><div class="rank-bar deity-bar-accent deity-fill-${this._deitySlug(d.name)}" style="width:${(d.count / maxDeity) * 100}%"></div></div>
             <span class="rank-count">${d.count}</span>
           </li>`).join('')}</ul>`
       : '<p class="text-muted text-small">No sessions yet</p>';
@@ -2182,7 +2197,95 @@ class App {
     };
   }
 
-  // ─── Singer Profile ───────────────────────────────────────────────────────
+  // ─── Helpers ─────────────────────────────────────────────────────────────
+
+  _periodFromDate(period) {
+    if (!period || period === 'all') return null;
+    const d = new Date();
+    if (period === '1y') d.setFullYear(d.getFullYear() - 1);
+    else if (period === '6m') d.setMonth(d.getMonth() - 6);
+    else if (period === '3m') d.setMonth(d.getMonth() - 3);
+    return d.toISOString().slice(0, 10);
+  }
+
+  _singerHue(name) {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 37 + name.charCodeAt(i)) % 360;
+    return h;
+  }
+
+  _deitySlug(deity) {
+    if (!deity) return 'other';
+    const d = deity.toLowerCase();
+    if (d.includes('ganesha') || d.includes('ganesh') || d.includes('ganapati')) return 'ganesha';
+    if (d.includes('shiva') || d.includes('siva') || d.includes('mahadeva')) return 'shiva';
+    if (d.includes('vishnu') || d.includes('narayana') || d.includes('venkatesha')) return 'vishnu';
+    if (d.includes('devi') || d.includes('durga') || d.includes('lakshmi') || d.includes('saraswati') || d.includes('parvati') || d.includes('shakti') || d.includes('amba')) return 'devi';
+    if (d.includes('rama') || d.includes('ram')) return 'rama';
+    if (d.includes('krishna') || d.includes('govinda') || d.includes('hari')) return 'krishna';
+    if (d.includes('hanuman') || d.includes('anjaneya')) return 'hanuman';
+    if (d.includes('subramanya') || d.includes('murugan') || d.includes('kartikeya')) return 'murugan';
+    if (d.includes('ayyappa') || d.includes('sastha')) return 'ayyappa';
+    return 'other';
+  }
+
+  // ─── Singers Directory ───────────────────────────────────────────────────
+
+  _renderSingers() {
+    const rawStats = this.sessions.allSingersWithStats();
+
+    // Merge aliases into canonical names
+    const canonMap = {};
+    for (const s of rawStats) {
+      const canon = this._canonName(s.name);
+      if (!canonMap[canon]) {
+        canonMap[canon] = { ...s, name: canon, _deityMerged: { ...s.deities }, _pitchMerged: { ...s.pitches } };
+      } else {
+        canonMap[canon].sessionCount += s.sessionCount;
+        canonMap[canon].bhajanCount += s.bhajanCount;
+        for (const [d, c] of Object.entries(s.deities)) {
+          canonMap[canon]._deityMerged[d] = (canonMap[canon]._deityMerged[d] || 0) + c;
+        }
+        for (const [p, c] of Object.entries(s.pitches || {})) {
+          canonMap[canon]._pitchMerged[p] = (canonMap[canon]._pitchMerged[p] || 0) + c;
+        }
+      }
+    }
+
+    const allSingers = Object.values(canonMap).map(s => ({
+      ...s,
+      topDeity: Object.entries(s._deityMerged).sort((a,b) => b[1]-a[1])[0]?.[0] || null,
+      usualPitch: Object.entries(s._pitchMerged).sort((a,b) => b[1]-a[1])[0]?.[0] || null,
+    })).sort((a, b) => b.bhajanCount - a.bhajanCount);
+
+    document.getElementById('singers-count-badge').textContent = allSingers.length;
+
+    if (!allSingers.length) {
+      document.getElementById('singers-grid').innerHTML =
+        `<div class="empty-state"><div class="empty-icon">🎤</div><p>No singers recorded yet.</p></div>`;
+      return;
+    }
+
+    document.getElementById('singers-grid').innerHTML = allSingers.map(s => {
+      const hue = this._singerHue(s.name);
+      const initials = s.name.split(/\s+/).map(w => w[0] || '').slice(0, 2).join('').toUpperCase() || '?';
+      const deitySlug = this._deitySlug(s.topDeity);
+      const pitchShort = s.usualPitch ? (s.usualPitch.split(' / ')[1] || s.usualPitch.split(' ')[0]) : null;
+      return `<div class="singer-card" data-name="${escHtml(s.name)}">
+        <div class="singer-card-avatar" style="background:hsl(${hue},55%,88%);color:hsl(${hue},55%,32%)">${initials}</div>
+        <div class="singer-card-name">${escHtml(s.name)}</div>
+        <div class="singer-card-stats">${s.sessionCount} session${s.sessionCount !== 1 ? 's' : ''} · ${s.bhajanCount} bhajans</div>
+        ${s.topDeity ? `<div class="singer-card-deity"><span class="deity-pill deity-${deitySlug}">${escHtml(s.topDeity)}</span></div>` : ''}
+        ${pitchShort ? `<div class="singer-card-pitch">${escHtml(pitchShort)}</div>` : ''}
+      </div>`;
+    }).join('');
+
+    document.querySelectorAll('#singers-grid .singer-card').forEach(el => {
+      el.addEventListener('click', () => {
+        location.hash = `#singer/${encodeURIComponent(el.dataset.name)}`;
+      });
+    });
+  }
 
   _renderSinger(name) {
     // Resolve to canonical name and load merged history (including aliases)
@@ -2190,22 +2293,79 @@ class App {
     const aliases = this._allAliasesOf(canonName).filter(n => n !== canonName);
     const { sessions, bhajans, usualPitch, uniqueBhajans } = this._singerHistoryMerged(canonName);
 
+    // Deity stats (merge across all alias names)
+    const deityRaw = {};
+    for (const n of this._allAliasesOf(canonName)) {
+      for (const d of this.sessions.singerDeityStats(n)) {
+        deityRaw[d.deity] = (deityRaw[d.deity] || 0) + d.count;
+      }
+    }
+    const deityTotal = Object.values(deityRaw).reduce((a, b) => a + b, 0);
+    const deityStats = Object.entries(deityRaw).sort((a, b) => b[1] - a[1])
+      .map(([deity, count]) => ({ deity, count, pct: deityTotal ? Math.round(count / deityTotal * 100) : 0 }));
+
+    // Co-singers (merge across alias names)
+    const coRaw = {};
+    for (const n of this._allAliasesOf(canonName)) {
+      for (const c of this.sessions.coSingers(n)) {
+        const cc = this._canonName(c.name);
+        if (cc !== canonName) coRaw[cc] = (coRaw[cc] || 0) + c.count;
+      }
+    }
+    const coSingers = Object.entries(coRaw).sort((a, b) => b[1] - a[1]).slice(0, 6)
+      .map(([n, count]) => ({ name: n, count }));
+
+    const hue = this._singerHue(canonName);
+    const initials = canonName.split(/\s+/).map(w => w[0] || '').slice(0, 2).join('').toUpperCase() || '?';
+    const pitchShort = usualPitch ? (usualPitch.split(' / ')[1] || usualPitch.split(' ')[0]) : null;
+
     document.getElementById('singer-content').innerHTML = `
       <div class="singer-header">
-        <div class="singer-big-avatar">${escHtml(canonName[0]?.toUpperCase() || '?')}</div>
-        <div>
+        <div class="singer-big-avatar" style="background:hsl(${hue},55%,88%);color:hsl(${hue},55%,30%)">${initials}</div>
+        <div class="singer-header-info">
           <div class="singer-info-name">${escHtml(canonName)}</div>
-          ${aliases.length ? `<div class="text-small text-muted" style="margin-top:.15rem">Also: ${aliases.map(a => escHtml(a)).join(', ')}</div>` : ''}
+          ${aliases.length ? `<div class="singer-aliases">Also: ${aliases.map(a => escHtml(a)).join(', ')}</div>` : ''}
           <div class="singer-stats-row">
-            <span>${sessions.length} session${sessions.length !== 1 ? 's' : ''}</span>
-            <span>${bhajans.length} bhajans sung</span>
-            ${usualPitch ? `<span>Usually at ${escHtml(usualPitch)}</span>` : ''}
+            <span class="singer-stat-pill">${sessions.length} session${sessions.length !== 1 ? 's' : ''}</span>
+            <span class="singer-stat-pill">${bhajans.length} sung</span>
+            ${pitchShort ? `<span class="singer-stat-pill pitch-pill">Key: ${escHtml(pitchShort)}</span>` : ''}
           </div>
         </div>
       </div>
 
-      <div class="section-header">
+      ${deityStats.length ? `
+        <div class="section-header">
+          <h3 class="section-title">Deity Affinity</h3>
+        </div>
+        <div class="deity-breakdown">
+          ${deityStats.map(d => `
+            <div class="deity-bar-row">
+              <span class="deity-bar-label deity-${this._deitySlug(d.deity)}">${escHtml(d.deity)}</span>
+              <div class="deity-bar-track">
+                <div class="deity-bar-fill deity-fill-${this._deitySlug(d.deity)}" style="width:${d.pct}%"></div>
+              </div>
+              <span class="deity-bar-pct">${d.pct}%</span>
+              <span class="deity-bar-count">${d.count}</span>
+            </div>`).join('')}
+        </div>` : ''}
+
+      ${coSingers.length ? `
+        <div class="section-header section-header-spaced">
+          <h3 class="section-title">Often Sings With</h3>
+        </div>
+        <div class="co-singers-row">
+          ${coSingers.map(c => {
+            const ch = this._singerHue(c.name);
+            return `<a href="#singer/${encodeURIComponent(c.name)}" class="co-singer-chip"
+              style="background:hsl(${ch},50%,92%);color:hsl(${ch},50%,30%);border-color:hsl(${ch},40%,78%)">
+              ${escHtml(c.name)}<span class="co-singer-count">${c.count}</span>
+            </a>`;
+          }).join('')}
+        </div>` : ''}
+
+      <div class="section-header section-header-spaced">
         <h3 class="section-title">Bhajans Sung</h3>
+        <span class="section-count">${uniqueBhajans.length} unique</span>
       </div>
 
       ${uniqueBhajans.length
@@ -2213,8 +2373,8 @@ class App {
             ${uniqueBhajans.map(b => `
               <div class="singer-bhajan-item" data-bhajan-id="${b.id}">
                 <div class="bhajan-item-main">
-                  <div class="bhajan-item-title">${escHtml(b.title)}</div>
-                  ${b.lastPitch ? `<div class="bhajan-item-meta">Last pitch: ${escHtml(b.lastPitch)}</div>` : ''}
+                  <div class="bhajan-item-title">${escHtml(b.title || b.id)}</div>
+                  ${b.lastPitch ? `<div class="bhajan-item-meta">Last key: ${escHtml(b.lastPitch.split(' / ')[1] || b.lastPitch)}</div>` : ''}
                 </div>
                 <span class="singer-bhajan-count">${b.count}×</span>
               </div>`).join('')}
@@ -2233,7 +2393,10 @@ class App {
       el.addEventListener('click', () => this._openBhajanModal(el.dataset.bhajanId));
     });
     document.querySelectorAll('#singer-content .session-card').forEach(card => {
-      card.addEventListener('click', () => { location.hash = `#session-detail/${card.dataset.id}`; });
+      card.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        location.hash = `#session-detail/${card.dataset.id}`;
+      });
     });
   }
 }

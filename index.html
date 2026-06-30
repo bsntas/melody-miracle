@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260711">
+  <link rel="stylesheet" href="css/style.css?v=20260712">
 </head>
 <body>
 
@@ -43,6 +43,7 @@
           <a href="#browse" class="nav-link" data-view="browse">Browse</a>
           <a href="#session" class="nav-link" data-view="session">Session</a>
           <a href="#history" class="nav-link" data-view="history">History</a>
+          <a href="#singers" class="nav-link" data-view="singers">Singers</a>
         </nav>
         <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
           <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
@@ -77,9 +78,9 @@
               <div class="stat-num" id="stat-bhajans-sung">0</div>
               <div class="stat-label">Bhajans Sung</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card stat-card-link" id="stat-singers-card">
               <div class="stat-num" id="stat-singers">0</div>
-              <div class="stat-label">Singers</div>
+              <div class="stat-label">Singers ↗</div>
             </div>
             <div class="stat-card">
               <div class="stat-num" id="stat-this-month">0</div>
@@ -98,6 +99,12 @@
           <div class="section-header">
             <h3 class="section-title">Insights</h3>
             <a href="#history" class="section-link">All sessions →</a>
+          </div>
+          <div class="period-tabs" id="dash-period-tabs">
+            <button class="period-tab active" data-period="all">All Time</button>
+            <button class="period-tab" data-period="1y">1 Year</button>
+            <button class="period-tab" data-period="6m">6 Months</button>
+            <button class="period-tab" data-period="3m">3 Months</button>
           </div>
           <div class="insights-grid">
             <div class="insight-card" id="insight-recent-sessions">
@@ -182,6 +189,17 @@
         </div>
       </div>
 
+      <!-- Singers directory -->
+      <div id="view-singers" class="view">
+        <div class="view-content">
+          <div class="page-header">
+            <h2 class="page-title">All Singers</h2>
+            <span class="bhajan-count-badge" id="singers-count-badge">0</span>
+          </div>
+          <div id="singers-grid" class="singers-grid"></div>
+        </div>
+      </div>
+
       <!-- Singer profile -->
       <div id="view-singer" class="view">
         <div class="view-content">
@@ -217,6 +235,10 @@
       <a href="#history" class="bnav-item" data-view="history">
         <span class="bnav-icon">📅</span>
         <span class="bnav-label">History</span>
+      </a>
+      <a href="#singers" class="bnav-item" data-view="singers">
+        <span class="bnav-icon">👥</span>
+        <span class="bnav-label">Singers</span>
       </a>
     </nav>
 

@@ -255,6 +255,77 @@ export class GitHubStore {
     return [...names].sort();
   }
 
+  allSingersWithStats(fromDate = null) {
+    const singers = {};
+    for (const s of this._sessions) {
+      if (fromDate && s.date < fromDate) continue;
+      for (const e of (s.bhajans || []))
+        for (const name of (e.singers || (e.singer ? [e.singer] : []))) {
+          if (!singers[name]) singers[name] = { name, _sess: new Set(), bhajans: 0, deities: {}, pitches: {} };
+          singers[name]._sess.add(s.id);
+          singers[name].bhajans++;
+          if (e.bhajan_deity)
+            e.bhajan_deity.split(/[,/]/).map(d => d.trim()).filter(Boolean)
+              .forEach(d => { singers[name].deities[d] = (singers[name].deities[d] || 0) + 1; });
+          if (e.pitch) singers[name].pitches[e.pitch] = (singers[name].pitches[e.pitch] || 0) + 1;
+        }
+    }
+    return Object.values(singers).map(s => ({
+      name: s.name, sessionCount: s._sess.size, bhajanCount: s.bhajans,
+      topDeity: Object.entries(s.deities).sort((a,b) => b[1]-a[1])[0]?.[0] || null,
+      deities: s.deities,
+      pitches: s.pitches,
+      usualPitch: Object.entries(s.pitches).sort((a,b) => b[1]-a[1])[0]?.[0] || null,
+    })).sort((a, b) => b.bhajanCount - a.bhajanCount);
+  }
+
+  singerDeityStats(name) {
+    const counts = {};
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || []))
+        if ((e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.bhajan_deity)
+          e.bhajan_deity.split(/[,/]/).map(d => d.trim()).filter(Boolean)
+            .forEach(d => { counts[d] = (counts[d] || 0) + 1; });
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    return Object.entries(counts).sort((a, b) => b[1] - a[1])
+      .map(([deity, count]) => ({ deity, count, pct: total ? Math.round(count / total * 100) : 0 }));
+  }
+
+  coSingers(name) {
+    const counts = {};
+    for (const s of this._sessions)
+      for (const e of (s.bhajans || [])) {
+        const names = e.singers || (e.singer ? [e.singer] : []);
+        if (names.includes(name)) names.forEach(n => { if (n !== name) counts[n] = (counts[n] || 0) + 1; });
+      }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5)
+      .map(([name, count]) => ({ name, count }));
+  }
+
+  topBhajansFrom(n = 5, fromDate = null) {
+    const counts = {};
+    for (const s of this._sessions) {
+      if (fromDate && s.date < fromDate) continue;
+      for (const e of (s.bhajans || [])) {
+        if (!e.bhajan_id) continue;
+        if (!counts[e.bhajan_id]) counts[e.bhajan_id] = { id: e.bhajan_id, title: e.bhajan_title, count: 0 };
+        counts[e.bhajan_id].count++;
+      }
+    }
+    return Object.values(counts).sort((a, b) => b.count - a.count).slice(0, n);
+  }
+
+  topSingersFrom(n = 5, fromDate = null) {
+    const counts = {};
+    for (const s of this._sessions) {
+      if (fromDate && s.date < fromDate) continue;
+      for (const e of (s.bhajans || []))
+        (e.singers || (e.singer ? [e.singer] : [])).forEach(name => { counts[name] = (counts[name] || 0) + 1; });
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, n)
+      .map(([name, count]) => ({ name, count }));
+  }
+
   knownSeries() {
     const s = new Set();
     for (const sess of this._sessions) if (sess.series) s.add(sess.series);
