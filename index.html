@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260710">
+  <link rel="stylesheet" href="css/style.css?v=20260711">
 </head>
 <body>
 
@@ -303,12 +303,13 @@
           <div class="mab-selected-bhajan" id="mab-selected-info"></div>
           <div class="form-group">
             <label class="form-label">Singer(s)</label>
+            <div id="mab-singer-suggestions" class="singer-suggestions"></div>
             <div id="mab-singers-box" class="singers-box">
               <input type="text" id="mab-singer" class="singers-text-input"
                 placeholder="Add singer…" autocomplete="off" list="mab-singer-list">
             </div>
             <datalist id="mab-singer-list"></datalist>
-            <div class="singers-hint">Enter or , to add · tap chip to remove</div>
+            <div class="singers-hint">Tap a suggestion or type · Enter or , to confirm · tap chip to remove</div>
           </div>
           <div class="form-group">
             <label class="form-label">Pitch</label>
@@ -463,6 +464,21 @@
           <button class="btn btn-ghost btn-sm" id="btn-clear-pat"
             style="color:var(--text-3);font-size:.78rem">Remove token and use local storage only</button>
         </div>
+
+        <div class="divider" style="margin-top:1.25rem"></div>
+        <div class="settings-section-title">Singer Aliases</div>
+        <p class="text-small text-muted" style="margin-bottom:.5rem">
+          Merge singer variants (e.g. "Ashik" → "Ashik Rai") so they count as one person.
+        </p>
+        <div id="settings-alias-list" class="alias-list"></div>
+        <div class="alias-form">
+          <input type="text" id="alias-from" class="form-input" placeholder="Variant (e.g. Ashik)" list="alias-from-list" autocomplete="off">
+          <datalist id="alias-from-list"></datalist>
+          <span class="alias-form-arrow">→</span>
+          <input type="text" id="alias-to" class="form-input" placeholder="Canonical (e.g. Ashik Rai)" list="alias-to-list" autocomplete="off">
+          <datalist id="alias-to-list"></datalist>
+          <button class="btn btn-primary btn-sm" id="btn-add-alias">Add</button>
+        </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-settings-cancel">Cancel</button>
@@ -471,7 +487,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260710"></script>
+  <script type="module" src="js/app.js?v=20260711"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
