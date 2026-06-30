@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260714';
-import { GitHubStore } from './github-store.js?v=20260714';
-import { LiveSession } from './live.js?v=20260714';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260630';
+import { GitHubStore } from './github-store.js?v=20260630';
+import { LiveSession } from './live.js?v=20260630';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -664,8 +664,19 @@ class App {
       liveAlert.classList.add('hidden');
     }
 
-    // Activity chart (last 16 weeks)
-    const activity = this.sessions.activityByWeek(16);
+    // Period tabs — must bind before chart so fromDate is ready
+    document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.period === this._dashPeriod);
+      btn.onclick = () => { this._dashPeriod = btn.dataset.period; this._renderDashboard(); };
+    });
+
+    const fromDate = this._periodFromDate(this._dashPeriod);
+
+    // Activity chart — weekly for 3M/6M, monthly for 1Y/All Time
+    const isMonthly = this._dashPeriod === 'all' || this._dashPeriod === '1y';
+    const activity = isMonthly
+      ? this.sessions.activityByMonth(12)
+      : this.sessions.activityByWeek(this._dashPeriod === '6m' ? 26 : 13);
     const maxCount = Math.max(...activity.map(w => w.count), 1);
     const barsEl = document.getElementById('dash-activity-bars');
     barsEl.innerHTML = `<div class="activity-chart-wrap">
@@ -673,24 +684,16 @@ class App {
         ${activity.map(w => `<div class="activity-bar-col">
           <div class="activity-bar ${w.count > 0 ? 'has-data' : ''}"
             style="height:${Math.max(4, (w.count / maxCount) * 56)}px"
-            title="Week of ${w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
+            title="${isMonthly ? w.label : 'Week of ' + w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
         </div>`).join('')}
       </div>
       <div class="activity-bar-labels">
         ${activity.map((w, i) => {
-          const showLabel = i === 0 || activity[i - 1].month !== w.month;
+          const showLabel = isMonthly || i === 0 || activity[i - 1].month !== w.month;
           return `<div class="activity-bar-label-col">${showLabel ? w.month : ''}</div>`;
         }).join('')}
       </div>
     </div>`;
-
-    // Period tabs — bind once per render
-    document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.period === this._dashPeriod);
-      btn.onclick = () => { this._dashPeriod = btn.dataset.period; this._renderDashboard(); };
-    });
-
-    const fromDate = this._periodFromDate(this._dashPeriod);
 
     // Top bhajans (time-filtered)
     const top = this.sessions.topBhajansFrom(5, fromDate);

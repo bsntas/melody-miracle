@@ -311,6 +311,25 @@ export class SessionStore {
     return weeks;
   }
 
+  activityByMonth(n = 12) {
+    const now = new Date();
+    const months = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const y = d.getFullYear(), mo = d.getMonth();
+      const startKey = `${y}-${String(mo + 1).padStart(2, '0')}-01`;
+      const endKey = new Date(y, mo + 1, 0).toISOString().slice(0, 10);
+      const label = d.toLocaleDateString('en-IN', { month: 'short', year: '2-digit' });
+      const month = d.toLocaleDateString('en-IN', { month: 'short' });
+      months.push({ startKey, endKey, label, month, count: 0 });
+    }
+    for (const s of this._sessions) {
+      const m = months.find(m => s.date >= m.startKey && s.date <= m.endKey);
+      if (m) m.count++;
+    }
+    return months;
+  }
+
   singerHistory(name) {
     const hasSinger = e => (e.singers || (e.singer ? [e.singer] : [])).includes(name);
     const sessions = this._sessions
