@@ -176,6 +176,8 @@ img { max-width: 100%; }
 .btn-ghost:hover { color: var(--saffron); background: var(--saffron-bg); }
 .btn-warning { background: #f59e0b; color: #fff; }
 .btn-danger { background: var(--red); color: #fff; }
+.btn-danger-ghost { color: var(--text-3); }
+.btn-danger-ghost:hover { color: var(--red); background: var(--red-light); }
 .btn-success { background: var(--green); color: #fff; }
 .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
 .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
