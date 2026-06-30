@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260713">
+  <link rel="stylesheet" href="css/style.css?v=20260714">
 </head>
 <body>
 
@@ -40,10 +40,8 @@
         </a>
         <nav class="top-nav" id="top-nav">
           <a href="#dashboard" class="nav-link" data-view="dashboard">Dashboard</a>
-          <a href="#browse" class="nav-link" data-view="browse">Browse</a>
+          <a href="#browse" class="nav-link" data-view="browse">Bhajans</a>
           <a href="#session" class="nav-link" data-view="session">Session</a>
-          <a href="#history" class="nav-link" data-view="history">History</a>
-          <a href="#singers" class="nav-link" data-view="singers">Singers</a>
         </nav>
         <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
           <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
@@ -70,9 +68,9 @@
 
           <!-- Stats row -->
           <div class="stats-row" id="dash-stats">
-            <div class="stat-card">
+            <div class="stat-card stat-card-link" id="stat-sessions-card">
               <div class="stat-num" id="stat-sessions">0</div>
-              <div class="stat-label">Sessions</div>
+              <div class="stat-label">Sessions ↗</div>
             </div>
             <div class="stat-card">
               <div class="stat-num" id="stat-bhajans-sung">0</div>
@@ -181,6 +179,7 @@
       <!-- History -->
       <div id="view-history" class="view">
         <div class="view-content">
+          <button class="btn btn-ghost btn-back" id="btn-history-back">← Dashboard</button>
           <div class="page-header">
             <h2 class="page-title">Session History</h2>
             <button class="btn btn-outline btn-sm" id="btn-add-backdated">+ Add Past Session</button>
@@ -192,6 +191,7 @@
       <!-- Singers directory -->
       <div id="view-singers" class="view">
         <div class="view-content">
+          <button class="btn btn-ghost btn-back" id="btn-singers-back">← Dashboard</button>
           <div class="page-header">
             <h2 class="page-title">All Singers</h2>
             <span class="bhajan-count-badge" id="singers-count-badge">0</span>
@@ -226,19 +226,11 @@
       </a>
       <a href="#browse" class="bnav-item" data-view="browse">
         <span class="bnav-icon">📖</span>
-        <span class="bnav-label">Browse</span>
+        <span class="bnav-label">Bhajans</span>
       </a>
       <a href="#session" class="bnav-item" data-view="session">
         <span class="bnav-icon live-session-icon" id="bnav-session-icon">🎵</span>
         <span class="bnav-label">Session</span>
-      </a>
-      <a href="#history" class="bnav-item" data-view="history">
-        <span class="bnav-icon">📅</span>
-        <span class="bnav-label">History</span>
-      </a>
-      <a href="#singers" class="bnav-item" data-view="singers">
-        <span class="bnav-icon">👥</span>
-        <span class="bnav-label">Singers</span>
       </a>
     </nav>
 

@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260713';
-import { GitHubStore } from './github-store.js?v=20260713';
-import { LiveSession } from './live.js?v=20260713';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260714';
+import { GitHubStore } from './github-store.js?v=20260714';
+import { LiveSession } from './live.js?v=20260714';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -296,8 +296,12 @@ class App {
 
     // History
     document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(true));
+    document.getElementById('btn-history-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
-    // Singer back
+    // Singers directory back
+    document.getElementById('btn-singers-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+
+    // Singer profile back
     document.getElementById('btn-singer-back')?.addEventListener('click', () => history.back());
     document.getElementById('btn-session-detail-back')?.addEventListener('click', () => { location.hash = '#history'; });
 
@@ -646,7 +650,8 @@ class App {
     document.getElementById('stat-singers').textContent      = s.singers;
     document.getElementById('stat-this-month').textContent   = s.thisMonth;
 
-    // Singers stat card → navigate to singers directory
+    // Stat cards → navigate to respective views
+    document.getElementById('stat-sessions-card')?.addEventListener('click', () => { location.hash = '#history'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
     // Live alert
