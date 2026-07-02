@@ -146,6 +146,15 @@ img { max-width: 100%; }
 .series-pill:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); }
 .series-pill-active { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); font-weight: 600; }
 .series-pill-single { cursor: default; pointer-events: none; }
+.series-pill-new { border-style: dashed; color: var(--text-3); margin-left: 0.25rem; }
+.series-pill-new:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); border-style: solid; }
+.series-readonly-display {
+  padding: 0.55rem 0.75rem;
+  background: var(--surface-2, #f9fafb);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius, 0.5rem);
+  font-size: 0.9rem; font-weight: 500; color: var(--text-1);
+}
 
 /* ─── Main Content ───────────────────────────────────────────────────────── */
 #app-main {
