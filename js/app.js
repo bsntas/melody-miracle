@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704';
-import { GitHubStore } from './github-store.js?v=20260704';
-import { LiveSession } from './live.js?v=20260704';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260705';
+import { GitHubStore } from './github-store.js?v=20260705';
+import { LiveSession } from './live.js?v=20260705';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -311,24 +311,38 @@ class App {
     const strip = document.getElementById('series-strip');
     if (!strip) return;
     const allSeries = this.sessions.knownSeries();
-    if (!allSeries.length) {
-      strip.classList.add('hidden');
-      return;
-    }
     strip.classList.remove('hidden');
     const sel = this._selectedSeries;
-    if (allSeries.length === 1) {
-      // Single series — show as a label chip, no switching needed
-      document.getElementById('series-pills').innerHTML =
-        `<span class="series-pill series-pill-active series-pill-single">${escHtml(allSeries[0])}</span>`;
+    const pillsEl = document.getElementById('series-pills');
+    if (allSeries.length === 0) {
+      pillsEl.innerHTML = `<button class="series-pill series-pill-new" id="btn-series-new">+ New Series</button>`;
+    } else if (allSeries.length === 1) {
+      pillsEl.innerHTML =
+        `<span class="series-pill series-pill-active series-pill-single">${escHtml(allSeries[0])}</span>` +
+        `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
     } else {
-      document.getElementById('series-pills').innerHTML =
+      pillsEl.innerHTML =
         `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
-        allSeries.map(s => `<button class="series-pill${s === sel ? ' series-pill-active' : ''}" data-series="${escHtml(s)}">${escHtml(s)}</button>`).join('');
-      document.querySelectorAll('#series-pills .series-pill').forEach(btn => {
+        allSeries.map(s => `<button class="series-pill${s === sel ? ' series-pill-active' : ''}" data-series="${escHtml(s)}">${escHtml(s)}</button>`).join('') +
+        `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
+      pillsEl.querySelectorAll('.series-pill[data-series]').forEach(btn => {
         btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
       });
     }
+    pillsEl.querySelector('#btn-series-new')?.addEventListener('click', () => this._openNewSeriesModal());
+  }
+
+  _openNewSeriesModal() {
+    document.getElementById('mnewseries-name').value = '';
+    this._openModal('modal-new-series');
+    setTimeout(() => document.getElementById('mnewseries-name').focus(), 100);
+  }
+
+  _submitNewSeries() {
+    const name = document.getElementById('mnewseries-name').value.trim();
+    if (!name) { this._toast('Please enter a series name', 'error'); return; }
+    this._closeModal('modal-new-series');
+    this._setSeriesFilter(name);
   }
 
   // ─── Refresh ──────────────────────────────────────────────────────────────
@@ -428,11 +442,13 @@ class App {
       if (e.target === document.getElementById('modal-session-form')) this._closeModal('modal-session-form');
     });
     document.getElementById('btn-mform-submit')?.addEventListener('click', () => this._submitSessionForm());
-    document.getElementById('sf-series')?.addEventListener('change', () => {
-      const newInput = document.getElementById('sf-series-new');
-      const isNew = document.getElementById('sf-series').value === '__new__';
-      newInput.style.display = isNew ? '' : 'none';
-      if (isNew) newInput.focus();
+    // New Series modal
+    document.getElementById('mnewseries-close')?.addEventListener('click', () => this._closeModal('modal-new-series'));
+    document.getElementById('btn-mnewseries-cancel')?.addEventListener('click', () => this._closeModal('modal-new-series'));
+    document.getElementById('btn-mnewseries-create')?.addEventListener('click', () => this._submitNewSeries());
+    document.getElementById('mnewseries-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') this._submitNewSeries(); });
+    document.getElementById('modal-new-series')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-new-series')) this._closeModal('modal-new-series');
     });
     // Add Bhajan modal
     document.getElementById('mab-close')?.addEventListener('click', () => this._closeModal('modal-add-bhajan'));
@@ -1448,35 +1464,27 @@ class App {
 
   _sfIsBackdated = false;
 
-  async _openNewSession(backdated = false) {
+  _openNewSession(backdated = false) {
     this._sfIsBackdated = backdated;
 
     document.getElementById('sf-date').value = todayISO();
     document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
     document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
-    const select   = document.getElementById('sf-series');
-    const newInput = document.getElementById('sf-series-new');
-    select.innerHTML = '<option value="" disabled selected>Loading…</option>';
-    newInput.style.display = 'none';
-    newInput.value = '';
+    const series = this._selectedSeries;
+    const display = document.getElementById('sf-series-display');
+    if (display) display.textContent = series || '(no series selected)';
 
-    const submitBtn = document.getElementById('btn-mform-submit');
-    submitBtn.textContent = backdated ? 'Add Session' : 'Start Session';
+    document.getElementById('btn-mform-submit').textContent = backdated ? 'Add Session' : 'Start Session';
     document.getElementById('mform-title').textContent = backdated ? 'Add Past Session' : 'New Session';
 
     this._openModal('modal-session-form');
-
-    const series = await this._fetchKnownSeries();
-    this._populateSeriesSelect(select, series, true);
+    setTimeout(() => document.getElementById('sf-date').focus(), 100);
   }
 
   _submitSessionForm() {
-    const seriesSelect = document.getElementById('sf-series');
-    const series = seriesSelect.value === '__new__'
-      ? document.getElementById('sf-series-new').value.trim()
-      : seriesSelect.value;
-    const date     = document.getElementById('sf-date').value;
+    const series    = this._selectedSeries;
+    const date      = document.getElementById('sf-date').value;
     const backdated = this._sfIsBackdated;
 
     if (!date) { this._toast('Please set a date', 'error'); return; }

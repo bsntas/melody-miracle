@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260704">
+  <link rel="stylesheet" href="css/style.css?v=20260705">
 </head>
 <body>
 
@@ -297,13 +297,8 @@
         <form id="session-form">
           <div class="form-group">
             <label class="form-label">Series</label>
-            <select id="sf-series" class="form-input">
-              <option value="" disabled selected>Loading…</option>
-            </select>
-            <input type="text" id="sf-series-new" class="form-input"
-              placeholder="New series name (e.g. Thursday Satsang)"
-              style="display:none; margin-top:0.5rem" autocomplete="off">
-            <div class="form-hint">Same series name every week makes sessions findable by date</div>
+            <div class="series-readonly-display" id="sf-series-display">—</div>
+            <div class="form-hint">Change series using the filter strip at the top</div>
           </div>
           <div class="form-group">
             <label class="form-label">Date</label>
@@ -527,7 +522,29 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260704"></script>
+  <!-- New Series Modal -->
+  <div id="modal-new-series" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">New Series</h3>
+        <button class="modal-close" id="mnewseries-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Series Name</label>
+          <input type="text" id="mnewseries-name" class="form-input"
+            placeholder="e.g. Thursday Satsang" autocomplete="off">
+          <div class="form-hint">Use the same name every week so sessions stay grouped</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mnewseries-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mnewseries-create">Create &amp; Select</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=20260705"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
