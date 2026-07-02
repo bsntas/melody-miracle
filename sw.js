@@ -1,10 +1,10 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260702.6';
+const CACHE = 'melody-miracle-20260702.7';
 
 // App shell: always cached on install.
 // Use the same versioned paths that index.html actually requests so cache hits work.
-const V = '20260702.6';
+const V = '20260702.7';
 const PRECACHE = [
   './',
   './index.html',
@@ -28,9 +28,10 @@ self.addEventListener('install', e => {
   );
 });
 
-// ── Activate: delete stale caches, then reload any open windows ───────────────
-// client.navigate() forces pages still running old JS to reload and pick up the
-// new service worker's cached files. Only fires on updates (not fresh installs).
+// ── Activate: delete stale caches, then tell open windows to reload ───────────
+// postMessage is used instead of client.navigate() because navigate() can fail
+// silently in installed PWA contexts. The page listens for SW_UPDATED and calls
+// window.location.reload() itself, which always works.
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
@@ -42,7 +43,7 @@ self.addEventListener('activate', e => {
           .then(() => {
             if (!isUpdate) return;
             return self.clients.matchAll({ type: 'window' }).then(clients =>
-              Promise.all(clients.map(c => c.navigate(c.url).catch(() => {})))
+              Promise.all(clients.map(c => c.postMessage({ type: 'SW_UPDATED' })))
             );
           });
       })
