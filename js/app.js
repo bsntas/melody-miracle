@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702';
-import { GitHubStore } from './github-store.js?v=20260702';
-import { LiveSession } from './live.js?v=20260702';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703';
+import { GitHubStore } from './github-store.js?v=20260703';
+import { LiveSession } from './live.js?v=20260703';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -74,6 +74,11 @@ class App {
     // Dashboard period filter
     this._dashPeriod = 'all';
 
+    // Series filter (null = all series)
+    try {
+      this._selectedSeries = localStorage.getItem('mm-series-filter') || null;
+    } catch { this._selectedSeries = null; }
+
     // Singer aliases: { aliasName -> canonicalName }
     try {
       this._singerAliases = JSON.parse(localStorage.getItem('mm-singer-aliases') || '{}');
@@ -118,6 +123,7 @@ class App {
     }
     this._updateSyncIndicator(pat ? this.sessions.syncStatus : 'local');
     if (!bhajansOk) this._toast('Bhajan catalog failed to load — browse & search unavailable', 'error');
+    this._initSeriesFilter();
     this._route();
     window.addEventListener('hashchange', () => this._route());
   }
@@ -274,9 +280,78 @@ class App {
     this._toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
   }
 
+  // ─── Series Filter ────────────────────────────────────────────────────────
+
+  _initSeriesFilter() {
+    const allSeries = this.sessions.knownSeries();
+    // Default to most recent session's series if no saved preference and multiple series exist
+    if (!this._selectedSeries && allSeries.length > 0) {
+      const recent = this.sessions.all();
+      this._selectedSeries = recent[0]?.series || allSeries[0] || null;
+    }
+    // If saved series no longer exists, reset
+    if (this._selectedSeries && !allSeries.includes(this._selectedSeries)) {
+      this._selectedSeries = allSeries[0] || null;
+    }
+    this.sessions.setSeriesFilter(this._selectedSeries);
+    this._renderSeriesStrip();
+  }
+
+  _setSeriesFilter(series) {
+    this._selectedSeries = series || null;
+    try { localStorage.setItem('mm-series-filter', this._selectedSeries || ''); } catch {}
+    this.sessions.setSeriesFilter(this._selectedSeries);
+    this._renderSeriesStrip();
+    this._route();
+  }
+
+  _renderSeriesStrip() {
+    const strip = document.getElementById('series-strip');
+    if (!strip) return;
+    const allSeries = this.sessions.knownSeries();
+    if (!allSeries.length) {
+      strip.classList.add('hidden');
+      return;
+    }
+    strip.classList.remove('hidden');
+    const sel = this._selectedSeries;
+    if (allSeries.length === 1) {
+      // Single series — show as a label chip, no switching needed
+      document.getElementById('series-pills').innerHTML =
+        `<span class="series-pill series-pill-active series-pill-single">${escHtml(allSeries[0])}</span>`;
+    } else {
+      document.getElementById('series-pills').innerHTML =
+        `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
+        allSeries.map(s => `<button class="series-pill${s === sel ? ' series-pill-active' : ''}" data-series="${escHtml(s)}">${escHtml(s)}</button>`).join('');
+      document.querySelectorAll('#series-pills .series-pill').forEach(btn => {
+        btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
+      });
+    }
+  }
+
+  // ─── Refresh ──────────────────────────────────────────────────────────────
+
+  async _refreshData() {
+    const btn = document.getElementById('btn-refresh');
+    if (btn) { btn.disabled = true; btn.classList.add('spinning'); }
+    try {
+      await this.sessions.load(true);
+      this._initSeriesFilter();
+      this._route();
+      this._toast('Data refreshed', 'success');
+    } catch {
+      this._toast('Refresh failed', 'error');
+    } finally {
+      if (btn) { btn.disabled = false; btn.classList.remove('spinning'); }
+    }
+  }
+
   // ─── Global bindings ──────────────────────────────────────────────────────
 
   _bindGlobal() {
+    // Refresh button
+    document.getElementById('btn-refresh')?.addEventListener('click', () => this._refreshData());
+
     // Dashboard
     document.getElementById('btn-dash-new-session')?.addEventListener('click', () => this._openNewSession());
     document.getElementById('btn-dash-join-session')?.addEventListener('click', () => this._openJoinModal());
@@ -742,7 +817,7 @@ class App {
       : '<p class="text-muted text-small">No sessions yet</p>';
 
     // Recent sessions
-    const recent = this.sessions.all().slice(0, 4);
+    const recent = this.sessions.activeAll().slice(0, 4);
     document.getElementById('dash-recent-sessions').innerHTML = recent.length
       ? recent.map(s => this._sessionCardHTML(s)).join('')
       : `<div class="empty-state"><div class="empty-icon">📅</div><p>No sessions recorded yet. Start one!</p></div>`;
@@ -817,7 +892,11 @@ class App {
     const opts = series.map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
     const newOpt = includeNew ? '<option value="__new__">— New series —</option>' : '';
     select.innerHTML = opts + newOpt;
-    if (series.length) select.value = series[0];
+    if (series.length) {
+      const preferred = this._selectedSeries && series.includes(this._selectedSeries)
+        ? this._selectedSeries : series[0];
+      select.value = preferred;
+    }
   }
 
   _moveBhajanEntry(entryId, direction, bhajansArray) {
@@ -896,7 +975,7 @@ class App {
   _sungIdsForFilter(value) {
     const ids = new Set();
     if (value === 'sung') {
-      for (const s of this.sessions.all())
+      for (const s of this.sessions.activeAll())
         for (const e of (s.bhajans || []))
           if (e.bhajan_id) ids.add(e.bhajan_id);
     } else {
@@ -905,7 +984,7 @@ class App {
         .filter(([, canon]) => canon === value)
         .map(([alias]) => alias);
       const allNames = new Set([value, ...aliases]);
-      for (const s of this.sessions.all())
+      for (const s of this.sessions.activeAll())
         for (const e of (s.bhajans || []))
           if ((e.singers || (e.singer ? [e.singer] : [])).some(n => allNames.has(n)))
             if (e.bhajan_id) ids.add(e.bhajan_id);
@@ -1935,7 +2014,7 @@ class App {
   // ─── History ──────────────────────────────────────────────────────────────
 
   _renderHistory() {
-    const all = this.sessions.all();
+    const all = this.sessions.activeAll();
     const el  = document.getElementById('history-list');
 
     if (!all.length) {

@@ -103,6 +103,7 @@ const DRAFT_KEY   = 'bm-draft-session';
 export class SessionStore {
   constructor() {
     this._sessions = this._load();
+    this._seriesFilter = null;
   }
 
   _load() {
@@ -117,11 +118,11 @@ export class SessionStore {
   // Fetch public sessions.json (served via GitHub Pages) and merge with local.
   // Used by non-PAT users so they can see history saved by the PAT user.
   // Returns true if any new sessions were merged in.
-  async load() {
+  async load(force = false) {
     try {
       const abort = new AbortController();
       const timer = setTimeout(() => abort.abort(), 5000);
-      const res = await fetch('./data/sessions.json', { signal: abort.signal });
+      const res = await fetch('./data/sessions.json', { signal: abort.signal, ...(force ? { cache: 'no-store' } : {}) });
       clearTimeout(timer);
       if (!res.ok) return false;
       const remote = await res.json();
@@ -187,10 +188,22 @@ export class SessionStore {
     return [...s].sort();
   }
 
+  setSeriesFilter(series) { this._seriesFilter = series || null; }
+
+  get _activeSessions() {
+    if (!this._seriesFilter) return this._sessions;
+    return this._sessions.filter(s => s.series === this._seriesFilter);
+  }
+
+  // Like all() but respects the active series filter — use this for display lists.
+  activeAll() {
+    return [...this._activeSessions].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
   // ── Analytics ──────────────────────────────────────────────────────────────
 
   stats() {
-    const sessions = this._sessions;
+    const sessions = this._activeSessions;
     const total = sessions.length;
 
     const allBhajans = sessions.flatMap(s => s.bhajans || []);
@@ -208,7 +221,7 @@ export class SessionStore {
   topBhajans(n = 10) {
     const counts = {};
     const titles = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       for (const e of (s.bhajans || [])) {
         counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
         titles[e.bhajan_id] = e.bhajan_title;
@@ -222,7 +235,7 @@ export class SessionStore {
 
   bhajanSungCounts() {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if (e.bhajan_id) counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
     return counts;
@@ -230,7 +243,7 @@ export class SessionStore {
 
   bhajanHistory(bhajanId) {
     const rows = [];
-    for (const s of [...this._sessions].sort((a, b) => b.date.localeCompare(a.date))) {
+    for (const s of [...this._activeSessions].sort((a, b) => b.date.localeCompare(a.date))) {
       for (const e of (s.bhajans || [])) {
         if (e.bhajan_id === bhajanId) {
           rows.push({
@@ -248,7 +261,7 @@ export class SessionStore {
 
   topSingers(n = 10) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         for (const name of (e.singers || (e.singer ? [e.singer] : [])))
           counts[name] = (counts[name] || 0) + 1;
@@ -260,7 +273,7 @@ export class SessionStore {
 
   deityDistribution() {
     const counts = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       for (const e of (s.bhajans || [])) {
         const deity = e.bhajan_deity;
         if (deity) {
@@ -284,7 +297,7 @@ export class SessionStore {
       const key = d.toISOString().slice(0, 10);
       days[key] = 0;
     }
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (days[s.date] !== undefined) days[s.date]++;
     }
     return Object.entries(days).map(([date, count]) => ({ date, count }));
@@ -304,7 +317,7 @@ export class SessionStore {
       const month = start.toLocaleDateString('en-IN', { month: 'short' });
       weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
     }
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
       if (w) w.count++;
     }
@@ -323,7 +336,7 @@ export class SessionStore {
       const month = d.toLocaleDateString('en-IN', { month: 'short' });
       months.push({ startKey, endKey, label, month, count: 0 });
     }
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       const m = months.find(m => s.date >= m.startKey && s.date <= m.endKey);
       if (m) m.count++;
     }
@@ -332,7 +345,7 @@ export class SessionStore {
 
   singerHistory(name) {
     const hasSinger = e => (e.singers || (e.singer ? [e.singer] : [])).includes(name);
-    const sessions = this._sessions
+    const sessions = this._activeSessions
       .filter(s => (s.bhajans || []).some(hasSinger))
       .sort((a, b) => b.date.localeCompare(a.date));
 
@@ -363,7 +376,7 @@ export class SessionStore {
   // Return the pitch a given singer most commonly uses (from all history)
   singerUsualPitch(singerName) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if ((e.singers || (e.singer ? [e.singer] : [])).includes(singerName) && e.pitch)
           counts[e.pitch] = (counts[e.pitch] || 0) + 1;
@@ -372,7 +385,7 @@ export class SessionStore {
 
   // Return pitch a singer used for a specific bhajan
   singerBhajanPitch(singerName, bhajanId) {
-    for (const s of [...this._sessions].reverse()) {
+    for (const s of [...this._activeSessions].reverse()) {
       const e = (s.bhajans || []).find(e =>
         (e.singers || (e.singer ? [e.singer] : [])).includes(singerName) && e.bhajan_id === bhajanId);
       if (e?.pitch) return e.pitch;
@@ -382,7 +395,7 @@ export class SessionStore {
 
   allSingerNames() {
     const names = new Set();
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       (s.bhajans || []).forEach(e =>
         (e.singers || (e.singer ? [e.singer] : [])).forEach(n => names.add(n)));
     return [...names].sort();
@@ -390,7 +403,7 @@ export class SessionStore {
 
   allSingersWithStats(fromDate = null) {
     const singers = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || []))
         for (const name of (e.singers || (e.singer ? [e.singer] : []))) {
@@ -414,7 +427,7 @@ export class SessionStore {
 
   singerDeityStats(name) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if ((e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.bhajan_deity)
           e.bhajan_deity.split(/[,/]/).map(d => d.trim()).filter(Boolean)
@@ -426,7 +439,7 @@ export class SessionStore {
 
   coSingers(name) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || [])) {
         const names = e.singers || (e.singer ? [e.singer] : []);
         if (names.includes(name)) names.forEach(n => { if (n !== name) counts[n] = (counts[n] || 0) + 1; });
@@ -437,7 +450,7 @@ export class SessionStore {
 
   topBhajansFrom(n = 5, fromDate = null) {
     const counts = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || [])) {
         if (!e.bhajan_id) continue;
@@ -450,7 +463,7 @@ export class SessionStore {
 
   topSingersFrom(n = 5, fromDate = null) {
     const counts = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || []))
         (e.singers || (e.singer ? [e.singer] : [])).forEach(name => { counts[name] = (counts[name] || 0) + 1; });

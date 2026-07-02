@@ -21,6 +21,7 @@ export class GitHubStore {
   constructor(pat) {
     this._pat         = pat;
     this._sessions    = this._loadCache();
+    this._seriesFilter = null;
     this._sha         = null;   // current file SHA on GitHub
     this._busy        = false;  // commit in-flight?
     this._dirty       = false;  // changed while commit was in-flight?
@@ -107,7 +108,7 @@ export class GitHubStore {
   // ── Analytics (identical to SessionStore) ────────────────────────────────────
 
   stats() {
-    const sessions      = this._sessions;
+    const sessions      = this._activeSessions;
     const total         = sessions.length;
     const allBhajans    = sessions.flatMap(s => s.bhajans || []);
     const totalBhajans  = allBhajans.length;
@@ -120,7 +121,7 @@ export class GitHubStore {
 
   topBhajans(n = 10) {
     const counts = {}; const titles = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || [])) {
         counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
         titles[e.bhajan_id] = e.bhajan_title;
@@ -131,7 +132,7 @@ export class GitHubStore {
 
   bhajanSungCounts() {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if (e.bhajan_id) counts[e.bhajan_id] = (counts[e.bhajan_id] || 0) + 1;
     return counts;
@@ -139,7 +140,7 @@ export class GitHubStore {
 
   bhajanHistory(bhajanId) {
     const rows = [];
-    for (const s of [...this._sessions].sort((a,b) => b.date.localeCompare(a.date))) {
+    for (const s of [...this._activeSessions].sort((a,b) => b.date.localeCompare(a.date))) {
       for (const e of (s.bhajans || [])) {
         if (e.bhajan_id === bhajanId) {
           rows.push({
@@ -157,7 +158,7 @@ export class GitHubStore {
 
   topSingers(n = 10) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         for (const name of (e.singers || (e.singer ? [e.singer] : [])))
           counts[name] = (counts[name] || 0) + 1;
@@ -167,7 +168,7 @@ export class GitHubStore {
 
   deityDistribution() {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if (e.bhajan_deity)
           e.bhajan_deity.split(/[,/]/).map(d=>d.trim()).filter(Boolean)
@@ -183,7 +184,7 @@ export class GitHubStore {
       const d = new Date(now); d.setDate(d.getDate()-i);
       days[d.toISOString().slice(0,10)] = 0;
     }
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       if (days[s.date] !== undefined) days[s.date]++;
     return Object.entries(days).map(([date,count])=>({ date, count }));
   }
@@ -202,7 +203,7 @@ export class GitHubStore {
       const month = start.toLocaleDateString('en-IN', { month: 'short' });
       weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
     }
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
       if (w) w.count++;
     }
@@ -221,7 +222,7 @@ export class GitHubStore {
       const month = d.toLocaleDateString('en-IN', { month: 'short' });
       months.push({ startKey, endKey, label, month, count: 0 });
     }
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       const m = months.find(m => s.date >= m.startKey && s.date <= m.endKey);
       if (m) m.count++;
     }
@@ -230,7 +231,7 @@ export class GitHubStore {
 
   singerHistory(name) {
     const hasSinger = e => (e.singers || (e.singer ? [e.singer] : [])).includes(name);
-    const sessions = this._sessions
+    const sessions = this._activeSessions
       .filter(s => (s.bhajans||[]).some(hasSinger))
       .sort((a,b)=>b.date.localeCompare(a.date));
     const bhajans = sessions.flatMap(s =>
@@ -250,7 +251,7 @@ export class GitHubStore {
 
   singerUsualPitch(name) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans||[]))
         if ((e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.pitch)
           counts[e.pitch]=(counts[e.pitch]||0)+1;
@@ -258,7 +259,7 @@ export class GitHubStore {
   }
 
   singerBhajanPitch(name, bhajanId) {
-    for (const s of [...this._sessions].reverse()) {
+    for (const s of [...this._activeSessions].reverse()) {
       const e = (s.bhajans||[]).find(e=>
         (e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.bhajan_id===bhajanId);
       if (e?.pitch) return e.pitch;
@@ -268,7 +269,7 @@ export class GitHubStore {
 
   allSingerNames() {
     const names = new Set();
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       (s.bhajans||[]).forEach(e =>
         (e.singers || (e.singer ? [e.singer] : [])).forEach(n => names.add(n)));
     return [...names].sort();
@@ -276,7 +277,7 @@ export class GitHubStore {
 
   allSingersWithStats(fromDate = null) {
     const singers = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || []))
         for (const name of (e.singers || (e.singer ? [e.singer] : []))) {
@@ -300,7 +301,7 @@ export class GitHubStore {
 
   singerDeityStats(name) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || []))
         if ((e.singers || (e.singer ? [e.singer] : [])).includes(name) && e.bhajan_deity)
           e.bhajan_deity.split(/[,/]/).map(d => d.trim()).filter(Boolean)
@@ -312,7 +313,7 @@ export class GitHubStore {
 
   coSingers(name) {
     const counts = {};
-    for (const s of this._sessions)
+    for (const s of this._activeSessions)
       for (const e of (s.bhajans || [])) {
         const names = e.singers || (e.singer ? [e.singer] : []);
         if (names.includes(name)) names.forEach(n => { if (n !== name) counts[n] = (counts[n] || 0) + 1; });
@@ -323,7 +324,7 @@ export class GitHubStore {
 
   topBhajansFrom(n = 5, fromDate = null) {
     const counts = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || [])) {
         if (!e.bhajan_id) continue;
@@ -336,7 +337,7 @@ export class GitHubStore {
 
   topSingersFrom(n = 5, fromDate = null) {
     const counts = {};
-    for (const s of this._sessions) {
+    for (const s of this._activeSessions) {
       if (fromDate && s.date < fromDate) continue;
       for (const e of (s.bhajans || []))
         (e.singers || (e.singer ? [e.singer] : [])).forEach(name => { counts[name] = (counts[name] || 0) + 1; });
@@ -349,6 +350,17 @@ export class GitHubStore {
     const s = new Set();
     for (const sess of this._sessions) if (sess.series) s.add(sess.series);
     return [...s].sort();
+  }
+
+  setSeriesFilter(series) { this._seriesFilter = series || null; }
+
+  get _activeSessions() {
+    if (!this._seriesFilter) return this._sessions;
+    return this._sessions.filter(s => s.series === this._seriesFilter);
+  }
+
+  activeAll() {
+    return [...this._activeSessions].sort((a, b) => b.date.localeCompare(a.date));
   }
 
   // ── GitHub API ────────────────────────────────────────────────────────────────

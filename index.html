@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260702">
+  <link rel="stylesheet" href="css/style.css?v=20260703">
 </head>
 <body>
 
@@ -43,11 +43,22 @@
           <a href="#browse" class="nav-link" data-view="browse">Browse</a>
           <a href="#session" class="nav-link" data-view="session">Session</a>
         </nav>
-        <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
-          <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
-        </button>
+        <div class="header-actions">
+          <button class="btn btn-ghost btn-icon" id="btn-refresh" title="Refresh data" aria-label="Refresh data">↻</button>
+          <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
+            <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
+          </button>
+        </div>
       </div>
     </header>
+
+    <!-- Series filter strip (shown when multiple series exist) -->
+    <div id="series-strip" class="series-strip hidden">
+      <div class="series-strip-inner">
+        <span class="series-strip-label">Series</span>
+        <div id="series-pills" class="series-pills"></div>
+      </div>
+    </div>
 
     <!-- Main content area -->
     <main id="app-main">
@@ -516,7 +527,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260702"></script>
+  <script type="module" src="js/app.js?v=20260703"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

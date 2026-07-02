@@ -109,6 +109,44 @@ img { max-width: 100%; }
 
 @media (min-width: 640px) { .top-nav { display: flex; } }
 
+/* ─── Header actions group ───────────────────────────────────────────────── */
+.header-actions { display: flex; align-items: center; gap: 0.25rem; }
+
+/* ─── Refresh button spin animation ─────────────────────────────────────── */
+#btn-refresh { font-size: 1.1rem; transition: transform .2s; }
+#btn-refresh.spinning { animation: spin 0.7s linear infinite; }
+
+/* ─── Series Strip ───────────────────────────────────────────────────────── */
+.series-strip {
+  position: sticky; top: var(--header-h); z-index: 40;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.series-strip-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 1rem;
+}
+.series-strip-label {
+  font-size: 0.75rem; font-weight: 600; color: var(--text-3);
+  white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.series-pills {
+  display: flex; gap: 0.4rem;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.series-pills::-webkit-scrollbar { display: none; }
+.series-pill {
+  padding: 0.25rem 0.85rem; border-radius: 99px;
+  font-size: 0.8rem; font-weight: 500; white-space: nowrap;
+  border: 1.5px solid var(--border); color: var(--text-2);
+  background: var(--surface); transition: all .15s;
+}
+.series-pill:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); }
+.series-pill-active { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); font-weight: 600; }
+.series-pill-single { cursor: default; pointer-events: none; }
+
 /* ─── Main Content ───────────────────────────────────────────────────────── */
 #app-main {
   flex: 1;
