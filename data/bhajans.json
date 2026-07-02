@@ -30364,5 +30364,17 @@
     "ladies_pitch_indian": "6 Pancham",
     "ladies_pitch_western": "A",
     "scale": "Minor"
+  },
+  {
+    "id": "hey-govinda-hey-ananta",
+    "title": "Hey Govinda Hey Ananta Nanda Gopala",
+    "deity": "Krishna",
+    "language": "Hindi"
+  },
+  {
+    "id": "megha-shyamala-madhava-murahara",
+    "title": "Megha Shyamala Madhava Murahara",
+    "deity": "Krishna",
+    "language": "Sanskrit"
   }
 ]
