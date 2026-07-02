@@ -288,15 +288,21 @@ class App {
 
   _initSeriesFilter() {
     const allSeries = this.sessions.knownSeries();
-    // Default to most recent session's series if no saved preference and multiple series exist
-    if (!this._selectedSeries && allSeries.length > 0) {
-      const recent = this.sessions.all();
-      this._selectedSeries = recent[0]?.series || allSeries[0] || null;
+    const draft = this.sessions.getDraft?.();
+
+    // If a series is already selected (restored from localStorage), keep it —
+    // it may belong to a live draft session not yet in knownSeries().
+    // Only auto-select if there is genuinely no preference saved.
+    if (!this._selectedSeries) {
+      // Prefer the draft's series so the strip matches what's in progress.
+      if (draft?.series) {
+        this._selectedSeries = draft.series;
+      } else if (allSeries.length > 0) {
+        const recent = this.sessions.all();
+        this._selectedSeries = recent[0]?.series || allSeries[0] || null;
+      }
     }
-    // If saved series no longer exists, reset
-    if (this._selectedSeries && !allSeries.includes(this._selectedSeries)) {
-      this._selectedSeries = allSeries[0] || null;
-    }
+
     this.sessions.setSeriesFilter(this._selectedSeries);
     this._renderSeriesStrip();
   }
