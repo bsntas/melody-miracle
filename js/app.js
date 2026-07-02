@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.3';
-import { GitHubStore } from './github-store.js?v=20260702.3';
-import { LiveSession } from './live.js?v=20260702.3';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.4';
+import { GitHubStore } from './github-store.js?v=20260702.4';
+import { LiveSession } from './live.js?v=20260702.4';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -78,6 +78,11 @@ class App {
     try {
       this._selectedSeries = localStorage.getItem('mm-series-filter') || null;
     } catch { this._selectedSeries = null; }
+
+    // Locally-created series names (persisted until browser data cleared)
+    try {
+      this._localSeries = JSON.parse(localStorage.getItem('mm-local-series') || '[]');
+    } catch { this._localSeries = []; }
 
     // Singer aliases: { aliasName -> canonicalName }
     try {
@@ -320,18 +325,17 @@ class App {
     if (!strip) return;
     const sel = this._selectedSeries;
     let allSeries = this.sessions.knownSeries();
-    // Always include the selected series (may not be saved yet — new series
-    // created via "+ New", or live session still in progress).
-    if (sel && !allSeries.includes(sel)) {
-      allSeries = [...allSeries, sel].sort();
+    // Merge locally-created series (persisted in localStorage, survive until
+    // browser data is cleared — independent of which series is currently active).
+    for (const s of this._localSeries) {
+      if (!allSeries.includes(s)) allSeries.push(s);
     }
-    // Always include the draft's series too — if the user navigates to a
-    // different series pill, the in-progress draft's series must stay visible
-    // so they can switch back to it without losing it.
+    // Also include the draft's series (live session in progress).
     const draftSeries = this.sessions.getDraft?.()?.series;
-    if (draftSeries && !allSeries.includes(draftSeries)) {
-      allSeries = [...allSeries, draftSeries].sort();
-    }
+    if (draftSeries && !allSeries.includes(draftSeries)) allSeries.push(draftSeries);
+    // Also include the currently selected series (catches edge cases).
+    if (sel && !allSeries.includes(sel)) allSeries.push(sel);
+    allSeries = allSeries.sort();
     strip.classList.remove('hidden');
     const pillsEl = document.getElementById('series-pills');
     if (allSeries.length === 0) {
@@ -362,6 +366,10 @@ class App {
     const name = document.getElementById('mnewseries-name').value.trim();
     if (!name) { this._toast('Please enter a series name', 'error'); return; }
     this._closeModal('modal-new-series');
+    if (!this._localSeries.includes(name)) {
+      this._localSeries.push(name);
+      try { localStorage.setItem('mm-local-series', JSON.stringify(this._localSeries)); } catch {}
+    }
     this._setSeriesFilter(name);
   }
 
