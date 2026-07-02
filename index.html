@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260702.5">
+  <link rel="stylesheet" href="css/style.css?v=20260702.6">
 </head>
 <body>
 
@@ -563,11 +563,11 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260702.5"></script>
+  <script type="module" src="js/app.js?v=20260702.6"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
+        navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).catch(() => {});
       });
       // When a new service worker takes control, reload so the page gets fresh JS.
       let _swReloading = false;
