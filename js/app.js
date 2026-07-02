@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260706';
-import { GitHubStore } from './github-store.js?v=20260706';
-import { LiveSession } from './live.js?v=20260706';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260707';
+import { GitHubStore } from './github-store.js?v=20260707';
+import { LiveSession } from './live.js?v=20260707';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -312,9 +312,15 @@ class App {
   _renderSeriesStrip() {
     const strip = document.getElementById('series-strip');
     if (!strip) return;
-    const allSeries = this.sessions.knownSeries();
-    strip.classList.remove('hidden');
     const sel = this._selectedSeries;
+    // Always include the currently selected series even if no session has been
+    // saved with it yet (e.g. new series created via "+ New", or live session
+    // in progress whose series is only saved when the session ends).
+    let allSeries = this.sessions.knownSeries();
+    if (sel && !allSeries.includes(sel)) {
+      allSeries = [...allSeries, sel].sort();
+    }
+    strip.classList.remove('hidden');
     const pillsEl = document.getElementById('series-pills');
     if (allSeries.length === 0) {
       pillsEl.innerHTML = `<button class="series-pill series-pill-new" id="btn-series-new">+ New Series</button>`;
