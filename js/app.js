@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.2';
-import { GitHubStore } from './github-store.js?v=20260702.2';
-import { LiveSession } from './live.js?v=20260702.2';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.3';
+import { GitHubStore } from './github-store.js?v=20260702.3';
+import { LiveSession } from './live.js?v=20260702.3';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -319,12 +319,18 @@ class App {
     const strip = document.getElementById('series-strip');
     if (!strip) return;
     const sel = this._selectedSeries;
-    // Always include the currently selected series even if no session has been
-    // saved with it yet (e.g. new series created via "+ New", or live session
-    // in progress whose series is only saved when the session ends).
     let allSeries = this.sessions.knownSeries();
+    // Always include the selected series (may not be saved yet — new series
+    // created via "+ New", or live session still in progress).
     if (sel && !allSeries.includes(sel)) {
       allSeries = [...allSeries, sel].sort();
+    }
+    // Always include the draft's series too — if the user navigates to a
+    // different series pill, the in-progress draft's series must stay visible
+    // so they can switch back to it without losing it.
+    const draftSeries = this.sessions.getDraft?.()?.series;
+    if (draftSeries && !allSeries.includes(draftSeries)) {
+      allSeries = [...allSeries, draftSeries].sort();
     }
     strip.classList.remove('hidden');
     const pillsEl = document.getElementById('series-pills');
