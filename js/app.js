@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703';
-import { GitHubStore } from './github-store.js?v=20260703';
-import { LiveSession } from './live.js?v=20260703';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704';
+import { GitHubStore } from './github-store.js?v=20260704';
+import { LiveSession } from './live.js?v=20260704';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -107,7 +107,9 @@ class App {
         try { await this.sessions.load(); } catch (e) { console.warn('GitHub sync failed on startup:', e); }
       } else {
         // No PAT: load public sessions.json in the background — never block app startup
-        this.sessions.load().then(changed => { if (changed) this._route(); });
+        this.sessions.load().then(changed => {
+          if (changed) { this._initSeriesFilter(); this._route(); }
+        });
       }
 
       this._migratePitchFields();
