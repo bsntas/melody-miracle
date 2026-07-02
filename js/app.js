@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260705';
-import { GitHubStore } from './github-store.js?v=20260705';
-import { LiveSession } from './live.js?v=20260705';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260706';
+import { GitHubStore } from './github-store.js?v=20260706';
+import { LiveSession } from './live.js?v=20260706';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -259,6 +259,8 @@ class App {
     document.querySelectorAll('[data-view]').forEach(el => {
       el.classList.toggle('active', el.dataset.view === view);
     });
+
+    this._renderSeriesStrip();
 
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
