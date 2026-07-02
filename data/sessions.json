@@ -773,7 +773,9 @@
         "singers": [],
         "language": "Sanskrit"
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR",
+    "label": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "weekendbhaja-2026-05-16",
@@ -8655,7 +8657,8 @@
         "pitch_western": "A#",
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "s_mr00van3zcyl",
@@ -8740,7 +8743,8 @@
         "pitch_western": null,
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "s_mr00valxspem",
@@ -8825,7 +8829,8 @@
         "pitch_western": "A",
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "s_mr00vakrtfpk",
@@ -8895,7 +8900,8 @@
         "pitch_western": "A#",
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "s_mr00vajsttco",
@@ -8978,7 +8984,8 @@
         "pitch_western": "F",
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "s_mr00vaimgfdq",
@@ -9061,7 +9068,8 @@
         "pitch_western": "C",
         "addedAt": null
       }
-    ]
+    ],
+    "series": "Weekend Bhajans E-City HSR"
   },
   {
     "id": "weekendbhaja-2024-01-20",
