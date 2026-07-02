@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.4';
-import { GitHubStore } from './github-store.js?v=20260702.4';
-import { LiveSession } from './live.js?v=20260702.4';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.5';
+import { GitHubStore } from './github-store.js?v=20260702.5';
+import { LiveSession } from './live.js?v=20260702.5';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -338,21 +338,37 @@ class App {
     allSeries = allSeries.sort();
     strip.classList.remove('hidden');
     const pillsEl = document.getElementById('series-pills');
+
+    const seriesPillHtml = (s) => {
+      const active = s === sel;
+      // Delete button on every series pill — confirmation modal prevents accidents
+      const del = `<button class="series-pill-del" data-del="${escHtml(s)}" title="Delete series">🗑</button>`;
+      if (active) {
+        return `<span class="series-pill series-pill-active">${escHtml(s)}</span>${del}`;
+      }
+      return `<button class="series-pill" data-series="${escHtml(s)}">${escHtml(s)}</button>${del}`;
+    };
+
     if (allSeries.length === 0) {
       pillsEl.innerHTML = `<button class="series-pill series-pill-new" id="btn-series-new">+ New Series</button>`;
     } else if (allSeries.length === 1) {
+      const s = allSeries[0];
       pillsEl.innerHTML =
-        `<span class="series-pill series-pill-active series-pill-single">${escHtml(allSeries[0])}</span>` +
+        `<span class="series-pill series-pill-active series-pill-single">${escHtml(s)}</span>` +
+        `<button class="series-pill-del" data-del="${escHtml(s)}" title="Delete series">🗑</button>` +
         `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
     } else {
       pillsEl.innerHTML =
         `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
-        allSeries.map(s => `<button class="series-pill${s === sel ? ' series-pill-active' : ''}" data-series="${escHtml(s)}">${escHtml(s)}</button>`).join('') +
+        allSeries.map(s => seriesPillHtml(s)).join('') +
         `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
       pillsEl.querySelectorAll('.series-pill[data-series]').forEach(btn => {
         btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
       });
     }
+    pillsEl.querySelectorAll('.series-pill-del').forEach(btn => {
+      btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.del));
+    });
     pillsEl.querySelector('#btn-series-new')?.addEventListener('click', () => this._openNewSeriesModal());
   }
 
@@ -371,6 +387,52 @@ class App {
       try { localStorage.setItem('mm-local-series', JSON.stringify(this._localSeries)); } catch {}
     }
     this._setSeriesFilter(name);
+  }
+
+  _confirmDeleteSeries(series) {
+    const count = this.sessions.all().filter(s => s.series === series).length;
+    const hasPat = !!(typeof GitHubStore !== 'undefined' ? GitHubStore.getPat() : '') ||
+      !!(this.sessions.constructor?.name === 'GitHubStore' ? true : false);
+    const syncNote = this.sessions.deleteSeries && this.sessions.constructor?.name !== 'SessionStore'
+      ? ' Synced data will be removed from GitHub.'
+      : '';
+    document.getElementById('mdel-series-name').textContent = series;
+    document.getElementById('mdel-session-count').textContent =
+      count === 0 ? 'no sessions' : `${count} session${count !== 1 ? 's' : ''}`;
+    document.getElementById('mdel-sync-note').textContent = syncNote;
+    this._pendingDeleteSeries = series;
+    this._openModal('modal-del-series');
+  }
+
+  async _executeDeleteSeries() {
+    const series = this._pendingDeleteSeries;
+    if (!series) return;
+    this._pendingDeleteSeries = null;
+    this._closeModal('modal-del-series');
+
+    // Remove from locally-tracked series
+    this._localSeries = this._localSeries.filter(s => s !== series);
+    try { localStorage.setItem('mm-local-series', JSON.stringify(this._localSeries)); } catch {}
+
+    // Clear any draft that belongs to this series
+    if (this.sessions.getDraft?.()?.series === series) this.sessions.clearDraft?.();
+
+    try {
+      await this.sessions.deleteSeries?.(series);
+    } catch {
+      this._toast(`Could not sync deletion to GitHub`, 'error');
+      return;
+    }
+
+    // Switch away from the deleted series
+    if (this._selectedSeries === series) {
+      const remaining = [...this.sessions.knownSeries(), ...this._localSeries].filter(s => s !== series);
+      this._setSeriesFilter(remaining[0] || null);
+    } else {
+      this._renderSeriesStrip();
+      this._route();
+    }
+    this._toast(`"${series}" deleted`, 'success');
   }
 
   // ─── Refresh ──────────────────────────────────────────────────────────────
@@ -477,6 +539,12 @@ class App {
     document.getElementById('mnewseries-name')?.addEventListener('keydown', e => { if (e.key === 'Enter') this._submitNewSeries(); });
     document.getElementById('modal-new-series')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-new-series')) this._closeModal('modal-new-series');
+    });
+    // Delete Series modal
+    document.getElementById('btn-mdel-cancel')?.addEventListener('click', () => this._closeModal('modal-del-series'));
+    document.getElementById('btn-mdel-confirm')?.addEventListener('click', () => this._executeDeleteSeries());
+    document.getElementById('modal-del-series')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-del-series')) this._closeModal('modal-del-series');
     });
     // Add Bhajan modal
     document.getElementById('mab-close')?.addEventListener('click', () => this._closeModal('modal-add-bhajan'));
@@ -1491,6 +1559,7 @@ class App {
   // ─── New Session Modal ────────────────────────────────────────────────────
 
   _sfIsBackdated = false;
+  _pendingDeleteSeries = null;
 
   _openNewSession(backdated = false) {
     this._sfIsBackdated = backdated;
