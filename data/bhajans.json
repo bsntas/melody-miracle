@@ -30364,5 +30364,41 @@
     "ladies_pitch_indian": "6 Pancham",
     "ladies_pitch_western": "A",
     "scale": "Minor"
+  },
+  {
+    "id": "guru-vacanam-pavana-nam",
+    "title": "Guru Vacanam Pavana Nam",
+    "deity": "Guru",
+    "language": "Sanskrit"
+  },
+  {
+    "id": "hey-govinda-hey-ananta",
+    "title": "Hey Govinda Hey Ananta",
+    "deity": "Krishna",
+    "language": "Hindi"
+  },
+  {
+    "id": "jai-maa-jai-maa-daya-karo-sai-maa",
+    "title": "Jai Maa Jai Maa Daya Karo Sai Maa",
+    "deity": "Sai",
+    "language": "Hindi"
+  },
+  {
+    "id": "kali-kali-mahakali-kapalini",
+    "title": "Kali Kali Mahakali Kapalini",
+    "deity": "Devi",
+    "language": "Sanskrit"
+  },
+  {
+    "id": "megha-shyamala-madhava-murahara",
+    "title": "Megha Shyamala Madhava Murahara",
+    "deity": "Krishna",
+    "language": "Sanskrit"
+  },
+  {
+    "id": "sai-ram-ghanashyam-bhagawan",
+    "title": "Sai Ram Ghanashyam Bhagawan",
+    "deity": "Sai",
+    "language": "Hindi"
   }
 ]
