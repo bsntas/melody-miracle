@@ -182,6 +182,11 @@ export class SessionStore {
     try { localStorage.removeItem(DRAFT_KEY); } catch {}
   }
 
+  deleteSeries(series) {
+    this._sessions = this._sessions.filter(s => s.series !== series);
+    this._save();
+  }
+
   knownSeries() {
     const s = new Set();
     for (const sess of this._sessions) if (sess.series) s.add(sess.series);

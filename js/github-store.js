@@ -12,6 +12,7 @@ const OWNER         = 'bsntas';
 const REPO          = 'melody-miracle';
 const BRANCH        = 'main';
 const SESSIONS_PATH = 'data/sessions.json';
+const SERIES_DIR    = 'data/series';
 const API_BASE      = 'https://api.github.com';
 const CACHE_KEY     = 'bm-sessions-v2';          // same key as SessionStore
 const PAT_KEY       = 'bm-github-pat';
@@ -19,16 +20,18 @@ const SYNC_META_KEY = 'bm-sync-meta';
 
 export class GitHubStore {
   constructor(pat) {
-    this._pat         = pat;
-    this._sessions    = this._loadCache();
+    this._pat          = pat;
+    this._sessions     = this._loadCache();
     this._seriesFilter = null;
-    this._sha         = null;   // current file SHA on GitHub
-    this._busy        = false;  // commit in-flight?
-    this._dirty       = false;  // changed while commit was in-flight?
-    this._commitTimer = null;   // debounce timer for auto-commit
-    this._pendingMsg  = null;   // commit message accumulated during debounce
-    this.syncStatus   = 'idle'; // 'idle' | 'syncing' | 'ok' | 'error' | 'pending'
-    this.onSyncChange = null;   // (status, message?) => void
+    this._sha          = null;   // SHA of data/sessions.json
+    this._seriesShas   = {};     // { seriesPath: sha } for per-series files
+    this._dirtySeries  = new Set(); // series whose files need updating after next commit
+    this._busy         = false;  // commit in-flight?
+    this._dirty        = false;  // changed while commit was in-flight?
+    this._commitTimer  = null;   // debounce timer for auto-commit
+    this._pendingMsg   = null;   // commit message accumulated during debounce
+    this.syncStatus    = 'idle'; // 'idle' | 'syncing' | 'ok' | 'error' | 'pending'
+    this.onSyncChange  = null;   // (status, message?) => void
   }
 
   // ── Load ────────────────────────────────────────────────────────────────────
@@ -84,13 +87,38 @@ export class GitHubStore {
     if (idx >= 0) this._sessions[idx] = { ...session };
     else          this._sessions.push({ ...session });
     this._saveCache();
+    if (session.series) this._dirtySeries.add(session.series);
     if (local) { this._setSync('pending'); } else { this._scheduleCommit(30000); }
   }
 
   delete(id) {
+    const session = this._sessions.find(s => s.id === id);
     this._sessions = this._sessions.filter(s => s.id !== id);
     this._saveCache();
+    if (session?.series) this._dirtySeries.add(session.series);
     this._scheduleCommit(0);  // immediate — user explicitly confirmed
+  }
+
+  // Delete all sessions for a series and sync to GitHub.
+  async deleteSeries(series) {
+    clearTimeout(this._commitTimer);
+    this._commitTimer = null;
+    this._busy = false;
+
+    this._sessions = this._sessions.filter(s => s.series !== series);
+    this._saveCache();
+
+    this._setSync('syncing');
+    try {
+      await Promise.all([
+        this._commitToGitHub(`Delete series "${series}"`),
+        this._deleteSeriesFile(series),
+      ]);
+      this._setSync('ok', `Synced ${new Date().toLocaleTimeString()}`);
+    } catch (e) {
+      this._setSync('error', e.message || 'Sync failed');
+      throw e;
+    }
   }
 
   // Force an immediate GitHub commit (cancels any pending debounce timer).
@@ -418,6 +446,8 @@ export class GitHubStore {
     if (this._busy) { this._dirty = true; return; }
     this._busy = true;
     this._dirty = false;
+    const seriesSnapshot = new Set(this._dirtySeries);
+    this._dirtySeries.clear();
     this._setSync('syncing');
     this._commitToGitHub(message)
       .then(() => {
@@ -427,12 +457,79 @@ export class GitHubStore {
           this._dirty = false;
           this._scheduleCommit(30000);
         }
+        // Write per-series files after the main commit (fire-and-forget)
+        for (const series of seriesSnapshot) {
+          this._commitSeriesFile(series).catch(() => {});
+        }
       })
       .catch(err => {
         this._busy = false;
         this._dirty = false;
+        // Restore dirty series so they're retried on next commit
+        for (const s of seriesSnapshot) this._dirtySeries.add(s);
         this._setSync('error', err.message || 'Sync failed');
       });
+  }
+
+  // ── Per-series files ──────────────────────────────────────────────────────────
+
+  _slugify(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'unnamed';
+  }
+
+  _seriesPath(series) {
+    return `${SERIES_DIR}/${this._slugify(series)}.json`;
+  }
+
+  async _commitSeriesFile(series) {
+    const sessions = this._sessions.filter(s => s.series === series);
+    if (sessions.length === 0) {
+      return this._deleteSeriesFile(series);
+    }
+    const path = this._seriesPath(series);
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(sessions, null, 2))));
+    let sha = this._seriesShas[path] || null;
+
+    // If we don't have the SHA, try to fetch it (file may already exist)
+    if (!sha) {
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`);
+      if (r.ok) { const d = await r.json(); sha = d.sha; this._seriesShas[path] = sha; }
+    }
+
+    const body = {
+      message: `Update ${series} sessions [${new Date().toISOString().slice(0, 10)}]`,
+      content,
+      branch: BRANCH,
+      ...(sha ? { sha } : {}),
+    };
+    const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${path}`, body);
+    if (res.status === 409) {
+      // Conflict: re-fetch SHA and retry once
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`);
+      if (r.ok) {
+        const d = await r.json();
+        this._seriesShas[path] = d.sha;
+        return this._commitSeriesFile(series);
+      }
+    }
+    if (res.ok) {
+      const d = await res.json();
+      this._seriesShas[path] = d.content?.sha;
+    }
+  }
+
+  async _deleteSeriesFile(series) {
+    const path = this._seriesPath(series);
+    const sha = this._seriesShas[path] ||
+      await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`)
+        .then(r => r.ok ? r.json().then(d => d.sha) : null).catch(() => null);
+    if (!sha) return; // File doesn't exist
+    await this._api('DELETE', `/repos/${OWNER}/${REPO}/contents/${path}`, {
+      message: `Delete series "${series}" [${new Date().toISOString().slice(0, 10)}]`,
+      sha,
+      branch: BRANCH,
+    });
+    delete this._seriesShas[path];
   }
 
   _api(method, path, body, signal) {
