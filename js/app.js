@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703.1';
-import { GitHubStore } from './github-store.js?v=20260703.1';
-import { LiveSession } from './live.js?v=20260703.1';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703.2';
+import { GitHubStore } from './github-store.js?v=20260703.2';
+import { LiveSession } from './live.js?v=20260703.2';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -341,12 +341,11 @@ class App {
 
     const seriesPillHtml = (s) => {
       const active = s === sel;
-      // Delete button on every series pill — confirmation modal prevents accidents
-      const del = `<button class="series-pill-del" data-del="${escHtml(s)}" title="Delete series">🗑</button>`;
+      const lp = `data-longpress="${escHtml(s)}" title="Hold to delete"`;
       if (active) {
-        return `<span class="series-pill series-pill-active">${escHtml(s)}</span>${del}`;
+        return `<span class="series-pill series-pill-active" ${lp}>${escHtml(s)}</span>`;
       }
-      return `<button class="series-pill" data-series="${escHtml(s)}">${escHtml(s)}</button>${del}`;
+      return `<button class="series-pill" data-series="${escHtml(s)}" ${lp}>${escHtml(s)}</button>`;
     };
 
     if (allSeries.length === 0) {
@@ -354,8 +353,7 @@ class App {
     } else if (allSeries.length === 1) {
       const s = allSeries[0];
       pillsEl.innerHTML =
-        `<span class="series-pill series-pill-active series-pill-single">${escHtml(s)}</span>` +
-        `<button class="series-pill-del" data-del="${escHtml(s)}" title="Delete series">🗑</button>` +
+        `<span class="series-pill series-pill-active" data-longpress="${escHtml(s)}" title="Hold to delete">${escHtml(s)}</span>` +
         `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
     } else {
       pillsEl.innerHTML =
@@ -366,10 +364,42 @@ class App {
         btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
       });
     }
-    pillsEl.querySelectorAll('.series-pill-del').forEach(btn => {
-      btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.del));
+    // Long-press (mobile) or right-click (desktop) to delete a series.
+    pillsEl.querySelectorAll('[data-longpress]').forEach(el => {
+      this._addLongPress(el, el.dataset.longpress);
     });
     pillsEl.querySelector('#btn-series-new')?.addEventListener('click', () => this._openNewSeriesModal());
+  }
+
+  _addLongPress(el, series) {
+    const MS = 600;
+    let timer = null, startX = 0, startY = 0;
+    const trigger = () => {
+      timer = null;
+      el.classList.remove('series-pill-pressing');
+      this._confirmDeleteSeries(series);
+    };
+    const start = (e) => {
+      if (e.button === 2) return;
+      startX = e.clientX; startY = e.clientY;
+      el.classList.add('series-pill-pressing');
+      timer = setTimeout(trigger, MS);
+    };
+    const cancel = () => {
+      clearTimeout(timer); timer = null;
+      el.classList.remove('series-pill-pressing');
+    };
+    el.addEventListener('pointerdown', start);
+    el.addEventListener('pointerup', cancel);
+    el.addEventListener('pointercancel', cancel);
+    el.addEventListener('pointermove', (e) => {
+      if (!timer) return;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      if (dx * dx + dy * dy > 100) cancel(); // cancel if finger moved > 10px
+    });
+    el.addEventListener('contextmenu', (e) => {
+      e.preventDefault(); cancel(); this._confirmDeleteSeries(series);
+    });
   }
 
   _openNewSeriesModal() {

@@ -145,16 +145,13 @@ img { max-width: 100%; }
 }
 .series-pill:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); }
 .series-pill-active { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); font-weight: 600; }
-.series-pill-single { cursor: default; pointer-events: none; }
 .series-pill-new { border-style: dashed; color: var(--text-3); margin-left: 0.25rem; }
 .series-pill-new:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-bg); border-style: solid; }
-.series-pill-del {
-  font-size: 0.75rem; padding: 0.15rem 0.3rem; margin-left: -0.2rem;
-  color: var(--text-3); background: none; border: none;
-  border-radius: 99px; cursor: pointer; line-height: 1;
-  opacity: 0.55; transition: opacity .15s, color .15s;
+@keyframes pill-press {
+  0%   { transform: scale(1);    border-color: var(--border); }
+  100% { transform: scale(0.93); border-color: var(--red,#dc2626); color: var(--red,#dc2626); box-shadow: 0 0 0 4px rgba(220,38,38,.12); }
 }
-.series-pill-del:hover { opacity: 1; color: var(--red, #dc2626); }
+.series-pill-pressing { animation: pill-press 0.6s ease forwards; cursor: wait; }
 .series-readonly-display {
   padding: 0.55rem 0.75rem;
   background: var(--surface-2, #f9fafb);
