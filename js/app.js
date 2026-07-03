@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260702.7';
-import { GitHubStore } from './github-store.js?v=20260702.7';
-import { LiveSession } from './live.js?v=20260702.7';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260703.1';
+import { GitHubStore } from './github-store.js?v=20260703.1';
+import { LiveSession } from './live.js?v=20260703.1';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
