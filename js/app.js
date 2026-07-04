@@ -1,6 +1,11 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.3';
-import { GitHubStore } from './github-store.js?v=20260704.3';
-import { LiveSession } from './live.js?v=20260704.3';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.4';
+import { GitHubStore } from './github-store.js?v=20260704.4';
+import { LiveSession } from './live.js?v=20260704.4';
+
+const _localDate = d => {
+  const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+};
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -1685,7 +1690,8 @@ class App {
       this._toast('Add at least one bhajan before starting', 'warn');
       return;
     }
-    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id, startedAt: new Date().toISOString() };
+    const today = _localDate(new Date());
+    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id, startedAt: new Date().toISOString(), date: today };
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
