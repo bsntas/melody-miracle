@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.7';
-import { GitHubStore } from './github-store.js?v=20260704.7';
-import { LiveSession } from './live.js?v=20260704.7';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.8';
+import { GitHubStore } from './github-store.js?v=20260704.8';
+import { LiveSession } from './live.js?v=20260704.8';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -13,7 +13,7 @@ const PITCH_OPTIONS = [
   { combined:'1 Pancham / C',    indian:'1 Pancham',   western:'C',  series:'Pancham' },
   { combined:'1.5 Pancham / C#', indian:'1.5 Pancham', western:'C#', series:'Pancham' },
   { combined:'2 Pancham / D',    indian:'2 Pancham',   western:'D',  series:'Pancham' },
-  { combined:'2.5 Pancham / E',  indian:'2.5 Pancham', western:'E',  series:'Pancham' },
+  { combined:'2.5 Pancham / D#', indian:'2.5 Pancham', western:'D#', series:'Pancham' },
   { combined:'3 Pancham / E',    indian:'3 Pancham',   western:'E',  series:'Pancham' },
   { combined:'4 Pancham / F',    indian:'4 Pancham',   western:'F',  series:'Pancham' },
   { combined:'4.5 Pancham / F#', indian:'4.5 Pancham', western:'F#', series:'Pancham' },
@@ -32,7 +32,7 @@ const PITCH_OPTIONS = [
   { combined:'5 Madhyam / C',    indian:'5 Madhyam',   western:'C',  series:'Madhyam' },
   { combined:'5.5 Madhyam / C#', indian:'5.5 Madhyam', western:'C#', series:'Madhyam' },
   { combined:'6 Madhyam / D',    indian:'6 Madhyam',   western:'D',  series:'Madhyam' },
-  { combined:'6.5 Madhyam / E',  indian:'6.5 Madhyam', western:'E',  series:'Madhyam' },
+  { combined:'6.5 Madhyam / D#', indian:'6.5 Madhyam', western:'D#', series:'Madhyam' },
   { combined:'7 Madhyam / E',    indian:'7 Madhyam',   western:'E',  series:'Madhyam' },
 ];
 
