@@ -309,18 +309,25 @@ export class SessionStore {
   }
 
   activityByWeek(n = 16) {
+    // Use ISO weeks (Mon–Sun) so Saturday and Sunday of the same weekend
+    // always fall in the same bar.
     const now = new Date();
+    const dow = now.getDay(); // 0=Sun … 6=Sat
+    const thisMonday = new Date(now);
+    thisMonday.setDate(now.getDate() + (dow === 0 ? -6 : 1 - dow));
+    thisMonday.setHours(0, 0, 0, 0);
+
+    const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
     const weeks = [];
     for (let i = n - 1; i >= 0; i--) {
-      const end = new Date(now);
-      end.setDate(end.getDate() - i * 7);
-      const start = new Date(end);
-      start.setDate(start.getDate() - 6);
-      const startKey = start.toISOString().slice(0, 10);
-      const endKey   = end.toISOString().slice(0, 10);
-      const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-      const month = start.toLocaleDateString('en-IN', { month: 'short' });
-      weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
+      const monday = new Date(thisMonday);
+      monday.setDate(thisMonday.getDate() - i * 7);
+      const sunday = new Date(monday);
+      sunday.setDate(monday.getDate() + 6);
+      const startKey = monday.toISOString().slice(0, 10);
+      const endKey   = sunday.toISOString().slice(0, 10);
+      const month    = monday.toLocaleDateString('en-IN', { month: 'short' });
+      weeks.push({ startKey, endKey, label: fmt(monday), month, count: 0 });
     }
     for (const s of this._activeSessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
