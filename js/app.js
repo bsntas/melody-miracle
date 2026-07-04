@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.10';
-import { GitHubStore } from './github-store.js?v=20260704.10';
-import { LiveSession } from './live.js?v=20260704.10';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.11';
+import { GitHubStore } from './github-store.js?v=20260704.11';
+import { LiveSession } from './live.js?v=20260704.11';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -75,6 +75,9 @@ class App {
     this._mabSingers   = [];   // currently-selected singers for the entry being added
     this._mabSuggestions = []; // full suggestion list for quick-select chips
     this._bhajanModalContext = null;
+
+    this._wakeLock = null;          // Screen Wake Lock (play mode, host only)
+    this._wakeLockVis = null;       // visibilitychange handler for wake lock re-acquisition
 
     // Dashboard period filter
     this._dashPeriod = 'all';
@@ -1756,6 +1759,7 @@ class App {
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
+    this._acquireWakeLock(); // keep device awake so MQTT/timers stay active
     this._renderSession();
   }
 
@@ -1792,6 +1796,7 @@ class App {
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
+    this._releaseWakeLock();
     this._renderSession();
   }
 
@@ -1804,6 +1809,7 @@ class App {
       this.liveState = { ...this.liveState, phase: savedPhase };
       this.live.updateState(this.liveState);
       this.sessions.saveDraft(this.liveState);
+      if (savedPhase === 'playing') this._acquireWakeLock();
       this._renderSession();
     }
     this._toast('Session resumed', 'success');
@@ -1819,6 +1825,33 @@ class App {
     if (this.live?.isHost && this.liveState) {
       this.sessions.saveDraft(this.liveState);
     }
+  }
+
+  // ─── Wake Lock ────────────────────────────────────────────────────────────
+  // Prevents device sleep during play mode so timers/MQTT stay active.
+
+  async _acquireWakeLock() {
+    if (!('wakeLock' in navigator)) return;
+    this._releaseWakeLock(); // clear any previous lock first
+    try {
+      this._wakeLock = await navigator.wakeLock.request('screen');
+      // Re-acquire after tab becomes visible (browser releases the lock on hide)
+      this._wakeLockVis = async () => {
+        if (document.visibilityState === 'visible' && this.liveState?.phase === 'playing') {
+          await this._acquireWakeLock();
+        }
+      };
+      document.addEventListener('visibilitychange', this._wakeLockVis);
+    } catch {}
+  }
+
+  _releaseWakeLock() {
+    if (this._wakeLockVis) {
+      document.removeEventListener('visibilitychange', this._wakeLockVis);
+      this._wakeLockVis = null;
+    }
+    this._wakeLock?.release().catch(() => {});
+    this._wakeLock = null;
   }
 
   // ─── Join Session ─────────────────────────────────────────────────────────
@@ -2172,6 +2205,7 @@ class App {
     if (!confirm(`Discard "${label}"? Nothing will be saved.`)) return;
 
     this.sessions.clearDraft();
+    this._releaseWakeLock();
     this.live?.leave();
     this.live = null;
     this.liveState = null;
@@ -2200,6 +2234,7 @@ class App {
     this.sessions.commitNow?.('End bhajan session');
     this.sessions.clearDraft();
 
+    this._releaseWakeLock();
     this.live?.end(); // broadcasts 'ended' to observers before leaving
     this.live = null;
     this.liveState = null;

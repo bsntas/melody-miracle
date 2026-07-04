@@ -40,10 +40,11 @@ export class LiveSession {
     this._localState     = null;   // host-only: full session state
 
     // Observer-only tracking
-    this._hostPeerId     = null;   // peer ID of the host (set on first state message)
-    this._reconnectTimer = null;   // grace period before declaring host gone
-    this._helloTimer     = null;   // periodic hello until state received
-    this._refreshTimer   = null;   // periodic ping to host after connected
+    this._hostPeerId      = null;   // peer ID of the host (set on first state message)
+    this._reconnectTimer  = null;   // grace period before declaring host gone
+    this._helloTimer      = null;   // periodic hello until state received
+    this._refreshTimer    = null;   // periodic ping to host after connected
+    this._visibilityHandler = null; // re-sync on page becoming visible again
   }
 
   // ── Host: create a new live room ──────────────────────────────────────────
@@ -97,6 +98,16 @@ export class LiveSession {
     this._heartbeat = setInterval(() => {
       if (this._localState) this._broadcastToAll();
     }, 10000);
+
+    // When the host's tab comes back to foreground after being backgrounded,
+    // immediately re-broadcast so observers catch up without waiting for the
+    // next heartbeat tick (which the browser may have delayed/skipped).
+    this._visibilityHandler = () => {
+      if (document.visibilityState === 'visible' && this._localState) {
+        this._broadcastToAll();
+      }
+    };
+    document.addEventListener('visibilitychange', this._visibilityHandler);
 
     return code;
   }
@@ -212,6 +223,20 @@ export class LiveSession {
         if (!this.trRoom || !resolved || !this._hostPeerId || !this.sendMsg) return;
         try { this.sendMsg({ type: 'hello' }, this._hostPeerId); } catch {}
       }, 20000);
+
+      // When the observer's tab comes back to foreground, immediately request
+      // fresh state — the browser may have throttled timers while hidden.
+      this._visibilityHandler = () => {
+        if (document.visibilityState !== 'visible' || !this.sendMsg) return;
+        try {
+          if (this._hostPeerId) {
+            this.sendMsg({ type: 'hello' }, this._hostPeerId);
+          } else {
+            this.sendMsg({ type: 'hello' }); // not yet identified host — broadcast
+          }
+        } catch {}
+      };
+      document.addEventListener('visibilitychange', this._visibilityHandler);
     });
   }
 
@@ -296,6 +321,10 @@ export class LiveSession {
     clearInterval(this._heartbeat);
     this._heartbeat = null;
     this._clearObserverTimers();
+    if (this._visibilityHandler) {
+      document.removeEventListener('visibilitychange', this._visibilityHandler);
+      this._visibilityHandler = null;
+    }
     try { this.trRoom?.leave?.(); } catch {}
     this.trRoom      = null;
     this.sendMsg     = null;
