@@ -171,6 +171,13 @@ export class LiveSession {
         [arr[idx], arr[newIdx]] = [arr[newIdx], arr[idx]];
         return { ...state, bhajans: arr };
       }
+      case 'reorder-full': {
+        const order = action.order || [];
+        const byId = Object.fromEntries(bhajans.map(e => [e.id, e]));
+        const sorted = order.map(id => byId[id]).filter(Boolean);
+        const missing = bhajans.filter(e => !order.includes(e.id));
+        return { ...state, bhajans: [...sorted, ...missing] };
+      }
       case 'update-pitch':
         return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? {
           ...e, pitch: action.pitch, pitch_indian: action.pitch_indian || null, pitch_western: action.pitch_western || null,

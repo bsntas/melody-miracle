@@ -696,7 +696,6 @@ img { max-width: 100%; }
 .tl-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
 /* Session detail timeline action column */
 .tl-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
-.reorder-btns-row { flex-direction: row; }
 
 
 /* ─── Singer Profile ─────────────────────────────────────────────────────── */
@@ -938,15 +937,17 @@ img { max-width: 100%; }
 .mbhajan-footer { justify-content: space-between; }
 .mbhajan-footer-actions { display: flex; gap: 0.5rem; }
 
-/* ─── Reorder buttons ────────────────────────────────────────────────────── */
-.reorder-btns { display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
-.btn-reorder {
-  width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; color: var(--text-3); border-radius: 3px; padding: 0;
-  line-height: 1;
+/* ─── Drag-to-reorder handle ─────────────────────────────────────────────── */
+.drag-handle {
+  cursor: grab; color: var(--text-3); font-size: 1.25rem; line-height: 1;
+  padding: 0 6px; display: flex; align-items: center; flex-shrink: 0;
+  touch-action: none; -webkit-user-select: none; user-select: none;
 }
-.btn-reorder:hover { background: var(--surface-2); color: var(--text); }
-.btn-reorder:disabled { opacity: .25; pointer-events: none; }
+.drag-handle:hover { color: var(--text-2); }
+.drag-handle:active { cursor: grabbing; }
+.session-bhajan-entry.dragging { opacity: 0.4; background: var(--surface-2); border-radius: 8px; }
+.session-bhajan-entry.drag-over-above { border-top: 2px solid var(--saffron, #ea580c); }
+.session-bhajan-entry.drag-over-below { border-bottom: 2px solid var(--saffron, #ea580c); }
 
 /* Bhajan entry title clickable */
 .entry-title-link { cursor: pointer; color: inherit; }

@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.5';
-import { GitHubStore } from './github-store.js?v=20260704.5';
-import { LiveSession } from './live.js?v=20260704.5';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.6';
+import { GitHubStore } from './github-store.js?v=20260704.6';
+import { LiveSession } from './live.js?v=20260704.6';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1062,6 +1062,74 @@ class App {
     return arr;
   }
 
+  _initDragReorder(listEl) {
+    if (!listEl) return;
+    let dragSrc = null, overTarget = null;
+
+    const rows = () => [...listEl.querySelectorAll('.session-bhajan-entry[data-entry-id]')];
+
+    const clearClasses = () => rows().forEach(r =>
+      r.classList.remove('dragging', 'drag-over-above', 'drag-over-below'));
+
+    const cancel = () => { clearClasses(); dragSrc = null; overTarget = null; };
+
+    listEl.querySelectorAll('.drag-handle').forEach(handle => {
+      handle.addEventListener('pointerdown', e => {
+        if (e.button > 0) return;
+        e.preventDefault();
+        handle.setPointerCapture(e.pointerId);
+        dragSrc = handle.closest('.session-bhajan-entry');
+        dragSrc?.classList.add('dragging');
+      }, { passive: false });
+
+      handle.addEventListener('pointermove', e => {
+        if (!dragSrc) return;
+        e.preventDefault();
+        const others = rows().filter(r => r !== dragSrc);
+        let newTarget = null;
+        for (const row of others) {
+          const { top, height } = row.getBoundingClientRect();
+          if (e.clientY < top + height / 2) { newTarget = row; break; }
+        }
+        if (newTarget !== overTarget) {
+          clearClasses();
+          dragSrc.classList.add('dragging');
+          overTarget = newTarget;
+          if (overTarget) overTarget.classList.add('drag-over-above');
+          else if (others.length) others[others.length - 1].classList.add('drag-over-below');
+        }
+      }, { passive: false });
+
+      const drop = () => {
+        if (!dragSrc) return;
+        const srcId = dragSrc.dataset.entryId;
+        const bhajans = this.liveState?.bhajans || [];
+        const src = bhajans.find(b => b.id === srcId);
+        if (!src) { cancel(); return; }
+
+        const without = bhajans.filter(b => b.id !== srcId);
+        let newBhajans;
+        if (!overTarget) {
+          newBhajans = [...without, src];
+        } else {
+          const tIdx = without.findIndex(b => b.id === overTarget.dataset.entryId);
+          newBhajans = tIdx < 0 ? [...without, src]
+            : [...without.slice(0, tIdx), src, ...without.slice(tIdx)];
+        }
+
+        cancel();
+        if (newBhajans.map(b => b.id).join() !== bhajans.map(b => b.id).join()) {
+          const updated = { ...this.liveState, bhajans: newBhajans };
+          this._applyLiveEdit(updated, { type: 'reorder-full', order: newBhajans.map(b => b.id) });
+          this._renderSession();
+        }
+      };
+
+      handle.addEventListener('pointerup', drop);
+      handle.addEventListener('pointercancel', cancel);
+    });
+  }
+
   // ─── Browse ───────────────────────────────────────────────────────────────
 
   _populateFilters() {
@@ -1442,16 +1510,7 @@ class App {
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
 
-      document.querySelectorAll('#live-bhajans-list .btn-reorder').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          const dir = btn.dataset.action === 'reorder-later' ? 'later' : 'earlier';
-          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, this.liveState.bhajans || []);
-          const updated = { ...this.liveState, bhajans: newBhajans };
-          this._applyLiveEdit(updated, { type: 'reorder-bhajan', entryId: btn.dataset.entryId, direction: dir });
-          this._renderSession();
-        });
-      });
+      this._initDragReorder(document.getElementById('live-bhajans-list'));
 
       document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -1564,7 +1623,8 @@ class App {
       const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
-      <div class="session-bhajan-entry">
+      <div class="session-bhajan-entry" data-entry-id="${e.id}">
+        ${!isPlaying ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
         <div class="entry-num">${i + 1}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
@@ -1584,10 +1644,6 @@ class App {
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
         ${!isPlaying ? `
-        <div class="reorder-btns">
-          <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${canGoEarlier ? '' : 'disabled'} title="Move up">↑</button>
-          <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${canGoLater ? '' : 'disabled'} title="Move down">↓</button>
-        </div>
         <div class="entry-actions">
           <button class="btn entry-action-btn" data-action="remove" data-entry-id="${e.id}" title="Remove">✕</button>
         </div>` : ''}
