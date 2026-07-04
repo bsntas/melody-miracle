@@ -333,7 +333,7 @@ export class SessionStore {
     }
     for (const s of this._activeSessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
-      if (w) w.count++;
+      if (w) w.count += (s.bhajans || []).length;
     }
     return weeks;
   }
@@ -352,7 +352,7 @@ export class SessionStore {
     }
     for (const s of this._activeSessions) {
       const m = months.find(m => s.date >= m.startKey && s.date <= m.endKey);
-      if (m) m.count++;
+      if (m) m.count += (s.bhajans || []).length;
     }
     return months;
   }

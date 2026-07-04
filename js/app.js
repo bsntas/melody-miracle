@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.1';
-import { GitHubStore } from './github-store.js?v=20260704.1';
-import { LiveSession } from './live.js?v=20260704.1';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.2';
+import { GitHubStore } from './github-store.js?v=20260704.2';
+import { LiveSession } from './live.js?v=20260704.2';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -911,7 +911,7 @@ class App {
         ${activity.map(w => `<div class="activity-bar-col">
           <div class="activity-bar ${w.count > 0 ? 'has-data' : ''}"
             style="height:${Math.max(4, (w.count / maxCount) * 56)}px"
-            title="${isMonthly ? w.label : 'Week of ' + w.label}: ${w.count} session${w.count !== 1 ? 's' : ''}"></div>
+            title="${isMonthly ? w.label : 'Week of ' + w.label}: ${w.count} bhajan${w.count !== 1 ? 's' : ''}"></div>
         </div>`).join('')}
       </div>
       <div class="activity-bar-labels">
