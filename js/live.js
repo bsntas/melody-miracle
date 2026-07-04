@@ -13,10 +13,11 @@ function genCode() {
 }
 
 export class LiveSession {
-  constructor({ onStateChange, onPeerChange, onError }) {
+  constructor({ onStateChange, onPeerChange, onError, onHostLeave }) {
     this.onStateChange = onStateChange; // (state) => void
     this.onPeerChange  = onPeerChange;  // (count) => void
     this.onError       = onError;       // (msg) => void
+    this.onHostLeave   = onHostLeave || null; // () => void — observer only
 
     this.isHost    = false;
     this.roomCode  = null;
@@ -35,7 +36,13 @@ export class LiveSession {
     this.isHost = true;
     this._localState = { ...sessionState };
 
-    this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, code);
+    try {
+      this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, code);
+    } catch {
+      this.onError?.('Live sharing unavailable — check your connection. Session continues offline.');
+      return code;
+    }
+
     const [send, onMsg] = this.trRoom.makeAction('msg');
     this.sendMsg = send;
 
@@ -62,7 +69,12 @@ export class LiveSession {
       this.onStateChange(this._sanitizeState(this._localState));
     });
 
-    onMsg(() => {});
+    // Re-send state to any observer who missed the initial delivery
+    onMsg((data, peerId) => {
+      if (data?.type === 'hello' && this._localState) {
+        send({ type: 'state', state: this._sanitizeState(this._localState) }, peerId);
+      }
+    });
 
     // Heartbeat: re-broadcast state every 25s so late-joiners get it
     this._heartbeat = setInterval(() => {
@@ -72,13 +84,27 @@ export class LiveSession {
     return code;
   }
 
+  // ── Host: broadcast session-ended signal then leave ───────────────────────
+  end() {
+    if (this.sendMsg) {
+      try { this.sendMsg({ type: 'ended' }); } catch {}
+    }
+    this._leave();
+  }
+
   // ── Guest: join a room as observer ────────────────────────────────────────
   join(code) {
     return new Promise((resolve, reject) => {
       this.roomCode = code;
       this.isHost = false;
 
-      this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, this.roomCode);
+      try {
+        this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, this.roomCode);
+      } catch {
+        reject(new Error('Could not connect to session network. Check your internet connection.'));
+        return;
+      }
+
       const [send, onMsg] = this.trRoom.makeAction('msg');
       this.sendMsg = send;
 
@@ -90,18 +116,29 @@ export class LiveSession {
       let resolved = false;
 
       this.trRoom.onPeerJoin(peerId => {
-        // As guest, we announce ourselves so host re-sends state
+        // Announce ourselves so the host re-sends state
         send({ type: 'hello' }, peerId);
       });
 
+      // Host has left — notify app and clean up
+      this.trRoom.onPeerLeave(() => {
+        if (!this.trRoom) return; // already left
+        this.onHostLeave?.();
+        this._leave();
+      });
+
       onMsg((data) => {
+        if (!this.trRoom) return; // guard against ghost callbacks after _leave()
+        // Any message from the host clears the join timeout
+        if (!resolved) {
+          resolved = true;
+          clearTimeout(timeout);
+          resolve();
+        }
         if (data.type === 'state') {
-          if (!resolved) {
-            resolved = true;
-            clearTimeout(timeout);
-            resolve();
-          }
           this.onStateChange(data.state);
+        } else if (data.type === 'ended') {
+          this.onStateChange({ phase: 'ended' });
         }
       });
 
@@ -158,7 +195,6 @@ export class LiveSession {
     this.sendMsg({ type: 'state', state: this._sanitizeState(this._localState) });
   }
 
-  // Strip any host-private data before broadcasting (nothing secret here, but keep it clean)
   _sanitizeState(state) {
     return { ...state };
   }

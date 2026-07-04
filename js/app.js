@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.4';
-import { GitHubStore } from './github-store.js?v=20260704.4';
-import { LiveSession } from './live.js?v=20260704.4';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.5';
+import { GitHubStore } from './github-store.js?v=20260704.5';
+import { LiveSession } from './live.js?v=20260704.5';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -651,6 +651,11 @@ class App {
 
   _closeModal(id) {
     document.getElementById(id).classList.add('hidden');
+    const cleanup = this._modalCleanup?.[id];
+    if (cleanup) {
+      delete this._modalCleanup[id];
+      cleanup();
+    }
   }
 
   _initKeyboardAdjust() {
@@ -1016,7 +1021,7 @@ class App {
   }
 
   _seriesSlug(name) {
-    return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 12);
+    return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   }
 
   _sessionRoomCode(series, date) {
@@ -1796,6 +1801,9 @@ class App {
   }
 
   async _joinSessionWithCode(code) {
+    // Guard against double-tap: leave any existing connection first
+    if (this.live) { this.live.leave(); this.live = null; }
+
     const el = document.getElementById('session-content');
     el.innerHTML = `<div class="connecting-state">
       <div class="connecting-spinner"></div>
@@ -1803,20 +1811,38 @@ class App {
     </div>`;
     location.hash = '#session';
 
+    const _exitObserver = () => {
+      this.live = null;
+      this.liveState = null;
+      el.innerHTML = this._sessionHomeHTML(this.sessions.getDraft());
+      this._bindSessionHome(this.sessions.getDraft());
+    };
+
     this.live = new LiveSession({
       onStateChange: (state) => {
+        if (state?.phase === 'ended') {
+          this._toast('The bhajan session has ended.', 'info');
+          _exitObserver();
+          return;
+        }
         this.liveState = state;
-        this._renderLiveSession(el);
+        if (document.getElementById('view-session').classList.contains('active')) {
+          this._renderLiveSession(el);
+        }
       },
       onPeerChange: () => {},
       onError: (msg) => this._toast(msg, 'error'),
+      onHostLeave: () => {
+        this._toast('The host has disconnected.', 'warn');
+        _exitObserver();
+      },
     });
 
     try {
       await this.live.join(code);
     } catch (err) {
       this._toast(err.message, 'error');
-      this.live.leave();
+      this.live?.leave();
       this.live = null;
       el.innerHTML = this._sessionHomeHTML(this.sessions.getDraft());
       this._bindSessionHome(this.sessions.getDraft());
@@ -2118,7 +2144,7 @@ class App {
     this.sessions.commitNow?.('End bhajan session');
     this.sessions.clearDraft();
 
-    this.live?.leave();
+    this.live?.end(); // broadcasts 'ended' to observers before leaving
     this.live = null;
     this.liveState = null;
 
@@ -2472,16 +2498,25 @@ class App {
   }
 
   _openDetailAddBhajan(session) {
-    // Temporarily set liveState for the add modal to work
+    // Temporarily set liveState for the add modal to work.
+    // Store prevLive so we can restore on ANY close path (confirm, cancel, backdrop).
     const prevLive = this.liveState;
     const prevLiveConn = this.live;
+    const origConfirm = this._mabConfirmAdd.bind(this);
     this.liveState = { ...session };
-    this.live = null; // not actually live
+    this.live = null; // not actually live; prevents broadcasting via _applyLiveEdit
+
+    // Restore on every close path via the _modalCleanup hook
+    if (!this._modalCleanup) this._modalCleanup = {};
+    this._modalCleanup['modal-add-bhajan'] = () => {
+      this.liveState = prevLive;
+      this.live = prevLiveConn;
+      this._mabConfirmAdd = origConfirm;
+    };
 
     this._openAddBhajanModal();
 
-    // Override the confirm button to save to history instead
-    const origConfirm = this._mabConfirmAdd.bind(this);
+    // Override the confirm button to save to history instead of broadcasting
     this._mabConfirmAdd = () => {
       const b = this._mabSelected;
       if (!b) return;
@@ -2512,10 +2547,7 @@ class App {
       const updated = { ...session, bhajans: newBhajans, singers: sessionSingers };
       this.sessions.save(updated, { local: true });
 
-      this._closeModal('modal-add-bhajan');
-      this.liveState = prevLive;
-      this.live = prevLiveConn;
-      this._mabConfirmAdd = origConfirm;
+      this._closeModal('modal-add-bhajan'); // cleanup hook restores liveState/live/origConfirm
       this._renderSessionDetail(session.id);
       this._toast(`Added: ${b.title}`, 'success');
     };
