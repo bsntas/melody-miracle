@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.13';
-import { GitHubStore } from './github-store.js?v=20260704.13';
-import { LiveSession } from './live.js?v=20260704.13';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.14';
+import { GitHubStore } from './github-store.js?v=20260704.14';
+import { LiveSession } from './live.js?v=20260704.14';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
