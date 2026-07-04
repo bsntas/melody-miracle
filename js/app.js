@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.6';
-import { GitHubStore } from './github-store.js?v=20260704.6';
-import { LiveSession } from './live.js?v=20260704.6';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.7';
+import { GitHubStore } from './github-store.js?v=20260704.7';
+import { LiveSession } from './live.js?v=20260704.7';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1806,7 +1806,7 @@ class App {
       this.sessions.saveDraft(this.liveState);
       this._renderSession();
     }
-    this._toast('Session resumed with a new code', 'success');
+    this._toast('Session resumed', 'success');
   }
 
   _onLiveStateChange() {
