@@ -1,5 +1,160 @@
 [
   {
+    "id": "weekendbhajansecityhsr-2026-07-04",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2026-07-04",
+    "roomCode": "weekendbhajansecityhsr-2026-07-04",
+    "singers": [
+      "Basanta",
+      "Bishal Da",
+      "Karam",
+      "Bhawana Bhauju",
+      "Sayujya",
+      "Ashik",
+      "Anisha",
+      "Pemila",
+      "Gigme"
+    ],
+    "bhajans": [
+      {
+        "id": "e_mr6agrdru6z1",
+        "bhajan_id": "jai-jai-jai-jai-ganapathi",
+        "bhajan_title": "Jai Jai Jai Jai Ganapathi",
+        "bhajan_deity": "Ganesha",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1783165108383
+      },
+      {
+        "id": "e_mr6dnkzo52p9",
+        "bhajan_id": "ramachandra-sri-ram",
+        "bhajan_title": "Ramachandra Sri Ram",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "2.5 Pancham / D#",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "D#",
+        "notes": "Sharp",
+        "addedAt": 1783170465540
+      },
+      {
+        "id": "e_mr6ahruqng7a",
+        "bhajan_id": "mahadeva-maheshwara-sai-narayana",
+        "bhajan_title": "Mahadeva Maheshwara Sai Narayana",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": 1783165155650
+      },
+      {
+        "id": "e_mr6drmxwtxc7",
+        "bhajan_id": "dattatreya-sadguru-deva",
+        "bhajan_title": "Dattatreya Sadguru Deva",
+        "bhajan_deity": "Guru",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": null,
+        "addedAt": 1783170654692
+      },
+      {
+        "id": "e_mr6e5u5hod8l",
+        "bhajan_id": "atma-rama-ananda-ramana",
+        "bhajan_title": "Atma Rama Ananda Ramana",
+        "bhajan_deity": "Rama, Narayana",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": 1783171317221
+      },
+      {
+        "id": "e_mr6d1hl4z0nr",
+        "bhajan_id": "ananda-sagara-muralidhara",
+        "bhajan_title": "Ananda Sagara Muralidhara",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "2 Madhyam / G",
+        "pitch_indian": "2 Madhyam",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1783169434698
+      },
+      {
+        "id": "e_mr6eb30al7ft",
+        "bhajan_id": "sai-natha-deena-natha-brahma",
+        "bhajan_title": "Sai Natha Deena Natha Brahma",
+        "bhajan_deity": "Guru",
+        "singers": [
+          "Anisha"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1783171561978
+      },
+      {
+        "id": "e_mr6d1lh12vvm",
+        "bhajan_id": "bhaja-mana-govinda-gopala",
+        "bhajan_title": "Bhaja Mana Govinda Gopala",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Pemila"
+        ],
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "notes": null,
+        "addedAt": 1783169439733
+      },
+      {
+        "id": "e_mr6e6spncwo6",
+        "bhajan_id": "allah-bhajo-maulah-bhajo",
+        "bhajan_title": "Allah Bhajo Maulah Bhajo",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "2 Madhyam / G",
+        "pitch_indian": "2 Madhyam",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1783171362011
+      }
+    ],
+    "status": "completed",
+    "isBackdated": false,
+    "createdAt": "2026-07-04T11:37:01.145Z",
+    "startTime": null,
+    "duration": 2688,
+    "phase": "setup",
+    "currentBhajan": "e_mr6e6spncwo6",
+    "startedAt": "2026-07-04T13:31:44.469Z",
+    "endedAt": "2026-07-04T14:16:32.411Z"
+  },
+  {
     "id": "weekendbhaja-2026-06-27",
     "label": "Weekend Bhajans E-City HSR",
     "series": "Weekend Bhajans E-City HSR",
