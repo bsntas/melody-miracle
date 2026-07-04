@@ -311,6 +311,8 @@ export class SessionStore {
   activityByWeek(n = 16) {
     // Use ISO weeks (Mon–Sun) so Saturday and Sunday of the same weekend
     // always fall in the same bar.
+    // Use local date components (not toISOString) to avoid UTC offset shifting
+    // week boundaries by one day for users in IST and other UTC+ timezones.
     const now = new Date();
     const dow = now.getDay(); // 0=Sun … 6=Sat
     const thisMonday = new Date(now);
@@ -324,8 +326,8 @@ export class SessionStore {
       monday.setDate(thisMonday.getDate() - i * 7);
       const sunday = new Date(monday);
       sunday.setDate(monday.getDate() + 6);
-      const startKey = monday.toISOString().slice(0, 10);
-      const endKey   = sunday.toISOString().slice(0, 10);
+      const startKey = _localDate(monday);
+      const endKey   = _localDate(sunday);
       const month    = monday.toLocaleDateString('en-IN', { month: 'short' });
       weeks.push({ startKey, endKey, label: fmt(monday), month, count: 0 });
     }
@@ -343,7 +345,7 @@ export class SessionStore {
       const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
       const y = d.getFullYear(), mo = d.getMonth();
       const startKey = `${y}-${String(mo + 1).padStart(2, '0')}-01`;
-      const endKey = new Date(y, mo + 1, 0).toISOString().slice(0, 10);
+      const endKey = _localDate(new Date(y, mo + 1, 0));
       const label = d.toLocaleDateString('en-IN', { month: 'short', year: '2-digit' });
       const month = d.toLocaleDateString('en-IN', { month: 'short' });
       months.push({ startKey, endKey, label, month, count: 0 });
@@ -486,6 +488,15 @@ export class SessionStore {
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+// Local YYYY-MM-DD — avoids UTC-offset shifting dates in toISOString() for
+// users in UTC+ timezones (e.g. IST) where local midnight is the previous UTC day.
+function _localDate(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
 
 // Levenshtein distance with early exit when cost exceeds max.
 function _lev(a, b, max) {
