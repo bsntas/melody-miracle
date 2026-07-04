@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.2';
-import { GitHubStore } from './github-store.js?v=20260704.2';
-import { LiveSession } from './live.js?v=20260704.2';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.3';
+import { GitHubStore } from './github-store.js?v=20260704.3';
+import { LiveSession } from './live.js?v=20260704.3';
 
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
@@ -862,8 +862,7 @@ class App {
   _renderDashboard() {
     // Date / greeting
     const now = new Date();
-    const hour = now.getHours();
-    const greeting = hour < 12 ? 'Good Morning 🙏' : hour < 17 ? 'Sairam 🙏' : 'Good Evening 🙏';
+    const greeting = 'Sairam 🙏';
     document.getElementById('dash-greeting').textContent = greeting;
     document.getElementById('dash-date').textContent = now.toLocaleDateString('en-IN', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
