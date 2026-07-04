@@ -217,7 +217,7 @@ export class SessionStore {
     const singers = new Set(sessions.flatMap(s => s.singers || []));
 
     const now = new Date();
-    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0, 10);
+    const monthStart = _localDate(new Date(now.getFullYear(), now.getMonth(), 1));
     const thisMonth = sessions.filter(s => s.date >= monthStart).length;
 
     return { total, totalBhajans, singers: singers.size, thisMonth };
@@ -299,7 +299,7 @@ export class SessionStore {
     const now = new Date();
     for (let i = 29; i >= 0; i--) {
       const d = new Date(now); d.setDate(d.getDate() - i);
-      const key = d.toISOString().slice(0, 10);
+      const key = _localDate(d);
       days[key] = 0;
     }
     for (const s of this._activeSessions) {
@@ -533,7 +533,7 @@ export function formatTime(ts) {
 }
 
 export function todayISO() {
-  return new Date().toISOString().slice(0, 10);
+  return _localDate(new Date());
 }
 
 export function monthLabel(dateStr) {

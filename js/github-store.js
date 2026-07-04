@@ -8,6 +8,13 @@
 //   - Commits are debounced + serialised to avoid SHA conflicts
 //   - On 409 conflict: fetch latest → merge by session ID → retry once
 
+function _localDate(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 const OWNER         = 'bsntas';
 const REPO          = 'melody-miracle';
 const BRANCH        = 'main';
@@ -142,7 +149,7 @@ export class GitHubStore {
     const totalBhajans  = allBhajans.length;
     const singers       = new Set(sessions.flatMap(s => s.singers || []));
     const now           = new Date();
-    const monthStart    = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0, 10);
+    const monthStart    = _localDate(new Date(now.getFullYear(), now.getMonth(), 1));
     const thisMonth     = sessions.filter(s => s.date >= monthStart).length;
     return { total, totalBhajans, singers: singers.size, thisMonth };
   }
@@ -210,7 +217,7 @@ export class GitHubStore {
     const now = new Date();
     for (let i = 29; i >= 0; i--) {
       const d = new Date(now); d.setDate(d.getDate()-i);
-      days[d.toISOString().slice(0,10)] = 0;
+      days[_localDate(d)] = 0;
     }
     for (const s of this._activeSessions)
       if (days[s.date] !== undefined) days[s.date]++;
@@ -219,21 +226,26 @@ export class GitHubStore {
 
   activityByWeek(n = 16) {
     const now = new Date();
+    const dow = now.getDay(); // 0=Sun … 6=Sat
+    const thisMonday = new Date(now);
+    thisMonday.setDate(now.getDate() + (dow === 0 ? -6 : 1 - dow));
+    thisMonday.setHours(0, 0, 0, 0);
+
+    const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
     const weeks = [];
     for (let i = n - 1; i >= 0; i--) {
-      const end = new Date(now);
-      end.setDate(end.getDate() - i * 7);
-      const start = new Date(end);
-      start.setDate(start.getDate() - 6);
-      const startKey = start.toISOString().slice(0, 10);
-      const endKey   = end.toISOString().slice(0, 10);
-      const fmt = d => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-      const month = start.toLocaleDateString('en-IN', { month: 'short' });
-      weeks.push({ startKey, endKey, label: fmt(start), month, count: 0 });
+      const monday = new Date(thisMonday);
+      monday.setDate(thisMonday.getDate() - i * 7);
+      const sunday = new Date(monday);
+      sunday.setDate(monday.getDate() + 6);
+      const startKey = _localDate(monday);
+      const endKey   = _localDate(sunday);
+      const month    = monday.toLocaleDateString('en-IN', { month: 'short' });
+      weeks.push({ startKey, endKey, label: fmt(monday), month, count: 0 });
     }
     for (const s of this._activeSessions) {
       const w = weeks.find(w => s.date >= w.startKey && s.date <= w.endKey);
-      if (w) w.count++;
+      if (w) w.count += (s.bhajans || []).length;
     }
     return weeks;
   }
@@ -245,14 +257,14 @@ export class GitHubStore {
       const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
       const y = d.getFullYear(), mo = d.getMonth();
       const startKey = `${y}-${String(mo + 1).padStart(2, '0')}-01`;
-      const endKey = new Date(y, mo + 1, 0).toISOString().slice(0, 10);
+      const endKey = _localDate(new Date(y, mo + 1, 0));
       const label = d.toLocaleDateString('en-IN', { month: 'short', year: '2-digit' });
       const month = d.toLocaleDateString('en-IN', { month: 'short' });
       months.push({ startKey, endKey, label, month, count: 0 });
     }
     for (const s of this._activeSessions) {
       const m = months.find(m => s.date >= m.startKey && s.date <= m.endKey);
-      if (m) m.count++;
+      if (m) m.count += (s.bhajans || []).length;
     }
     return months;
   }

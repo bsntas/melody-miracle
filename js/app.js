@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.11';
-import { GitHubStore } from './github-store.js?v=20260704.11';
-import { LiveSession } from './live.js?v=20260704.11';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.12';
+import { GitHubStore } from './github-store.js?v=20260704.12';
+import { LiveSession } from './live.js?v=20260704.12';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2652,7 +2652,7 @@ class App {
     if (period === '1y') d.setFullYear(d.getFullYear() - 1);
     else if (period === '6m') d.setMonth(d.getMonth() - 6);
     else if (period === '3m') d.setMonth(d.getMonth() - 3);
-    return d.toISOString().slice(0, 10);
+    return _localDate(d);
   }
 
   _singerHue(name) {
