@@ -4450,8 +4450,8 @@
       },
       {
         "id": "e_back2025052503",
-        "bhajan_id": "devi-bhavani-ma-jaya-sai",
-        "bhajan_title": "Devi Bhavani Ma Jaya Sai",
+        "bhajan_id": "jaya-sai-gurudeva",
+        "bhajan_title": "Jaya Sai Gurudeva",
         "bhajan_deity": "Devi",
         "singers": [
           "Ashik",
@@ -5910,12 +5910,11 @@
         "bhajan_title": "Anjaneya Veera Hanumantha Shoora",
         "bhajan_deity": "Anjaneya",
         "singers": [
-          "Anisha",
           "Basanta"
         ],
-        "pitch": null,
-        "pitch_indian": null,
-        "pitch_western": null,
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
         "notes": null,
         "addedAt": null
       },
@@ -5938,8 +5937,13 @@
         "id": "e_back202412209",
         "bhajan_id": "ram-ram-bhajo-mana-harey",
         "bhajan_title": "Ram Ram Bhajo Mana Harey",
-        "singers": [],
-        "language": "Hindi"
+        "singers": [
+          "Anisha"
+        ],
+        "language": "Hindi",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C"
       }
     ],
     "createdAt": null,
