@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.14';
-import { GitHubStore } from './github-store.js?v=20260704.14';
-import { LiveSession } from './live.js?v=20260704.14';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
+import { GitHubStore } from './github-store.js?v=20260704.15';
+import { LiveSession } from './live.js?v=20260704.15';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2043,6 +2043,29 @@ class App {
       <div class="mab-sel-title">${escHtml(b.title)}</div>
       <div class="mab-sel-meta">${escHtml([b.deity, b.language, b.tempo].filter(Boolean).join(' · '))}</div>`;
 
+    // Deity / duplicate hint
+    const existing = this.liveState?.bhajans || [];
+    const hintEl = document.getElementById('mab-session-hint');
+    if (existing.some(e => e.bhajan_id === b.id)) {
+      hintEl.innerHTML = `<div class="mab-hint mab-hint-error">🚫 Already in this session</div>`;
+    } else {
+      const deities = b.deity ? b.deity.split(/[,/]/).map(d => d.trim()).filter(Boolean) : [];
+      const sameCount = deities.length ? existing.filter(e =>
+        e.bhajan_deity && deities.some(d =>
+          e.bhajan_deity.split(/[,/]/).map(x => x.trim()).includes(d)
+        )
+      ).length : 0;
+      const isGanesha = deities.some(d => d.toLowerCase() === 'ganesha');
+      if (isGanesha && sameCount > 0) {
+        hintEl.innerHTML = `<div class="mab-hint mab-hint-warn">⚠️ ${sameCount} Ganesha bhajan${sameCount > 1 ? 's' : ''} already in session — add only if intentional</div>`;
+      } else if (sameCount > 0) {
+        const label = deities.join(', ');
+        hintEl.innerHTML = `<div class="mab-hint mab-hint-info">ℹ️ ${sameCount} ${label} bhajan${sameCount > 1 ? 's' : ''} already in session</div>`;
+      } else {
+        hintEl.innerHTML = '';
+      }
+    }
+
     // Set pitch buttons labels (show Indian · Western · Scale)
     const scaleSuffix = b.scale ? ` · ${b.scale}` : '';
     const gpLabel = b.gents_pitch_indian
@@ -2133,6 +2156,25 @@ class App {
   _mabConfirmAdd() {
     const b = this._mabSelected;
     if (!b) return;
+
+    const existing = this.liveState?.bhajans || [];
+
+    // Hard block: same bhajan already in session
+    if (existing.some(e => e.bhajan_id === b.id)) {
+      this._toast(`"${b.title}" is already in this session`, 'error');
+      return;
+    }
+
+    // Ganesha warning: confirm before adding a second+ Ganesha bhajan
+    const deities = b.deity ? b.deity.split(/[,/]/).map(d => d.trim()) : [];
+    if (deities.some(d => d.toLowerCase() === 'ganesha')) {
+      const ganeshCount = existing.filter(e =>
+        e.bhajan_deity && e.bhajan_deity.split(/[,/]/).map(x => x.trim()).some(d => d.toLowerCase() === 'ganesha')
+      ).length;
+      if (ganeshCount > 0 && !confirm(`There ${ganeshCount === 1 ? 'is' : 'are'} already ${ganeshCount} Ganesha bhajan${ganeshCount > 1 ? 's' : ''} in this session. Add another one?`)) {
+        return;
+      }
+    }
 
     // Flush any name still typed but not yet chip-added
     const typedName = document.getElementById('mab-singer').value.trim();

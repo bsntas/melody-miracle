@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260704.14">
+  <link rel="stylesheet" href="css/style.css?v=20260704.15">
 </head>
 <body>
 
@@ -336,6 +336,7 @@
         <!-- Step 2: Details -->
         <div id="mab-step-details" class="hidden">
           <div class="mab-selected-bhajan" id="mab-selected-info"></div>
+          <div id="mab-session-hint"></div>
           <div class="form-group">
             <label class="form-label">Singer(s)</label>
             <div id="mab-singer-suggestions" class="singer-suggestions"></div>
@@ -564,7 +565,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260704.14"></script>
+  <script type="module" src="js/app.js?v=20260704.15"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

@@ -773,6 +773,10 @@ img { max-width: 100%; }
 }
 .mab-sel-title { font-weight: 700; font-size: 0.95rem; color: var(--maroon); }
 .mab-sel-meta { font-size: 0.78rem; color: var(--saffron-dark); margin-top: 0.2rem; }
+.mab-hint { font-size: 0.8rem; padding: 0.4rem 0.65rem; border-radius: var(--radius-sm); margin-bottom: 0.75rem; line-height: 1.4; }
+.mab-hint-error { background: var(--red-light);   color: var(--red); }
+.mab-hint-warn  { background: var(--gold-light);   color: var(--gold); }
+.mab-hint-info  { background: var(--blue-light);   color: var(--blue); }
 
 /* ─── Modals ─────────────────────────────────────────────────────────────── */
 .modal-overlay {

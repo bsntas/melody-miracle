@@ -251,6 +251,7 @@ export class LiveSession {
     const bhajans = state.bhajans || [];
     switch (action.type) {
       case 'add-bhajan':
+        if (bhajans.some(e => e.bhajan_id === action.entry.bhajan_id)) return null;
         return { ...state, bhajans: [...bhajans, action.entry] };
       case 'remove-bhajan':
         return { ...state, bhajans: bhajans.filter(e => e.id !== action.entryId) };
