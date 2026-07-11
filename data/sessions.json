@@ -9507,5 +9507,160 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
+  },
+  {
+    "id": "weekendbhajansecityhsr-2026-07-11",
+    "label": "Weekend Bhajans E-City HSR",
+    "series": "Weekend Bhajans E-City HSR",
+    "date": "2026-07-11",
+    "roomCode": "weekendbhajansecityhsr-2026-07-11",
+    "singers": [
+      "Karam",
+      "Bhawana Bhauju",
+      "Bishal Da",
+      "Basanta",
+      "Sayujya",
+      "Pemila",
+      "Gigme",
+      "Ashik",
+      "Isha"
+    ],
+    "bhajans": [
+      {
+        "id": "e_mrge124pycwt",
+        "bhajan_id": "ganesha-charanam-parama-pavanam",
+        "bhajan_title": "Ganesha Charanam Parama Pavanam",
+        "bhajan_deity": "Ganesha, Guru",
+        "singers": [
+          "Karam"
+        ],
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "notes": null,
+        "addedAt": 1783775756041
+      },
+      {
+        "id": "e_mrfw1bwynclv",
+        "bhajan_id": "raghukula-bhooshana-rajeeva-nayana",
+        "bhajan_title": "Raghukula Bhooshana Rajeeva Nayana",
+        "bhajan_deity": "Rama",
+        "singers": [
+          "Bhawana Bhauju"
+        ],
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "notes": "Minor",
+        "addedAt": 1783745535634
+      },
+      {
+        "id": "e_mrgcjmaa0fph",
+        "bhajan_id": "bhava-nasha-puttaparthi-pureesha",
+        "bhajan_title": "Bhava Nasha Puttaparthi Pureesha",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Bishal Da"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": "F, C",
+        "addedAt": 1783773262738
+      },
+      {
+        "id": "e_mrge4ctepv81",
+        "bhajan_id": "manasa-bhajorey-guru-charanam-0",
+        "bhajan_title": "Manasa Bhajorey Guru Charanam",
+        "bhajan_deity": "Guru",
+        "singers": [
+          "Basanta"
+        ],
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "notes": null,
+        "addedAt": 1783775909858
+      },
+      {
+        "id": "e_mrgdsicklesm",
+        "bhajan_id": "guru-deva-priya-deva-sai",
+        "bhajan_title": "Guru Deva Priya Deva Sai",
+        "bhajan_deity": "Guru",
+        "singers": [
+          "Sayujya"
+        ],
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "notes": null,
+        "addedAt": 1783775357156
+      },
+      {
+        "id": "e_mrgcofledury",
+        "bhajan_id": "hara-hara-hara-hara-mahadeva",
+        "bhajan_title": "Hara Hara Hara Hara Mahadeva",
+        "bhajan_deity": "Shiva",
+        "singers": [
+          "Pemila"
+        ],
+        "pitch": "4 Pancham / F",
+        "pitch_indian": "4 Pancham",
+        "pitch_western": "F",
+        "notes": null,
+        "addedAt": 1783773487346
+      },
+      {
+        "id": "e_mrgdt7baugju",
+        "bhajan_id": "amba-manda-haasa-vadani",
+        "bhajan_title": "Amba Manda Haasa Vadani",
+        "bhajan_deity": "Devi",
+        "singers": [
+          "Gigme"
+        ],
+        "pitch": "6 Madhyam / D",
+        "pitch_indian": "6 Madhyam",
+        "pitch_western": "D",
+        "notes": "It's D major",
+        "addedAt": 1783775389510
+      },
+      {
+        "id": "e_mrgdcg9il7rn",
+        "bhajan_id": "sai-naam-bolo-govinda-naam",
+        "bhajan_title": "Sai Naam Bolo Govinda Naam",
+        "bhajan_deity": "Sarva Dharma",
+        "singers": [
+          "Ashik"
+        ],
+        "pitch": "2.5 Pancham / E",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "E",
+        "notes": "Major",
+        "addedAt": 1783774607959
+      },
+      {
+        "id": "e_mrgd55sknh08",
+        "bhajan_id": "neela-megha-shyama-krishna-gopala-krishna",
+        "bhajan_title": "Neela Megha Shyama Krishna Gopala Krishna",
+        "bhajan_deity": "Krishna",
+        "singers": [
+          "Isha"
+        ],
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "notes": null,
+        "addedAt": 1783774267796
+      }
+    ],
+    "status": "completed",
+    "isBackdated": false,
+    "createdAt": "2026-07-11T04:51:38.656Z",
+    "startTime": null,
+    "duration": 3179,
+    "phase": "playing",
+    "currentBhajan": "e_mrgd55sknh08",
+    "startedAt": "2026-07-11T13:25:51.744Z",
+    "endedAt": "2026-07-11T14:18:51.153Z"
   }
 ]
