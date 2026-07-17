@@ -104,7 +104,7 @@ export class LiveSession {
   host(sessionState, code) {
     this.isHost      = true;
     this.roomCode    = code;
-    this._localState = { ...sessionState };
+    this._localState = { phase: 'setup', ...sessionState };
 
     try {
       this._db       = _getDb();
