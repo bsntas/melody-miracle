@@ -1,26 +1,50 @@
 // ─── LiveSession ─────────────────────────────────────────────────────────────
-// Trystero-based real-time bhajan session sharing.
-// Host-authoritative: host holds state and broadcasts to all observers.
-// In setup phase, observers can send edit actions back to the host.
+// Firebase Realtime Database session sharing — replaces Trystero/MQTT.
+// Host-authoritative: host owns and writes state; observers subscribe via onValue.
+// Firebase handles reconnection automatically — no heartbeats or retry loops needed.
 //
-// Robustness model:
-//  - Host broadcasts state every 10s (heartbeat) and on every state change.
-//  - Observer pings hello every 5s until it receives its first state (handles
-//    MQTT packet loss on initial join). After connected, pings every 20s so
-//    it stays in sync even if a heartbeat is lost.
-//  - Observer tracks which peer IS the host (via the first state/ended message).
-//    onPeerLeave is only acted on if THAT specific peer left — not other observers.
-//  - If the host peer leaves, an 8s grace window lets a WiFi flap recover
-//    silently (state stays on screen). Only after 8s without a returning state
-//    message does onHostLeave fire.
+// Data layout (entire node auto-deleted when host disconnects or ends session):
+//   melody-miracle/sessions/<roomCode>/state       ← full session state (host writes)
+//   melody-miracle/sessions/<roomCode>/edits/      ← observer edit queue (deleted after processing)
+//   melody-miracle/sessions/<roomCode>/observers/  ← presence nodes (one per active observer)
+//
+// ─── One-time Firebase setup ─────────────────────────────────────────────────
+// 1. Create a project at https://console.firebase.google.com
+// 2. Build → Realtime Database → Create Database (any region, start in test mode)
+// 3. Go to Rules tab and replace with:
+//      {
+//        "rules": {
+//          "melody-miracle": {
+//            "sessions": {
+//              "$roomCode": { ".read": true, ".write": true }
+//            }
+//          }
+//        }
+//      }
+// 4. Project Settings → General → Your apps → Add web app → copy values below.
+//    The API key is intentionally public; security is enforced by the DB rules above.
+// ─────────────────────────────────────────────────────────────────────────────
+const FIREBASE_CONFIG = {
+  apiKey:      'REPLACE_WITH_apiKey',
+  databaseURL: 'https://REPLACE_WITH_projectId-default-rtdb.firebaseio.com',
+  projectId:   'REPLACE_WITH_projectId',
+};
+// ─────────────────────────────────────────────────────────────────────────────
 
-import { joinRoom } from 'https://esm.sh/trystero@0.21.0/mqtt';
+import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import {
+  getDatabase, ref, set, push, remove,
+  onValue, onChildAdded, onChildRemoved, onDisconnect,
+} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
-const APP_ID     = 'bsntas-melody-miracle-v1';
-const BROKER_URL = 'wss://broker.hivemq.com:8884/mqtt';
+const DB_PATH = 'melody-miracle/sessions';
 
-function genCode() {
-  return Math.random().toString(36).slice(2, 8).toUpperCase();
+function _getDb() {
+  if (FIREBASE_CONFIG.apiKey.startsWith('REPLACE_')) {
+    throw new Error('Firebase not configured — fill in FIREBASE_CONFIG in js/live.js');
+  }
+  const app = getApps().length ? getApps()[0] : initializeApp(FIREBASE_CONFIG);
+  return getDatabase(app);
 }
 
 export class LiveSession {
@@ -30,223 +54,201 @@ export class LiveSession {
     this.onError       = onError;
     this.onHostLeave   = onHostLeave || null;
 
-    this.isHost          = false;
-    this.roomCode        = null;
-    this.trRoom          = null;
-    this.sendMsg         = null;
-    this._sendEdit       = null;
-    this.peerCount       = 0;
-    this._heartbeat      = null;
-    this._localState     = null;   // host-only: full session state
-
-    // Observer-only tracking
-    this._hostPeerId      = null;   // peer ID of the host (set on first state message)
-    this._reconnectTimer  = null;   // grace period before declaring host gone
-    this._helloTimer      = null;   // periodic hello until state received
-    this._refreshTimer    = null;   // periodic ping to host after connected
-    this._visibilityHandler = null; // re-sync on page becoming visible again
+    this.isHost        = false;
+    this.roomCode      = null;
+    this._db           = null;
+    this._sessionRef   = null;
+    this._stateRef     = null;
+    this._presenceRef  = null;  // observer-only: own presence node for host's count
+    this._localState   = null;  // host-only: authoritative state copy
+    this._peerCount    = 0;     // host-only: live observer count
+    this._unsubs       = [];    // listener cleanup functions (returned by onValue / onChildAdded)
   }
 
   // ── Host: create a new live room ──────────────────────────────────────────
-  host(sessionState, preferredCode = null) {
-    const code = preferredCode || genCode();
-    this.roomCode = code;
-    this.isHost = true;
+  host(sessionState, code) {
+    this.isHost      = true;
+    this.roomCode    = code;
     this._localState = { ...sessionState };
 
     try {
-      this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, code);
-    } catch {
-      this.onError?.('Live sharing unavailable — check your connection. Session continues offline.');
-      return code;
+      this._db         = _getDb();
+      this._sessionRef = ref(this._db, `${DB_PATH}/${code}`);
+      this._stateRef   = ref(this._db, `${DB_PATH}/${code}/state`);
+      const editsRef   = ref(this._db, `${DB_PATH}/${code}/edits`);
+      const obsRef     = ref(this._db, `${DB_PATH}/${code}/observers`);
+
+      // Register server-side cleanup — if host's tab closes or network drops,
+      // Firebase removes the entire session node automatically.
+      onDisconnect(this._sessionRef).remove();
+
+      // Write a clean session node, then attach listeners once confirmed.
+      // Attaching after the write ensures onChildAdded never fires for stale
+      // edits or observers from a previous (crashed) session with the same code.
+      set(this._sessionRef, { state: this._localState })
+        .then(() => {
+          if (!this._db) return; // host left before write finished
+
+          const unsubObsAdd = onChildAdded(obsRef, () => {
+            this._peerCount++;
+            this.onPeerChange(this._peerCount);
+          });
+          const unsubObsRem = onChildRemoved(obsRef, () => {
+            this._peerCount = Math.max(0, this._peerCount - 1);
+            this.onPeerChange(this._peerCount);
+          });
+
+          // Process observer edits (setup phase only); delete each after processing.
+          const unsubEdits = onChildAdded(editsRef, (snapshot) => {
+            const action = snapshot.val();
+            remove(snapshot.ref); // delete immediately — processed or ignored
+            if (!action || this._localState?.phase !== 'setup') return;
+            const next = this._applyEdit(action, this._localState);
+            if (!next) return;
+            this._localState = next;
+            set(this._stateRef, this._localState).catch(() => {});
+            this.onStateChange(this._localState);
+          });
+
+          this._unsubs.push(unsubObsAdd, unsubObsRem, unsubEdits);
+        })
+        .catch(e => {
+          this.onError?.(`Failed to start live session: ${e.message}`);
+        });
+
+    } catch (e) {
+      this.onError?.(`${e.message} — session continues offline.`);
     }
-
-    const [send, onMsg] = this.trRoom.makeAction('msg');
-    this.sendMsg = send;
-
-    this.trRoom.onPeerJoin(peerId => {
-      this.peerCount++;
-      this.onPeerChange(this.peerCount);
-      // Send full state to the newly joined observer immediately
-      try { send({ type: 'state', state: this._sanitizeState(this._localState) }, peerId); } catch {}
-    });
-
-    this.trRoom.onPeerLeave(() => {
-      this.peerCount = Math.max(0, this.peerCount - 1);
-      this.onPeerChange(this.peerCount);
-    });
-
-    // Host accepts edit actions from participants (setup phase only)
-    const [, onEdit] = this.trRoom.makeAction('edit');
-    onEdit((data) => {
-      if (this._localState?.phase !== 'setup') return;
-      const next = this._applyEdit(data, this._localState);
-      if (!next) return;
-      this._localState = next;
-      this._broadcastToAll();
-      this.onStateChange(this._sanitizeState(this._localState));
-    });
-
-    // Re-send state whenever any observer sends a hello (handles missed initial delivery)
-    onMsg((data, peerId) => {
-      if (data?.type === 'hello' && this._localState) {
-        try { send({ type: 'state', state: this._sanitizeState(this._localState) }, peerId); } catch {}
-      }
-    });
-
-    // Heartbeat every 10s so late-joiners and reconnects get state quickly
-    this._heartbeat = setInterval(() => {
-      if (this._localState) this._broadcastToAll();
-    }, 10000);
-
-    // When the host's tab comes back to foreground after being backgrounded,
-    // immediately re-broadcast so observers catch up without waiting for the
-    // next heartbeat tick (which the browser may have delayed/skipped).
-    this._visibilityHandler = () => {
-      if (document.visibilityState === 'visible' && this._localState) {
-        this._broadcastToAll();
-      }
-    };
-    document.addEventListener('visibilitychange', this._visibilityHandler);
 
     return code;
   }
 
-  // ── Host: broadcast session-ended signal then leave ───────────────────────
-  end() {
-    if (this.sendMsg) {
-      try { this.sendMsg({ type: 'ended' }); } catch {}
-    }
-    this._leave();
+  // ── Host: update state and broadcast to all observers ────────────────────
+  updateState(newState) {
+    if (!this.isHost) return;
+    this._localState = { ...newState };
+    set(this._stateRef, this._localState).catch(() => {});
+    this.onStateChange(this._localState);
   }
 
-  // ── Guest: join a room as observer ────────────────────────────────────────
+  // ── Host: signal session ended, then leave ────────────────────────────────
+  end() {
+    if (!this._sessionRef) { this._cleanup(); return; }
+
+    // Capture refs before cleanup nullifies them
+    const sessRef    = this._sessionRef;
+    const stateRef   = this._stateRef;
+    const finalState = { ...this._localState, phase: 'ended' };
+
+    // Cancel the auto-remove onDisconnect, write 'ended' state so observers
+    // see a clean end (not "host disconnected"), then remove after a short wait.
+    onDisconnect(sessRef).cancel()
+      .then(() => set(stateRef, finalState))
+      .then(() => new Promise(r => setTimeout(r, 3000))) // give observers time to receive it
+      .then(() => remove(sessRef))
+      .catch(() => {}); // non-critical; onDisconnect will clean up on next disconnect
+
+    this._cleanup();
+  }
+
+  // ── Observer: join a room ─────────────────────────────────────────────────
   join(code) {
     return new Promise((resolve, reject) => {
       this.roomCode = code;
-      this.isHost = false;
-      this._hostPeerId = null;
+      this.isHost   = false;
 
+      let db;
       try {
-        this.trRoom = joinRoom({ appId: APP_ID, brokerUrl: BROKER_URL }, this.roomCode);
-      } catch {
-        reject(new Error('Could not connect to session network. Check your internet connection.'));
+        db       = _getDb();
+        this._db = db;
+      } catch (e) {
+        reject(new Error(e.message));
         return;
       }
 
-      const [send, onMsg] = this.trRoom.makeAction('msg');
-      this.sendMsg = send;
+      const stateRef     = ref(db, `${DB_PATH}/${code}/state`);
+      const obsRef       = ref(db, `${DB_PATH}/${code}/observers`);
+      this._stateRef     = stateRef;
 
       let resolved = false;
+      let hasState = false;
 
-      const joinTimeout = setTimeout(() => {
-        this._clearObserverTimers();
-        this._leave();
-        reject(new Error(`Session "${code}" not found — check the code and try again`));
-      }, 45000); // 45s — was 30s; slow WiFi needs more time
-
-      const resolveOnce = () => {
-        if (resolved) return;
-        resolved = true;
-        clearTimeout(joinTimeout);
-        this._clearHelloTimer(); // stop pinging — we have state
-      };
-
-      // Announce to any peer already in the room
-      this.trRoom.onPeerJoin(peerId => {
-        try { send({ type: 'hello' }, peerId); } catch {}
-      });
-
-      // ─── Critical fix ────────────────────────────────────────────────────
-      // Only react to the HOST peer leaving, not to other observers leaving.
-      // Other observers leaving previously caused all remaining observers to
-      // call onHostLeave() and wipe their screens — that is fixed here.
-      this.trRoom.onPeerLeave((peerId) => {
-        if (!this.trRoom) return;
-        // Never identified the host (we have no state) — ignore all leaves
-        if (!this._hostPeerId) return;
-        // Some other observer left — completely ignore
-        if (peerId !== this._hostPeerId) return;
-
-        // The actual host peer disconnected.
-        // Give 8s grace: WiFi flaps often reconnect in a few seconds.
-        // If the host sends state within 8s, the timer is cancelled.
-        if (this._reconnectTimer) clearTimeout(this._reconnectTimer);
-        this._reconnectTimer = setTimeout(() => {
-          this._reconnectTimer = null;
-          if (!this.trRoom) return; // already cleaned up elsewhere
-          this.onHostLeave?.();
-          this._leave();
-        }, 8000);
-      });
-
-      onMsg((data, peerId) => {
-        if (!this.trRoom) return; // guard against ghost callbacks after _leave()
-
-        // Only 'state' and 'ended' come from the host — ignore 'hello' from other observers
-        if (data.type !== 'state' && data.type !== 'ended') return;
-
-        // Always update host identification (handles host reconnecting with new peer ID)
-        this._hostPeerId = peerId;
-
-        // Host is alive — cancel any reconnect grace timer
-        if (this._reconnectTimer) {
-          clearTimeout(this._reconnectTimer);
-          this._reconnectTimer = null;
+      // 30-second timeout — much shorter than old 45s since Firebase responds
+      // immediately with null if the path doesn't exist (no MQTT handshake lag).
+      const timeout = setTimeout(() => {
+        if (!resolved) {
+          this._cleanup();
+          reject(new Error(`Session "${code}" not found — is the host running and on the same series/date?`));
         }
+      }, 30000);
 
-        resolveOnce();
+      const unsub = onValue(stateRef, (snapshot) => {
+        const state = snapshot.val();
 
-        if (data.type === 'state') {
-          this.onStateChange(data.state);
-        } else {
-          // ended
-          this.onStateChange({ phase: 'ended' });
-        }
-      });
-
-      // Observer edit channel: send setup-phase edits to host
-      const [sendEdit] = this.trRoom.makeAction('edit');
-      this._sendEdit = sendEdit;
-
-      // Retry hello every 5s until state arrives — handles MQTT packet loss
-      // on initial join where the first hello might be dropped.
-      this._helloTimer = setInterval(() => {
-        if (resolved) { this._clearHelloTimer(); return; }
-        if (!this.sendMsg) return;
-        try { this.sendMsg({ type: 'hello' }); } catch {}
-      }, 5000);
-
-      // After connected, ping host every 20s to request a fresh state.
-      // This ensures state stays in sync even if a heartbeat is dropped.
-      this._refreshTimer = setInterval(() => {
-        if (!this.trRoom || !resolved || !this._hostPeerId || !this.sendMsg) return;
-        try { this.sendMsg({ type: 'hello' }, this._hostPeerId); } catch {}
-      }, 20000);
-
-      // When the observer's tab comes back to foreground, immediately request
-      // fresh state — the browser may have throttled timers while hidden.
-      this._visibilityHandler = () => {
-        if (document.visibilityState !== 'visible' || !this.sendMsg) return;
-        try {
-          if (this._hostPeerId) {
-            this.sendMsg({ type: 'hello' }, this._hostPeerId);
-          } else {
-            this.sendMsg({ type: 'hello' }); // not yet identified host — broadcast
+        if (state === null) {
+          if (hasState) {
+            // Node gone: host crashed or onDisconnect fired — treat as host left
+            this.onHostLeave?.();
+            this._cleanup();
           }
-        } catch {}
-      };
-      document.addEventListener('visibilitychange', this._visibilityHandler);
+          // else: session not yet created — keep waiting for the timeout
+          return;
+        }
+
+        hasState = true;
+        if (!resolved) {
+          resolved = true;
+          clearTimeout(timeout);
+          resolve();
+        }
+
+        if (state.phase === 'ended') {
+          this.onStateChange({ phase: 'ended' });
+          this._cleanup();
+          return;
+        }
+
+        this.onStateChange(state);
+      });
+      this._unsubs.push(unsub);
+
+      // Write own presence so the host can show a live observer count.
+      // onDisconnect ensures this is deleted even on tab close or network drop.
+      const presRef     = push(obsRef, { joined: Date.now() });
+      this._presenceRef = presRef;
+      onDisconnect(presRef).remove();
     });
   }
 
   // ── Observer: send a setup-phase edit to the host ────────────────────────
   sendAction(action) {
-    if (this.isHost || !this._sendEdit) return;
-    try { this._sendEdit(action); } catch {}
+    if (this.isHost || !this._db || !this.roomCode) return;
+    push(ref(this._db, `${DB_PATH}/${this.roomCode}/edits`), action).catch(() => {});
   }
 
-  // ── Apply an edit action to a state snapshot ──────────────────────────────
+  // ── Leave (observer voluntary exit or host discard) ───────────────────────
+  leave() {
+    if (this._presenceRef) {
+      remove(this._presenceRef).catch(() => {}); // immediate cleanup, don't wait for onDisconnect
+    }
+    this._cleanup();
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+
+  _cleanup() {
+    this._unsubs.forEach(fn => fn());
+    this._unsubs      = [];
+    this._db          = null;
+    this._sessionRef  = null;
+    this._stateRef    = null;
+    this._presenceRef = null;
+    this._localState  = null;
+    this.roomCode     = null;
+    this.isHost       = false;
+    this._peerCount   = 0;
+  }
+
   _applyEdit(action, state) {
     const bhajans = state.bhajans || [];
     switch (action.type) {
@@ -266,76 +268,24 @@ export class LiveSession {
       }
       case 'reorder-full': {
         const order = action.order || [];
-        const byId = Object.fromEntries(bhajans.map(e => [e.id, e]));
-        const sorted = order.map(id => byId[id]).filter(Boolean);
+        const byId  = Object.fromEntries(bhajans.map(e => [e.id, e]));
+        const sorted  = order.map(id => byId[id]).filter(Boolean);
         const missing = bhajans.filter(e => !order.includes(e.id));
         return { ...state, bhajans: [...sorted, ...missing] };
       }
       case 'update-pitch':
         return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? {
-          ...e, pitch: action.pitch, pitch_indian: action.pitch_indian || null, pitch_western: action.pitch_western || null,
+          ...e, pitch: action.pitch,
+          pitch_indian:  action.pitch_indian  || null,
+          pitch_western: action.pitch_western || null,
         } : e) };
       case 'update-notes':
-        return { ...state, bhajans: bhajans.map(e => e.id === action.entryId ? { ...e, notes: action.notes } : e) };
+        return { ...state, bhajans: bhajans.map(e =>
+          e.id === action.entryId ? { ...e, notes: action.notes } : e) };
       default:
         return null;
     }
   }
 
-  // ── Host: update state and broadcast ─────────────────────────────────────
-  updateState(newState) {
-    if (!this.isHost) return;
-    this._localState = { ...newState };
-    this._broadcastToAll();
-    this.onStateChange(this._sanitizeState(this._localState));
-  }
-
-  _broadcastToAll() {
-    if (!this.sendMsg || !this._localState) return;
-    try { this.sendMsg({ type: 'state', state: this._sanitizeState(this._localState) }); } catch {}
-  }
-
-  _sanitizeState(state) {
-    return { ...state };
-  }
-
-  // ── Leave room ────────────────────────────────────────────────────────────
-  leave() {
-    this._leave();
-  }
-
-  _clearHelloTimer() {
-    clearInterval(this._helloTimer);
-    this._helloTimer = null;
-  }
-
-  _clearObserverTimers() {
-    clearInterval(this._helloTimer);
-    clearInterval(this._refreshTimer);
-    clearTimeout(this._reconnectTimer);
-    this._helloTimer     = null;
-    this._refreshTimer   = null;
-    this._reconnectTimer = null;
-  }
-
-  _leave() {
-    clearInterval(this._heartbeat);
-    this._heartbeat = null;
-    this._clearObserverTimers();
-    if (this._visibilityHandler) {
-      document.removeEventListener('visibilitychange', this._visibilityHandler);
-      this._visibilityHandler = null;
-    }
-    try { this.trRoom?.leave?.(); } catch {}
-    this.trRoom      = null;
-    this.sendMsg     = null;
-    this._sendEdit   = null;
-    this.peerCount   = 0;
-    this.isHost      = false;
-    this.roomCode    = null;
-    this._localState = null;
-    this._hostPeerId = null;
-  }
-
-  get isConnected() { return !!this.trRoom; }
+  get isConnected() { return !!this._db; }
 }

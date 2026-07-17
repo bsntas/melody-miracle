@@ -1,6 +1,6 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
 import { GitHubStore } from './github-store.js?v=20260704.15';
-import { LiveSession } from './live.js?v=20260704.15';
+import { LiveSession } from './live.js?v=20260717.1';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
