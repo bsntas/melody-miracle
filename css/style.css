@@ -1142,6 +1142,44 @@ img { max-width: 100%; }
   border-radius: 999px; margin-top: 0.05rem;
 }
 
+/* ─── Offline / freeze banner ────────────────────────────────────────────── */
+.session-offline-banner {
+  display: none;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  padding: 0.35rem 1rem;
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+@media (prefers-color-scheme: dark) {
+  .session-offline-banner {
+    background: #451a03;
+    color: #fbbf24;
+    border-color: #92400e;
+  }
+}
+:root[data-theme="dark"] .session-offline-banner {
+  background: #451a03;
+  color: #fbbf24;
+  border-color: #92400e;
+}
+:root[data-theme="light"] .session-offline-banner {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+#session-content.session-offline .session-offline-banner {
+  display: block;
+}
+#session-content.session-offline button,
+#session-content.session-offline .drag-handle {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
 /* ─── Responsive tweaks ──────────────────────────────────────────────────── */
 @media (max-width: 400px) {
   .page-header { flex-direction: column; }

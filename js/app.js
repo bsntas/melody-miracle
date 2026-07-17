@@ -1,6 +1,6 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
 import { GitHubStore } from './github-store.js?v=20260704.15';
-import { LiveSession } from './live.js?v=20260717.2';
+import { LiveSession } from './live.js?v=20260717.3';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1449,6 +1449,7 @@ class App {
 
     el.innerHTML = `
       <div class="live-session-view">
+        <div class="session-offline-banner" aria-live="polite">↻ Reconnecting…</div>
         ${!isHost ? `<div class="observer-banner">${isPlaying ? '👁 Observer mode — watching live' : '✏️ Setup mode — add or arrange bhajans'}</div>` : ''}
 
         <div class="live-header">
@@ -1733,6 +1734,7 @@ class App {
         const el = document.getElementById('live-observer-count');
         if (el) el.textContent = `${count} observer${count !== 1 ? 's' : ''}`;
       },
+      onConnectionChange: (isOnline) => this._handleConnectionChange(isOnline),
       onError: (msg) => this._toast(msg, 'error'),
     });
 
@@ -1759,7 +1761,7 @@ class App {
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
-    this._acquireWakeLock(); // keep device awake so MQTT/timers stay active
+    this._acquireWakeLock(); // keep device awake during play mode
     this._renderSession();
   }
 
@@ -1825,6 +1827,10 @@ class App {
     if (this.live?.isHost && this.liveState) {
       this.sessions.saveDraft(this.liveState);
     }
+  }
+
+  _handleConnectionChange(isOnline) {
+    document.getElementById('session-content')?.classList.toggle('session-offline', !isOnline);
   }
 
   // ─── Wake Lock ────────────────────────────────────────────────────────────
@@ -1920,11 +1926,8 @@ class App {
         }
       },
       onPeerChange: () => {},
+      onConnectionChange: (isOnline) => this._handleConnectionChange(isOnline),
       onError: (msg) => this._toast(msg, 'error'),
-      onHostLeave: () => {
-        this._toast('The host has disconnected.', 'warn');
-        _exitObserver();
-      },
     });
 
     try {
@@ -2211,14 +2214,10 @@ class App {
 
   // ─── Live edit helper ─────────────────────────────────────────────────────
 
-  _applyLiveEdit(updatedState, action) {
+  _applyLiveEdit(updatedState, _action) {
     this.liveState = updatedState;
-    if (this.live?.isHost) {
-      this.live.updateState(updatedState);
-      this.sessions.saveDraft(updatedState);
-    } else {
-      this.live?.sendAction(action);
-    }
+    this.live?.updateState(updatedState);
+    if (this.live?.isHost) this.sessions.saveDraft(updatedState);
   }
 
   // ─── Remove / set current bhajan ─────────────────────────────────────────
