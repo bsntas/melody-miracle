@@ -63,9 +63,13 @@
 //    https://<projectId>-default-rtdb.asia-southeast1.firebasedatabase.app
 // ─────────────────────────────────────────────────────────────────────────────
 const FIREBASE_CONFIG = {
-  apiKey:      'AIzaSyB5ljPjYYHikxCZMFMa41oYHOHO41EeKso',
-  databaseURL: 'https://melody-miracle-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId:   'melody-miracle',
+  apiKey:            'AIzaSyB5ljPjYYHikxCZMFMa41oYHOHO41EeKso',
+  authDomain:        'melody-miracle.firebaseapp.com',
+  databaseURL:       'https://melody-miracle-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId:         'melody-miracle',
+  storageBucket:     'melody-miracle.firebasestorage.app',
+  messagingSenderId: '26737059113',
+  appId:             '1:26737059113:web:dd9019a0ca7f9968be0338',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
