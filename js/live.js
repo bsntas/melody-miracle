@@ -28,17 +28,35 @@
 //
 // ─── One-time Firebase setup ─────────────────────────────────────────────────
 // 1. Create a project at https://console.firebase.google.com
-// 2. Build → Realtime Database → Create Database (any region, test mode to start)
+// 2. Build → Realtime Database → Create Database (any region, start in locked mode)
 // 3. Go to Rules tab and replace with:
+//
 //      {
 //        "rules": {
+//          ".read": false,
+//          ".write": false,
 //          "melody-miracle": {
 //            "sessions": {
-//              "$roomCode": { ".read": true, ".write": true }
+//              "$roomCode": {
+//                ".read":  "$roomCode.matches(/^[a-z0-9][a-z0-9-]{0,60}-[0-9]{4}-[0-9]{2}-[0-9]{2}$/)",
+//                ".write": "$roomCode.matches(/^[a-z0-9][a-z0-9-]{0,60}-[0-9]{4}-[0-9]{2}-[0-9]{2}$/)",
+//                "state":     { ".validate": "newData.hasChildren(['phase'])" },
+//                "observers": { "$uid": { ".validate": "newData.hasChildren(['joined']) && newData.child('joined').isNumber()" } }
+//              }
 //            }
 //          }
 //        }
 //      }
+//
+//    What the rules do:
+//      • Root false/false  — everything outside this app's path is locked.
+//      • $roomCode regex   — only valid <series-slug>-YYYY-MM-DD codes are accepted;
+//                            arbitrary paths cannot be created.
+//      • .validate on state — writes must include a phase field; empty or
+//                             malformed payloads are rejected.
+//      • .validate on observers — presence nodes must carry a numeric joined timestamp.
+//      • Deletions (null writes) bypass .validate by design — end() / leave() work fine.
+//
 // 4. Project Settings → General → Your apps → Add web app → copy values below.
 //    The API key is intentionally public; security is enforced by the DB rules above.
 // ─────────────────────────────────────────────────────────────────────────────
