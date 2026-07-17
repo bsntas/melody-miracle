@@ -59,11 +59,13 @@
 //
 // 4. Project Settings → General → Your apps → Add web app → copy values below.
 //    The API key is intentionally public; security is enforced by the DB rules above.
+//    Note: databaseURL uses a regional subdomain for non-US databases, e.g.
+//    https://<projectId>-default-rtdb.asia-southeast1.firebasedatabase.app
 // ─────────────────────────────────────────────────────────────────────────────
 const FIREBASE_CONFIG = {
-  apiKey:      'REPLACE_WITH_apiKey',
-  databaseURL: 'https://REPLACE_WITH_projectId-default-rtdb.firebaseio.com',
-  projectId:   'REPLACE_WITH_projectId',
+  apiKey:      'AIzaSyB5ljPjYYHikxCZMFMa41oYHOHO41EeKso',
+  databaseURL: 'https://melody-miracle-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId:   'melody-miracle',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
