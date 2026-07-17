@@ -1,16 +1,25 @@
 // ─── LiveSession ─────────────────────────────────────────────────────────────
-// Firebase Realtime Database session sharing — replaces Trystero/MQTT.
+// Firebase Realtime Database session sharing.
 // Host-authoritative: host owns and writes state; observers subscribe via onValue.
-// Firebase handles reconnection automatically — no heartbeats or retry loops needed.
+// Firebase handles reconnection automatically — no heartbeats or retry loops.
 //
-// Data layout (entire node auto-deleted when host disconnects or ends session):
-//   melody-miracle/sessions/<roomCode>/state       ← full session state (host writes)
+// Mobile disconnect handling:
+//   Mobile browsers drop the WebSocket whenever the app is backgrounded.
+//   We NEVER delete session data on a disconnect. Instead the host presence
+//   node is set to { online: false } (via onDisconnect), and observers start
+//   a 2-minute grace timer before declaring the host gone. If the host comes
+//   back within that window, the timer is cancelled and the session continues
+//   uninterrupted. Session data is only removed on explicit end() / leave().
+//
+// Data layout:
+//   melody-miracle/sessions/<roomCode>/state       ← full session state
+//   melody-miracle/sessions/<roomCode>/host        ← { online: bool } presence flag
 //   melody-miracle/sessions/<roomCode>/edits/      ← observer edit queue (deleted after processing)
-//   melody-miracle/sessions/<roomCode>/observers/  ← presence nodes (one per active observer)
+//   melody-miracle/sessions/<roomCode>/observers/  ← { joined: ts } one per active observer
 //
 // ─── One-time Firebase setup ─────────────────────────────────────────────────
 // 1. Create a project at https://console.firebase.google.com
-// 2. Build → Realtime Database → Create Database (any region, start in test mode)
+// 2. Build → Realtime Database → Create Database (any region, test mode to start)
 // 3. Go to Rules tab and replace with:
 //      {
 //        "rules": {
@@ -37,7 +46,8 @@ import {
   onValue, onChildAdded, onChildRemoved, onDisconnect,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
-const DB_PATH = 'melody-miracle/sessions';
+const DB_PATH  = 'melody-miracle/sessions';
+const GRACE_MS = 120_000; // 2 min grace before declaring host gone after a disconnect
 
 function _getDb() {
   if (FIREBASE_CONFIG.apiKey.startsWith('REPLACE_')) {
@@ -54,15 +64,17 @@ export class LiveSession {
     this.onError       = onError;
     this.onHostLeave   = onHostLeave || null;
 
-    this.isHost        = false;
-    this.roomCode      = null;
-    this._db           = null;
-    this._sessionRef   = null;
-    this._stateRef     = null;
-    this._presenceRef  = null;  // observer-only: own presence node for host's count
-    this._localState   = null;  // host-only: authoritative state copy
-    this._peerCount    = 0;     // host-only: live observer count
-    this._unsubs       = [];    // listener cleanup functions (returned by onValue / onChildAdded)
+    this.isHost       = false;
+    this.roomCode     = null;
+    this.peerCount    = 0;     // public: host shows live observer count
+    this._db          = null;
+    this._sessionRef  = null;
+    this._stateRef    = null;
+    this._hostRef     = null;  // sessions/<code>/host — presence flag only
+    this._presenceRef = null;  // observer-only: own presence node
+    this._localState  = null;  // host-only: authoritative state copy
+    this._graceTimer  = null;  // observer-only: fires onHostLeave after GRACE_MS
+    this._unsubs      = [];    // listener cleanup functions
   }
 
   // ── Host: create a new live room ──────────────────────────────────────────
@@ -75,33 +87,49 @@ export class LiveSession {
       this._db         = _getDb();
       this._sessionRef = ref(this._db, `${DB_PATH}/${code}`);
       this._stateRef   = ref(this._db, `${DB_PATH}/${code}/state`);
+      this._hostRef    = ref(this._db, `${DB_PATH}/${code}/host`);
       const editsRef   = ref(this._db, `${DB_PATH}/${code}/edits`);
       const obsRef     = ref(this._db, `${DB_PATH}/${code}/observers`);
 
-      // Register server-side cleanup — if host's tab closes or network drops,
-      // Firebase removes the entire session node automatically.
-      onDisconnect(this._sessionRef).remove();
-
-      // Write a clean session node, then attach listeners once confirmed.
-      // Attaching after the write ensures onChildAdded never fires for stale
-      // edits or observers from a previous (crashed) session with the same code.
+      // Write a clean session node (clears any stale data from a previous session
+      // with the same room code), then attach listeners once confirmed.
       set(this._sessionRef, { state: this._localState })
         .then(() => {
           if (!this._db) return; // host left before write finished
 
-          const unsubObsAdd = onChildAdded(obsRef, () => {
-            this._peerCount++;
-            this.onPeerChange(this._peerCount);
+          // ── Host presence via /.info/connected ──────────────────────────
+          // This is Firebase's canonical reconnect pattern. On every (re)connect
+          // we re-register onDisconnect and write online:true. onDisconnect only
+          // sets a flag — it never deletes session data — so a mobile background
+          // pause does not destroy the session.
+          const connRef = ref(this._db, '.info/connected');
+          const unsubConn = onValue(connRef, (snap) => {
+            if (!snap.val() || !this._db) return;
+            // Reconnected: re-register the soft disconnect marker and go online
+            onDisconnect(this._hostRef).set({ online: false });
+            set(this._hostRef, { online: true });
           });
-          const unsubObsRem = onChildRemoved(obsRef, () => {
-            this._peerCount = Math.max(0, this._peerCount - 1);
-            this.onPeerChange(this._peerCount);
+          this._unsubs.push(unsubConn);
+
+          // ── Observer count via presence nodes ────────────────────────────
+          // Observers push a presence node on join and remove it on explicit
+          // leave(). We do NOT use onDisconnect for observer presence — a
+          // backgrounded observer should not decrement the count. The count
+          // may be slightly stale after a crash but that is acceptable.
+          this.peerCount = 0;
+          const unsubOA = onChildAdded(obsRef, () => {
+            this.peerCount++;
+            this.onPeerChange(this.peerCount);
+          });
+          const unsubOR = onChildRemoved(obsRef, () => {
+            this.peerCount = Math.max(0, this.peerCount - 1);
+            this.onPeerChange(this.peerCount);
           });
 
-          // Process observer edits (setup phase only); delete each after processing.
+          // ── Observer edit queue ──────────────────────────────────────────
           const unsubEdits = onChildAdded(editsRef, (snapshot) => {
             const action = snapshot.val();
-            remove(snapshot.ref); // delete immediately — processed or ignored
+            remove(snapshot.ref); // delete immediately after reading
             if (!action || this._localState?.phase !== 'setup') return;
             const next = this._applyEdit(action, this._localState);
             if (!next) return;
@@ -110,7 +138,7 @@ export class LiveSession {
             this.onStateChange(this._localState);
           });
 
-          this._unsubs.push(unsubObsAdd, unsubObsRem, unsubEdits);
+          this._unsubs.push(unsubOA, unsubOR, unsubEdits);
         })
         .catch(e => {
           this.onError?.(`Failed to start live session: ${e.message}`);
@@ -135,18 +163,20 @@ export class LiveSession {
   end() {
     if (!this._sessionRef) { this._cleanup(); return; }
 
-    // Capture refs before cleanup nullifies them
+    // Capture refs before _cleanup() nullifies them
     const sessRef    = this._sessionRef;
     const stateRef   = this._stateRef;
+    const hostRef    = this._hostRef;
     const finalState = { ...this._localState, phase: 'ended' };
 
-    // Cancel the auto-remove onDisconnect, write 'ended' state so observers
-    // see a clean end (not "host disconnected"), then remove after a short wait.
-    onDisconnect(sessRef).cancel()
+    // Cancel the soft-offline marker so it doesn't fire during our cleanup,
+    // write the 'ended' state so observers see a clean end (not "host disconnected"),
+    // then remove the session node after a short wait.
+    onDisconnect(hostRef).cancel()
       .then(() => set(stateRef, finalState))
-      .then(() => new Promise(r => setTimeout(r, 3000))) // give observers time to receive it
+      .then(() => new Promise(r => setTimeout(r, 3000)))
       .then(() => remove(sessRef))
-      .catch(() => {}); // non-critical; onDisconnect will clean up on next disconnect
+      .catch(() => {}); // non-critical; stale node is harmless and date-scoped
 
     this._cleanup();
   }
@@ -166,43 +196,48 @@ export class LiveSession {
         return;
       }
 
-      const stateRef     = ref(db, `${DB_PATH}/${code}/state`);
-      const obsRef       = ref(db, `${DB_PATH}/${code}/observers`);
-      this._stateRef     = stateRef;
+      const stateRef   = ref(db, `${DB_PATH}/${code}/state`);
+      const hostRef    = ref(db, `${DB_PATH}/${code}/host`);
+      const obsRef     = ref(db, `${DB_PATH}/${code}/observers`);
+      this._stateRef   = stateRef;
 
       let resolved = false;
       let hasState = false;
 
-      // 30-second timeout — much shorter than old 45s since Firebase responds
-      // immediately with null if the path doesn't exist (no MQTT handshake lag).
-      const timeout = setTimeout(() => {
+      // 30 s join timeout. Firebase responds immediately with null if the path
+      // doesn't exist (no MQTT handshake lag), so 30 s is plenty.
+      const joinTimeout = setTimeout(() => {
         if (!resolved) {
           this._cleanup();
           reject(new Error(`Session "${code}" not found — is the host running and on the same series/date?`));
         }
       }, 30000);
 
-      const unsub = onValue(stateRef, (snapshot) => {
+      // ── State listener ───────────────────────────────────────────────────
+      const unsubState = onValue(stateRef, (snapshot) => {
         const state = snapshot.val();
 
         if (state === null) {
           if (hasState) {
-            // Node gone: host crashed or onDisconnect fired — treat as host left
+            // Node gone: host called leave() (explicit discard). The host-went-
+            // offline path is handled separately via the host presence listener.
+            this._cancelGrace();
             this.onHostLeave?.();
             this._cleanup();
           }
-          // else: session not yet created — keep waiting for the timeout
+          // else: session not yet created — keep waiting for the join timeout
           return;
         }
 
         hasState = true;
         if (!resolved) {
           resolved = true;
-          clearTimeout(timeout);
+          clearTimeout(joinTimeout);
           resolve();
         }
 
         if (state.phase === 'ended') {
+          this._cancelGrace();
           this.onStateChange({ phase: 'ended' });
           this._cleanup();
           return;
@@ -210,13 +245,39 @@ export class LiveSession {
 
         this.onStateChange(state);
       });
-      this._unsubs.push(unsub);
+      this._unsubs.push(unsubState);
 
-      // Write own presence so the host can show a live observer count.
-      // onDisconnect ensures this is deleted even on tab close or network drop.
+      // ── Host presence listener (grace-period disconnect detection) ────────
+      // When host goes offline (mobile background, network drop) onDisconnect
+      // sets host.online = false. We wait GRACE_MS before acting — if the host
+      // reconnects within that window we cancel the timer and stay in session.
+      // Only start the grace timer once we've confirmed the session exists
+      // (hasState = true), so a temporarily-offline host at join time is fine.
+      const unsubHost = onValue(hostRef, (snap) => {
+        const h = snap.val();
+        if (!h) return; // host presence not written yet
+
+        if (h.online === true) {
+          // Host is (back) online — cancel any running grace timer
+          this._cancelGrace();
+        } else if (h.online === false && hasState && !this._graceTimer) {
+          // Host went offline. Start grace period before declaring them gone.
+          this._graceTimer = setTimeout(() => {
+            this._graceTimer = null;
+            this.onHostLeave?.();
+            this._cleanup();
+          }, GRACE_MS);
+        }
+      });
+      // Wrap so _cleanup() also cancels the grace timer
+      this._unsubs.push(() => { this._cancelGrace(); unsubHost(); });
+
+      // ── Own presence node ────────────────────────────────────────────────
+      // Pushed on join; removed on explicit leave(). We deliberately do NOT
+      // register onDisconnect here — a backgrounded observer should not
+      // decrement the host's count. Slight over-count on crash is acceptable.
       const presRef     = push(obsRef, { joined: Date.now() });
       this._presenceRef = presRef;
-      onDisconnect(presRef).remove();
     });
   }
 
@@ -229,24 +290,37 @@ export class LiveSession {
   // ── Leave (observer voluntary exit or host discard) ───────────────────────
   leave() {
     if (this._presenceRef) {
-      remove(this._presenceRef).catch(() => {}); // immediate cleanup, don't wait for onDisconnect
+      remove(this._presenceRef).catch(() => {}); // explicit leave → remove presence immediately
+    }
+    if (this.isHost && this._sessionRef) {
+      // Host discard: remove the session node so observers know the session is gone
+      remove(this._sessionRef).catch(() => {});
     }
     this._cleanup();
   }
 
   // ─────────────────────────────────────────────────────────────────────────
 
+  _cancelGrace() {
+    if (this._graceTimer) {
+      clearTimeout(this._graceTimer);
+      this._graceTimer = null;
+    }
+  }
+
   _cleanup() {
+    this._cancelGrace();
     this._unsubs.forEach(fn => fn());
     this._unsubs      = [];
     this._db          = null;
     this._sessionRef  = null;
     this._stateRef    = null;
+    this._hostRef     = null;
     this._presenceRef = null;
     this._localState  = null;
     this.roomCode     = null;
     this.isHost       = false;
-    this._peerCount   = 0;
+    this.peerCount    = 0;
   }
 
   _applyEdit(action, state) {
@@ -267,8 +341,8 @@ export class LiveSession {
         return { ...state, bhajans: arr };
       }
       case 'reorder-full': {
-        const order = action.order || [];
-        const byId  = Object.fromEntries(bhajans.map(e => [e.id, e]));
+        const order  = action.order || [];
+        const byId   = Object.fromEntries(bhajans.map(e => [e.id, e]));
         const sorted  = order.map(id => byId[id]).filter(Boolean);
         const missing = bhajans.filter(e => !order.includes(e.id));
         return { ...state, bhajans: [...sorted, ...missing] };
