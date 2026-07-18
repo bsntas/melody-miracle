@@ -73,7 +73,7 @@ class App {
     this._mabSelected  = null; // bhajan selected in Add Bhajan modal
     this._mabStep      = 1;
     this._mabSingers   = [];   // currently-selected singers for the entry being added
-    this._mabSuggestions = []; // full suggestion list for quick-select chips
+    this._mabSuggestions = []; // full singer list for the select dropdown
     this._bhajanModalContext = null;
 
     this._wakeLock = null;          // Screen Wake Lock (play mode, host only)
@@ -635,6 +635,19 @@ class App {
       // datalist selection fires 'change' in most browsers
       singerInp.addEventListener('change', () => {
         if (singerInp.value.trim()) this._mabAddSingerFromInput();
+      });
+    }
+    const singerSel = document.getElementById('mab-singer-select');
+    if (singerSel) {
+      singerSel.addEventListener('change', () => {
+        const name = singerSel.value;
+        if (name && !this._mabSingers.includes(name)) {
+          this._mabSingers.push(name);
+          this._mabRenderSingerChips();
+          this._mabUpdatePitchHint();
+          this._mabUpdateSuggChips();
+        }
+        singerSel.value = '';
       });
     }
 
@@ -2153,27 +2166,16 @@ class App {
       const canon = this._canonName(n);
       if (!seenCanon.has(canon)) { seenCanon.add(canon); suggestions.push(canon); }
     }
-    this._mabSuggestions = suggestions.slice(0, 10);
+    this._mabSuggestions = suggestions;
     document.getElementById('mab-singer-list').innerHTML =
       suggestions.map(s => `<option value="${escHtml(s)}">`).join('');
 
-    // Quick-select suggestion chips
-    const suggEl = document.getElementById('mab-singer-suggestions');
-    if (suggEl) {
-      suggEl.innerHTML = this._mabSuggestions.map(n =>
-        `<button type="button" class="singer-sugg-chip" data-name="${escHtml(n)}">${escHtml(n)}</button>`
-      ).join('');
-      suggEl.querySelectorAll('.singer-sugg-chip').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const name = btn.dataset.name;
-          if (!this._mabSingers.includes(name)) {
-            this._mabSingers.push(name);
-            this._mabRenderSingerChips();
-            this._mabUpdatePitchHint();
-          }
-          this._mabUpdateSuggChips();
-        });
-      });
+    // Singer dropdown: all known singers
+    const singerSel = document.getElementById('mab-singer-select');
+    if (singerSel) {
+      singerSel.innerHTML = `<option value="">Select singer…</option>` +
+        suggestions.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
+      singerSel.value = '';
     }
 
     if (preselect) {
@@ -2310,13 +2312,16 @@ class App {
       });
       box.insertBefore(chip, inp);
     }
-    inp.placeholder = this._mabSingers.length ? 'Add another…' : 'Add singer…';
+    inp.placeholder = this._mabSingers.length ? 'Add another…' : 'Or type a new name…';
   }
 
   _mabUpdateSuggChips() {
-    document.querySelectorAll('#mab-singer-suggestions .singer-sugg-chip').forEach(btn => {
-      btn.classList.toggle('hidden', this._mabSingers.includes(btn.dataset.name));
-    });
+    const singerSel = document.getElementById('mab-singer-select');
+    if (singerSel) {
+      [...singerSel.options].forEach(opt => {
+        if (opt.value) opt.disabled = this._mabSingers.includes(opt.value);
+      });
+    }
   }
 
   _mabUpdatePitchHint() {

@@ -932,6 +932,7 @@ img { max-width: 100%; }
 .sync-pending { background: var(--gold); }
 
 /* ─── Multi-singer chip input ───────────────────────────────────────────── */
+#mab-singer-select { margin-bottom: 0.4rem; }
 .singers-box {
   display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center;
   border: 1px solid var(--border); border-radius: var(--radius-sm);
