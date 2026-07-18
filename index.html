@@ -360,13 +360,15 @@
           <div id="mab-session-hint"></div>
           <div class="form-group">
             <label class="form-label">Singer(s)</label>
-            <div id="mab-singer-suggestions" class="singer-suggestions"></div>
+            <select id="mab-singer-select" class="form-input">
+              <option value="">Select singer…</option>
+            </select>
             <div id="mab-singers-box" class="singers-box">
               <input type="text" id="mab-singer" class="singers-text-input"
-                placeholder="Add singer…" autocomplete="off" list="mab-singer-list">
+                placeholder="Or type a new name…" autocomplete="off" list="mab-singer-list">
             </div>
             <datalist id="mab-singer-list"></datalist>
-            <div class="singers-hint">Tap a suggestion or type · Enter or , to confirm · tap chip to remove</div>
+            <div class="singers-hint">Pick from list or type a new name · Enter or , to confirm · tap chip to remove</div>
           </div>
           <div class="form-group">
             <label class="form-label">Pitch</label>
