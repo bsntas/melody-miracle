@@ -1070,6 +1070,44 @@ class App {
     return arr;
   }
 
+  // Sequencing rules: Ganesha → position 0; others sorted slow→fast; unknown tempo → end.
+  // Only called on initial add — manual reorders are not affected.
+  _insertWithSequencing(bhajans, newEntry, catalogBhajan) {
+    const TEMPO_RANK = { 'Slow': 1, 'Medium Slow': 2, 'Medium, Slow': 2.5, 'Medium': 3, 'Medium Fast': 4, 'Fast': 5 };
+
+    const isGanesha = (entry) => {
+      const deity = entry.bhajan_deity || '';
+      return deity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+    };
+
+    if (isGanesha(newEntry)) {
+      return [newEntry, ...bhajans];
+    }
+
+    const newRank = TEMPO_RANK[catalogBhajan?.tempo] ?? Infinity;
+    if (newRank === Infinity) {
+      return [...bhajans, newEntry];
+    }
+
+    // Find insertion point: after the last entry (Ganesha or non-Ganesha with rank ≤ newRank).
+    // Ganesha always stays before all non-Ganesha entries.
+    const result = [...bhajans];
+    let insertAt = 0;
+
+    for (let i = 0; i < result.length; i++) {
+      if (isGanesha(result[i])) {
+        insertAt = i + 1; // keep Ganesha before new entry
+        continue;
+      }
+      const b = this.bhajans.getById(result[i].bhajan_id);
+      const rank = TEMPO_RANK[b?.tempo] ?? Infinity;
+      if (rank <= newRank) insertAt = i + 1;
+    }
+
+    result.splice(insertAt, 0, newEntry);
+    return result;
+  }
+
   _initDragReorder(listEl) {
     if (!listEl) return;
     let dragSrc = null, overTarget = null;
@@ -1696,12 +1734,37 @@ class App {
   }
 
   _sessionBhajansHTML(bhajans, isHost = false, phase = 'setup') {
-    if (!bhajans.length) return '<div class="empty-state" style="padding:1.5rem 0"><p class="text-muted">No bhajans added yet</p></div>';
-
     const isPlaying = phase === 'playing';
     const currentId = this.liveState?.currentBhajan;
 
-    return bhajans.map((e, i) => {
+    const hasGanesha = bhajans.some(e => {
+      const deity = e.bhajan_deity || '';
+      return deity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+    });
+    const showPlaceholder = !isPlaying && !hasGanesha;
+
+    if (!bhajans.length) {
+      if (showPlaceholder) {
+        return `<div class="session-bhajan-entry ganesh-placeholder">
+          <div class="entry-num">1</div>
+          <div class="entry-main">
+            <div class="entry-title ganesh-placeholder-label">Ganesh bhajan — not yet added</div>
+          </div>
+        </div>`;
+      }
+      return '<div class="empty-state" style="padding:1.5rem 0"><p class="text-muted">No bhajans added yet</p></div>';
+    }
+
+    const placeholderHTML = showPlaceholder ? `<div class="session-bhajan-entry ganesh-placeholder">
+      <div class="entry-num">1</div>
+      <div class="entry-main">
+        <div class="entry-title ganesh-placeholder-label">Ganesh bhajan — not yet added</div>
+      </div>
+    </div>` : '';
+    const indexOffset = showPlaceholder ? 1 : 0;
+
+    return placeholderHTML + bhajans.map((e, i) => {
+      const displayNum = i + 1 + indexOffset;
       const isCurrent = isPlaying && e.id === currentId;
       const canGoEarlier = i > 0;
       const canGoLater   = i < bhajans.length - 1;
@@ -1742,7 +1805,7 @@ class App {
       return `
       <div class="session-bhajan-entry" data-entry-id="${e.id}">
         ${!isPlaying ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
-        <div class="entry-num">${i + 1}</div>
+        <div class="entry-num">${displayNum}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
           ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
@@ -2313,7 +2376,7 @@ class App {
 
     const updated = {
       ...this.liveState,
-      bhajans: [...(this.liveState.bhajans || []), entry],
+      bhajans: this._insertWithSequencing(this.liveState.bhajans || [], entry, b),
     };
 
     this._applyLiveEdit(updated, { type: 'add-bhajan', entry });
@@ -2784,7 +2847,7 @@ class App {
         notes:         notes || null,
         addedAt:       Date.now(),
       };
-      const newBhajans = [...(session.bhajans || []), entry];
+      const newBhajans = this._insertWithSequencing(session.bhajans || [], entry, b);
       const sessionSingers = [...new Set(newBhajans.flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
       const updated = { ...session, bhajans: newBhajans, singers: sessionSingers };
       this.sessions.save(updated, { local: true });
