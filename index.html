@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260718.1">
+  <link rel="stylesheet" href="css/style.css?v=20260718.2">
 </head>
 <body>
 
@@ -103,6 +103,9 @@
             <span id="dash-live-text">Session in progress</span>
             <button class="btn btn-sm btn-warning" id="btn-dash-goto-live">Go Live →</button>
           </div>
+
+          <!-- Open sessions (populated dynamically) -->
+          <div id="dash-open-sessions" class="dash-open-sessions hidden"></div>
 
           <!-- Insights charts -->
           <div class="section-header">

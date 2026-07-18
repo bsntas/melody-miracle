@@ -75,7 +75,7 @@ const FIREBASE_CONFIG = {
 
 import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import {
-  getDatabase, ref, set, push, remove,
+  getDatabase, ref, set, push, remove, get,
   onValue, onChildAdded, onChildRemoved,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
@@ -292,4 +292,27 @@ export class LiveSession {
   }
 
   get isConnected() { return !!this._db; }
+}
+
+// ── List currently open sessions ───────────────────────────────────────────
+// Probes each room code with a one-time read and returns those whose state
+// exists and has not ended. Uses the existing per-roomCode Firebase rules —
+// no extra permissions required.
+export async function listOpenSessions(roomCodes) {
+  if (!roomCodes.length) return [];
+  let db;
+  try { db = _getDb(); } catch { return []; }
+
+  const results = await Promise.allSettled(
+    roomCodes.map(async code => {
+      const snap = await get(ref(db, `${DB_PATH}/${code}/state`));
+      const state = snap.val();
+      if (!state || state.phase === 'ended') return null;
+      return { code, state };
+    })
+  );
+
+  return results
+    .filter(r => r.status === 'fulfilled' && r.value !== null)
+    .map(r => r.value);
 }
