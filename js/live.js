@@ -104,13 +104,15 @@ export class LiveSession {
     this._presenceRef = null;   // this participant's own presence node
     this._localState  = null;   // latest known state (used by end() for final write)
     this._unsubs      = [];     // listener cleanup functions
+    this._pendingInit = false;  // true while host() is resolving the initial get/write
   }
 
   // ── Coordinator: create and own the session ───────────────────────────────
   host(sessionState, code) {
-    this.isHost      = true;
-    this.roomCode    = code;
-    this._localState = { phase: 'setup', ...sessionState };
+    this.isHost       = true;
+    this.roomCode     = code;
+    this._localState  = { phase: 'setup', ...sessionState };
+    this._pendingInit = true; // block updateState until the get/write resolves
 
     try {
       this._db       = _getDb();
@@ -118,30 +120,49 @@ export class LiveSession {
       this._stateRef = ref(this._db, `${DB_PATH}/${code}/state`);
       const obsRef   = ref(this._db, `${DB_PATH}/${code}/observers`);
 
-      // Write a clean session node (overwrites any stale data from a previous
-      // session on the same room code), then attach all listeners once confirmed.
-      set(sessRef, { state: this._localState })
-        .then(() => {
-          if (!this._db) return; // left before write finished
+      const attachListeners = () => {
+        if (!this._db) { this._pendingInit = false; return; }
+        this._pendingInit = false;
+        this._watchConnection();
+        this._watchState(); // coordinator also listens so participant edits update the UI
 
-          this._watchConnection();
-          this._watchState();    // coordinator also listens so participant edits update the UI
+        // Track participant count via presence nodes
+        this.peerCount = 0;
+        const unsubOA = onChildAdded(obsRef, () => {
+          this.peerCount++;
+          this.onPeerChange(this.peerCount);
+        });
+        const unsubOR = onChildRemoved(obsRef, () => {
+          this.peerCount = Math.max(0, this.peerCount - 1);
+          this.onPeerChange(this.peerCount);
+        });
+        this._unsubs.push(unsubOA, unsubOR);
+      };
 
-          // Track participant count via presence nodes
-          this.peerCount = 0;
-          const unsubOA = onChildAdded(obsRef, () => {
-            this.peerCount++;
-            this.onPeerChange(this.peerCount);
-          });
-          const unsubOR = onChildRemoved(obsRef, () => {
-            this.peerCount = Math.max(0, this.peerCount - 1);
-            this.onPeerChange(this.peerCount);
-          });
-          this._unsubs.push(unsubOA, unsubOR);
+      // Check whether an active session already exists for this room code.
+      // If one is found, adopt Firebase as the source of truth rather than
+      // overwriting it — this preserves participant edits when the host
+      // rejoins or resumes after a page reload.
+      get(this._stateRef)
+        .then(snap => {
+          if (!this._db) { this._pendingInit = false; return; }
+          const existing = snap.val();
+          if (existing && existing.phase !== 'ended') {
+            // Active session found — use Firebase state, skip initial write
+            this._localState = { ...existing };
+            attachListeners();
+          } else {
+            // No active session — write fresh initial state then attach listeners
+            return set(sessRef, { state: this._localState }).then(attachListeners);
+          }
         })
-        .catch(e => this.onError?.(`Failed to start live session: ${e.message}`));
+        .catch(e => {
+          this._pendingInit = false;
+          this.onError?.(`Failed to start live session: ${e.message}`);
+        });
 
     } catch (e) {
+      this._pendingInit = false;
       this.onError?.(`${e.message} — session continues offline.`);
     }
 
@@ -216,7 +237,9 @@ export class LiveSession {
   // ── All participants: write state directly to Firebase ────────────────────
   // Firebase's local-echo fires onValue synchronously, so all listeners
   // (including the writer's own) receive the update immediately.
+  // Writes are dropped while _pendingInit is true (host() is mid-resolution).
   updateState(newState) {
+    if (this._pendingInit) return;
     this._localState = { ...newState };
     set(this._stateRef, this._localState).catch(() => {});
   }
@@ -289,6 +312,7 @@ export class LiveSession {
     this.roomCode     = null;
     this.isHost       = false;
     this.peerCount    = 0;
+    this._pendingInit = false;
   }
 
   get isConnected() { return !!this._db; }
