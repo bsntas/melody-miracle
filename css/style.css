@@ -695,6 +695,9 @@ img { max-width: 100%; }
 .entry-actions { display: flex; gap: 0.25rem; }
 .entry-action-btn { font-size: 0.75rem; padding: 0.2rem 0.4rem; border-radius: var(--radius-sm); color: var(--text-3); }
 .entry-action-btn:hover { background: var(--surface-2); color: var(--text); }
+.ganesh-placeholder { opacity: 0.55; }
+.ganesh-placeholder .entry-num { background: transparent; border: 1.5px dashed var(--text-3); }
+.ganesh-placeholder-label { font-style: italic; color: var(--text-3); font-size: 0.85rem; }
 
 /* Observer mode */
 .observer-banner {
