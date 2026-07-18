@@ -1065,6 +1065,11 @@ class App {
     if (idx < 0) return bhajansArray;
     const newIdx = direction === 'earlier' ? idx - 1 : idx + 1;
     if (newIdx < 0 || newIdx >= bhajansArray.length) return bhajansArray;
+    if (newIdx === 0) {
+      const deity = bhajansArray[idx].bhajan_deity || '';
+      const isGanesha = deity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+      if (!isGanesha) return null; // blocked: only Ganesh bhajan can be first
+    }
     const arr = [...bhajansArray];
     [arr[idx], arr[newIdx]] = [arr[newIdx], arr[idx]];
     return arr;
@@ -1161,6 +1166,15 @@ class App {
           const tIdx = without.findIndex(b => b.id === overTarget.dataset.entryId);
           newBhajans = tIdx < 0 ? [...without, src]
             : [...without.slice(0, tIdx), src, ...without.slice(tIdx)];
+        }
+
+        // Block non-Ganesha from landing at position 0
+        const srcDeity = src.bhajan_deity || '';
+        const srcIsGanesha = srcDeity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+        if (!srcIsGanesha && newBhajans[0]?.id === srcId) {
+          this._toast('Only a Ganesh bhajan can be first', 'warn');
+          cancel();
+          return;
         }
 
         cancel();
@@ -2765,6 +2779,7 @@ class App {
           if (!current) return;
           const dir = btn.dataset.action === 'reorder-earlier' ? 'earlier' : 'later';
           const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, current.bhajans || []);
+          if (!newBhajans) { this._toast('Only a Ganesh bhajan can be first', 'warn'); return; }
           this.sessions.save({ ...current, bhajans: newBhajans }, { local: true });
           this._renderSessionDetail(id);
         });
