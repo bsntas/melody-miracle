@@ -1837,7 +1837,7 @@ class App {
 
   // ─── Start Live Session ───────────────────────────────────────────────────
 
-  _startLiveSession(sessionData) {
+  _startLiveSession(sessionData, { resuming = false } = {}) {
     this.live = new LiveSession({
       onStateChange: (state) => {
         this.liveState = state;
@@ -1860,7 +1860,7 @@ class App {
 
     location.hash = '#session';
     this._renderSession();
-    this._toast('Session started! Add bhajans then tap ▶ Start.', 'success');
+    if (!resuming) this._toast('Session started! Add bhajans then tap ▶ Start.', 'success');
   }
 
   _startPlaying() {
@@ -1917,16 +1917,10 @@ class App {
 
   _resumeDraftSession(draft) {
     const sessionData = { ...draft, status: 'live' };
-    const savedPhase = sessionData.phase; // preserve playing/setup phase
-    this._startLiveSession(sessionData);
-    // _startLiveSession resets phase to 'setup'; restore the saved phase
-    if (savedPhase && savedPhase !== 'setup') {
-      this.liveState = { ...this.liveState, phase: savedPhase };
-      this.live.updateState(this.liveState);
-      this.sessions.saveDraft(this.liveState);
-      if (savedPhase === 'playing') this._acquireWakeLock();
-      this._renderSession();
-    }
+    // Pass resuming:true so host() checks Firebase first and won't overwrite
+    // participant edits. Phase and bhajans are delivered via onStateChange once
+    // Firebase resolves; no manual updateState() call needed here.
+    this._startLiveSession(sessionData, { resuming: true });
     this._toast('Session resumed', 'success');
   }
 
@@ -1936,9 +1930,12 @@ class App {
       const el = document.getElementById('session-content');
       if (this.liveState) this._renderLiveSession(el);
     }
-    // Update draft
     if (this.live?.isHost && this.liveState) {
+      // Update draft
       this.sessions.saveDraft(this.liveState);
+      // Re-acquire wake lock if playing — covers resumes where Firebase delivers
+      // phase:'playing' asynchronously after the initial setup render
+      if (this.liveState.phase === 'playing' && !this._wakeLock) this._acquireWakeLock();
     }
   }
 
