@@ -1,6 +1,6 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
 import { GitHubStore } from './github-store.js?v=20260704.15';
-import { LiveSession } from './live.js?v=20260717.3';
+import { LiveSession, listOpenSessions } from './live.js?v=20260718.1';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -905,6 +905,9 @@ class App {
       liveAlert.classList.add('hidden');
     }
 
+    // Open sessions — load async, show only when sessions exist
+    this._loadDashOpenSessions();
+
     // Period tabs — must bind before chart so fromDate is ready
     document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.period === this._dashPeriod);
@@ -1423,14 +1426,21 @@ class App {
       <div class="session-home">
         <div class="session-home-icon">🎵</div>
         <div class="session-home-title">Bhajan Session</div>
-        <div class="session-home-desc">Start a session to record bhajans. Others can join by selecting the series and date.</div>
+        <div class="session-home-desc">Start a session to record bhajans. Others can join instantly from the list below.</div>
         <div class="session-home-actions">
           <button class="btn btn-primary btn-lg btn-block" id="btn-session-new">+ Start New Session</button>
           ${draft ? `<div style="width:100%">
             <button class="btn btn-warning btn-block" id="btn-session-resume">↩ Resume "${escHtml(draft.label || 'Previous Session')}"</button>
           </div>` : ''}
-          <span class="session-home-or">— or join an existing one —</span>
-          <button class="btn btn-outline btn-block" id="btn-session-join">Join Session →</button>
+        </div>
+        <div class="open-sessions-section">
+          <div class="open-sessions-header">Live Now</div>
+          <div id="open-sessions-list" class="open-sessions-list">
+            <div class="open-sessions-loading"><span class="open-sessions-spinner"></span> Looking for active sessions…</div>
+          </div>
+        </div>
+        <div class="session-home-actions" style="margin-top:0.25rem">
+          <button class="btn btn-outline btn-block" id="btn-session-join">Join by Series & Date →</button>
         </div>
       </div>`;
   }
@@ -1440,6 +1450,107 @@ class App {
     document.getElementById('btn-session-join').addEventListener('click', () => this._openJoinModal());
     if (draft) {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
+    }
+    this._loadOpenSessions();
+  }
+
+  async _loadOpenSessions() {
+    const el = document.getElementById('open-sessions-list');
+    if (!el) return;
+
+    try {
+      const series = await this._fetchKnownSeries();
+      const today = todayISO();
+      const d = new Date();
+      d.setDate(d.getDate() - 1);
+      const yesterday = _localDate(d);
+      const codes = [...new Set(
+        [today, yesterday].flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
+      )];
+
+      const open = await listOpenSessions(codes);
+
+      if (!el.isConnected) return;
+
+      if (!open.length) {
+        el.innerHTML = '<div class="open-sessions-empty">No active sessions right now</div>';
+        return;
+      }
+
+      el.innerHTML = open.map(({ code, state }) => `
+        <button class="open-session-card" data-code="${escHtml(code)}">
+          <div class="open-session-info">
+            <div class="open-session-label">${escHtml(state.label || code)}</div>
+            <div class="open-session-meta">
+              <span class="live-dot"></span>
+              ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+              · ${escHtml(formatDate(state.date || ''))}
+            </div>
+          </div>
+          <span class="open-session-join">Join →</span>
+        </button>
+      `).join('');
+
+      el.querySelectorAll('.open-session-card').forEach(btn => {
+        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+      });
+    } catch {
+      const el2 = document.getElementById('open-sessions-list');
+      if (el2?.isConnected) el2.innerHTML = '<div class="open-sessions-empty">Could not check for active sessions</div>';
+    }
+  }
+
+  async _loadDashOpenSessions() {
+    const container = document.getElementById('dash-open-sessions');
+    if (!container) return;
+
+    try {
+      const series = await this._fetchKnownSeries();
+      const today = todayISO();
+      const d = new Date();
+      d.setDate(d.getDate() - 1);
+      const yesterday = _localDate(d);
+      const codes = [...new Set(
+        [today, yesterday].flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
+      )];
+
+      const open = await listOpenSessions(codes);
+
+      if (!container.isConnected) return;
+
+      if (!open.length) {
+        container.classList.add('hidden');
+        return;
+      }
+
+      container.classList.remove('hidden');
+      container.innerHTML = `
+        <div class="dash-open-sessions-header">
+          <span class="dash-open-sessions-title">Live Now</span>
+          <a href="#session" class="section-link">Session →</a>
+        </div>
+        <div class="open-sessions-list">
+          ${open.map(({ code, state }) => `
+            <button class="open-session-card" data-code="${escHtml(code)}">
+              <div class="open-session-info">
+                <div class="open-session-label">${escHtml(state.label || code)}</div>
+                <div class="open-session-meta">
+                  <span class="live-dot"></span>
+                  ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+                  · ${escHtml(formatDate(state.date || ''))}
+                </div>
+              </div>
+              <span class="open-session-join">Join →</span>
+            </button>
+          `).join('')}
+        </div>
+      `;
+
+      container.querySelectorAll('.open-session-card').forEach(btn => {
+        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+      });
+    } catch {
+      document.getElementById('dash-open-sessions')?.classList.add('hidden');
     }
   }
 
