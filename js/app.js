@@ -78,6 +78,7 @@ class App {
 
     this._wakeLock = null;          // Screen Wake Lock (play mode, host only)
     this._wakeLockVis = null;       // visibilitychange handler for wake lock re-acquisition
+    this._installDeferredPrompt = null; // beforeinstallprompt event, captured for later use
 
     // Dashboard period filter
     this._dashPeriod = 'all';
@@ -141,6 +142,7 @@ class App {
     this._initSeriesFilter();
     this._route();
     window.addEventListener('hashchange', () => this._route());
+    this._initInstallPrompt();
   }
 
   // Backfill pitch_indian / pitch_western on any session entries that pre-date this feature
@@ -2892,3 +2894,69 @@ class App {
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 
 window.addEventListener('DOMContentLoaded', () => { window._app = new App(); });
+
+// ─── Install Prompt (defined outside the class so it can self-contain state) ─
+// Methods are attached to the App prototype below for access via `this`.
+
+App.prototype._initInstallPrompt = function () {
+  // Never show if already running as installed PWA
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+    || window.navigator.standalone === true;
+  if (isStandalone) return;
+
+  // Don't show if dismissed within the last 14 days
+  try {
+    const ts = localStorage.getItem('mm-install-dismissed');
+    if (ts && Date.now() - parseInt(ts, 10) < 14 * 24 * 60 * 60 * 1000) return;
+  } catch { /* ignore */ }
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if (isIOS && isSafari) {
+    // iOS Safari: no beforeinstallprompt — show manual instructions after a delay
+    setTimeout(() => this._showInstallPrompt('ios'), 4000);
+    return;
+  }
+
+  // Chrome/Edge/Android: capture the browser's deferred install prompt
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    this._installDeferredPrompt = e;
+    setTimeout(() => this._showInstallPrompt('native'), 3000);
+  });
+
+  window.addEventListener('appinstalled', () => this._dismissInstallPrompt());
+};
+
+App.prototype._showInstallPrompt = function (mode) {
+  const banner = document.getElementById('install-prompt');
+  if (!banner) return;
+
+  if (mode === 'ios') {
+    document.getElementById('install-prompt-desc')?.classList.add('hidden');
+    document.getElementById('install-prompt-ios')?.classList.remove('hidden');
+    const btn = document.getElementById('btn-install-app');
+    if (btn) btn.classList.add('hidden');
+  }
+
+  banner.classList.remove('hidden');
+
+  document.getElementById('btn-install-app')?.addEventListener('click', async () => {
+    this._dismissInstallPrompt();
+    if (this._installDeferredPrompt) {
+      this._installDeferredPrompt.prompt();
+      await this._installDeferredPrompt.userChoice;
+      this._installDeferredPrompt = null;
+    }
+  }, { once: true });
+
+  document.getElementById('btn-install-dismiss')?.addEventListener('click', () => {
+    this._dismissInstallPrompt();
+    try { localStorage.setItem('mm-install-dismissed', String(Date.now())); } catch { /* ignore */ }
+  }, { once: true });
+};
+
+App.prototype._dismissInstallPrompt = function () {
+  document.getElementById('install-prompt')?.classList.add('hidden');
+};
