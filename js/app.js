@@ -1,6 +1,8 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
 import { GitHubStore } from './github-store.js?v=20260704.15';
 import { LiveSession, listOpenSessions } from './live.js?v=20260718.3';
+import { AuthManager } from './auth.js?v=20260719.1';
+import { FavouritesStore } from './favourites.js?v=20260719.1';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -83,6 +85,9 @@ class App {
     // Dashboard period filter
     this._dashPeriod = 'all';
 
+    this.auth       = null;
+    this.favourites = new FavouritesStore();
+
     // Series filter (null = all series)
     try {
       this._selectedSeries = localStorage.getItem('mm-series-filter') || null;
@@ -143,6 +148,7 @@ class App {
     this._route();
     window.addEventListener('hashchange', () => this._route());
     this._initInstallPrompt();
+    this._initAuth();
   }
 
   // Backfill pitch_indian / pitch_western on any session entries that pre-date this feature
@@ -551,6 +557,10 @@ class App {
       }
       const bhajan = this.bhajans.getById(id);
       if (bhajan) this._openAddBhajanModal(bhajan);
+    });
+    document.getElementById('mbhajan-fav')?.addEventListener('click', () => {
+      const id = document.getElementById('mbhajan-add-to-session')?.dataset.bhajanId;
+      if (id) this._toggleBhajanFavourite(id);
     });
     document.getElementById('mbhajan-prev')?.addEventListener('click', () => {
       const ctx = this._bhajanModalContext;
@@ -1231,6 +1241,7 @@ class App {
       const prev = sungEl.value;
       const singers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
       sungEl.innerHTML = `<option value="">All Bhajans</option>
+        ${this.auth?.currentUser ? '<option value="favourites">★ My Favourites</option>' : ''}
         <option value="sung">Sung Bhajans</option>
         <optgroup label="By Singer">
           ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}
@@ -1248,6 +1259,19 @@ class App {
     const tempo    = document.getElementById('filter-tempo').value;
     const level    = document.getElementById('filter-level').value;
     const sung     = document.getElementById('filter-sung')?.value || '';
+
+    if (sung === 'favourites' && !this.auth?.currentUser) {
+      this._browseFiltered = [];
+      document.getElementById('browse-count-badge').textContent = '0';
+      document.getElementById('browse-list').innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">♡</div>
+          <p>Sign in to see your favourites</p>
+          <button class="btn btn-primary btn-sm" id="browse-signin-btn">Sign in with Google</button>
+        </div>`;
+      document.getElementById('browse-signin-btn')?.addEventListener('click', () => this._handleSignIn());
+      return;
+    }
 
     this._browseFiltered = this.bhajans.search(q, { deity, language, tempo, level });
 
@@ -1267,6 +1291,9 @@ class App {
   }
 
   _sungIdsForFilter(value) {
+    if (value === 'favourites') {
+      return this.favourites.allIds;
+    }
     const ids = new Set();
     if (value === 'sung') {
       for (const s of this.sessions.activeAll())
@@ -1462,6 +1489,7 @@ class App {
         `<p class="text-muted text-small">Not recorded in any session yet</p>`}
     `;
 
+    this._updateFavButton(id);
     this._openModal('modal-bhajan');
   }
 
@@ -3079,6 +3107,123 @@ class App {
         location.hash = `#session-detail/${card.dataset.id}`;
       });
     });
+  }
+
+  // ─── Auth ─────────────────────────────────────────────────────────────────
+
+  _initAuth() {
+    try {
+      this.auth = new AuthManager(user => this._onAuthStateChange(user));
+      this._bindAuth();
+    } catch (e) {
+      console.warn('Auth init failed:', e);
+    }
+  }
+
+  _bindAuth() {
+    document.getElementById('btn-auth')?.addEventListener('click', async () => {
+      if (this.auth?.currentUser) {
+        document.getElementById('auth-dropdown')?.classList.toggle('hidden');
+      } else {
+        await this._handleSignIn();
+      }
+    });
+
+    document.getElementById('btn-sign-out')?.addEventListener('click', async () => {
+      document.getElementById('auth-dropdown')?.classList.add('hidden');
+      await this.auth?.signOut();
+      this._toast('Signed out');
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#btn-auth') && !e.target.closest('#auth-dropdown')) {
+        document.getElementById('auth-dropdown')?.classList.add('hidden');
+      }
+    });
+  }
+
+  async _handleSignIn() {
+    try {
+      await this.auth?.signIn();
+    } catch (e) {
+      if (e.code !== 'auth/popup-closed-by-user' && e.code !== 'auth/cancelled-popup-request') {
+        this._toast('Sign-in failed. Please try again.', 'error');
+      }
+    }
+  }
+
+  async _onAuthStateChange(user) {
+    this._renderAuthButton(user);
+    if (user) {
+      try {
+        await this.favourites.load(user.uid, () => this._syncFavUI());
+        this._syncFavUI();
+        this._toast(`Welcome, ${user.displayName || user.email}!`, 'success');
+      } catch (e) {
+        console.warn('Favourites load failed:', e);
+      }
+    } else {
+      this.favourites.unload();
+      this._syncFavUI();
+    }
+  }
+
+  _syncFavUI() {
+    // Update fav button if bhajan modal is open
+    const addBtn = document.getElementById('mbhajan-add-to-session');
+    if (addBtn?.dataset.bhajanId && !document.getElementById('modal-bhajan').classList.contains('hidden')) {
+      this._updateFavButton(addBtn.dataset.bhajanId);
+    }
+    // Refresh browse if currently visible (updates "My Favourites" option and filter results)
+    if (document.getElementById('view-browse')?.classList.contains('active')) {
+      this._renderBrowse();
+    }
+  }
+
+  _renderAuthButton(user) {
+    const btn      = document.getElementById('btn-auth');
+    const avatarEl = document.getElementById('auth-avatar');
+    if (!btn || !avatarEl) return;
+
+    if (user) {
+      const initial = (user.displayName || user.email || '?')[0].toUpperCase();
+      avatarEl.textContent = initial;
+      avatarEl.className   = 'auth-avatar auth-avatar-signed-in';
+      btn.title = user.displayName || user.email || 'Account';
+      const nameEl  = document.getElementById('auth-user-name');
+      const emailEl = document.getElementById('auth-user-email');
+      if (nameEl)  nameEl.textContent  = user.displayName || '';
+      if (emailEl) emailEl.textContent = user.email || '';
+    } else {
+      avatarEl.textContent = '👤';
+      avatarEl.className   = 'auth-avatar';
+      btn.title = 'Sign in with Google';
+    }
+  }
+
+  // ─── Favourites ───────────────────────────────────────────────────────────
+
+  async _toggleBhajanFavourite(bhajanId) {
+    if (!this.auth?.currentUser) {
+      this._toast('Sign in to save favourites', 'warn');
+      return;
+    }
+    try {
+      const added = await this.favourites.toggle(bhajanId);
+      this._updateFavButton(bhajanId);
+      this._toast(added ? 'Added to favourites ♥' : 'Removed from favourites');
+    } catch {
+      this._toast('Could not update favourites', 'error');
+    }
+  }
+
+  _updateFavButton(bhajanId) {
+    const btn = document.getElementById('mbhajan-fav');
+    if (!btn) return;
+    const active = !!(this.auth?.currentUser && this.favourites.isFavourite(bhajanId));
+    btn.textContent = active ? '♥' : '♡';
+    btn.classList.toggle('fav-active', active);
+    btn.title = active ? 'Remove from favourites' : 'Add to favourites';
   }
 }
 
