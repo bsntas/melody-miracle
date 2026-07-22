@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.5';
-import { GitHubStore } from './github-store.js?v=20260722.5';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.5';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.6';
+import { GitHubStore } from './github-store.js?v=20260722.6';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.6';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -675,6 +675,102 @@ class App {
       e.stopPropagation();
       this._removeBhajanEntry(btn.dataset.entryId);
     });
+
+    // Persistent delegated drag-reorder for live session bhajans.
+    // Same rationale: per-element listeners on .drag-handle are destroyed on every
+    // Firebase re-render. Listening on #session-content (stable) + document (for
+    // pointermove/up/cancel once a drag starts) survives re-renders.
+    {
+      const sc = document.getElementById('session-content');
+      if (sc) {
+        let dragSrc = null, dragOver = null;
+
+        const liveRows = () => [
+          ...(document.getElementById('live-bhajans-list')
+            ?.querySelectorAll('.session-bhajan-entry[data-entry-id]') || []),
+        ];
+        const clearClasses = () =>
+          liveRows().forEach(r => r.classList.remove('dragging', 'drag-over-above', 'drag-over-below'));
+
+        const onMove = (e) => {
+          if (!dragSrc) return;
+          e.preventDefault();
+          const others = liveRows().filter(r => r !== dragSrc);
+          let newOver = null;
+          for (const row of others) {
+            const { top, height } = row.getBoundingClientRect();
+            if (e.clientY < top + height / 2) { newOver = row; break; }
+          }
+          if (newOver !== dragOver) {
+            clearClasses();
+            dragSrc.classList.add('dragging');
+            dragOver = newOver;
+            if (dragOver) dragOver.classList.add('drag-over-above');
+            else if (others.length) others[others.length - 1].classList.add('drag-over-below');
+          }
+        };
+
+        const endDrag = (commit) => {
+          document.removeEventListener('pointermove', onMove);
+          document.removeEventListener('pointerup', doCommit);
+          document.removeEventListener('pointercancel', doCancel);
+          if (!dragSrc) return;
+          const src = dragSrc, over = dragOver;
+          clearClasses();
+          dragSrc = null; dragOver = null;
+          if (!commit) return;
+
+          const srcId = src.dataset.entryId;
+          const bhajans = this.liveState?.bhajans || [];
+          const srcEntry = bhajans.find(b => b.id === srcId);
+          if (!srcEntry) return;
+
+          const without = bhajans.filter(b => b.id !== srcId);
+          let newBhajans;
+          if (!over) {
+            newBhajans = [...without, srcEntry];
+          } else {
+            const tIdx = without.findIndex(b => b.id === over.dataset.entryId);
+            newBhajans = tIdx < 0 ? [...without, srcEntry]
+              : [...without.slice(0, tIdx), srcEntry, ...without.slice(tIdx)];
+          }
+
+          // Only block non-Ganesha from position 0 when a Ganesha is already in the session.
+          // Without this guard, ANY reorder among non-Ganesha bhajans is blocked when no
+          // Ganesha has been added yet (since one of them would inevitably land at index 0).
+          const srcDeity = srcEntry.bhajan_deity || '';
+          const srcIsGanesha = srcDeity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+          const sessionHasGanesha = newBhajans.some(b => {
+            const d = b.bhajan_deity || '';
+            return d.split(/[,/]/).map(x => x.trim()).some(x => x.toLowerCase() === 'ganesha');
+          });
+          if (!srcIsGanesha && sessionHasGanesha && newBhajans[0]?.id === srcId) {
+            this._toast('Only a Ganesh bhajan can be first', 'warn');
+            return;
+          }
+
+          if (newBhajans.map(b => b.id).join() !== bhajans.map(b => b.id).join()) {
+            const updated = { ...this.liveState, bhajans: newBhajans };
+            this._applyLiveEdit(updated, { type: 'reorder-full', order: newBhajans.map(b => b.id) });
+            this._renderSession();
+          }
+        };
+
+        const doCommit = () => endDrag(true);
+        const doCancel = () => endDrag(false);
+
+        sc.addEventListener('pointerdown', e => {
+          if (!e.target.closest('.drag-handle') || e.button > 0) return;
+          e.preventDefault();
+          dragSrc = e.target.closest('.session-bhajan-entry');
+          if (!dragSrc) return;
+          dragSrc.classList.add('dragging');
+          document.addEventListener('pointermove', onMove, { passive: false });
+          document.addEventListener('pointerup', doCommit);
+          document.addEventListener('pointercancel', doCancel);
+        }, { passive: false });
+      }
+    }
   }
 
   _openModal(id) {
@@ -1095,7 +1191,14 @@ class App {
     if (newIdx === 0) {
       const deity = bhajansArray[idx].bhajan_deity || '';
       const isGanesha = deity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
-      if (!isGanesha) return null; // blocked: only Ganesh bhajan can be first
+      if (!isGanesha) {
+        // Only block when a Ganesha bhajan is already in the list and must stay first.
+        const hasGanesha = bhajansArray.some(e => {
+          const d = e.bhajan_deity || '';
+          return d.split(/[,/]/).map(x => x.trim()).some(x => x.toLowerCase() === 'ganesha');
+        });
+        if (hasGanesha) return null;
+      }
     }
     const arr = [...bhajansArray];
     [arr[idx], arr[newIdx]] = [arr[newIdx], arr[idx]];
@@ -1138,83 +1241,6 @@ class App {
 
     result.splice(insertAt, 0, newEntry);
     return result;
-  }
-
-  _initDragReorder(listEl) {
-    if (!listEl) return;
-    let dragSrc = null, overTarget = null;
-
-    const rows = () => [...listEl.querySelectorAll('.session-bhajan-entry[data-entry-id]')];
-
-    const clearClasses = () => rows().forEach(r =>
-      r.classList.remove('dragging', 'drag-over-above', 'drag-over-below'));
-
-    const cancel = () => { clearClasses(); dragSrc = null; overTarget = null; };
-
-    listEl.querySelectorAll('.drag-handle').forEach(handle => {
-      handle.addEventListener('pointerdown', e => {
-        if (e.button > 0) return;
-        e.preventDefault();
-        handle.setPointerCapture(e.pointerId);
-        dragSrc = handle.closest('.session-bhajan-entry');
-        dragSrc?.classList.add('dragging');
-      }, { passive: false });
-
-      handle.addEventListener('pointermove', e => {
-        if (!dragSrc) return;
-        e.preventDefault();
-        const others = rows().filter(r => r !== dragSrc);
-        let newTarget = null;
-        for (const row of others) {
-          const { top, height } = row.getBoundingClientRect();
-          if (e.clientY < top + height / 2) { newTarget = row; break; }
-        }
-        if (newTarget !== overTarget) {
-          clearClasses();
-          dragSrc.classList.add('dragging');
-          overTarget = newTarget;
-          if (overTarget) overTarget.classList.add('drag-over-above');
-          else if (others.length) others[others.length - 1].classList.add('drag-over-below');
-        }
-      }, { passive: false });
-
-      const drop = () => {
-        if (!dragSrc) return;
-        const srcId = dragSrc.dataset.entryId;
-        const bhajans = this.liveState?.bhajans || [];
-        const src = bhajans.find(b => b.id === srcId);
-        if (!src) { cancel(); return; }
-
-        const without = bhajans.filter(b => b.id !== srcId);
-        let newBhajans;
-        if (!overTarget) {
-          newBhajans = [...without, src];
-        } else {
-          const tIdx = without.findIndex(b => b.id === overTarget.dataset.entryId);
-          newBhajans = tIdx < 0 ? [...without, src]
-            : [...without.slice(0, tIdx), src, ...without.slice(tIdx)];
-        }
-
-        // Block non-Ganesha from landing at position 0
-        const srcDeity = src.bhajan_deity || '';
-        const srcIsGanesha = srcDeity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
-        if (!srcIsGanesha && newBhajans[0]?.id === srcId) {
-          this._toast('Only a Ganesh bhajan can be first', 'warn');
-          cancel();
-          return;
-        }
-
-        cancel();
-        if (newBhajans.map(b => b.id).join() !== bhajans.map(b => b.id).join()) {
-          const updated = { ...this.liveState, bhajans: newBhajans };
-          this._applyLiveEdit(updated, { type: 'reorder-full', order: newBhajans.map(b => b.id) });
-          this._renderSession();
-        }
-      };
-
-      handle.addEventListener('pointerup', drop);
-      handle.addEventListener('pointercancel', cancel);
-    });
   }
 
   // ─── Browse ───────────────────────────────────────────────────────────────
@@ -1715,10 +1741,8 @@ class App {
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
 
-      this._initDragReorder(document.getElementById('live-bhajans-list'));
-
-      // Remove-button clicks are handled by the persistent delegated listener
-      // bound to #session-content in _bindGlobal(), so no per-element binding here.
+      // Drag-reorder and remove-button clicks are handled by persistent delegated
+      // listeners bound to #session-content in _bindGlobal(), so no per-element binding here.
 
       document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
         pitchEl.addEventListener('click', e => {
