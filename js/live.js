@@ -249,6 +249,26 @@ export class LiveSession {
     });
   }
 
+  // ── Any participant: take over as coordinator ─────────────────────────────
+  claimHost() {
+    this.isHost = true;
+    if (this._presenceRef) {
+      remove(this._presenceRef).catch(() => {});
+      this._presenceRef = null;
+    }
+    const obsRef = ref(this._db, `${DB_PATH}/${this.roomCode}/observers`);
+    this.peerCount = 0;
+    const unsubOA = onChildAdded(obsRef, () => {
+      this.peerCount++;
+      this.onPeerChange(this.peerCount);
+    });
+    const unsubOR = onChildRemoved(obsRef, () => {
+      this.peerCount = Math.max(0, this.peerCount - 1);
+      this.onPeerChange(this.peerCount);
+    });
+    this._unsubs.push(unsubOA, unsubOR);
+  }
+
   // ── All participants: write state directly to Firebase ────────────────────
   // Firebase's local-echo fires onValue synchronously, so all listeners
   // (including the writer's own) receive the update immediately.
