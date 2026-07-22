@@ -458,6 +458,10 @@ img { max-width: 100%; }
 .notes-editable { cursor: pointer; }
 .notes-editable:hover em, .notes-editable:hover .pitch-unset { text-decoration: underline; }
 .notes-inline-input { font-size: .8rem; padding: .15rem .35rem; border: 1px solid var(--saffron); border-radius: var(--radius-sm); width: 100%; max-width: 200px; }
+.singer-editable { cursor: pointer; }
+.entry-singer-chip.singer-editable:hover { opacity: 0.75; }
+.singer-empty { font-size: 0.72rem; color: var(--text-3); }
+.singer-empty:hover { text-decoration: underline; }
 
 /* ─── Bhajan Detail Modal ────────────────────────────────────────────────── */
 .modal-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }
