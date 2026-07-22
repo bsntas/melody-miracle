@@ -241,7 +241,9 @@ export class LiveSession {
   updateState(newState) {
     if (this._pendingInit) return;
     this._localState = { ...newState };
-    set(this._stateRef, this._localState).catch(() => {});
+    set(this._stateRef, this._localState).catch(e => {
+      this.onError?.(`Could not save change — ${e.message || 'network error'}`);
+    });
   }
 
   // ── Coordinator: signal session ended, then clean up ──────────────────────
