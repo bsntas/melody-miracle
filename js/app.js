@@ -1,6 +1,8 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.8';
-import { GitHubStore } from './github-store.js?v=20260722.8';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.8';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.9';
+import { GitHubStore } from './github-store.js?v=20260722.9';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.9';
+
+console.log('[MM] app.js v20260722.9 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -672,6 +674,7 @@ class App {
     document.getElementById('session-content')?.addEventListener('click', e => {
       const btn = e.target.closest('.entry-action-btn[data-action="remove"]');
       if (!btn) return;
+      console.log('[MM] delete click:', btn.dataset.entryId);
       e.stopPropagation();
       this._removeBhajanEntry(btn.dataset.entryId);
     });
@@ -2458,14 +2461,19 @@ class App {
   // ─── Remove / set current bhajan ─────────────────────────────────────────
 
   _removeBhajanEntry(entryId) {
-    if (!entryId || !this.liveState || this.liveState.phase === 'playing') return;
-    const bhajans = this.liveState.bhajans || [];
-    if (!bhajans.some(e => e.id === entryId)) return; // already removed
+    if (!entryId) { console.warn('[MM] delete: no entryId'); return; }
+    if (!this.liveState) { console.warn('[MM] delete: no liveState'); return; }
+    if (this.liveState.phase === 'playing') { console.warn('[MM] delete: phase is playing'); return; }
+    const bhajans = this.liveState.bhajans;
+    console.log('[MM] delete state:', { phase: this.liveState.phase, bhajansType: Array.isArray(bhajans) ? 'array' : typeof bhajans, count: Array.isArray(bhajans) ? bhajans.length : Object.keys(bhajans || {}).length, ids: Array.isArray(bhajans) ? bhajans.map(b => b.id) : Object.values(bhajans || {}).map(b => b.id), entryId });
+    const bhajansArr = Array.isArray(bhajans) ? bhajans : Object.values(bhajans || {});
+    if (!bhajansArr.some(e => e.id === entryId)) { console.warn('[MM] delete: entryId not found in bhajans'); return; }
     const updated = {
       ...this.liveState,
-      bhajans: bhajans.filter(e => e.id !== entryId),
+      bhajans: bhajansArr.filter(e => e.id !== entryId),
       currentBhajan: this.liveState.currentBhajan === entryId ? null : this.liveState.currentBhajan,
     };
+    console.log('[MM] delete: applying edit, new bhajans count:', updated.bhajans.length);
     this._applyLiveEdit(updated, { type: 'remove-bhajan', entryId });
     this._renderSession();
   }
