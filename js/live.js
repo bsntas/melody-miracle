@@ -99,12 +99,13 @@ export class LiveSession {
     this.isHost       = false;  // true for session coordinator; only affects app.js UI
     this.roomCode     = null;
     this.peerCount    = 0;      // live participant count (coordinator display)
-    this._db          = null;
-    this._stateRef    = null;
-    this._presenceRef = null;   // this participant's own presence node
-    this._localState  = null;   // latest known state (used by end() for final write)
-    this._unsubs      = [];     // listener cleanup functions
-    this._pendingInit = false;  // true while host() is resolving the initial get/write
+    this._db           = null;
+    this._stateRef     = null;
+    this._presenceRef  = null;   // this participant's own presence node
+    this._localState   = null;   // latest known state (used by end() for final write)
+    this._unsubs       = [];     // listener cleanup functions
+    this._pendingInit  = false;  // true while host() is resolving the initial get/write
+    this._pendingState = null;   // state queued during _pendingInit window
   }
 
   // ── Coordinator: create and own the session ───────────────────────────────
@@ -125,6 +126,12 @@ export class LiveSession {
         this._pendingInit = false;
         this._watchConnection();
         this._watchState(); // coordinator also listens so participant edits update the UI
+        // Flush any state changes that arrived during the _pendingInit window
+        if (this._pendingState) {
+          const queued = this._pendingState;
+          this._pendingState = null;
+          this.updateState(queued);
+        }
 
         // Track participant count via presence nodes
         this.peerCount = 0;
@@ -240,7 +247,8 @@ export class LiveSession {
   // Writes are dropped while _pendingInit is true (host() is mid-resolution).
   updateState(newState) {
     if (this._pendingInit) {
-      this.onError?.('Session still connecting to server — please try again in a moment');
+      // Queue the update; attachListeners() will flush it once Firebase is ready.
+      this._pendingState = { ...newState };
       return;
     }
     this._localState = { ...newState };
@@ -313,11 +321,12 @@ export class LiveSession {
     this._db          = null;
     this._stateRef    = null;
     this._presenceRef = null;
-    this._localState  = null;
-    this.roomCode     = null;
-    this.isHost       = false;
-    this.peerCount    = 0;
-    this._pendingInit = false;
+    this._localState   = null;
+    this._pendingState = null;
+    this.roomCode      = null;
+    this.isHost        = false;
+    this.peerCount     = 0;
+    this._pendingInit  = false;
   }
 
   get isConnected() { return !!this._db; }
