@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260704.15';
-import { GitHubStore } from './github-store.js?v=20260704.15';
-import { LiveSession, listOpenSessions } from './live.js?v=20260718.3';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.2';
+import { GitHubStore } from './github-store.js?v=20260722.2';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.2';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -276,6 +276,9 @@ class App {
     });
 
     this._renderSeriesStrip();
+
+    // Stop the Live Now auto-refresh when leaving the session home
+    if (view !== 'session') clearInterval(this._openSessionsInterval);
 
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
@@ -1474,6 +1477,7 @@ class App {
   // ─── Session View ─────────────────────────────────────────────────────────
 
   _renderSession() {
+    clearInterval(this._openSessionsInterval);
     const el = document.getElementById('session-content');
 
     if (this.liveState) {
@@ -1517,6 +1521,9 @@ class App {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
     }
     this._loadOpenSessions();
+    // Keep the Live Now list fresh: re-probe Firebase every 30 s so a session
+    // that starts after this page loaded still appears without a manual refresh.
+    this._openSessionsInterval = setInterval(() => this._loadOpenSessions(), 30_000);
   }
 
   async _loadOpenSessions() {
