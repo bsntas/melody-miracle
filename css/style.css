@@ -1239,11 +1239,6 @@ img { max-width: 100%; }
 #session-content.session-offline .session-offline-banner {
   display: block;
 }
-#session-content.session-offline button,
-#session-content.session-offline .drag-handle {
-  pointer-events: none;
-  opacity: 0.45;
-}
 
 /* ─── Install Prompt ─────────────────────────────────────────────────────── */
 @keyframes install-slide-up {
