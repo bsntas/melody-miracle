@@ -693,7 +693,7 @@ img { max-width: 100%; }
 .entry-meta { font-size: 0.77rem; color: var(--text-2); margin-top: 0.1rem; }
 .entry-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
 .entry-actions { display: flex; gap: 0.25rem; }
-.entry-action-btn { font-size: 0.75rem; padding: 0.2rem 0.4rem; border-radius: var(--radius-sm); color: var(--text-3); }
+.entry-action-btn { font-size: 0.85rem; padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); color: var(--text-3); min-width: 2.25rem; min-height: 2.25rem; display: flex; align-items: center; justify-content: center; }
 .entry-action-btn:hover { background: var(--surface-2); color: var(--text); }
 .ganesh-placeholder { opacity: 0.55; }
 .ganesh-placeholder .entry-num { background: transparent; border: 1.5px dashed var(--text-3); }

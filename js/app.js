@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.3';
-import { GitHubStore } from './github-store.js?v=20260722.3';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.3';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.4';
+import { GitHubStore } from './github-store.js?v=20260722.4';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.4';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1532,12 +1532,15 @@ class App {
 
     try {
       const series = await this._fetchKnownSeries();
-      const today = todayISO();
-      const d = new Date();
-      d.setDate(d.getDate() - 1);
-      const yesterday = _localDate(d);
+      // Check yesterday through 6 days ahead — covers sessions created for upcoming weekends
+      const now = new Date();
+      const dates = Array.from({ length: 8 }, (_, i) => {
+        const d = new Date(now);
+        d.setDate(d.getDate() + i - 1);
+        return _localDate(d);
+      });
       const codes = [...new Set(
-        [today, yesterday].flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
+        dates.flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
       )];
 
       const open = await listOpenSessions(codes);
@@ -1578,12 +1581,14 @@ class App {
 
     try {
       const series = await this._fetchKnownSeries();
-      const today = todayISO();
-      const d = new Date();
-      d.setDate(d.getDate() - 1);
-      const yesterday = _localDate(d);
+      const now = new Date();
+      const dates = Array.from({ length: 8 }, (_, i) => {
+        const d = new Date(now);
+        d.setDate(d.getDate() + i - 1);
+        return _localDate(d);
+      });
       const codes = [...new Set(
-        [today, yesterday].flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
+        dates.flatMap(date => series.map(s => this._sessionRoomCode(s, date)))
       )];
 
       const open = await listOpenSessions(codes);
