@@ -1680,7 +1680,7 @@ class App {
     el.innerHTML = `
       <div class="live-session-view">
         <div class="session-offline-banner" aria-live="polite">↻ Reconnecting…</div>
-        ${!isHost ? `<div class="observer-banner">${isPlaying ? '👁 Observer mode — watching live' : '✏️ Setup mode — add or arrange bhajans'}</div>` : ''}
+        ${!isHost ? `<div class="observer-banner"><span>${isPlaying ? '👁 Observer mode — watching live' : '✏️ Setup mode — add or arrange bhajans'}</span><button class="btn btn-sm btn-outline" id="btn-claim-host">Claim host</button></div>` : ''}
 
         <div class="live-header">
           <div class="live-header-top">
@@ -1737,6 +1737,11 @@ class App {
         const idx = parseInt(link.dataset.entryIdx);
         this._openBhajanModal(link.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
       });
+    });
+
+    document.getElementById('btn-claim-host')?.addEventListener('click', () => {
+      this.live.claimHost();
+      this._renderLiveSession(el);
     });
 
     if (!isPlaying) {

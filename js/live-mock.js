@@ -25,6 +25,10 @@ export class LiveSession {
     return Promise.reject(new Error('Mock: join not supported'));
   }
 
+  claimHost() {
+    this.isHost = true;
+  }
+
   updateState(newState) {
     this._state = { ...newState };
     // Simulate Firebase local echo
