@@ -1,8 +1,8 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.9';
-import { GitHubStore } from './github-store.js?v=20260722.9';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.9';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.10';
+import { GitHubStore } from './github-store.js?v=20260722.10';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.10';
 
-console.log('[MM] app.js v20260722.9 loaded');
+console.log('[MM] app.js v20260722.10 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2471,7 +2471,7 @@ class App {
     const updated = {
       ...this.liveState,
       bhajans: bhajansArr.filter(e => e.id !== entryId),
-      currentBhajan: this.liveState.currentBhajan === entryId ? null : this.liveState.currentBhajan,
+      currentBhajan: this.liveState.currentBhajan === entryId ? null : (this.liveState.currentBhajan ?? null),
     };
     console.log('[MM] delete: applying edit, new bhajans count:', updated.bhajans.length);
     this._applyLiveEdit(updated, { type: 'remove-bhajan', entryId });

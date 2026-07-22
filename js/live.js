@@ -132,8 +132,12 @@ export class LiveSession {
         if (this._pendingState) {
           this._localState = { ...this._pendingState };
           this._pendingState = null;
-          set(this._stateRef, this._localState)
-            .catch(e => this.onError?.(`Could not save change — ${e.message || 'network error'}`));
+          try {
+            set(this._stateRef, this._localState)
+              .catch(e => this.onError?.(`Could not save change — ${e.message || 'network error'}`));
+          } catch (e) {
+            this.onError?.(`Could not save change — ${e.message || 'network error'}`);
+          }
         }
         this._watchState(); // coordinator also listens so participant edits update the UI
 
@@ -256,9 +260,13 @@ export class LiveSession {
       return;
     }
     this._localState = { ...newState };
-    set(this._stateRef, this._localState).catch(e => {
+    try {
+      set(this._stateRef, this._localState).catch(e => {
+        this.onError?.(`Could not save change — ${e.message || 'network error'}`);
+      });
+    } catch (e) {
       this.onError?.(`Could not save change — ${e.message || 'network error'}`);
-    });
+    }
   }
 
   // ── Coordinator: signal session ended, then clean up ──────────────────────
