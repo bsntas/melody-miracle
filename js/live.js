@@ -125,13 +125,17 @@ export class LiveSession {
         if (!this._db) { this._pendingInit = false; return; }
         this._pendingInit = false;
         this._watchConnection();
-        this._watchState(); // coordinator also listens so participant edits update the UI
-        // Flush any state changes that arrived during the _pendingInit window
+        // Flush any state changes queued during the _pendingInit window BEFORE attaching
+        // _watchState. Doing it first means the Firebase local cache already has the
+        // pending write applied, so the very first onValue echo delivers the updated
+        // state — no visible flash of the old state coming back.
         if (this._pendingState) {
-          const queued = this._pendingState;
+          this._localState = { ...this._pendingState };
           this._pendingState = null;
-          this.updateState(queued);
+          set(this._stateRef, this._localState)
+            .catch(e => this.onError?.(`Could not save change — ${e.message || 'network error'}`));
         }
+        this._watchState(); // coordinator also listens so participant edits update the UI
 
         // Track participant count via presence nodes
         this.peerCount = 0;
