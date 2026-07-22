@@ -239,7 +239,10 @@ export class LiveSession {
   // (including the writer's own) receive the update immediately.
   // Writes are dropped while _pendingInit is true (host() is mid-resolution).
   updateState(newState) {
-    if (this._pendingInit) return;
+    if (this._pendingInit) {
+      this.onError?.('Session still connecting to server — please try again in a moment');
+      return;
+    }
     this._localState = { ...newState };
     set(this._stateRef, this._localState).catch(e => {
       this.onError?.(`Could not save change — ${e.message || 'network error'}`);

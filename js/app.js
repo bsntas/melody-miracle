@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.4';
-import { GitHubStore } from './github-store.js?v=20260722.4';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.4';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.5';
+import { GitHubStore } from './github-store.js?v=20260722.5';
+import { LiveSession, listOpenSessions } from './live.js?v=20260722.5';
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -663,6 +663,17 @@ class App {
     });
     document.getElementById('modal-join-session')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-join-session')) this._closeModal('modal-join-session');
+    });
+
+    // Persistent delegated remove-bhajan listener on the stable session container.
+    // Per-element listeners attached during _renderLiveSession are lost whenever Firebase
+    // triggers a re-render (onStateChange → innerHTML replaced). Delegation on #session-content
+    // (which is never replaced, only its children are) survives every re-render.
+    document.getElementById('session-content')?.addEventListener('click', e => {
+      const btn = e.target.closest('.entry-action-btn[data-action="remove"]');
+      if (!btn) return;
+      e.stopPropagation();
+      this._removeBhajanEntry(btn.dataset.entryId);
     });
   }
 
@@ -1706,12 +1717,8 @@ class App {
 
       this._initDragReorder(document.getElementById('live-bhajans-list'));
 
-      document.querySelectorAll('.entry-action-btn[data-action="remove"]').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          this._removeBhajanEntry(btn.dataset.entryId);
-        });
-      });
+      // Remove-button clicks are handled by the persistent delegated listener
+      // bound to #session-content in _bindGlobal(), so no per-element binding here.
 
       document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
         pitchEl.addEventListener('click', e => {
@@ -2427,9 +2434,12 @@ class App {
   // ─── Remove / set current bhajan ─────────────────────────────────────────
 
   _removeBhajanEntry(entryId) {
+    if (!entryId || !this.liveState || this.liveState.phase === 'playing') return;
+    const bhajans = this.liveState.bhajans || [];
+    if (!bhajans.some(e => e.id === entryId)) return; // already removed
     const updated = {
       ...this.liveState,
-      bhajans: (this.liveState.bhajans || []).filter(e => e.id !== entryId),
+      bhajans: bhajans.filter(e => e.id !== entryId),
       currentBhajan: this.liveState.currentBhajan === entryId ? null : this.liveState.currentBhajan,
     };
     this._applyLiveEdit(updated, { type: 'remove-bhajan', entryId });
