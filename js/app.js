@@ -1,8 +1,8 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260722.10';
-import { GitHubStore } from './github-store.js?v=20260722.10';
-import { LiveSession, listOpenSessions } from './live.js?v=20260722.10';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260723.1';
+import { GitHubStore } from './github-store.js?v=20260723.1';
+import { LiveSession, listOpenSessions } from './live.js?v=20260723.1';
 
-console.log('[MM] app.js v20260722.10 loaded');
+console.log('[MM] app.js v20260723.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
