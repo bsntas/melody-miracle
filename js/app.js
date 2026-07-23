@@ -1766,6 +1766,13 @@ class App {
         });
       });
 
+      document.querySelectorAll('#live-bhajans-list .singer-editable').forEach(singerEl => {
+        singerEl.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlineSingerEdit(singerEl, singerEl.dataset.entryId, 'live');
+        });
+      });
+
       // Setup controls: host only
       if (isHost) {
         document.getElementById('btn-start-playing').addEventListener('click', () => this._startPlaying());
@@ -1887,11 +1894,12 @@ class App {
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
           ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
-            <span class="entry-singer-chip">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+            <span class="entry-singer-chip${!isPlaying ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
             ${!isPlaying ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
-          </div>` : (e.notes || !isPlaying ? `<div class="entry-meta">
+          </div>` : `<div class="entry-meta">
+            ${!isPlaying ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
             ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
-          </div>` : '')}
+          </div>`}
           <div class="entry-pitch-row">
             <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Tap to edit pitch' : ''}">
               ${e.pitch
@@ -2426,7 +2434,13 @@ class App {
     const typedName = document.getElementById('mab-singer').value.trim();
     if (typedName && !this._mabSingers.includes(typedName)) this._mabSingers.push(typedName);
 
-    const singers = this._mabSingers.length ? [...this._mabSingers] : null;
+    if (!this._mabSingers.length) {
+      this._toast('Singer name is required', 'error');
+      document.getElementById('mab-singer').focus();
+      return;
+    }
+
+    const singers = [...this._mabSingers];
     const pitch  = document.getElementById('mab-pitch').value.trim();
     const notes  = document.getElementById('mab-notes').value.trim();
     const { pitch_indian, pitch_western } = splitPitchCombined(pitch);
@@ -2721,6 +2735,58 @@ class App {
           ...session,
           bhajans: session.bhajans.map(e =>
             e.id === entryId ? { ...e, notes: newNotes } : e),
+        };
+        this.sessions.save(updated, { local: true });
+        this._renderSessionDetail(this._detailSessionId);
+      }
+    };
+
+    let done = false;
+    inp.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter')  { done = true; inp.blur(); }
+      if (ev.key === 'Escape') { done = true; inp.replaceWith(triggerEl); }
+    });
+    inp.addEventListener('blur', () => { if (!done) { done = true; save(); } });
+  }
+
+  // ─── Inline singer edit ───────────────────────────────────────────────────
+
+  _inlineSingerEdit(triggerEl, entryId, mode) {
+    const entries = mode === 'live'
+      ? (this.liveState?.bhajans || [])
+      : (this.sessions.get(this._detailSessionId)?.bhajans || []);
+    const entry = entries.find(e => e.id === entryId);
+    if (!entry) return;
+
+    const currentSingers = entry.singers || (entry.singer ? [entry.singer] : []);
+
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'notes-inline-input form-input';
+    inp.value = currentSingers.join(', ');
+    inp.placeholder = 'Singer(s), comma-separated…';
+
+    triggerEl.replaceWith(inp);
+    inp.focus();
+    inp.select();
+
+    const save = () => {
+      const newSingers = inp.value.split(',').map(s => s.trim()).filter(Boolean);
+      if (mode === 'live') {
+        const updated = {
+          ...this.liveState,
+          bhajans: (this.liveState.bhajans || []).map(e =>
+            e.id === entryId ? { ...e, singers: newSingers.length ? newSingers : null } : e),
+        };
+        this._applyLiveEdit(updated, { type: 'update-singers', entryId, singers: newSingers });
+        this._renderSession();
+      } else {
+        const session = this.sessions.get(this._detailSessionId);
+        if (!session) return;
+        const updated = {
+          ...session,
+          bhajans: session.bhajans.map(e =>
+            e.id === entryId ? { ...e, singers: newSingers.length ? newSingers : null } : e),
         };
         this.sessions.save(updated, { local: true });
         this._renderSessionDetail(this._detailSessionId);
