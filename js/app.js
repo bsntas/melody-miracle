@@ -2080,10 +2080,12 @@ class App {
       if (this.liveState) this._renderLiveSession(el);
     }
     if (this.live?.isHost && this.liveState) {
-      // Update draft
-      this.sessions.saveDraft(this.liveState);
-      // Re-acquire wake lock if playing — covers resumes where Firebase delivers
-      // phase:'playing' asynchronously after the initial setup render
+      // Don't persist ended state — clearDraft() already ran in _endSession(), and
+      // Firebase's synchronous local echo from end()'s set() would otherwise
+      // re-write the draft here before _endSession() nulls this.live.
+      if (this.liveState.phase !== 'ended') {
+        this.sessions.saveDraft(this.liveState);
+      }
       if (this.liveState.phase === 'playing' && !this._wakeLock) this._acquireWakeLock();
     }
   }
