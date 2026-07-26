@@ -156,7 +156,10 @@
         <div class="view-content">
           <div class="page-header">
             <h2 class="page-title">Browse Bhajans</h2>
-            <span class="bhajan-count-badge" id="browse-count-badge">1439</span>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <span class="bhajan-count-badge" id="browse-count-badge">1439</span>
+              <button class="btn btn-primary btn-sm" id="btn-new-bhajan">+ New</button>
+            </div>
           </div>
 
           <div class="search-bar-wrap">
@@ -584,6 +587,83 @@
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-mnewseries-cancel">Cancel</button>
         <button class="btn btn-primary" id="btn-mnewseries-create">Create &amp; Select</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Bhajan Modal -->
+  <div id="modal-new-bhajan" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">New Bhajan</h3>
+        <button class="modal-close" id="mnb-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="form-hint" style="margin-bottom:.75rem">Added to the local catalog for this session — will not persist after page reload.</p>
+        <form id="new-bhajan-form">
+          <div class="form-group">
+            <label class="form-label">Title <span style="color:var(--error,#dc2626)">*</span></label>
+            <input type="text" id="mnb-title" class="form-input" placeholder="e.g. Jai Ganesh" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Deity</label>
+            <input type="text" id="mnb-deity" class="form-input" placeholder="e.g. Ganesha, Shiva" autocomplete="off" list="mnb-deity-list">
+            <datalist id="mnb-deity-list"></datalist>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Language</label>
+            <input type="text" id="mnb-language" class="form-input" placeholder="e.g. Hindi" autocomplete="off" list="mnb-lang-list">
+            <datalist id="mnb-lang-list"></datalist>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Raga</label>
+            <input type="text" id="mnb-raga" class="form-input" placeholder="e.g. Bhairavi" autocomplete="off">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+            <div class="form-group">
+              <label class="form-label">Tempo</label>
+              <select id="mnb-tempo" class="form-input">
+                <option value="">—</option>
+                <option>Slow</option>
+                <option>Medium Slow</option>
+                <option>Medium</option>
+                <option>Medium Fast</option>
+                <option>Fast</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Level</label>
+              <select id="mnb-level" class="form-input">
+                <option value="">—</option>
+                <option>Simple</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+            <div class="form-group">
+              <label class="form-label">Gents Pitch</label>
+              <input type="text" id="mnb-gents-pitch" class="form-input" placeholder="e.g. 5 Pancham" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ladies Pitch</label>
+              <input type="text" id="mnb-ladies-pitch" class="form-input" placeholder="e.g. 2 Pancham" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Scale</label>
+            <input type="text" id="mnb-scale" class="form-input" placeholder="e.g. Minor, Major" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lyrics</label>
+            <textarea id="mnb-lyrics" class="form-input" rows="4" placeholder="Paste or type lyrics here…" style="resize:vertical;min-height:80px"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mnb-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mnb-submit">Add Bhajan</button>
       </div>
     </div>
   </div>

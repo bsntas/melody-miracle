@@ -534,6 +534,17 @@ class App {
     // Browse sung/singer filter
     document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
 
+    // New Bhajan button
+    document.getElementById('btn-new-bhajan')?.addEventListener('click', () => this._openNewBhajanModal());
+
+    // New Bhajan modal
+    document.getElementById('mnb-close')?.addEventListener('click', () => this._closeModal('modal-new-bhajan'));
+    document.getElementById('btn-mnb-cancel')?.addEventListener('click', () => this._closeModal('modal-new-bhajan'));
+    document.getElementById('modal-new-bhajan')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-new-bhajan')) this._closeModal('modal-new-bhajan');
+    });
+    document.getElementById('btn-mnb-submit')?.addEventListener('click', () => this._submitNewBhajanForm());
+
     // Singer profile back
     document.getElementById('btn-singer-back')?.addEventListener('click', () => history.back());
     document.getElementById('btn-session-detail-back')?.addEventListener('click', () => { location.hash = '#history'; });
@@ -1398,6 +1409,54 @@ class App {
         ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
       </div>
     </div>`;
+  }
+
+  // ─── New Bhajan Entry ─────────────────────────────────────────────────────
+
+  _openNewBhajanModal() {
+    document.getElementById('new-bhajan-form').reset();
+    const deityList = document.getElementById('mnb-deity-list');
+    deityList.innerHTML = this.bhajans.uniqueValues('deity').map(d => `<option value="${escHtml(d)}">`).join('');
+    const langList = document.getElementById('mnb-lang-list');
+    langList.innerHTML = this.bhajans.uniqueValues('language').map(l => `<option value="${escHtml(l)}">`).join('');
+    this._openModal('modal-new-bhajan');
+    setTimeout(() => document.getElementById('mnb-title').focus(), 100);
+  }
+
+  _submitNewBhajanForm() {
+    const title = document.getElementById('mnb-title').value.trim();
+    if (!title) { this._toast('Title is required', 'error'); return; }
+
+    const id = title.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+
+    if (this.bhajans.getById(id)) {
+      this._toast('A bhajan with a similar title already exists', 'warn');
+      return;
+    }
+
+    const bhajan = {
+      id,
+      title,
+      deity:        document.getElementById('mnb-deity').value.trim(),
+      language:     document.getElementById('mnb-language').value.trim(),
+      raga:         document.getElementById('mnb-raga').value.trim(),
+      tempo:        document.getElementById('mnb-tempo').value,
+      level:        document.getElementById('mnb-level').value,
+      gents_pitch:  document.getElementById('mnb-gents-pitch').value.trim(),
+      ladies_pitch: document.getElementById('mnb-ladies-pitch').value.trim(),
+      scale:        document.getElementById('mnb-scale').value.trim(),
+      lyrics:       document.getElementById('mnb-lyrics').value.trim(),
+      beat: '', audio_url: '', source_url: '',
+    };
+
+    this.bhajans.bhajans.push(bhajan);
+    this.bhajans._buildIndex();
+    this._closeModal('modal-new-bhajan');
+    this._toast(`"${title}" added to the catalog`, 'success');
+    this._renderBrowse();
   }
 
   // ─── Sung Bhajans ─────────────────────────────────────────────────────────
