@@ -620,6 +620,10 @@
             <label class="form-label">Raga</label>
             <input type="text" id="mnb-raga" class="form-input" placeholder="e.g. Bhairavi" autocomplete="off">
           </div>
+          <div class="form-group">
+            <label class="form-label">Beat</label>
+            <input type="text" id="mnb-beat" class="form-input" placeholder="e.g. 8 Beat / Keherwa / Adi" autocomplete="off">
+          </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
             <div class="form-group">
               <label class="form-label">Tempo</label>
@@ -656,13 +660,23 @@
             <label class="form-label">Scale</label>
             <input type="text" id="mnb-scale" class="form-input" placeholder="e.g. Minor, Major" autocomplete="off">
           </div>
-          <div class="form-group">
-            <label class="form-label">Source URL</label>
-            <input type="url" id="mnb-source-url" class="form-input" placeholder="e.g. https://youtube.com/watch?v=…" autocomplete="off">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+            <div class="form-group">
+              <label class="form-label">Source URL</label>
+              <input type="url" id="mnb-source-url" class="form-input" placeholder="e.g. https://youtube.com/…" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Audio URL</label>
+              <input type="url" id="mnb-audio-url" class="form-input" placeholder="e.g. https://…/bhajan.mp3" autocomplete="off">
+            </div>
           </div>
           <div class="form-group">
             <label class="form-label">Lyrics</label>
             <textarea id="mnb-lyrics" class="form-input" rows="4" placeholder="Paste or type lyrics here…" style="resize:vertical;min-height:80px"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meaning</label>
+            <textarea id="mnb-meaning" class="form-input" rows="3" placeholder="Translation or meaning of the lyrics…" style="resize:vertical;min-height:60px"></textarea>
           </div>
         </form>
       </div>

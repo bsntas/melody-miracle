@@ -1451,7 +1451,10 @@ class App {
     document.getElementById('mnb-ladies-pitch').value = b.ladies_pitch_indian || b.ladies_pitch || '';
     document.getElementById('mnb-scale').value       = b.scale || '';
     document.getElementById('mnb-source-url').value  = b.source_url || '';
+    document.getElementById('mnb-audio-url').value   = b.audio_url || '';
+    document.getElementById('mnb-beat').value        = b.beat || '';
     document.getElementById('mnb-lyrics').value      = b.lyrics || '';
+    document.getElementById('mnb-meaning').value     = b.meaning || '';
     this._openModal('modal-new-bhajan');
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
   }
@@ -1483,7 +1486,6 @@ class App {
     const existing = isEdit ? (this.bhajans.getById(id) || {}) : {};
 
     const bhajan = {
-      beat: '', audio_url: '', source_url: '',
       ...existing,
       id,
       title,
@@ -1495,8 +1497,11 @@ class App {
       gents_pitch:  document.getElementById('mnb-gents-pitch').value.trim(),
       ladies_pitch: document.getElementById('mnb-ladies-pitch').value.trim(),
       scale:        document.getElementById('mnb-scale').value.trim(),
+      beat:         document.getElementById('mnb-beat').value.trim(),
       source_url:   document.getElementById('mnb-source-url').value.trim(),
+      audio_url:    document.getElementById('mnb-audio-url').value.trim(),
       lyrics:       document.getElementById('mnb-lyrics').value.trim(),
+      meaning:      document.getElementById('mnb-meaning').value.trim(),
     };
 
     if (isEdit) {
