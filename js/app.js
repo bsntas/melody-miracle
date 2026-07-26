@@ -1,6 +1,6 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260726.1';
-import { GitHubStore } from './github-store.js?v=20260726.1';
-import { LiveSession, listOpenSessions } from './live.js?v=20260726.1';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260726.2';
+import { GitHubStore } from './github-store.js?v=20260726.2';
+import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 
 console.log('[MM] app.js v20260726.1 loaded');
 
@@ -986,6 +986,20 @@ class App {
     if (localSessions.length) {
       for (const s of localSessions) {
         if (!this.sessions.get(s.id)) this.sessions.save(s);
+      }
+    }
+
+    // Push any bhajans added in-memory before the PAT was configured
+    const locallyAdded = this.bhajans.bhajans.length - (this.bhajans._originalCount ?? this.bhajans.bhajans.length);
+    if (locallyAdded > 0) {
+      try {
+        this._updateSyncIndicator('syncing');
+        await this.sessions.commitBhajans(
+          this.bhajans.bhajans,
+          `Add ${locallyAdded} bhajan${locallyAdded === 1 ? '' : 's'} added offline`,
+        );
+      } catch (e) {
+        console.error('Failed to sync offline bhajans:', e);
       }
     }
 

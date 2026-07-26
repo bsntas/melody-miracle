@@ -11,6 +11,7 @@ export class BhajanStore {
     const res = await fetch('data/bhajans.json');
     if (!res.ok) throw new Error('Failed to load bhajan catalog');
     this.bhajans = await res.json();
+    this._originalCount = this.bhajans.length;
     this._buildIndex();
     return this.bhajans;
   }

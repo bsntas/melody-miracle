@@ -546,17 +546,24 @@ export class GitHubStore {
     delete this._seriesShas[path];
   }
 
+  // Fetch the blob SHA for data/bhajans.json using the Git Trees API.
+  // The Contents API GET fails for files >1 MB, so we walk the tree instead.
+  async _fetchBhajansSha() {
+    const refRes = await this._api('GET', `/repos/${OWNER}/${REPO}/git/ref/heads/${BRANCH}`);
+    if (!refRes.ok) return null;
+    const refData = await refRes.json();
+    const commitSha = refData.object?.sha;
+    if (!commitSha) return null;
+    const treeRes = await this._api('GET', `/repos/${OWNER}/${REPO}/git/trees/${commitSha}?recursive=1`);
+    if (!treeRes.ok) return null;
+    const treeData = await treeRes.json();
+    return (treeData.tree || []).find(e => e.path === BHAJANS_PATH)?.sha ?? null;
+  }
+
   // Commit the full bhajan catalog to data/bhajans.json on the main branch.
   async commitBhajans(bhajans, message = 'Update bhajan catalog') {
-    // Fetch current SHA if we don't have it cached
     if (!this._bhajansSha) {
-      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${BHAJANS_PATH}?ref=${BRANCH}`);
-      if (r.ok) {
-        const d = await r.json();
-        this._bhajansSha = d.sha;
-      } else if (r.status !== 404) {
-        throw new Error(`GitHub API error fetching bhajans: ${r.status}`);
-      }
+      this._bhajansSha = await this._fetchBhajansSha();
     }
 
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(bhajans, null, 2))));
@@ -569,8 +576,8 @@ export class GitHubStore {
 
     const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${BHAJANS_PATH}`, body);
 
-    if (res.status === 409) {
-      // Conflict: re-fetch SHA and retry once
+    if (res.status === 409 || res.status === 422) {
+      // Conflict or SHA mismatch: re-fetch SHA and retry once
       this._bhajansSha = null;
       return this.commitBhajans(bhajans, message);
     }
