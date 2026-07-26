@@ -1428,6 +1428,8 @@ class App {
       'If GitHub sync is enabled, this entry will be saved permanently. Otherwise it is session-only.';
     document.getElementById('new-bhajan-form').reset();
     this._mnbPopulateLists();
+    this._modalCleanup = this._modalCleanup || {};
+    this._modalCleanup['modal-new-bhajan'] = () => { this._editBhajanId = null; };
     this._openModal('modal-new-bhajan');
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
   }
@@ -1455,6 +1457,8 @@ class App {
     document.getElementById('mnb-beat').value        = b.beat || '';
     document.getElementById('mnb-lyrics').value      = b.lyrics || '';
     document.getElementById('mnb-meaning').value     = b.meaning || '';
+    this._modalCleanup = this._modalCleanup || {};
+    this._modalCleanup['modal-new-bhajan'] = () => { this._editBhajanId = null; };
     this._openModal('modal-new-bhajan');
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
   }
@@ -1485,17 +1489,26 @@ class App {
 
     const existing = isEdit ? (this.bhajans.getById(id) || {}) : {};
 
+    const gentsRaw  = document.getElementById('mnb-gents-pitch').value.trim();
+    const ladiesRaw = document.getElementById('mnb-ladies-pitch').value.trim();
+    const gp = pitchByIndian(gentsRaw);
+    const lp = pitchByIndian(ladiesRaw);
+
     const bhajan = {
       ...existing,
       id,
       title,
-      deity:        document.getElementById('mnb-deity').value.trim(),
-      language:     document.getElementById('mnb-language').value.trim(),
-      raga:         document.getElementById('mnb-raga').value.trim(),
-      tempo:        document.getElementById('mnb-tempo').value,
-      level:        document.getElementById('mnb-level').value,
-      gents_pitch:  document.getElementById('mnb-gents-pitch').value.trim(),
-      ladies_pitch: document.getElementById('mnb-ladies-pitch').value.trim(),
+      deity:               document.getElementById('mnb-deity').value.trim(),
+      language:            document.getElementById('mnb-language').value.trim(),
+      raga:                document.getElementById('mnb-raga').value.trim(),
+      tempo:               document.getElementById('mnb-tempo').value,
+      level:               document.getElementById('mnb-level').value,
+      gents_pitch:         gp ? gp.combined : gentsRaw,
+      gents_pitch_indian:  gp ? gp.indian   : null,
+      gents_pitch_western: gp ? gp.western  : null,
+      ladies_pitch:         lp ? lp.combined : ladiesRaw,
+      ladies_pitch_indian:  lp ? lp.indian   : null,
+      ladies_pitch_western: lp ? lp.western  : null,
       scale:        document.getElementById('mnb-scale').value.trim(),
       beat:         document.getElementById('mnb-beat').value.trim(),
       source_url:   document.getElementById('mnb-source-url').value.trim(),
