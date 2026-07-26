@@ -1455,8 +1455,23 @@ class App {
     this.bhajans.bhajans.push(bhajan);
     this.bhajans._buildIndex();
     this._closeModal('modal-new-bhajan');
-    this._toast(`"${title}" added to the catalog`, 'success');
     this._renderBrowse();
+
+    if (this.sessions instanceof GitHubStore) {
+      this._toast(`"${title}" added — saving to GitHub…`);
+      this._updateSyncIndicator('syncing');
+      this.sessions.commitBhajans(this.bhajans.bhajans, `Add bhajan: ${title}`)
+        .then(() => {
+          this._updateSyncIndicator('ok');
+          this._toast(`"${title}" saved to GitHub`, 'success');
+        })
+        .catch(err => {
+          this._updateSyncIndicator('error');
+          this._toast(`Saved locally — GitHub sync failed: ${err.message}`, 'error');
+        });
+    } else {
+      this._toast(`"${title}" added (session only — no GitHub sync)`, 'success');
+    }
   }
 
   // ─── Sung Bhajans ─────────────────────────────────────────────────────────
