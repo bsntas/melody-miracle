@@ -303,6 +303,7 @@
         <button class="btn btn-ghost btn-sm hidden" id="mbhajan-prev">← Prev</button>
         <div class="mbhajan-footer-actions">
           <button class="btn btn-outline btn-sm" id="mbhajan-add-to-session">+ Add to Session</button>
+          <button class="btn btn-ghost btn-sm" id="mbhajan-edit">Edit</button>
           <a class="btn btn-ghost btn-sm" id="mbhajan-source-link" target="_blank" rel="noopener">Source ↗</a>
         </div>
         <button class="btn btn-ghost btn-sm hidden" id="mbhajan-next">Next →</button>
@@ -595,11 +596,11 @@
   <div id="modal-new-bhajan" class="modal-overlay hidden">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 class="modal-title">New Bhajan</h3>
+        <h3 class="modal-title" id="mnb-modal-title">New Bhajan</h3>
         <button class="modal-close" id="mnb-close">✕</button>
       </div>
       <div class="modal-body">
-        <p class="form-hint" style="margin-bottom:.75rem">If GitHub sync is enabled, this entry will be saved permanently to the catalog. Otherwise it is session-only.</p>
+        <p class="form-hint" id="mnb-hint" style="margin-bottom:.75rem">If GitHub sync is enabled, this entry will be saved permanently to the catalog. Otherwise it is session-only.</p>
         <form id="new-bhajan-form">
           <div class="form-group">
             <label class="form-label">Title <span style="color:var(--error,#dc2626)">*</span></label>

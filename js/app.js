@@ -534,8 +534,13 @@ class App {
     // Browse sung/singer filter
     document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
 
-    // New Bhajan button
+    // New / Edit Bhajan
     document.getElementById('btn-new-bhajan')?.addEventListener('click', () => this._openNewBhajanModal());
+    document.getElementById('mbhajan-edit')?.addEventListener('click', () => {
+      const id = document.getElementById('mbhajan-add-to-session').dataset.bhajanId;
+      this._closeBhajanModal();
+      this._openEditBhajanModal(id);
+    });
 
     // New Bhajan modal
     document.getElementById('mnb-close')?.addEventListener('click', () => this._closeModal('modal-new-bhajan'));
@@ -1411,33 +1416,74 @@ class App {
     </div>`;
   }
 
-  // ─── New Bhajan Entry ─────────────────────────────────────────────────────
+  // ─── New / Edit Bhajan ────────────────────────────────────────────────────
+
+  _editBhajanId = null;
 
   _openNewBhajanModal() {
+    this._editBhajanId = null;
+    document.getElementById('mnb-modal-title').textContent = 'New Bhajan';
+    document.getElementById('btn-mnb-submit').textContent = 'Add Bhajan';
+    document.getElementById('mnb-hint').textContent =
+      'If GitHub sync is enabled, this entry will be saved permanently. Otherwise it is session-only.';
     document.getElementById('new-bhajan-form').reset();
-    const deityList = document.getElementById('mnb-deity-list');
-    deityList.innerHTML = this.bhajans.uniqueValues('deity').map(d => `<option value="${escHtml(d)}">`).join('');
-    const langList = document.getElementById('mnb-lang-list');
-    langList.innerHTML = this.bhajans.uniqueValues('language').map(l => `<option value="${escHtml(l)}">`).join('');
+    this._mnbPopulateLists();
     this._openModal('modal-new-bhajan');
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
+  }
+
+  _openEditBhajanModal(id) {
+    const b = this.bhajans.getById(id);
+    if (!b) return;
+    this._editBhajanId = id;
+    document.getElementById('mnb-modal-title').textContent = 'Edit Bhajan';
+    document.getElementById('btn-mnb-submit').textContent = 'Save Changes';
+    document.getElementById('mnb-hint').textContent =
+      'Changes are applied immediately. With GitHub sync enabled they are committed to the catalog.';
+    this._mnbPopulateLists();
+    document.getElementById('mnb-title').value       = b.title || '';
+    document.getElementById('mnb-deity').value       = b.deity || '';
+    document.getElementById('mnb-language').value    = b.language || '';
+    document.getElementById('mnb-raga').value        = b.raga || '';
+    document.getElementById('mnb-tempo').value       = b.tempo || '';
+    document.getElementById('mnb-level').value       = b.level || '';
+    document.getElementById('mnb-gents-pitch').value = b.gents_pitch_indian || b.gents_pitch || '';
+    document.getElementById('mnb-ladies-pitch').value = b.ladies_pitch_indian || b.ladies_pitch || '';
+    document.getElementById('mnb-scale').value       = b.scale || '';
+    document.getElementById('mnb-lyrics').value      = b.lyrics || '';
+    this._openModal('modal-new-bhajan');
+    setTimeout(() => document.getElementById('mnb-title').focus(), 100);
+  }
+
+  _mnbPopulateLists() {
+    document.getElementById('mnb-deity-list').innerHTML =
+      this.bhajans.uniqueValues('deity').map(d => `<option value="${escHtml(d)}">`).join('');
+    document.getElementById('mnb-lang-list').innerHTML =
+      this.bhajans.uniqueValues('language').map(l => `<option value="${escHtml(l)}">`).join('');
   }
 
   _submitNewBhajanForm() {
     const title = document.getElementById('mnb-title').value.trim();
     if (!title) { this._toast('Title is required', 'error'); return; }
 
-    const id = title.toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '')
-      .trim()
-      .replace(/\s+/g, '-');
+    const isEdit = !!this._editBhajanId;
+    let id;
 
-    if (this.bhajans.getById(id)) {
-      this._toast('A bhajan with a similar title already exists', 'warn');
-      return;
+    if (isEdit) {
+      id = this._editBhajanId;
+    } else {
+      id = title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+      if (this.bhajans.getById(id)) {
+        this._toast('A bhajan with a similar title already exists', 'warn');
+        return;
+      }
     }
 
+    const existing = isEdit ? (this.bhajans.getById(id) || {}) : {};
+
     const bhajan = {
+      beat: '', audio_url: '', source_url: '',
+      ...existing,
       id,
       title,
       deity:        document.getElementById('mnb-deity').value.trim(),
@@ -1449,18 +1495,27 @@ class App {
       ladies_pitch: document.getElementById('mnb-ladies-pitch').value.trim(),
       scale:        document.getElementById('mnb-scale').value.trim(),
       lyrics:       document.getElementById('mnb-lyrics').value.trim(),
-      beat: '', audio_url: '', source_url: '',
     };
 
-    this.bhajans.bhajans.push(bhajan);
+    if (isEdit) {
+      const idx = this.bhajans.bhajans.findIndex(b => b.id === id);
+      if (idx >= 0) this.bhajans.bhajans[idx] = bhajan;
+    } else {
+      this.bhajans.bhajans.push(bhajan);
+    }
+
     this.bhajans._buildIndex();
+    this._editBhajanId = null;
     this._closeModal('modal-new-bhajan');
     this._renderBrowse();
 
+    const action    = isEdit ? 'updated' : 'added';
+    const commitMsg = isEdit ? `Edit bhajan: ${title}` : `Add bhajan: ${title}`;
+
     if (this.sessions instanceof GitHubStore) {
-      this._toast(`"${title}" added — saving to GitHub…`);
+      this._toast(`"${title}" ${action} — saving to GitHub…`);
       this._updateSyncIndicator('syncing');
-      this.sessions.commitBhajans(this.bhajans.bhajans, `Add bhajan: ${title}`)
+      this.sessions.commitBhajans(this.bhajans.bhajans, commitMsg)
         .then(() => {
           this._updateSyncIndicator('ok');
           this._toast(`"${title}" saved to GitHub`, 'success');
@@ -1470,7 +1525,7 @@ class App {
           this._toast(`Saved locally — GitHub sync failed: ${err.message}`, 'error');
         });
     } else {
-      this._toast(`"${title}" added (session only — no GitHub sync)`, 'success');
+      this._toast(`"${title}" ${action} (session only — no GitHub sync)`, 'success');
     }
   }
 
