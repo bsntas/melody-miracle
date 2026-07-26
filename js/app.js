@@ -1450,6 +1450,7 @@ class App {
     document.getElementById('mnb-gents-pitch').value = b.gents_pitch_indian || b.gents_pitch || '';
     document.getElementById('mnb-ladies-pitch').value = b.ladies_pitch_indian || b.ladies_pitch || '';
     document.getElementById('mnb-scale').value       = b.scale || '';
+    document.getElementById('mnb-source-url').value  = b.source_url || '';
     document.getElementById('mnb-lyrics').value      = b.lyrics || '';
     this._openModal('modal-new-bhajan');
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
@@ -1494,6 +1495,7 @@ class App {
       gents_pitch:  document.getElementById('mnb-gents-pitch').value.trim(),
       ladies_pitch: document.getElementById('mnb-ladies-pitch').value.trim(),
       scale:        document.getElementById('mnb-scale').value.trim(),
+      source_url:   document.getElementById('mnb-source-url').value.trim(),
       lyrics:       document.getElementById('mnb-lyrics').value.trim(),
     };
 
