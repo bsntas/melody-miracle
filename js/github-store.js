@@ -19,6 +19,7 @@ const OWNER         = 'bsntas';
 const REPO          = 'melody-miracle';
 const BRANCH        = 'main';
 const SESSIONS_PATH = 'data/sessions.json';
+const BHAJANS_PATH  = 'data/bhajans.json';
 const SERIES_DIR    = 'data/series';
 const API_BASE      = 'https://api.github.com';
 const CACHE_KEY     = 'bm-sessions-v2';          // same key as SessionStore
@@ -31,6 +32,7 @@ export class GitHubStore {
     this._sessions     = this._loadCache();
     this._seriesFilter = null;
     this._sha          = null;   // SHA of data/sessions.json
+    this._bhajansSha   = null;   // SHA of data/bhajans.json
     this._seriesShas   = {};     // { seriesPath: sha } for per-series files
     this._dirtySeries  = new Set(); // series whose files need updating after next commit
     this._busy         = false;  // commit in-flight?
@@ -542,6 +544,44 @@ export class GitHubStore {
       branch: BRANCH,
     });
     delete this._seriesShas[path];
+  }
+
+  // Commit the full bhajan catalog to data/bhajans.json on the main branch.
+  async commitBhajans(bhajans, message = 'Update bhajan catalog') {
+    // Fetch current SHA if we don't have it cached
+    if (!this._bhajansSha) {
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${BHAJANS_PATH}?ref=${BRANCH}`);
+      if (r.ok) {
+        const d = await r.json();
+        this._bhajansSha = d.sha;
+      } else if (r.status !== 404) {
+        throw new Error(`GitHub API error fetching bhajans: ${r.status}`);
+      }
+    }
+
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(bhajans, null, 2))));
+    const body = {
+      message: `${message} [${new Date().toISOString().slice(0, 10)}]`,
+      content,
+      branch: BRANCH,
+      ...(this._bhajansSha ? { sha: this._bhajansSha } : {}),
+    };
+
+    const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${BHAJANS_PATH}`, body);
+
+    if (res.status === 409) {
+      // Conflict: re-fetch SHA and retry once
+      this._bhajansSha = null;
+      return this.commitBhajans(bhajans, message);
+    }
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || `GitHub write error: ${res.status}`);
+    }
+
+    const data = await res.json();
+    this._bhajansSha = data.content?.sha;
   }
 
   _api(method, path, body, signal) {

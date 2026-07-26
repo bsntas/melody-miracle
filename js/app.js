@@ -534,6 +534,22 @@ class App {
     // Browse sung/singer filter
     document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
 
+    // New / Edit Bhajan
+    document.getElementById('btn-new-bhajan')?.addEventListener('click', () => this._openNewBhajanModal());
+    document.getElementById('mbhajan-edit')?.addEventListener('click', () => {
+      const id = document.getElementById('mbhajan-add-to-session').dataset.bhajanId;
+      this._closeBhajanModal();
+      this._openEditBhajanModal(id);
+    });
+
+    // New Bhajan modal
+    document.getElementById('mnb-close')?.addEventListener('click', () => this._closeModal('modal-new-bhajan'));
+    document.getElementById('btn-mnb-cancel')?.addEventListener('click', () => this._closeModal('modal-new-bhajan'));
+    document.getElementById('modal-new-bhajan')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-new-bhajan')) this._closeModal('modal-new-bhajan');
+    });
+    document.getElementById('btn-mnb-submit')?.addEventListener('click', () => this._submitNewBhajanForm());
+
     // Singer profile back
     document.getElementById('btn-singer-back')?.addEventListener('click', () => history.back());
     document.getElementById('btn-session-detail-back')?.addEventListener('click', () => { location.hash = '#history'; });
@@ -1398,6 +1414,139 @@ class App {
         ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
       </div>
     </div>`;
+  }
+
+  // ─── New / Edit Bhajan ────────────────────────────────────────────────────
+
+  _editBhajanId = null;
+
+  _openNewBhajanModal() {
+    this._editBhajanId = null;
+    document.getElementById('mnb-modal-title').textContent = 'New Bhajan';
+    document.getElementById('btn-mnb-submit').textContent = 'Add Bhajan';
+    document.getElementById('mnb-hint').textContent =
+      'If GitHub sync is enabled, this entry will be saved permanently. Otherwise it is session-only.';
+    document.getElementById('new-bhajan-form').reset();
+    this._mnbPopulateLists();
+    this._modalCleanup = this._modalCleanup || {};
+    this._modalCleanup['modal-new-bhajan'] = () => { this._editBhajanId = null; };
+    this._openModal('modal-new-bhajan');
+    setTimeout(() => document.getElementById('mnb-title').focus(), 100);
+  }
+
+  _openEditBhajanModal(id) {
+    const b = this.bhajans.getById(id);
+    if (!b) return;
+    this._editBhajanId = id;
+    document.getElementById('mnb-modal-title').textContent = 'Edit Bhajan';
+    document.getElementById('btn-mnb-submit').textContent = 'Save Changes';
+    document.getElementById('mnb-hint').textContent =
+      'Changes are applied immediately. With GitHub sync enabled they are committed to the catalog.';
+    this._mnbPopulateLists();
+    document.getElementById('mnb-title').value       = b.title || '';
+    document.getElementById('mnb-deity').value       = b.deity || '';
+    document.getElementById('mnb-language').value    = b.language || '';
+    document.getElementById('mnb-raga').value        = b.raga || '';
+    document.getElementById('mnb-tempo').value       = b.tempo || '';
+    document.getElementById('mnb-level').value       = b.level || '';
+    document.getElementById('mnb-gents-pitch').value = b.gents_pitch_indian || b.gents_pitch || '';
+    document.getElementById('mnb-ladies-pitch').value = b.ladies_pitch_indian || b.ladies_pitch || '';
+    document.getElementById('mnb-scale').value       = b.scale || '';
+    document.getElementById('mnb-source-url').value  = b.source_url || '';
+    document.getElementById('mnb-audio-url').value   = b.audio_url || '';
+    document.getElementById('mnb-beat').value        = b.beat || '';
+    document.getElementById('mnb-lyrics').value      = b.lyrics || '';
+    document.getElementById('mnb-meaning').value     = b.meaning || '';
+    this._modalCleanup = this._modalCleanup || {};
+    this._modalCleanup['modal-new-bhajan'] = () => { this._editBhajanId = null; };
+    this._openModal('modal-new-bhajan');
+    setTimeout(() => document.getElementById('mnb-title').focus(), 100);
+  }
+
+  _mnbPopulateLists() {
+    document.getElementById('mnb-deity-list').innerHTML =
+      this.bhajans.uniqueValues('deity').map(d => `<option value="${escHtml(d)}">`).join('');
+    document.getElementById('mnb-lang-list').innerHTML =
+      this.bhajans.uniqueValues('language').map(l => `<option value="${escHtml(l)}">`).join('');
+  }
+
+  _submitNewBhajanForm() {
+    const title = document.getElementById('mnb-title').value.trim();
+    if (!title) { this._toast('Title is required', 'error'); return; }
+
+    const isEdit = !!this._editBhajanId;
+    let id;
+
+    if (isEdit) {
+      id = this._editBhajanId;
+    } else {
+      id = title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+      if (this.bhajans.getById(id)) {
+        this._toast('A bhajan with a similar title already exists', 'warn');
+        return;
+      }
+    }
+
+    const existing = isEdit ? (this.bhajans.getById(id) || {}) : {};
+
+    const gentsRaw  = document.getElementById('mnb-gents-pitch').value.trim();
+    const ladiesRaw = document.getElementById('mnb-ladies-pitch').value.trim();
+    const gp = pitchByIndian(gentsRaw);
+    const lp = pitchByIndian(ladiesRaw);
+
+    const bhajan = {
+      ...existing,
+      id,
+      title,
+      deity:               document.getElementById('mnb-deity').value.trim(),
+      language:            document.getElementById('mnb-language').value.trim(),
+      raga:                document.getElementById('mnb-raga').value.trim(),
+      tempo:               document.getElementById('mnb-tempo').value,
+      level:               document.getElementById('mnb-level').value,
+      gents_pitch:         gp ? gp.combined : gentsRaw,
+      gents_pitch_indian:  gp ? gp.indian   : null,
+      gents_pitch_western: gp ? gp.western  : null,
+      ladies_pitch:         lp ? lp.combined : ladiesRaw,
+      ladies_pitch_indian:  lp ? lp.indian   : null,
+      ladies_pitch_western: lp ? lp.western  : null,
+      scale:        document.getElementById('mnb-scale').value.trim(),
+      beat:         document.getElementById('mnb-beat').value.trim(),
+      source_url:   document.getElementById('mnb-source-url').value.trim(),
+      audio_url:    document.getElementById('mnb-audio-url').value.trim(),
+      lyrics:       document.getElementById('mnb-lyrics').value.trim(),
+      meaning:      document.getElementById('mnb-meaning').value.trim(),
+    };
+
+    if (isEdit) {
+      const idx = this.bhajans.bhajans.findIndex(b => b.id === id);
+      if (idx >= 0) this.bhajans.bhajans[idx] = bhajan;
+    } else {
+      this.bhajans.bhajans.push(bhajan);
+    }
+
+    this.bhajans._buildIndex();
+    this._editBhajanId = null;
+    this._closeModal('modal-new-bhajan');
+    this._renderBrowse();
+
+    const action    = isEdit ? 'updated' : 'added';
+    const commitMsg = isEdit ? `Edit bhajan: ${title}` : `Add bhajan: ${title}`;
+
+    if (this.sessions instanceof GitHubStore) {
+      this._toast(`"${title}" ${action} — saving to GitHub…`);
+      this._updateSyncIndicator('syncing');
+      this.sessions.commitBhajans(this.bhajans.bhajans, commitMsg)
+        .then(() => {
+          this._updateSyncIndicator('ok');
+          this._toast(`"${title}" saved to GitHub`, 'success');
+        })
+        .catch(err => {
+          this._updateSyncIndicator('error');
+          this._toast(`Saved locally — GitHub sync failed: ${err.message}`, 'error');
+        });
+    } else {
+      this._toast(`"${title}" ${action} (session only — no GitHub sync)`, 'success');
+    }
   }
 
   // ─── Sung Bhajans ─────────────────────────────────────────────────────────
