@@ -589,14 +589,25 @@ img { max-width: 100%; }
 .singer-chip.clickable { cursor: pointer; }
 .singer-chip.clickable:hover { background: var(--saffron-light); }
 
-/* ─── Setup-phase controls (two-group layout) ────────────────────────────── */
-.session-setup-controls { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
-.session-content-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.session-lifecycle-actions { display: flex; flex-direction: column; gap: 0.4rem; }
-.session-mgmt-row { display: flex; gap: 0.5rem; }
+/* ─── Setup-phase controls ───────────────────────────────────────────────── */
+.session-setup-bar {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;
+}
+.session-setup-bar .btn-success { margin-left: auto; }
+.session-mgmt-links {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin-bottom: 0.75rem; font-size: 0.78rem; color: var(--text-3);
+}
+.btn-link-muted {
+  background: none; border: none; padding: 0; font-family: inherit;
+  font-size: 0.78rem; color: var(--text-3); cursor: pointer;
+}
+.btn-link-muted:hover { color: var(--text-2); text-decoration: underline; }
+.btn-link-danger:hover { color: var(--red); }
 
-/* keep legacy class harmless in case it persists anywhere */
+/* keep legacy classes harmless */
 .session-add-btn-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.session-setup-controls { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
 
 .btn-aarati { color: var(--gold); border: 1px solid var(--gold-light); }
 
