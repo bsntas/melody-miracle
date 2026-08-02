@@ -1870,19 +1870,15 @@ class App {
           </div>
         </div>
 
-        ${!isPlaying ? `<div class="session-setup-controls">
-          <div class="session-content-actions">
-            <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
-            <button class="btn ${this._liveEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done Editing' : '✎ Edit List'}</button>
-          </div>
-          ${isHost ? `<div class="session-lifecycle-actions">
-            <button class="btn btn-success btn-block" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start Session</button>
-            <div class="session-mgmt-row">
-              <button class="btn btn-outline btn-sm" id="btn-end-session">Save &amp; Close</button>
-              <button class="btn btn-ghost btn-danger-ghost btn-sm" id="btn-discard-session" title="Discard session without saving">Discard</button>
-            </div>
-          </div>` : ''}
-        </div>` : `<div class="playing-controls-strip">
+        ${!isPlaying ? `<div class="session-setup-bar">
+          <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
+          ${isHost ? `<button class="btn btn-success btn-sm" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>` : ''}
+        </div>
+        ${isHost ? `<div class="session-mgmt-links">
+          <button class="btn-link-muted" id="btn-end-session">Save &amp; Close</button>
+          <span aria-hidden="true">·</span>
+          <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
+        </div>` : ''}` : `<div class="playing-controls-strip">
           ${isHost ? `
           <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
           <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
@@ -1891,6 +1887,7 @@ class App {
 
         <div class="section-header section-header-flush">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
+          ${!isPlaying ? `<button class="btn btn-ghost btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
           ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase, this._liveEditMode)}
