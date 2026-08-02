@@ -589,7 +589,15 @@ img { max-width: 100%; }
 .singer-chip.clickable { cursor: pointer; }
 .singer-chip.clickable:hover { background: var(--saffron-light); }
 
+/* ─── Setup-phase controls (two-group layout) ────────────────────────────── */
+.session-setup-controls { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+.session-content-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.session-lifecycle-actions { display: flex; flex-direction: column; gap: 0.4rem; }
+.session-mgmt-row { display: flex; gap: 0.5rem; }
+
+/* keep legacy class harmless in case it persists anywhere */
 .session-add-btn-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+
 .btn-aarati { color: var(--gold); border: 1px solid var(--gold-light); }
 
 /* ─── Playing-phase compact controls strip ───────────────────────────────── */
@@ -604,6 +612,13 @@ img { max-width: 100%; }
 }
 .playing-controls-strip .btn-icon:hover { color: var(--saffron); border-color: var(--saffron-light); }
 .playing-controls-strip .btn-aarati { color: var(--gold); border-color: var(--gold-light); }
+.playing-ctrl-btn {
+  font-size: 0.82rem; padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.playing-ctrl-btn:hover { color: var(--saffron); border-color: var(--saffron-light); background: var(--saffron-bg); }
+.playing-ctrl-btn.btn-danger-ghost { color: var(--text-3); }
+.playing-ctrl-btn.btn-danger-ghost:hover { color: var(--red); border-color: #fca5a5; background: var(--red-light); }
 
 /* ─── Inline expanded "Now Playing" entry ────────────────────────────────── */
 .session-bhajan-entry.session-entry-playing {
@@ -708,8 +723,11 @@ img { max-width: 100%; }
   background: var(--blue-light); border: 1px solid #93c5fd;
   border-radius: var(--radius-sm); padding: 0.5rem 0.75rem;
   font-size: 0.82rem; color: var(--blue); margin-bottom: 0.75rem;
-  text-align: center;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
 }
+.observer-banner-info { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.observer-role-badge { font-weight: 700; font-size: 0.82rem; }
+.observer-banner-desc { font-size: 0.77rem; opacity: 0.75; }
 .connecting-state { text-align: center; padding: 3rem 1rem; color: var(--text-2); }
 .connecting-spinner {
   width: 36px; height: 36px; border: 3px solid var(--border);

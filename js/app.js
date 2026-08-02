@@ -1843,7 +1843,13 @@ class App {
     el.innerHTML = `
       <div class="live-session-view">
         <div class="session-offline-banner" aria-live="polite">↻ Reconnecting…</div>
-        ${!isHost ? `<div class="observer-banner"><span>${isPlaying ? '👁 Observer mode — watching live' : '✏️ Setup mode — add or arrange bhajans'}</span><button class="btn btn-sm btn-outline" id="btn-claim-host">Claim host</button></div>` : ''}
+        ${!isHost ? `<div class="observer-banner">
+          <div class="observer-banner-info">
+            <span class="observer-role-badge">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
+            <span class="observer-banner-desc">${isPlaying ? 'Watching live · updates automatically' : 'Can add &amp; arrange bhajans'}</span>
+          </div>
+          <button class="btn btn-sm btn-outline" id="btn-claim-host">Take control</button>
+        </div>` : ''}
 
         <div class="live-header">
           <div class="live-header-top">
@@ -1864,16 +1870,22 @@ class App {
           </div>
         </div>
 
-        ${!isPlaying ? `<div class="session-add-btn-row">
-          <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
-          <button class="btn ${this._liveEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>
-          ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
-          <button class="btn btn-outline" id="btn-end-session">End Session</button>
-          <button class="btn btn-ghost btn-danger-ghost" id="btn-discard-session" title="Discard session without saving">Discard</button>` : ''}
+        ${!isPlaying ? `<div class="session-setup-controls">
+          <div class="session-content-actions">
+            <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
+            <button class="btn ${this._liveEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done Editing' : '✎ Edit List'}</button>
+          </div>
+          ${isHost ? `<div class="session-lifecycle-actions">
+            <button class="btn btn-success btn-block" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start Session</button>
+            <div class="session-mgmt-row">
+              <button class="btn btn-outline btn-sm" id="btn-end-session">Save &amp; Close</button>
+              <button class="btn btn-ghost btn-danger-ghost btn-sm" id="btn-discard-session" title="Discard session without saving">Discard</button>
+            </div>
+          </div>` : ''}
         </div>` : `<div class="playing-controls-strip">
           ${isHost ? `
-          <button class="btn btn-ghost btn-icon" id="btn-exit-play" title="Return to setup">↩</button>
-          <button class="btn btn-ghost btn-icon" id="btn-end-session" title="End session">⏹</button>` : ''}
+          <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
+          <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
           <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati">🪔</button>
         </div>`}
 
