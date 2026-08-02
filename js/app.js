@@ -1866,6 +1866,7 @@ class App {
 
         ${!isPlaying ? `<div class="session-add-btn-row">
           <button class="btn btn-primary" id="btn-add-bhajan-live">+ Add Bhajan</button>
+          <button class="btn ${this._liveEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>
           ${isHost ? `<button class="btn btn-success" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>
           <button class="btn btn-outline" id="btn-end-session">End Session</button>
           <button class="btn btn-ghost btn-danger-ghost" id="btn-discard-session" title="Discard session without saving">Discard</button>` : ''}
@@ -1880,7 +1881,7 @@ class App {
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
-          ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase)}
+          ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase, this._liveEditMode)}
         </div>
 
         ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
@@ -1908,33 +1909,39 @@ class App {
     });
 
     if (!isPlaying) {
-      // Setup mode: all participants can edit
+      // Setup mode: add bhajan always available; edit controls gated by edit mode
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+      document.getElementById('btn-live-edit-toggle')?.addEventListener('click', () => {
+        this._liveEditMode = !this._liveEditMode;
+        this._renderLiveSession(el);
+      });
       if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
 
       // Drag-reorder and remove-button clicks are handled by persistent delegated
       // listeners bound to #session-content in _bindGlobal(), so no per-element binding here.
 
-      document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
-        pitchEl.addEventListener('click', e => {
-          e.stopPropagation();
-          this._inlinePitchEdit(pitchEl, pitchEl.dataset.entryId, 'live');
+      if (this._liveEditMode) {
+        document.querySelectorAll('#live-bhajans-list .pitch-editable').forEach(pitchEl => {
+          pitchEl.addEventListener('click', e => {
+            e.stopPropagation();
+            this._inlinePitchEdit(pitchEl, pitchEl.dataset.entryId, 'live');
+          });
         });
-      });
 
-      document.querySelectorAll('#live-bhajans-list .notes-editable').forEach(notesEl => {
-        notesEl.addEventListener('click', e => {
-          e.stopPropagation();
-          this._inlineNotesEdit(notesEl, notesEl.dataset.entryId, 'live');
+        document.querySelectorAll('#live-bhajans-list .notes-editable').forEach(notesEl => {
+          notesEl.addEventListener('click', e => {
+            e.stopPropagation();
+            this._inlineNotesEdit(notesEl, notesEl.dataset.entryId, 'live');
+          });
         });
-      });
 
-      document.querySelectorAll('#live-bhajans-list .singer-editable').forEach(singerEl => {
-        singerEl.addEventListener('click', e => {
-          e.stopPropagation();
-          this._inlineSingerEdit(singerEl, singerEl.dataset.entryId, 'live');
+        document.querySelectorAll('#live-bhajans-list .singer-editable').forEach(singerEl => {
+          singerEl.addEventListener('click', e => {
+            e.stopPropagation();
+            this._inlineSingerEdit(singerEl, singerEl.dataset.entryId, 'live');
+          });
         });
-      });
+      }
 
       // Setup controls: host only
       if (isHost) {
@@ -1981,7 +1988,7 @@ class App {
     </div>`;
   }
 
-  _sessionBhajansHTML(bhajans, isHost = false, phase = 'setup') {
+  _sessionBhajansHTML(bhajans, isHost = false, phase = 'setup', isEditMode = false) {
     const isPlaying = phase === 'playing';
     const currentId = this.liveState?.currentBhajan;
 
@@ -2052,27 +2059,27 @@ class App {
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
       <div class="session-bhajan-entry" data-entry-id="${e.id}">
-        ${!isPlaying ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
+        ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
         <div class="entry-num">${displayNum}</div>
         <div class="entry-main">
           <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
           ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
-            <span class="entry-singer-chip${!isPlaying ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
-            ${!isPlaying ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
+            <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+            ${!isPlaying && isEditMode ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
           </div>` : `<div class="entry-meta">
-            ${!isPlaying ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
-            ${!isPlaying ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
+            ${!isPlaying && isEditMode ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
+            ${!isPlaying && isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
           </div>`}
           <div class="entry-pitch-row">
-            <span class="${!isPlaying ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying ? 'Tap to edit pitch' : ''}">
+            <span class="${!isPlaying && isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Tap to edit pitch' : ''}">
               ${e.pitch
                 ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
-                : (!isPlaying ? `<span class="pitch-unset">+ pitch</span>` : '')}
+                : (!isPlaying && isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
             </span>
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
-        ${!isPlaying ? `
+        ${!isPlaying && isEditMode ? `
         <div class="entry-actions">
           <button class="btn entry-action-btn" data-action="remove" data-entry-id="${e.id}" title="Remove">✕</button>
         </div>` : ''}
@@ -2084,6 +2091,8 @@ class App {
 
   _sfIsBackdated = false;
   _pendingDeleteSeries = null;
+  _detailEditMode = false;
+  _liveEditMode = false;
 
   _openNewSession(backdated = false) {
     this._sfIsBackdated = backdated;
@@ -2219,6 +2228,7 @@ class App {
   }
 
   _exitPlay() {
+    this._liveEditMode = false;
     const updated = { ...this.liveState, phase: 'setup' };
     this.liveState = updated;
     this.live.updateState(updated);
@@ -2969,6 +2979,7 @@ class App {
   // ─── Session Detail ───────────────────────────────────────────────────────
 
   _renderSessionDetail(id) {
+    if (id !== this._detailSessionId) this._detailEditMode = false;
     this._detailSessionId = id;
     const s = this.sessions.get(id);
     if (!s) {
@@ -2977,8 +2988,9 @@ class App {
       return;
     }
 
-    const canEdit = s.status === 'completed' || s.isBackdated;
-    const hasPat  = !!GitHubStore.getPat();
+    const canEdit   = s.status === 'completed' || s.isBackdated;
+    const hasPat    = !!GitHubStore.getPat();
+    const isEditMode = canEdit && this._detailEditMode;
 
     document.getElementById('session-detail-content').innerHTML = `
       <div class="session-detail-header">
@@ -2987,9 +2999,10 @@ class App {
             <div class="session-detail-title">${escHtml(s.label || 'Bhajan Session')}</div>
             <div class="session-detail-date">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</div>
           </div>
-          <div style="display:flex;gap:.4rem;flex-shrink:0">
-            ${canEdit && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
+          <div style="display:flex;gap:.4rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
+            ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
             ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
+            ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-detail-edit-toggle">${isEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
             <button class="btn btn-danger btn-sm" id="btn-detail-delete">Delete</button>
           </div>
         </div>
@@ -3017,19 +3030,19 @@ class App {
                   <div class="tl-meta">
                     ${(e.singers?.length || e.singer) ? `👤 ${escHtml(e.singers?.join(' · ') || e.singer)}` : ''}
                     ${(e.singers?.length || e.singer) ? ' · ' : ''}
-                    <span class="${canEdit ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${canEdit ? 'Edit pitch' : ''}">
+                    <span class="${isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${isEditMode ? 'Edit pitch' : ''}">
                       ${e.pitch
                         ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
-                        : (canEdit ? `<span class="pitch-unset">+ pitch</span>` : '')}
+                        : (isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
                   </div>
-                  ${canEdit
+                  ${isEditMode
                     ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
                     : (e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : '')}
                 </div>
                 <div class="tl-actions">
                   <span class="tl-time">${formatTime(e.addedAt)}</span>
-                  ${canEdit ? `
+                  ${isEditMode ? `
                   <div class="reorder-btns reorder-btns-row">
                     <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${i > 0 ? '' : 'disabled'} title="Move up">↑</button>
                     <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${i < (s.bhajans.length - 1) ? '' : 'disabled'} title="Move down">↓</button>
@@ -3056,15 +3069,24 @@ class App {
       });
     });
 
-    // Add bhajan to completed/backdated session
+    // Edit mode toggle
+    document.getElementById('btn-detail-edit-toggle')?.addEventListener('click', () => {
+      this._detailEditMode = !this._detailEditMode;
+      this._renderSessionDetail(id);
+    });
+
+    // Add bhajan (always available when canEdit, regardless of edit mode)
     if (canEdit) {
+      document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', () => {
+        this._openDetailAddBhajan(s);
+      });
+    }
+
+    // Edit-mode-only controls
+    if (isEditMode) {
       document.getElementById('btn-detail-save')?.addEventListener('click', () => {
         this.sessions.commitNow?.('Save session to GitHub');
         this._toast('Saving to GitHub…', 'success');
-      });
-
-      document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', () => {
-        this._openDetailAddBhajan(s);
       });
 
       // Reorder bhajans in session detail
