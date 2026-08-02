@@ -17,57 +17,78 @@ export class BhajanStore {
   }
 
   _buildIndex() {
-    this._index = this.bhajans.map(b => {
-      const text = [b.title, b.deity, b.language, b.raga, b.beat, b.scale]
-        .filter(Boolean).join(' ').toLowerCase();
-      return {
-        id: b.id,
-        searchText: text,
-        words: [...new Set(text.split(/\s+/).filter(w => w.length >= 3))],
-      };
-    });
+    const norm  = s => (s || '').toLowerCase();
+    const words = s => norm(s).split(/[\s,/]+/).filter(w => w.length >= 2);
+    this._index = this.bhajans.map(b => ({
+      id:         b.id,
+      titleLower: norm(b.title),
+      titleWords: [...new Set(words(b.title))],
+      deityWords: [...new Set(words(b.deity))],
+      langWords:  [...new Set(words(b.language))],
+      otherWords: [...new Set([b.raga, b.beat, b.scale].flatMap(f => words(f)))],
+    }));
   }
 
-  // Every space-separated token in q must match the entry.
-  // Fast path: exact substring. Fallback: per-word fuzzy (Levenshtein).
-  _matchQuery(q, entry) {
-    if (entry.searchText.includes(q)) return true;
-    const tokens = q.split(/\s+/).filter(Boolean);
-    return tokens.every(tok => {
-      if (entry.words.some(w => w.startsWith(tok) || tok.startsWith(w))) return true;
-      if (tok.length < 3) return false;
-      const maxDist = tok.length <= 5 ? 1 : 2;
-      return entry.words.some(
-        w => Math.abs(w.length - tok.length) <= maxDist && _lev(tok, w, maxDist) <= maxDist
-      );
-    });
+  // Score a single query token against one bhajan index entry across all fields.
+  // Returns 0 if no match; higher = more relevant.
+  _tokenScore(tok, entry) {
+    let best = 0;
+    const check = (words, weight) => {
+      for (const w of words) {
+        let s = 0;
+        if (w === tok)                               s = weight * 4; // exact word
+        else if (w.startsWith(tok))                  s = weight * 3; // word starts with token
+        else if (tok.startsWith(w) && w.length >= 2) s = weight * 2; // token starts with word
+        else if (tok.length >= 3 && w.includes(tok)) s = weight;     // token is substring of word
+        else if (tok.length >= 3) {
+          const d = tok.length <= 5 ? 1 : 2;
+          if (Math.abs(w.length - tok.length) <= d && _lev(tok, w, d) <= d)
+            s = Math.ceil(weight * 0.5);                              // fuzzy (typo-tolerant)
+        }
+        if (s > best) best = s;
+      }
+    };
+    check(entry.titleWords, 20);
+    check(entry.deityWords,  8);
+    check(entry.langWords,   6);
+    check(entry.otherWords,  3);
+    return best;
   }
 
   search(query, filters = {}) {
-    const q = (query || '').toLowerCase().trim();
-    const results = this.bhajans.filter((b, i) => {
-      if (q && !this._matchQuery(q, this._index[i])) return false;
-      if (filters.deity && !(b.deity || '').toLowerCase().includes(filters.deity.toLowerCase())) return false;
-      if (filters.language && !(b.language || '').toLowerCase().includes(filters.language.toLowerCase())) return false;
-      if (filters.tempo && b.tempo !== filters.tempo) return false;
-      if (filters.level && b.level !== filters.level) return false;
-      return true;
-    });
-    if (!q) return results;
-    const tokens = q.split(/\s+/).filter(Boolean);
-    return results.sort((a, b) => this._scoreQuery(tokens, b) - this._scoreQuery(tokens, a));
-  }
+    const q      = (query || '').toLowerCase().trim();
+    const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
 
-  // Score by how many times query tokens appear in the title (weight 3).
-  // Higher score = more relevant. Bhajans with repeated title words rank above partial matches.
-  _scoreQuery(tokens, bhajan) {
-    const title = (bhajan.title || '').toLowerCase();
-    let score = 0;
-    for (const tok of tokens) {
-      let idx = 0;
-      while ((idx = title.indexOf(tok, idx)) !== -1) { score += 3; idx += tok.length; }
-    }
-    return score;
+    const out = [];
+    this.bhajans.forEach((b, i) => {
+      if (filters.deity    && !(b.deity    || '').toLowerCase().includes(filters.deity.toLowerCase()))    return;
+      if (filters.language && !(b.language || '').toLowerCase().includes(filters.language.toLowerCase())) return;
+      if (filters.tempo    && b.tempo !== filters.tempo) return;
+      if (filters.level    && b.level !== filters.level) return;
+
+      if (!q) { out.push({ b, score: 0 }); return; }
+
+      const idx = this._index[i];
+      let score = 0;
+      let hits  = 0;
+      for (const tok of tokens) {
+        const ts = this._tokenScore(tok, idx);
+        if (ts > 0) { score += ts; hits++; }
+      }
+      if (hits === 0) return;
+
+      // Boost when all tokens matched (AND result wins over partial match)
+      if (hits === tokens.length && tokens.length > 1) score += 40;
+      // Boost when the full query phrase appears verbatim in the title
+      if (idx.titleLower.includes(q)) score += 60;
+      if (idx.titleLower.startsWith(q)) score += 30;
+
+      out.push({ b, score });
+    });
+
+    if (!q) return out.map(r => r.b);
+    out.sort((a, b) => b.score - a.score);
+    return out.map(r => r.b);
   }
 
   getById(id) {
