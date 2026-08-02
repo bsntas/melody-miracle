@@ -613,7 +613,11 @@ class App {
     document.getElementById('modal-add-bhajan')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-add-bhajan')) this._closeModal('modal-add-bhajan');
     });
-    document.getElementById('mab-search')?.addEventListener('input', () => this._mabSearch());
+    document.getElementById('mab-search')?.addEventListener('input', () => {
+      clearTimeout(this._mabSearchTimer);
+      this._mabSearchTimer = setTimeout(() => this._mabSearch(), 180);
+    });
+    document.getElementById('mab-search')?.addEventListener('search', () => this._mabSearch());
     document.getElementById('btn-mab-back')?.addEventListener('click', () => this._mabGoStep(1));
     document.getElementById('btn-mab-add')?.addEventListener('click', () => this._mabConfirmAdd());
     document.getElementById('btn-pitch-gents')?.addEventListener('click', () => {
