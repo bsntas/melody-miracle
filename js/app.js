@@ -2,7 +2,7 @@ import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, mon
 import { GitHubStore } from './github-store.js?v=20260726.2';
 import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 
-console.log('[MM] app.js v20260726.1 loaded');
+console.log('[MM] app.js v20260803.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -499,7 +499,28 @@ class App {
 
   // ─── Global bindings ──────────────────────────────────────────────────────
 
+  _initTheme() {
+    const btn = document.getElementById('btn-theme');
+    if (!btn) return;
+    const apply = (theme) => {
+      const root = document.documentElement;
+      if (theme === 'dark')  { root.dataset.theme = 'dark';  btn.textContent = '☀️'; btn.title = 'Switch to light mode'; }
+      else                   { root.dataset.theme = 'light'; btn.textContent = '🌙'; btn.title = 'Switch to dark mode'; }
+    };
+    const saved = localStorage.getItem('mm-theme');
+    const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    apply(saved || (sysDark ? 'dark' : 'light'));
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      try { localStorage.setItem('mm-theme', next); } catch {}
+      apply(next);
+    });
+  }
+
   _bindGlobal() {
+    this._initTheme();
+
     // Refresh button
     document.getElementById('btn-refresh')?.addEventListener('click', () => this._refreshData());
 
