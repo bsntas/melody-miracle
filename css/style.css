@@ -1240,6 +1240,194 @@ img { max-width: 100%; }
   border-radius: 999px; margin-top: 0.05rem;
 }
 
+/* ─── Dark Mode ──────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cream:        #1c1917;
+    --surface:      #292524;
+    --surface-2:    #44403c;
+    --border:       #57534e;
+    --border-focus: #fb923c;
+    --text:         #f5f5f4;
+    --text-2:       #d6d3d1;
+    --text-3:       #78716c;
+    --saffron-bg:   #431407;
+    --saffron-light:#9a3412;
+    --gold-light:   #451a03;
+    --green-light:  #052e16;
+    --red-light:    #450a0a;
+    --blue-light:   #172554;
+    --blue:         #93c5fd;
+    --maroon:       #fed7aa;
+    --shadow:       0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
+    --shadow-md:    0 4px 6px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.3);
+    --shadow-lg:    0 10px 15px rgba(0,0,0,.45), 0 4px 6px rgba(0,0,0,.3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --cream:        #1c1917;
+  --surface:      #292524;
+  --surface-2:    #44403c;
+  --border:       #57534e;
+  --border-focus: #fb923c;
+  --text:         #f5f5f4;
+  --text-2:       #d6d3d1;
+  --text-3:       #78716c;
+  --saffron-bg:   #431407;
+  --saffron-light:#9a3412;
+  --gold-light:   #451a03;
+  --green-light:  #052e16;
+  --red-light:    #450a0a;
+  --blue-light:   #172554;
+  --blue:         #93c5fd;
+  --maroon:       #fed7aa;
+  --shadow:       0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md:    0 4px 6px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.3);
+  --shadow-lg:    0 10px 15px rgba(0,0,0,.45), 0 4px 6px rgba(0,0,0,.3);
+}
+
+/* Force light mode overrides */
+:root[data-theme="light"] {
+  --cream:        #fdf4e7;
+  --surface:      #ffffff;
+  --surface-2:    #f5f5f4;
+  --border:       #e7e5e4;
+  --border-focus: #ea580c;
+  --text:         #1c1917;
+  --text-2:       #57534e;
+  --text-3:       #a8a29e;
+  --saffron-bg:   #fff7ed;
+  --saffron-light:#fed7aa;
+  --gold-light:   #fef3c7;
+  --green-light:  #dcfce7;
+  --red-light:    #fee2e2;
+  --blue-light:   #dbeafe;
+  --blue:         #1d4ed8;
+  --maroon:       #7c2d12;
+  --shadow:       0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:    0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.05);
+  --shadow-lg:    0 10px 15px rgba(0,0,0,.08), 0 4px 6px rgba(0,0,0,.05);
+}
+
+/* Dark mode: hard-coded light colours that don't use CSS variables */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bhajan-tag-tempo-slow  { background: #1e3a5f; color: #93c5fd; }
+  :root:not([data-theme="light"]) .bhajan-tag-tempo-medium { background: #3b2a00; color: #fde68a; }
+  :root:not([data-theme="light"]) .bhajan-tag-tempo-fast  { background: #450a0a; color: #fca5a5; }
+  :root:not([data-theme="light"]) .bhajan-tag-level-simple { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .bhajan-tag-level-intermediate { background: #451a03; color: #fcd34d; }
+  :root:not([data-theme="light"]) .bhajan-tag-level-advanced { background: #3b0764; color: #e879f9; }
+  :root:not([data-theme="light"]) .bhajan-tag-scale-major { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .bhajan-tag-scale-minor { background: #2e1065; color: #c4b5fd; }
+  :root:not([data-theme="light"]) .bhajan-tag-scale-mixed { background: #3b2a00; color: #fde68a; }
+  :root:not([data-theme="light"]) .pitch-gents  { background: #1e3a5f; color: #93c5fd; }
+  :root:not([data-theme="light"]) .pitch-ladies { background: #3b0764; color: #e879f9; }
+  :root:not([data-theme="light"]) .playing-pitch-indian,
+  :root:not([data-theme="light"]) .playing-pitch-western { background: #1e3a5f; color: #93c5fd; }
+  :root:not([data-theme="light"]) .entry-singer-chip { background: #451a03; color: #fde68a; }
+  :root:not([data-theme="light"]) .playing-singer-pill { background: #451a03; color: #fde68a; }
+  :root:not([data-theme="light"]) .singer-chip { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .singer-chip.clickable:hover { background: #9a3412; }
+  :root:not([data-theme="light"]) .singer-remove-chip { background: #431407; color: #fed7aa; border-color: #9a3412; }
+  :root:not([data-theme="light"]) .singer-chip-sm { background: #9a3412; color: #fed7aa; }
+  :root:not([data-theme="light"]) .singer-card-pitch { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .tl-num { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .step-num { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .info-banner { background: #3b2a00; border-color: #92400e; color: #fde68a; }
+  :root:not([data-theme="light"]) .session-code-derived { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .singer-bhajan-count { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .bhajan-count-badge { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .period-tab:hover:not(.active) { background: rgba(0,0,0,0.2); }
+  :root:not([data-theme="light"]) .deity-ganesha { background: #3b2a00; color: #fcd34d; }
+  :root:not([data-theme="light"]) .deity-shiva   { background: #1e1b4b; color: #a5b4fc; }
+  :root:not([data-theme="light"]) .deity-vishnu  { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .deity-devi    { background: #3b0764; color: #f0abfc; }
+  :root:not([data-theme="light"]) .deity-rama    { background: #052e16; color: #6ee7b7; }
+  :root:not([data-theme="light"]) .deity-krishna { background: #2e1065; color: #c4b5fd; }
+  :root:not([data-theme="light"]) .deity-hanuman { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .deity-murugan { background: #3b2a00; color: #fde68a; }
+  :root:not([data-theme="light"]) .deity-ayyappa { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .deity-other   { background: #44403c; color: #d6d3d1; }
+  :root:not([data-theme="light"]) .session-entry-playing {
+    background: linear-gradient(135deg, #431407, #1c1917);
+    border-color: #9a3412;
+  }
+  :root:not([data-theme="light"]) .badge-live      { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .badge-completed { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .badge-backdated { background: #3b2a00; color: #fde68a; }
+  :root:not([data-theme="light"]) .sync-banner-ok    { background: #052e16; color: #86efac; border-color: #166534; }
+  :root:not([data-theme="light"]) .sync-banner-error { background: #450a0a; color: #fca5a5; border-color: #991b1b; }
+  :root:not([data-theme="light"]) .sync-banner-info  { background: #172554; color: #93c5fd; border-color: #1e40af; }
+  :root:not([data-theme="light"]) .pat-ok     { background: #052e16; color: #86efac; }
+  :root:not([data-theme="light"]) .pat-error  { background: #450a0a; color: #fca5a5; }
+  :root:not([data-theme="light"]) .mab-hint-error { background: #450a0a; color: #fca5a5; }
+  :root:not([data-theme="light"]) .mab-hint-warn  { background: #3b2a00; color: #fde68a; }
+  :root:not([data-theme="light"]) .mab-hint-info  { background: #172554; color: #93c5fd; }
+  :root:not([data-theme="light"]) .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
+  :root:not([data-theme="light"]) .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
+  :root:not([data-theme="light"]) .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+}
+
+:root[data-theme="dark"] .bhajan-tag-tempo-slow  { background: #1e3a5f; color: #93c5fd; }
+:root[data-theme="dark"] .bhajan-tag-tempo-medium { background: #3b2a00; color: #fde68a; }
+:root[data-theme="dark"] .bhajan-tag-tempo-fast  { background: #450a0a; color: #fca5a5; }
+:root[data-theme="dark"] .bhajan-tag-level-simple { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .bhajan-tag-level-intermediate { background: #451a03; color: #fcd34d; }
+:root[data-theme="dark"] .bhajan-tag-level-advanced { background: #3b0764; color: #e879f9; }
+:root[data-theme="dark"] .bhajan-tag-scale-major { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .bhajan-tag-scale-minor { background: #2e1065; color: #c4b5fd; }
+:root[data-theme="dark"] .bhajan-tag-scale-mixed { background: #3b2a00; color: #fde68a; }
+:root[data-theme="dark"] .pitch-gents  { background: #1e3a5f; color: #93c5fd; }
+:root[data-theme="dark"] .pitch-ladies { background: #3b0764; color: #e879f9; }
+:root[data-theme="dark"] .playing-pitch-indian,
+:root[data-theme="dark"] .playing-pitch-western { background: #1e3a5f; color: #93c5fd; }
+:root[data-theme="dark"] .entry-singer-chip { background: #451a03; color: #fde68a; }
+:root[data-theme="dark"] .playing-singer-pill { background: #451a03; color: #fde68a; }
+:root[data-theme="dark"] .singer-chip { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .singer-chip.clickable:hover { background: #9a3412; }
+:root[data-theme="dark"] .singer-remove-chip { background: #431407; color: #fed7aa; border-color: #9a3412; }
+:root[data-theme="dark"] .singer-chip-sm { background: #9a3412; color: #fed7aa; }
+:root[data-theme="dark"] .singer-card-pitch { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .tl-num { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .step-num { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .info-banner { background: #3b2a00; border-color: #92400e; color: #fde68a; }
+:root[data-theme="dark"] .session-code-derived { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .singer-bhajan-count { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .bhajan-count-badge { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .period-tab:hover:not(.active) { background: rgba(0,0,0,0.2); }
+:root[data-theme="dark"] .deity-ganesha { background: #3b2a00; color: #fcd34d; }
+:root[data-theme="dark"] .deity-shiva   { background: #1e1b4b; color: #a5b4fc; }
+:root[data-theme="dark"] .deity-vishnu  { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .deity-devi    { background: #3b0764; color: #f0abfc; }
+:root[data-theme="dark"] .deity-rama    { background: #052e16; color: #6ee7b7; }
+:root[data-theme="dark"] .deity-krishna { background: #2e1065; color: #c4b5fd; }
+:root[data-theme="dark"] .deity-hanuman { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .deity-murugan { background: #3b2a00; color: #fde68a; }
+:root[data-theme="dark"] .deity-ayyappa { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .deity-other   { background: #44403c; color: #d6d3d1; }
+:root[data-theme="dark"] .session-entry-playing {
+  background: linear-gradient(135deg, #431407, #1c1917);
+  border-color: #9a3412;
+}
+:root[data-theme="dark"] .badge-live      { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .badge-completed { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .badge-backdated { background: #3b2a00; color: #fde68a; }
+:root[data-theme="dark"] .sync-banner-ok    { background: #052e16; color: #86efac; border-color: #166534; }
+:root[data-theme="dark"] .sync-banner-error { background: #450a0a; color: #fca5a5; border-color: #991b1b; }
+:root[data-theme="dark"] .sync-banner-info  { background: #172554; color: #93c5fd; border-color: #1e40af; }
+:root[data-theme="dark"] .pat-ok     { background: #052e16; color: #86efac; }
+:root[data-theme="dark"] .pat-error  { background: #450a0a; color: #fca5a5; }
+:root[data-theme="dark"] .mab-hint-error { background: #450a0a; color: #fca5a5; }
+:root[data-theme="dark"] .mab-hint-warn  { background: #3b2a00; color: #fde68a; }
+:root[data-theme="dark"] .mab-hint-info  { background: #172554; color: #93c5fd; }
+:root[data-theme="dark"] .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
+:root[data-theme="dark"] .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
+:root[data-theme="dark"] .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+
+/* ─── Theme toggle button ────────────────────────────────────────────────── */
+#btn-theme { font-size: 1.05rem; min-width: 2rem; }
+
 /* ─── Offline / freeze banner ────────────────────────────────────────────── */
 .session-offline-banner {
   display: none;

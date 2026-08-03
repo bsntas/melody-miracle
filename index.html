@@ -16,7 +16,13 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260802.2">
+  <link rel="stylesheet" href="css/style.css?v=20260803.1">
+  <script>
+    (function(){
+      var t=localStorage.getItem('mm-theme');
+      if(t==='dark'||t==='light') document.documentElement.dataset.theme=t;
+    })();
+  </script>
 </head>
 <body>
 
@@ -44,6 +50,7 @@
           <a href="#session" class="nav-link" data-view="session">Session</a>
         </nav>
         <div class="header-actions">
+          <button class="btn btn-ghost btn-icon" id="btn-theme" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
           <button class="btn btn-ghost btn-icon" id="btn-refresh" title="Refresh data" aria-label="Refresh data">↻</button>
           <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
             <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
@@ -687,7 +694,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260802.2"></script>
+  <script type="module" src="js/app.js?v=20260803.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
