@@ -2958,6 +2958,48 @@ class App {
     inp.addEventListener('blur', () => { if (!done) { done = true; save(); } });
   }
 
+  // ─── Inline date edit ────────────────────────────────────────────────────
+
+  _inlineDateEdit(triggerEl, sessionId) {
+    const session = this.sessions.get(sessionId);
+    if (!session) return;
+
+    const inp = document.createElement('input');
+    inp.type = 'date';
+    inp.className = 'notes-inline-input form-input';
+    inp.value = session.date;
+    inp.max = todayISO();
+
+    triggerEl.replaceWith(inp);
+    inp.focus();
+
+    const save = () => {
+      const newDate = inp.value;
+      if (!newDate || newDate === session.date) {
+        inp.replaceWith(triggerEl);
+        return;
+      }
+      if (newDate > todayISO()) {
+        this._toast('Date cannot be in the future', 'warn');
+        inp.replaceWith(triggerEl);
+        return;
+      }
+      const isNowBackdated = newDate < todayISO();
+      const updated = { ...session, date: newDate, isBackdated: isNowBackdated };
+      this.sessions.save(updated, { local: true });
+      this._renderSessionDetail(sessionId);
+      this._toast('Session date updated', 'success');
+    };
+
+    let done = false;
+    inp.addEventListener('change', () => { if (!done) { done = true; save(); } });
+    inp.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter')  { if (!done) { done = true; inp.blur(); } }
+      if (ev.key === 'Escape') { done = true; inp.replaceWith(triggerEl); }
+    });
+    inp.addEventListener('blur', () => { if (!done) { done = true; save(); } });
+  }
+
   // ─── Inline singer edit ───────────────────────────────────────────────────
 
   _inlineSingerEdit(triggerEl, entryId, mode) {
@@ -3031,7 +3073,7 @@ class App {
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
           <div>
             <div class="session-detail-title">${escHtml(s.label || 'Bhajan Session')}</div>
-            <div class="session-detail-date">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</div>
+            <div class="session-detail-date${isEditMode ? ' date-editable' : ''}" id="session-detail-date-display">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</div>
           </div>
           <div style="display:flex;gap:.4rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
             ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
@@ -3156,6 +3198,11 @@ class App {
           e.stopPropagation();
           this._inlineNotesEdit(el, el.dataset.entryId, 'detail');
         });
+      });
+
+      document.getElementById('session-detail-date-display')?.addEventListener('click', e => {
+        e.stopPropagation();
+        this._inlineDateEdit(e.currentTarget, id);
       });
     }
 
