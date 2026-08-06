@@ -35,6 +35,9 @@
   --header-h:       56px;
   --bottom-nav-h:   60px;
   --safe-bottom:    env(safe-area-inset-bottom, 0px);
+
+  --toast-bg:       #292524;
+  --toast-fg:       #f5f5f4;
 }
 
 html { font-size: 16px; overflow-x: hidden; }
@@ -958,7 +961,7 @@ img { max-width: 100%; }
 .toast {
   position: fixed; bottom: calc(var(--bottom-nav-h) + var(--safe-bottom) + 0.75rem); left: 50%;
   transform: translateX(-50%) translateY(8px);
-  background: var(--text); color: #fff;
+  background: var(--toast-bg, #292524); color: var(--toast-fg, #f5f5f4);
   padding: 0.65rem 1.25rem; border-radius: var(--radius);
   font-size: 0.88rem; font-weight: 500; max-width: calc(100vw - 2rem);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
@@ -1112,6 +1115,19 @@ img { max-width: 100%; }
   color: var(--text-2); text-decoration: none; font-size: inherit;
 }
 .session-meta-singers a.singer-link:hover { color: var(--saffron); text-decoration: underline; }
+
+/* ─── Settings appearance section ────────────────────────────────────────── */
+.settings-appearance-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+}
+.settings-appearance-label { font-size: 0.88rem; color: var(--text-2); }
+.settings-theme-btn { font-size: 0.88rem; }
+
+/* ─── Bhajan list favourite mark ─────────────────────────────────────────── */
+.bhajan-fav-mark {
+  font-size: 0.72rem; color: var(--red, #dc2626);
+  margin-left: 0.3rem; vertical-align: middle; line-height: 1;
+}
 
 /* ─── Singer alias management (settings) ────────────────────────────────── */
 .settings-section-title {
@@ -1294,6 +1310,8 @@ img { max-width: 100%; }
     --shadow:       0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
     --shadow-md:    0 4px 6px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.3);
     --shadow-lg:    0 10px 15px rgba(0,0,0,.45), 0 4px 6px rgba(0,0,0,.3);
+    --toast-bg:     #e7e5e4;
+    --toast-fg:     #1c1917;
   }
 }
 
@@ -1317,6 +1335,8 @@ img { max-width: 100%; }
   --shadow:       0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
   --shadow-md:    0 4px 6px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.3);
   --shadow-lg:    0 10px 15px rgba(0,0,0,.45), 0 4px 6px rgba(0,0,0,.3);
+  --toast-bg:     #e7e5e4;
+  --toast-fg:     #1c1917;
 }
 
 /* Force light mode overrides */
@@ -1461,8 +1481,6 @@ img { max-width: 100%; }
 :root[data-theme="dark"] .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
 :root[data-theme="dark"] .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
 
-/* ─── Theme toggle button ────────────────────────────────────────────────── */
-#btn-theme { font-size: 1.05rem; min-width: 2rem; }
 
 /* ─── Offline / freeze banner ────────────────────────────────────────────── */
 .session-offline-banner {

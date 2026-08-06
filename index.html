@@ -50,8 +50,6 @@
           <a href="#session" class="nav-link" data-view="session">Session</a>
         </nav>
         <div class="header-actions">
-          <button class="btn btn-ghost btn-icon" id="btn-theme" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
-          <button class="btn btn-ghost btn-icon" id="btn-refresh" title="Refresh data" aria-label="Refresh data">↻</button>
           <div class="auth-wrap">
             <button class="btn btn-ghost btn-icon" id="btn-auth" title="Sign in with Google" aria-label="Sign in">
               <span id="auth-avatar" class="auth-avatar">👤</span>
@@ -500,10 +498,23 @@
   <div id="modal-settings" class="modal-overlay hidden">
     <div class="modal-box modal-sm">
       <div class="modal-header">
-        <h3 class="modal-title">⚙ Sync Settings</h3>
+        <h3 class="modal-title">⚙ Settings</h3>
         <button class="modal-close" id="msettings-close">✕</button>
       </div>
       <div class="modal-body">
+
+        <div class="settings-section-title">Appearance</div>
+        <div class="settings-appearance-row">
+          <span class="settings-appearance-label">Theme</span>
+          <button class="btn btn-ghost btn-sm settings-theme-btn" id="btn-theme" aria-label="Toggle theme">🌙 Dark mode</button>
+        </div>
+        <div class="settings-appearance-row" style="margin-top:0.4rem">
+          <span class="settings-appearance-label">Data</span>
+          <button class="btn btn-ghost btn-sm" id="btn-refresh" aria-label="Refresh data">↻ Refresh bhajans</button>
+        </div>
+
+        <div class="divider" style="margin-top:1rem;margin-bottom:1rem"></div>
+        <div class="settings-section-title" style="margin-bottom:0.5rem">GitHub Sync</div>
         <div id="sync-status-banner" class="sync-banner hidden"></div>
 
         <p class="settings-desc">
