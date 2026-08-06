@@ -506,21 +506,27 @@ class App {
   // ─── Global bindings ──────────────────────────────────────────────────────
 
   _initTheme() {
-    const btn = document.getElementById('btn-theme');
-    if (!btn) return;
     const apply = (theme) => {
       const root = document.documentElement;
-      if (theme === 'dark')  { root.dataset.theme = 'dark';  btn.textContent = '☀️'; btn.title = 'Switch to light mode'; }
-      else                   { root.dataset.theme = 'light'; btn.textContent = '🌙'; btn.title = 'Switch to dark mode'; }
+      const btn = document.getElementById('btn-theme');
+      if (theme === 'dark') {
+        root.dataset.theme = 'dark';
+        if (btn) { btn.textContent = '☀️ Light mode'; btn.title = 'Switch to light mode'; }
+      } else {
+        root.dataset.theme = 'light';
+        if (btn) { btn.textContent = '🌙 Dark mode'; btn.title = 'Switch to dark mode'; }
+      }
     };
     const saved = localStorage.getItem('mm-theme');
     const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     apply(saved || (sysDark ? 'dark' : 'light'));
-    btn.addEventListener('click', () => {
-      const isDark = document.documentElement.dataset.theme === 'dark';
-      const next = isDark ? 'light' : 'dark';
-      try { localStorage.setItem('mm-theme', next); } catch {}
-      apply(next);
+    document.addEventListener('click', e => {
+      if (e.target.closest('#btn-theme')) {
+        const isDark = document.documentElement.dataset.theme === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        try { localStorage.setItem('mm-theme', next); } catch {}
+        apply(next);
+      }
     });
   }
 
@@ -903,6 +909,14 @@ class App {
   }
 
   _openSettings() {
+    // Sync theme button label to current state
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const themeBtn = document.getElementById('btn-theme');
+    if (themeBtn) {
+      themeBtn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+      themeBtn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+
     const pat = GitHubStore.getPat();
     document.getElementById('settings-pat').value = pat ? '••••••••••••••••' : '';
     document.getElementById('settings-pat').dataset.hasExisting = pat ? 'true' : 'false';
@@ -1465,9 +1479,10 @@ class App {
     const levelClass = b.level ? 'bhajan-tag-level-' + b.level.toLowerCase() : '';
     const sungCount  = this._bhajanCounts?.[b.id] || 0;
 
+    const isFav = !!(this.auth?.currentUser && this.favourites?.isFavourite(b.id));
     return `<div class="bhajan-item" data-id="${b.id}">
       <div class="bhajan-item-main">
-        <div class="bhajan-item-title">${escHtml(b.title)}</div>
+        <div class="bhajan-item-title">${escHtml(b.title)}${isFav ? '<span class="bhajan-fav-mark">♥</span>' : ''}</div>
         <div class="bhajan-item-meta">${escHtml([b.deity, b.language].filter(Boolean).join(' · '))}</div>
         <div class="bhajan-item-tags">
           ${b.tempo ? `<span class="bhajan-tag ${tempoClass}">${escHtml(b.tempo)}</span>` : ''}
@@ -3622,7 +3637,8 @@ class App {
     try {
       const added = await this.favourites.toggle(bhajanId);
       this._updateFavButton(bhajanId);
-      this._toast(added ? 'Added to favourites ♥' : 'Removed from favourites');
+      this._updateFavMark(bhajanId, added);
+      this._toast(added ? 'Added to favourites ♥' : 'Removed from favourites', added ? 'success' : '');
     } catch {
       this._toast('Could not update favourites', 'error');
     }
@@ -3635,6 +3651,20 @@ class App {
     btn.textContent = active ? '♥' : '♡';
     btn.classList.toggle('fav-active', active);
     btn.title = active ? 'Remove from favourites' : 'Add to favourites';
+  }
+
+  _updateFavMark(bhajanId, isFav) {
+    document.querySelectorAll(`.bhajan-item[data-id="${CSS.escape(bhajanId)}"] .bhajan-item-title`).forEach(titleEl => {
+      let mark = titleEl.querySelector('.bhajan-fav-mark');
+      if (isFav && !mark) {
+        mark = document.createElement('span');
+        mark.className = 'bhajan-fav-mark';
+        mark.textContent = '♥';
+        titleEl.appendChild(mark);
+      } else if (!isFav && mark) {
+        mark.remove();
+      }
+    });
   }
 }
 
