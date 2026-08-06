@@ -862,6 +862,36 @@ img { max-width: 100%; }
 .pitch-input { flex: 1; min-width: 120px; }
 .pitch-hint { font-size: 0.75rem; color: var(--text-3); margin-top: 0.3rem; }
 
+/* Suggested pitch chips */
+.pitch-suggestions-wrap { margin-bottom: 0.25rem; }
+.pitch-sugg-label {
+  display: block; font-size: 0.68rem; font-weight: 700;
+  color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+.btn-pitch-sugg {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  padding: 0.38rem 0.8rem; border-radius: 999px; border: none;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer;
+  transition: opacity 0.15s, box-shadow 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-pitch-sugg:active { transform: scale(0.95); }
+.btn-pitch-sugg-gents  { background: #dbeafe; color: #1e3a8a; }
+.btn-pitch-sugg-ladies { background: #fce7f3; color: #9d174d; }
+.btn-pitch-sugg.pitch-sugg-active { box-shadow: 0 0 0 2px currentColor; }
+/* divider between suggestions and manual inputs */
+.pitch-or-divider {
+  font-size: 0.7rem; color: var(--text-3); text-align: center;
+  margin: 0.55rem 0 0.45rem; position: relative;
+}
+.pitch-or-divider::before, .pitch-or-divider::after {
+  content: ''; position: absolute; top: 50%; width: 33%; height: 1px;
+  background: var(--border); transform: translateY(-50%);
+}
+.pitch-or-divider::before { left: 0; }
+.pitch-or-divider::after  { right: 0; }
+
 /* ─── Add Bhajan modal ───────────────────────────────────────────────────── */
 .modal-add-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }
 .modal-add-bhajan-box .modal-body { overflow-y: auto; flex: 1; padding: 0.75rem 1.25rem 0.5rem; overscroll-behavior: contain; scroll-padding-bottom: 1rem; }
@@ -1325,6 +1355,8 @@ img { max-width: 100%; }
   :root:not([data-theme="light"]) .bhajan-tag-scale-mixed { background: #3b2a00; color: #fde68a; }
   :root:not([data-theme="light"]) .pitch-gents  { background: #1e3a5f; color: #93c5fd; }
   :root:not([data-theme="light"]) .pitch-ladies { background: #3b0764; color: #e879f9; }
+  :root:not([data-theme="light"]) .btn-pitch-sugg-gents  { background: #1e3a5f; color: #93c5fd; }
+  :root:not([data-theme="light"]) .btn-pitch-sugg-ladies { background: #3b0764; color: #e879f9; }
   :root:not([data-theme="light"]) .playing-pitch-indian,
   :root:not([data-theme="light"]) .playing-pitch-western { background: #1e3a5f; color: #93c5fd; }
   :root:not([data-theme="light"]) .entry-singer-chip { background: #451a03; color: #fde68a; }
@@ -1382,6 +1414,8 @@ img { max-width: 100%; }
 :root[data-theme="dark"] .bhajan-tag-scale-mixed { background: #3b2a00; color: #fde68a; }
 :root[data-theme="dark"] .pitch-gents  { background: #1e3a5f; color: #93c5fd; }
 :root[data-theme="dark"] .pitch-ladies { background: #3b0764; color: #e879f9; }
+:root[data-theme="dark"] .btn-pitch-sugg-gents  { background: #1e3a5f; color: #93c5fd; }
+:root[data-theme="dark"] .btn-pitch-sugg-ladies { background: #3b0764; color: #e879f9; }
 :root[data-theme="dark"] .playing-pitch-indian,
 :root[data-theme="dark"] .playing-pitch-western { background: #1e3a5f; color: #93c5fd; }
 :root[data-theme="dark"] .entry-singer-chip { background: #451a03; color: #fde68a; }

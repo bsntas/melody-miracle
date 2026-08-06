@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260806.2';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260806.2 loaded');
+console.log('[MM] app.js v20260806.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -653,23 +653,25 @@ class App {
     document.getElementById('btn-mab-add')?.addEventListener('click', () => this._mabConfirmAdd());
     document.getElementById('btn-pitch-gents')?.addEventListener('click', () => {
       const b = this._mabSelected;
-      if (b?.gents_pitch) this._setMabPitch(b.gents_pitch);
+      if (b?.gents_pitch) { this._setMabPitch(b.gents_pitch); this._setPitchSuggActive('gents'); }
     });
     document.getElementById('btn-pitch-ladies')?.addEventListener('click', () => {
       const b = this._mabSelected;
-      if (b?.ladies_pitch) this._setMabPitch(b.ladies_pitch);
+      if (b?.ladies_pitch) { this._setMabPitch(b.ladies_pitch); this._setPitchSuggActive('ladies'); }
     });
     // Dual pitch selects — bidirectional linking
     document.getElementById('mab-pitch-indian')?.addEventListener('change', e => {
       const p = pitchByIndian(e.target.value);
       document.getElementById('mab-pitch-western').value = p?.western || '';
       document.getElementById('mab-pitch').value         = p?.combined || '';
+      this._clearPitchSuggActive();
     });
     document.getElementById('mab-pitch-western')?.addEventListener('change', e => {
       const series = pitchByIndian(document.getElementById('mab-pitch-indian').value)?.series || 'Pancham';
       const p = pitchByWestern(e.target.value, series);
       document.getElementById('mab-pitch-indian').value = p?.indian || '';
       document.getElementById('mab-pitch').value        = p?.combined || '';
+      this._clearPitchSuggActive();
     });
     const singerInp = document.getElementById('mab-singer');
     if (singerInp) {
@@ -2449,6 +2451,9 @@ class App {
     document.getElementById('mab-pitch-indian').value = '';
     document.getElementById('mab-pitch-western').value = '';
     document.getElementById('mab-pitch-hint').textContent = '';
+    document.getElementById('pitch-suggestions-wrap')?.classList.add('hidden');
+    document.getElementById('pitch-or-divider')?.classList.add('hidden');
+    this._clearPitchSuggActive();
 
     // Populate singer autocomplete: session bhajan singers first, then all historical
     this._mabSingers = [];
@@ -2566,6 +2571,9 @@ class App {
     document.getElementById('btn-pitch-ladies').textContent = lpLabel ? `♀ ${lpLabel}` : 'Ladies';
     document.getElementById('btn-pitch-gents').style.display = b.gents_pitch ? '' : 'none';
     document.getElementById('btn-pitch-ladies').style.display = b.ladies_pitch ? '' : 'none';
+    const hasAnySugg = !!(b.gents_pitch || b.ladies_pitch);
+    document.getElementById('pitch-suggestions-wrap')?.classList.toggle('hidden', !hasAnySugg);
+    document.getElementById('pitch-or-divider')?.classList.toggle('hidden', !hasAnySugg);
 
     this._mabUpdatePitchHint();
   }
@@ -2576,6 +2584,16 @@ class App {
     document.getElementById('mab-pitch').value         = p?.combined || combined || '';
     document.getElementById('mab-pitch-indian').value  = p?.indian   || combined.split(' / ')[0]?.trim() || '';
     document.getElementById('mab-pitch-western').value = p?.western  || combined.split(' / ')[1]?.trim() || '';
+  }
+
+  _setPitchSuggActive(which) {
+    document.getElementById('btn-pitch-gents')?.classList.toggle('pitch-sugg-active', which === 'gents');
+    document.getElementById('btn-pitch-ladies')?.classList.toggle('pitch-sugg-active', which === 'ladies');
+  }
+
+  _clearPitchSuggActive() {
+    document.getElementById('btn-pitch-gents')?.classList.remove('pitch-sugg-active');
+    document.getElementById('btn-pitch-ladies')?.classList.remove('pitch-sugg-active');
   }
 
   _mabAddSingerFromInput() {
@@ -2641,7 +2659,7 @@ class App {
       }
     }
     hintEl.textContent = '';
-    if (!combined && b?.gents_pitch) this._setMabPitch(b.gents_pitch);
+    if (!combined && b?.gents_pitch) { this._setMabPitch(b.gents_pitch); this._setPitchSuggActive('gents'); }
   }
 
   _mabConfirmAdd() {

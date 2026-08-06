@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260806.2">
+  <link rel="stylesheet" href="css/style.css?v=20260806.3">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -396,10 +396,14 @@
           </div>
           <div class="form-group">
             <label class="form-label">Pitch</label>
-            <div class="pitch-row">
-              <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-gents">Gents</button>
-              <button type="button" class="btn btn-pitch btn-outline btn-sm" id="btn-pitch-ladies">Ladies</button>
+            <div class="pitch-suggestions-wrap hidden" id="pitch-suggestions-wrap">
+              <span class="pitch-sugg-label">Suggested — tap to use</span>
+              <div class="pitch-row">
+                <button type="button" class="btn-pitch-sugg btn-pitch-sugg-gents" id="btn-pitch-gents">Gents</button>
+                <button type="button" class="btn-pitch-sugg btn-pitch-sugg-ladies" id="btn-pitch-ladies">Ladies</button>
+              </div>
             </div>
+            <div class="pitch-or-divider" id="pitch-or-divider">or choose manually</div>
             <div class="pitch-dual">
               <select id="mab-pitch-indian" class="form-input pitch-dual-sel">
                 <option value="">Indian…</option>
@@ -707,7 +711,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260806.2"></script>
+  <script type="module" src="js/app.js?v=20260806.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
