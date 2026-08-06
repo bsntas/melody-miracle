@@ -1,10 +1,10 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260803.1';
+const CACHE = 'melody-miracle-20260806.2';
 
 // App shell: always cached on install.
 // Use the same versioned paths that index.html actually requests so cache hits work.
-const V = '20260803.1';
+const V = '20260806.2';
 const PRECACHE = [
   './',
   './index.html',
@@ -14,6 +14,8 @@ const PRECACHE = [
   `./js/store.js?v=${V}`,
   `./js/github-store.js?v=${V}`,
   `./js/live.js?v=${V}`,
+  `./js/auth.js?v=${V}`,
+  `./js/favourites.js?v=${V}`,
   './icons/icon-192.png',
   './icons/icon-512.png',
   './favicon.png',

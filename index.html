@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260806.1">
+  <link rel="stylesheet" href="css/style.css?v=20260806.2">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -52,6 +52,18 @@
         <div class="header-actions">
           <button class="btn btn-ghost btn-icon" id="btn-theme" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
           <button class="btn btn-ghost btn-icon" id="btn-refresh" title="Refresh data" aria-label="Refresh data">↻</button>
+          <div class="auth-wrap">
+            <button class="btn btn-ghost btn-icon" id="btn-auth" title="Sign in with Google" aria-label="Sign in">
+              <span id="auth-avatar" class="auth-avatar">👤</span>
+            </button>
+            <div id="auth-dropdown" class="auth-dropdown hidden">
+              <div class="auth-user-info">
+                <div class="auth-user-name" id="auth-user-name"></div>
+                <div class="auth-user-email" id="auth-user-email"></div>
+              </div>
+              <button class="btn btn-ghost btn-sm btn-block" id="btn-sign-out">Sign out</button>
+            </div>
+          </div>
           <button class="btn btn-ghost btn-icon" id="btn-settings" title="Sync settings" aria-label="Settings">
             <span id="sync-indicator" class="sync-dot sync-idle"></span>⚙
           </button>
@@ -309,6 +321,7 @@
       <div class="modal-footer mbhajan-footer">
         <button class="btn btn-ghost btn-sm hidden" id="mbhajan-prev">← Prev</button>
         <div class="mbhajan-footer-actions">
+          <button class="btn btn-ghost btn-sm btn-fav" id="mbhajan-fav" title="Add to favourites" aria-label="Favourite">♡</button>
           <button class="btn btn-outline btn-sm" id="mbhajan-add-to-session">+ Add to Session</button>
           <button class="btn btn-ghost btn-sm" id="mbhajan-edit">Edit</button>
           <a class="btn btn-ghost btn-sm" id="mbhajan-source-link" target="_blank" rel="noopener">Source ↗</a>
@@ -694,7 +707,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260806.1"></script>
+  <script type="module" src="js/app.js?v=20260806.2"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
