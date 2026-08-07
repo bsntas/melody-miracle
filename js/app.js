@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.8 loaded');
+console.log('[MM] app.js v20260807.9 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -910,6 +910,9 @@ class App {
       if (inp.type === 'password') { inp.type = 'text'; btn.textContent = 'Hide token'; }
       else { inp.type = 'password'; btn.textContent = 'Show token'; }
     });
+    document.getElementById('btn-gh-info')?.addEventListener('click', () => {
+      document.getElementById('settings-how')?.classList.toggle('hidden');
+    });
   }
 
   _openSettings() {
@@ -964,8 +967,8 @@ class App {
     document.getElementById('alias-from-list').innerHTML = datalistOpts(allSingers);
     document.getElementById('alias-to-list').innerHTML = datalistOpts(canonSingers);
 
+    document.getElementById('settings-how')?.classList.add('hidden');
     this._openModal('modal-settings');
-    if (!pat) setTimeout(() => document.getElementById('settings-pat').focus(), 100);
   }
 
   _renderAliasList() {
