@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.9 loaded');
+console.log('[MM] app.js v20260807.10 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1374,7 +1374,12 @@ class App {
         <optgroup label="By Singer">
           ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}
         </optgroup>`;
-      if (prev) sungEl.value = prev;
+      if (this._pendingBrowseFilter) {
+        sungEl.value = this._pendingBrowseFilter;
+        this._pendingBrowseFilter = null;
+      } else if (prev) {
+        sungEl.value = prev;
+      }
     }
 
     this._applyBrowseFilters();
@@ -3677,8 +3682,7 @@ class App {
     document.getElementById('auth-favourites-link')?.addEventListener('click', e => {
       e.preventDefault();
       document.getElementById('auth-dropdown')?.classList.add('hidden');
-      const sungEl = document.getElementById('filter-sung');
-      if (sungEl) sungEl.value = 'favourites';
+      this._pendingBrowseFilter = 'favourites';
       if (location.hash === '#browse') {
         this._renderBrowse();
       } else {
