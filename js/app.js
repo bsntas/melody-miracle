@@ -3671,6 +3671,18 @@ class App {
       this._toast('Signed out');
     });
 
+    document.getElementById('auth-favourites-link')?.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('auth-dropdown')?.classList.add('hidden');
+      const sungEl = document.getElementById('filter-sung');
+      if (sungEl) sungEl.value = 'favourites';
+      if (location.hash === '#browse') {
+        this._renderBrowse();
+      } else {
+        window.location.hash = '#browse';
+      }
+    });
+
     document.addEventListener('click', e => {
       if (!e.target.closest('#btn-auth') && !e.target.closest('#auth-dropdown')) {
         document.getElementById('auth-dropdown')?.classList.add('hidden');
@@ -3737,6 +3749,7 @@ class App {
     if (!btn || !avatarEl) return;
 
     const profileLink    = document.getElementById('auth-profile-link');
+    const favouritesLink = document.getElementById('auth-favourites-link');
     const setSingerBtn   = document.getElementById('btn-set-singer-name');
 
     if (user) {
@@ -3772,12 +3785,14 @@ class App {
       if (setSingerBtn) {
         setSingerBtn.textContent = singerName ? 'Change singer name' : 'Set singer name';
       }
+      favouritesLink?.classList.remove('hidden');
     } else {
       avatarEl.replaceChildren();
       avatarEl.textContent = '👤';
       avatarEl.className   = 'auth-avatar';
       btn.title = 'Sign in with Google';
       profileLink?.classList.add('hidden');
+      favouritesLink?.classList.add('hidden');
       if (setSingerBtn) setSingerBtn.textContent = 'Set singer name';
     }
   }
