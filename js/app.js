@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.3 loaded');
+console.log('[MM] app.js v20260807.4 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1989,7 +1989,8 @@ class App {
       });
     });
 
-    document.getElementById('btn-claim-host')?.addEventListener('click', () => {
+    document.getElementById('btn-claim-host')?.addEventListener('click', async () => {
+      if (!await this.requireAuth()) return;
       this.live.claimHost();
       this._renderLiveSession(el);
     });
@@ -2328,7 +2329,8 @@ class App {
     this._renderSession();
   }
 
-  _resumeDraftSession(draft) {
+  async _resumeDraftSession(draft) {
+    if (!await this.requireAuth()) return;
     const sessionData = { ...draft, status: 'live' };
     // Pass resuming:true so host() checks Firebase first and won't overwrite
     // participant edits. Phase and bhajans are delivered via onStateChange once
@@ -2473,7 +2475,8 @@ class App {
 
   // ─── Add Bhajan Modal ─────────────────────────────────────────────────────
 
-  _openAddBhajanModal(preselect = null) {
+  async _openAddBhajanModal(preselect = null) {
+    if (!await this.requireAuth()) return;
     this._mabSelected = preselect || null;
     this._mabStep = preselect ? 2 : 1;
 
