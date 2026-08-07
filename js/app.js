@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.1 loaded');
+console.log('[MM] app.js v20260807.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -3724,10 +3724,18 @@ class App {
 
     if (user) {
       const singerName = this._userProfile?.singerName;
-      const initial = (singerName || user.displayName || user.email || '?')[0].toUpperCase();
-      avatarEl.textContent = initial;
-      avatarEl.className   = 'auth-avatar auth-avatar-signed-in';
+      avatarEl.className = 'auth-avatar auth-avatar-signed-in';
       btn.title = singerName || user.displayName || user.email || 'Account';
+      if (user.photoURL) {
+        const img = document.createElement('img');
+        img.src = user.photoURL;
+        img.alt = singerName || user.displayName || '';
+        img.referrerPolicy = 'no-referrer';
+        avatarEl.replaceChildren(img);
+      } else {
+        const initial = (singerName || user.displayName || user.email || '?')[0].toUpperCase();
+        avatarEl.textContent = initial;
+      }
 
       const nameEl  = document.getElementById('auth-user-name');
       const emailEl = document.getElementById('auth-user-email');
@@ -3748,6 +3756,7 @@ class App {
         setSingerBtn.textContent = singerName ? 'Change singer name' : 'Set singer name';
       }
     } else {
+      avatarEl.replaceChildren();
       avatarEl.textContent = '👤';
       avatarEl.className   = 'auth-avatar';
       btn.title = 'Sign in with Google';
