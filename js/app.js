@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.4 loaded');
+console.log('[MM] app.js v20260807.5 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1998,7 +1998,8 @@ class App {
     if (!isPlaying) {
       // Setup mode: add bhajan always available; edit controls gated by edit mode
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
-      document.getElementById('btn-live-edit-toggle')?.addEventListener('click', () => {
+      document.getElementById('btn-live-edit-toggle')?.addEventListener('click', async () => {
+        if (!this._liveEditMode && !await this.requireAuth()) return;
         this._liveEditMode = !this._liveEditMode;
         this._renderLiveSession(el);
       });
@@ -2428,6 +2429,7 @@ class App {
   }
 
   async _joinSessionWithCode(code) {
+    if (!await this.requireAuth()) return;
     // Guard against double-tap: leave any existing connection first
     if (this.live) { this.live.leave(); this.live = null; }
 
