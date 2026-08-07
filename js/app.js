@@ -1107,6 +1107,10 @@ class App {
     document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
+    // Hide Join button when a resumable draft exists
+    const draft = this.sessions.getDraft();
+    document.getElementById('btn-dash-join-session')?.classList.toggle('hidden', !!draft);
+
     // Live alert
     const liveAlert = document.getElementById('dash-live-alert');
     if (this.liveState) {
@@ -1788,15 +1792,15 @@ class App {
             <div class="open-sessions-loading"><span class="open-sessions-spinner"></span> Looking for active sessions…</div>
           </div>
         </div>
-        <div class="session-home-actions" style="margin-top:0.25rem">
+        ${!draft ? `<div class="session-home-actions" style="margin-top:0.25rem">
           <button class="btn btn-outline btn-block" id="btn-session-join">Join by Series & Date →</button>
-        </div>
+        </div>` : ''}
       </div>`;
   }
 
   _bindSessionHome(draft) {
     document.getElementById('btn-session-new').addEventListener('click', () => this._openNewSession());
-    document.getElementById('btn-session-join').addEventListener('click', () => this._openJoinModal());
+    document.getElementById('btn-session-join')?.addEventListener('click', () => this._openJoinModal());
     if (draft) {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
     }
@@ -1809,6 +1813,8 @@ class App {
   async _loadOpenSessions() {
     const el = document.getElementById('open-sessions-list');
     if (!el) return;
+
+    const hasDraft = !!this.sessions.getDraft();
 
     try {
       const series = await this._fetchKnownSeries();
@@ -1842,7 +1848,7 @@ class App {
               · ${escHtml(formatDate(state.date || ''))}
             </div>
           </div>
-          <span class="open-session-join">Join →</span>
+          ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
         </button>
       `).join('');
 
@@ -1858,6 +1864,8 @@ class App {
   async _loadDashOpenSessions() {
     const container = document.getElementById('dash-open-sessions');
     if (!container) return;
+
+    const hasDraft = !!this.sessions.getDraft();
 
     try {
       const series = await this._fetchKnownSeries();
@@ -1897,7 +1905,7 @@ class App {
                   · ${escHtml(formatDate(state.date || ''))}
                 </div>
               </div>
-              <span class="open-session-join">Join →</span>
+              ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
             </button>
           `).join('')}
         </div>
