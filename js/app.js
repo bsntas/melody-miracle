@@ -67,8 +67,9 @@ class App {
   constructor() {
     this.bhajans   = new BhajanStore();
     this.sessions  = new SessionStore();  // replaced by GitHubStore if PAT set
-    this.live      = null;  // LiveSession instance when active
-    this.liveState = null;  // current live session state (host or observer)
+    this.live           = null;  // LiveSession instance when active
+    this.liveState      = null;  // current live session state (host or observer)
+    this._liveObservers = [];    // observer details list kept by host
 
     this._toastTimer      = null;
     this._browseSearchTimer = null;
@@ -725,6 +726,13 @@ class App {
     });
     document.getElementById('modal-join-session')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-join-session')) this._closeModal('modal-join-session');
+    });
+
+    // Observer list modal
+    document.getElementById('mobservers-close')?.addEventListener('click', () => this._closeModal('modal-observers'));
+    document.getElementById('btn-mobservers-done')?.addEventListener('click', () => this._closeModal('modal-observers'));
+    document.getElementById('modal-observers')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-observers')) this._closeModal('modal-observers');
     });
 
     // Onboarding modal
@@ -1955,8 +1963,8 @@ class App {
               <div class="live-session-date">${formatDate(st.date)}</div>
             </div>
           </div>
-          <div class="observer-count" id="live-observer-count">
-            ${isHost ? `${this.live?.peerCount || 0} observer${(this.live?.peerCount || 0) !== 1 ? 's' : ''}` : ''}
+          <div class="observer-count">
+            ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
           </div>
           <div class="singers-strip">
             ${[...new Set((st.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))].map(name => `
@@ -2013,6 +2021,10 @@ class App {
       if (!await this.requireAuth()) return;
       this.live.claimHost();
       this._renderLiveSession(el);
+    });
+
+    document.getElementById('btn-observer-count')?.addEventListener('click', () => {
+      this._showObserverList();
     });
 
     if (!isPlaying) {
@@ -2269,6 +2281,48 @@ class App {
     }
   }
 
+  // ─── Observer count helpers ───────────────────────────────────────────────
+
+  _updateObserverCount(count) {
+    const n     = count ?? this.live?.peerCount ?? 0;
+    const label = `${n} observer${n !== 1 ? 's' : ''}`;
+    const btn   = document.getElementById('btn-observer-count');
+    if (btn) btn.textContent = label;
+  }
+
+  _renderObserverListBody(body) {
+    const observers = this._liveObservers;
+    if (!observers.length) {
+      body.innerHTML = '<p class="observer-list-empty">No observers yet.</p>';
+      return;
+    }
+    const now = Date.now();
+    body.innerHTML = observers.map(o => {
+      const displayName = o.name || o.email || 'Anonymous';
+      const initials    = displayName.slice(0, 2).toUpperCase();
+      const minutesAgo  = Math.max(0, Math.round((now - (o.joined || now)) / 60000));
+      const joinedLabel = minutesAgo === 0 ? 'Just joined' : `${minutesAgo}m ago`;
+      return `
+        <div class="observer-list-item">
+          <div class="observer-list-avatar">${escHtml(initials)}</div>
+          <div class="observer-list-info">
+            <div class="observer-list-name">${escHtml(displayName)}</div>
+            ${o.email && o.name ? `<div class="observer-list-email">${escHtml(o.email)}</div>` : ''}
+          </div>
+          <div class="observer-list-time">${escHtml(joinedLabel)}</div>
+        </div>`;
+    }).join('');
+  }
+
+  _showObserverList() {
+    const n     = this._liveObservers.length;
+    const title = document.getElementById('mobservers-title');
+    const body  = document.getElementById('mobservers-body');
+    if (title) title.textContent = `Observers (${n})`;
+    if (body)  this._renderObserverListBody(body);
+    this._openModal('modal-observers');
+  }
+
   // ─── Start Live Session ───────────────────────────────────────────────────
 
   _startLiveSession(sessionData, { resuming = false } = {}) {
@@ -2277,9 +2331,12 @@ class App {
         this.liveState = state;
         this._onLiveStateChange();
       },
-      onPeerChange: (count) => {
-        const el = document.getElementById('live-observer-count');
-        if (el) el.textContent = `${count} observer${count !== 1 ? 's' : ''}`;
+      onPeerChange: (count) => this._updateObserverCount(count),
+      onObserversChange: (observers) => {
+        this._liveObservers = observers;
+        // Refresh the popover if it's open
+        const body = document.getElementById('mobservers-body');
+        if (body) this._renderObserverListBody(body);
       },
       onConnectionChange: (isOnline) => this._handleConnectionChange(isOnline),
       onError: (msg) => this._toast(msg, 'error'),
@@ -2485,7 +2542,11 @@ class App {
     });
 
     try {
-      await this.live.join(code);
+      const user = this.auth?.currentUser;
+      await this.live.join(code, {
+        email: user?.email   || null,
+        name:  this._userProfile?.singerName || user?.displayName || null,
+      });
     } catch (err) {
       this._toast(err.message, 'error');
       this.live?.leave();
