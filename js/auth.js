@@ -6,6 +6,9 @@ import {
   signOut as _fbSignOut,
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import {
+  getDatabase, ref, get, set,
+} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
 const FIREBASE_CONFIG = {
   apiKey:            'AIzaSyB5ljPjYYHikxCZMFMa41oYHOHO41EeKso',
@@ -17,13 +20,17 @@ const FIREBASE_CONFIG = {
   appId:             '1:26737059113:web:dd9019a0ca7f9968be0338',
 };
 
+const PROFILE_BASE = 'melody-miracle/users';
+
 function _getApp() {
   return getApps().length ? getApps()[0] : initializeApp(FIREBASE_CONFIG);
 }
 
 export class AuthManager {
   constructor(onUserChange) {
-    this._auth = getAuth(_getApp());
+    const app  = _getApp();
+    this._auth = getAuth(app);
+    this._db   = getDatabase(app);
     this._user = null;
     onAuthStateChanged(this._auth, user => {
       this._user = user;
@@ -40,5 +47,18 @@ export class AuthManager {
 
   async signOut() {
     await _fbSignOut(this._auth);
+  }
+
+  async loadProfile(uid) {
+    try {
+      const snap = await get(ref(this._db, `${PROFILE_BASE}/${uid}/profile`));
+      return snap.val() || null;
+    } catch {
+      return null;
+    }
+  }
+
+  async saveProfile(uid, data) {
+    await set(ref(this._db, `${PROFILE_BASE}/${uid}/profile`), data);
   }
 }
