@@ -1,12 +1,12 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260807.12';
+const CACHE = 'melody-miracle-20260807.13';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260807.11'; // app.js (observer list feature)
-const V_CSS  = '20260807.5'; // style.css (observer list styles)
+const V_APP  = '20260807.12'; // app.js (pass uid to join; dedup observers)
+const V_CSS  = '20260807.5'; // style.css (unchanged)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
-const V_CORE = '20260807.1'; // store.js, github-store.js, live.js (observer email capture)
+const V_CORE = '20260807.2'; // live.js (uid-keyed presence to prevent duplicates)
 const V_FAV  = '20260806.2'; // favourites.js (unchanged)
 const PRECACHE = [
   './',

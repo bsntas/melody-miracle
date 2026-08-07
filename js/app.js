@@ -2544,6 +2544,7 @@ class App {
     try {
       const user = this.auth?.currentUser;
       await this.live.join(code, {
+        uid:   user?.uid     || null,
         email: user?.email   || null,
         name:  this._userProfile?.singerName || user?.displayName || null,
       });

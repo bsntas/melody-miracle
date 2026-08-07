@@ -178,7 +178,7 @@ export class LiveSession {
   }
 
   // ── Participant: join an existing session ─────────────────────────────────
-  join(code, { email, name } = {}) {
+  join(code, { uid, email, name } = {}) {
     return new Promise((resolve, reject) => {
       this.roomCode = code;
       this.isHost   = false;
@@ -225,11 +225,20 @@ export class LiveSession {
           resolved = true;
           clearTimeout(joinTimeout);
           this._watchConnection();
-          // Register own presence so coordinator sees an accurate count and identity
+          // Register own presence so coordinator sees an accurate count and identity.
+          // Use the stable Firebase Auth UID as the key when available — set() on an
+          // existing key just updates the node without triggering onChildAdded, so the
+          // same person rejoining during a session doesn't produce a duplicate entry.
           const presData = { joined: Date.now() };
           if (email) presData.email = email;
           if (name)  presData.name  = name;
-          const presRef     = push(obsRef, presData);
+          let presRef;
+          if (uid) {
+            presRef = ref(db, `${DB_PATH}/${code}/observers/${uid}`);
+            set(presRef, presData).catch(() => {});
+          } else {
+            presRef = push(obsRef, presData);
+          }
           this._presenceRef = presRef;
           resolve();
         }
