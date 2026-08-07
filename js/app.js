@@ -1,10 +1,10 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260726.2';
 import { GitHubStore } from './github-store.js?v=20260726.2';
 import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
-import { AuthManager } from './auth.js?v=20260806.2';
+import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260806.3 loaded');
+console.log('[MM] app.js v20260807.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -87,8 +87,9 @@ class App {
     // Dashboard period filter
     this._dashPeriod = 'all';
 
-    this.auth       = null;
-    this.favourites = new FavouritesStore();
+    this.auth        = null;
+    this._userProfile = null;  // { singerName, displayName, email, photoURL }
+    this.favourites  = new FavouritesStore();
 
     // Series filter (null = all series)
     try {
@@ -726,6 +727,9 @@ class App {
       if (e.target === document.getElementById('modal-join-session')) this._closeModal('modal-join-session');
     });
 
+    // Onboarding modal
+    this._bindOnboarding();
+
     // Persistent delegated remove-bhajan listener on the stable session container.
     // Per-element listeners attached during _renderLiveSession are lost whenever Firebase
     // triggers a re-render (onStateChange → innerHTML replaced). Delegation on #session-content
@@ -1084,7 +1088,8 @@ class App {
   _renderDashboard() {
     // Date / greeting
     const now = new Date();
-    const greeting = 'Sairam 🙏';
+    const singerName = this._userProfile?.singerName;
+    const greeting = singerName ? `Sairam, ${singerName} 🙏` : 'Sairam 🙏';
     document.getElementById('dash-greeting').textContent = greeting;
     document.getElementById('dash-date').textContent = now.toLocaleDateString('en-IN', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
@@ -1353,9 +1358,11 @@ class App {
     const sungEl = document.getElementById('filter-sung');
     if (sungEl) {
       const prev = sungEl.value;
+      const mySingerName = this._userProfile?.singerName;
       const singers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
       sungEl.innerHTML = `<option value="">All Bhajans</option>
         ${this.auth?.currentUser ? '<option value="favourites">★ My Favourites</option>' : ''}
+        ${mySingerName ? `<option value="${escHtml(mySingerName)}">★ Sung by me</option>` : ''}
         <option value="sung">Sung Bhajans</option>
         <optgroup label="By Singer">
           ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}
@@ -2173,7 +2180,12 @@ class App {
   _detailEditMode = false;
   _liveEditMode = false;
 
-  _openNewSession(backdated = false) {
+  async _openNewSession(backdated = false) {
+    if (!await this.requireAuth()) {
+      this._toast('Sign in to create or manage sessions', 'warn');
+      return;
+    }
+
     this._sfIsBackdated = backdated;
 
     document.getElementById('sf-date').value = todayISO();
@@ -2376,6 +2388,11 @@ class App {
   // ─── Join Session ─────────────────────────────────────────────────────────
 
   async _openJoinModal() {
+    if (!await this.requireAuth()) {
+      this._toast('Sign in to join a session', 'warn');
+      return;
+    }
+
     const select = document.getElementById('mjoin-series');
     const errEl  = document.getElementById('mjoin-fetch-error');
     select.innerHTML = '<option value="" disabled selected>Loading…</option>';
@@ -2492,6 +2509,15 @@ class App {
       singerSel.innerHTML = `<option value="">Select singer…</option>` +
         suggestions.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
       singerSel.value = '';
+    }
+
+    // Auto-add the logged-in user's singer name as the first chip
+    const mySingerName = this._userProfile?.singerName;
+    if (mySingerName && !this._mabSingers.includes(mySingerName)) {
+      this._mabSingers.push(mySingerName);
+      this._mabRenderSingerChips();
+      this._mabUpdatePitchHint?.();
+      this._mabUpdateSuggChips?.();
     }
 
     if (preselect) {
@@ -3537,6 +3563,73 @@ class App {
 
   // ─── Auth ─────────────────────────────────────────────────────────────────
 
+  // Returns true if the user is (or becomes) signed in. Triggers sign-in popup
+  // if needed. Call with `if (!await this.requireAuth()) return;` at the top of
+  // any write action that requires an authenticated user.
+  async requireAuth() {
+    if (this.auth?.currentUser) return true;
+    try { await this._handleSignIn(); } catch { return false; }
+    return !!(this.auth?.currentUser);
+  }
+
+  _bindOnboarding() {
+    document.getElementById('btn-onboard-save')?.addEventListener('click', () => this._submitOnboarding());
+    document.getElementById('btn-onboard-skip')?.addEventListener('click', () => {
+      this._closeModal('modal-onboarding');
+      this._toast('You can set your singer name anytime from the account menu');
+    });
+    document.getElementById('onboard-singer-new')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') this._submitOnboarding();
+    });
+    // "Set singer name" from the auth dropdown
+    document.getElementById('btn-set-singer-name')?.addEventListener('click', () => {
+      document.getElementById('auth-dropdown')?.classList.add('hidden');
+      if (this.auth?.currentUser) this._openOnboardingModal();
+    });
+  }
+
+  _openOnboardingModal() {
+    const allSingers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
+    const select = document.getElementById('onboard-singer-select');
+    if (select) {
+      select.innerHTML = `<option value="">— Pick from existing singers —</option>` +
+        allSingers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
+      // Pre-select current singerName if one is already set
+      if (this._userProfile?.singerName) select.value = this._userProfile.singerName;
+      else select.value = '';
+    }
+    const textInp = document.getElementById('onboard-singer-new');
+    if (textInp) textInp.value = '';
+    this._openModal('modal-onboarding');
+    setTimeout(() => select?.focus(), 100);
+  }
+
+  async _submitOnboarding() {
+    const user = this.auth?.currentUser;
+    if (!user) return;
+    const select   = document.getElementById('onboard-singer-select');
+    const textInp  = document.getElementById('onboard-singer-new');
+    const singerName = (textInp?.value.trim() || select?.value || '').trim();
+    if (!singerName) { this._toast('Please enter or select a name', 'warn'); return; }
+    const profile = {
+      singerName,
+      displayName: user.displayName || '',
+      email:       user.email       || '',
+      photoURL:    user.photoURL    || '',
+      updatedAt:   Date.now(),
+    };
+    try {
+      await this.auth.saveProfile(user.uid, profile);
+      this._userProfile = profile;
+      this._closeModal('modal-onboarding');
+      this._renderAuthButton(user);
+      this._route();
+      this._toast(`Singer name set to "${singerName}"`, 'success');
+    } catch {
+      this._toast('Could not save — please try again', 'error');
+    }
+  }
+
   _initAuth() {
     try {
       this.auth = new AuthManager(user => this._onAuthStateChange(user));
@@ -3579,18 +3672,33 @@ class App {
   }
 
   async _onAuthStateChange(user) {
-    this._renderAuthButton(user);
     if (user) {
+      // Load profile first so _renderAuthButton can show singerName
+      try {
+        this._userProfile = await this.auth.loadProfile(user.uid);
+      } catch {
+        this._userProfile = null;
+      }
+      this._renderAuthButton(user);
+      // First sign-in or no singer name set — show onboarding
+      if (!this._userProfile?.singerName) {
+        this._openOnboardingModal();
+      }
       try {
         await this.favourites.load(user.uid, () => this._syncFavUI());
         this._syncFavUI();
-        this._toast(`Welcome, ${user.displayName || user.email}!`, 'success');
+        const name = this._userProfile?.singerName || user.displayName || user.email;
+        this._toast(`Welcome, ${name}!`, 'success');
       } catch (e) {
         console.warn('Favourites load failed:', e);
       }
+      this._route(); // re-render to apply personalization (greeting, browse filter, etc.)
     } else {
+      this._userProfile = null;
+      this._renderAuthButton(user);
       this.favourites.unload();
       this._syncFavUI();
+      this._route();
     }
   }
 
@@ -3611,19 +3719,40 @@ class App {
     const avatarEl = document.getElementById('auth-avatar');
     if (!btn || !avatarEl) return;
 
+    const profileLink    = document.getElementById('auth-profile-link');
+    const setSingerBtn   = document.getElementById('btn-set-singer-name');
+
     if (user) {
-      const initial = (user.displayName || user.email || '?')[0].toUpperCase();
+      const singerName = this._userProfile?.singerName;
+      const initial = (singerName || user.displayName || user.email || '?')[0].toUpperCase();
       avatarEl.textContent = initial;
       avatarEl.className   = 'auth-avatar auth-avatar-signed-in';
-      btn.title = user.displayName || user.email || 'Account';
+      btn.title = singerName || user.displayName || user.email || 'Account';
+
       const nameEl  = document.getElementById('auth-user-name');
       const emailEl = document.getElementById('auth-user-email');
-      if (nameEl)  nameEl.textContent  = user.displayName || '';
+      if (nameEl)  nameEl.textContent  = singerName ? `${singerName}` : (user.displayName || '');
       if (emailEl) emailEl.textContent = user.email || '';
+
+      if (profileLink) {
+        if (singerName) {
+          profileLink.href = `#singer/${encodeURIComponent(singerName)}`;
+          profileLink.textContent = `My Profile (${singerName})`;
+          profileLink.classList.remove('hidden');
+          profileLink.onclick = () => document.getElementById('auth-dropdown')?.classList.add('hidden');
+        } else {
+          profileLink.classList.add('hidden');
+        }
+      }
+      if (setSingerBtn) {
+        setSingerBtn.textContent = singerName ? 'Change singer name' : 'Set singer name';
+      }
     } else {
       avatarEl.textContent = '👤';
       avatarEl.className   = 'auth-avatar';
       btn.title = 'Sign in with Google';
+      profileLink?.classList.add('hidden');
+      if (setSingerBtn) setSingerBtn.textContent = 'Set singer name';
     }
   }
 

@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260806.4">
+  <link rel="stylesheet" href="css/style.css?v=20260807.1">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -59,6 +59,8 @@
                 <div class="auth-user-name" id="auth-user-name"></div>
                 <div class="auth-user-email" id="auth-user-email"></div>
               </div>
+              <a href="#" id="auth-profile-link" class="btn btn-ghost btn-sm btn-block auth-dropdown-link hidden">My Profile</a>
+              <button class="btn btn-ghost btn-sm btn-block auth-dropdown-link" id="btn-set-singer-name">Set singer name</button>
               <button class="btn btn-ghost btn-sm btn-block" id="btn-sign-out">Sign out</button>
             </div>
           </div>
@@ -722,7 +724,32 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260806.4"></script>
+  <!-- Onboarding Modal — shown on first Google sign-in to link account to a singer name -->
+  <div id="modal-onboarding" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Welcome to Melody Miracle 🙏</h3>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">To participate in sessions, tell us what name you sing under. This links your account to your session history.</p>
+        <div class="form-group">
+          <label class="form-label">Your singer name</label>
+          <select id="onboard-singer-select" class="form-input">
+            <option value="">— Pick from existing singers —</option>
+          </select>
+          <div class="onboard-or-divider">or type a new name</div>
+          <input type="text" id="onboard-singer-new" class="form-input"
+            placeholder="Enter your name…" autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-onboard-skip">Skip for now</button>
+        <button class="btn btn-primary" id="btn-onboard-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=20260807.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
