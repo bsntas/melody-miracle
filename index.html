@@ -517,7 +517,10 @@
         </div>
 
         <div class="divider" style="margin-top:1rem;margin-bottom:1rem"></div>
-        <div class="settings-section-title" style="margin-bottom:0.5rem">GitHub Sync</div>
+        <div class="settings-section-title" style="margin-bottom:0.5rem">
+          GitHub Sync
+          <button class="btn btn-ghost btn-icon" id="btn-gh-info" title="How to create a token" aria-label="How to create a token" style="font-size:0.78rem;vertical-align:middle;margin-left:0.3rem;padding:0 0.25rem">ℹ</button>
+        </div>
         <div id="sync-status-banner" class="sync-banner hidden"></div>
 
         <p class="settings-desc">
@@ -525,7 +528,7 @@
           and stays in sync across all your devices.
         </p>
 
-        <div class="settings-how">
+        <div class="settings-how hidden" id="settings-how">
           <div class="settings-step">
             <span class="step-num">1</span>
             <span>Go to <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Settings → Fine-grained tokens</a></span>
@@ -750,7 +753,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260807.8"></script>
+  <script type="module" src="js/app.js?v=20260807.9"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
