@@ -2,6 +2,168 @@
   {
     "bhajans": [
       {
+        "addedAt": 1785588836688,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "jai-ganesh-jai-ganesh-jai",
+        "bhajan_title": "Jai Ganesh Jai Ganesh Jai",
+        "id": "e_msadho406p6q",
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1785499976823,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "ghana-ghana-neela-vadana-ati",
+        "bhajan_title": "Ghana Ghana Neela Vadana Ati",
+        "id": "e_ms8wl3efybya",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1785583860951,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "madhusudhana-harey-madhava",
+        "bhajan_title": "Madhusudhana Harey Madhava",
+        "id": "e_msaaj0t25z70",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Bishal Da"
+        ]
+      },
+      {
+        "addedAt": 1785587946599,
+        "bhajan_deity": "Rama",
+        "bhajan_id": "rama-rama-jaya-raghukula-tilaka",
+        "bhajan_title": "Rama Rama Jaya Raghukula Tilaka",
+        "id": "e_msacylbbzdy7",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1785574330002,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "sheetala-charanam-komala-charanam",
+        "bhajan_title": "Sheetala Charanam Komala Charanam",
+        "id": "e_msa4uqoia4u7",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1785588276703,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "guruvara-naam-pavana-naam",
+        "bhajan_title": "Guruvara Naam Pavana Naam",
+        "id": "e_msad5o0vw4vh",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Bhawana Bhauju"
+        ]
+      },
+      {
+        "addedAt": 1785579204604,
+        "bhajan_deity": "Sai, Rama, Narayana",
+        "bhajan_id": "karunanta-ranga-kariraja-varada-kamalesha",
+        "bhajan_title": "Karunanta Ranga Kariraja Varada Kamalesha",
+        "id": "e_msa7r7y4pq9f",
+        "pitch": "1.5 Madhyam / F#",
+        "pitch_indian": "1.5 Madhyam",
+        "pitch_western": "F#",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1785580131574,
+        "bhajan_deity": "Vittala",
+        "bhajan_id": "deena-bandhu-vittala-jai",
+        "bhajan_title": "Deena Bandhu Vittala Jai",
+        "id": "e_msa8b37ah6vl",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Pemila"
+        ]
+      },
+      {
+        "addedAt": 1785590048515,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "guru-brahma-guru-vishnu-guru-0",
+        "bhajan_title": "Guru Brahma Guru Vishnu Guru",
+        "id": "e_msae7n5vyoc2",
+        "pitch": "4 Pancham / F",
+        "pitch_indian": "4 Pancham",
+        "pitch_western": "F",
+        "singers": [
+          "Gigme",
+          "Ashik"
+        ]
+      },
+      {
+        "addedAt": 1785591188165,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "jis-pal-mein-sai-ka-naam-ho",
+        "bhajan_title": "Jis Pal Mein Sai Ka Naam Ho",
+        "id": "e_msaew2ithw28",
+        "notes": "Minor",
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
+        "singers": [
+          "Group"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-26T11:52:36.809Z",
+    "currentBhajan": "e_msaew2ithw28",
+    "date": "2026-08-01",
+    "id": "weekendbhajansecityhsr-2026-08-01",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-08-01",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-08-01T13:33:47.476Z",
+    "status": "completed",
+    "singers": [
+      "Sayujya",
+      "Isha",
+      "Bishal Da",
+      "Karam",
+      "Anisha",
+      "Bhawana Bhauju",
+      "Basanta",
+      "Pemila",
+      "Gigme",
+      "Ashik",
+      "Group"
+    ],
+    "endedAt": "2026-08-01T14:32:10.109Z",
+    "duration": 3503
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1784750162287,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "mangala-dayaka-hey-gananatha",
@@ -8245,11 +8407,11 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Anisha",
       "Ashik",
       "Basanta",
+      "Karam",
       "Gigme",
-      "Karam"
+      "Anisha"
     ],
     "bhajans": [
       {
@@ -8295,18 +8457,18 @@
         "addedAt": null
       },
       {
-        "id": "e_back2024052604",
-        "bhajan_id": "hey-deena-dayalu-harey-harey",
-        "bhajan_title": "Hey Deena Dayalu Harey Harey",
-        "bhajan_deity": "Sai",
+        "id": "e_msisewjylilf",
+        "bhajan_id": "hey-deena-dayalu-sai-rama",
+        "bhajan_title": "Hey Deena Dayalu Sai Rama",
+        "bhajan_deity": "Rama",
         "singers": [
           "Anisha"
         ],
-        "pitch": "6.5 Pancham / A#",
-        "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#",
+        "pitch": "3 Madhyam / A",
+        "pitch_indian": "3 Madhyam",
+        "pitch_western": "A",
         "notes": null,
-        "addedAt": null
+        "addedAt": 1786097631310
       },
       {
         "id": "e_back2024052605",
@@ -9925,167 +10087,5 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
-  },
-  {
-    "bhajans": [
-      {
-        "addedAt": 1785588836688,
-        "bhajan_deity": "Ganesha",
-        "bhajan_id": "jai-ganesh-jai-ganesh-jai",
-        "bhajan_title": "Jai Ganesh Jai Ganesh Jai",
-        "id": "e_msadho406p6q",
-        "pitch": "7 Pancham / B",
-        "pitch_indian": "7 Pancham",
-        "pitch_western": "B",
-        "singers": [
-          "Sayujya"
-        ]
-      },
-      {
-        "addedAt": 1785499976823,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "ghana-ghana-neela-vadana-ati",
-        "bhajan_title": "Ghana Ghana Neela Vadana Ati",
-        "id": "e_ms8wl3efybya",
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "singers": [
-          "Isha"
-        ]
-      },
-      {
-        "addedAt": 1785583860951,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "madhusudhana-harey-madhava",
-        "bhajan_title": "Madhusudhana Harey Madhava",
-        "id": "e_msaaj0t25z70",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "singers": [
-          "Bishal Da"
-        ]
-      },
-      {
-        "addedAt": 1785587946599,
-        "bhajan_deity": "Rama",
-        "bhajan_id": "rama-rama-jaya-raghukula-tilaka",
-        "bhajan_title": "Rama Rama Jaya Raghukula Tilaka",
-        "id": "e_msacylbbzdy7",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "singers": [
-          "Karam"
-        ]
-      },
-      {
-        "addedAt": 1785574330002,
-        "bhajan_deity": "Guru",
-        "bhajan_id": "sheetala-charanam-komala-charanam",
-        "bhajan_title": "Sheetala Charanam Komala Charanam",
-        "id": "e_msa4uqoia4u7",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "singers": [
-          "Anisha"
-        ]
-      },
-      {
-        "addedAt": 1785588276703,
-        "bhajan_deity": "Guru",
-        "bhajan_id": "guruvara-naam-pavana-naam",
-        "bhajan_title": "Guruvara Naam Pavana Naam",
-        "id": "e_msad5o0vw4vh",
-        "pitch": "5.5 Pancham / G#",
-        "pitch_indian": "5.5 Pancham",
-        "pitch_western": "G#",
-        "singers": [
-          "Bhawana Bhauju"
-        ]
-      },
-      {
-        "addedAt": 1785579204604,
-        "bhajan_deity": "Sai, Rama, Narayana",
-        "bhajan_id": "karunanta-ranga-kariraja-varada-kamalesha",
-        "bhajan_title": "Karunanta Ranga Kariraja Varada Kamalesha",
-        "id": "e_msa7r7y4pq9f",
-        "pitch": "1.5 Madhyam / F#",
-        "pitch_indian": "1.5 Madhyam",
-        "pitch_western": "F#",
-        "singers": [
-          "Basanta"
-        ]
-      },
-      {
-        "addedAt": 1785580131574,
-        "bhajan_deity": "Vittala",
-        "bhajan_id": "deena-bandhu-vittala-jai",
-        "bhajan_title": "Deena Bandhu Vittala Jai",
-        "id": "e_msa8b37ah6vl",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "singers": [
-          "Pemila"
-        ]
-      },
-      {
-        "addedAt": 1785590048515,
-        "bhajan_deity": "Guru",
-        "bhajan_id": "guru-brahma-guru-vishnu-guru-0",
-        "bhajan_title": "Guru Brahma Guru Vishnu Guru",
-        "id": "e_msae7n5vyoc2",
-        "pitch": "4 Pancham / F",
-        "pitch_indian": "4 Pancham",
-        "pitch_western": "F",
-        "singers": [
-          "Gigme",
-          "Ashik"
-        ]
-      },
-      {
-        "addedAt": 1785591188165,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "jis-pal-mein-sai-ka-naam-ho",
-        "bhajan_title": "Jis Pal Mein Sai Ka Naam Ho",
-        "id": "e_msaew2ithw28",
-        "notes": "Minor",
-        "pitch": "7 Pancham / B",
-        "pitch_indian": "7 Pancham",
-        "pitch_western": "B",
-        "singers": [
-          "Group"
-        ]
-      }
-    ],
-    "createdAt": "2026-07-26T11:52:36.809Z",
-    "currentBhajan": "e_msaew2ithw28",
-    "date": "2026-08-01",
-    "id": "weekendbhajansecityhsr-2026-08-01",
-    "isBackdated": false,
-    "label": "Weekend Bhajans E-City HSR",
-    "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-08-01",
-    "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-08-01T13:33:47.476Z",
-    "status": "completed",
-    "singers": [
-      "Sayujya",
-      "Isha",
-      "Bishal Da",
-      "Karam",
-      "Anisha",
-      "Bhawana Bhauju",
-      "Basanta",
-      "Pemila",
-      "Gigme",
-      "Ashik",
-      "Group"
-    ],
-    "endedAt": "2026-08-01T14:32:10.109Z",
-    "duration": 3503
   }
 ]
