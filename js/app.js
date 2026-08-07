@@ -1839,7 +1839,7 @@ class App {
       }
 
       el.innerHTML = open.map(({ code, state }) => `
-        <button class="open-session-card" data-code="${escHtml(code)}">
+        <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}">
           <div class="open-session-info">
             <div class="open-session-label">${escHtml(state.label || code)}</div>
             <div class="open-session-meta">
@@ -1849,12 +1849,14 @@ class App {
             </div>
           </div>
           ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
-        </button>
+        </div>
       `).join('');
 
-      el.querySelectorAll('.open-session-card').forEach(btn => {
-        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
-      });
+      if (!hasDraft) {
+        el.querySelectorAll('.open-session-card').forEach(btn => {
+          btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+        });
+      }
     } catch {
       const el2 = document.getElementById('open-sessions-list');
       if (el2?.isConnected) el2.innerHTML = '<div class="open-sessions-empty">Could not check for active sessions</div>';
@@ -1896,7 +1898,7 @@ class App {
         </div>
         <div class="open-sessions-list">
           ${open.map(({ code, state }) => `
-            <button class="open-session-card" data-code="${escHtml(code)}">
+            <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}">
               <div class="open-session-info">
                 <div class="open-session-label">${escHtml(state.label || code)}</div>
                 <div class="open-session-meta">
@@ -1906,14 +1908,16 @@ class App {
                 </div>
               </div>
               ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
-            </button>
+            </div>
           `).join('')}
         </div>
       `;
 
-      container.querySelectorAll('.open-session-card').forEach(btn => {
-        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
-      });
+      if (!hasDraft) {
+        container.querySelectorAll('.open-session-card').forEach(btn => {
+          btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+        });
+      }
     } catch {
       document.getElementById('dash-open-sessions')?.classList.add('hidden');
     }

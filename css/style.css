@@ -538,6 +538,12 @@ img { max-width: 100%; }
 .open-session-card:hover {
   border-color: var(--saffron-light); box-shadow: var(--shadow-md);
 }
+.open-session-card--no-action {
+  cursor: default; pointer-events: none; opacity: 0.75;
+}
+.open-session-card--no-action:hover {
+  border-color: var(--border); box-shadow: none;
+}
 .open-session-info { flex: 1; min-width: 0; }
 .open-session-label {
   font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem;
