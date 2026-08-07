@@ -90,15 +90,17 @@ function _getDb() {
 }
 
 export class LiveSession {
-  constructor({ onStateChange, onPeerChange, onConnectionChange, onError }) {
+  constructor({ onStateChange, onPeerChange, onObserversChange, onConnectionChange, onError }) {
     this.onStateChange      = onStateChange;
     this.onPeerChange       = onPeerChange;
+    this.onObserversChange  = onObserversChange || null;
     this.onConnectionChange = onConnectionChange || null;
     this.onError            = onError;
 
     this.isHost       = false;  // true for session coordinator; only affects app.js UI
     this.roomCode     = null;
     this.peerCount    = 0;      // live participant count (coordinator display)
+    this._observers   = new Map(); // key → { key, joined, email?, name? }
     this._db           = null;
     this._stateRef     = null;
     this._presenceRef  = null;   // this participant's own presence node
@@ -141,17 +143,8 @@ export class LiveSession {
         }
         this._watchState(); // coordinator also listens so participant edits update the UI
 
-        // Track participant count via presence nodes
-        this.peerCount = 0;
-        const unsubOA = onChildAdded(obsRef, () => {
-          this.peerCount++;
-          this.onPeerChange(this.peerCount);
-        });
-        const unsubOR = onChildRemoved(obsRef, () => {
-          this.peerCount = Math.max(0, this.peerCount - 1);
-          this.onPeerChange(this.peerCount);
-        });
-        this._unsubs.push(unsubOA, unsubOR);
+        // Track participant count and details via presence nodes
+        this._bindObserverListeners(obsRef);
       };
 
       // Check whether an active session already exists for this room code.
@@ -185,7 +178,7 @@ export class LiveSession {
   }
 
   // ── Participant: join an existing session ─────────────────────────────────
-  join(code) {
+  join(code, { email, name } = {}) {
     return new Promise((resolve, reject) => {
       this.roomCode = code;
       this.isHost   = false;
@@ -232,8 +225,11 @@ export class LiveSession {
           resolved = true;
           clearTimeout(joinTimeout);
           this._watchConnection();
-          // Register own presence so coordinator sees an accurate count
-          const presRef     = push(obsRef, { joined: Date.now() });
+          // Register own presence so coordinator sees an accurate count and identity
+          const presData = { joined: Date.now() };
+          if (email) presData.email = email;
+          if (name)  presData.name  = name;
+          const presRef     = push(obsRef, presData);
           this._presenceRef = presRef;
           resolve();
         }
@@ -257,16 +253,7 @@ export class LiveSession {
       this._presenceRef = null;
     }
     const obsRef = ref(this._db, `${DB_PATH}/${this.roomCode}/observers`);
-    this.peerCount = 0;
-    const unsubOA = onChildAdded(obsRef, () => {
-      this.peerCount++;
-      this.onPeerChange(this.peerCount);
-    });
-    const unsubOR = onChildRemoved(obsRef, () => {
-      this.peerCount = Math.max(0, this.peerCount - 1);
-      this.onPeerChange(this.peerCount);
-    });
-    this._unsubs.push(unsubOA, unsubOR);
+    this._bindObserverListeners(obsRef);
   }
 
   // ── All participants: write state directly to Firebase ────────────────────
@@ -347,6 +334,28 @@ export class LiveSession {
     this._unsubs.push(unsub);
   }
 
+  // Attach onChildAdded / onChildRemoved on the observers ref.
+  // Tracks count AND per-observer details; fires both onPeerChange and onObserversChange.
+  _bindObserverListeners(obsRef) {
+    this.peerCount  = 0;
+    this._observers = new Map();
+
+    const unsubOA = onChildAdded(obsRef, (snap) => {
+      const data = snap.val() || {};
+      this._observers.set(snap.key, { key: snap.key, ...data });
+      this.peerCount++;
+      this.onPeerChange(this.peerCount);
+      this.onObserversChange?.(Array.from(this._observers.values()));
+    });
+    const unsubOR = onChildRemoved(obsRef, (snap) => {
+      this._observers.delete(snap.key);
+      this.peerCount = Math.max(0, this.peerCount - 1);
+      this.onPeerChange(this.peerCount);
+      this.onObserversChange?.(Array.from(this._observers.values()));
+    });
+    this._unsubs.push(unsubOA, unsubOR);
+  }
+
   _cleanup() {
     this._unsubs.forEach(fn => fn());
     this._unsubs      = [];
@@ -355,6 +364,7 @@ export class LiveSession {
     this._presenceRef = null;
     this._localState   = null;
     this._pendingState = null;
+    this._observers   = new Map();
     this.roomCode      = null;
     this.isHost        = false;
     this.peerCount     = 0;
