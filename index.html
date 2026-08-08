@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260808.5">
+  <link rel="stylesheet" href="css/style.css?v=20260808.6">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -183,17 +183,17 @@
           </div>
 
           <div class="search-bar-wrap">
-            <input type="search" id="browse-search" class="search-input"
-              placeholder="Search by title, deity, raga…" autocomplete="off" autocorrect="off">
-          </div>
-
-          <div class="filter-bar-wrap">
             <button class="filter-btn" id="btn-clear-filters" title="Open filters" aria-label="Open filters">
               <svg class="filter-btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
               </svg>
               <span class="filter-btn-x" aria-hidden="true">✕</span>
             </button>
+            <input type="search" id="browse-search" class="search-input"
+              placeholder="Search by title, deity, raga…" autocomplete="off" autocorrect="off">
+          </div>
+
+          <div class="filter-bar-wrap">
             <div class="filter-bar" id="browse-filter-chips">
               <!-- Active filter summary chips rendered here by JS -->
             </div>
@@ -825,7 +825,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260808.5"></script>
+  <script type="module" src="js/app.js?v=20260808.6"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

@@ -344,9 +344,13 @@ img { max-width: 100%; }
 .empty-state p { font-size: 0.95rem; }
 
 /* ─── Search & Filters ───────────────────────────────────────────────────── */
-.search-bar-wrap { margin-bottom: 0.75rem; }
+.search-bar-wrap {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
 .search-input {
-  width: 100%; padding: 0.65rem 1rem 0.65rem 2.5rem;
+  flex: 1; min-width: 0;
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
   border: 1.5px solid var(--border); border-radius: var(--radius);
   font-size: 0.95rem; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.56a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 0.75rem center;
   transition: border-color .15s;
@@ -354,9 +358,8 @@ img { max-width: 100%; }
 }
 .search-input:focus { outline: none; border-color: var(--border-focus); }
 
-/* Filter bar — wrapper holds the button + scrollable strip */
+/* Filter bar — scrollable chip strip below search row */
 .filter-bar-wrap {
-  display: flex; align-items: center; gap: 0.5rem;
   margin-bottom: 1rem; position: relative;
 }
 /* Right-edge fade signals more chips are scrollable */
