@@ -369,19 +369,26 @@ img { max-width: 100%; }
   background: linear-gradient(to right, transparent, var(--surface));
 }
 
-/* Filter icon / clear button — always visible, left-anchored */
+/* Filter icon button — always shows funnel, saffron-filled when filters are active */
 .filter-btn {
   flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
   border: 1.5px solid var(--border); background: var(--surface);
   color: var(--text-3); display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: border-color .15s, background .15s, color .15s;
 }
-.filter-btn .filter-btn-x { display: none; font-size: 0.72rem; line-height: 1; }
 .filter-btn.active {
   border-color: var(--saffron); background: var(--saffron); color: #fff;
 }
-.filter-btn.active .filter-btn-icon { display: none; }
-.filter-btn.active .filter-btn-x { display: block; }
+
+/* Clear-all chip — ✕ circle at the start of the active filter strip */
+.filter-clear-chip {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid var(--saffron); background: var(--saffron); color: #fff;
+  font-size: 0.65rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .15s;
+}
+.filter-clear-chip:hover { background: var(--saffron-dark); border-color: var(--saffron-dark); }
 
 /* Chip strip — horizontally scrollable, no wrap */
 .filter-bar {

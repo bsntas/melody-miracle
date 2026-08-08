@@ -1576,6 +1576,13 @@ class App {
     if (language) labels.push(language);
     if (tempo) labels.push(tempo);
     if (level) labels.push(level);
+    if (labels.length === 0) return;
+    const clearChip = document.createElement('button');
+    clearChip.className = 'filter-clear-chip';
+    clearChip.textContent = '✕';
+    clearChip.setAttribute('aria-label', 'Clear all filters');
+    clearChip.addEventListener('click', e => { e.stopPropagation(); this._clearBrowseFilters(); });
+    strip.append(clearChip);
     labels.forEach(label => {
       const chip = document.createElement('span');
       chip.className = 'filter-active-chip';
