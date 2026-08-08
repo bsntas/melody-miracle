@@ -567,14 +567,7 @@ class App {
     document.getElementById('btn-sung-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
     // Filter modal
-    document.getElementById('btn-clear-filters')?.addEventListener('click', () => {
-      const btn = document.getElementById('btn-clear-filters');
-      if (btn?.classList.contains('active')) {
-        this._clearBrowseFilters();
-      } else {
-        this._openFilterModal();
-      }
-    });
+    document.getElementById('btn-clear-filters')?.addEventListener('click', () => this._openFilterModal());
     document.getElementById('mfilter-close')?.addEventListener('click', () => this._closeFilterModal());
     document.getElementById('modal-filters')?.addEventListener('click', e => {
       if (e.target === document.getElementById('modal-filters')) this._closeFilterModal();
