@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260808.2">
+  <link rel="stylesheet" href="css/style.css?v=20260808.3">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -187,23 +187,23 @@
               placeholder="Search by title, deity, raga…" autocomplete="off" autocorrect="off">
           </div>
 
-          <div class="filter-row" id="browse-filters">
-            <select class="filter-select" id="filter-sung">
+          <div class="filter-bar" id="browse-filters">
+            <select class="filter-chip" id="filter-sung">
               <option value="">All Bhajans</option>
             </select>
-            <select class="filter-select" id="filter-deity">
+            <select class="filter-chip" id="filter-deity">
               <option value="">All Deities</option>
             </select>
-            <select class="filter-select" id="filter-language">
+            <select class="filter-chip" id="filter-language">
               <option value="">All Languages</option>
             </select>
-            <select class="filter-select" id="filter-tempo">
+            <select class="filter-chip" id="filter-tempo">
               <option value="">All Tempos</option>
             </select>
-            <select class="filter-select" id="filter-level">
+            <select class="filter-chip" id="filter-level">
               <option value="">All Levels</option>
             </select>
-            <button class="btn-clear-filters" id="btn-clear-filters" style="display:none" title="Clear all filters">✕ Clear</button>
+            <button class="filter-chip filter-chip-clear" id="btn-clear-filters" style="display:none" title="Clear all filters">✕ Clear</button>
           </div>
 
           <div id="browse-list" class="bhajan-list"></div>
@@ -768,7 +768,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260808.2"></script>
+  <script type="module" src="js/app.js?v=20260808.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

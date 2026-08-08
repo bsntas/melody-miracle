@@ -1432,6 +1432,12 @@ class App {
     this._browsePage = 0;
     document.getElementById('browse-count-badge').textContent = this._browseFiltered.length;
 
+    // Reflect active state on each chip
+    [['filter-sung', sung], ['filter-deity', deity], ['filter-language', language],
+     ['filter-tempo', tempo], ['filter-level', level]].forEach(([id, val]) => {
+      document.getElementById(id)?.classList.toggle('active', !!val);
+    });
+
     const hasActiveFilter = !!(q || deity || language || tempo || level || sung);
     const clearBtn = document.getElementById('btn-clear-filters');
     if (clearBtn) clearBtn.style.display = hasActiveFilter ? '' : 'none';
