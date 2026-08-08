@@ -354,11 +354,38 @@ img { max-width: 100%; }
 }
 .search-input:focus { outline: none; border-color: var(--border-focus); }
 
-/* Filter chip strip — horizontally scrollable, no wrap */
+/* Filter bar — wrapper holds the button + scrollable strip */
+.filter-bar-wrap {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1rem; position: relative;
+}
+/* Right-edge fade signals more chips are scrollable */
+.filter-bar-wrap::after {
+  content: ''; pointer-events: none;
+  position: absolute; right: 0; top: 0; bottom: 2px; width: 2.5rem;
+  background: linear-gradient(to right, transparent, var(--surface));
+}
+
+/* Filter icon / clear button — always visible, left-anchored */
+.filter-btn {
+  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--text-3); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+}
+.filter-btn .filter-btn-x { display: none; font-size: 0.72rem; line-height: 1; }
+.filter-btn.active {
+  border-color: var(--saffron); background: var(--saffron); color: #fff;
+}
+.filter-btn.active .filter-btn-icon { display: none; }
+.filter-btn.active .filter-btn-x { display: block; }
+
+/* Chip strip — horizontally scrollable, no wrap */
 .filter-bar {
+  flex: 1; min-width: 0;
   display: flex; gap: 0.4rem; flex-wrap: nowrap;
   overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
-  margin-bottom: 1rem; padding-bottom: 2px;
+  padding-bottom: 2px;
 }
 .filter-bar::-webkit-scrollbar { display: none; }
 
@@ -381,13 +408,6 @@ img { max-width: 100%; }
   color: var(--saffron-dark); font-weight: 600;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23c2410c' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
 }
-/* Clear chip — no chevron, filled saffron */
-.filter-chip-clear {
-  background-image: none; padding-right: 0.6rem;
-  border-color: var(--saffron); background-color: var(--saffron);
-  color: #fff; font-weight: 600;
-}
-.filter-chip-clear:hover { background-color: var(--saffron-dark); border-color: var(--saffron-dark); }
 
 .bhajan-count-badge {
   display: inline-flex; align-items: center;

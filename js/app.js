@@ -1440,7 +1440,11 @@ class App {
 
     const hasActiveFilter = !!(q || deity || language || tempo || level || sung);
     const clearBtn = document.getElementById('btn-clear-filters');
-    if (clearBtn) clearBtn.style.display = hasActiveFilter ? '' : 'none';
+    if (clearBtn) {
+      clearBtn.classList.toggle('active', hasActiveFilter);
+      clearBtn.title = hasActiveFilter ? 'Clear all filters' : 'Filters';
+      clearBtn.setAttribute('aria-label', hasActiveFilter ? 'Clear all filters' : 'Filters');
+    }
 
     this._renderBrowsePage();
   }
