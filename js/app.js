@@ -1436,11 +1436,11 @@ class App {
       }
     }
 
-    // Populate by-singer select in the modal (keep first 2 static options: All Singers, All Sung Bhajans)
+    // Populate by-singer select in the modal (only static option: All Singers)
     const bySingerEl = document.getElementById('filter-by-singer');
     if (bySingerEl) {
       const prevSinger = bySingerEl.value;
-      while (bySingerEl.options.length > 2) bySingerEl.remove(2);
+      while (bySingerEl.options.length > 1) bySingerEl.remove(1);
       singers.forEach(n => bySingerEl.append(new Option(n, n)));
       if (prevSinger) bySingerEl.value = prevSinger;
     }
@@ -1472,6 +1472,21 @@ class App {
           const sEl = document.getElementById('filter-sung');
           if (!sEl) return;
           sEl.value = sEl.value === mySingerName ? '' : mySingerName;
+          const bsEl = document.getElementById('filter-by-singer');
+          if (bsEl) bsEl.value = '';
+          this._syncFilterModalUI();
+          this._applyBrowseFilters();
+        });
+        toggleRow.append(btn);
+      }
+      {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
+        btn.id = 'fmodal-toggle-allsung'; btn.textContent = '♪ All Sung';
+        btn.addEventListener('click', () => {
+          const sEl = document.getElementById('filter-sung');
+          if (!sEl) return;
+          sEl.value = sEl.value === 'sung' ? '' : 'sung';
           const bsEl = document.getElementById('filter-by-singer');
           if (bsEl) bsEl.value = '';
           this._syncFilterModalUI();
@@ -1576,6 +1591,13 @@ class App {
     if (language) labels.push(language);
     if (tempo) labels.push(tempo);
     if (level) labels.push(level);
+    if (labels.length === 0) return;
+    const clearChip = document.createElement('button');
+    clearChip.className = 'filter-clear-chip';
+    clearChip.textContent = '✕';
+    clearChip.setAttribute('aria-label', 'Clear all filters');
+    clearChip.addEventListener('click', e => { e.stopPropagation(); this._clearBrowseFilters(); });
+    strip.append(clearChip);
     labels.forEach(label => {
       const chip = document.createElement('span');
       chip.className = 'filter-active-chip';
@@ -1592,8 +1614,10 @@ class App {
     if (favsBtn) favsBtn.classList.toggle('active', sungVal === 'favourites');
     const sungBtn = document.getElementById('fmodal-toggle-sung');
     if (sungBtn) sungBtn.classList.toggle('active', !!(mySingerName && sungVal === mySingerName));
+    const allSungBtn = document.getElementById('fmodal-toggle-allsung');
+    if (allSungBtn) allSungBtn.classList.toggle('active', sungVal === 'sung');
 
-    const isSingerToggle = sungVal === 'favourites' || (mySingerName && sungVal === mySingerName);
+    const isSingerToggle = sungVal === 'favourites' || sungVal === 'sung' || (mySingerName && sungVal === mySingerName);
     const bySingerEl = document.getElementById('filter-by-singer');
     if (bySingerEl) {
       bySingerEl.value = isSingerToggle ? '' : sungVal;
