@@ -350,7 +350,7 @@ img { max-width: 100%; }
 }
 .search-input {
   flex: 1; min-width: 0;
-  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  padding: 0.55rem 1rem 0.55rem 2.5rem;
   border: 1.5px solid var(--border); border-radius: var(--radius);
   font-size: 0.95rem; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.56a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 0.75rem center;
   transition: border-color .15s;
@@ -371,7 +371,7 @@ img { max-width: 100%; }
 
 /* Filter icon button — always shows funnel, saffron-filled when filters are active */
 .filter-btn {
-  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
   border: 1.5px solid var(--border); background: var(--surface);
   color: var(--text-3); display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: border-color .15s, background .15s, color .15s;
@@ -398,26 +398,6 @@ img { max-width: 100%; }
   padding-bottom: 2px;
 }
 .filter-bar::-webkit-scrollbar { display: none; }
-
-.filter-chip {
-  flex: 0 0 auto;
-  padding: 0.32rem 0.7rem 0.32rem 0.6rem;
-  border: 1.5px solid var(--border); border-radius: 999px;
-  font-size: 0.78rem; font-family: inherit;
-  background: var(--surface); color: var(--text-2);
-  cursor: pointer; white-space: nowrap;
-  -webkit-appearance: none; appearance: none;
-  padding-right: 1.35rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 0.42rem center;
-  transition: border-color .15s, background .15s, color .15s;
-}
-.filter-chip:focus { outline: none; border-color: var(--border-focus); }
-.filter-chip.active {
-  border-color: var(--saffron); background-color: var(--saffron-bg);
-  color: var(--saffron-dark); font-weight: 600;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23c2410c' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-}
 
 /* Read-only chip in the active filter strip */
 .filter-active-chip {
@@ -463,15 +443,26 @@ img { max-width: 100%; }
   padding: 0.38rem 0.78rem;
   border: 1.5px solid var(--border); border-radius: 999px;
   background-color: var(--surface); color: var(--text-2);
-  font-size: 0.82rem; font-family: inherit;
+  font-size: 0.85rem; font-family: inherit;
   cursor: pointer; transition: border-color .15s, background-color .15s, color .15s;
 }
 .fmodal-chip-btn.active {
   border-color: var(--saffron); background-color: var(--saffron-bg);
   color: var(--saffron-dark); font-weight: 600;
 }
-.fmodal-actions { display: flex; gap: 0.75rem; padding-top: 0.25rem; }
+.fmodal-actions {
+  display: flex; gap: 0.75rem;
+  padding: 0.75rem 1.25rem 1rem;
+  border-top: 1px solid var(--border); flex-shrink: 0;
+}
 .fmodal-actions .btn { flex: 1; }
+
+/* Drag handle — visual affordance at top of filter bottom sheet */
+.modal-drag-handle {
+  width: 2.5rem; height: 3px; border-radius: 2px;
+  background: var(--border); margin: 0.55rem auto 0;
+  flex-shrink: 0;
+}
 
 .bhajan-count-badge {
   display: inline-flex; align-items: center;

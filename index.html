@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260808.8">
+  <link rel="stylesheet" href="css/style.css?v=20260808.10">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -763,6 +763,7 @@
   <!-- Filter Modal (bottom sheet) -->
   <div id="modal-filters" class="modal-overlay hidden">
     <div class="modal-box">
+      <div class="modal-drag-handle" aria-hidden="true"></div>
       <div class="modal-header">
         <h3 class="modal-title">Filter Bhajans</h3>
         <button class="modal-close" id="mfilter-close" aria-label="Close filters">✕</button>
@@ -773,13 +774,13 @@
         <select id="filter-tempo" hidden><option value=""></option></select>
         <select id="filter-level" hidden><option value=""></option></select>
 
-        <!-- Show: My Favourites / Sung by Me toggles -->
+        <!-- Show: My Favourites / Sung by Me / All Sung toggles -->
         <div class="fmodal-section" id="fmodal-section-show">
           <div class="fmodal-label">Show</div>
           <div class="fmodal-toggle-row" id="fmodal-toggle-row"></div>
         </div>
 
-        <!-- Singer / Sung filter -->
+        <!-- Singer filter -->
         <div class="fmodal-section">
           <div class="fmodal-label">Singer</div>
           <select class="fmodal-select" id="filter-by-singer">
@@ -814,16 +815,16 @@
           <div class="fmodal-label">Level</div>
           <div class="fmodal-chip-group" id="fmodal-level-chips"></div>
         </div>
-
-        <div class="fmodal-actions">
-          <button class="btn btn-outline" id="fmodal-clear">Clear All</button>
-          <button class="btn btn-primary" id="fmodal-done">Show Results</button>
-        </div>
+      </div>
+      <!-- Pinned footer — never scrolls away -->
+      <div class="fmodal-actions">
+        <button class="btn btn-outline" id="fmodal-clear">Clear All</button>
+        <button class="btn btn-primary" id="fmodal-done">Show Results</button>
       </div>
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260808.9"></script>
+  <script type="module" src="js/app.js?v=20260808.10"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
