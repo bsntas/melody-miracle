@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260808.4">
+  <link rel="stylesheet" href="css/style.css?v=20260808.5">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -188,28 +188,14 @@
           </div>
 
           <div class="filter-bar-wrap">
-            <button class="filter-btn" id="btn-clear-filters" title="Filters" aria-label="Filters">
+            <button class="filter-btn" id="btn-clear-filters" title="Open filters" aria-label="Open filters">
               <svg class="filter-btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
               </svg>
               <span class="filter-btn-x" aria-hidden="true">✕</span>
             </button>
-            <div class="filter-bar" id="browse-filters">
-              <select class="filter-chip" id="filter-sung">
-                <option value="">All Bhajans</option>
-              </select>
-              <select class="filter-chip" id="filter-deity">
-                <option value="">All Deities</option>
-              </select>
-              <select class="filter-chip" id="filter-language">
-                <option value="">All Languages</option>
-              </select>
-              <select class="filter-chip" id="filter-tempo">
-                <option value="">All Tempos</option>
-              </select>
-              <select class="filter-chip" id="filter-level">
-                <option value="">All Levels</option>
-              </select>
+            <div class="filter-bar" id="browse-filter-chips">
+              <!-- Active filter summary chips rendered here by JS -->
             </div>
           </div>
 
@@ -775,7 +761,71 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260808.4"></script>
+  <!-- Filter Modal (bottom sheet) -->
+  <div id="modal-filters" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Filter Bhajans</h3>
+        <button class="modal-close" id="mfilter-close" aria-label="Close filters">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Hidden state selects read by _applyBrowseFilters -->
+        <select id="filter-sung" hidden></select>
+        <select id="filter-tempo" hidden><option value=""></option></select>
+        <select id="filter-level" hidden><option value=""></option></select>
+
+        <!-- Show: My Favourites / Sung by Me toggles -->
+        <div class="fmodal-section" id="fmodal-section-show">
+          <div class="fmodal-label">Show</div>
+          <div class="fmodal-toggle-row" id="fmodal-toggle-row"></div>
+        </div>
+
+        <!-- Singer / Sung filter -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Singer</div>
+          <select class="fmodal-select" id="filter-by-singer">
+            <option value="">All Singers</option>
+            <option value="sung">All Sung Bhajans</option>
+          </select>
+        </div>
+
+        <!-- Deity -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Deity</div>
+          <select class="fmodal-select" id="filter-deity">
+            <option value="">Any Deity</option>
+          </select>
+        </div>
+
+        <!-- Language -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Language</div>
+          <select class="fmodal-select" id="filter-language">
+            <option value="">Any Language</option>
+          </select>
+        </div>
+
+        <!-- Tempo chip buttons (options added by JS) -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Tempo</div>
+          <div class="fmodal-chip-group" id="fmodal-tempo-chips"></div>
+        </div>
+
+        <!-- Level chip buttons (options added by JS) -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Level</div>
+          <div class="fmodal-chip-group" id="fmodal-level-chips"></div>
+        </div>
+
+        <div class="fmodal-actions">
+          <button class="btn btn-outline" id="fmodal-clear">Clear All</button>
+          <button class="btn btn-primary" id="fmodal-done">Show Results</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=20260808.5"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
