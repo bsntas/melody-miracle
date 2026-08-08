@@ -569,6 +569,9 @@ class App {
     // Browse sung/singer filter
     document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
 
+    // Clear all browse filters
+    document.getElementById('btn-clear-filters')?.addEventListener('click', () => this._clearBrowseFilters());
+
     // New / Edit Bhajan
     document.getElementById('btn-new-bhajan')?.addEventListener('click', () => this._openNewBhajanModal());
     document.getElementById('mbhajan-edit')?.addEventListener('click', () => {
@@ -1428,7 +1431,21 @@ class App {
 
     this._browsePage = 0;
     document.getElementById('browse-count-badge').textContent = this._browseFiltered.length;
+
+    const hasActiveFilter = !!(q || deity || language || tempo || level || sung);
+    const clearBtn = document.getElementById('btn-clear-filters');
+    if (clearBtn) clearBtn.style.display = hasActiveFilter ? '' : 'none';
+
     this._renderBrowsePage();
+  }
+
+  _clearBrowseFilters() {
+    document.getElementById('browse-search').value = '';
+    ['filter-sung', 'filter-deity', 'filter-language', 'filter-tempo', 'filter-level'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    this._applyBrowseFilters();
   }
 
   _sungIdsForFilter(value) {
