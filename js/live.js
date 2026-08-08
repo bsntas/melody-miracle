@@ -350,13 +350,30 @@ export class LiveSession {
     this._observers = new Map();
 
     const unsubOA = onChildAdded(obsRef, (snap) => {
-      const data = snap.val() || {};
-      this._observers.set(snap.key, { key: snap.key, ...data });
+      const data     = snap.val() || {};
+      const incoming = { key: snap.key, ...data };
+
+      // Deduplicate by email: stale push-key entries from earlier joins (before the
+      // UID-key fix, or from a previous join in the same session) produce a second
+      // onChildAdded for the same person. Replace the older entry instead of adding
+      // a duplicate, keeping the count correct.
+      if (incoming.email) {
+        for (const [k, o] of this._observers) {
+          if (o.email === incoming.email) {
+            this._observers.delete(k);
+            this.peerCount = Math.max(0, this.peerCount - 1);
+            break;
+          }
+        }
+      }
+
+      this._observers.set(snap.key, incoming);
       this.peerCount++;
       this.onPeerChange(this.peerCount);
       this.onObserversChange?.(Array.from(this._observers.values()));
     });
     const unsubOR = onChildRemoved(obsRef, (snap) => {
+      if (!this._observers.has(snap.key)) return; // already evicted during dedup
       this._observers.delete(snap.key);
       this.peerCount = Math.max(0, this.peerCount - 1);
       this.onPeerChange(this.peerCount);
