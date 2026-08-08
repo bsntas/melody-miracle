@@ -366,6 +366,14 @@ img { max-width: 100%; }
   background-repeat: no-repeat; background-position: right 0.5rem center;
 }
 .filter-select:focus { outline: none; border-color: var(--border-focus); }
+.btn-clear-filters {
+  flex: 0 0 auto; padding: 0.4rem 0.75rem;
+  border: 1.5px solid var(--saffron); border-radius: var(--radius-sm);
+  background: transparent; color: var(--saffron);
+  font-size: 0.8rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; transition: background 0.15s, color 0.15s;
+}
+.btn-clear-filters:hover { background: var(--saffron); color: #fff; }
 
 .bhajan-count-badge {
   display: inline-flex; align-items: center;
