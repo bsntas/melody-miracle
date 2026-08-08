@@ -553,8 +553,8 @@ class App {
     browseSearch?.addEventListener('search', () => this._applyBrowseFilters());
     document.getElementById('filter-deity')?.addEventListener('change', () => this._applyBrowseFilters());
     document.getElementById('filter-language')?.addEventListener('change', () => this._applyBrowseFilters());
-    document.getElementById('filter-tempo')?.addEventListener('change', () => this._applyBrowseFilters());
-    document.getElementById('filter-level')?.addEventListener('change', () => this._applyBrowseFilters());
+    // filter-tempo and filter-level are hidden selects managed by chip buttons — no change listener needed
+    // filter-sung is a hidden select managed by the filter modal — no change listener needed
 
     // History
     document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(true));
@@ -566,11 +566,21 @@ class App {
     // Sung bhajans back
     document.getElementById('btn-sung-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
-    // Browse sung/singer filter
-    document.getElementById('filter-sung')?.addEventListener('change', () => this._applyBrowseFilters());
-
-    // Clear all browse filters
-    document.getElementById('btn-clear-filters')?.addEventListener('click', () => this._clearBrowseFilters());
+    // Filter modal
+    document.getElementById('btn-clear-filters')?.addEventListener('click', () => this._openFilterModal());
+    document.getElementById('mfilter-close')?.addEventListener('click', () => this._closeFilterModal());
+    document.getElementById('modal-filters')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-filters')) this._closeFilterModal();
+    });
+    document.getElementById('fmodal-clear')?.addEventListener('click', () => this._clearBrowseFilters());
+    document.getElementById('fmodal-done')?.addEventListener('click', () => this._closeFilterModal());
+    document.getElementById('filter-by-singer')?.addEventListener('change', () => {
+      const val = document.getElementById('filter-by-singer').value;
+      const sungEl = document.getElementById('filter-sung');
+      if (sungEl) sungEl.value = val;
+      this._syncFilterModalUI();
+      this._applyBrowseFilters();
+    });
 
     // New / Edit Bhajan
     document.getElementById('btn-new-bhajan')?.addEventListener('click', () => this._openNewBhajanModal());
@@ -1357,6 +1367,8 @@ class App {
     const langEl     = document.getElementById('filter-language');
     const tempoEl    = document.getElementById('filter-tempo');
     const levelEl    = document.getElementById('filter-level');
+    const tempoChips = document.getElementById('fmodal-tempo-chips');
+    const levelChips = document.getElementById('fmodal-level-chips');
 
     const deities = this.bhajans.uniqueValues('deity');
     const langs   = this.bhajans.uniqueValues('language');
@@ -1365,26 +1377,57 @@ class App {
 
     deities.forEach(d => deityEl.append(new Option(d, d)));
     langs.forEach(l => langEl.append(new Option(l, l)));
-    tempos.forEach(t => tempoEl.append(new Option(t, t)));
-    levels.forEach(l => levelEl.append(new Option(l, l)));
+
+    tempos.forEach(t => {
+      tempoEl.append(new Option(t, t));
+      if (tempoChips) {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-chip-btn';
+        btn.textContent = t;
+        btn.addEventListener('click', () => {
+          const val = tempoEl.value === t ? '' : t;
+          tempoEl.value = val;
+          document.querySelectorAll('#fmodal-tempo-chips .fmodal-chip-btn')
+            .forEach(b => b.classList.toggle('active', b.textContent === val));
+          this._applyBrowseFilters();
+        });
+        tempoChips.append(btn);
+      }
+    });
+
+    levels.forEach(l => {
+      levelEl.append(new Option(l, l));
+      if (levelChips) {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-chip-btn';
+        btn.textContent = l;
+        btn.addEventListener('click', () => {
+          const val = levelEl.value === l ? '' : l;
+          levelEl.value = val;
+          document.querySelectorAll('#fmodal-level-chips .fmodal-chip-btn')
+            .forEach(b => b.classList.toggle('active', b.textContent === val));
+          this._applyBrowseFilters();
+        });
+        levelChips.append(btn);
+      }
+    });
   }
 
   _renderBrowse() {
     this._bhajanCounts = this.sessions.bhajanSungCounts();
 
-    // Populate sung/singer filter (dynamic — depends on session data)
+    const mySingerName = this._userProfile?.singerName;
+    const singers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
+
+    // Keep filter-sung hidden select populated (needed by _sungIdsForFilter for valid .value assignment)
     const sungEl = document.getElementById('filter-sung');
     if (sungEl) {
       const prev = sungEl.value;
-      const mySingerName = this._userProfile?.singerName;
-      const singers = this._canonSingers(this.sessions.topSingersFrom(200)).map(s => s.name).sort();
       sungEl.innerHTML = `<option value="">All Bhajans</option>
         ${this.auth?.currentUser ? '<option value="favourites">★ My Favourites</option>' : ''}
         ${mySingerName ? `<option value="${escHtml(mySingerName)}">★ Sung by me</option>` : ''}
         <option value="sung">Sung Bhajans</option>
-        <optgroup label="By Singer">
-          ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}
-        </optgroup>`;
+        ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}`;
       if (this._pendingBrowseFilter) {
         sungEl.value = this._pendingBrowseFilter;
         this._pendingBrowseFilter = null;
@@ -1393,6 +1436,54 @@ class App {
       }
     }
 
+    // Populate by-singer select in the modal (keep first 2 static options: All Singers, All Sung Bhajans)
+    const bySingerEl = document.getElementById('filter-by-singer');
+    if (bySingerEl) {
+      const prevSinger = bySingerEl.value;
+      while (bySingerEl.options.length > 2) bySingerEl.remove(2);
+      singers.forEach(n => bySingerEl.append(new Option(n, n)));
+      if (prevSinger) bySingerEl.value = prevSinger;
+    }
+
+    // Rebuild modal toggle row based on current auth / singer state
+    const toggleRow = document.getElementById('fmodal-toggle-row');
+    if (toggleRow) {
+      toggleRow.innerHTML = '';
+      if (this.auth?.currentUser) {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
+        btn.id = 'fmodal-toggle-favs'; btn.textContent = '★ My Favourites';
+        btn.addEventListener('click', () => {
+          const sEl = document.getElementById('filter-sung');
+          if (!sEl) return;
+          sEl.value = sEl.value === 'favourites' ? '' : 'favourites';
+          const bsEl = document.getElementById('filter-by-singer');
+          if (bsEl) bsEl.value = '';
+          this._syncFilterModalUI();
+          this._applyBrowseFilters();
+        });
+        toggleRow.append(btn);
+      }
+      if (mySingerName) {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
+        btn.id = 'fmodal-toggle-sung'; btn.textContent = '★ Sung by Me';
+        btn.addEventListener('click', () => {
+          const sEl = document.getElementById('filter-sung');
+          if (!sEl) return;
+          sEl.value = sEl.value === mySingerName ? '' : mySingerName;
+          const bsEl = document.getElementById('filter-by-singer');
+          if (bsEl) bsEl.value = '';
+          this._syncFilterModalUI();
+          this._applyBrowseFilters();
+        });
+        toggleRow.append(btn);
+      }
+      const showSection = document.getElementById('fmodal-section-show');
+      if (showSection) showSection.classList.toggle('hidden', !toggleRow.children.length);
+    }
+
+    this._syncFilterModalUI();
     this._applyBrowseFilters();
   }
 
@@ -1430,21 +1521,31 @@ class App {
     }
 
     this._browsePage = 0;
-    document.getElementById('browse-count-badge').textContent = this._browseFiltered.length;
+    const count = this._browseFiltered.length;
+    document.getElementById('browse-count-badge').textContent = count;
 
-    // Reflect active state on each chip
-    [['filter-sung', sung], ['filter-deity', deity], ['filter-language', language],
-     ['filter-tempo', tempo], ['filter-level', level]].forEach(([id, val]) => {
-      document.getElementById(id)?.classList.toggle('active', !!val);
-    });
+    // Reflect active state on modal selects
+    document.getElementById('filter-deity')?.classList.toggle('active', !!deity);
+    document.getElementById('filter-language')?.classList.toggle('active', !!language);
+    const mySingerName = this._userProfile?.singerName;
+    const isSingerToggle = sung === 'favourites' || (mySingerName && sung === mySingerName);
+    document.getElementById('filter-by-singer')?.classList.toggle('active', !!(sung && !isSingerToggle));
 
+    // Update done button text with current result count
+    const doneBtn = document.getElementById('fmodal-done');
+    if (doneBtn) doneBtn.textContent = count ? `Show ${count} Results` : 'Show Results';
+
+    // Update funnel/✕ button state
     const hasActiveFilter = !!(q || deity || language || tempo || level || sung);
     const clearBtn = document.getElementById('btn-clear-filters');
     if (clearBtn) {
       clearBtn.classList.toggle('active', hasActiveFilter);
-      clearBtn.title = hasActiveFilter ? 'Clear all filters' : 'Filters';
-      clearBtn.setAttribute('aria-label', hasActiveFilter ? 'Clear all filters' : 'Filters');
+      clearBtn.title = hasActiveFilter ? 'Filters active' : 'Open filters';
+      clearBtn.setAttribute('aria-label', hasActiveFilter ? 'Filters active — open modal' : 'Open filters');
     }
+
+    // Render read-only active filter chips in the strip
+    this._renderActiveFilterChips({ q, deity, language, tempo, level, sung });
 
     this._renderBrowsePage();
   }
@@ -1455,7 +1556,66 @@ class App {
       const el = document.getElementById(id);
       if (el) el.value = '';
     });
+    const bsEl = document.getElementById('filter-by-singer');
+    if (bsEl) bsEl.value = '';
+    this._syncFilterModalUI();
     this._applyBrowseFilters();
+  }
+
+  _renderActiveFilterChips({ q, deity, language, tempo, level, sung }) {
+    const strip = document.getElementById('browse-filter-chips');
+    if (!strip) return;
+    strip.innerHTML = '';
+    const mySingerName = this._userProfile?.singerName;
+    const labels = [];
+    if (sung === 'favourites') labels.push('★ My Favourites');
+    else if (mySingerName && sung === mySingerName) labels.push('★ Sung by Me');
+    else if (sung === 'sung') labels.push('All Sung Bhajans');
+    else if (sung) labels.push(sung);
+    if (deity) labels.push(deity);
+    if (language) labels.push(language);
+    if (tempo) labels.push(tempo);
+    if (level) labels.push(level);
+    labels.forEach(label => {
+      const chip = document.createElement('span');
+      chip.className = 'filter-active-chip';
+      chip.textContent = label;
+      strip.append(chip);
+    });
+  }
+
+  _syncFilterModalUI() {
+    const sungVal = document.getElementById('filter-sung')?.value || '';
+    const mySingerName = this._userProfile?.singerName;
+
+    const favsBtn = document.getElementById('fmodal-toggle-favs');
+    if (favsBtn) favsBtn.classList.toggle('active', sungVal === 'favourites');
+    const sungBtn = document.getElementById('fmodal-toggle-sung');
+    if (sungBtn) sungBtn.classList.toggle('active', !!(mySingerName && sungVal === mySingerName));
+
+    const isSingerToggle = sungVal === 'favourites' || (mySingerName && sungVal === mySingerName);
+    const bySingerEl = document.getElementById('filter-by-singer');
+    if (bySingerEl) {
+      bySingerEl.value = isSingerToggle ? '' : sungVal;
+      bySingerEl.classList.toggle('active', !isSingerToggle && !!sungVal);
+    }
+
+    const tempo = document.getElementById('filter-tempo')?.value || '';
+    document.querySelectorAll('#fmodal-tempo-chips .fmodal-chip-btn')
+      .forEach(b => b.classList.toggle('active', b.textContent === tempo));
+
+    const level = document.getElementById('filter-level')?.value || '';
+    document.querySelectorAll('#fmodal-level-chips .fmodal-chip-btn')
+      .forEach(b => b.classList.toggle('active', b.textContent === level));
+  }
+
+  _openFilterModal() {
+    this._syncFilterModalUI();
+    this._openModal('modal-filters');
+  }
+
+  _closeFilterModal() {
+    this._closeModal('modal-filters');
   }
 
   _sungIdsForFilter(value) {
