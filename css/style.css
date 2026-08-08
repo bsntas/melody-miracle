@@ -381,8 +381,11 @@ img { max-width: 100%; }
 }
 
 /* Clear-all chip — ✕ circle at the start of the active filter strip */
+/* Height calc matches filter-active-chip: 0.78rem*1.4 line-height + 2*0.28rem padding + 3px border */
 .filter-clear-chip {
-  flex-shrink: 0; aspect-ratio: 1; align-self: stretch; border-radius: 50%;
+  flex-shrink: 0;
+  width: calc(1.652rem + 3px); height: calc(1.652rem + 3px);
+  border-radius: 50%;
   border: 1.5px solid var(--saffron); background: var(--saffron); color: #fff;
   font-size: 0.7rem; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
