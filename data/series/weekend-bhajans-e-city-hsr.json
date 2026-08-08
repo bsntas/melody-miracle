@@ -37,7 +37,7 @@
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ]
       },
       {
@@ -76,7 +76,7 @@
         "pitch_indian": "5.5 Pancham",
         "pitch_western": "G#",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ]
       },
       {
@@ -148,10 +148,10 @@
     "singers": [
       "Sayujya",
       "Isha",
-      "Bishal Da",
+      "Bishal",
       "Karam",
       "Anisha",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Basanta",
       "Pemila",
       "Gigme",
@@ -186,7 +186,7 @@
         "pitch_indian": "2 Pancham",
         "pitch_western": "D",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ]
       },
       {
@@ -252,7 +252,7 @@
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ]
       },
       {
@@ -282,12 +282,12 @@
     "status": "completed",
     "singers": [
       "Anisha",
-      "Bishal Da",
+      "Bishal",
       "Isha",
       "Sayujya",
       "Gigme",
       "Basanta",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Ashik"
     ],
     "endedAt": "2026-07-25T14:08:57.351Z",
@@ -305,7 +305,7 @@
         "pitch_indian": "2.5 Pancham",
         "pitch_western": "D#",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ]
       },
       {
@@ -396,7 +396,7 @@
         "pitch_indian": "6 Madhyam",
         "pitch_western": "D",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ]
       }
     ],
@@ -412,14 +412,14 @@
     "startedAt": "2026-07-18T13:28:48.018Z",
     "status": "completed",
     "singers": [
-      "Bishal Da",
+      "Bishal",
       "Basanta",
       "Isha",
       "Anisha",
       "Sayujya",
       "Ashik",
       "Gigme",
-      "Bhawana Bhauju"
+      "Bhawana"
     ],
     "endedAt": "2026-07-18T14:17:40.259Z",
     "duration": 2932
@@ -432,8 +432,8 @@
     "roomCode": "weekendbhajansecityhsr-2026-07-11",
     "singers": [
       "Karam",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Basanta",
       "Sayujya",
       "Pemila",
@@ -462,7 +462,7 @@
         "bhajan_title": "Raghukula Bhooshana Rajeeva Nayana",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -476,7 +476,7 @@
         "bhajan_title": "Bhava Nasha Puttaparthi Pureesha",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -587,9 +587,9 @@
     "roomCode": "weekendbhajansecityhsr-2026-07-04",
     "singers": [
       "Basanta",
-      "Bishal Da",
+      "Bishal",
       "Karam",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Sayujya",
       "Ashik",
       "Anisha",
@@ -617,7 +617,7 @@
         "bhajan_title": "Ramachandra Sri Ram",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2.5 Pancham / D#",
         "pitch_indian": "2.5 Pancham",
@@ -645,7 +645,7 @@
         "bhajan_title": "Dattatreya Sadguru Deva",
         "bhajan_deity": "Guru",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -742,9 +742,9 @@
     "roomCode": "weekendbhaja-2026-06-27",
     "singers": [
       "Basanta",
-      "Bishal Da",
+      "Bishal",
       "Karam",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Anisha",
       "Sayujya",
       "Ashik",
@@ -777,7 +777,7 @@
         "pitch_indian": "4 Pancham",
         "pitch_western": "F",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ]
       },
       {
@@ -805,7 +805,7 @@
         "pitch_indian": "6.5 Pancham",
         "pitch_western": "A#",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ]
       },
       {
@@ -897,8 +897,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -954,7 +954,7 @@
         "bhajan_title": "Daya Karo Shiva Gangadhari",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -982,7 +982,7 @@
         "bhajan_title": "Jeevan Jyothi Tum Ho Sai",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -1047,8 +1047,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -1076,7 +1076,7 @@
         "bhajan_title": "Sri Ramachandra Jaya Ramachandra",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -1174,7 +1174,7 @@
         "bhajan_title": "Sathya Dharma Shanthi Prema Swaroopa",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -1197,8 +1197,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -1226,7 +1226,7 @@
         "bhajan_title": "Daya Karo Sai Narayana",
         "bhajan_deity": "Narayana",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -1254,7 +1254,7 @@
         "bhajan_title": "Poorna Brahma Avatara Sai",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -1851,8 +1851,8 @@
     "singers": [
       "Anisha",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -1880,7 +1880,7 @@
         "bhajan_title": "Shiva Shiva Hara Hara",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -1922,7 +1922,7 @@
         "bhajan_title": "Vaidehi Priya Vaikunta Rama",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "4.5 Pancham / F#",
         "pitch_indian": "4.5 Pancham",
@@ -2001,8 +2001,8 @@
     "singers": [
       "Alisha",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -2044,7 +2044,7 @@
         "bhajan_title": "Madhava Murahara Murali Gopala",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -2072,7 +2072,7 @@
         "bhajan_title": "Amba Bhavani Tribhuvana Mohini",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6.5 Pancham / A#",
         "pitch_indian": "6.5 Pancham",
@@ -2151,8 +2151,8 @@
     "singers": [
       "Anisha",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -2180,7 +2180,7 @@
         "bhajan_title": "Araj Suno Merey Parama Krupalu",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -2194,7 +2194,7 @@
         "bhajan_title": "Om Jagat Janani Sai Mata",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -2302,8 +2302,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Pemila",
@@ -2388,7 +2388,7 @@
         "bhajan_title": "Deena Bandhava Sri Sai Deva",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -2416,7 +2416,7 @@
         "bhajan_title": "Meera Nath Harey Giridhari",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -2455,8 +2455,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -2484,7 +2484,7 @@
         "bhajan_title": "Gowri Vara Gangadhara",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -2512,7 +2512,7 @@
         "bhajan_title": "Arunachala Shiva, Arunachala Shiva",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -2604,8 +2604,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -2647,7 +2647,7 @@
         "bhajan_title": "Madhusudhana Hey Muralidhara",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -2661,7 +2661,7 @@
         "bhajan_title": "Rajeeva Lochana Jaya Jaya Rama",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -2725,8 +2725,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -2754,7 +2754,7 @@
         "bhajan_title": "Jaya Jaya Jaya Hey Madhusudhana",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -2782,7 +2782,7 @@
         "bhajan_title": "Shyamala Komala Krishna Murari",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -2847,8 +2847,8 @@
     "status": "completed",
     "singers": [
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila",
@@ -2890,7 +2890,7 @@
         "bhajan_title": "Akhila Jagat Ke Daata Sai",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "3 Pancham / E",
         "pitch_indian": "3 Pancham",
@@ -2918,7 +2918,7 @@
         "bhajan_title": "Madura Puri Nilayey Meenakshi",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -2997,8 +2997,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Karam",
       "Sayujya",
       "Sudhaan"
@@ -3024,7 +3024,7 @@
         "bhajan_title": "Gowri Manohara Hey Nataraja",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -3080,7 +3080,7 @@
         "bhajan_title": "Giridhari Lal Shyama Gopal",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "3 Pancham / E",
         "pitch_indian": "3 Pancham",
@@ -3130,8 +3130,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -3174,7 +3174,7 @@
         "bhajan_title": "Sada Nirantara Hari Guna Gao",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -3188,7 +3188,7 @@
         "bhajan_title": "Govinda Madhava Gopala Keshava",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -3217,7 +3217,7 @@
         "bhajan_deity": null,
         "singers": [
           "Isha",
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -3253,8 +3253,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila",
@@ -3295,7 +3295,7 @@
         "bhajan_title": "Govinda Madhava Gopala Keshava",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -3309,7 +3309,7 @@
         "bhajan_title": "Eshwaramba Priya Nandana",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -3373,8 +3373,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Group",
       "Karam",
       "Pemila",
@@ -3401,7 +3401,7 @@
         "bhajan_title": "Deva Senapathey Skanda Subrahmanya Paahi",
         "bhajan_deity": "Subrahmanya",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -3443,7 +3443,7 @@
         "bhajan_title": "Bhajorey Bhajo Sai Harey Ram",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2.5 Pancham / D#",
         "pitch_indian": "2.5 Pancham",
@@ -3494,8 +3494,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Isha",
       "Karam",
       "Pemila",
@@ -3579,7 +3579,7 @@
         "bhajan_title": "Srikari Krupakari Kshemankari Sayeeshwari",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -3607,7 +3607,7 @@
         "bhajan_title": "Ayodhya Vasi Ram Hai",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -3644,8 +3644,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Karam",
       "Pemila",
       "Sayujya"
@@ -3685,7 +3685,7 @@
         "bhajan_title": "Sri Ramachandra Jaya Ramachandra",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -3699,7 +3699,7 @@
         "bhajan_title": "Namami Sai Pada Pankajam",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -3763,8 +3763,8 @@
     "status": "completed",
     "singers": [
       "Bari",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Group",
       "Isha",
@@ -3793,7 +3793,7 @@
         "bhajan_title": "Jayatu Jayatu Rama",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -3863,7 +3863,7 @@
         "bhajan_title": "Mata Maheshwari Tribhuvana Janani",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -3914,8 +3914,8 @@
     "singers": [
       "Ashik",
       "Bari",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -3928,7 +3928,7 @@
         "bhajan_title": "Paahi Gajanana Deenavana",
         "bhajan_deity": "Ganesha",
         "singers": [
-          "Bhawana Bhauju",
+          "Bhawana",
           "Isha"
         ],
         "pitch": "3 Pancham / E",
@@ -3972,7 +3972,7 @@
         "bhajan_title": "Govinda Harey Gopala Harey",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -4000,7 +4000,7 @@
         "bhajan_title": "Simha Vahini Sai Narayani",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -4063,8 +4063,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Group",
       "Isha",
@@ -4093,7 +4093,7 @@
         "bhajan_title": "Premamayi Sai Ma Gnanamayi Sai",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -4107,7 +4107,7 @@
         "bhajan_title": "Sai Shankara",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -4149,7 +4149,7 @@
         "bhajan_title": "Simha Vahini Sai Narayani",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -4213,7 +4213,7 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Gigme",
       "Isha",
       "Karam"
@@ -4281,7 +4281,7 @@
         "bhajan_title": "Sathyam Gnanam Anantham Brahma",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -4303,7 +4303,7 @@
     "status": "completed",
     "singers": [
       "Basanta",
-      "Bishal Da",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila"
@@ -4371,7 +4371,7 @@
         "bhajan_title": "Partheeshwari Jagat Janani",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -4392,8 +4392,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Group",
       "Karam",
@@ -4435,7 +4435,7 @@
         "bhajan_title": "Janani Krupa Karo Ambe",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -4449,7 +4449,7 @@
         "bhajan_title": "Ayodhya Vasi Ram Hai",
         "bhajan_deity": "Rama, Krishna, Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": null,
         "pitch_indian": null,
@@ -4512,8 +4512,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -4527,7 +4527,7 @@
         "bhajan_title": "Lambodhara Gananatha Gajanana",
         "bhajan_deity": "Ganesha",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -4569,7 +4569,7 @@
         "bhajan_title": "Mera Jeevan Terey Hawaley Prabhu",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -4632,7 +4632,7 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
+      "Bhawana",
       "Gigme",
       "Isha",
       "Karam",
@@ -4674,7 +4674,7 @@
         "bhajan_title": "Gowri Manohara Hey Nataraja",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -4689,7 +4689,7 @@
         "bhajan_deity": "Krishna",
         "singers": [
           "Isha",
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -4754,8 +4754,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Group",
       "Pemila",
       "Sayujya"
@@ -4781,7 +4781,7 @@
         "bhajan_title": "Srikari Krupakari Kshemankari Sayeeshwari",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -4823,7 +4823,7 @@
         "bhajan_title": "Abhayankara Sai Shiva",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -4872,8 +4872,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -4886,7 +4886,7 @@
         "bhajan_title": "Ganapathi Om Jaya Ganapathi Om",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -4900,7 +4900,7 @@
         "bhajan_title": "Allah Ho Akbar Tum Ho",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2.5 Pancham / D#",
         "pitch_indian": "2.5 Pancham",
@@ -5085,8 +5085,8 @@
     "isBackdated": true,
     "status": "completed",
     "singers": [
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -5115,7 +5115,7 @@
         "bhajan_title": "Amba Manda Haasa Vadani",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "4 Pancham / F",
         "pitch_indian": "4 Pancham",
@@ -5171,7 +5171,7 @@
         "bhajan_title": "Jai Jai Janani Sai Janani",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -5208,8 +5208,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -5238,7 +5238,7 @@
         "bhajan_title": "Sita Ram Bolo Bolo Sita",
         "bhajan_deity": "Rama, Krishna",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -5252,7 +5252,7 @@
         "bhajan_title": "Sadguru Brahma Sanathana Hey",
         "bhajan_deity": "Guru",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -5332,8 +5332,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila",
@@ -5374,7 +5374,7 @@
         "bhajan_title": "Anand Se Bolo Jai Baba Jai",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -5403,7 +5403,7 @@
         "bhajan_title": "Narayana Hari Naama Bhajorey Narayana",
         "bhajan_deity": "Narayana",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -5454,8 +5454,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila",
@@ -5468,7 +5468,7 @@
         "bhajan_title": "Gajanana Hey Shubhanana",
         "bhajan_deity": "Ganesha",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -5540,7 +5540,7 @@
         "bhajan_title": "Sai Natha Bhagawan Sai Natha",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -5576,8 +5576,8 @@
     "status": "completed",
     "singers": [
       "Ashik",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -5606,7 +5606,7 @@
         "bhajan_title": "Gowri Manohara Hey Nataraja",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -5635,7 +5635,7 @@
         "bhajan_title": "Akhila Jagat Ke Daata Sai",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "3 Pancham / E",
         "pitch_indian": "3 Pancham",
@@ -5913,8 +5913,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Karam",
       "Sayujya"
     ],
@@ -5967,7 +5967,7 @@
         "bhajan_title": "Vaidehi Priya Vaikunta Rama",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -5981,7 +5981,7 @@
         "bhajan_title": "Rama Sri Ramachandra Jaya Jaya",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1.5 Pancham / C#",
         "pitch_indian": "1.5 Pancham",
@@ -6032,9 +6032,9 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bhawana Bhauju Mom",
-      "Bishal Da",
+      "Bhawana",
+      "Bhawana Mom",
+      "Bishal",
       "Karam",
       "Sayujya"
     ],
@@ -6059,7 +6059,7 @@
         "bhajan_title": "Gowri Manohara Hey Nataraja",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -6073,7 +6073,7 @@
         "bhajan_title": "Akhila Jagat Ke Daata Sai",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "3 Pancham / E",
         "pitch_indian": "3 Pancham",
@@ -6129,7 +6129,7 @@
         "bhajan_title": "Anjaneya Veera Hanumantha Shoora",
         "bhajan_deity": "Anjaneya",
         "singers": [
-          "Bhawana Bhauju Mom"
+          "Bhawana Mom"
         ],
         "pitch": "3 Pancham / E",
         "pitch_indian": "3 Pancham",
@@ -6152,8 +6152,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Isha",
       "Karam",
       "Sayujya"
@@ -6179,7 +6179,7 @@
         "bhajan_title": "Gowri Manohara Hey Nataraja",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -6249,7 +6249,7 @@
         "bhajan_title": "Vanamali Vasudeva Jaganmohana Radha Ramana",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -6273,8 +6273,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Karam",
       "Sayujya"
     ],
@@ -6299,7 +6299,7 @@
         "bhajan_title": "Mythili Pathey Raghu Nandana",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -6355,7 +6355,7 @@
         "bhajan_title": "Mruthyunjayaya Namah Om",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -6393,10 +6393,10 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bhawana Bhauju Mom",
-      "Bhawana Bhauju Sis",
-      "Bishal Da",
+      "Bhawana",
+      "Bhawana Mom",
+      "Bhawana Sis",
+      "Bishal",
       "Sayujya"
     ],
     "bhajans": [
@@ -6406,7 +6406,7 @@
         "bhajan_title": "Gowri Ganesh Uma Ganesh",
         "bhajan_deity": "Ganesha",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -6420,7 +6420,7 @@
         "bhajan_title": "Koti Pranam Shata Koti Pranam",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -6504,8 +6504,8 @@
         "bhajan_title": "Jaun Na Jaun Aba Hari Darshan Ma",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju Sis",
-          "Bhawana Bhauju Mom"
+          "Bhawana Sis",
+          "Bhawana Mom"
         ],
         "pitch": null,
         "pitch_indian": null,
@@ -6542,8 +6542,8 @@
       "Anjana",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Sayujya"
     ],
     "bhajans": [
@@ -6553,7 +6553,7 @@
         "bhajan_title": "Jagadeesha Harey Jaya Ho",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -6567,7 +6567,7 @@
         "bhajan_title": "Aruna Ramana Sri Guru Deva",
         "bhajan_deity": "Guru",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": null,
         "pitch_indian": null,
@@ -6665,7 +6665,7 @@
         "bhajan_title": "Allah Yeshu Sai Ram",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -6730,8 +6730,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Karam",
       "Sayujya"
     ],
@@ -6756,7 +6756,7 @@
         "bhajan_title": "Jaya Ma Jaya Ma Daya",
         "bhajan_deity": "Rama",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -6812,7 +6812,7 @@
         "bhajan_title": "Rama Harey Sai Krishna Harey",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2.5 Pancham / D#",
         "pitch_indian": "2.5 Pancham",
@@ -6850,8 +6850,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Pemila",
       "Sayujya"
     ],
@@ -6890,7 +6890,7 @@
         "bhajan_title": "Om Tat Sat",
         "bhajan_deity": "Sarva Dharma",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -6904,7 +6904,7 @@
         "bhajan_title": "Jai Jai Janani Sai Janani",
         "bhajan_deity": "Devi",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -6970,8 +6970,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam"
@@ -6998,7 +6998,7 @@
         "bhajan_title": "Pannaga Shayana Kali Avatara",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -7070,7 +7070,7 @@
         "bhajan_title": "Jaya Jagadeesha Harey Jaya Govinda",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -7094,8 +7094,8 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -7124,7 +7124,7 @@
         "bhajan_title": "Govinda Harey Gopala Harey",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -7138,7 +7138,7 @@
         "bhajan_title": "Partheeshwari Jagat Janani",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -7234,8 +7234,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Sayujya"
@@ -7247,7 +7247,7 @@
         "bhajan_title": "Paahi Gajanana Deenavana",
         "bhajan_deity": "Ganesha",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5 Pancham / G",
         "pitch_indian": "5 Pancham",
@@ -7289,7 +7289,7 @@
         "bhajan_title": "Aao Pyaarey Nayana Hamarey",
         "bhajan_deity": null,
         "singers": [
-          "Bishal Da",
+          "Bishal",
           "Ashik"
         ],
         "pitch": "4.5 Pancham / F#",
@@ -7359,8 +7359,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -7415,7 +7415,7 @@
         "bhajan_title": "Vanamali Radha Ramana Giridhari Govinda",
         "bhajan_deity": "Krishna, Narayana",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -7458,7 +7458,7 @@
         "bhajan_title": "Gopala Radha Lola",
         "bhajan_deity": "Krishna",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -7481,8 +7481,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Karam",
       "Pemila",
@@ -7509,7 +7509,7 @@
         "bhajan_title": "Prema Ki Jyoti Jalao Sai",
         "bhajan_deity": null,
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -7552,7 +7552,7 @@
         "bhajan_title": "Hari Bhajana Bina Sukh Shanthi",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
@@ -7589,8 +7589,8 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
-      "Bishal Da",
+      "Bhawana",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -7617,7 +7617,7 @@
         "bhajan_title": "Kamala Nayana Sai Ranga",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "7 Pancham / B",
         "pitch_indian": "7 Pancham",
@@ -7673,7 +7673,7 @@
         "bhajan_title": "Koti Pranam Shata Koti Pranam",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
@@ -7712,7 +7712,7 @@
       "Anisha",
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Isha",
       "Karam",
       "Sayujya"
@@ -7738,7 +7738,7 @@
         "bhajan_title": "Kamala Nayana Sai Ranga",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "6 Pancham / A",
         "pitch_indian": "6 Pancham",
@@ -7831,7 +7831,7 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bhawana Bhauju",
+      "Bhawana",
       "Gigme",
       "Isha",
       "Karam",
@@ -7914,7 +7914,7 @@
         "bhajan_title": "Guruvara Naam Pavana Naam",
         "bhajan_deity": "Sai",
         "singers": [
-          "Bhawana Bhauju"
+          "Bhawana"
         ],
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
@@ -7951,7 +7951,7 @@
     "singers": [
       "Ashik",
       "Basanta",
-      "Bishal Da",
+      "Bishal",
       "Gigme",
       "Isha",
       "Karam",
@@ -8009,7 +8009,7 @@
         "bhajan_title": "Jaya Kailasa Pathey Shiva Shankara",
         "bhajan_deity": "Shiva",
         "singers": [
-          "Bishal Da"
+          "Bishal"
         ],
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
