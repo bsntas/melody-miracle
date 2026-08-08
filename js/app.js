@@ -1482,7 +1482,7 @@ class App {
       {
         const btn = document.createElement('button');
         btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
-        btn.id = 'fmodal-toggle-allsung'; btn.textContent = '♪ All Sung';
+        btn.id = 'fmodal-toggle-allsung'; btn.textContent = '★ All Sung';
         btn.addEventListener('click', () => {
           const sEl = document.getElementById('filter-sung');
           if (!sEl) return;
@@ -1581,6 +1581,7 @@ class App {
     const strip = document.getElementById('browse-filter-chips');
     if (!strip) return;
     strip.innerHTML = '';
+    const wrap = strip.closest('.filter-bar-wrap');
     const mySingerName = this._userProfile?.singerName;
     const labels = [];
     if (sung === 'favourites') labels.push('★ My Favourites');
@@ -1591,6 +1592,7 @@ class App {
     if (language) labels.push(language);
     if (tempo) labels.push(tempo);
     if (level) labels.push(level);
+    if (wrap) wrap.classList.toggle('hidden', labels.length === 0);
     if (labels.length === 0) return;
     const clearChip = document.createElement('button');
     clearChip.className = 'filter-clear-chip';
