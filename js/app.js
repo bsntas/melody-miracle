@@ -1951,9 +1951,9 @@ class App {
         ${!isHost ? `<div class="observer-banner">
           <div class="observer-banner-info">
             <span class="observer-role-badge">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
-            <span class="observer-banner-desc">${isPlaying ? 'Watching live · updates automatically' : 'Can add &amp; arrange bhajans'}</span>
+            <span class="observer-banner-desc">${isPlaying ? 'Watching live · updates automatically' : 'Can add &amp; arrange · cannot start or end'}</span>
           </div>
-          <button class="btn btn-sm btn-outline" id="btn-claim-host">Take control</button>
+          <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim Host</button>
         </div>` : ''}
 
         <div class="live-header">
