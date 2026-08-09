@@ -3487,7 +3487,8 @@ class App {
             ${(s.bhajans).map((e, i) => {
               const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
               return `
-              <div class="timeline-item">
+              <div class="timeline-item" data-entry-id="${e.id}">
+                ${isEditMode ? '<div class="drag-handle" title="Drag to reorder">⠿</div>' : ''}
                 <div class="tl-num">${i + 1}</div>
                 <div class="tl-main">
                   <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
@@ -3506,12 +3507,7 @@ class App {
                 </div>
                 <div class="tl-actions">
                   <span class="tl-time">${formatTime(e.addedAt)}</span>
-                  ${isEditMode ? `
-                  <div class="reorder-btns reorder-btns-row">
-                    <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${i > 0 ? '' : 'disabled'} title="Move up">↑</button>
-                    <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${i < (s.bhajans.length - 1) ? '' : 'disabled'} title="Move down">↓</button>
-                  </div>
-                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
+                  ${isEditMode ? `<button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
                 </div>
               </div>`;
             }).join('')}
@@ -3553,18 +3549,92 @@ class App {
         this._toast('Saving to GitHub…', 'success');
       });
 
-      // Reorder bhajans in session detail
-      document.querySelectorAll('#session-detail-content .btn-reorder').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const current = this.sessions.get(id);
-          if (!current) return;
-          const dir = btn.dataset.action === 'reorder-earlier' ? 'earlier' : 'later';
-          const newBhajans = this._moveBhajanEntry(btn.dataset.entryId, dir, current.bhajans || []);
-          if (!newBhajans) { this._toast('Only a Ganesh bhajan can be first', 'warn'); return; }
-          this.sessions.save({ ...current, bhajans: newBhajans }, { local: true });
-          this._renderSessionDetail(id);
-        });
-      });
+      // Drag-to-reorder for session detail timeline
+      {
+        const dc = document.getElementById('session-detail-content');
+        if (dc) {
+          let dragSrc = null, dragOver = null;
+          const tlRows = () => [...dc.querySelectorAll('.timeline-item[data-entry-id]')];
+          const clearCls = () => tlRows().forEach(r => r.classList.remove('dragging', 'drag-over-above', 'drag-over-below'));
+
+          const onMove = (e) => {
+            if (!dragSrc) return;
+            e.preventDefault();
+            const others = tlRows().filter(r => r !== dragSrc);
+            let newOver = null;
+            for (const row of others) {
+              const { top, height } = row.getBoundingClientRect();
+              if (e.clientY < top + height / 2) { newOver = row; break; }
+            }
+            if (newOver !== dragOver) {
+              clearCls();
+              dragSrc.classList.add('dragging');
+              dragOver = newOver;
+              if (dragOver) dragOver.classList.add('drag-over-above');
+              else if (others.length) others[others.length - 1].classList.add('drag-over-below');
+            }
+          };
+
+          const endDrag = (commit) => {
+            document.removeEventListener('pointermove', onMove);
+            document.removeEventListener('pointerup', doCommit);
+            document.removeEventListener('pointercancel', doCancel);
+            if (!dragSrc) return;
+            const src = dragSrc, over = dragOver;
+            clearCls();
+            dragSrc = null; dragOver = null;
+            if (!commit) return;
+
+            const srcId = src.dataset.entryId;
+            const current = this.sessions.get(id);
+            if (!current) return;
+            const bhajans = current.bhajans || [];
+            const srcEntry = bhajans.find(b => b.id === srcId);
+            if (!srcEntry) return;
+
+            const without = bhajans.filter(b => b.id !== srcId);
+            let newBhajans;
+            if (!over) {
+              newBhajans = [...without, srcEntry];
+            } else {
+              const tIdx = without.findIndex(b => b.id === over.dataset.entryId);
+              newBhajans = tIdx < 0 ? [...without, srcEntry]
+                : [...without.slice(0, tIdx), srcEntry, ...without.slice(tIdx)];
+            }
+
+            // Guard: only a Ganesha bhajan can be first when one exists in the session
+            const srcDeity = srcEntry.bhajan_deity || '';
+            const srcIsGanesha = srcDeity.split(/[,/]/).map(d => d.trim()).some(d => d.toLowerCase() === 'ganesha');
+            const sessionHasGanesha = newBhajans.some(b => {
+              const d = b.bhajan_deity || '';
+              return d.split(/[,/]/).map(x => x.trim()).some(x => x.toLowerCase() === 'ganesha');
+            });
+            if (!srcIsGanesha && sessionHasGanesha && newBhajans[0]?.id === srcId) {
+              this._toast('Only a Ganesh bhajan can be first', 'warn');
+              return;
+            }
+
+            if (newBhajans.map(b => b.id).join() !== bhajans.map(b => b.id).join()) {
+              this.sessions.save({ ...current, bhajans: newBhajans }, { local: true });
+              this._renderSessionDetail(id);
+            }
+          };
+
+          const doCommit = () => endDrag(true);
+          const doCancel = () => endDrag(false);
+
+          dc.addEventListener('pointerdown', e => {
+            if (!e.target.closest('.drag-handle') || e.button > 0) return;
+            e.preventDefault();
+            dragSrc = e.target.closest('.timeline-item');
+            if (!dragSrc) return;
+            dragSrc.classList.add('dragging');
+            document.addEventListener('pointermove', onMove, { passive: false });
+            document.addEventListener('pointerup', doCommit);
+            document.addEventListener('pointercancel', doCancel);
+          }, { passive: false });
+        }
+      }
 
       document.querySelectorAll('#session-detail-content .entry-action-btn[data-action="remove"]').forEach(btn => {
         btn.addEventListener('click', () => {
