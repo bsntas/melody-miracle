@@ -2391,6 +2391,8 @@ class App {
 
       const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
+      const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
+      const eDeitySlug = this._deitySlug(eDeity);
       return `
       <div class="session-bhajan-entry" data-entry-id="${e.id}">
         ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
@@ -2405,6 +2407,7 @@ class App {
             ${!isPlaying && isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
           </div>`}
           <div class="entry-pitch-row">
+            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
             <span class="${!isPlaying && isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Tap to edit pitch' : ''}">
               ${e.pitch
                 ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
@@ -3486,6 +3489,8 @@ class App {
         ? `<div class="session-bhajan-timeline">
             ${(s.bhajans).map((e, i) => {
               const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
+              const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
+              const eDeitySlug = this._deitySlug(eDeity);
               return `
               <div class="timeline-item" data-entry-id="${e.id}">
                 ${isEditMode ? '<div class="drag-handle" title="Drag to reorder">⠿</div>' : ''}
@@ -3500,6 +3505,7 @@ class App {
                         ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                         : (isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
+                    ${eDeity ? `<span class="deity-pill deity-${eDeitySlug} tl-deity-pill">${escHtml(eDeity)}</span>` : ''}
                   </div>
                   ${isEditMode
                     ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
