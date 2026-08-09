@@ -2170,24 +2170,36 @@ class App {
           <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim Host</button>
         </div>` : ''}
 
+        ${(() => {
+          const singers = [...new Set((st.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
+          const deityTally = {};
+          for (const e of st.bhajans || []) {
+            const d = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
+            if (d) deityTally[d] = (deityTally[d] || 0) + 1;
+          }
+          const deityPillsHTML = Object.entries(deityTally)
+            .sort((a, b) => b[1] - a[1])
+            .map(([deity, count]) => {
+              const slug = this._deitySlug(deity);
+              return `<span class="deity-pill deity-${slug}">${escHtml(deity)}${count > 1 ? ` ×${count}` : ''}</span>`;
+            }).join('');
+          return `
         <div class="live-header">
           <div class="live-header-top">
             <div>
               <div class="live-session-label">${escHtml(st.label || 'Bhajan Session')}</div>
               <div class="live-session-date">${formatDate(st.date)}</div>
             </div>
+            <div class="live-header-right">
+              ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
+              ${singers.length ? `<div class="singers-strip-compact">
+                ${singers.map(name => `<div class="singer-avatar-sm clickable" data-singer="${escHtml(name)}" title="${escHtml(name)}">${escHtml(name[0]?.toUpperCase() || '?')}</div>`).join('')}
+              </div>` : ''}
+            </div>
           </div>
-          <div class="observer-count">
-            ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
-          </div>
-          <div class="singers-strip">
-            ${[...new Set((st.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))].map(name => `
-              <div class="singer-chip clickable" data-singer="${escHtml(name)}" title="View ${escHtml(name)}'s profile">
-                <div class="singer-avatar">${escHtml(name[0]?.toUpperCase() || '?')}</div>
-                ${escHtml(name)}
-              </div>`).join('')}
-          </div>
-        </div>
+          ${deityPillsHTML ? `<div class="deity-summary-strip">${deityPillsHTML}</div>` : ''}
+        </div>`;
+        })()}
 
         ${!isPlaying ? `<div class="session-setup-bar">
           <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
@@ -2215,7 +2227,14 @@ class App {
         ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
       </div>`;
 
-    // Singer chip clicks
+    // Singer avatar clicks (compact header strip)
+    document.querySelectorAll('.singer-avatar-sm.clickable').forEach(av => {
+      av.addEventListener('click', () => {
+        location.hash = `#singer/${encodeURIComponent(av.dataset.singer)}`;
+      });
+    });
+
+    // Singer chip clicks (kept for any remaining full chips)
     document.querySelectorAll('.singer-chip.clickable').forEach(chip => {
       chip.addEventListener('click', () => {
         location.hash = `#singer/${encodeURIComponent(chip.dataset.singer)}`;
@@ -2358,6 +2377,8 @@ class App {
       const canGoEarlier = i > 0;
       const canGoLater   = i < bhajans.length - 1;
       const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
+      const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
+      const eDeitySlug = this._deitySlug(eDeity);
 
       if (isCurrent) {
         const bhajanRec = this.bhajans.getById(e.bhajan_id);
@@ -2369,7 +2390,10 @@ class App {
           <div class="playing-entry-header">
             <span class="entry-num entry-num-playing">▶</span>
             <div class="entry-main">
-              <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
+              <div class="entry-title-row">
+                ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
+                <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+              </div>
               ${e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : ''}
             </div>
             ${isHost ? `<div class="playing-nav-btns">
@@ -2391,14 +2415,15 @@ class App {
 
       const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
-      const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
-      const eDeitySlug = this._deitySlug(eDeity);
       return `
       <div class="session-bhajan-entry" data-entry-id="${e.id}">
         ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
         <div class="entry-num">${displayNum}</div>
         <div class="entry-main">
-          <div class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
+          <div class="entry-title-row">
+            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
+            <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+          </div>
           ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
             <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
             ${!isPlaying && isEditMode ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
@@ -2407,7 +2432,6 @@ class App {
             ${!isPlaying && isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
           </div>`}
           <div class="entry-pitch-row">
-            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
             <span class="${!isPlaying && isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Tap to edit pitch' : ''}">
               ${e.pitch
                 ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
@@ -3496,7 +3520,10 @@ class App {
                 ${isEditMode ? '<div class="drag-handle" title="Drag to reorder">⠿</div>' : ''}
                 <div class="tl-num">${i + 1}</div>
                 <div class="tl-main">
-                  <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
+                  <div class="tl-title-row">
+                    ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
+                    <span class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+                  </div>
                   <div class="tl-meta">
                     ${(e.singers?.length || e.singer) ? `👤 ${escHtml(e.singers?.join(' · ') || e.singer)}` : ''}
                     ${(e.singers?.length || e.singer) && (e.pitch || isEditMode) ? ' · ' : ''}
@@ -3505,7 +3532,6 @@ class App {
                         ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
                         : (isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
                     </span>
-                    ${eDeity ? `<span class="deity-pill deity-${eDeitySlug} tl-deity-pill">${escHtml(eDeity)}</span>` : ''}
                   </div>
                   ${isEditMode
                     ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
