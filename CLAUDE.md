@@ -8,7 +8,7 @@ A **vanilla JS PWA** for managing bhajan (devotional song) sessions. No framewor
 
 ```
 index.html          Single-page shell; all views declared here as hidden divs
-js/app.js           Main controller (~4 300 lines) — routing, rendering, all UI logic
+js/app.js           Main controller (~4 350 lines) — routing, rendering, all UI logic
 js/store.js         BhajanStore (bhajans.json wrapper) + SessionStore (localStorage + fetch)
 js/github-store.js  Extends SessionStore — commits sessions.json to GitHub via PAT
 js/live.js          Firebase Realtime DB — live session sync between host and participants
@@ -82,6 +82,19 @@ DB paths: `melody-miracle/sessions/<roomCode>/state`, `.../observers/`, `melody-
 ## How to add a bhajan
 
 Edit a Markdown file in `bhajans/`, then run `python scripts/build-bhajans.py` to regenerate `data/bhajans.json`.
+
+## Auth gate pattern
+
+Protected write actions call `await this.requireAuth(reason)` at the top. If the user is not signed in, this shows a `modal-require-auth` dialog (in `index.html`) with the `reason` string and two buttons — **Go back** (returns `false`, caller bails) and **Sign in with Google** (triggers the Firebase Google popup, returns `true` on success). The underlying helper is `_openAuthRequiredDialog(reason)` which returns a Promise.
+
+Reasons passed per action:
+- Create/manage sessions → "Sign in to create or manage sessions"
+- Resume draft → "Sign in to resume your session"
+- Join session → "Sign in to join a session"
+- Add bhajan → "Sign in to add bhajans"
+- Claim host → "Sign in to claim host"
+- Edit mode → "Sign in to edit the session"
+- Toggle favourite → "Sign in to save favourites"
 
 ## Persistence flow
 

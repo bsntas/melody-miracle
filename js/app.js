@@ -2251,7 +2251,7 @@ class App {
     });
 
     document.getElementById('btn-claim-host')?.addEventListener('click', async () => {
-      if (!await this.requireAuth()) return;
+      if (!await this.requireAuth('Sign in to claim host')) return;
       this.live.claimHost();
       this._renderLiveSession(el);
     });
@@ -2264,7 +2264,7 @@ class App {
       // Setup mode: add bhajan always available; edit controls gated by edit mode
       document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       document.getElementById('btn-live-edit-toggle')?.addEventListener('click', async () => {
-        if (!this._liveEditMode && !await this.requireAuth()) return;
+        if (!this._liveEditMode && !await this.requireAuth('Sign in to edit the session')) return;
         this._liveEditMode = !this._liveEditMode;
         this._renderLiveSession(el);
       });
@@ -2456,10 +2456,7 @@ class App {
   _liveEditMode = false;
 
   async _openNewSession(backdated = false) {
-    if (!await this.requireAuth()) {
-      this._toast('Sign in to create or manage sessions', 'warn');
-      return;
-    }
+    if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
     this._sfIsBackdated = backdated;
 
@@ -2649,7 +2646,7 @@ class App {
   }
 
   async _resumeDraftSession(draft) {
-    if (!await this.requireAuth()) return;
+    if (!await this.requireAuth('Sign in to resume your session')) return;
     const sessionData = { ...draft, status: 'live' };
     // Pass resuming:true so host() checks Firebase first and won't overwrite
     // participant edits. Phase and bhajans are delivered via onStateChange once
@@ -2709,10 +2706,7 @@ class App {
   // ─── Join Session ─────────────────────────────────────────────────────────
 
   async _openJoinModal() {
-    if (!await this.requireAuth()) {
-      this._toast('Sign in to join a session', 'warn');
-      return;
-    }
+    if (!await this.requireAuth('Sign in to join a session')) return;
 
     const select = document.getElementById('mjoin-series');
     const errEl  = document.getElementById('mjoin-fetch-error');
@@ -2747,7 +2741,7 @@ class App {
   }
 
   async _joinSessionWithCode(code) {
-    if (!await this.requireAuth()) return;
+    if (!await this.requireAuth('Sign in to join a session')) return;
     // Guard against double-tap: leave any existing connection first
     if (this.live) { this.live.leave(); this.live = null; }
 
@@ -2801,7 +2795,7 @@ class App {
   // ─── Add Bhajan Modal ─────────────────────────────────────────────────────
 
   async _openAddBhajanModal(preselect = null) {
-    if (!await this.requireAuth()) return;
+    if (!await this.requireAuth('Sign in to add bhajans')) return;
     this._mabSelected = preselect || null;
     this._mabStep = preselect ? 2 : 1;
 
@@ -3966,11 +3960,39 @@ class App {
 
   // ─── Auth ─────────────────────────────────────────────────────────────────
 
-  // Returns true if the user is (or becomes) signed in. Triggers sign-in popup
-  // if needed. Call with `if (!await this.requireAuth()) return;` at the top of
-  // any write action that requires an authenticated user.
-  async requireAuth() {
+  // Shows a dialog explaining why sign-in is needed. Resolves true if the user
+  // clicks "Sign in", false if they dismiss or click "Go back".
+  _openAuthRequiredDialog(reason = '') {
+    return new Promise(resolve => {
+      const modal = document.getElementById('modal-require-auth');
+      document.getElementById('mrauth-message').textContent =
+        reason || 'This feature requires you to be signed in.';
+
+      let settled = false;
+      const settle = (val) => {
+        if (settled) return;
+        settled = true;
+        modal.classList.add('hidden');
+        resolve(val);
+      };
+
+      document.getElementById('btn-mrauth-signin').onclick = () => settle(true);
+      document.getElementById('btn-mrauth-cancel').onclick  = () => settle(false);
+      document.getElementById('mrauth-close').onclick       = () => settle(false);
+      modal.onclick = (e) => { if (e.target === modal) settle(false); };
+
+      modal.classList.remove('hidden');
+    });
+  }
+
+  // Returns true if the user is (or becomes) signed in. Shows a confirmation
+  // dialog first so the user can opt out before the sign-in popup appears.
+  // Call with `if (!await this.requireAuth()) return;` at the top of any write
+  // action that requires an authenticated user.
+  async requireAuth(reason = '') {
     if (this.auth?.currentUser) return true;
+    const confirmed = await this._openAuthRequiredDialog(reason);
+    if (!confirmed) return false;
     try { await this._handleSignIn(); } catch { return false; }
     return !!(this.auth?.currentUser);
   }
@@ -4189,10 +4211,7 @@ class App {
   // ─── Favourites ───────────────────────────────────────────────────────────
 
   async _toggleBhajanFavourite(bhajanId) {
-    if (!this.auth?.currentUser) {
-      this._toast('Sign in to save favourites', 'warn');
-      return;
-    }
+    if (!await this.requireAuth('Sign in to save favourites')) return;
     try {
       const added = await this.favourites.toggle(bhajanId);
       this._updateFavButton(bhajanId);
