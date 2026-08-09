@@ -352,7 +352,8 @@ img { max-width: 100%; }
   flex: 1; min-width: 0;
   padding: 0.55rem 1rem 0.55rem 2.5rem;
   border: 1.5px solid var(--border); border-radius: var(--radius);
-  font-size: 0.95rem; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.56a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 0.75rem center;
+  font-size: 0.95rem; color: var(--text);
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a8a29e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.56a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E") no-repeat 0.75rem center;
   transition: border-color .15s;
   -webkit-appearance: none; appearance: none;
 }
@@ -912,8 +913,6 @@ img { max-width: 100%; }
 .tl-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
 /* Session detail timeline action column */
 .tl-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
-.reorder-btns-row { display: flex; gap: 0.2rem; }
-.btn-reorder { padding: 0.15rem 0.4rem; font-size: 0.8rem; line-height: 1; }
 
 
 /* ─── Singer Profile ─────────────────────────────────────────────────────── */
@@ -1195,6 +1194,10 @@ img { max-width: 100%; }
 .session-bhajan-entry.dragging { opacity: 0.4; background: var(--surface-2); border-radius: 8px; }
 .session-bhajan-entry.drag-over-above { border-top: 2px solid var(--saffron, #ea580c); }
 .session-bhajan-entry.drag-over-below { border-bottom: 2px solid var(--saffron, #ea580c); }
+/* Drag states for historic session detail timeline */
+.timeline-item.dragging { opacity: 0.4; background: var(--surface-2); border-radius: 8px; }
+.timeline-item.drag-over-above { border-top: 2px solid var(--saffron, #ea580c); }
+.timeline-item.drag-over-below { border-bottom: 2px solid var(--saffron, #ea580c); }
 
 /* Bhajan entry title clickable */
 .entry-title-link { cursor: pointer; color: inherit; }
@@ -1531,6 +1534,17 @@ img { max-width: 100%; }
   :root:not([data-theme="light"]) .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
   :root:not([data-theme="light"]) .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
   :root:not([data-theme="light"]) .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+  /* saffron-dark on saffron-bg/dark-surface contrast fixes */
+  :root:not([data-theme="light"]) .filter-active-chip { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .fmodal-toggle-btn.active { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .fmodal-select.active { color: #fb923c; }
+  :root:not([data-theme="light"]) .fmodal-chip-btn.active { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .bhajan-tag-sung { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .btn-nav-compact { color: #fb923c; border-color: #9a3412; }
+  :root:not([data-theme="light"]) .playing-entry-header .entry-meta { color: #fed7aa; }
+  :root:not([data-theme="light"]) .mab-sel-meta { color: #fed7aa; }
+  :root:not([data-theme="light"]) .pitch-pill { background: #431407; color: #fed7aa; }
+  :root:not([data-theme="light"]) .singer-sugg-chip:hover { background: #9a3412; color: #fed7aa; }
 }
 
 :root[data-theme="dark"] .bhajan-tag-tempo-slow  { background: #1e3a5f; color: #93c5fd; }
@@ -1590,6 +1604,17 @@ img { max-width: 100%; }
 :root[data-theme="dark"] .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
 :root[data-theme="dark"] .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
 :root[data-theme="dark"] .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+/* saffron-dark on saffron-bg/dark-surface contrast fixes */
+:root[data-theme="dark"] .filter-active-chip { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .fmodal-toggle-btn.active { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .fmodal-select.active { color: #fb923c; }
+:root[data-theme="dark"] .fmodal-chip-btn.active { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .bhajan-tag-sung { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .btn-nav-compact { color: #fb923c; border-color: #9a3412; }
+:root[data-theme="dark"] .playing-entry-header .entry-meta { color: #fed7aa; }
+:root[data-theme="dark"] .mab-sel-meta { color: #fed7aa; }
+:root[data-theme="dark"] .pitch-pill { background: #431407; color: #fed7aa; }
+:root[data-theme="dark"] .singer-sugg-chip:hover { background: #9a3412; color: #fed7aa; }
 
 
 /* ─── Offline / freeze banner ────────────────────────────────────────────── */
