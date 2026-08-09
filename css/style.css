@@ -539,7 +539,10 @@ img { max-width: 100%; }
 .pitch-sep  { opacity: 0.5; font-weight: 400; }
 .pitch-western-bold { font-weight: 700; opacity: 1; }
 .entry-pitch-row { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
-.tl-deity-pill { margin-left: 0.3rem; }
+.entry-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; }
+.entry-title-row .deity-pill { flex-shrink: 0; }
+.tl-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.1rem; }
+.tl-title-row .deity-pill { flex-shrink: 0; }
 
 /* Singer chip in session list entries */
 .entry-singer-row { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem; flex-wrap: wrap; }
@@ -686,12 +689,23 @@ img { max-width: 100%; }
   border-radius: var(--radius); padding: 1rem; margin-bottom: 1rem;
   box-shadow: var(--shadow);
 }
-.live-header-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.live-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+.live-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; flex-shrink: 0; }
 .live-session-label { font-weight: 700; font-size: 1rem; }
 .live-session-date { font-size: 0.8rem; color: var(--text-2); margin-top: 0.1rem; }
-.observer-count { font-size: 0.78rem; color: var(--text-2); margin-top: 0.5rem; }
+.observer-count { font-size: 0.78rem; color: var(--text-2); }
 
 .singers-strip { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+.singers-strip-compact { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.singer-avatar-sm {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--saffron); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; cursor: pointer;
+  transition: opacity 0.15s;
+}
+.singer-avatar-sm:hover { opacity: 0.8; }
+.deity-summary-strip { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
 .singer-chip {
   display: flex; align-items: center; gap: 0.3rem;
   background: var(--saffron-bg); color: var(--saffron-dark);
