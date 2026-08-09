@@ -654,6 +654,7 @@ class App {
       if (e.target === document.getElementById('modal-new-series')) this._closeModal('modal-new-series');
     });
     // Delete Series modal
+    document.getElementById('btn-mdel-close')?.addEventListener('click', () => this._closeModal('modal-del-series'));
     document.getElementById('btn-mdel-cancel')?.addEventListener('click', () => this._closeModal('modal-del-series'));
     document.getElementById('btn-mdel-confirm')?.addEventListener('click', () => this._executeDeleteSeries());
     document.getElementById('modal-del-series')?.addEventListener('click', e => {
@@ -2068,7 +2069,7 @@ class App {
       }
 
       el.innerHTML = open.map(({ code, state }) => `
-        <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}">
+        <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${hasDraft ? ' title="Discard your current draft first to join"' : ''}>
           <div class="open-session-info">
             <div class="open-session-label">${escHtml(state.label || code)}</div>
             <div class="open-session-meta">
@@ -2077,7 +2078,7 @@ class App {
               · ${escHtml(formatDate(state.date || ''))}
             </div>
           </div>
-          ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
+          ${hasDraft ? '<span class="open-session-join-blocked">Discard draft to join</span>' : '<span class="open-session-join">Join →</span>'}
         </div>
       `).join('');
 
@@ -2200,7 +2201,7 @@ class App {
           ${isHost ? `
           <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
           <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
-          <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati">🪔</button>
+          <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati" aria-label="Open Mangala Aarati bhajan">🪔</button>
         </div>`}
 
         <div class="section-header section-header-flush">
@@ -2373,11 +2374,11 @@ class App {
             </div>
             ${isHost ? `<div class="playing-nav-btns">
               <button class="btn btn-nav-compact" id="btn-prev-bhajan" ${canGoEarlier ? '' : 'disabled'} title="Previous">‹</button>
-              <button class="btn btn-nav-compact" id="btn-next-bhajan" title="Next">›</button>
+              <button class="btn btn-nav-compact" id="btn-next-bhajan" ${canGoLater ? '' : 'disabled'} title="Next">›</button>
             </div>` : ''}
           </div>
           ${(e.singers?.length || e.singer) ? `<div class="playing-singer-display">
-            <span class="playing-singer-pill">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+            <span class="playing-singer-pill" title="${escHtml(e.singers?.join(' · ') || e.singer)}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
           </div>` : ''}
           ${e.pitch ? `<div class="playing-pitch-display">
             <span class="playing-pitch-indian">${escHtml(pitchIndian)}</span>
@@ -3492,7 +3493,7 @@ class App {
                   <div class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</div>
                   <div class="tl-meta">
                     ${(e.singers?.length || e.singer) ? `👤 ${escHtml(e.singers?.join(' · ') || e.singer)}` : ''}
-                    ${(e.singers?.length || e.singer) ? ' · ' : ''}
+                    ${(e.singers?.length || e.singer) && (e.pitch || isEditMode) ? ' · ' : ''}
                     <span class="${isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${isEditMode ? 'Edit pitch' : ''}">
                       ${e.pitch
                         ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
@@ -3510,7 +3511,7 @@ class App {
                     <button class="btn btn-reorder" data-action="reorder-earlier" data-entry-id="${e.id}" ${i > 0 ? '' : 'disabled'} title="Move up">↑</button>
                     <button class="btn btn-reorder" data-action="reorder-later" data-entry-id="${e.id}" ${i < (s.bhajans.length - 1) ? '' : 'disabled'} title="Move down">↓</button>
                   </div>
-                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}">✕</button>` : ''}
+                  <button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
                 </div>
               </div>`;
             }).join('')}
@@ -3873,6 +3874,10 @@ class App {
   }
 
   _bindOnboarding() {
+    document.getElementById('monboard-close')?.addEventListener('click', () => this._closeModal('modal-onboarding'));
+    document.getElementById('modal-onboarding')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-onboarding')) this._closeModal('modal-onboarding');
+    });
     document.getElementById('btn-onboard-save')?.addEventListener('click', () => this._submitOnboarding());
     document.getElementById('btn-onboard-skip')?.addEventListener('click', () => {
       this._closeModal('modal-onboarding');

@@ -330,7 +330,7 @@ img { max-width: 100%; }
 
 .session-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
 .session-card-date { font-size: 0.78rem; color: var(--text-3); font-weight: 500; }
-.session-card-label { font-weight: 600; font-size: 0.95rem; margin-top: 0.15rem; }
+.session-card-label { font-weight: 600; font-size: 0.95rem; margin-top: 0.15rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .session-card-meta { display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-2); flex-wrap: wrap; }
 .session-meta-item { display: flex; align-items: center; gap: 0.3rem; }
 .session-card-badge { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 999px; flex-shrink: 0; }
@@ -660,6 +660,10 @@ img { max-width: 100%; }
   color: var(--saffron); font-weight: 600; font-size: 0.85rem;
   flex-shrink: 0; margin-left: 0.75rem;
 }
+.open-session-join-blocked {
+  font-size: 0.72rem; color: var(--text-3); flex-shrink: 0;
+  margin-left: 0.75rem; text-align: right;
+}
 .open-sessions-loading {
   display: flex; align-items: center; gap: 0.5rem;
   font-size: 0.85rem; color: var(--text-3); padding: 0.4rem 0;
@@ -809,6 +813,7 @@ img { max-width: 100%; }
   font-size: 0.85rem; line-height: 1.9; white-space: pre-wrap;
   color: var(--maroon); max-height: 40dvh; overflow-y: auto;
 }
+@media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
 .session-bhajans-list { }
 .session-bhajan-entry {
@@ -850,7 +855,7 @@ img { max-width: 100%; }
 }
 .observer-banner-info { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
 .observer-role-badge { font-weight: 700; font-size: 0.82rem; }
-.observer-banner-desc { font-size: 0.77rem; opacity: 0.75; }
+.observer-banner-desc { font-size: 0.77rem; color: var(--text-2); }
 .connecting-state { text-align: center; padding: 3rem 1rem; color: var(--text-2); }
 .connecting-spinner {
   width: 36px; height: 36px; border: 3px solid var(--border);
@@ -907,6 +912,8 @@ img { max-width: 100%; }
 .tl-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
 /* Session detail timeline action column */
 .tl-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+.reorder-btns-row { display: flex; gap: 0.2rem; }
+.btn-reorder { padding: 0.15rem 0.4rem; font-size: 0.8rem; line-height: 1; }
 
 
 /* ─── Singer Profile ─────────────────────────────────────────────────────── */
@@ -998,7 +1005,7 @@ img { max-width: 100%; }
 .pitch-or-divider::after  { right: 0; }
 
 /* ─── Add Bhajan modal ───────────────────────────────────────────────────── */
-.modal-add-bhajan-box { max-height: 85dvh; min-height: 75dvh; display: flex; flex-direction: column; }
+.modal-add-bhajan-box { max-height: 85dvh; display: flex; flex-direction: column; }
 .modal-add-bhajan-box .modal-body { overflow-y: auto; flex: 1; min-height: 0; padding: 0.75rem 1.25rem 0.5rem; overscroll-behavior: contain; scroll-padding-bottom: 1rem; display: flex; flex-direction: column; }
 #mab-step-search { display: flex; flex-direction: column; flex: 1; min-height: 0; }
 .mab-results { flex: 1; min-height: 0; overflow-y: auto; margin-top: 0.5rem; }
@@ -1068,7 +1075,7 @@ img { max-width: 100%; }
   padding: 0.65rem 1.25rem; border-radius: var(--radius);
   font-size: 0.88rem; font-weight: 500; max-width: calc(100vw - 2rem);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
-  z-index: 300; white-space: nowrap;
+  z-index: 300; white-space: normal; overflow-wrap: break-word;
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .toast-success { background: #15803d; }
