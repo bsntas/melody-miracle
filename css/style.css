@@ -839,11 +839,15 @@ img { max-width: 100%; }
 }
 @media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
-.session-bhajans-list { }
+.session-bhajans-list { overflow-x: hidden; }
 .session-bhajan-entry {
   display: flex; align-items: center; gap: 0.75rem;
   padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+  will-change: transform; touch-action: pan-y;
 }
+.entry-view-mode { cursor: pointer; }
+.entry-view-mode:hover { background: var(--saffron-bg); border-radius: var(--radius-sm); padding-left: 0.35rem; padding-right: 0.35rem; }
+.swipe-delete-armed { background: rgba(220, 38, 38, 0.1); border-radius: var(--radius-sm); }
 .session-bhajan-entry:last-child { border-bottom: none; }
 .session-entry-current {
   background: var(--saffron-bg);
@@ -863,6 +867,7 @@ img { max-width: 100%; }
 .entry-title { font-weight: 600; font-size: 0.88rem; flex: 1; min-width: 0; }
 .entry-meta { font-size: 0.77rem; color: var(--text-2); margin-top: 0.1rem; }
 .entry-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
+/* .entry-actions / .entry-action-btn kept for session-detail timeline which still uses them */
 .entry-actions { display: flex; gap: 0.25rem; }
 .entry-action-btn { font-size: 0.85rem; padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); color: var(--text-3); min-width: 2.25rem; min-height: 2.25rem; display: flex; align-items: center; justify-content: center; }
 .entry-action-btn:hover { background: var(--surface-2); color: var(--text); }

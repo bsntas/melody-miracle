@@ -774,17 +774,109 @@ class App {
     // Onboarding modal
     this._bindOnboarding();
 
-    // Persistent delegated remove-bhajan listener on the stable session container.
+    // Persistent delegated listeners on the stable session container.
     // Per-element listeners attached during _renderLiveSession are lost whenever Firebase
     // triggers a re-render (onStateChange → innerHTML replaced). Delegation on #session-content
     // (which is never replaced, only its children are) survives every re-render.
-    document.getElementById('session-content')?.addEventListener('click', e => {
-      const btn = e.target.closest('.entry-action-btn[data-action="remove"]');
-      if (!btn) return;
-      console.log('[MM] delete click:', btn.dataset.entryId);
-      e.stopPropagation();
-      this._removeBhajanEntry(btn.dataset.entryId);
+    const sessionContent = document.getElementById('session-content');
+
+    // Click anywhere on a bhajan entry in view mode → open bhajan detail modal.
+    sessionContent?.addEventListener('click', e => {
+      if (this._liveEditMode) return;
+      if (e.target.closest('.entry-action-btn')) return;
+      const entry = e.target.closest('.session-bhajan-entry[data-entry-id]');
+      if (!entry) return;
+      const st = this.liveState;
+      if (!st) return;
+      const bhajans = st.bhajans || [];
+      const entryData = bhajans.find(b => b.id === entry.dataset.entryId);
+      if (!entryData) return;
+      const bhajanIds = bhajans.map(b => b.bhajan_id);
+      const idx = bhajans.findIndex(b => b.id === entry.dataset.entryId);
+      this._openBhajanModal(entryData.bhajan_id, { bhajans: bhajanIds, index: idx });
     });
+
+    // Swipe-to-remove in edit mode: horizontal left swipe on a bhajan entry deletes it.
+    {
+      let swipeEl = null, startX = 0, startY = 0, swiping = false, armed = false;
+
+      const onSwipeMove = (e) => {
+        if (!swipeEl) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        if (!swiping) {
+          if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+          if (Math.abs(dx) >= Math.abs(dy)) {
+            swiping = true;
+          } else {
+            swipeEl = null; return; // vertical scroll wins
+          }
+        }
+        e.preventDefault();
+        const clamped = Math.min(0, dx);
+        swipeEl.style.transition = 'none';
+        swipeEl.style.transform = `translateX(${clamped}px)`;
+        const wasArmed = armed;
+        armed = clamped < -90;
+        if (armed !== wasArmed) swipeEl.classList.toggle('swipe-delete-armed', armed);
+      };
+
+      const onSwipeEnd = () => {
+        document.removeEventListener('pointermove', onSwipeMove);
+        document.removeEventListener('pointerup', onSwipeEnd);
+        document.removeEventListener('pointercancel', onSwipeCancel);
+        if (!swipeEl) return;
+        const el = swipeEl, del = armed;
+        swipeEl = null; swiping = false; armed = false;
+        if (del) {
+          const entryId = el.dataset.entryId;
+          el.style.transition = 'transform 0.18s ease-out, opacity 0.18s ease-out';
+          el.style.transform = 'translateX(-110%)';
+          el.style.opacity = '0';
+          setTimeout(() => {
+            el.style.transition = 'max-height 0.18s ease, padding-top 0.18s ease, padding-bottom 0.18s ease';
+            el.style.overflow = 'hidden';
+            el.style.maxHeight = el.offsetHeight + 'px';
+            el.offsetHeight; // force reflow
+            el.style.maxHeight = '0';
+            el.style.paddingTop = '0';
+            el.style.paddingBottom = '0';
+            setTimeout(() => this._removeBhajanEntry(entryId), 200);
+          }, 170);
+        } else {
+          el.style.transition = 'transform 0.25s ease';
+          el.style.transform = '';
+          el.classList.remove('swipe-delete-armed');
+        }
+      };
+
+      const onSwipeCancel = () => {
+        document.removeEventListener('pointermove', onSwipeMove);
+        document.removeEventListener('pointerup', onSwipeEnd);
+        document.removeEventListener('pointercancel', onSwipeCancel);
+        if (swipeEl) {
+          swipeEl.style.transition = 'transform 0.25s ease';
+          swipeEl.style.transform = '';
+          swipeEl.classList.remove('swipe-delete-armed');
+          swipeEl = null; swiping = false; armed = false;
+        }
+      };
+
+      sessionContent?.addEventListener('pointerdown', e => {
+        if (!this._liveEditMode) return;
+        if (e.target.closest('.drag-handle')) return;
+        const entry = e.target.closest('.session-bhajan-entry[data-entry-id]');
+        if (!entry) return;
+        swipeEl = entry;
+        startX = e.clientX;
+        startY = e.clientY;
+        swiping = false;
+        armed = false;
+        document.addEventListener('pointermove', onSwipeMove, { passive: false });
+        document.addEventListener('pointerup', onSwipeEnd);
+        document.addEventListener('pointercancel', onSwipeCancel);
+      }, { passive: true });
+    }
 
     // Persistent delegated drag-reorder for live session bhajans.
     // Same rationale: per-element listeners on .drag-handle are destroyed on every
@@ -2316,14 +2408,7 @@ class App {
       });
     });
 
-    // Clickable bhajan titles (all users)
-    document.querySelectorAll('#live-bhajans-list .entry-title-link').forEach(link => {
-      link.addEventListener('click', () => {
-        const bhajanIds = (st.bhajans || []).map(e => e.bhajan_id);
-        const idx = parseInt(link.dataset.entryIdx);
-        this._openBhajanModal(link.dataset.bhajanId, { bhajans: bhajanIds, index: idx });
-      });
-    });
+    // Bhajan title / full-row click → handled by persistent delegated listener in _bindGlobal.
 
     document.getElementById('btn-claim-host')?.addEventListener('click', async () => {
       if (!await this.requireAuth('Sign in to claim host')) return;
@@ -2494,7 +2579,7 @@ class App {
       const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
-      <div class="session-bhajan-entry" data-entry-id="${e.id}">
+      <div class="session-bhajan-entry${!isEditMode ? ' entry-view-mode' : ''}" data-entry-id="${e.id}">
         ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
         <div class="entry-num">${displayNum}</div>
         <div class="entry-main">
@@ -2518,10 +2603,6 @@ class App {
           </div>
         </div>
         <div class="entry-time">${formatTime(e.addedAt)}</div>
-        ${!isPlaying && isEditMode ? `
-        <div class="entry-actions">
-          <button class="btn entry-action-btn" data-action="remove" data-entry-id="${e.id}" title="Remove">✕</button>
-        </div>` : ''}
       </div>`;
     }).join('');
   }
