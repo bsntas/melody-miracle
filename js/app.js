@@ -798,7 +798,7 @@ class App {
 
     // Swipe-to-remove in edit mode: horizontal left swipe on a bhajan entry deletes it.
     {
-      let swipeEl = null, startX = 0, startY = 0, swiping = false, armed = false;
+      let swipeEl = null, contentEl = null, startX = 0, startY = 0, swiping = false, armed = false;
 
       const onSwipeMove = (e) => {
         if (!swipeEl) return;
@@ -809,13 +809,13 @@ class App {
           if (Math.abs(dx) >= Math.abs(dy)) {
             swiping = true;
           } else {
-            swipeEl = null; return; // vertical scroll wins
+            swipeEl = null; contentEl = null; return; // vertical scroll wins
           }
         }
         e.preventDefault();
         const clamped = Math.min(0, dx);
-        swipeEl.style.transition = 'none';
-        swipeEl.style.transform = `translateX(${clamped}px)`;
+        contentEl.style.transition = 'none';
+        contentEl.style.transform = `translateX(${clamped}px)`;
         const wasArmed = armed;
         armed = clamped < -90;
         if (armed !== wasArmed) swipeEl.classList.toggle('swipe-delete-armed', armed);
@@ -826,13 +826,12 @@ class App {
         document.removeEventListener('pointerup', onSwipeEnd);
         document.removeEventListener('pointercancel', onSwipeCancel);
         if (!swipeEl) return;
-        const el = swipeEl, del = armed;
-        swipeEl = null; swiping = false; armed = false;
+        const el = swipeEl, cel = contentEl, del = armed;
+        swipeEl = null; contentEl = null; swiping = false; armed = false;
         if (del) {
           const entryId = el.dataset.entryId;
-          el.style.transition = 'transform 0.18s ease-out, opacity 0.18s ease-out';
-          el.style.transform = 'translateX(-110%)';
-          el.style.opacity = '0';
+          cel.style.transition = 'transform 0.18s ease-out';
+          cel.style.transform = 'translateX(-110%)';
           setTimeout(() => {
             el.style.transition = 'max-height 0.18s ease, padding-top 0.18s ease, padding-bottom 0.18s ease';
             el.style.overflow = 'hidden';
@@ -844,8 +843,8 @@ class App {
             setTimeout(() => this._removeBhajanEntry(entryId), 200);
           }, 170);
         } else {
-          el.style.transition = 'transform 0.25s ease';
-          el.style.transform = '';
+          cel.style.transition = 'transform 0.25s ease';
+          cel.style.transform = '';
           el.classList.remove('swipe-delete-armed');
         }
       };
@@ -855,10 +854,10 @@ class App {
         document.removeEventListener('pointerup', onSwipeEnd);
         document.removeEventListener('pointercancel', onSwipeCancel);
         if (swipeEl) {
-          swipeEl.style.transition = 'transform 0.25s ease';
-          swipeEl.style.transform = '';
+          contentEl.style.transition = 'transform 0.25s ease';
+          contentEl.style.transform = '';
           swipeEl.classList.remove('swipe-delete-armed');
-          swipeEl = null; swiping = false; armed = false;
+          swipeEl = null; contentEl = null; swiping = false; armed = false;
         }
       };
 
@@ -867,7 +866,10 @@ class App {
         if (e.target.closest('.drag-handle')) return;
         const entry = e.target.closest('.session-bhajan-entry[data-entry-id]');
         if (!entry) return;
+        const cel = entry.querySelector('.entry-content');
+        if (!cel) return;
         swipeEl = entry;
+        contentEl = cel;
         startX = e.clientX;
         startY = e.clientY;
         swiping = false;
@@ -2580,29 +2582,31 @@ class App {
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
       <div class="session-bhajan-entry${!isEditMode ? ' entry-view-mode' : ''}" data-entry-id="${e.id}">
-        ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
-        <div class="entry-num">${displayNum}</div>
-        <div class="entry-main">
-          <div class="entry-title-row">
-            <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
-            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
-          </div>
-          ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
-            <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
-            ${!isPlaying && isEditMode ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
-          </div>` : `<div class="entry-meta">
-            ${!isPlaying && isEditMode ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
-            ${!isPlaying && isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
-          </div>`}
-          <div class="entry-pitch-row">
-            <span class="${!isPlaying && isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Tap to edit pitch' : ''}">
-              ${e.pitch
-                ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
-                : (!isPlaying && isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
-            </span>
+        ${isEditMode ? `<div class="entry-delete-bg"><span class="entry-delete-icon">🗑</span></div>` : ''}
+        <div class="entry-content">
+          ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
+          <div class="entry-num">${displayNum}</div>
+          <div class="entry-main">
+            <div class="entry-title-row">
+              <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+              ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
+            </div>
+            ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
+              <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+              ${!isPlaying && isEditMode ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
+            </div>` : `<div class="entry-meta">
+              ${!isPlaying && isEditMode ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
+              ${!isPlaying && isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
+            </div>`}
+            <div class="entry-pitch-row">
+              <span class="${!isPlaying && isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Tap to edit pitch' : ''}">
+                ${e.pitch
+                  ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
+                  : (!isPlaying && isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
+              </span>
+            </div>
           </div>
         </div>
-        <div class="entry-time">${formatTime(e.addedAt)}</div>
       </div>`;
     }).join('');
   }

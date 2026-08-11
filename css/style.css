@@ -840,14 +840,33 @@ img { max-width: 100%; }
 @media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
 .session-bhajans-list { overflow-x: hidden; }
-.session-bhajan-entry {
+.session-bhajan-entry { position: relative; border-bottom: 1px solid var(--border); }
+/* Placeholder + currently-playing (no data-entry-id): keep legacy flex layout */
+.session-bhajan-entry:not([data-entry-id]) {
+  display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0;
+}
+/* Swipeable entries clip the slide animation */
+.session-bhajan-entry[data-entry-id] { overflow: hidden; }
+/* Content wrapper — the thing that actually translates on swipe */
+.entry-content {
   display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+  padding: 0.65rem 0; width: 100%;
+  background: var(--surface);
+  position: relative; z-index: 1;
   will-change: transform; touch-action: pan-y;
 }
+/* Red delete zone revealed as content slides left */
+.entry-delete-bg {
+  position: absolute; inset: 0;
+  background: #dc2626;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-right: 1.25rem; gap: 0.3rem;
+}
+.entry-delete-icon { color: white; font-size: 1.1rem; transition: transform 0.15s; }
+.swipe-delete-armed .entry-delete-icon { transform: scale(1.3); }
+/* View mode: whole row is a tap target */
 .entry-view-mode { cursor: pointer; }
-.entry-view-mode:hover { background: var(--saffron-bg); border-radius: var(--radius-sm); padding-left: 0.35rem; padding-right: 0.35rem; }
-.swipe-delete-armed { background: rgba(220, 38, 38, 0.1); border-radius: var(--radius-sm); }
+.entry-view-mode:hover .entry-content { background: var(--saffron-bg); border-radius: var(--radius-sm); padding-left: 0.35rem; padding-right: 0.35rem; }
 .session-bhajan-entry:last-child { border-bottom: none; }
 .session-entry-current {
   background: var(--saffron-bg);
@@ -1219,7 +1238,8 @@ img { max-width: 100%; }
 }
 .drag-handle:hover { color: var(--text-2); }
 .drag-handle:active { cursor: grabbing; }
-.session-bhajan-entry.dragging { opacity: 0.4; background: var(--surface-2); border-radius: 8px; }
+.session-bhajan-entry.dragging { opacity: 0.4; border-radius: 8px; }
+.session-bhajan-entry.dragging .entry-content { background: var(--surface-2); }
 .session-bhajan-entry.drag-over-above { border-top: 2px solid var(--saffron, #ea580c); }
 .session-bhajan-entry.drag-over-below { border-bottom: 2px solid var(--saffron, #ea580c); }
 /* Drag states for historic session detail timeline */
