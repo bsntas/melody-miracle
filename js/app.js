@@ -1,10 +1,10 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
 import { GitHubStore } from './github-store.js?v=20260811.1';
-import { LiveSession, listOpenSessions } from './live.js?v=20260807.3';
+import { LiveSession, listOpenSessions } from './live.js?v=20260811.2';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260811.1 loaded');
+console.log('[MM] app.js v20260811.2 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1147,10 +1147,9 @@ class App {
     document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
-    // Hide Join/New buttons when a live session or resumable draft exists
+    // Hide Join button when a resumable draft exists
     const draft = this.sessions.getDraft();
     document.getElementById('btn-dash-join-session')?.classList.toggle('hidden', !!draft);
-    document.getElementById('btn-dash-new-session')?.classList.toggle('hidden', !!this.liveState);
 
     // Live alert
     const liveAlert = document.getElementById('dash-live-alert');
@@ -2063,11 +2062,7 @@ class App {
     const hasDraft = !!this.sessions.getDraft();
 
     try {
-      const allSeries = await this._fetchKnownSeries();
-      // Narrow to the active series so Live Now only shows relevant sessions
-      const series = this._selectedSeries
-        ? allSeries.filter(s => s === this._selectedSeries)
-        : allSeries;
+      const series = await this._fetchKnownSeries();
       // Check yesterday through 6 days ahead — covers sessions created for upcoming weekends
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
@@ -2120,11 +2115,7 @@ class App {
     const hasDraft = !!this.sessions.getDraft();
 
     try {
-      const allSeries = await this._fetchKnownSeries();
-      // Narrow to the active series so Live Now only shows relevant sessions
-      const series = this._selectedSeries
-        ? allSeries.filter(s => s === this._selectedSeries)
-        : allSeries;
+      const series = await this._fetchKnownSeries();
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
         const d = new Date(now);
@@ -2232,6 +2223,8 @@ class App {
         ${isHost ? `<div class="session-mgmt-links">
           <button class="btn-link-muted" id="btn-end-session">Save &amp; Close</button>
           <span aria-hidden="true">·</span>
+          <button class="btn-link-muted" id="btn-background-session" title="Leave open for others to add bhajans while you manage another series">Background</button>
+          <span aria-hidden="true">·</span>
           <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
         </div>` : ''}` : `<div class="playing-controls-strip">
           ${isHost ? `
@@ -2292,7 +2285,10 @@ class App {
         this._liveEditMode = !this._liveEditMode;
         this._renderLiveSession(el);
       });
-      if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
+      if (isHost) {
+        document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
+        document.getElementById('btn-background-session')?.addEventListener('click', () => this._backgroundSession());
+      }
 
       // Drag-reorder and remove-button clicks are handled by persistent delegated
       // listeners bound to #session-content in _bindGlobal(), so no per-element binding here.
@@ -2588,8 +2584,9 @@ class App {
   // ─── Start Live Session ───────────────────────────────────────────────────
 
   _startLiveSession(sessionData, { resuming = false } = {}) {
-    // Clean up any existing connection before opening a new one
-    if (this.live) { this.live.leave(); this.live = null; }
+    // Detach any existing connection without destroying its Firebase node,
+    // so a backgrounded session stays open for collaborators to add bhajans.
+    if (this.live) { this.live.detach(); this.live = null; }
 
     this.live = new LiveSession({
       onStateChange: (state) => {
@@ -2769,8 +2766,8 @@ class App {
 
   async _joinSessionWithCode(code) {
     if (!await this.requireAuth('Sign in to join a session')) return;
-    // Guard against double-tap: leave any existing connection first
-    if (this.live) { this.live.leave(); this.live = null; }
+    // Detach any existing connection without destroying its Firebase node
+    if (this.live) { this.live.detach(); this.live = null; }
 
     const el = document.getElementById('session-content');
     el.innerHTML = `<div class="connecting-state">
@@ -3149,6 +3146,18 @@ class App {
     const bhCount = (this.liveState?.bhajans || []).length;
     if (!confirm(`End session? ${bhCount} bhajans will be saved.`)) return;
     this._endSession();
+  }
+
+  _backgroundSession() {
+    const label = this.liveState?.label || 'Session';
+    this.live?.detach();
+    this.live = null;
+    this.liveState = null;
+    // Keep the localStorage draft so the host can see it in the session home.
+    // Firebase state remains intact — others can still join and add bhajans.
+    document.getElementById('bnav-session-icon').classList.remove('is-live');
+    this._renderSession(); // returns to session home; draft shows Resume button
+    this._toast(`"${label}" is open — others can add bhajans via Live Now`);
   }
 
   _discardSession() {

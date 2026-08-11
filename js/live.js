@@ -315,6 +315,18 @@ export class LiveSession {
     this._cleanup();
   }
 
+  // ── Detach: disconnect listeners without deleting the Firebase session node ──
+  // Use this when backgrounding a session so it stays open for collaborators.
+  // Unlike leave(), the session remains discoverable in Live Now and retains
+  // all bhajans added so far. The coordinator can rejoin later via host().
+  detach() {
+    if (this._presenceRef) {
+      remove(this._presenceRef).catch(() => {}); // remove from observer list
+    }
+    // Session node is intentionally NOT removed — Firebase state persists.
+    this._cleanup();
+  }
+
   // ─────────────────────────────────────────────────────────────────────────
 
   // Attach onValue on stateRef. If a callback is provided it's used instead of

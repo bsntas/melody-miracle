@@ -1,13 +1,14 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260811.1';
+const CACHE = 'melody-miracle-20260811.2';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260811.1'; // app.js (series-user mapping, series index auto-commit)
+const V_APP  = '20260811.2'; // app.js (multi-session background support)
 const V_GH   = '20260811.1'; // github-store.js (series index auto-commit)
 const V_CSS  = '20260809.6'; // style.css (unchanged)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
-const V_CORE = '20260807.3'; // live.js, store.js (unchanged)
+const V_LIVE = '20260811.2'; // live.js (detach() method)
+const V_CORE = '20260807.3'; // store.js (unchanged)
 const V_FAV  = '20260806.2'; // favourites.js (unchanged)
 const PRECACHE = [
   './',
@@ -17,7 +18,7 @@ const PRECACHE = [
   `./js/app.js?v=${V_APP}`,
   `./js/store.js?v=${V_CORE}`,
   `./js/github-store.js?v=${V_GH}`,
-  `./js/live.js?v=${V_CORE}`,
+  `./js/live.js?v=${V_LIVE}`,
   `./js/auth.js?v=${V_AUTH}`,
   `./js/favourites.js?v=${V_FAV}`,
   './icons/icon-192.png',
