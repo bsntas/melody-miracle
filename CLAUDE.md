@@ -113,8 +113,8 @@ Reasons passed per action:
 
 ### Session form date constraints
 - Default: today's date.
-- **Live sessions** (`isBackdated = false`): the `sf-date` input has `max = todayISO()` and `_submitSessionForm()` validates `date ≤ today`. Future dates are rejected.
-- **Backdated sessions**: no `max` attribute; any past date is valid.
+- **Setup/live sessions** (`isBackdated = false`): future dates are allowed — the setup phase is specifically designed for preparing upcoming sessions in advance (e.g. next Sunday's bhajan). No `max` constraint is set on the date input.
+- **Backdated sessions**: any past date is valid (opens directly in edit mode; saved as `status: 'completed'` immediately).
 
 ### Single active session per browser
 `this.liveState` and `this.live` are singletons — only one session can be actively hosted at a time. Starting a new session while one is active automatically backgrounds the running session (with a confirmation prompt) before opening the new session form.

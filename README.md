@@ -88,7 +88,7 @@ Each session has a deterministic ID from its series name and date (`series-slug-
 - **Same series, same date** → blocked; the app redirects to the existing session.
 - **Same series, different dates** → fully allowed. Each date produces a separate session.
 
-You can have as many future dates as you like queued up as separate sessions, but only one session can be **actively hosted** (playing live) at a time per browser.
+You can set up sessions for future dates (next Sunday, next month) in advance. Only one session can be **actively in setup or playing** at a time per browser, but others can be backgrounded.
 
 ### Running sessions across multiple series
 
