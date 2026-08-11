@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260811.4 loaded');
+console.log('[MM] app.js v20260811.5 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -1302,6 +1302,9 @@ class App {
 
   async _fetchKnownSeries() {
     const series = new Set(this.sessions.knownSeries?.() || []);
+    // Include locally-created series that may not yet have any completed sessions
+    // or committed data/series.json entries (e.g. a brand-new series with only a draft).
+    (this._localSeries || []).forEach(s => series.add(s));
     try {
       const res = await fetch('./data/series.json');
       if (res.ok) {
@@ -2097,7 +2100,13 @@ class App {
     const draftCode = this.sessions.getDraft()?.roomCode || null;
 
     try {
-      const series = await this._fetchKnownSeries();
+      const allSeries = await this._fetchKnownSeries();
+      // When a series filter is active, only probe that series so Live Now
+      // stays consistent with what the user is currently focused on.
+      // Without a filter, probe all known series.
+      const series = this._selectedSeries
+        ? allSeries.filter(s => s === this._selectedSeries)
+        : allSeries;
       // Check yesterday through 6 days ahead — covers sessions created for upcoming weekends
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
