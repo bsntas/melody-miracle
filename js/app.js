@@ -2469,8 +2469,8 @@ class App {
             <span class="entry-num entry-num-playing">▶</span>
             <div class="entry-main">
               <div class="entry-title-row">
-                ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
                 <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+                ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
               </div>
               ${e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : ''}
             </div>
@@ -2499,8 +2499,8 @@ class App {
         <div class="entry-num">${displayNum}</div>
         <div class="entry-main">
           <div class="entry-title-row">
-            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
             <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+            ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
           </div>
           ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
             <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>

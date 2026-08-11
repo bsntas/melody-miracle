@@ -538,7 +538,7 @@ img { max-width: 100%; }
 .pitch-sep  { opacity: 0.5; font-weight: 400; }
 .pitch-western-bold { font-weight: 700; opacity: 1; }
 .entry-pitch-row { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
-.entry-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; }
+.entry-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
 .entry-title-row .deity-pill { flex-shrink: 0; }
 .tl-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.1rem; }
 .tl-title-row .deity-pill { flex-shrink: 0; }
@@ -860,7 +860,7 @@ img { max-width: 100%; }
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .entry-main { flex: 1; min-width: 0; }
-.entry-title { font-weight: 600; font-size: 0.88rem; }
+.entry-title { font-weight: 600; font-size: 0.88rem; flex: 1; min-width: 0; }
 .entry-meta { font-size: 0.77rem; color: var(--text-2); margin-top: 0.1rem; }
 .entry-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
 .entry-actions { display: flex; gap: 0.25rem; }
