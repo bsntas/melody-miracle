@@ -2532,9 +2532,24 @@ class App {
   async _openNewSession(backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
+    // If a session is currently live, offer to background it before starting a new one
+    // so the draft is not silently overwritten.
+    if (this.liveState) {
+      const label = this.liveState.label || 'the current session';
+      if (!confirm(`"${label}" is active. It will be moved to Backgrounded Sessions so you can start a new one. Continue?`)) return;
+      this._backgroundSession();
+    }
+
     this._sfIsBackdated = backdated;
 
-    document.getElementById('sf-date').value = todayISO();
+    const dateEl = document.getElementById('sf-date');
+    dateEl.value = todayISO();
+    // Prevent future dates for live sessions; backdated sessions have no upper bound.
+    if (!backdated) {
+      dateEl.max = todayISO();
+    } else {
+      dateEl.removeAttribute('max');
+    }
     document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
     document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
@@ -2556,6 +2571,7 @@ class App {
 
     if (!date) { this._toast('Please set a date', 'error'); return; }
     if (!series) { this._toast('Please enter a series name', 'error'); return; }
+    if (!backdated && date > todayISO()) { this._toast('Live sessions cannot be scheduled for future dates', 'error'); return; }
 
     // Derive deterministic ID and room code from series + date
     const roomCode  = this._sessionRoomCode(series, date);

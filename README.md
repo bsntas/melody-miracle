@@ -79,6 +79,36 @@ Bhajans are grouped by deity and displayed with colour-coded pills:
 
 The **Ganesha-first convention** is enforced: a dashed placeholder appears at position 1 until a Ganesha bhajan is added.
 
+## Session management
+
+### Multiple sessions per series
+
+Each session has a deterministic ID from its series name and date (`series-slug-YYYY-MM-DD`). This means:
+
+- **Same series, same date** → blocked; the app redirects to the existing session.
+- **Same series, different dates** → fully allowed. Each date produces a separate session.
+
+You can have as many future dates as you like queued up as separate sessions, but only one session can be **actively hosted** (playing live) at a time per browser.
+
+### Running sessions across multiple series
+
+A single host can manage sessions across different series:
+
+1. Start a session for Series A.
+2. Tap **Background** — the session stays open on Firebase (observers can still add bhajans), and you return to the home screen.
+3. Switch the series filter to Series B, then start a new session for that series.
+4. Resume a backgrounded session at any time from the **Backgrounded Sessions** list on the Session home screen.
+
+Backgrounded sessions expire automatically after 2 days if not resumed, and their Firebase nodes are cleaned up.
+
+### Observer flow
+
+Observers join via **Live Now** on the dashboard — the app probes for active sessions across all known series for dates ranging from yesterday to +6 days ahead. Observers can add bhajans (in setup phase) and edit pitches/singers in edit mode, both behind a sign-in gate. If the host disconnects, any observer can tap **Claim Host** to take over.
+
+### Backdated sessions
+
+Use **History → + Add Past Session** to record sessions that weren't tracked live. Backdated sessions are saved directly to the completed-sessions store and are editable from the session detail view.
+
 ## Deployment
 
 The app is a static site — deploy the repository root to any static host (GitHub Pages, Netlify, Vercel, etc.).
