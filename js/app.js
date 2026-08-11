@@ -341,6 +341,21 @@ class App {
     this.sessions.setSeriesFilter(this._selectedSeries);
     this._renderSeriesStrip();
     this._route();
+    // Persist selection to user profile so it roams across devices
+    if (series) this._saveSeriesPreference(series);
+  }
+
+  async _saveSeriesPreference(series) {
+    const user = this.auth?.currentUser;
+    if (!user || !this._userProfile) return;
+    const existing = this._userProfile.preferredSeries || [];
+    if (existing[0] === series) return; // already at front, nothing to do
+    const updated = [series, ...existing.filter(s => s !== series)];
+    const profile = { ...this._userProfile, preferredSeries: updated };
+    try {
+      await this.auth.saveProfile(user.uid, profile);
+      this._userProfile = profile;
+    } catch { /* non-critical */ }
   }
 
   _renderSeriesStrip() {
@@ -2047,7 +2062,11 @@ class App {
     const hasDraft = !!this.sessions.getDraft();
 
     try {
-      const series = await this._fetchKnownSeries();
+      const allSeries = await this._fetchKnownSeries();
+      // Narrow to the active series so Live Now only shows relevant sessions
+      const series = this._selectedSeries
+        ? allSeries.filter(s => s === this._selectedSeries)
+        : allSeries;
       // Check yesterday through 6 days ahead — covers sessions created for upcoming weekends
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
@@ -2100,7 +2119,11 @@ class App {
     const hasDraft = !!this.sessions.getDraft();
 
     try {
-      const series = await this._fetchKnownSeries();
+      const allSeries = await this._fetchKnownSeries();
+      // Narrow to the active series so Live Now only shows relevant sessions
+      const series = this._selectedSeries
+        ? allSeries.filter(s => s === this._selectedSeries)
+        : allSeries;
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
         const d = new Date(now);
@@ -4023,12 +4046,24 @@ class App {
     if (select) {
       select.innerHTML = `<option value="">— Pick from existing singers —</option>` +
         allSingers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
-      // Pre-select current singerName if one is already set
       if (this._userProfile?.singerName) select.value = this._userProfile.singerName;
       else select.value = '';
     }
     const textInp = document.getElementById('onboard-singer-new');
     if (textInp) textInp.value = '';
+
+    // Populate series selector
+    const seriesSelect = document.getElementById('onboard-series-select');
+    if (seriesSelect) {
+      const allSeries = this.sessions.knownSeries();
+      for (const s of this._localSeries) if (!allSeries.includes(s)) allSeries.push(s);
+      seriesSelect.innerHTML =
+        `<option value="">— Pick your series (optional) —</option>` +
+        allSeries.sort().map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+      const prefSeries = this._userProfile?.preferredSeries?.[0] || this._selectedSeries;
+      if (prefSeries) seriesSelect.value = prefSeries;
+    }
+
     this._openModal('modal-onboarding');
     setTimeout(() => select?.focus(), 100);
   }
@@ -4040,19 +4075,32 @@ class App {
     const textInp  = document.getElementById('onboard-singer-new');
     const singerName = (textInp?.value.trim() || select?.value || '').trim();
     if (!singerName) { this._toast('Please enter or select a name', 'warn'); return; }
+    const seriesEl = document.getElementById('onboard-series-select');
+    const selectedSeries = seriesEl?.value || '';
+    const existingPreferred = this._userProfile?.preferredSeries || [];
+    const preferredSeries = selectedSeries
+      ? [selectedSeries, ...existingPreferred.filter(s => s !== selectedSeries)]
+      : existingPreferred;
+
     const profile = {
       singerName,
       displayName: user.displayName || '',
       email:       user.email       || '',
       photoURL:    user.photoURL    || '',
       updatedAt:   Date.now(),
+      ...(preferredSeries.length ? { preferredSeries } : {}),
     };
     try {
       await this.auth.saveProfile(user.uid, profile);
       this._userProfile = profile;
       this._closeModal('modal-onboarding');
       this._renderAuthButton(user);
-      this._route();
+      // Apply selected series immediately
+      if (selectedSeries && selectedSeries !== this._selectedSeries) {
+        this._setSeriesFilter(selectedSeries);
+      } else {
+        this._route();
+      }
       this._toast(`Singer name set to "${singerName}"`, 'success');
     } catch {
       this._toast('Could not save — please try again', 'error');
@@ -4123,6 +4171,23 @@ class App {
       // First sign-in or no singer name set — show onboarding
       if (!this._userProfile?.singerName) {
         this._openOnboardingModal();
+      } else {
+        // Apply series preference from profile across devices
+        const preferred = this._userProfile.preferredSeries;
+        if (preferred?.length) {
+          // Only override the local filter if the user hasn't already made a choice
+          // in this session (i.e. the localStorage value is absent or matches the profile)
+          const localFilter = localStorage.getItem('mm-series-filter') || null;
+          if (!localFilter || localFilter === preferred[0]) {
+            this.sessions.setSeriesFilter(preferred[0]);
+            this._selectedSeries = preferred[0];
+            try { localStorage.setItem('mm-series-filter', preferred[0]); } catch {}
+            this._renderSeriesStrip();
+          }
+        } else if (this._selectedSeries) {
+          // Silently migrate: user has singerName but no preferredSeries stored yet
+          this._saveSeriesPreference(this._selectedSeries);
+        }
       }
       try {
         await this.favourites.load(user.uid, () => this._syncFavUI());
