@@ -98,6 +98,50 @@ Reasons passed per action:
 
 ## Persistence flow
 
-1. Local draft → `localStorage` (key: `bm-draft`)
+1. Local draft → `localStorage` (key: `bm-draft-session`)
 2. Completed sessions → `localStorage` cache (key: `bm-sessions-v2`) + `data/sessions.json` committed to GitHub via `GitHubStore` (requires a PAT stored in localStorage)
 3. Live sync → Firebase Realtime DB (host writes, observers read)
+
+## Session management — key rules and constraints
+
+### Session identity
+`id` and `roomCode` are both set to `_sessionRoomCode(series, date)` → `seriesslug-YYYY-MM-DD`. The slug is `series.toLowerCase().replace(/[^a-z0-9]/g,'')`. Same series + same date always produces the same ID; creating a duplicate is blocked with a redirect to the existing session.
+
+### Multiple sessions per series
+- **Same series, same date**: hard-blocked (deterministic ID collision).
+- **Same series, different dates**: fully allowed — no limit. Each session gets its own Firebase node and its own row in `data/sessions.json`.
+
+### Session form date constraints
+- Default: today's date.
+- **Setup/live sessions** (`isBackdated = false`): future dates are allowed — the setup phase is specifically designed for preparing upcoming sessions in advance (e.g. next Sunday's bhajan). No `max` constraint is set on the date input.
+- **Backdated sessions**: any past date is valid (opens directly in edit mode; saved as `status: 'completed'` immediately).
+
+### Single active session per browser
+`this.liveState` and `this.live` are singletons — only one session can be actively hosted at a time. Starting a new session while one is active automatically backgrounds the running session (with a confirmation prompt) before opening the new session form.
+
+### Background sessions
+`_bgSessions` (localStorage key `mm-bg-sessions`) is an array of `{roomCode, label, series, date}`. Multiple sessions from different series can be backgrounded simultaneously. They appear in the Session view under "Backgrounded Sessions" with Resume/Discard buttons. Sessions whose `date` is more than 2 days old are auto-expired and their Firebase nodes cleaned up (`_cleanupExpiredBgSessions()`). The Live Now probe covers yesterday through +6 days, so a backgrounded session stays discoverable by observers within that window.
+
+### Session lifecycle
+| Phase | `status` (stored) | `phase` (Firebase) | Stored to sessions? |
+|---|---|---|---|
+| Newly created (live) | `'live'` | `'setup'` | Draft only |
+| Playing | `'live'` | `'playing'` | Draft only |
+| Ended normally | `'completed'` | `'ended'` | Yes — `sessions.save()` |
+| Backdated at creation | `'completed'` | — | Yes — `sessions.save()` |
+| Discarded | _(deleted)_ | _(Firebase cleaned)_ | Never |
+
+`data/sessions.json` and localStorage cache (`bm-sessions-v2`) only ever receive `status: 'completed'` sessions. A session in the draft (`bm-draft-session`) has `status: 'live'` and is not yet in the permanent store.
+
+### Host vs observer
+- **Host**: set by calling `live.host()`. Has exclusive control over Start/End/Discard/Background buttons and wake-lock. Writes all state changes to Firebase.
+- **Observer**: set by calling `live.join()`. Can add bhajans (setup phase only) and edit pitch/singers in edit mode. Can call `claimHost()` to take over (behind auth gate).
+- Firebase rules do not enforce host/observer roles at the transport layer — gating is UI-only in app.js.
+
+### Series storage (four sources merged)
+1. `mm-local-series` localStorage — series names created via "+ New Series" modal, device-local.
+2. `bm-sessions-v2` localStorage — unique `series` values from completed sessions via `knownSeries()`.
+3. `data/series.json` in the GitHub repo — committed by `GitHubStore._commitSeriesIndex()` after each sync.
+4. `data/series/<slug>.json` per-series files — sessions for that series only; not directly fetched by the app at runtime.
+
+`_fetchKnownSeries()` merges all four for the join modal and the Live Now probe.

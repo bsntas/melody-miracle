@@ -2532,6 +2532,14 @@ class App {
   async _openNewSession(backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
+    // If a session is currently live, offer to background it before starting a new one
+    // so the draft is not silently overwritten.
+    if (this.liveState) {
+      const label = this.liveState.label || 'the current session';
+      if (!confirm(`"${label}" is active. It will be moved to Backgrounded Sessions so you can start a new one. Continue?`)) return;
+      this._backgroundSession();
+    }
+
     this._sfIsBackdated = backdated;
 
     document.getElementById('sf-date').value = todayISO();
