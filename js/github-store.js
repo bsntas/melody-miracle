@@ -31,9 +31,10 @@ export class GitHubStore {
     this._pat          = pat;
     this._sessions     = this._loadCache();
     this._seriesFilter = null;
-    this._sha          = null;   // SHA of data/sessions.json
-    this._bhajansSha   = null;   // SHA of data/bhajans.json
-    this._seriesShas   = {};     // { seriesPath: sha } for per-series files
+    this._sha           = null;   // SHA of data/sessions.json
+    this._bhajansSha    = null;   // SHA of data/bhajans.json
+    this._seriesShas    = {};     // { seriesPath: sha } for per-series files
+    this._seriesIndexSha = null;  // SHA of data/series.json
     this._dirtySeries  = new Set(); // series whose files need updating after next commit
     this._busy         = false;  // commit in-flight?
     this._dirty        = false;  // changed while commit was in-flight?
@@ -471,10 +472,11 @@ export class GitHubStore {
           this._dirty = false;
           this._scheduleCommit(30000);
         }
-        // Write per-series files after the main commit (fire-and-forget)
+        // Write per-series files and update the series index (fire-and-forget)
         for (const series of seriesSnapshot) {
           this._commitSeriesFile(series).catch(() => {});
         }
+        this._commitSeriesIndex().catch(() => {});
       })
       .catch(err => {
         this._busy = false;
@@ -544,6 +546,39 @@ export class GitHubStore {
       branch: BRANCH,
     });
     delete this._seriesShas[path];
+  }
+
+  // Keeps data/series.json in sync with all series present in this._sessions.
+  async _commitSeriesIndex() {
+    const allSeries = [...new Set(this._sessions.map(s => s.series).filter(Boolean))].sort();
+    const path = 'data/series.json';
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(allSeries, null, 2))));
+    let sha = this._seriesIndexSha;
+
+    if (!sha) {
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`);
+      if (r.ok) { const d = await r.json(); sha = d.sha; this._seriesIndexSha = sha; }
+    }
+
+    const body = {
+      message: `Update series index [${new Date().toISOString().slice(0, 10)}]`,
+      content,
+      branch: BRANCH,
+      ...(sha ? { sha } : {}),
+    };
+    const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${path}`, body);
+    if (res.status === 409) {
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`);
+      if (r.ok) {
+        const d = await r.json();
+        this._seriesIndexSha = d.sha;
+        return this._commitSeriesIndex();
+      }
+    }
+    if (res.ok) {
+      const d = await res.json();
+      this._seriesIndexSha = d.content?.sha;
+    }
   }
 
   // Fetch the blob SHA for data/bhajans.json using the Git Trees API.

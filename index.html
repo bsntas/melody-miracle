@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260809.6">
+  <link rel="stylesheet" href="css/style.css?v=20260811.3">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -741,6 +741,13 @@
           <input type="text" id="onboard-singer-new" class="form-input"
             placeholder="Enter your name…" autocomplete="off">
         </div>
+        <div class="form-group" id="onboard-series-group">
+          <label class="form-label">Your series</label>
+          <select id="onboard-series-select" class="form-input">
+            <option value="">— Pick your series (optional) —</option>
+          </select>
+          <div class="form-hint">The satsang series you typically attend — filters your session view</div>
+        </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-onboard-skip">Skip for now</button>
@@ -844,7 +851,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260809.7"></script>
+  <script type="module" src="js/app.js?v=20260811.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

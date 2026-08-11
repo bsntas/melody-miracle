@@ -1,10 +1,10 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260726.2';
-import { GitHubStore } from './github-store.js?v=20260726.2';
-import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
+import { GitHubStore } from './github-store.js?v=20260811.1';
+import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.10 loaded');
+console.log('[MM] app.js v20260811.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -107,6 +107,12 @@ class App {
       this._singerAliases = JSON.parse(localStorage.getItem('mm-singer-aliases') || '{}');
     } catch { this._singerAliases = {}; }
 
+    // Backgrounded sessions: [{roomCode, label, series, date}]
+    // Persists across page reloads; auto-cleaned when dates expire.
+    try {
+      this._bgSessions = JSON.parse(localStorage.getItem('mm-bg-sessions') || '[]');
+    } catch { this._bgSessions = []; }
+
     this._init();
   }
 
@@ -152,6 +158,7 @@ class App {
     this._route();
     window.addEventListener('hashchange', () => this._route());
     this._initInstallPrompt();
+    this._cleanupExpiredBgSessions();
     this._initAuth();
   }
 
@@ -341,6 +348,21 @@ class App {
     this.sessions.setSeriesFilter(this._selectedSeries);
     this._renderSeriesStrip();
     this._route();
+    // Persist selection to user profile so it roams across devices
+    if (series) this._saveSeriesPreference(series);
+  }
+
+  async _saveSeriesPreference(series) {
+    const user = this.auth?.currentUser;
+    if (!user || !this._userProfile) return;
+    const existing = this._userProfile.preferredSeries || [];
+    if (existing[0] === series) return; // already at front, nothing to do
+    const updated = [series, ...existing.filter(s => s !== series)];
+    const profile = { ...this._userProfile, preferredSeries: updated };
+    try {
+      await this.auth.saveProfile(user.uid, profile);
+      this._userProfile = profile;
+    } catch { /* non-critical */ }
   }
 
   _renderSeriesStrip() {
@@ -2005,6 +2027,9 @@ class App {
   }
 
   _sessionHomeHTML(draft) {
+    // Show backgrounded sessions that are distinct from the current draft —
+    // if the draft IS the backgrounded session, the Resume button above covers it.
+    const bgSessions = (this._bgSessions || []).filter(s => !draft || s.roomCode !== draft.roomCode);
     return `
       <div class="session-home">
         <div class="session-home-icon">🎵</div>
@@ -2016,6 +2041,25 @@ class App {
             <button class="btn btn-warning btn-block" id="btn-session-resume">↩ Resume "${escHtml(draft.label || 'Previous Session')}"</button>
           </div>` : ''}
         </div>
+        ${bgSessions.length ? `
+          <div class="open-sessions-section">
+            <div class="open-sessions-header">Backgrounded Sessions</div>
+            <div class="open-sessions-list">
+              ${bgSessions.map(s => `
+                <div class="bg-session-card">
+                  <div class="open-session-info">
+                    <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
+                    <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+                  </div>
+                  <div class="bg-session-actions">
+                    <button class="btn btn-sm btn-warning" data-bg-resume="${escHtml(s.roomCode)}">Resume</button>
+                    <button class="btn btn-sm btn-outline" data-bg-discard="${escHtml(s.roomCode)}">Discard</button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
         <div class="open-sessions-section">
           <div class="open-sessions-header">Live Now</div>
           <div id="open-sessions-list" class="open-sessions-list">
@@ -2034,6 +2078,12 @@ class App {
     if (draft) {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
     }
+    document.querySelectorAll('[data-bg-resume]').forEach(btn =>
+      btn.addEventListener('click', () => this._resumeBgSession(btn.dataset.bgResume))
+    );
+    document.querySelectorAll('[data-bg-discard]').forEach(btn =>
+      btn.addEventListener('click', () => this._discardBgSession(btn.dataset.bgDiscard))
+    );
     this._loadOpenSessions();
     // Keep the Live Now list fresh: re-probe Firebase every 30 s so a session
     // that starts after this page loaded still appears without a manual refresh.
@@ -2208,6 +2258,8 @@ class App {
         ${isHost ? `<div class="session-mgmt-links">
           <button class="btn-link-muted" id="btn-end-session">Save &amp; Close</button>
           <span aria-hidden="true">·</span>
+          <button class="btn-link-muted" id="btn-background-session" title="Leave open for others to add bhajans while you manage another series">Background</button>
+          <span aria-hidden="true">·</span>
           <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
         </div>` : ''}` : `<div class="playing-controls-strip">
           ${isHost ? `
@@ -2268,7 +2320,10 @@ class App {
         this._liveEditMode = !this._liveEditMode;
         this._renderLiveSession(el);
       });
-      if (isHost) document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
+      if (isHost) {
+        document.getElementById('btn-discard-session')?.addEventListener('click', () => this._discardSession());
+        document.getElementById('btn-background-session')?.addEventListener('click', () => this._backgroundSession());
+      }
 
       // Drag-reorder and remove-button clicks are handled by persistent delegated
       // listeners bound to #session-content in _bindGlobal(), so no per-element binding here.
@@ -2564,6 +2619,10 @@ class App {
   // ─── Start Live Session ───────────────────────────────────────────────────
 
   _startLiveSession(sessionData, { resuming = false } = {}) {
+    // Detach any existing connection without destroying its Firebase node,
+    // so a backgrounded session stays open for collaborators to add bhajans.
+    if (this.live) { this.live.detach(); this.live = null; }
+
     this.live = new LiveSession({
       onStateChange: (state) => {
         this.liveState = state;
@@ -2742,8 +2801,8 @@ class App {
 
   async _joinSessionWithCode(code) {
     if (!await this.requireAuth('Sign in to join a session')) return;
-    // Guard against double-tap: leave any existing connection first
-    if (this.live) { this.live.leave(); this.live = null; }
+    // Detach any existing connection without destroying its Firebase node
+    if (this.live) { this.live.detach(); this.live = null; }
 
     const el = document.getElementById('session-content');
     el.innerHTML = `<div class="connecting-state">
@@ -3124,15 +3183,95 @@ class App {
     this._endSession();
   }
 
+  _backgroundSession() {
+    const label    = this.liveState?.label || 'Session';
+    const roomCode = this.live?.roomCode;
+    const series   = this.liveState?.series || null;
+    const date     = this.liveState?.date || '';
+
+    this.live?.detach();
+    this.live = null;
+    this.liveState = null;
+
+    // Track so the session can be resumed or discarded later even after the
+    // localStorage draft is overwritten by a new session.
+    if (roomCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+      this._bgSessions.unshift({ roomCode, label, series, date });
+      this._saveBgSessions();
+    }
+
+    document.getElementById('bnav-session-icon').classList.remove('is-live');
+    this._renderSession();
+    this._toast(`"${label}" is open — others can add bhajans via Live Now`);
+  }
+
+  _saveBgSessions() {
+    try { localStorage.setItem('mm-bg-sessions', JSON.stringify(this._bgSessions)); } catch {}
+  }
+
+  async _cleanupExpiredBgSessions() {
+    if (!this._bgSessions.length) return;
+    // Keep sessions within the Live Now probe window (yesterday through +6 days).
+    // Anything older than 2 days ago is outside the window and can never be
+    // discovered or joined — remove its Firebase node to prevent orphans.
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 2);
+    const cutoff = _localDate(cutoffDate);
+    const expired = this._bgSessions.filter(s => s.date && s.date < cutoff);
+    if (!expired.length) return;
+    this._bgSessions = this._bgSessions.filter(s => !s.date || s.date >= cutoff);
+    this._saveBgSessions();
+    await Promise.allSettled(expired.map(s => LiveSession.cleanupOrphan(s.roomCode)));
+  }
+
+  async _resumeBgSession(roomCode) {
+    const entry = this._bgSessions.find(s => s.roomCode === roomCode);
+    if (!entry) return;
+    if (!await this.requireAuth('Sign in to resume your session')) return;
+    // host() will adopt the existing Firebase state (bhajans, phase, etc.)
+    // via the get() call in its implementation.
+    const sessionData = {
+      id: entry.roomCode,
+      roomCode: entry.roomCode,
+      label: entry.label,
+      series: entry.series,
+      date: entry.date,
+      status: 'live',
+      phase: 'setup',
+      bhajans: [],
+    };
+    this._startLiveSession(sessionData, { resuming: true });
+    this._toast('Session resumed', 'success');
+  }
+
+  async _discardBgSession(roomCode) {
+    const entry = this._bgSessions.find(s => s.roomCode === roomCode);
+    if (!entry) return;
+    const label = entry.label || 'this session';
+    if (!confirm(`Discard "${label}"? This will close the session for all collaborators.`)) return;
+    this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+    this._saveBgSessions();
+    LiveSession.cleanupOrphan(roomCode).catch(() => {});
+    this._renderSession();
+    this._toast(`"${label}" discarded`);
+  }
+
   _discardSession() {
-    const label = this.liveState?.label || 'this session';
+    const label         = this.liveState?.label || 'this session';
     if (!confirm(`Discard "${label}"? Nothing will be saved.`)) return;
 
+    const discardedCode = this.liveState?.roomCode;
     this.sessions.clearDraft();
     this._releaseWakeLock();
     this.live?.leave();
     this.live = null;
     this.liveState = null;
+
+    if (discardedCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== discardedCode);
+      this._saveBgSessions();
+    }
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
     location.hash = '#dashboard';
@@ -3140,9 +3279,10 @@ class App {
   }
 
   _endSession() {
-    const startTs = this.liveState.startedAt || this.liveState.createdAt;
-    const started = startTs ? new Date(startTs) : null;
-    const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
+    const startTs   = this.liveState.startedAt || this.liveState.createdAt;
+    const started   = startTs ? new Date(startTs) : null;
+    const duration  = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
+    const endedCode = this.liveState.roomCode;
 
     const singers = [...new Set((this.liveState.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
 
@@ -3162,6 +3302,11 @@ class App {
     this.live?.end(); // broadcasts 'ended' to observers before leaving
     this.live = null;
     this.liveState = null;
+
+    if (endedCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== endedCode);
+      this._saveBgSessions();
+    }
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
 
@@ -4023,12 +4168,24 @@ class App {
     if (select) {
       select.innerHTML = `<option value="">— Pick from existing singers —</option>` +
         allSingers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
-      // Pre-select current singerName if one is already set
       if (this._userProfile?.singerName) select.value = this._userProfile.singerName;
       else select.value = '';
     }
     const textInp = document.getElementById('onboard-singer-new');
     if (textInp) textInp.value = '';
+
+    // Populate series selector
+    const seriesSelect = document.getElementById('onboard-series-select');
+    if (seriesSelect) {
+      const allSeries = this.sessions.knownSeries();
+      for (const s of this._localSeries) if (!allSeries.includes(s)) allSeries.push(s);
+      seriesSelect.innerHTML =
+        `<option value="">— Pick your series (optional) —</option>` +
+        allSeries.sort().map(s => `<option value="${escHtml(s)}">${escHtml(s)}</option>`).join('');
+      const prefSeries = this._userProfile?.preferredSeries?.[0] || this._selectedSeries;
+      if (prefSeries) seriesSelect.value = prefSeries;
+    }
+
     this._openModal('modal-onboarding');
     setTimeout(() => select?.focus(), 100);
   }
@@ -4040,19 +4197,32 @@ class App {
     const textInp  = document.getElementById('onboard-singer-new');
     const singerName = (textInp?.value.trim() || select?.value || '').trim();
     if (!singerName) { this._toast('Please enter or select a name', 'warn'); return; }
+    const seriesEl = document.getElementById('onboard-series-select');
+    const selectedSeries = seriesEl?.value || '';
+    const existingPreferred = this._userProfile?.preferredSeries || [];
+    const preferredSeries = selectedSeries
+      ? [selectedSeries, ...existingPreferred.filter(s => s !== selectedSeries)]
+      : existingPreferred;
+
     const profile = {
       singerName,
       displayName: user.displayName || '',
       email:       user.email       || '',
       photoURL:    user.photoURL    || '',
       updatedAt:   Date.now(),
+      ...(preferredSeries.length ? { preferredSeries } : {}),
     };
     try {
       await this.auth.saveProfile(user.uid, profile);
       this._userProfile = profile;
       this._closeModal('modal-onboarding');
       this._renderAuthButton(user);
-      this._route();
+      // Apply selected series immediately
+      if (selectedSeries && selectedSeries !== this._selectedSeries) {
+        this._setSeriesFilter(selectedSeries);
+      } else {
+        this._route();
+      }
       this._toast(`Singer name set to "${singerName}"`, 'success');
     } catch {
       this._toast('Could not save — please try again', 'error');
@@ -4123,6 +4293,23 @@ class App {
       // First sign-in or no singer name set — show onboarding
       if (!this._userProfile?.singerName) {
         this._openOnboardingModal();
+      } else {
+        // Apply series preference from profile across devices
+        const preferred = this._userProfile.preferredSeries;
+        if (preferred?.length) {
+          // Only override the local filter if the user hasn't already made a choice
+          // in this session (i.e. the localStorage value is absent or matches the profile)
+          const localFilter = localStorage.getItem('mm-series-filter') || null;
+          if (!localFilter || localFilter === preferred[0]) {
+            this.sessions.setSeriesFilter(preferred[0]);
+            this._selectedSeries = preferred[0];
+            try { localStorage.setItem('mm-series-filter', preferred[0]); } catch {}
+            this._renderSeriesStrip();
+          }
+        } else if (this._selectedSeries) {
+          // Silently migrate: user has singerName but no preferredSeries stored yet
+          this._saveSeriesPreference(this._selectedSeries);
+        }
       }
       try {
         await this.favourites.load(user.uid, () => this._syncFavUI());
