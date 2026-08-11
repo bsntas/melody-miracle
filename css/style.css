@@ -507,7 +507,7 @@ img { max-width: 100%; }
 .bhajan-tag-scale-minor { background: #ede9fe; color: #4c1d95; }
 .bhajan-tag-scale-mixed { background: #fef3c7; color: #78350f; }
 
-.bhajan-item-pitches { display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem; margin-top: 0.25rem; }
+.bhajan-item-pitches { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.25rem; }
 
 /* ─── Browse Pagination ──────────────────────────────────────────────────── */
 .browse-pagination {
