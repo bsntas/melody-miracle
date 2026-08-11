@@ -481,7 +481,7 @@ img { max-width: 100%; }
 .bhajan-list { display: flex; flex-direction: column; gap: 0; }
 
 .bhajan-item {
-  display: flex; align-items: flex-start; gap: 0.75rem;
+  display: flex; flex-direction: column;
   padding: 0.75rem 0.5rem;
   border-bottom: 1px solid var(--border);
   cursor: pointer; transition: background .1s;
@@ -489,9 +489,8 @@ img { max-width: 100%; }
 .bhajan-item:hover { background: var(--saffron-bg); border-radius: var(--radius-sm); }
 .bhajan-item:last-child { border-bottom: none; }
 
-.bhajan-item-main { flex: 1; min-width: 0; }
-.bhajan-item-title { font-weight: 600; font-size: 0.95rem; }
-.bhajan-item-meta { font-size: 0.78rem; color: var(--text-2); margin-top: 0.2rem; }
+.bhajan-item-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+.bhajan-item-title { font-weight: 600; font-size: 0.95rem; flex: 1; min-width: 0; }
 .bhajan-item-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.3rem; }
 .bhajan-tag {
   font-size: 0.67rem; padding: 0.15rem 0.45rem; border-radius: 999px;
@@ -508,7 +507,7 @@ img { max-width: 100%; }
 .bhajan-tag-scale-minor { background: #ede9fe; color: #4c1d95; }
 .bhajan-tag-scale-mixed { background: #fef3c7; color: #78350f; }
 
-.bhajan-item-pitches { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; flex-shrink: 0; }
+.bhajan-item-pitches { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.25rem; }
 
 /* ─── Browse Pagination ──────────────────────────────────────────────────── */
 .browse-pagination {
@@ -539,7 +538,7 @@ img { max-width: 100%; }
 .pitch-sep  { opacity: 0.5; font-weight: 400; }
 .pitch-western-bold { font-weight: 700; opacity: 1; }
 .entry-pitch-row { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
-.entry-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; }
+.entry-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
 .entry-title-row .deity-pill { flex-shrink: 0; }
 .tl-title-row { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.1rem; }
 .tl-title-row .deity-pill { flex-shrink: 0; }
@@ -840,11 +839,15 @@ img { max-width: 100%; }
 }
 @media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
-.session-bhajans-list { }
+.session-bhajans-list { overflow-x: hidden; }
 .session-bhajan-entry {
   display: flex; align-items: center; gap: 0.75rem;
   padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+  will-change: transform; touch-action: pan-y;
 }
+.entry-view-mode { cursor: pointer; }
+.entry-view-mode:hover { background: var(--saffron-bg); border-radius: var(--radius-sm); padding-left: 0.35rem; padding-right: 0.35rem; }
+.swipe-delete-armed { background: rgba(220, 38, 38, 0.1); border-radius: var(--radius-sm); }
 .session-bhajan-entry:last-child { border-bottom: none; }
 .session-entry-current {
   background: var(--saffron-bg);
@@ -861,9 +864,10 @@ img { max-width: 100%; }
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .entry-main { flex: 1; min-width: 0; }
-.entry-title { font-weight: 600; font-size: 0.88rem; }
+.entry-title { font-weight: 600; font-size: 0.88rem; flex: 1; min-width: 0; }
 .entry-meta { font-size: 0.77rem; color: var(--text-2); margin-top: 0.1rem; }
 .entry-time { font-size: 0.72rem; color: var(--text-3); flex-shrink: 0; }
+/* .entry-actions / .entry-action-btn kept for session-detail timeline which still uses them */
 .entry-actions { display: flex; gap: 0.25rem; }
 .entry-action-btn { font-size: 0.85rem; padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); color: var(--text-3); min-width: 2.25rem; min-height: 2.25rem; display: flex; align-items: center; justify-content: center; }
 .entry-action-btn:hover { background: var(--surface-2); color: var(--text); }
