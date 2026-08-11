@@ -1147,9 +1147,10 @@ class App {
     document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
-    // Hide Join button when a resumable draft exists
+    // Hide Join/New buttons when a live session or resumable draft exists
     const draft = this.sessions.getDraft();
     document.getElementById('btn-dash-join-session')?.classList.toggle('hidden', !!draft);
+    document.getElementById('btn-dash-new-session')?.classList.toggle('hidden', !!this.liveState);
 
     // Live alert
     const liveAlert = document.getElementById('dash-live-alert');
@@ -2587,6 +2588,9 @@ class App {
   // ─── Start Live Session ───────────────────────────────────────────────────
 
   _startLiveSession(sessionData, { resuming = false } = {}) {
+    // Clean up any existing connection before opening a new one
+    if (this.live) { this.live.leave(); this.live = null; }
+
     this.live = new LiveSession({
       onStateChange: (state) => {
         this.liveState = state;
