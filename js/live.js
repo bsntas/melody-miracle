@@ -327,6 +327,18 @@ export class LiveSession {
     this._cleanup();
   }
 
+  // ── Static: remove an orphaned Firebase session node ─────────────────────
+  // Call this when discarding a backgrounded session. Unlike leave(), this is
+  // invoked without a live connection — it opens a one-shot DB reference,
+  // removes the node, and exits. Non-critical: failures are silently swallowed.
+  static async cleanupOrphan(roomCode) {
+    if (!roomCode) return;
+    try {
+      const db = _getDb();
+      await remove(ref(db, `${DB_PATH}/${roomCode}`));
+    } catch { /* non-critical */ }
+  }
+
   // ─────────────────────────────────────────────────────────────────────────
 
   // Attach onValue on stateRef. If a callback is provided it's used instead of

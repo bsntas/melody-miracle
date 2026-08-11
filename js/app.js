@@ -1,10 +1,10 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
 import { GitHubStore } from './github-store.js?v=20260811.1';
-import { LiveSession, listOpenSessions } from './live.js?v=20260811.2';
+import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260811.2 loaded');
+console.log('[MM] app.js v20260811.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -107,6 +107,12 @@ class App {
       this._singerAliases = JSON.parse(localStorage.getItem('mm-singer-aliases') || '{}');
     } catch { this._singerAliases = {}; }
 
+    // Backgrounded sessions: [{roomCode, label, series, date}]
+    // Persists across page reloads; auto-cleaned when dates expire.
+    try {
+      this._bgSessions = JSON.parse(localStorage.getItem('mm-bg-sessions') || '[]');
+    } catch { this._bgSessions = []; }
+
     this._init();
   }
 
@@ -152,6 +158,7 @@ class App {
     this._route();
     window.addEventListener('hashchange', () => this._route());
     this._initInstallPrompt();
+    this._cleanupExpiredBgSessions();
     this._initAuth();
   }
 
@@ -2020,6 +2027,9 @@ class App {
   }
 
   _sessionHomeHTML(draft) {
+    // Show backgrounded sessions that are distinct from the current draft —
+    // if the draft IS the backgrounded session, the Resume button above covers it.
+    const bgSessions = (this._bgSessions || []).filter(s => !draft || s.roomCode !== draft.roomCode);
     return `
       <div class="session-home">
         <div class="session-home-icon">🎵</div>
@@ -2031,6 +2041,25 @@ class App {
             <button class="btn btn-warning btn-block" id="btn-session-resume">↩ Resume "${escHtml(draft.label || 'Previous Session')}"</button>
           </div>` : ''}
         </div>
+        ${bgSessions.length ? `
+          <div class="open-sessions-section">
+            <div class="open-sessions-header">Backgrounded Sessions</div>
+            <div class="open-sessions-list">
+              ${bgSessions.map(s => `
+                <div class="bg-session-card">
+                  <div class="open-session-info">
+                    <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
+                    <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+                  </div>
+                  <div class="bg-session-actions">
+                    <button class="btn btn-sm btn-warning" data-bg-resume="${escHtml(s.roomCode)}">Resume</button>
+                    <button class="btn btn-sm btn-outline" data-bg-discard="${escHtml(s.roomCode)}">Discard</button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
         <div class="open-sessions-section">
           <div class="open-sessions-header">Live Now</div>
           <div id="open-sessions-list" class="open-sessions-list">
@@ -2049,6 +2078,12 @@ class App {
     if (draft) {
       document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
     }
+    document.querySelectorAll('[data-bg-resume]').forEach(btn =>
+      btn.addEventListener('click', () => this._resumeBgSession(btn.dataset.bgResume))
+    );
+    document.querySelectorAll('[data-bg-discard]').forEach(btn =>
+      btn.addEventListener('click', () => this._discardBgSession(btn.dataset.bgDiscard))
+    );
     this._loadOpenSessions();
     // Keep the Live Now list fresh: re-probe Firebase every 30 s so a session
     // that starts after this page loaded still appears without a manual refresh.
@@ -3149,26 +3184,94 @@ class App {
   }
 
   _backgroundSession() {
-    const label = this.liveState?.label || 'Session';
+    const label    = this.liveState?.label || 'Session';
+    const roomCode = this.live?.roomCode;
+    const series   = this.liveState?.series || null;
+    const date     = this.liveState?.date || '';
+
     this.live?.detach();
     this.live = null;
     this.liveState = null;
-    // Keep the localStorage draft so the host can see it in the session home.
-    // Firebase state remains intact — others can still join and add bhajans.
+
+    // Track so the session can be resumed or discarded later even after the
+    // localStorage draft is overwritten by a new session.
+    if (roomCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+      this._bgSessions.unshift({ roomCode, label, series, date });
+      this._saveBgSessions();
+    }
+
     document.getElementById('bnav-session-icon').classList.remove('is-live');
-    this._renderSession(); // returns to session home; draft shows Resume button
+    this._renderSession();
     this._toast(`"${label}" is open — others can add bhajans via Live Now`);
   }
 
+  _saveBgSessions() {
+    try { localStorage.setItem('mm-bg-sessions', JSON.stringify(this._bgSessions)); } catch {}
+  }
+
+  async _cleanupExpiredBgSessions() {
+    if (!this._bgSessions.length) return;
+    // Keep sessions within the Live Now probe window (yesterday through +6 days).
+    // Anything older than 2 days ago is outside the window and can never be
+    // discovered or joined — remove its Firebase node to prevent orphans.
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 2);
+    const cutoff = _localDate(cutoffDate);
+    const expired = this._bgSessions.filter(s => s.date && s.date < cutoff);
+    if (!expired.length) return;
+    this._bgSessions = this._bgSessions.filter(s => !s.date || s.date >= cutoff);
+    this._saveBgSessions();
+    await Promise.allSettled(expired.map(s => LiveSession.cleanupOrphan(s.roomCode)));
+  }
+
+  async _resumeBgSession(roomCode) {
+    const entry = this._bgSessions.find(s => s.roomCode === roomCode);
+    if (!entry) return;
+    if (!await this.requireAuth('Sign in to resume your session')) return;
+    // host() will adopt the existing Firebase state (bhajans, phase, etc.)
+    // via the get() call in its implementation.
+    const sessionData = {
+      id: entry.roomCode,
+      roomCode: entry.roomCode,
+      label: entry.label,
+      series: entry.series,
+      date: entry.date,
+      status: 'live',
+      phase: 'setup',
+      bhajans: [],
+    };
+    this._startLiveSession(sessionData, { resuming: true });
+    this._toast('Session resumed', 'success');
+  }
+
+  async _discardBgSession(roomCode) {
+    const entry = this._bgSessions.find(s => s.roomCode === roomCode);
+    if (!entry) return;
+    const label = entry.label || 'this session';
+    if (!confirm(`Discard "${label}"? This will close the session for all collaborators.`)) return;
+    this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+    this._saveBgSessions();
+    LiveSession.cleanupOrphan(roomCode).catch(() => {});
+    this._renderSession();
+    this._toast(`"${label}" discarded`);
+  }
+
   _discardSession() {
-    const label = this.liveState?.label || 'this session';
+    const label         = this.liveState?.label || 'this session';
     if (!confirm(`Discard "${label}"? Nothing will be saved.`)) return;
 
+    const discardedCode = this.liveState?.roomCode;
     this.sessions.clearDraft();
     this._releaseWakeLock();
     this.live?.leave();
     this.live = null;
     this.liveState = null;
+
+    if (discardedCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== discardedCode);
+      this._saveBgSessions();
+    }
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
     location.hash = '#dashboard';
@@ -3176,9 +3279,10 @@ class App {
   }
 
   _endSession() {
-    const startTs = this.liveState.startedAt || this.liveState.createdAt;
-    const started = startTs ? new Date(startTs) : null;
-    const duration = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
+    const startTs   = this.liveState.startedAt || this.liveState.createdAt;
+    const started   = startTs ? new Date(startTs) : null;
+    const duration  = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
+    const endedCode = this.liveState.roomCode;
 
     const singers = [...new Set((this.liveState.bhajans || []).flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
 
@@ -3198,6 +3302,11 @@ class App {
     this.live?.end(); // broadcasts 'ended' to observers before leaving
     this.live = null;
     this.liveState = null;
+
+    if (endedCode) {
+      this._bgSessions = this._bgSessions.filter(s => s.roomCode !== endedCode);
+      this._saveBgSessions();
+    }
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
 
