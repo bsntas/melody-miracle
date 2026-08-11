@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260811.3 loaded');
+console.log('[MM] app.js v20260811.4 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2094,7 +2094,7 @@ class App {
     const el = document.getElementById('open-sessions-list');
     if (!el) return;
 
-    const hasDraft = !!this.sessions.getDraft();
+    const draftCode = this.sessions.getDraft()?.roomCode || null;
 
     try {
       const series = await this._fetchKnownSeries();
@@ -2118,25 +2118,28 @@ class App {
         return;
       }
 
-      el.innerHTML = open.map(({ code, state }) => `
-        <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${hasDraft ? ' title="Discard your current draft first to join"' : ''}>
-          <div class="open-session-info">
-            <div class="open-session-label">${escHtml(state.label || code)}</div>
-            <div class="open-session-meta">
-              <span class="live-dot"></span>
-              ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
-              · ${escHtml(formatDate(state.date || ''))}
+      el.innerHTML = open.map(({ code, state }) => {
+        // Only block the card for the user's own draft session — joining your own
+        // session as participant while you're the host makes no sense. Sessions from
+        // other series are always joinable regardless of draft state.
+        const isOwnDraft = draftCode === code;
+        return `
+          <div class="open-session-card${isOwnDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${isOwnDraft ? ' title="This is your session — use Resume above"' : ''}>
+            <div class="open-session-info">
+              <div class="open-session-label">${escHtml(state.label || code)}</div>
+              <div class="open-session-meta">
+                <span class="live-dot"></span>
+                ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+                · ${escHtml(formatDate(state.date || ''))}
+              </div>
             </div>
-          </div>
-          ${hasDraft ? '<span class="open-session-join-blocked">Discard draft to join</span>' : '<span class="open-session-join">Join →</span>'}
-        </div>
-      `).join('');
+            ${isOwnDraft ? '<span class="open-session-join-blocked">Your session</span>' : '<span class="open-session-join">Join →</span>'}
+          </div>`;
+      }).join('');
 
-      if (!hasDraft) {
-        el.querySelectorAll('.open-session-card').forEach(btn => {
-          btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
-        });
-      }
+      el.querySelectorAll('.open-session-card:not(.open-session-card--no-action)').forEach(btn => {
+        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+      });
     } catch {
       const el2 = document.getElementById('open-sessions-list');
       if (el2?.isConnected) el2.innerHTML = '<div class="open-sessions-empty">Could not check for active sessions</div>';
@@ -2147,10 +2150,17 @@ class App {
     const container = document.getElementById('dash-open-sessions');
     if (!container) return;
 
-    const hasDraft = !!this.sessions.getDraft();
+    const draftCode = this.sessions.getDraft()?.roomCode || null;
 
     try {
-      const series = await this._fetchKnownSeries();
+      const allSeries = await this._fetchKnownSeries();
+      // When a series filter is active, only probe that series so the dashboard
+      // Live Now section stays consistent with the rest of the filtered dashboard.
+      // Without a filter, show all series (the user may want to join any of them).
+      const series = this._selectedSeries
+        ? allSeries.filter(s => s === this._selectedSeries)
+        : allSeries;
+
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
         const d = new Date(now);
@@ -2177,27 +2187,27 @@ class App {
           <a href="#session" class="section-link">Session →</a>
         </div>
         <div class="open-sessions-list">
-          ${open.map(({ code, state }) => `
-            <div class="open-session-card${hasDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}">
-              <div class="open-session-info">
-                <div class="open-session-label">${escHtml(state.label || code)}</div>
-                <div class="open-session-meta">
-                  <span class="live-dot"></span>
-                  ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
-                  · ${escHtml(formatDate(state.date || ''))}
+          ${open.map(({ code, state }) => {
+            const isOwnDraft = draftCode === code;
+            return `
+              <div class="open-session-card${isOwnDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${isOwnDraft ? ' title="This is your session — go to Session tab to resume"' : ''}>
+                <div class="open-session-info">
+                  <div class="open-session-label">${escHtml(state.label || code)}</div>
+                  <div class="open-session-meta">
+                    <span class="live-dot"></span>
+                    ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+                    · ${escHtml(formatDate(state.date || ''))}
+                  </div>
                 </div>
-              </div>
-              ${hasDraft ? '' : '<span class="open-session-join">Join →</span>'}
-            </div>
-          `).join('')}
+                ${isOwnDraft ? '' : '<span class="open-session-join">Join →</span>'}
+              </div>`;
+          }).join('')}
         </div>
       `;
 
-      if (!hasDraft) {
-        container.querySelectorAll('.open-session-card').forEach(btn => {
-          btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
-        });
-      }
+      container.querySelectorAll('.open-session-card:not(.open-session-card--no-action)').forEach(btn => {
+        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+      });
     } catch {
       document.getElementById('dash-open-sessions')?.classList.add('hidden');
     }
