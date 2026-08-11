@@ -1744,23 +1744,27 @@ class App {
       : '';
     const levelClass = b.level ? 'bhajan-tag-level-' + b.level.toLowerCase() : '';
     const sungCount  = this._bhajanCounts?.[b.id] || 0;
-
     const isFav = !!(this.auth?.currentUser && this.favourites?.isFavourite(b.id));
+    const firstDeity = b.deity ? b.deity.split(/[,/]/)[0].trim() : '';
+    const deitySlug = this._deitySlug(firstDeity);
+    const deityPill = b.deity
+      ? `<span class="deity-pill deity-${deitySlug}" style="flex-shrink:0">${escHtml(b.deity)}</span>`
+      : '';
     return `<div class="bhajan-item" data-id="${b.id}">
-      <div class="bhajan-item-main">
+      <div class="bhajan-item-header">
         <div class="bhajan-item-title">${escHtml(b.title)}${isFav ? '<span class="bhajan-fav-mark">♥</span>' : ''}</div>
-        <div class="bhajan-item-meta">${escHtml([b.deity, b.language].filter(Boolean).join(' · '))}</div>
-        <div class="bhajan-item-tags">
-          ${b.tempo ? `<span class="bhajan-tag ${tempoClass}">${escHtml(b.tempo)}</span>` : ''}
-          ${b.level ? `<span class="bhajan-tag ${levelClass}">${escHtml(b.level)}</span>` : ''}
-          ${b.raga ? `<span class="bhajan-tag">${escHtml(b.raga.split('/')[0].trim())}</span>` : ''}
-          ${b.scale ? `<span class="bhajan-tag bhajan-tag-scale-${(b.scale||'').toLowerCase()}">${escHtml(b.scale)}</span>` : ''}
-          ${sungCount ? `<span class="bhajan-tag bhajan-tag-sung">${sungCount}× sung</span>` : ''}
-        </div>
+        ${deityPill}
       </div>
       <div class="bhajan-item-pitches">
         ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}">♂ ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
         ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
+      </div>
+      <div class="bhajan-item-tags">
+        ${b.tempo ? `<span class="bhajan-tag ${tempoClass}">${escHtml(b.tempo)}</span>` : ''}
+        ${b.level ? `<span class="bhajan-tag ${levelClass}">${escHtml(b.level)}</span>` : ''}
+        ${b.raga ? `<span class="bhajan-tag">${escHtml(b.raga.split('/')[0].trim())}</span>` : ''}
+        ${b.beat ? `<span class="bhajan-tag">${escHtml(b.beat)}</span>` : ''}
+        ${sungCount ? `<span class="bhajan-tag bhajan-tag-sung">${sungCount}× sung</span>` : ''}
       </div>
     </div>`;
   }
