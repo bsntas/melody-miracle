@@ -1,10 +1,10 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260726.2';
-import { GitHubStore } from './github-store.js?v=20260726.2';
-import { LiveSession, listOpenSessions } from './live.js?v=20260726.2';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
+import { GitHubStore } from './github-store.js?v=20260811.1';
+import { LiveSession, listOpenSessions } from './live.js?v=20260807.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260807.10 loaded');
+console.log('[MM] app.js v20260811.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
