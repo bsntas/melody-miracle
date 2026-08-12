@@ -839,7 +839,7 @@ img { max-width: 100%; }
 }
 @media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
-.session-bhajans-list { overflow-x: hidden; background: var(--surface); }
+.session-bhajans-list { overflow-x: hidden; }
 .session-bhajan-entry { position: relative; border-bottom: 1px solid var(--border); }
 /* Placeholder + currently-playing (no data-entry-id): keep legacy flex layout */
 .session-bhajan-entry:not([data-entry-id]) {
@@ -851,10 +851,11 @@ img { max-width: 100%; }
 .entry-content {
   display: flex; align-items: center; gap: 0.75rem;
   padding: 0.65rem 0; width: 100%;
-  background: var(--surface);
   position: relative; z-index: 1;
   will-change: transform; touch-action: pan-y;
 }
+/* Edit mode only: needs opaque background to cover the red delete zone */
+.session-bhajan-entry:not(.entry-view-mode) .entry-content { background: var(--surface); }
 /* Red delete zone revealed as content slides left */
 .entry-delete-bg {
   position: absolute; inset: 0;
@@ -890,7 +891,7 @@ img { max-width: 100%; }
 .entry-actions { display: flex; gap: 0.25rem; }
 .entry-action-btn { font-size: 0.85rem; padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); color: var(--text-3); min-width: 2.25rem; min-height: 2.25rem; display: flex; align-items: center; justify-content: center; }
 .entry-action-btn:hover { background: var(--surface-2); color: var(--text); }
-.ganesh-placeholder { opacity: 0.55; background: var(--surface); }
+.ganesh-placeholder { opacity: 0.55; }
 .ganesh-placeholder .entry-num { background: transparent; border: 1.5px dashed var(--text-3); }
 .ganesh-placeholder-label { font-style: italic; color: var(--text-3); font-size: 0.85rem; }
 
