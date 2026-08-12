@@ -839,7 +839,7 @@ img { max-width: 100%; }
 }
 @media (max-height: 500px) { .playing-entry-lyrics { max-height: 120px; } }
 
-.session-bhajans-list { overflow-x: hidden; }
+.session-bhajans-list { overflow-x: hidden; background: var(--surface); }
 .session-bhajan-entry { position: relative; border-bottom: 1px solid var(--border); }
 /* Placeholder + currently-playing (no data-entry-id): keep legacy flex layout */
 .session-bhajan-entry:not([data-entry-id]) {
