@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260811.5 loaded');
+console.log('[MM] app.js v20260812.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
