@@ -2210,7 +2210,6 @@ class App {
             <div class="session-series-create-actions">
               <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
               <button class="btn btn-sm btn-outline" data-past-series="${escHtml(s)}">+ Past</button>
-              <button class="btn btn-sm btn-ghost" data-multi-series="${escHtml(s)}">+ Multiple</button>
             </div>
           </div>`).join('');
 
@@ -2247,10 +2246,6 @@ class App {
     document.querySelectorAll('[data-past-series]').forEach(btn =>
       btn.addEventListener('click', () => this._openNewSession(btn.dataset.pastSeries, true))
     );
-    document.querySelectorAll('[data-multi-series]').forEach(btn =>
-      btn.addEventListener('click', () => this._openNewSession(btn.dataset.multiSeries, true, { multi: true }))
-    );
-
     document.querySelectorAll('[data-own-resume]').forEach(btn => {
       const roomCode = btn.dataset.ownResume;
       const isDraft = btn.dataset.ownIsDraft === '1';
@@ -2812,7 +2807,7 @@ class App {
   _detailEditMode = false;
   _liveEditMode = false;
 
-  async _openNewSession(series = null, backdated = false, { multi = false } = {}) {
+  async _openNewSession(series = null, backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
     // If a session is currently live, background it before starting a new one.
@@ -2834,64 +2829,28 @@ class App {
       }
     }
 
-    this._sfIsBackdated = backdated || multi;
+    this._sfIsBackdated = backdated;
 
-    // Populate series dropdown with all known series
+    // Populate series dropdown; pre-select the series this was opened from
     const allSeries = [...new Set([...this.sessions.knownSeries(), ...this._localSeries])].sort();
     const seriesSelect = document.getElementById('sf-series');
     if (seriesSelect) {
       seriesSelect.innerHTML = allSeries.length
         ? allSeries.map(s => `<option value="${escHtml(s)}"${s === series ? ' selected' : ''}>${escHtml(s)}</option>`).join('')
-        : `<option value="">— no series —</option>`;
+        : `<option value="">— no series yet —</option>`;
     }
 
-    // Reset to a single date row; "+ Multiple" mode adds an extra date hint
-    const datesList = document.getElementById('sf-dates-list');
-    if (datesList) {
-      datesList.innerHTML = `<input type="date" id="sf-date" class="form-input" value="${todayISO()}">`;
-      if (multi) {
-        // Add a second empty date row to signal the intent
-        this._addExtraDate(datesList);
-      }
-    }
+    const dateInput = document.getElementById('sf-date');
+    if (dateInput) dateInput.value = todayISO();
 
-    document.getElementById('sf-time-group').style.display = (backdated && !multi) ? '' : 'none';
-    document.getElementById('sf-backdated-note').style.display = (backdated || multi) ? '' : 'none';
+    document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
+    document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
 
-    const isMultiOrBackdated = backdated || multi;
-    document.getElementById('btn-mform-submit').textContent = isMultiOrBackdated ? 'Add Session(s)' : 'Start Session';
-    document.getElementById('mform-title').textContent = isMultiOrBackdated ? 'Add Past Session(s)' : 'New Session';
-
-    // Bind "+ Add Date" button
-    const addDateBtn = document.getElementById('sf-add-date');
-    if (addDateBtn) {
-      addDateBtn._sfHandler && addDateBtn.removeEventListener('click', addDateBtn._sfHandler);
-      addDateBtn._sfHandler = () => this._addExtraDate(datesList);
-      addDateBtn.addEventListener('click', addDateBtn._sfHandler);
-      // Only show "+ Add Date" for backdated/multi mode — live sessions are always single date
-      addDateBtn.style.display = isMultiOrBackdated ? '' : 'none';
-    }
+    document.getElementById('btn-mform-submit').textContent = backdated ? 'Add Session' : 'Start Session';
+    document.getElementById('mform-title').textContent = backdated ? 'Add Past Session' : 'New Session';
 
     this._openModal('modal-session-form');
     setTimeout(() => document.getElementById('sf-date')?.focus(), 100);
-  }
-
-  _addExtraDate(container) {
-    const row = document.createElement('div');
-    row.className = 'sf-extra-date-row';
-    row.style.cssText = 'display:flex;gap:0.4rem;margin-top:0.4rem;align-items:center';
-    const input = document.createElement('input');
-    input.type = 'date';
-    input.className = 'form-input sf-extra-date';
-    const rm = document.createElement('button');
-    rm.type = 'button';
-    rm.textContent = '×';
-    rm.className = 'btn btn-ghost btn-sm';
-    rm.style.padding = '0 0.5rem';
-    rm.addEventListener('click', () => row.remove());
-    row.append(input, rm);
-    container.appendChild(row);
-    input.focus();
   }
 
   _submitSessionForm() {
@@ -2900,47 +2859,30 @@ class App {
 
     if (!series) { this._toast('Please select a series', 'error'); return; }
 
-    // Gather all dates (primary + any extra rows)
-    const primaryDate = document.getElementById('sf-date')?.value;
-    const extraDates  = [...document.querySelectorAll('#sf-dates-list .sf-extra-date')]
-      .map(el => el.value).filter(Boolean);
-    const allDates = [...new Set([primaryDate, ...extraDates].filter(Boolean))];
-
-    if (!allDates.length) { this._toast('Please set a date', 'error'); return; }
+    const date = document.getElementById('sf-date')?.value;
+    if (!date) { this._toast('Please set a date', 'error'); return; }
 
     this._closeModal('modal-session-form');
 
-    if (allDates.length > 1 || backdated) {
-      // Multiple dates or backdated → create all as completed entries
-      let created = 0;
-      let lastId = null;
-      for (const date of allDates) {
-        const roomCode = this._sessionRoomCode(series, date);
-        if (this.sessions.get(roomCode)) continue; // skip existing
-        this.sessions.save({
-          id: roomCode, label: series, series, date, roomCode,
-          singers: [], bhajans: [],
-          status: 'completed', isBackdated: true,
-          createdAt: new Date().toISOString(),
-          startTime: allDates.length === 1 ? (document.getElementById('sf-start-time')?.value || null) : null,
-          duration: null,
-        }, { local: true });
-        created++;
-        lastId = roomCode;
-      }
-      if (created === 0) {
-        this._toast('Sessions already exist for all selected dates', 'warn');
-      } else if (created === 1 && lastId) {
-        location.hash = `#session-detail/${lastId}`;
-      } else {
-        this._toast(`${created} session${created !== 1 ? 's' : ''} added`, 'success');
-        this._route();
-      }
-    } else {
-      // Single date, live session
-      const date     = allDates[0];
-      const roomCode = this._sessionRoomCode(series, date);
+    const roomCode = this._sessionRoomCode(series, date);
 
+    if (backdated) {
+      if (this.sessions.get(roomCode)) {
+        this._toast('A session for this series on this date already exists', 'warn');
+        location.hash = `#session-detail/${roomCode}`;
+        return;
+      }
+      this.sessions.save({
+        id: roomCode, label: series, series, date, roomCode,
+        singers: [], bhajans: [],
+        status: 'completed', isBackdated: true,
+        createdAt: new Date().toISOString(),
+        startTime: document.getElementById('sf-start-time')?.value || null,
+        duration: null,
+      }, { local: true });
+      location.hash = `#session-detail/${roomCode}`;
+    } else {
+      // Live session
       if (this.sessions.get(roomCode)) {
         this._toast('A session for this series on this date already exists', 'warn');
         location.hash = `#session-detail/${roomCode}`;
