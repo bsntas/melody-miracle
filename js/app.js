@@ -2131,12 +2131,11 @@ class App {
     // Merge draft + backgrounded sessions into a single "My Sessions" list.
     // Draft (if any) is always treated as a host session and shown first.
     const ownSessions = [];
-    if (draft) {
+    if (draft && (!this._selectedSeries || draft.series === this._selectedSeries)) {
       ownSessions.push({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true, _isDraft: true });
     }
     for (const s of (this._bgSessions || [])) {
       if (!draft || s.roomCode !== draft.roomCode) {
-        // When a series filter is active, only show sessions for that series
         if (!this._selectedSeries || s.series === this._selectedSeries) {
           ownSessions.push(s);
         }
