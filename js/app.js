@@ -2337,7 +2337,14 @@ class App {
     const container = document.getElementById('dash-open-sessions');
     if (!container) return;
 
-    const draftCode = this.sessions.getDraft()?.roomCode || null;
+    const draft = this.sessions.getDraft();
+    const draftCode = draft?.roomCode || null;
+    // Build a map of roomCode → {isHost, isDraft} for all sessions the user owns
+    const ownMap = new Map();
+    if (draftCode) ownMap.set(draftCode, { isHost: true, isDraft: true });
+    for (const s of (this._bgSessions || [])) {
+      if (!ownMap.has(s.roomCode)) ownMap.set(s.roomCode, { isHost: s.isHost ?? true, isDraft: false });
+    }
 
     try {
       const allSeries = await this._fetchKnownSeries();
@@ -2375,9 +2382,13 @@ class App {
         </div>
         <div class="open-sessions-list">
           ${open.map(({ code, state }) => {
-            const isOwnDraft = draftCode === code;
+            const own = ownMap.get(code);
+            const actionLabel = own
+              ? (own.isHost ? 'Resume →' : 'Rejoin →')
+              : 'Join →';
+            const noAction = own?.isDraft && !own.isHost;
             return `
-              <div class="open-session-card${isOwnDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${isOwnDraft ? ' title="This is your session — go to Session tab to resume"' : ''}>
+              <div class="open-session-card${noAction ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}" data-own-is-host="${own?.isHost ? '1' : '0'}" data-own-is-draft="${own?.isDraft ? '1' : '0'}">
                 <div class="open-session-info">
                   <div class="open-session-label">${escHtml(state.label || code)}</div>
                   <div class="open-session-meta">
@@ -2386,14 +2397,29 @@ class App {
                     · ${escHtml(formatDate(state.date || ''))}
                   </div>
                 </div>
-                ${isOwnDraft ? '' : '<span class="open-session-join">Join →</span>'}
+                ${noAction ? '' : `<span class="open-session-join">${actionLabel}</span>`}
               </div>`;
           }).join('')}
         </div>
       `;
 
       container.querySelectorAll('.open-session-card:not(.open-session-card--no-action)').forEach(btn => {
-        btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
+        const code = btn.dataset.code;
+        const isHost = btn.dataset.ownIsHost === '1';
+        const isDraft = btn.dataset.ownIsDraft === '1';
+        btn.addEventListener('click', () => {
+          if (isDraft) {
+            this._resumeDraftSession();
+          } else if (ownMap.has(code)) {
+            if (isHost) {
+              this._resumeBgSession(code);
+            } else {
+              this._joinSessionWithCode(code);
+            }
+          } else {
+            this._joinSessionWithCode(code);
+          }
+        });
       });
     } catch {
       document.getElementById('dash-open-sessions')?.classList.add('hidden');
