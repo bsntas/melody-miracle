@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260813.9';
+const CACHE = 'melody-miracle-20260813.10';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260813.9'; // app.js (session tab: per-series creation rows, auto-background on nav)
+const V_APP  = '20260813.10'; // app.js (remove +Multiple; fix session form series select)
 const V_GH   = '20260811.1'; // github-store.js (unchanged)
 const V_CSS  = '20260813.2'; // style.css (session-home full-width, session creation section styles)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
