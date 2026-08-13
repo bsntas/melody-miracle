@@ -292,10 +292,21 @@ class App {
       el.classList.toggle('active', el.dataset.view === view);
     });
 
-    this._renderSeriesStrip();
+    // Series strip is only meaningful on the dashboard (analytics context).
+    if (view === 'dashboard') {
+      this._renderSeriesStrip();
+    } else {
+      document.getElementById('series-strip')?.classList.add('hidden');
+    }
 
-    // Stop the Live Now auto-refresh when leaving the session home
+    // Stop the Live Now auto-refresh when leaving the session home.
     if (view !== 'session') clearInterval(this._openSessionsInterval);
+
+    // Auto-background a live session when the user navigates away from the
+    // session tab. The session stays resumable from My Sessions without a prompt.
+    if (view !== 'session' && this.liveState) {
+      this._backgroundSession({ silent: true });
+    }
 
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
@@ -593,8 +604,6 @@ class App {
     document.getElementById('btn-refresh')?.addEventListener('click', () => this._refreshData());
 
     // Dashboard
-    document.getElementById('btn-dash-new-session')?.addEventListener('click', () => this._openNewSession());
-    document.getElementById('btn-dash-join-session')?.addEventListener('click', () => this._openJoinModal());
     document.getElementById('btn-dash-goto-live')?.addEventListener('click', () => { location.hash = '#session'; });
 
     // Browse — debounce typing to avoid Levenshtein search on every keystroke;
@@ -611,7 +620,7 @@ class App {
     // filter-sung is a hidden select managed by the filter modal — no change listener needed
 
     // History
-    document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(true));
+    document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(null, true));
     document.getElementById('btn-history-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
     // Singers directory back
@@ -1280,10 +1289,6 @@ class App {
     document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
-    // Hide Join button when a resumable draft exists
-    const draft = this.sessions.getDraft();
-    document.getElementById('btn-dash-join-session')?.classList.toggle('hidden', !!draft);
-
     // Live alert
     const liveAlert = document.getElementById('dash-live-alert');
     if (this.liveState) {
@@ -1293,9 +1298,6 @@ class App {
     } else {
       liveAlert.classList.add('hidden');
     }
-
-    // Open sessions — load async, show only when sessions exist
-    this._loadDashOpenSessions();
 
     // Period tabs — must bind before chart so fromDate is ready
     document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
@@ -2164,17 +2166,13 @@ class App {
 
   _sessionHomeHTML(draft) {
     // Merge draft + backgrounded sessions into a single "My Sessions" list.
-    // Draft (if any) is always treated as a host session and shown first.
+    // No series filter applied here — all in-progress sessions are shown.
     const ownSessions = [];
-    if (draft && (!this._selectedSeries || draft.series === this._selectedSeries)) {
+    if (draft) {
       ownSessions.push({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true, _isDraft: true });
     }
     for (const s of (this._bgSessions || [])) {
-      if (!draft || s.roomCode !== draft.roomCode) {
-        if (!this._selectedSeries || s.series === this._selectedSeries) {
-          ownSessions.push(s);
-        }
-      }
+      if (!draft || s.roomCode !== draft.roomCode) ownSessions.push(s);
     }
 
     const ownCardsHTML = ownSessions.map(s => {
@@ -2201,13 +2199,27 @@ class App {
         </div>`;
     }).join('');
 
+    // Build per-series creation rows
+    const allSeries = [...new Set([...this.sessions.knownSeries(), ...this._localSeries])].sort();
+
+    const seriesRowsHTML = allSeries.length === 0
+      ? `<div class="session-no-series">No series yet. Create one to get started.</div>`
+      : allSeries.map(s => `
+          <div class="session-series-create-row">
+            <span class="session-series-create-name">${escHtml(s)}</span>
+            <div class="session-series-create-actions">
+              <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
+              <button class="btn btn-sm btn-outline" data-past-series="${escHtml(s)}">+ Past</button>
+              <button class="btn btn-sm btn-ghost" data-multi-series="${escHtml(s)}">+ Multiple</button>
+            </div>
+          </div>`).join('');
+
     return `
       <div class="session-home">
-        <div class="session-home-icon">🎵</div>
-        <div class="session-home-title">Bhajan Session</div>
-        <div class="session-home-desc">Start a session to record bhajans. Others can join instantly from the list below.</div>
-        <div class="session-home-actions">
-          <button class="btn btn-primary btn-lg btn-block" id="btn-session-new">+ Start New Session</button>
+        <div class="session-create-section">
+          <div class="session-create-section-title">Sessions</div>
+          ${seriesRowsHTML}
+          <button class="btn btn-ghost btn-sm session-new-series-btn" id="btn-session-new-series">+ New Series</button>
         </div>
         <div class="open-sessions-section"${ownSessions.length ? '' : ' hidden'} id="my-sessions-section">
           <div class="open-sessions-header">My Sessions</div>
@@ -2220,14 +2232,24 @@ class App {
           </div>
         </div>
         <div class="session-home-actions" style="margin-top:0.25rem">
-          <button class="btn btn-outline btn-block" id="btn-session-join">Join by Series & Date →</button>
+          <button class="btn btn-outline btn-block" id="btn-session-join">Join by Series &amp; Date →</button>
         </div>
       </div>`;
   }
 
   _bindSessionHome(draft) {
-    document.getElementById('btn-session-new').addEventListener('click', () => this._openNewSession());
     document.getElementById('btn-session-join')?.addEventListener('click', () => this._openJoinModal());
+    document.getElementById('btn-session-new-series')?.addEventListener('click', () => this._openNewSeriesModal());
+
+    document.querySelectorAll('[data-start-series]').forEach(btn =>
+      btn.addEventListener('click', () => this._openNewSession(btn.dataset.startSeries, false))
+    );
+    document.querySelectorAll('[data-past-series]').forEach(btn =>
+      btn.addEventListener('click', () => this._openNewSession(btn.dataset.pastSeries, true))
+    );
+    document.querySelectorAll('[data-multi-series]').forEach(btn =>
+      btn.addEventListener('click', () => this._openNewSession(btn.dataset.multiSeries, true, { multi: true }))
+    );
 
     document.querySelectorAll('[data-own-resume]').forEach(btn => {
       const roomCode = btn.dataset.ownResume;
@@ -2790,7 +2812,7 @@ class App {
   _detailEditMode = false;
   _liveEditMode = false;
 
-  async _openNewSession(backdated = false) {
+  async _openNewSession(series = null, backdated = false, { multi = false } = {}) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
     // If a session is currently live, background it before starting a new one.
@@ -2812,64 +2834,127 @@ class App {
       }
     }
 
-    this._sfIsBackdated = backdated;
+    this._sfIsBackdated = backdated || multi;
 
-    document.getElementById('sf-date').value = todayISO();
-    document.getElementById('sf-time-group').style.display = backdated ? '' : 'none';
-    document.getElementById('sf-backdated-note').style.display = backdated ? '' : 'none';
+    // Populate series dropdown with all known series
+    const allSeries = [...new Set([...this.sessions.knownSeries(), ...this._localSeries])].sort();
+    const seriesSelect = document.getElementById('sf-series');
+    if (seriesSelect) {
+      seriesSelect.innerHTML = allSeries.length
+        ? allSeries.map(s => `<option value="${escHtml(s)}"${s === series ? ' selected' : ''}>${escHtml(s)}</option>`).join('')
+        : `<option value="">— no series —</option>`;
+    }
 
-    const series = this._selectedSeries;
-    const display = document.getElementById('sf-series-display');
-    if (display) display.textContent = series || '(no series selected)';
+    // Reset to a single date row; "+ Multiple" mode adds an extra date hint
+    const datesList = document.getElementById('sf-dates-list');
+    if (datesList) {
+      datesList.innerHTML = `<input type="date" id="sf-date" class="form-input" value="${todayISO()}">`;
+      if (multi) {
+        // Add a second empty date row to signal the intent
+        this._addExtraDate(datesList);
+      }
+    }
 
-    document.getElementById('btn-mform-submit').textContent = backdated ? 'Add Session' : 'Start Session';
-    document.getElementById('mform-title').textContent = backdated ? 'Add Past Session' : 'New Session';
+    document.getElementById('sf-time-group').style.display = (backdated && !multi) ? '' : 'none';
+    document.getElementById('sf-backdated-note').style.display = (backdated || multi) ? '' : 'none';
+
+    const isMultiOrBackdated = backdated || multi;
+    document.getElementById('btn-mform-submit').textContent = isMultiOrBackdated ? 'Add Session(s)' : 'Start Session';
+    document.getElementById('mform-title').textContent = isMultiOrBackdated ? 'Add Past Session(s)' : 'New Session';
+
+    // Bind "+ Add Date" button
+    const addDateBtn = document.getElementById('sf-add-date');
+    if (addDateBtn) {
+      addDateBtn._sfHandler && addDateBtn.removeEventListener('click', addDateBtn._sfHandler);
+      addDateBtn._sfHandler = () => this._addExtraDate(datesList);
+      addDateBtn.addEventListener('click', addDateBtn._sfHandler);
+      // Only show "+ Add Date" for backdated/multi mode — live sessions are always single date
+      addDateBtn.style.display = isMultiOrBackdated ? '' : 'none';
+    }
 
     this._openModal('modal-session-form');
-    setTimeout(() => document.getElementById('sf-date').focus(), 100);
+    setTimeout(() => document.getElementById('sf-date')?.focus(), 100);
+  }
+
+  _addExtraDate(container) {
+    const row = document.createElement('div');
+    row.className = 'sf-extra-date-row';
+    row.style.cssText = 'display:flex;gap:0.4rem;margin-top:0.4rem;align-items:center';
+    const input = document.createElement('input');
+    input.type = 'date';
+    input.className = 'form-input sf-extra-date';
+    const rm = document.createElement('button');
+    rm.type = 'button';
+    rm.textContent = '×';
+    rm.className = 'btn btn-ghost btn-sm';
+    rm.style.padding = '0 0.5rem';
+    rm.addEventListener('click', () => row.remove());
+    row.append(input, rm);
+    container.appendChild(row);
+    input.focus();
   }
 
   _submitSessionForm() {
-    const series    = this._selectedSeries;
-    const date      = document.getElementById('sf-date').value;
+    const series    = document.getElementById('sf-series')?.value || this._selectedSeries;
     const backdated = this._sfIsBackdated;
 
-    if (!date) { this._toast('Please set a date', 'error'); return; }
-    if (!series) { this._toast('Please enter a series name', 'error'); return; }
+    if (!series) { this._toast('Please select a series', 'error'); return; }
 
-    // Derive deterministic ID and room code from series + date
-    const roomCode  = this._sessionRoomCode(series, date);
-    const sessionId = roomCode;
+    // Gather all dates (primary + any extra rows)
+    const primaryDate = document.getElementById('sf-date')?.value;
+    const extraDates  = [...document.querySelectorAll('#sf-dates-list .sf-extra-date')]
+      .map(el => el.value).filter(Boolean);
+    const allDates = [...new Set([primaryDate, ...extraDates].filter(Boolean))];
 
-    // Prevent duplicate
-    if (this.sessions.get(sessionId)) {
-      this._closeModal('modal-session-form');
-      this._toast('A session for this series on this date already exists', 'warn');
-      location.hash = `#session-detail/${sessionId}`;
-      return;
-    }
-
-    const sessionData = {
-      id: sessionId,
-      label: series,
-      series,
-      date,
-      roomCode,
-      singers: [],
-      bhajans: [],
-      status: backdated ? 'completed' : 'live',
-      isBackdated: backdated,
-      createdAt: new Date().toISOString(),
-      startTime: document.getElementById('sf-start-time').value || null,
-      duration: null,
-    };
+    if (!allDates.length) { this._toast('Please set a date', 'error'); return; }
 
     this._closeModal('modal-session-form');
 
-    if (backdated) {
-      this._openBackdatedEntry(sessionData);
+    if (allDates.length > 1 || backdated) {
+      // Multiple dates or backdated → create all as completed entries
+      let created = 0;
+      let lastId = null;
+      for (const date of allDates) {
+        const roomCode = this._sessionRoomCode(series, date);
+        if (this.sessions.get(roomCode)) continue; // skip existing
+        this.sessions.save({
+          id: roomCode, label: series, series, date, roomCode,
+          singers: [], bhajans: [],
+          status: 'completed', isBackdated: true,
+          createdAt: new Date().toISOString(),
+          startTime: allDates.length === 1 ? (document.getElementById('sf-start-time')?.value || null) : null,
+          duration: null,
+        }, { local: true });
+        created++;
+        lastId = roomCode;
+      }
+      if (created === 0) {
+        this._toast('Sessions already exist for all selected dates', 'warn');
+      } else if (created === 1 && lastId) {
+        location.hash = `#session-detail/${lastId}`;
+      } else {
+        this._toast(`${created} session${created !== 1 ? 's' : ''} added`, 'success');
+        this._route();
+      }
     } else {
-      this._startLiveSession(sessionData);
+      // Single date, live session
+      const date     = allDates[0];
+      const roomCode = this._sessionRoomCode(series, date);
+
+      if (this.sessions.get(roomCode)) {
+        this._toast('A session for this series on this date already exists', 'warn');
+        location.hash = `#session-detail/${roomCode}`;
+        return;
+      }
+
+      this._startLiveSession({
+        id: roomCode, label: series, series, date, roomCode,
+        singers: [], bhajans: [],
+        status: 'live', isBackdated: false,
+        createdAt: new Date().toISOString(),
+        startTime: document.getElementById('sf-start-time')?.value || null,
+        duration: null,
+      });
     }
   }
 
@@ -3482,7 +3567,7 @@ class App {
     this._endSession();
   }
 
-  _backgroundSession() {
+  _backgroundSession({ silent = false } = {}) {
     const label    = this.liveState?.label || 'Session';
     const roomCode = this.live?.roomCode;
     const series   = this.liveState?.series || null;
@@ -3502,8 +3587,10 @@ class App {
     }
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
-    this._renderSession();
-    this._toast(`"${label}" is open — others can add bhajans via Live Now`);
+    if (!silent) {
+      this._renderSession();
+      this._toast(`"${label}" is open — others can add bhajans via Live Now`);
+    }
   }
 
   _saveBgSessions() {

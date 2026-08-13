@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260813.1">
+  <link rel="stylesheet" href="css/style.css?v=20260813.2">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -91,10 +91,6 @@
               <h2 class="page-title" id="dash-greeting">Namaste 🙏</h2>
               <p class="page-subtitle" id="dash-date"></p>
             </div>
-            <div class="dash-quick-actions">
-              <button class="btn btn-primary btn-sm" id="btn-dash-new-session">+ New Session</button>
-              <button class="btn btn-outline btn-sm" id="btn-dash-join-session">Join</button>
-            </div>
           </div>
 
           <!-- Stats row -->
@@ -123,9 +119,6 @@
             <span id="dash-live-text">Session in progress</span>
             <button class="btn btn-sm btn-warning" id="btn-dash-goto-live">Go Live →</button>
           </div>
-
-          <!-- Open sessions (populated dynamically) -->
-          <div id="dash-open-sessions" class="dash-open-sessions hidden"></div>
 
           <!-- Insights charts -->
           <div class="section-header">
@@ -334,14 +327,16 @@
       </div>
       <div class="modal-body">
         <form id="session-form">
-          <div class="form-group">
+          <div class="form-group" id="sf-series-group">
             <label class="form-label">Series</label>
-            <div class="series-readonly-display" id="sf-series-display">—</div>
-            <div class="form-hint">Change series using the filter strip at the top</div>
+            <select id="sf-series" class="form-input"></select>
           </div>
           <div class="form-group">
             <label class="form-label">Date</label>
-            <input type="date" id="sf-date" class="form-input">
+            <div id="sf-dates-list">
+              <input type="date" id="sf-date" class="form-input">
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="sf-add-date" style="margin-top:0.4rem">+ Add Date</button>
           </div>
           <div class="form-group" id="sf-time-group" style="display:none">
             <label class="form-label">Start Time (optional)</label>
