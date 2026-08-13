@@ -27,10 +27,13 @@ const PRECACHE = [
 ];
 
 // ── Install: pre-cache the app shell ─────────────────────────────────────────
+// Use cache:'reload' so every install always fetches from the server, bypassing
+// any HTTP/CDN cache. Without this, a stale CDN response for index.html could
+// be baked into the new SW cache even after the version string has changed.
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
-      .then(c => c.addAll(PRECACHE))
+      .then(c => c.addAll(PRECACHE.map(url => new Request(url, { cache: 'reload' }))))
       .then(() => self.skipWaiting())
   );
 });
