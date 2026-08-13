@@ -2339,12 +2339,19 @@ class App {
 
     const draft = this.sessions.getDraft();
     const draftCode = draft?.roomCode || null;
-    // Build a map of roomCode → {isHost, isDraft} for all sessions the user owns
+    // Build a map of roomCode → {isHost, isDraft} for sessions known locally
     const ownMap = new Map();
     if (draftCode) ownMap.set(draftCode, { isHost: true, isDraft: true });
     for (const s of (this._bgSessions || [])) {
       if (!ownMap.has(s.roomCode)) ownMap.set(s.roomCode, { isHost: s.isHost ?? true, isDraft: false });
     }
+    // Series set to match Firebase results that fell out of localStorage
+    const ownSeries = this._selectedSeries
+      ? new Set([this._selectedSeries])
+      : new Set([
+          ...(draft?.series ? [draft.series] : []),
+          ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
+        ]);
 
     try {
       const allSeries = await this._fetchKnownSeries();
@@ -2374,6 +2381,13 @@ class App {
         return;
       }
 
+      // Sessions in my series but not in local storage — treat as own (host resume)
+      const liveMineSet = new Set(
+        open.filter(({ code, state }) =>
+          !ownMap.has(code) && state?.series && ownSeries.has(state.series)
+        ).map(({ code }) => code)
+      );
+
       container.classList.remove('hidden');
       container.innerHTML = `
         <div class="dash-open-sessions-header">
@@ -2383,12 +2397,13 @@ class App {
         <div class="open-sessions-list">
           ${open.map(({ code, state }) => {
             const own = ownMap.get(code);
+            const isMine = liveMineSet.has(code);
             const actionLabel = own
               ? (own.isHost ? 'Resume →' : 'Rejoin →')
-              : 'Join →';
+              : (isMine ? 'Resume →' : 'Join →');
             const noAction = own?.isDraft && !own.isHost;
             return `
-              <div class="open-session-card${noAction ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}" data-own-is-host="${own?.isHost ? '1' : '0'}" data-own-is-draft="${own?.isDraft ? '1' : '0'}">
+              <div class="open-session-card${noAction ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}" data-own-is-host="${(own?.isHost || isMine) ? '1' : '0'}" data-own-is-draft="${own?.isDraft ? '1' : '0'}" data-live-mine="${isMine ? '1' : '0'}" data-live-series="${escHtml(state.series || '')}" data-live-label="${escHtml(state.label || code)}" data-live-date="${escHtml(state.date || '')}">
                 <div class="open-session-info">
                   <div class="open-session-label">${escHtml(state.label || code)}</div>
                   <div class="open-session-meta">
@@ -2407,9 +2422,20 @@ class App {
         const code = btn.dataset.code;
         const isHost = btn.dataset.ownIsHost === '1';
         const isDraft = btn.dataset.ownIsDraft === '1';
+        const isMine = btn.dataset.liveMine === '1';
         btn.addEventListener('click', () => {
           if (isDraft) {
             this._resumeDraftSession();
+          } else if (isMine) {
+            // Session in our series but fell out of localStorage — re-host via startLiveSession
+            const sessionData = {
+              id: code, roomCode: code,
+              label: btn.dataset.liveLabel || code,
+              series: btn.dataset.liveSeries || '',
+              date: btn.dataset.liveDate || '',
+              status: 'live', phase: 'setup', bhajans: [],
+            };
+            this._startLiveSession(sessionData, { resuming: true });
           } else if (ownMap.has(code)) {
             if (isHost) {
               this._resumeBgSession(code);
