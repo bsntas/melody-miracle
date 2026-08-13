@@ -2135,7 +2135,12 @@ class App {
       ownSessions.push({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true, _isDraft: true });
     }
     for (const s of (this._bgSessions || [])) {
-      if (!draft || s.roomCode !== draft.roomCode) ownSessions.push(s);
+      if (!draft || s.roomCode !== draft.roomCode) {
+        // When a series filter is active, only show sessions for that series
+        if (!this._selectedSeries || s.series === this._selectedSeries) {
+          ownSessions.push(s);
+        }
+      }
     }
 
     const ownCardsHTML = ownSessions.map(s => {
@@ -2220,11 +2225,15 @@ class App {
       ...(draft?.roomCode ? [draft.roomCode] : []),
       ...(this._bgSessions || []).map(s => s.roomCode),
     ]);
-    // Series the user has locally — live sessions matching these get pulled into My Sessions
-    const ownSeries = new Set([
-      ...(draft?.series ? [draft.series] : []),
-      ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
-    ]);
+    // Series to match against live Firebase sessions for My Sessions injection.
+    // When a filter is active, scope to that series only so we don't pull in live
+    // sessions from other series. Without a filter, use all locally known series.
+    const ownSeries = this._selectedSeries
+      ? new Set([this._selectedSeries])
+      : new Set([
+          ...(draft?.series ? [draft.series] : []),
+          ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
+        ]);
 
     try {
       const allSeries = await this._fetchKnownSeries();
@@ -3387,6 +3396,7 @@ class App {
     const roomCode = this.live?.roomCode;
     const series   = this.liveState?.series || null;
     const date     = this.liveState?.date || '';
+    const isHost   = this.live?.isHost ?? true; // capture before this.live is nulled
 
     this.live?.detach();
     this.live = null;
@@ -3396,7 +3406,7 @@ class App {
     // localStorage draft is overwritten by a new session.
     if (roomCode) {
       this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
-      this._bgSessions.unshift({ roomCode, label, series, date, isHost: this.live?.isHost ?? true });
+      this._bgSessions.unshift({ roomCode, label, series, date, isHost });
       this._saveBgSessions();
     }
 
