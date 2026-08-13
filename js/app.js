@@ -2693,12 +2693,23 @@ class App {
   async _openNewSession(backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
 
-    // If a session is currently live, offer to background it before starting a new one
-    // so the draft is not silently overwritten.
+    // If a session is currently live, background it before starting a new one.
     if (this.liveState) {
       const label = this.liveState.label || 'the current session';
-      if (!confirm(`"${label}" is active. It will be moved to Backgrounded Sessions so you can start a new one. Continue?`)) return;
+      if (!confirm(`"${label}" is active. It will be moved to My Sessions so you can start a new one. Continue?`)) return;
       this._backgroundSession();
+    } else {
+      // No active liveState but there may be an orphaned draft (user navigated away
+      // from a session without ending it). Guard it so the draft isn't silently
+      // overwritten when starting a new session from the home screen.
+      const draft = this.sessions.getDraft();
+      if (draft?.roomCode) {
+        const label = draft.label || 'a previous session';
+        if (!confirm(`"${label}" was not ended. Move it to My Sessions before starting a new one?`)) return;
+        this._bgSessions = this._bgSessions.filter(s => s.roomCode !== draft.roomCode);
+        this._bgSessions.unshift({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true });
+        this._saveBgSessions();
+      }
     }
 
     this._sfIsBackdated = backdated;
