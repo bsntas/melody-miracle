@@ -2128,9 +2128,40 @@ class App {
   }
 
   _sessionHomeHTML(draft) {
-    // Show backgrounded sessions that are distinct from the current draft —
-    // if the draft IS the backgrounded session, the Resume button above covers it.
-    const bgSessions = (this._bgSessions || []).filter(s => !draft || s.roomCode !== draft.roomCode);
+    // Merge draft + backgrounded sessions into a single "My Sessions" list.
+    // Draft (if any) is always treated as a host session and shown first.
+    const ownSessions = [];
+    if (draft) {
+      ownSessions.push({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true, _isDraft: true });
+    }
+    for (const s of (this._bgSessions || [])) {
+      if (!draft || s.roomCode !== draft.roomCode) ownSessions.push(s);
+    }
+
+    const ownCardsHTML = ownSessions.map(s => {
+      const isHost = s.isHost !== false;
+      const roleBadge = isHost
+        ? `<span class="session-role-badge session-role-host">Host</span>`
+        : `<span class="session-role-badge session-role-observer">Observer</span>`;
+      const primaryBtn = isHost
+        ? `<button class="btn btn-sm btn-warning" data-own-resume="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Resume</button>`
+        : `<button class="btn btn-sm btn-outline" data-own-rejoin="${escHtml(s.roomCode)}">Rejoin</button>`;
+      return `
+        <div class="own-session-card">
+          <div class="open-session-info">
+            <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
+            <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+          </div>
+          <div class="own-session-right">
+            ${roleBadge}
+            <div class="own-session-actions">
+              ${primaryBtn}
+              <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Discard</button>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+
     return `
       <div class="session-home">
         <div class="session-home-icon">🎵</div>
@@ -2138,27 +2169,11 @@ class App {
         <div class="session-home-desc">Start a session to record bhajans. Others can join instantly from the list below.</div>
         <div class="session-home-actions">
           <button class="btn btn-primary btn-lg btn-block" id="btn-session-new">+ Start New Session</button>
-          ${draft ? `<div style="width:100%">
-            <button class="btn btn-warning btn-block" id="btn-session-resume">↩ Resume "${escHtml(draft.label || 'Previous Session')}"</button>
-          </div>` : ''}
         </div>
-        ${bgSessions.length ? `
+        ${ownSessions.length ? `
           <div class="open-sessions-section">
-            <div class="open-sessions-header">Backgrounded Sessions</div>
-            <div class="open-sessions-list">
-              ${bgSessions.map(s => `
-                <div class="bg-session-card">
-                  <div class="open-session-info">
-                    <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
-                    <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
-                  </div>
-                  <div class="bg-session-actions">
-                    <button class="btn btn-sm btn-warning" data-bg-resume="${escHtml(s.roomCode)}">Resume</button>
-                    <button class="btn btn-sm btn-outline" data-bg-discard="${escHtml(s.roomCode)}">Discard</button>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
+            <div class="open-sessions-header">My Sessions</div>
+            <div class="open-sessions-list">${ownCardsHTML}</div>
           </div>
         ` : ''}
         <div class="open-sessions-section">
@@ -2167,24 +2182,30 @@ class App {
             <div class="open-sessions-loading"><span class="open-sessions-spinner"></span> Looking for active sessions…</div>
           </div>
         </div>
-        ${!draft ? `<div class="session-home-actions" style="margin-top:0.25rem">
+        <div class="session-home-actions" style="margin-top:0.25rem">
           <button class="btn btn-outline btn-block" id="btn-session-join">Join by Series & Date →</button>
-        </div>` : ''}
+        </div>
       </div>`;
   }
 
   _bindSessionHome(draft) {
     document.getElementById('btn-session-new').addEventListener('click', () => this._openNewSession());
     document.getElementById('btn-session-join')?.addEventListener('click', () => this._openJoinModal());
-    if (draft) {
-      document.getElementById('btn-session-resume')?.addEventListener('click', () => this._resumeDraftSession(draft));
-    }
-    document.querySelectorAll('[data-bg-resume]').forEach(btn =>
-      btn.addEventListener('click', () => this._resumeBgSession(btn.dataset.bgResume))
+
+    document.querySelectorAll('[data-own-resume]').forEach(btn => {
+      const roomCode = btn.dataset.ownResume;
+      const isDraft = btn.dataset.ownIsDraft === '1';
+      btn.addEventListener('click', () => isDraft ? this._resumeDraftSession(draft) : this._resumeBgSession(roomCode));
+    });
+    document.querySelectorAll('[data-own-rejoin]').forEach(btn =>
+      btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.ownRejoin))
     );
-    document.querySelectorAll('[data-bg-discard]').forEach(btn =>
-      btn.addEventListener('click', () => this._discardBgSession(btn.dataset.bgDiscard))
-    );
+    document.querySelectorAll('[data-own-discard]').forEach(btn => {
+      const roomCode = btn.dataset.ownDiscard;
+      const isDraft = btn.dataset.ownIsDraft === '1';
+      btn.addEventListener('click', () => isDraft ? this._discardDraftFromHome(draft) : this._discardBgSession(roomCode));
+    });
+
     this._loadOpenSessions();
     // Keep the Live Now list fresh: re-probe Firebase every 30 s so a session
     // that starts after this page loaded still appears without a manual refresh.
@@ -2195,7 +2216,12 @@ class App {
     const el = document.getElementById('open-sessions-list');
     if (!el) return;
 
-    const draftCode = this.sessions.getDraft()?.roomCode || null;
+    const draft = this.sessions.getDraft();
+    // Codes already shown in "My Sessions" — skip them in Live Now to avoid duplication
+    const ownCodes = new Set([
+      ...(draft?.roomCode ? [draft.roomCode] : []),
+      ...(this._bgSessions || []).map(s => s.roomCode),
+    ]);
 
     try {
       const allSeries = await this._fetchKnownSeries();
@@ -2220,31 +2246,28 @@ class App {
 
       if (!el.isConnected) return;
 
-      if (!open.length) {
-        el.innerHTML = '<div class="open-sessions-empty">No active sessions right now</div>';
+      // Only show sessions the user doesn't already own / have backgrounded
+      const foreign = open.filter(({ code }) => !ownCodes.has(code));
+
+      if (!foreign.length) {
+        el.innerHTML = '<div class="open-sessions-empty">No other active sessions right now</div>';
         return;
       }
 
-      el.innerHTML = open.map(({ code, state }) => {
-        // Only block the card for the user's own draft session — joining your own
-        // session as participant while you're the host makes no sense. Sessions from
-        // other series are always joinable regardless of draft state.
-        const isOwnDraft = draftCode === code;
-        return `
-          <div class="open-session-card${isOwnDraft ? ' open-session-card--no-action' : ''}" data-code="${escHtml(code)}"${isOwnDraft ? ' title="This is your session — use Resume above"' : ''}>
-            <div class="open-session-info">
-              <div class="open-session-label">${escHtml(state.label || code)}</div>
-              <div class="open-session-meta">
-                <span class="live-dot"></span>
-                ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
-                · ${escHtml(formatDate(state.date || ''))}
-              </div>
+      el.innerHTML = foreign.map(({ code, state }) => `
+        <div class="open-session-card" data-code="${escHtml(code)}">
+          <div class="open-session-info">
+            <div class="open-session-label">${escHtml(state.label || code)}</div>
+            <div class="open-session-meta">
+              <span class="live-dot"></span>
+              ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+              · ${escHtml(formatDate(state.date || ''))}
             </div>
-            ${isOwnDraft ? '<span class="open-session-join-blocked">Your session</span>' : '<span class="open-session-join">Join →</span>'}
-          </div>`;
-      }).join('');
+          </div>
+          <span class="open-session-join">Join →</span>
+        </div>`).join('');
 
-      el.querySelectorAll('.open-session-card:not(.open-session-card--no-action)').forEach(btn => {
+      el.querySelectorAll('.open-session-card').forEach(btn => {
         btn.addEventListener('click', () => this._joinSessionWithCode(btn.dataset.code));
       });
     } catch {
@@ -3313,7 +3336,7 @@ class App {
     // localStorage draft is overwritten by a new session.
     if (roomCode) {
       this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
-      this._bgSessions.unshift({ roomCode, label, series, date });
+      this._bgSessions.unshift({ roomCode, label, series, date, isHost: this.live?.isHost ?? true });
       this._saveBgSessions();
     }
 
@@ -3369,6 +3392,22 @@ class App {
     this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
     this._saveBgSessions();
     LiveSession.cleanupOrphan(roomCode).catch(() => {});
+    this._renderSession();
+    this._toast(`"${label}" discarded`);
+  }
+
+  async _discardDraftFromHome(draft) {
+    if (!draft) return;
+    const label = draft.label || 'this session';
+    const bhCount = (draft.bhajans || []).length;
+    const msg = bhCount
+      ? `Discard "${label}"? ${bhCount} bhajan${bhCount !== 1 ? 's' : ''} will not be saved.`
+      : `Discard "${label}"? Nothing will be saved.`;
+    if (!confirm(msg)) return;
+    this.sessions.clearDraft();
+    this._bgSessions = (this._bgSessions || []).filter(s => s.roomCode !== draft.roomCode);
+    this._saveBgSessions();
+    LiveSession.cleanupOrphan(draft.roomCode).catch(() => {});
     this._renderSession();
     this._toast(`"${label}" discarded`);
   }
