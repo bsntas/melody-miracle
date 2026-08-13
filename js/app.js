@@ -328,9 +328,14 @@ class App {
     // If a series is already selected (restored from localStorage), keep it —
     // it may belong to a live draft session not yet in knownSeries().
     // Only auto-select if there is genuinely no preference saved.
+    // Treat localStorage value of "" as an explicit "All" choice — don't override it.
     if (!this._selectedSeries) {
-      // Prefer the draft's series so the strip matches what's in progress.
-      if (draft?.series) {
+      let stored = null;
+      try { stored = localStorage.getItem('mm-series-filter'); } catch {}
+      if (stored === '') {
+        // User explicitly chose "All" — leave _selectedSeries as null.
+      } else if (draft?.series) {
+        // Prefer the draft's series so the strip matches what's in progress.
         this._selectedSeries = draft.series;
       } else if (allSeries.length > 0) {
         const recent = this.sessions.all();
@@ -348,8 +353,14 @@ class App {
     this.sessions.setSeriesFilter(this._selectedSeries);
     this._renderSeriesStrip();
     this._route();
-    // Persist selection to user profile so it roams across devices
-    if (series) this._saveSeriesPreference(series);
+    // Persist selection to user profile so it roams across devices.
+    // When "All" is selected (series falsy), clear the stored preference so the
+    // other device doesn't re-apply a named series on next login.
+    if (series) {
+      this._saveSeriesPreference(series);
+    } else {
+      this._clearSeriesPreference();
+    }
   }
 
   async _saveSeriesPreference(series) {
@@ -359,6 +370,17 @@ class App {
     if (existing[0] === series) return; // already at front, nothing to do
     const updated = [series, ...existing.filter(s => s !== series)];
     const profile = { ...this._userProfile, preferredSeries: updated };
+    try {
+      await this.auth.saveProfile(user.uid, profile);
+      this._userProfile = profile;
+    } catch { /* non-critical */ }
+  }
+
+  async _clearSeriesPreference() {
+    const user = this.auth?.currentUser;
+    if (!user || !this._userProfile) return;
+    if (!this._userProfile.preferredSeries?.length) return;
+    const profile = { ...this._userProfile, preferredSeries: [] };
     try {
       await this.auth.saveProfile(user.uid, profile);
       this._userProfile = profile;
@@ -395,12 +417,9 @@ class App {
 
     if (allSeries.length === 0) {
       pillsEl.innerHTML = `<button class="series-pill series-pill-new" id="btn-series-new">+ New Series</button>`;
-    } else if (allSeries.length === 1) {
-      const s = allSeries[0];
-      pillsEl.innerHTML =
-        `<span class="series-pill series-pill-active" data-longpress="${escHtml(s)}" title="Hold to delete">${escHtml(s)}</span>` +
-        `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
     } else {
+      // For 1 or more series: always show an "All" pill so the active-state accurately
+      // reflects the filter (null → All active) and the user can always opt out of a filter.
       pillsEl.innerHTML =
         `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
         allSeries.map(s => seriesPillHtml(s)).join('') +
@@ -456,8 +475,21 @@ class App {
   _submitNewSeries() {
     const name = document.getElementById('mnewseries-name').value.trim();
     if (!name) { this._toast('Please enter a series name', 'error'); return; }
+
+    const newSlug = this._seriesSlug(name);
+    const allKnown = [...new Set([...this._localSeries, ...this.sessions.knownSeries()])];
+
+    // Block names that share a room-code slug with an existing series — they would
+    // collide in Firebase (same series+date → same room code).
+    const slugCollision = allKnown.find(s => s !== name && this._seriesSlug(s) === newSlug);
+    if (slugCollision) {
+      this._toast(`'${slugCollision}' already uses an equivalent name`, 'error');
+      return;
+    }
+
     this._closeModal('modal-new-series');
-    if (!this._localSeries.includes(name)) {
+    // Only add to _localSeries if the name isn't already tracked anywhere.
+    if (!allKnown.includes(name)) {
       this._localSeries.push(name);
       try { localStorage.setItem('mm-local-series', JSON.stringify(this._localSeries)); } catch {}
     }
@@ -1999,6 +2031,9 @@ class App {
   // ─── Sung Bhajans ─────────────────────────────────────────────────────────
 
   _renderSung() {
+    const titleEl = document.querySelector('#view-sung .page-title');
+    if (titleEl) titleEl.textContent = this._selectedSeries ? `${this._selectedSeries} — Bhajans Sung` : 'Sung Bhajans';
+
     this._bhajanCounts = this.sessions.bhajanSungCounts();
     const counts = this._bhajanCounts;
     const sorted = Object.entries(counts)
@@ -2226,12 +2261,14 @@ class App {
     ]);
     // Series to match against live Firebase sessions for My Sessions injection.
     // When a filter is active, scope to that series only so we don't pull in live
-    // sessions from other series. Without a filter, use all locally known series.
+    // sessions from other series. Without a filter, include all known series so that
+    // switching to "All" doesn't demote the user's own sessions from My Sessions to Live Now.
     const ownSeries = this._selectedSeries
       ? new Set([this._selectedSeries])
       : new Set([
           ...(draft?.series ? [draft.series] : []),
           ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
+          ...this.sessions.knownSeries(),
         ]);
 
     try {
@@ -2345,12 +2382,15 @@ class App {
     for (const s of (this._bgSessions || [])) {
       if (!ownMap.has(s.roomCode)) ownMap.set(s.roomCode, { isHost: s.isHost ?? true, isDraft: false });
     }
-    // Series set to match Firebase results that fell out of localStorage
+    // Series set to match Firebase results that fell out of localStorage.
+    // Include all known series when "All" is active so that switching to "All" doesn't
+    // demote the user's own sessions from My Sessions to Live Now.
     const ownSeries = this._selectedSeries
       ? new Set([this._selectedSeries])
       : new Set([
           ...(draft?.series ? [draft.series] : []),
           ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
+          ...this.sessions.knownSeries(),
         ]);
 
     try {
@@ -3618,6 +3658,9 @@ class App {
   // ─── History ──────────────────────────────────────────────────────────────
 
   _renderHistory() {
+    const titleEl = document.querySelector('#view-history .page-title');
+    if (titleEl) titleEl.textContent = this._selectedSeries ? `${this._selectedSeries} — History` : 'Session History';
+
     const all = this.sessions.activeAll();
     const el  = document.getElementById('history-list');
 
@@ -4211,6 +4254,9 @@ class App {
   // ─── Singers Directory ───────────────────────────────────────────────────
 
   _renderSingers() {
+    const titleEl = document.querySelector('#view-singers .page-title');
+    if (titleEl) titleEl.textContent = this._selectedSeries ? `${this._selectedSeries} — Singers` : 'All Singers';
+
     const rawStats = this.sessions.allSingersWithStats();
 
     // Merge aliases into canonical names
@@ -4574,9 +4620,11 @@ class App {
         const preferred = this._userProfile.preferredSeries;
         if (preferred?.length) {
           // Only override the local filter if the user hasn't already made a choice
-          // in this session (i.e. the localStorage value is absent or matches the profile)
-          const localFilter = localStorage.getItem('mm-series-filter') || null;
-          if (!localFilter || localFilter === preferred[0]) {
+          // in this session (i.e. the localStorage value is absent or matches the profile).
+          // localStorage value of "" means the user explicitly chose "All" — don't override.
+          const localFilter = localStorage.getItem('mm-series-filter');
+          const localIsAll = localFilter === '';
+          if (!localIsAll && (!localFilter || localFilter === preferred[0])) {
             this.sessions.setSeriesFilter(preferred[0]);
             this._selectedSeries = preferred[0];
             try { localStorage.setItem('mm-series-filter', preferred[0]); } catch {}
