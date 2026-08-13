@@ -2170,12 +2170,10 @@ class App {
         <div class="session-home-actions">
           <button class="btn btn-primary btn-lg btn-block" id="btn-session-new">+ Start New Session</button>
         </div>
-        ${ownSessions.length ? `
-          <div class="open-sessions-section">
-            <div class="open-sessions-header">My Sessions</div>
-            <div class="open-sessions-list">${ownCardsHTML}</div>
-          </div>
-        ` : ''}
+        <div class="open-sessions-section"${ownSessions.length ? '' : ' hidden'} id="my-sessions-section">
+          <div class="open-sessions-header">My Sessions</div>
+          <div class="open-sessions-list" id="my-sessions-list">${ownCardsHTML}</div>
+        </div>
         <div class="open-sessions-section">
           <div class="open-sessions-header">Live Now</div>
           <div id="open-sessions-list" class="open-sessions-list">
@@ -2217,10 +2215,15 @@ class App {
     if (!el) return;
 
     const draft = this.sessions.getDraft();
-    // Codes already shown in "My Sessions" — skip them in Live Now to avoid duplication
+    // Codes already shown in My Sessions via local storage (draft + bgSessions)
     const ownCodes = new Set([
       ...(draft?.roomCode ? [draft.roomCode] : []),
       ...(this._bgSessions || []).map(s => s.roomCode),
+    ]);
+    // Series the user has locally — live sessions matching these get pulled into My Sessions
+    const ownSeries = new Set([
+      ...(draft?.series ? [draft.series] : []),
+      ...(this._bgSessions || []).filter(s => s.series).map(s => s.series),
     ]);
 
     try {
@@ -2246,8 +2249,54 @@ class App {
 
       if (!el.isConnected) return;
 
-      // Only show sessions the user doesn't already own / have backgrounded
-      const foreign = open.filter(({ code }) => !ownCodes.has(code));
+      // Sessions not in local storage but matching the user's series — treat as mine
+      const liveMine = open.filter(({ code, state }) =>
+        !ownCodes.has(code) && state?.series && ownSeries.has(state.series)
+      );
+      // Truly foreign sessions — show in Live Now
+      const foreign = open.filter(({ code, state }) =>
+        !ownCodes.has(code) && !(state?.series && ownSeries.has(state.series))
+      );
+
+      // Inject live "my series" sessions into the My Sessions panel
+      if (liveMine.length) {
+        const myList = document.getElementById('my-sessions-list');
+        const mySection = document.getElementById('my-sessions-section');
+        if (myList?.isConnected) {
+          liveMine.forEach(({ code, state }) => {
+            // Skip if a card for this code already exists (avoid duplicates on refresh)
+            if (myList.querySelector(`[data-live-code="${CSS.escape(code)}"]`)) return;
+            const card = document.createElement('div');
+            card.className = 'own-session-card';
+            card.dataset.liveCode = code;
+            card.innerHTML = `
+              <div class="open-session-info">
+                <div class="open-session-label">${escHtml(state.label || code)}</div>
+                <div class="open-session-meta">
+                  <span class="live-dot"></span>
+                  ${state.phase === 'playing' ? 'Playing now' : 'In setup'}
+                  · ${escHtml(formatDate(state.date || ''))}
+                </div>
+              </div>
+              <div class="own-session-right">
+                <span class="session-role-badge session-role-host">Host</span>
+                <div class="own-session-actions">
+                  <button class="btn btn-sm btn-warning">Resume</button>
+                </div>
+              </div>`;
+            card.querySelector('button').addEventListener('click', () => {
+              const sessionData = {
+                id: code, roomCode: code,
+                label: state.label || code, series: state.series || '',
+                date: state.date || '', status: 'live', phase: 'setup', bhajans: [],
+              };
+              this._startLiveSession(sessionData, { resuming: true });
+            });
+            myList.appendChild(card);
+          });
+          mySection?.removeAttribute('hidden');
+        }
+      }
 
       if (!foreign.length) {
         el.innerHTML = '<div class="open-sessions-empty">No other active sessions right now</div>';
