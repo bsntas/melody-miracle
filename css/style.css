@@ -640,18 +640,16 @@ img { max-width: 100%; }
 .session-join-row input { flex: 1; }
 
 /* ─── Session Create Section ─────────────────────────────────────────────── */
+.session-section { margin-bottom: 1rem; }
+.session-section .session-create-section { margin-bottom: 0.5rem; }
 .session-create-section {
   width: 100%; background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 0.75rem 1rem 0.5rem; margin-bottom: 1.25rem;
-}
-.session-create-section-title {
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 0.6rem;
+  padding: 0.25rem 1rem;
 }
 .session-series-create-row {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0.45rem 0; border-top: 1px solid var(--border-subtle, var(--border));
+  padding: 0.55rem 0; border-top: 1px solid var(--border-subtle, var(--border));
   gap: 0.5rem;
 }
 .session-series-create-row:first-of-type { border-top: none; }
@@ -662,13 +660,13 @@ img { max-width: 100%; }
 .session-series-create-actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
 .session-no-series {
   font-size: 0.88rem; color: var(--text-3);
-  padding: 0.5rem 0; text-align: center;
+  padding: 0.55rem 0; text-align: center;
 }
 .session-new-series-btn {
-  width: 100%; margin-top: 0.4rem; color: var(--saffron);
-  font-size: 0.82rem; padding: 0.35rem 0;
+  color: var(--saffron); font-size: 0.82rem;
+  padding: 0.3rem 0; width: 100%;
 }
-.session-new-series-btn:hover { background: var(--surface-2, var(--surface)); }
+.session-new-series-btn:hover { background: transparent; opacity: 0.75; }
 
 /* ─── Open Sessions List ─────────────────────────────────────────────────── */
 .open-sessions-section {
@@ -728,20 +726,25 @@ img { max-width: 100%; }
 
 /* ─── My Sessions (unified own-session cards) ────────────────────────────── */
 .own-session-card {
-  display: flex; align-items: flex-start; justify-content: space-between;
+  display: flex; flex-direction: column;
+  gap: 0.5rem;
   width: 100%; padding: 0.75rem 1rem;
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--radius); gap: 0.75rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: inset 3px 0 0 var(--saffron);
 }
-.own-session-right {
-  display: flex; flex-direction: column; align-items: flex-end;
-  gap: 0.4rem; flex-shrink: 0;
+.own-session-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
 }
-.own-session-actions { display: flex; gap: 0.375rem; }
+.own-session-bottom {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+}
+.own-session-actions { display: flex; gap: 0.375rem; flex-shrink: 0; }
 .session-role-badge {
-  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.05em; padding: 0.15rem 0.45rem;
-  border-radius: 999px; line-height: 1.4; white-space: nowrap;
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; padding: 0.15rem 0.5rem;
+  border-radius: 999px; line-height: 1.4; white-space: nowrap; flex-shrink: 0;
 }
 .session-role-host {
   background: color-mix(in srgb, var(--saffron) 15%, transparent);
