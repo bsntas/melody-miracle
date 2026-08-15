@@ -735,7 +735,10 @@ img { max-width: 100%; }
   box-shadow: inset 3px 0 0 var(--saffron);
 }
 .own-session-top {
-  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem;
+}
+.own-session-top .open-session-label {
+  white-space: normal; word-break: break-word; margin-bottom: 0;
 }
 .own-session-bottom {
   display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
