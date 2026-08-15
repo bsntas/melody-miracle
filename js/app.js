@@ -2482,12 +2482,7 @@ class App {
           <button class="btn-link-muted" id="btn-background-session" title="Leave open for others to add bhajans while you manage another series">Background</button>
           <span aria-hidden="true">·</span>
           <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
-        </div>` : ''}` : `<div class="playing-controls-strip">
-          ${isHost ? `
-          <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
-          <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
-          <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati" aria-label="Open Mangala Aarati bhajan">🪔</button>
-        </div>`}
+        </div>` : ''}` : ''}
 
         <div class="section-header section-header-flush">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
@@ -2498,6 +2493,21 @@ class App {
         </div>
 
         ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
+        ${isPlaying && isHost ? (() => {
+          const bh = st.bhajans || [];
+          const ci = bh.findIndex(e => e.id === st.currentBhajan);
+          return `
+        <div class="playing-float-pill">
+          <button class="float-nav-btn" id="btn-float-prev" ${ci > 0 ? '' : 'disabled'} title="Previous bhajan">‹</button>
+          <div class="float-pill-center">
+            <button class="float-ctrl-btn" id="btn-float-setup" title="Return to setup mode">↩ Setup</button>
+            <span class="float-divider" aria-hidden="true">·</span>
+            <button class="float-ctrl-btn float-ctrl-danger" id="btn-float-end" title="End and save session">⏹ End</button>
+          </div>
+          <button class="float-nav-btn" id="btn-float-next" title="Next bhajan">›</button>
+        </div>
+        <div class="playing-float-spacer"></div>`;
+        })() : ''}
       </div>`;
 
     // Singer avatar clicks (compact header strip)
@@ -2575,15 +2585,13 @@ class App {
         document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
       }
     } else {
-      // Playing phase — Prev/Next are now inside the expanded list entry
+      // Playing phase — controls in floating pill (host only)
       if (isHost) {
-        document.getElementById('btn-prev-bhajan')?.addEventListener('click', () => this._prevBhajan());
-        document.getElementById('btn-next-bhajan')?.addEventListener('click', () => this._nextBhajan());
-        document.getElementById('btn-exit-play').addEventListener('click', () => this._exitPlay());
-        document.getElementById('btn-end-session').addEventListener('click', () => this._confirmEndSession());
+        document.getElementById('btn-float-prev')?.addEventListener('click', () => this._prevBhajan());
+        document.getElementById('btn-float-next')?.addEventListener('click', () => this._nextBhajan());
+        document.getElementById('btn-float-setup')?.addEventListener('click', () => this._exitPlay());
+        document.getElementById('btn-float-end')?.addEventListener('click', () => this._confirmEndSession());
       }
-      // Mangala Aarati visible to all in playing phase
-      document.getElementById('btn-mangala-aarati').addEventListener('click', () => this._openBhajanModal('mangala-aarati'));
     }
 
     document.getElementById('bnav-session-icon').classList.add('is-live');
@@ -2647,8 +2655,6 @@ class App {
     return placeholderHTML + bhajans.map((e, i) => {
       const displayNum = i + 1 + indexOffset;
       const isCurrent = isPlaying && e.id === currentId;
-      const canGoEarlier = i > 0;
-      const canGoLater   = i < bhajans.length - 1;
       const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
       const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
       const eDeitySlug = this._deitySlug(eDeity);
@@ -2668,10 +2674,6 @@ class App {
               </div>
               ${e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : ''}
             </div>
-            ${isHost ? `<div class="playing-nav-btns">
-              <button class="btn btn-nav-compact" id="btn-prev-bhajan" ${canGoEarlier ? '' : 'disabled'} title="Previous">‹</button>
-              <button class="btn btn-nav-compact" id="btn-next-bhajan" ${canGoLater ? '' : 'disabled'} title="Next">›</button>
-            </div>` : ''}
           </div>
           ${(e.singers?.length || e.singer) ? `<div class="playing-singer-display">
             <span class="playing-singer-pill" title="${escHtml(e.singers?.join(' · ') || e.singer)}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
@@ -2920,7 +2922,7 @@ class App {
     const currentIdx = bhajans.findIndex(e => e.id === this.liveState?.currentBhajan);
     const nextIdx = currentIdx + 1;
     if (nextIdx >= bhajans.length) {
-      this._confirmEndSession();
+      this._openBhajanModal('mangala-aarati');
     } else {
       const updated = { ...this.liveState, currentBhajan: bhajans[nextIdx].id };
       this.liveState = updated;

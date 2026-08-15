@@ -829,25 +829,45 @@ img { max-width: 100%; }
 
 .btn-aarati { color: var(--gold); border: 1px solid var(--gold-light); }
 
-/* ─── Playing-phase compact controls strip ───────────────────────────────── */
-.playing-controls-strip {
-  display: flex; align-items: center; gap: 0.35rem;
-  margin-bottom: 0.75rem; justify-content: flex-end;
-}
-.playing-controls-strip .btn-icon {
-  font-size: 1rem; padding: 0.3rem 0.55rem;
-  border-radius: var(--radius-sm); color: var(--text-2);
+/* ─── Playing-phase floating control pill ────────────────────────────────── */
+.playing-float-pill {
+  position: fixed;
+  bottom: calc(var(--bottom-nav-h) + 0.6rem);
+  left: 50%; transform: translateX(-50%);
+  z-index: 40;
+  display: flex; align-items: center; gap: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.35rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,.14), 0 1px 4px rgba(0,0,0,.08);
+  white-space: nowrap;
 }
-.playing-controls-strip .btn-icon:hover { color: var(--saffron); border-color: var(--saffron-light); }
-.playing-controls-strip .btn-aarati { color: var(--gold); border-color: var(--gold-light); }
-.playing-ctrl-btn {
-  font-size: 0.82rem; padding: 0.3rem 0.65rem;
-  border-radius: var(--radius-sm); border: 1px solid var(--border);
+.float-nav-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--saffron-dark); border: 1.5px solid var(--saffron-light);
+  background: var(--surface); cursor: pointer; flex-shrink: 0;
+  transition: background .15s, color .15s;
 }
-.playing-ctrl-btn:hover { color: var(--saffron); border-color: var(--saffron-light); background: var(--saffron-bg); }
-.playing-ctrl-btn.btn-danger-ghost { color: var(--text-3); }
-.playing-ctrl-btn.btn-danger-ghost:hover { color: var(--red); border-color: #fca5a5; background: var(--red-light); }
+.float-nav-btn:hover:not(:disabled) { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+.float-nav-btn:disabled { opacity: .3; cursor: default; }
+.float-pill-center {
+  display: flex; align-items: center; gap: 0.3rem;
+  padding: 0 0.65rem;
+}
+.float-ctrl-btn {
+  font-size: 0.8rem; font-weight: 600; color: var(--text-2);
+  background: none; border: none; cursor: pointer; font-family: inherit;
+  padding: 0.2rem 0; transition: color .15s;
+}
+.float-ctrl-btn:hover { color: var(--text); }
+.float-ctrl-danger { color: var(--text-3); }
+.float-ctrl-danger:hover { color: var(--red); }
+.float-divider { color: var(--text-3); font-size: 0.75rem; user-select: none; }
+.playing-float-spacer { height: 3.5rem; }
 
 /* ─── Inline expanded "Now Playing" entry ────────────────────────────────── */
 .session-bhajan-entry.session-entry-playing {
@@ -1674,6 +1694,8 @@ img { max-width: 100%; }
   :root:not([data-theme="light"]) .mab-hint-info  { background: #172554; color: #93c5fd; }
   :root:not([data-theme="light"]) .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
   :root:not([data-theme="light"]) .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+  :root:not([data-theme="light"]) .playing-float-pill { background: rgba(41,37,36,0.94); }
+  :root:not([data-theme="light"]) .float-nav-btn { background: #292524; color: #fb923c; border-color: #9a3412; }
   /* saffron-dark on saffron-bg/dark-surface contrast fixes */
   :root:not([data-theme="light"]) .filter-active-chip { background: #431407; color: #fed7aa; }
   :root:not([data-theme="light"]) .fmodal-toggle-btn.active { background: #431407; color: #fed7aa; }
@@ -1743,6 +1765,8 @@ img { max-width: 100%; }
 :root[data-theme="dark"] .mab-hint-info  { background: #172554; color: #93c5fd; }
 :root[data-theme="dark"] .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
 :root[data-theme="dark"] .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
+:root[data-theme="dark"] .playing-float-pill { background: rgba(41,37,36,0.94); }
+:root[data-theme="dark"] .float-nav-btn { background: #292524; color: #fb923c; border-color: #9a3412; }
 /* saffron-dark on saffron-bg/dark-surface contrast fixes */
 :root[data-theme="dark"] .filter-active-chip { background: #431407; color: #fed7aa; }
 :root[data-theme="dark"] .fmodal-toggle-btn.active { background: #431407; color: #fed7aa; }
