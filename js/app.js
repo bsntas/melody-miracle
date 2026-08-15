@@ -2500,9 +2500,9 @@ class App {
         <div class="playing-float-pill">
           <button class="float-nav-btn" id="btn-float-prev" ${ci > 0 ? '' : 'disabled'} title="Previous bhajan">‹</button>
           <div class="float-pill-center">
-            <button class="float-ctrl-btn" id="btn-float-setup" title="Return to setup mode">↩ Setup</button>
+            <button class="float-ctrl-btn" id="btn-float-setup" title="Return to setup mode" aria-label="Return to setup mode">↩</button>
             <span class="float-divider" aria-hidden="true">·</span>
-            <button class="float-ctrl-btn float-ctrl-danger" id="btn-float-end" title="End and save session">⏹ End</button>
+            <button class="float-ctrl-btn float-ctrl-danger" id="btn-float-end" title="End and save session" aria-label="End and save session">⏹</button>
           </div>
           <button class="float-nav-btn" id="btn-float-next" title="Next bhajan">›</button>
         </div>

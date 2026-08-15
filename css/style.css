@@ -859,9 +859,10 @@ img { max-width: 100%; }
   padding: 0 0.65rem;
 }
 .float-ctrl-btn {
-  font-size: 0.8rem; font-weight: 600; color: var(--text-2);
+  font-size: 1rem; font-weight: 600; color: var(--text-2);
   background: none; border: none; cursor: pointer; font-family: inherit;
-  padding: 0.2rem 0; transition: color .15s;
+  padding: 0.2rem 0.15rem; transition: color .15s;
+  line-height: 1;
 }
 .float-ctrl-btn:hover { color: var(--text); }
 .float-ctrl-danger { color: var(--text-3); }

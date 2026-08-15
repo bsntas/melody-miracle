@@ -1,11 +1,11 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260815.17';
+const CACHE = 'melody-miracle-20260815.19';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260815.16'; // app.js (floating play pill; auto-aarati on last-next)
+const V_APP  = '20260815.18'; // app.js (icon-only setup/end buttons in float pill)
 const V_GH   = '20260811.1';  // github-store.js (unchanged)
-const V_CSS  = '20260815.17'; // style.css (floating play pill styles)
+const V_CSS  = '20260815.19'; // style.css (float-ctrl-btn icon sizing)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
 const V_LIVE = '20260811.3'; // live.js (unchanged)
 const V_CORE = '20260807.3'; // store.js (unchanged)
