@@ -766,6 +766,17 @@ img { max-width: 100%; }
   box-shadow: var(--shadow);
 }
 .live-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+.live-header-left { display: flex; align-items: center; gap: 0.5rem; }
+.btn-live-back {
+  width: 30px; height: 30px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 8px; cursor: pointer; color: var(--text-2);
+  transition: background .15s, color .15s;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.btn-live-back:hover { background: var(--border); color: var(--text); }
+.btn-live-back:active { opacity: .7; }
 .live-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; flex-shrink: 0; }
 .live-session-label { font-weight: 700; font-size: 1rem; }
 .live-session-date { font-size: 0.8rem; color: var(--text-2); margin-top: 0.1rem; }
