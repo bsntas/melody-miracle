@@ -2465,7 +2465,8 @@ class App {
             <div class="live-header-right">
               ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
               ${singers.length ? `<div class="singers-strip-compact">
-                ${singers.map(name => `<div class="singer-avatar-sm clickable" data-singer="${escHtml(name)}" title="${escHtml(name)}">${escHtml(name[0]?.toUpperCase() || '?')}</div>`).join('')}
+                ${singers.slice(0, 5).map(name => `<div class="singer-avatar-sm clickable" data-singer="${escHtml(name)}" title="${escHtml(name)}">${escHtml(name[0]?.toUpperCase() || '?')}</div>`).join('')}
+                ${singers.length > 5 ? `<div class="singer-avatar-sm singer-avatar-overflow" title="${singers.slice(5).join(', ')}">+${singers.length - 5}</div>` : ''}
               </div>` : ''}
             </div>
           </div>
