@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.4 loaded');
+console.log('[MM] app.js v20260815.6 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2540,16 +2540,15 @@ class App {
               return `<span class="deity-pill deity-${slug}">${escHtml(deity)}${count > 1 ? ` ×${count}` : ''}</span>`;
             }).join('');
           return `
+        <button class="btn-live-back" id="btn-live-back" aria-label="Background session and go back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Back
+        </button>
         <div class="live-header">
           <div class="live-header-top">
-            <div class="live-header-left">
-              <button class="btn-live-back" id="btn-live-back" aria-label="Background session and go back" title="Background and go back">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <div>
-                <div class="live-session-label">${escHtml(st.label || 'Bhajan Session')}</div>
-                <div class="live-session-date">${formatDate(st.date)}</div>
-              </div>
+            <div>
+              <div class="live-session-label">${escHtml(st.label || 'Bhajan Session')}</div>
+              <div class="live-session-date">${formatDate(st.date)}</div>
             </div>
             <div class="live-header-right">
               ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
