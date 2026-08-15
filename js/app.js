@@ -303,8 +303,10 @@ class App {
     if (view !== 'session') clearInterval(this._openSessionsInterval);
 
     // Auto-background a live session when the user navigates away from the
-    // session tab. The session stays resumable from My Sessions without a prompt.
-    if (view !== 'session' && this.liveState) {
+    // session tab. Browse is exempt so users can search for a bhajan and use
+    // the "Add to session" button in the bhajan detail modal without losing
+    // their active session.
+    if (view !== 'session' && view !== 'browse' && this.liveState) {
       this._backgroundSession({ silent: true });
     }
 
