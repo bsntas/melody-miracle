@@ -677,6 +677,10 @@ class App {
         this._toast('No active session. Start a session first.', 'warn');
         return;
       }
+      if (this.liveState.phase === 'playing') {
+        this._toast('Session is playing — exit play mode to add bhajans.', 'warn');
+        return;
+      }
       const bhajan = this.bhajans.getById(id);
       if (bhajan) this._openAddBhajanModal(bhajan);
     });
@@ -2469,10 +2473,10 @@ class App {
         </div>`;
         })()}
 
-        <div class="session-setup-bar">
+        ${!isPlaying ? `<div class="session-setup-bar">
           <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
-          ${isHost && !isPlaying ? `<button class="btn btn-success btn-sm" id="btn-start-playing" ${displayBhajans.length === 0 ? 'disabled' : ''}>▶ Start</button>` : ''}
-        </div>
+          ${isHost ? `<button class="btn btn-success btn-sm" id="btn-start-playing" ${displayBhajans.length === 0 ? 'disabled' : ''}>▶ Start</button>` : ''}
+        </div>` : ''}
         ${isHost && !isPlaying ? `<div class="session-mgmt-links">
           <button class="btn-link-muted" id="btn-end-session">Save &amp; Close</button>
           <span aria-hidden="true">·</span>
@@ -2545,8 +2549,7 @@ class App {
       this._backgroundSession();
     });
 
-    // Add bhajan always available — observers can add even while host is playing
-    document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+    document.getElementById('btn-add-bhajan-live')?.addEventListener('click', () => this._openAddBhajanModal());
 
     if (!isPlaying) {
       document.getElementById('btn-live-edit-toggle')?.addEventListener('click', async () => {
