@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260812.1 loaded');
+console.log('[MM] app.js v20260815.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2185,12 +2185,12 @@ class App {
         : `<button class="btn btn-sm btn-outline" data-own-rejoin="${escHtml(s.roomCode)}">Rejoin</button>`;
       return `
         <div class="own-session-card">
-          <div class="open-session-info">
+          <div class="own-session-top">
             <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
-            <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
-          </div>
-          <div class="own-session-right">
             ${roleBadge}
+          </div>
+          <div class="own-session-bottom">
+            <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
             <div class="own-session-actions">
               ${primaryBtn}
               <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Discard</button>
@@ -2215,9 +2215,9 @@ class App {
 
     return `
       <div class="session-home">
-        <div class="session-create-section">
-          <div class="session-create-section-title">Sessions</div>
-          ${seriesRowsHTML}
+        <div class="session-section">
+          <div class="open-sessions-header">Sessions</div>
+          <div class="session-create-section">${seriesRowsHTML}</div>
           <button class="btn btn-ghost btn-sm session-new-series-btn" id="btn-session-new-series">+ New Series</button>
         </div>
         <div class="open-sessions-section"${ownSessions.length ? '' : ' hidden'} id="my-sessions-section">
