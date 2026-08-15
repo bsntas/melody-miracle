@@ -677,10 +677,6 @@ class App {
         this._toast('No active session. Start a session first.', 'warn');
         return;
       }
-      if (this.liveState.phase === 'playing') {
-        this._toast('Session is playing — exit play mode to add bhajans.', 'warn');
-        return;
-      }
       const bhajan = this.bhajans.getById(id);
       if (bhajan) this._openAddBhajanModal(bhajan);
     });
