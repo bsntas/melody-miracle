@@ -2190,7 +2190,7 @@ class App {
             ${roleBadge}
           </div>
           <div class="own-session-bottom">
-            <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+            <div class="open-session-meta">${s.date ? escHtml(formatDate(s.date)) : ''}</div>
             <div class="own-session-actions">
               ${primaryBtn}
               <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Discard</button>
