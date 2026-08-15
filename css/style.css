@@ -832,7 +832,6 @@ img { max-width: 100%; }
 /* ─── Playing-phase compact controls strip ───────────────────────────────── */
 .playing-controls-strip {
   display: flex; align-items: center; gap: 0.35rem;
-  margin-bottom: 0.75rem; justify-content: flex-end;
 }
 .playing-controls-strip .btn-icon {
   font-size: 1rem; padding: 0.3rem 0.55rem;
