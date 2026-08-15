@@ -2482,16 +2482,16 @@ class App {
           <button class="btn-link-muted" id="btn-background-session" title="Leave open for others to add bhajans while you manage another series">Background</button>
           <span aria-hidden="true">·</span>
           <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
-        </div>` : ''}` : ''}
+        </div>` : ''}` : `<div class="playing-controls-strip">
+          ${isHost ? `
+          <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
+          <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
+          <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati" aria-label="Open Mangala Aarati bhajan">🪔</button>
+        </div>`}
 
         <div class="section-header section-header-flush">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
-          ${isPlaying ? `<div class="playing-controls-strip">
-            ${isHost ? `
-            <button class="btn btn-ghost playing-ctrl-btn" id="btn-exit-play" title="Return to setup mode">↩ Setup</button>
-            <button class="btn btn-ghost playing-ctrl-btn btn-danger-ghost" id="btn-end-session" title="End and save this session">⏹ End Session</button>` : ''}
-            <button class="btn btn-ghost btn-icon btn-aarati" id="btn-mangala-aarati" title="Mangala Aarati" aria-label="Open Mangala Aarati bhajan">🪔</button>
-          </div>` : `<button class="btn btn-ghost btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>`}
+          ${!isPlaying ? `<button class="btn btn-ghost btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
           ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase, this._liveEditMode)}

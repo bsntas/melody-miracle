@@ -1,11 +1,11 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260815.12';
+const CACHE = 'melody-miracle-20260815.14';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260815.11'; // app.js (fix playing-phase controls layout)
+const V_APP  = '20260815.13'; // app.js (revert controls strip to own row; keep prev/next fix)
 const V_GH   = '20260811.1';  // github-store.js (unchanged)
-const V_CSS  = '20260815.12'; // style.css (fix prev/next nav buttons clipped in playing card)
+const V_CSS  = '20260815.14'; // style.css (restore controls strip right-aligned layout)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
 const V_LIVE = '20260811.3'; // live.js (unchanged)
 const V_CORE = '20260807.3'; // store.js (unchanged)
