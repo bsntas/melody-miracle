@@ -974,15 +974,11 @@ img { max-width: 100%; }
 .ganesh-placeholder-label { font-style: italic; color: var(--text-3); font-size: 0.85rem; }
 
 /* Observer mode */
-.observer-banner {
-  background: var(--blue-light); border: 1px solid #93c5fd;
-  border-radius: var(--radius-sm); padding: 0.5rem 0.75rem;
-  font-size: 0.82rem; color: var(--blue); margin-bottom: 0.75rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+.observer-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.75rem;
 }
-.observer-banner-info { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
-.observer-role-badge { font-weight: 700; font-size: 0.82rem; }
-.observer-banner-desc { font-size: 0.77rem; color: var(--text-2); }
+.observer-meta-role { font-size: 0.78rem; color: var(--text-3); }
 .connecting-state { text-align: center; padding: 3rem 1rem; color: var(--text-2); }
 .connecting-spinner {
   width: 36px; height: 36px; border: 3px solid var(--border);
@@ -1677,7 +1673,6 @@ img { max-width: 100%; }
   :root:not([data-theme="light"]) .mab-hint-warn  { background: #3b2a00; color: #fde68a; }
   :root:not([data-theme="light"]) .mab-hint-info  { background: #172554; color: #93c5fd; }
   :root:not([data-theme="light"]) .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
-  :root:not([data-theme="light"]) .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
   :root:not([data-theme="light"]) .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
   /* saffron-dark on saffron-bg/dark-surface contrast fixes */
   :root:not([data-theme="light"]) .filter-active-chip { background: #431407; color: #fed7aa; }
@@ -1747,7 +1742,6 @@ img { max-width: 100%; }
 :root[data-theme="dark"] .mab-hint-warn  { background: #3b2a00; color: #fde68a; }
 :root[data-theme="dark"] .mab-hint-info  { background: #172554; color: #93c5fd; }
 :root[data-theme="dark"] .live-alert { background: #052e16; border-color: #166534; color: #86efac; }
-:root[data-theme="dark"] .observer-banner { background: #172554; border-color: #1e40af; color: #93c5fd; }
 :root[data-theme="dark"] .mab-selected-bhajan { background: #431407; border-color: #9a3412; }
 /* saffron-dark on saffron-bg/dark-surface contrast fixes */
 :root[data-theme="dark"] .filter-active-chip { background: #431407; color: #fed7aa; }

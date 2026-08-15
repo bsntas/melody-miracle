@@ -2432,12 +2432,9 @@ class App {
     el.innerHTML = `
       <div class="live-session-view">
         <div class="session-offline-banner" aria-live="polite">↻ Reconnecting…</div>
-        ${!isHost ? `<div class="observer-banner">
-          <div class="observer-banner-info">
-            <span class="observer-role-badge">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
-            <span class="observer-banner-desc">${isPlaying ? 'Watching live · updates automatically' : 'Can add &amp; arrange · cannot start or end'}</span>
-          </div>
-          <button class="btn-link-muted" id="btn-claim-host">Claim host</button>
+        ${!isHost ? `<div class="observer-meta">
+          <span class="observer-meta-role">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
+          <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim host</button>
         </div>` : ''}
 
         ${(() => {
