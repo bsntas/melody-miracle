@@ -918,8 +918,8 @@ img { max-width: 100%; }
 
 .session-bhajans-list { overflow-x: hidden; }
 .session-bhajan-entry { position: relative; border-bottom: 1px solid var(--border); }
-/* Placeholder + currently-playing (no data-entry-id): keep legacy flex layout */
-.session-bhajan-entry:not([data-entry-id]) {
+/* Placeholder (no data-entry-id, not the expanded playing card): keep legacy flex layout */
+.session-bhajan-entry:not([data-entry-id]):not(.session-entry-playing) {
   display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0;
 }
 /* Swipeable entries clip the slide animation */
