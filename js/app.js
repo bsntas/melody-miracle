@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.6 loaded');
+console.log('[MM] app.js v20260815.7 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -3535,6 +3535,10 @@ class App {
       this._bgSessions.unshift({ roomCode, label, series, date, isHost });
       this._saveBgSessions();
     }
+    // Clear the draft so a stale localStorage entry doesn't trigger the
+    // "was not ended" confirm when starting a new session. Resume rebuilds
+    // from Firebase via _resumeBgSession(), so the draft is not needed.
+    this.sessions.clearDraft();
 
     document.getElementById('bnav-session-icon').classList.remove('is-live');
     if (!silent) {
