@@ -2437,7 +2437,7 @@ class App {
             <span class="observer-role-badge">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
             <span class="observer-banner-desc">${isPlaying ? 'Watching live · updates automatically' : 'Can add &amp; arrange · cannot start or end'}</span>
           </div>
-          <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim Host</button>
+          <button class="btn-link-muted" id="btn-claim-host">Claim host</button>
         </div>` : ''}
 
         ${(() => {
