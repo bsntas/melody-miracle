@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.8 loaded');
+console.log('[MM] app.js v20260815.20 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2496,15 +2496,24 @@ class App {
         ${isPlaying && isHost ? (() => {
           const bh = st.bhajans || [];
           const ci = bh.findIndex(e => e.id === st.currentBhajan);
+          const currentIsAarti = ci >= 0 && bh[ci]?.bhajan_id === 'mangala-aarati';
           return `
         <div class="playing-float-pill">
-          <button class="float-nav-btn" id="btn-float-prev" ${ci > 0 ? '' : 'disabled'} title="Previous bhajan">‹</button>
+          <button class="float-nav-btn" id="btn-float-prev" ${ci > 0 ? '' : 'disabled'} title="Previous bhajan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
           <div class="float-pill-center">
-            <button class="float-ctrl-btn" id="btn-float-setup" title="Return to setup mode" aria-label="Return to setup mode">↩</button>
+            <button class="float-ctrl-btn" id="btn-float-setup" title="Return to setup mode" aria-label="Return to setup mode">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+            </button>
             <span class="float-divider" aria-hidden="true">·</span>
-            <button class="float-ctrl-btn float-ctrl-danger" id="btn-float-end" title="End and save session" aria-label="End and save session">⏹</button>
+            <button class="float-ctrl-btn float-ctrl-danger" id="btn-float-end" title="End and save session" aria-label="End and save session">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+            </button>
           </div>
-          <button class="float-nav-btn" id="btn-float-next" title="Next bhajan">›</button>
+          <button class="float-nav-btn" id="btn-float-next" ${currentIsAarti ? 'disabled' : ''} title="Next bhajan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
         <div class="playing-float-spacer"></div>`;
         })() : ''}
@@ -2921,10 +2930,34 @@ class App {
     const bhajans = this.liveState?.bhajans || [];
     const currentIdx = bhajans.findIndex(e => e.id === this.liveState?.currentBhajan);
     const nextIdx = currentIdx + 1;
-    if (nextIdx >= bhajans.length) {
-      this._openBhajanModal('mangala-aarati');
-    } else {
+    if (nextIdx < bhajans.length) {
       const updated = { ...this.liveState, currentBhajan: bhajans[nextIdx].id };
+      this.liveState = updated;
+      this.live.updateState(updated);
+      this.sessions.saveDraft(updated);
+      this._renderSession();
+      setTimeout(() => document.querySelector('.session-entry-current')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+    } else {
+      // At the last bhajan — auto-add Mangala Aarati inline, or end session if not in catalog
+      const aarti = this.bhajans.getById('mangala-aarati');
+      if (!aarti) { this._confirmEndSession(); return; }
+
+      // Re-use existing aarti entry if already in session (e.g. navigating back then forward)
+      const existing = bhajans.find(e => e.bhajan_id === 'mangala-aarati');
+      const entry = existing || {
+        id: genId('e'),
+        bhajan_id:    aarti.id,
+        bhajan_title: aarti.title,
+        bhajan_deity: aarti.deity,
+        singers:      null,
+        pitch:        null,
+        pitch_indian: null,
+        pitch_western:null,
+        notes:        null,
+        addedAt:      Date.now(),
+      };
+      const newBhajans = existing ? bhajans : [...bhajans, entry];
+      const updated = { ...this.liveState, bhajans: newBhajans, currentBhajan: entry.id };
       this.liveState = updated;
       this.live.updateState(updated);
       this.sessions.saveDraft(updated);
