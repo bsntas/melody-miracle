@@ -1,5 +1,14 @@
 # Melody Miracle — Codebase Context
 
+## IMPORTANT: Version bump required on every change
+
+Whenever any of `js/app.js`, `css/style.css`, `js/github-store.js`, `js/live.js`, `js/auth.js`, `js/store.js`, or `js/favourites.js` is modified, you **must** bump versions in the same commit:
+
+1. **`sw.js`** — update `CACHE` and the matching `V_*` constant(s) for every changed file. Use the format `YYYYMMDD.N` (today's date, incrementing N from the current highest value). Update the inline comment to describe the change.
+2. **`index.html`** — update the `?v=` query strings on `<link>` and `<script>` tags for every changed file to match the new `V_*` values in `sw.js`.
+
+Forgetting this means the service worker serves stale cached files and users won't see the changes.
+
 ## What this is
 
 A **vanilla JS PWA** for managing bhajan (devotional song) sessions. No framework, no build step — plain HTML5, CSS, and ES modules. Works offline via a service worker and syncs sessions to GitHub as a JSON file.
