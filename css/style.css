@@ -648,14 +648,14 @@ img { max-width: 100%; }
   padding: 0.25rem 1rem;
 }
 .session-series-create-row {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: flex-start; justify-content: space-between;
   padding: 0.55rem 0; border-top: 1px solid var(--border-subtle, var(--border));
   gap: 0.5rem;
 }
 .session-series-create-row:first-of-type { border-top: none; }
 .session-series-create-name {
   font-weight: 600; font-size: 0.9rem; flex: 1; min-width: 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: normal; word-break: break-word;
 }
 .session-series-create-actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
 .session-no-series {

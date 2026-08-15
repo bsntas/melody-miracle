@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.1 loaded');
+console.log('[MM] app.js v20260815.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2190,7 +2190,7 @@ class App {
             ${roleBadge}
           </div>
           <div class="own-session-bottom">
-            <div class="open-session-meta">${escHtml(s.series || '')}${s.series && s.date ? ' · ' : ''}${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+            <div class="open-session-meta">${s.date ? escHtml(formatDate(s.date)) : ''}</div>
             <div class="own-session-actions">
               ${primaryBtn}
               <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Discard</button>
@@ -2216,7 +2216,7 @@ class App {
     return `
       <div class="session-home">
         <div class="session-section">
-          <div class="open-sessions-header">Sessions</div>
+          <div class="open-sessions-header">Series</div>
           <div class="session-create-section">${seriesRowsHTML}</div>
           <button class="btn btn-ghost btn-sm session-new-series-btn" id="btn-session-new-series">+ New Series</button>
         </div>
@@ -2225,7 +2225,7 @@ class App {
           <div class="open-sessions-list" id="my-sessions-list">${ownCardsHTML}</div>
         </div>
         <div class="open-sessions-section">
-          <div class="open-sessions-header">Live Now</div>
+          <div class="open-sessions-header">Open Sessions</div>
           <div id="open-sessions-list" class="open-sessions-list">
             <div class="open-sessions-loading"><span class="open-sessions-spinner"></span> Looking for active sessions…</div>
           </div>
@@ -2448,7 +2448,7 @@ class App {
       container.classList.remove('hidden');
       container.innerHTML = `
         <div class="dash-open-sessions-header">
-          <span class="dash-open-sessions-title">Live Now</span>
+          <span class="dash-open-sessions-title">Open Sessions</span>
           <a href="#session" class="section-link">Session →</a>
         </div>
         <div class="open-sessions-list">
