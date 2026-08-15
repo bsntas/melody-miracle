@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260815.2';
+const CACHE = 'melody-miracle-20260815.3';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260815.2'; // app.js (fix: series name wrapping + remove duplicate meta in My Sessions)
+const V_APP  = '20260815.3'; // app.js (rename sections: Sessions→Series, Live Now→Open Sessions)
 const V_GH   = '20260811.1'; // github-store.js (unchanged)
 const V_CSS  = '20260815.2'; // style.css (fix: series name wrapping in create row)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
