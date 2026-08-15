@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.7 loaded');
+console.log('[MM] app.js v20260815.8 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2829,11 +2829,16 @@ class App {
       // overwritten when starting a new session from the home screen.
       const draft = this.sessions.getDraft();
       if (draft?.roomCode) {
-        const label = draft.label || 'a previous session';
-        if (!confirm(`"${label}" was not ended. Move it to My Sessions before starting a new one?`)) return;
-        this._bgSessions = this._bgSessions.filter(s => s.roomCode !== draft.roomCode);
-        this._bgSessions.unshift({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true });
-        this._saveBgSessions();
+        if (this._bgSessions.some(s => s.roomCode === draft.roomCode)) {
+          // Already tracked in My Sessions — just clear the stale draft, no prompt needed.
+          this.sessions.clearDraft();
+        } else {
+          const label = draft.label || 'a previous session';
+          if (!confirm(`"${label}" was not ended. Move it to My Sessions before starting a new one?`)) return;
+          this._bgSessions = this._bgSessions.filter(s => s.roomCode !== draft.roomCode);
+          this._bgSessions.unshift({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true });
+          this._saveBgSessions();
+        }
       }
     }
 
