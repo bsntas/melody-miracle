@@ -302,13 +302,6 @@ class App {
     // Stop the Live Now auto-refresh when leaving the session home.
     if (view !== 'session') clearInterval(this._openSessionsInterval);
 
-    // Auto-background a live session when the user navigates away from the
-    // session tab. Browse is exempt so users can search for a bhajan and use
-    // the "Add to session" button in the bhajan detail modal without losing
-    // their active session.
-    if (view !== 'session' && view !== 'browse' && this.liveState) {
-      this._backgroundSession({ silent: true });
-    }
 
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
