@@ -1897,8 +1897,7 @@ img { max-width: 100%; }
 
 /* ─── Responsive tweaks ──────────────────────────────────────────────────── */
 @media (max-width: 400px) {
-  .page-header { flex-direction: column; }
-  .dash-quick-actions { align-self: stretch; }
+  .dash-quick-actions { flex-direction: column; align-self: stretch; }
   .dash-quick-actions .btn { flex: 1; }
   .bhajan-item-pitches { gap: 0.15rem; }
   .bhajan-item-pitches .pitch-badge { font-size: 0.62rem; padding: 0.1rem 0.3rem; }
