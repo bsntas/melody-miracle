@@ -302,11 +302,6 @@ class App {
     // Stop the Live Now auto-refresh when leaving the session home.
     if (view !== 'session') clearInterval(this._openSessionsInterval);
 
-    // Auto-background a live session when the user navigates away from the
-    // session tab. The session stays resumable from My Sessions without a prompt.
-    if (view !== 'session' && this.liveState) {
-      this._backgroundSession({ silent: true });
-    }
 
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
