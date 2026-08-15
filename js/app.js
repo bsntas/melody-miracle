@@ -2665,7 +2665,6 @@ class App {
             <div class="entry-main">
               <div class="entry-title-row">
                 <span class="entry-title entry-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
-                ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
               </div>
               ${e.notes ? `<div class="entry-meta"><em>${escHtml(e.notes)}</em></div>` : ''}
             </div>
