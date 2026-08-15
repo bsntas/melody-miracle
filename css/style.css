@@ -782,7 +782,8 @@ img { max-width: 100%; }
 .observer-count { font-size: 0.78rem; color: var(--text-2); }
 
 .singers-strip { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
-.singers-strip-compact { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.singers-strip-compact { display: flex; flex-wrap: wrap; gap: 0.25rem; max-width: 160px; justify-content: flex-end; }
+.singer-avatar-overflow { background: var(--text-3); cursor: default; font-size: 0.62rem; }
 .singer-avatar-sm {
   width: 26px; height: 26px; border-radius: 50%;
   background: var(--saffron); color: #fff;

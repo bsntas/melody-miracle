@@ -2464,9 +2464,6 @@ class App {
             </div>
             <div class="live-header-right">
               ${isHost ? (() => { const n = this.live?.peerCount || 0; return `<button class="btn-observer-count" id="btn-observer-count" title="View observer list">${n} observer${n !== 1 ? 's' : ''}</button>`; })() : ''}
-              ${singers.length ? `<div class="singers-strip-compact">
-                ${singers.map(name => `<div class="singer-avatar-sm clickable" data-singer="${escHtml(name)}" title="${escHtml(name)}">${escHtml(name[0]?.toUpperCase() || '?')}</div>`).join('')}
-              </div>` : ''}
             </div>
           </div>
           ${deityPillsHTML ? `<div class="deity-summary-strip">${deityPillsHTML}</div>` : ''}
