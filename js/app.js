@@ -4,7 +4,7 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260807.1';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
-console.log('[MM] app.js v20260815.22 loaded');
+console.log('[MM] app.js v20260815.23 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2428,6 +2428,10 @@ class App {
     const isHost = this.live?.isHost;
     const phase = st.phase || 'setup';
     const isPlaying = phase === 'playing';
+    // Observers never see Mangala Aarati — it's a host play-mode internal entry
+    const displayBhajans = (!isHost && isPlaying)
+      ? (st.bhajans || []).filter(e => e.bhajan_id !== 'mangala-aarati')
+      : (st.bhajans || []);
 
     el.innerHTML = `
       <div class="live-session-view">
@@ -2472,24 +2476,24 @@ class App {
         </div>`;
         })()}
 
-        ${!isPlaying ? `<div class="session-setup-bar">
+        <div class="session-setup-bar">
           <button class="btn btn-primary btn-sm" id="btn-add-bhajan-live">+ Add Bhajan</button>
-          ${isHost ? `<button class="btn btn-success btn-sm" id="btn-start-playing" ${(st.bhajans || []).length === 0 ? 'disabled' : ''}>▶ Start</button>` : ''}
+          ${isHost && !isPlaying ? `<button class="btn btn-success btn-sm" id="btn-start-playing" ${displayBhajans.length === 0 ? 'disabled' : ''}>▶ Start</button>` : ''}
         </div>
-        ${isHost ? `<div class="session-mgmt-links">
+        ${isHost && !isPlaying ? `<div class="session-mgmt-links">
           <button class="btn-link-muted" id="btn-end-session">Save &amp; Close</button>
           <span aria-hidden="true">·</span>
           <button class="btn-link-muted" id="btn-background-session" title="Leave open for others to add bhajans while you manage another series">Background</button>
           <span aria-hidden="true">·</span>
           <button class="btn-link-muted btn-link-danger" id="btn-discard-session">Discard</button>
-        </div>` : ''}` : ''}
+        </div>` : ''}
 
         <div class="section-header section-header-flush">
-          <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${(st.bhajans || []).length})</h3>
+          <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${displayBhajans.length})</h3>
           ${!isPlaying ? `<button class="btn btn-ghost btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
-          ${this._sessionBhajansHTML(st.bhajans || [], isHost, phase, this._liveEditMode)}
+          ${this._sessionBhajansHTML(displayBhajans, isHost, phase, this._liveEditMode)}
         </div>
 
         ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
@@ -2548,9 +2552,10 @@ class App {
       this._backgroundSession();
     });
 
+    // Add bhajan always available — observers can add even while host is playing
+    document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
+
     if (!isPlaying) {
-      // Setup mode: add bhajan always available; edit controls gated by edit mode
-      document.getElementById('btn-add-bhajan-live').addEventListener('click', () => this._openAddBhajanModal());
       document.getElementById('btn-live-edit-toggle')?.addEventListener('click', async () => {
         if (!this._liveEditMode && !await this.requireAuth('Sign in to edit the session')) return;
         this._liveEditMode = !this._liveEditMode;
@@ -3355,7 +3360,10 @@ class App {
     const b = this._mabSelected;
     if (!b) return;
 
-    const existing = this.liveState?.bhajans || [];
+    const allBhajans = this.liveState?.bhajans || [];
+    // Strip Aarti for duplicate/sequencing checks; it gets re-appended after insertion
+    const aartiEntry = allBhajans.find(e => e.bhajan_id === 'mangala-aarati');
+    const existing = aartiEntry ? allBhajans.filter(e => e.bhajan_id !== 'mangala-aarati') : allBhajans;
 
     // Hard block: same bhajan already in session
     if (existing.some(e => e.bhajan_id === b.id)) {
@@ -3402,11 +3410,11 @@ class App {
       addedAt:       Date.now(),
     };
 
-    const updated = {
-      ...this.liveState,
-      bhajans: this._insertWithSequencing(this.liveState.bhajans || [], entry, b),
-    };
+    const inserted = this._insertWithSequencing(existing, entry, b);
+    // Re-append Aarti at the end so it always stays last during play mode
+    const newBhajans = aartiEntry ? [...inserted, aartiEntry] : inserted;
 
+    const updated = { ...this.liveState, bhajans: newBhajans };
     this._applyLiveEdit(updated, { type: 'add-bhajan', entry });
     this._closeModal('modal-add-bhajan');
     this._renderSession();
