@@ -77,6 +77,7 @@ import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/10.12
 import {
   getDatabase, ref, set, push, remove, get,
   onValue, onChildAdded, onChildRemoved,
+  goOffline, goOnline,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
 const DB_PATH = 'melody-miracle/sessions';
@@ -264,6 +265,15 @@ export class LiveSession {
     }
     const obsRef = ref(this._db, `${DB_PATH}/${this.roomCode}/observers`);
     this._bindObserverListeners(obsRef);
+  }
+
+  // ── Any participant: force a reconnect when stuck ────────────────────────
+  // Cycles the WebSocket by briefly going offline then online. Safe to call
+  // while already disconnected — Firebase will flush queued writes on reconnect.
+  reconnect() {
+    if (!this._db) return;
+    goOffline(this._db);
+    setTimeout(() => { if (this._db) goOnline(this._db); }, 300);
   }
 
   // ── All participants: write state directly to Firebase ────────────────────

@@ -1794,7 +1794,12 @@ img { max-width: 100%; }
   padding: 0.35rem 1rem;
   font-size: 0.82rem;
   margin-bottom: 0.75rem;
+  width: 100%;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
+.session-offline-banner:active { opacity: 0.65; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .session-offline-banner {
     background: #451a03;

@@ -818,6 +818,10 @@ class App {
 
     // Click anywhere on a bhajan entry in view mode → open bhajan detail modal.
     sessionContent?.addEventListener('click', e => {
+      if (e.target.closest('.session-offline-banner')) {
+        this.live?.reconnect();
+        return;
+      }
       if (this._liveEditMode) return;
       if (e.target.closest('.entry-action-btn')) return;
       const entry = e.target.closest('.session-bhajan-entry[data-entry-id]');
@@ -2427,7 +2431,7 @@ class App {
 
     el.innerHTML = `
       <div class="live-session-view">
-        <div class="session-offline-banner" aria-live="polite">↻ Reconnecting…</div>
+        <button class="session-offline-banner" aria-live="polite" title="Tap to retry connection">↻ Reconnecting… · Tap to retry</button>
         ${!isHost ? `<div class="observer-meta">
           <span class="observer-meta-role">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
           <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim host</button>
