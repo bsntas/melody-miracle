@@ -167,6 +167,7 @@ export class LiveSession {
         .catch(e => {
           this._pendingInit = false;
           this.onError?.(`Failed to start live session: ${e.message}`);
+          this._cleanup();
         });
 
     } catch (e) {
