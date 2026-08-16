@@ -2875,6 +2875,10 @@ class App {
     // Detach any existing connection without destroying its Firebase node,
     // so a backgrounded session stays open for collaborators to add bhajans.
     if (this.live) { this.live.detach(); this.live = null; }
+    // Clear any stale offline banner left from the previous session. detach()/_cleanup()
+    // removes the .info/connected listener but cannot call _handleConnectionChange(true),
+    // so the class can linger and show the banner immediately when the new session renders.
+    document.getElementById('session-content')?.classList.remove('session-offline');
 
     this.live = new LiveSession({
       onStateChange: (state) => {
