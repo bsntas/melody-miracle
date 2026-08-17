@@ -3789,6 +3789,10 @@ class App {
       phase: 'setup',
       bhajans: [],
     };
+    // Remove from background list — it becomes the foreground session, so the
+    // badge count must not include it (avoids red dot + count clashing on the tab).
+    this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+    this._saveBgSessions();
     this._startLiveSession(sessionData, { resuming: true });
     this._toast('Session resumed', 'success');
   }
