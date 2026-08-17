@@ -2350,27 +2350,20 @@ class App {
         </div>`;
     }).join('');
 
-    // Build per-series creation rows
-    const allSeries = [...new Set([...this.sessions.knownSeries(), ...this._localSeries])].sort();
-
-    const seriesRowsHTML = allSeries.length === 0
-      ? `<div class="session-no-series">No series yet. Create one to get started.</div>`
-      : allSeries.map(s => `
-          <div class="session-series-create-row">
-            <button class="btn btn-ghost session-series-create-name" data-series-history="${escHtml(s)}">${escHtml(s)}</button>
-            <div class="session-series-create-actions">
-              <div class="series-row-secondary">
-                <button class="btn btn-sm btn-danger-ghost" data-delete-series="${escHtml(s)}">Delete</button>
-              </div>
-              <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
-            </div>
-          </div>`).join('');
+    // Build per-series creation rows — include GitHub-sourced remote series so
+    // observers see series that have no local completed sessions yet.
+    const allSeries = [...new Set([
+      ...this.sessions.knownSeries(),
+      ...this._localSeries,
+      ...(this._remoteSeries || []),
+    ])].sort();
+    this._seriesSectionFingerprint = allSeries.join('|');
 
     return `
       <div class="session-home">
         <div class="session-section">
           <div class="open-sessions-header">Series</div>
-          <div class="session-create-section">${seriesRowsHTML}</div>
+          <div class="session-create-section" id="session-series-section">${this._seriesRowsHTML(allSeries)}</div>
           <button class="btn btn-ghost btn-sm session-new-series-btn" id="btn-session-new-series">+ New Series</button>
         </div>
         <div class="open-sessions-section"${ownSessions.length ? '' : ' hidden'} id="my-sessions-section">
@@ -2389,14 +2382,28 @@ class App {
       </div>`;
   }
 
-  _bindSessionHome(draft) {
-    document.getElementById('btn-session-join')?.addEventListener('click', () => this._openJoinModal());
-    document.getElementById('btn-session-new-series')?.addEventListener('click', () => this._openNewSeriesModal());
+  _seriesRowsHTML(allSeries) {
+    return allSeries.length === 0
+      ? `<div class="session-no-series">No series yet. Create one to get started.</div>`
+      : allSeries.map(s => `
+          <div class="session-series-create-row">
+            <button class="btn btn-ghost session-series-create-name" data-series-history="${escHtml(s)}">${escHtml(s)}</button>
+            <div class="session-series-create-actions">
+              <div class="series-row-secondary">
+                <button class="btn btn-sm btn-danger-ghost" data-delete-series="${escHtml(s)}">Delete</button>
+              </div>
+              <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
+            </div>
+          </div>`).join('');
+  }
 
-    document.querySelectorAll('[data-start-series]').forEach(btn =>
+  // Bind event handlers for the series rows inside `container` (an Element or document).
+  // Safe to call again after an in-place innerHTML update — old listeners are gone with old nodes.
+  _bindSeriesRows(container) {
+    container.querySelectorAll('[data-start-series]').forEach(btn =>
       btn.addEventListener('click', () => this._openNewSession(btn.dataset.startSeries, false))
     );
-    document.querySelectorAll('[data-delete-series]').forEach(btn =>
+    container.querySelectorAll('[data-delete-series]').forEach(btn =>
       btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.deleteSeries))
     );
 
@@ -2405,7 +2412,7 @@ class App {
         .forEach(el => el.classList.remove('visible'));
 
     // Tap series name → open its history. Long-press → reveal Delete.
-    document.querySelectorAll('[data-series-history]').forEach(nameBtn => {
+    container.querySelectorAll('[data-series-history]').forEach(nameBtn => {
       const series = nameBtn.dataset.seriesHistory;
       const secondary = nameBtn.closest('.session-series-create-row').querySelector('.series-row-secondary');
       let lpFired = false;
@@ -2427,7 +2434,8 @@ class App {
       });
     });
 
-    // Dismiss secondary rows when tapping outside a series row
+    // Dismiss secondary rows when tapping outside a series row.
+    // Re-register each time (remove old first) so there's only ever one listener.
     if (this._seriesSecondaryDismiss) {
       document.removeEventListener('click', this._seriesSecondaryDismiss);
     }
@@ -2435,6 +2443,13 @@ class App {
       if (!e.target.closest('.session-series-create-row')) hideAllSecondary();
     };
     document.addEventListener('click', this._seriesSecondaryDismiss);
+  }
+
+  _bindSessionHome(draft) {
+    document.getElementById('btn-session-join')?.addEventListener('click', () => this._openJoinModal());
+    document.getElementById('btn-session-new-series')?.addEventListener('click', () => this._openNewSeriesModal());
+
+    this._bindSeriesRows(document);
     document.querySelectorAll('[data-own-resume]').forEach(btn => {
       const roomCode = btn.dataset.ownResume;
       const isDraft = btn.dataset.ownIsDraft === '1';
@@ -2471,6 +2486,24 @@ class App {
 
     try {
       const allSeries = await this._fetchKnownSeries();
+
+      // If _fetchKnownSeries() returned new series not yet in the rendered list,
+      // update the series section in-place so the user sees them without a reload.
+      const sectionEl = document.getElementById('session-series-section');
+      if (sectionEl?.isConnected) {
+        const merged = [...new Set([
+          ...this.sessions.knownSeries(),
+          ...this._localSeries,
+          ...(this._remoteSeries || []),
+        ])].sort();
+        const fp = merged.join('|');
+        if (fp !== this._seriesSectionFingerprint) {
+          this._seriesSectionFingerprint = fp;
+          sectionEl.innerHTML = this._seriesRowsHTML(merged);
+          this._bindSeriesRows(sectionEl);
+        }
+      }
+
       // When a series filter is active, only probe that series so Live Now
       // stays consistent with what the user is currently focused on.
       // Without a filter, probe all known series.
