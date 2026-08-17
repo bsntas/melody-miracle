@@ -416,31 +416,24 @@ class App {
 
     const seriesPillHtml = (s) => {
       const active = s === sel;
-      const lp = `data-longpress="${escHtml(s)}" title="Hold to delete"`;
       if (active) {
-        return `<span class="series-pill series-pill-active" ${lp}>${escHtml(s)}</span>`;
+        return `<span class="series-pill series-pill-active">${escHtml(s)}</span>`;
       }
-      return `<button class="series-pill" data-series="${escHtml(s)}" ${lp}>${escHtml(s)}</button>`;
+      return `<button class="series-pill" data-series="${escHtml(s)}">${escHtml(s)}</button>`;
     };
 
     if (allSeries.length === 0) {
-      pillsEl.innerHTML = `<button class="series-pill series-pill-new" id="btn-series-new">+ New Series</button>`;
-    } else {
-      // For 1 or more series: always show an "All" pill so the active-state accurately
-      // reflects the filter (null → All active) and the user can always opt out of a filter.
-      pillsEl.innerHTML =
-        `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
-        allSeries.map(s => seriesPillHtml(s)).join('') +
-        `<button class="series-pill series-pill-new" id="btn-series-new">+ New</button>`;
-      pillsEl.querySelectorAll('.series-pill[data-series]').forEach(btn => {
-        btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
-      });
+      strip.classList.add('hidden');
+      return;
     }
-    // Long-press (mobile) or right-click (desktop) to delete a series.
-    pillsEl.querySelectorAll('[data-longpress]').forEach(el => {
-      this._addLongPress(el, el.dataset.longpress);
+    // For 1 or more series: always show an "All" pill so the active-state accurately
+    // reflects the filter (null → All active) and the user can always opt out of a filter.
+    pillsEl.innerHTML =
+      `<button class="series-pill${!sel ? ' series-pill-active' : ''}" data-series="">All</button>` +
+      allSeries.map(s => seriesPillHtml(s)).join('');
+    pillsEl.querySelectorAll('.series-pill[data-series]').forEach(btn => {
+      btn.addEventListener('click', () => this._setSeriesFilter(btn.dataset.series));
     });
-    pillsEl.querySelector('#btn-series-new')?.addEventListener('click', () => this._openNewSeriesModal());
   }
 
   _addLongPress(el, series) {
@@ -2221,6 +2214,7 @@ class App {
             <div class="session-series-create-actions">
               <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
               <button class="btn btn-sm btn-outline" data-past-series="${escHtml(s)}">+ Past</button>
+              <button class="btn btn-sm btn-danger-ghost" data-delete-series="${escHtml(s)}" title="Delete series">✕</button>
             </div>
           </div>`).join('');
 
@@ -2256,6 +2250,9 @@ class App {
     );
     document.querySelectorAll('[data-past-series]').forEach(btn =>
       btn.addEventListener('click', () => this._openNewSession(btn.dataset.pastSeries, true))
+    );
+    document.querySelectorAll('[data-delete-series]').forEach(btn =>
+      btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.deleteSeries))
     );
     document.querySelectorAll('[data-own-resume]').forEach(btn => {
       const roomCode = btn.dataset.ownResume;
