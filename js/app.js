@@ -2523,12 +2523,8 @@ class App {
         }
       }
 
-      // When a series filter is active, only probe that series so Live Now
-      // stays consistent with what the user is currently focused on.
-      // Without a filter, probe all known series.
-      const series = this._selectedSeries
-        ? allSeries.filter(s => s === this._selectedSeries)
-        : allSeries;
+      // Always probe all known series — Live Now is independent of the series strip filter.
+      const series = allSeries;
       // Check yesterday through 6 days ahead — covers sessions created for upcoming weekends
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
@@ -2589,12 +2585,8 @@ class App {
 
     try {
       const allSeries = await this._fetchKnownSeries();
-      // When a series filter is active, only probe that series so the dashboard
-      // Live Now section stays consistent with the rest of the filtered dashboard.
-      // Without a filter, show all series (the user may want to join any of them).
-      const series = this._selectedSeries
-        ? allSeries.filter(s => s === this._selectedSeries)
-        : allSeries;
+      // Always probe all series — Live Now is independent of the series strip filter.
+      const series = allSeries;
 
       const now = new Date();
       const dates = Array.from({ length: 8 }, (_, i) => {
