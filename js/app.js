@@ -4242,31 +4242,42 @@ class App {
               const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
               const eDeity = e.bhajan_deity ? e.bhajan_deity.split(/[,/]/)[0].trim() : '';
               const eDeitySlug = this._deitySlug(eDeity);
+              const pitchIndian  = e.pitch_indian  || e.pitch?.split(' / ')[0] || '';
+              const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
+              const hasSinger = e.singers?.length || e.singer;
               return `
-              <div class="timeline-item" data-entry-id="${e.id}">
-                ${isEditMode ? '<div class="drag-handle" title="Drag to reorder">⠿</div>' : ''}
-                <div class="tl-num">${i + 1}</div>
-                <div class="tl-main">
-                  <div class="tl-title-row">
-                    ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
-                    <span class="tl-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+              <div class="session-bhajan-entry${!isEditMode ? ' entry-view-mode' : ''}" data-entry-id="${e.id}">
+                <div class="entry-content">
+                  ${isEditMode ? '<div class="drag-handle" title="Hold and drag to reorder">⠿</div>' : ''}
+                  <div class="entry-num">${i + 1}</div>
+                  <div class="entry-main">
+                    <div class="entry-title-row">
+                      <span class="entry-title tl-title-link" data-bhajan-id="${e.bhajan_id}" data-entry-idx="${i}">${escHtml(e.bhajan_title)}</span>
+                      ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
+                    </div>
+                    ${hasSinger ? `
+                      <div class="entry-singer-row">
+                        <span class="entry-singer-chip${isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${isEditMode ? 'Edit singer' : ''}">${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+                        ${isEditMode
+                          ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>`
+                          : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
+                      </div>` : `
+                      <div class="entry-meta">
+                        ${isEditMode ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="detail" title="Add singer">+ singer</span>` : ''}
+                        ${isEditMode ? `<span class="notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '<span class="pitch-unset">+ notes</span>'}</span>` : (e.notes ? `<em>${escHtml(e.notes)}</em>` : '')}
+                      </div>`}
+                    <div class="entry-pitch-row">
+                      <span class="${isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${isEditMode ? 'Edit pitch' : ''}">
+                        ${e.pitch
+                          ? `<span class="pitch-badge pitch-gents session-pitch-badge">${escHtml(pitchIndian)}${pitchWestern ? `<span class="pitch-sep"> •</span><span class="pitch-western-bold"> ${escHtml(pitchWestern)}</span>` : ''}${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
+                          : (isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
+                      </span>
+                    </div>
                   </div>
-                  <div class="tl-meta">
-                    ${(e.singers?.length || e.singer) ? `👤 ${escHtml(e.singers?.join(' · ') || e.singer)}` : ''}
-                    ${(e.singers?.length || e.singer) && (e.pitch || isEditMode) ? ' · ' : ''}
-                    <span class="${isEditMode ? 'pitch-editable' : ''}" data-entry-id="${e.id}" data-mode="detail" title="${isEditMode ? 'Edit pitch' : ''}">
-                      ${e.pitch
-                        ? `🎵 <span class="pitch-badge pitch-gents">${escHtml(e.pitch_indian || e.pitch.split(' / ')[0])}<span class="pitch-western"> ${escHtml(e.pitch_western || e.pitch.split(' / ')[1] || '')}</span>${eScale ? `<span class="pitch-scale"> ${escHtml(eScale)}</span>` : ''}</span>`
-                        : (isEditMode ? `<span class="pitch-unset">+ pitch</span>` : '')}
-                    </span>
+                  <div class="entry-actions">
+                    <span class="tl-time">${formatTime(e.addedAt)}</span>
+                    ${isEditMode ? `<button class="entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
                   </div>
-                  ${isEditMode
-                    ? `<div class="tl-notes notes-editable" data-entry-id="${e.id}" data-mode="detail" title="Edit notes">${e.notes ? escHtml(e.notes) : '<span class="pitch-unset">+ notes</span>'}</div>`
-                    : (e.notes ? `<div class="tl-notes">${escHtml(e.notes)}</div>` : '')}
-                </div>
-                <div class="tl-actions">
-                  <span class="tl-time">${formatTime(e.addedAt)}</span>
-                  ${isEditMode ? `<button class="btn btn-ghost btn-sm entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
                 </div>
               </div>`;
             }).join('')}
@@ -4416,6 +4427,13 @@ class App {
         el.addEventListener('click', e => {
           e.stopPropagation();
           this._inlineNotesEdit(el, el.dataset.entryId, 'detail');
+        });
+      });
+
+      document.querySelectorAll('#session-detail-content .singer-editable').forEach(el => {
+        el.addEventListener('click', e => {
+          e.stopPropagation();
+          this._inlineSingerEdit(el, el.dataset.entryId, 'detail');
         });
       });
 
