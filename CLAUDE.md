@@ -17,7 +17,7 @@ A **vanilla JS PWA** for managing bhajan (devotional song) sessions. No framewor
 
 ```
 index.html          Single-page shell; all views declared here as hidden divs
-js/app.js           Main controller (~4 350 lines) — routing, rendering, all UI logic
+js/app.js           Main controller (~4 400 lines) — routing, rendering, all UI logic
 js/store.js         BhajanStore (bhajans.json wrapper) + SessionStore (localStorage + fetch)
 js/github-store.js  Extends SessionStore — commits sessions.json to GitHub via PAT
 js/live.js          Firebase Realtime DB — live session sync between host and participants
@@ -74,6 +74,7 @@ Deity is a first-class field. Every bhajan has a `deity` string (can be comma-se
 | Method | What it renders |
 |---|---|
 | `_sessionBhajansHTML(bhajans, isHost, phase, isEditMode)` | Bhajan list in the **live session** view |
+| `_sessionHomeHTML()` | My Sessions section: draft card + host/observer bg-session cards |
 | `_renderSessionDetail(id)` | Completed session detail (timeline of bhajans) |
 | `_sessionCardHTML(session)` | Session cards on dashboard and history list |
 | `_renderSingers()` | Singers directory with per-singer stats |
@@ -129,7 +130,20 @@ Reasons passed per action:
 `this.liveState` and `this.live` are singletons — only one session can be actively hosted at a time. Starting a new session while one is active automatically backgrounds the running session (with a confirmation prompt) before opening the new session form.
 
 ### Background sessions
-`_bgSessions` (localStorage key `mm-bg-sessions`) is an array of `{roomCode, label, series, date}`. Multiple sessions from different series can be backgrounded simultaneously. They appear in the Session view under "Backgrounded Sessions" with Resume/Discard buttons. Sessions whose `date` is more than 2 days old are auto-expired and their Firebase nodes cleaned up (`_cleanupExpiredBgSessions()`). The Live Now probe covers yesterday through +6 days, so a backgrounded session stays discoverable by observers within that window.
+`_bgSessions` (localStorage key `mm-bg-sessions`) is an array of `{roomCode, label, series, date, isHost, snapshot?}`. Multiple sessions from different series can be backgrounded simultaneously. They appear in the Session view's **My Sessions** section. Capped at 10 entries (oldest dropped on overflow). Sessions whose `date` is more than 2 days old (or have no date) are auto-expired and their Firebase nodes cleaned up (`_cleanupExpiredBgSessions()`). The Live Now probe covers yesterday through +6 days, so a backgrounded session stays discoverable by observers within that window.
+
+**Entry fields:**
+- `roomCode` — Firebase node key, used as the session identifier.
+- `label` — display name.
+- `series`, `date` — metadata; `date` is always set (falls back to today when not known).
+- `isHost` — `true` if this device hosted the session; `false` for observer bookmarks.
+- `snapshot` — copy of `liveState` at the moment of backgrounding; used to seed the UI on Resume before Firebase replies.
+
+**Observer bookmarks**: When an observer makes a live edit (`_applyLiveEdit()`), `_saveObserverBookmark()` records a `{isHost: false}` entry in `_bgSessions`. This lets observers rejoin their sessions from My Sessions without having hosted them.
+
+**Host vs observer on discard**: `_discardBgSession()` only calls `LiveSession.cleanupOrphan()` when `entry.isHost !== false`. Observers use `_leaveBgSession()` instead, which removes the entry without touching Firebase.
+
+**Badge**: `_updateBgBadge()` keeps the bottom-nav Session tab count badge in sync. Called automatically by `_saveBgSessions()` and once on app init.
 
 ### Session lifecycle
 | Phase | `status` (stored) | `phase` (Firebase) | Stored to sessions? |
@@ -144,8 +158,17 @@ Reasons passed per action:
 
 ### Host vs observer
 - **Host**: set by calling `live.host()`. Has exclusive control over Start/End/Discard/Background buttons and wake-lock. Writes all state changes to Firebase.
-- **Observer**: set by calling `live.join()`. Can add bhajans (setup phase only) and edit pitch/singers in edit mode. Can call `claimHost()` to take over (behind auth gate).
+- **Observer**: set by calling `live.join()`. Can add bhajans (setup phase only) and edit pitch/singers in edit mode. Can call `claimHost()` to take over (behind auth gate). Appears in My Sessions under a "Joined" badge (not "Observer") with **Rejoin** and **Leave** buttons.
 - Firebase rules do not enforce host/observer roles at the transport layer — gating is UI-only in app.js.
+
+### My Sessions card variants
+Three visually distinct card types in `_sessionHomeHTML()`:
+1. **Draft (not started)** — shows "Draft — not started" eyebrow, left accent bar via `.own-session-draft-card`. Buttons: Resume, Discard.
+2. **Host backgrounded** — shows "Host" badge, normal card. Buttons: Resume, Discard.
+3. **Observer bookmark** — shows "Joined" badge, left accent via `.own-session-observer-card`. Buttons: Rejoin, Leave.
+
+### Confirm dialog
+`_confirm(title, body, confirmLabel, { danger })` — styled `Promise<boolean>` dialog using `#modal-confirm`. Replaces all native `window.confirm()` calls throughout app.js. The cancel button, close (✕), and overlay backdrop all resolve `false`; OK resolves `true`. Danger variant uses `btn-danger` on the confirm button.
 
 ### Series storage (four sources merged)
 1. `mm-local-series` localStorage — series names created via "+ New Series" modal, device-local.
@@ -153,4 +176,11 @@ Reasons passed per action:
 3. `data/series.json` in the GitHub repo — committed by `GitHubStore._commitSeriesIndex()` after each sync.
 4. `data/series/<slug>.json` per-series files — sessions for that series only; not directly fetched by the app at runtime.
 
-`_fetchKnownSeries()` merges all four for the join modal and the Live Now probe.
+`_fetchKnownSeries()` merges all four **plus** the active `liveState.series` and any draft's series, ensuring a brand-new series is always present in the join modal even before it's been committed anywhere.
+
+### Slug divergence (intentional)
+`_seriesSlug(name)` strips all non-alphanumeric characters (e.g. `"Thursday Satsang"` → `"thursdaysatsang"`). This is used in **Firebase room codes** (`thursdaysatsang-2026-08-17`).
+
+`GitHubStore._slugify(name)` replaces non-alphanumeric characters with hyphens (e.g. `"Thursday Satsang"` → `"thursday-satsang"`). This is used in **GitHub file paths** (`data/series/thursday-satsang.json`).
+
+The two slugs serve different namespaces and must never be derived from each other.

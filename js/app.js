@@ -159,6 +159,7 @@ class App {
     window.addEventListener('hashchange', () => this._route());
     this._initInstallPrompt();
     this._cleanupExpiredBgSessions();
+    this._updateBgBadge();
     this._initAuth();
   }
 
@@ -1015,6 +1016,73 @@ class App {
     }
   }
 
+  // ─── Styled confirm dialog (replaces native window.confirm) ─────────────────
+  // Returns a Promise that resolves true (confirmed) or false (cancelled/dismissed).
+  _confirm(title, body, confirmLabel = 'Confirm', { danger = false } = {}) {
+    return new Promise(resolve => {
+      document.getElementById('mconfirm-title').textContent = title;
+      document.getElementById('mconfirm-body').textContent  = body;
+      const okBtn = document.getElementById('btn-mconfirm-ok');
+      okBtn.textContent = confirmLabel;
+      okBtn.className   = `btn ${danger ? 'btn-danger' : 'btn-primary'}`;
+
+      let settled = false;
+      const settle = (val) => {
+        if (settled) return;
+        settled = true;
+        this._closeModal('modal-confirm');
+        resolve(val);
+      };
+
+      document.getElementById('btn-mconfirm-ok').onclick     = () => settle(true);
+      document.getElementById('btn-mconfirm-cancel').onclick  = () => settle(false);
+      document.getElementById('mconfirm-close').onclick       = () => settle(false);
+      document.getElementById('modal-confirm').onclick        = (e) => {
+        if (e.target === document.getElementById('modal-confirm')) settle(false);
+      };
+
+      this._openModal('modal-confirm');
+    });
+  }
+
+  // ─── Background sessions badge (bottom nav Session tab) ──────────────────
+  _updateBgBadge() {
+    const badge = document.getElementById('bnav-bg-badge');
+    if (!badge) return;
+    const count = (this._bgSessions || []).length;
+    badge.textContent = count || '';
+    badge.classList.toggle('hidden', count === 0);
+  }
+
+  // ─── Observer bookmark ────────────────────────────────────────────────────
+  // When an observer makes an edit, save a lightweight entry to _bgSessions so
+  // they can find the session in My Sessions after navigating away or closing
+  // the tab. Only added once per session; does not save any session state.
+  _saveObserverBookmark(state) {
+    const { roomCode, label, series, date } = state || {};
+    if (!roomCode) return;
+    if (this._bgSessions.some(s => s.roomCode === roomCode)) return;
+    this._bgSessions.unshift({ roomCode, label: label || roomCode, series, date: date || todayISO(), isHost: false });
+    this._saveBgSessions();
+  }
+
+  // ─── Leave an observer bg-session entry ───────────────────────────────────
+  // Removes the entry from My Sessions WITHOUT destroying the Firebase node.
+  async _leaveBgSession(roomCode) {
+    const entry = this._bgSessions.find(s => s.roomCode === roomCode);
+    if (!entry) return;
+    const label = entry.label || 'this session';
+    if (!await this._confirm(
+      `Leave "${label}"?`,
+      'This removes it from My Sessions. The session stays open — the host can continue without you.',
+      'Leave'
+    )) return;
+    this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
+    this._saveBgSessions();
+    this._renderSession();
+    this._toast(`Left "${label}"`);
+  }
+
   _openModal(id) {
     document.getElementById(id).classList.remove('hidden');
   }
@@ -1243,8 +1311,12 @@ class App {
     this._route(); // re-render current view with fresh data
   }
 
-  _clearPat() {
-    if (!confirm('Stop syncing to GitHub? Sessions will still be stored locally on this device.')) return;
+  async _clearPat() {
+    if (!await this._confirm(
+      'Stop syncing to GitHub?',
+      'Sessions will still be stored locally on this device.',
+      'Disconnect'
+    )) return;
     GitHubStore.clearPat();
     this.sessions = new SessionStore();
     this._updateSyncIndicator('local');
@@ -1430,6 +1502,10 @@ class App {
   }
 
   _seriesSlug(name) {
+    // Strips all non-alphanumeric chars. Intentionally different from GitHubStore._slugify
+    // (which replaces with hyphens) — the two slugs serve different namespaces: this produces
+    // Firebase room codes like "thursdaysatsang-2026-08-17"; _slugify produces GitHub file
+    // paths like data/series/thursday-satsang.json. Never derive one from the other.
     return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   }
 
@@ -1443,6 +1519,11 @@ class App {
     // Include locally-created series that may not yet have any completed sessions
     // or committed data/series.json entries (e.g. a brand-new series with only a draft).
     (this._localSeries || []).forEach(s => series.add(s));
+    // Include the active session and any draft so the Join modal and Live Now probe
+    // see a brand-new series immediately, before any GitHub sync runs.
+    if (this.liveState?.series) series.add(this.liveState.series);
+    const draft = this.sessions.getDraft?.();
+    if (draft?.series) series.add(draft.series);
     try {
       const res = await fetch('./data/series.json');
       if (res.ok) {
@@ -2176,6 +2257,10 @@ class App {
 
   _sessionHomeHTML(draft) {
     // Merge draft + backgrounded sessions into a single "My Sessions" list.
+    // Three semantically distinct card types are rendered differently:
+    //   1. Draft    — an incomplete form submit; not yet connected to Firebase.
+    //   2. Host bg  — a session you own, backgrounded; Firebase node is alive.
+    //   3. Observer — a session you joined (or edited) but do not own.
     // No series filter applied here — all in-progress sessions are shown.
     const ownSessions = [];
     if (draft) {
@@ -2186,24 +2271,56 @@ class App {
     }
 
     const ownCardsHTML = ownSessions.map(s => {
-      const isHost = s.isHost === true || s._isDraft;
-      const roleBadge = isHost
-        ? `<span class="session-role-badge session-role-host">Host</span>`
-        : `<span class="session-role-badge session-role-observer">Observer</span>`;
-      const primaryBtn = isHost
-        ? `<button class="btn btn-sm btn-warning" data-own-resume="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Resume</button>`
-        : `<button class="btn btn-sm btn-outline" data-own-rejoin="${escHtml(s.roomCode)}">Rejoin</button>`;
-      return `
+      const isDraft   = !!s._isDraft;
+      const isHost    = s.isHost === true || isDraft;
+      const dateStr   = s.date ? escHtml(formatDate(s.date)) : '';
+
+      if (isDraft) {
+        return `
+        <div class="own-session-card own-session-draft-card">
+          <div class="own-session-eyebrow">Draft — not started</div>
+          <div class="own-session-top">
+            <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
+          </div>
+          <div class="own-session-bottom">
+            <div class="open-session-meta">${dateStr}</div>
+            <div class="own-session-actions">
+              <button class="btn btn-sm btn-warning" data-own-resume="${escHtml(s.roomCode)}" data-own-is-draft="1">Resume</button>
+              <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}" data-own-is-draft="1">Discard</button>
+            </div>
+          </div>
+        </div>`;
+      }
+
+      if (isHost) {
+        return `
         <div class="own-session-card">
           <div class="own-session-top">
             <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
-            ${roleBadge}
+            <span class="session-role-badge session-role-host">Host</span>
           </div>
           <div class="own-session-bottom">
-            <div class="open-session-meta">${s.date ? escHtml(formatDate(s.date)) : ''}</div>
+            <div class="open-session-meta">${dateStr}</div>
             <div class="own-session-actions">
-              ${primaryBtn}
-              <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}"${s._isDraft ? ' data-own-is-draft="1"' : ''}>Discard</button>
+              <button class="btn btn-sm btn-warning" data-own-resume="${escHtml(s.roomCode)}">Resume</button>
+              <button class="btn btn-sm btn-outline" data-own-discard="${escHtml(s.roomCode)}">Discard</button>
+            </div>
+          </div>
+        </div>`;
+      }
+
+      // Observer card
+      return `
+        <div class="own-session-card own-session-observer-card">
+          <div class="own-session-top">
+            <div class="open-session-label">${escHtml(s.label || s.roomCode)}</div>
+            <span class="session-role-badge session-role-observer">Joined</span>
+          </div>
+          <div class="own-session-bottom">
+            <div class="open-session-meta">${dateStr}</div>
+            <div class="own-session-actions">
+              <button class="btn btn-sm btn-outline" data-own-rejoin="${escHtml(s.roomCode)}">Rejoin</button>
+              <button class="btn btn-sm btn-outline" data-own-leave="${escHtml(s.roomCode)}">Leave</button>
             </div>
           </div>
         </div>`;
@@ -2297,6 +2414,9 @@ class App {
       const isDraft = btn.dataset.ownIsDraft === '1';
       btn.addEventListener('click', () => isDraft ? this._discardDraftFromHome(draft) : this._discardBgSession(roomCode));
     });
+    document.querySelectorAll('[data-own-leave]').forEach(btn =>
+      btn.addEventListener('click', () => this._leaveBgSession(btn.dataset.ownLeave))
+    );
 
     this._loadOpenSessions();
     // Keep the Live Now list fresh: re-probe Firebase every 30 s so a session
@@ -2778,7 +2898,11 @@ class App {
     // If a session is currently live, background it before starting a new one.
     if (this.liveState) {
       const label = this.liveState.label || 'the current session';
-      if (!confirm(`"${label}" is active. It will be moved to My Sessions so you can start a new one. Continue?`)) return;
+      if (!await this._confirm(
+        `"${label}" is active`,
+        'It will be moved to My Sessions so you can start a new one.',
+        'Continue'
+      )) return;
       this._backgroundSession();
     } else {
       // No active liveState but there may be an orphaned draft (user navigated away
@@ -2791,9 +2915,13 @@ class App {
           this.sessions.clearDraft();
         } else {
           const label = draft.label || 'a previous session';
-          if (!confirm(`"${label}" was not ended. Move it to My Sessions before starting a new one?`)) return;
+          if (!await this._confirm(
+            `"${label}" was not ended`,
+            'Move it to My Sessions before starting a new one?',
+            'Move to My Sessions'
+          )) return;
           this._bgSessions = this._bgSessions.filter(s => s.roomCode !== draft.roomCode);
-          this._bgSessions.unshift({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date, isHost: true });
+          this._bgSessions.unshift({ roomCode: draft.roomCode, label: draft.label, series: draft.series, date: draft.date || todayISO(), isHost: true });
           this._saveBgSessions();
         }
       }
@@ -2941,7 +3069,8 @@ class App {
 
     const code = this.live.host(sessionData, sessionData.roomCode || null);
     sessionData.roomCode = code;
-    sessionData.phase = 'setup';
+    // Preserve a snapshot's phase when resuming; only default to 'setup' for new sessions.
+    if (!sessionData.phase) sessionData.phase = 'setup';
 
     this.liveState = { ...sessionData };
     this.sessions.saveDraft(this.liveState);
@@ -3394,7 +3523,7 @@ class App {
     if (!combined && b?.gents_pitch) { this._setMabPitch(b.gents_pitch); this._setPitchSuggActive('gents'); }
   }
 
-  _mabConfirmAdd() {
+  async _mabConfirmAdd() {
     const b = this._mabSelected;
     if (!b) return;
 
@@ -3415,7 +3544,11 @@ class App {
       const ganeshCount = existing.filter(e =>
         e.bhajan_deity && e.bhajan_deity.split(/[,/]/).map(x => x.trim()).some(d => d.toLowerCase() === 'ganesha')
       ).length;
-      if (ganeshCount > 0 && !confirm(`There ${ganeshCount === 1 ? 'is' : 'are'} already ${ganeshCount} Ganesha bhajan${ganeshCount > 1 ? 's' : ''} in this session. Add another one?`)) {
+      if (ganeshCount > 0 && !await this._confirm(
+        'Another Ganesha bhajan?',
+        `There ${ganeshCount === 1 ? 'is' : 'are'} already ${ganeshCount} Ganesha bhajan${ganeshCount > 1 ? 's' : ''} in this session.`,
+        'Add Anyway'
+      )) {
         return;
       }
     }
@@ -3464,7 +3597,13 @@ class App {
   _applyLiveEdit(updatedState, _action) {
     this.liveState = updatedState;
     this.live?.updateState(updatedState);
-    if (this.live?.isHost) this.sessions.saveDraft(updatedState);
+    if (this.live?.isHost) {
+      this.sessions.saveDraft(updatedState);
+    } else if (this.live && !this.live.isHost) {
+      // Save an observer bookmark so the session appears in My Sessions even if
+      // the observer didn't join explicitly (e.g. they joined then navigated away).
+      this._saveObserverBookmark(updatedState);
+    }
   }
 
   // ─── Remove / set current bhajan ─────────────────────────────────────────
@@ -3490,9 +3629,13 @@ class App {
 
   // ─── End / Discard Session ────────────────────────────────────────────────
 
-  _confirmEndSession() {
+  async _confirmEndSession() {
     const bhCount = (this.liveState?.bhajans || []).length;
-    if (!confirm(`End session? ${bhCount} bhajans will be saved.`)) return;
+    if (!await this._confirm(
+      'End session?',
+      `${bhCount} bhajan${bhCount !== 1 ? 's' : ''} will be saved to history.`,
+      'End Session'
+    )) return;
     this._endSession();
   }
 
@@ -3500,8 +3643,10 @@ class App {
     const label    = this.liveState?.label || 'Session';
     const roomCode = this.live?.roomCode;
     const series   = this.liveState?.series || null;
-    const date     = this.liveState?.date || '';
+    const date     = this.liveState?.date || todayISO();
     const isHost   = this.live?.isHost ?? true; // capture before this.live is nulled
+    // Snapshot the current state so Resume can seed the local view before Firebase replies.
+    const snapshot = this.liveState ? { ...this.liveState } : null;
 
     this.live?.detach();
     this.live = null;
@@ -3512,7 +3657,7 @@ class App {
     // localStorage draft is overwritten by a new session.
     if (roomCode) {
       this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
-      this._bgSessions.unshift({ roomCode, label, series, date, isHost });
+      this._bgSessions.unshift({ roomCode, label, series, date, isHost, snapshot });
       this._saveBgSessions();
     }
     // Clear the draft so a stale localStorage entry doesn't trigger the
@@ -3528,7 +3673,9 @@ class App {
   }
 
   _saveBgSessions() {
+    if (this._bgSessions.length > 10) this._bgSessions = this._bgSessions.slice(0, 10);
     try { localStorage.setItem('mm-bg-sessions', JSON.stringify(this._bgSessions)); } catch {}
+    this._updateBgBadge();
   }
 
   async _cleanupExpiredBgSessions() {
@@ -3539,20 +3686,22 @@ class App {
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - 2);
     const cutoff = _localDate(cutoffDate);
-    const expired = this._bgSessions.filter(s => s.date && s.date < cutoff);
+    // Entries without a date are also treated as expired (no way to verify they're current).
+    const expired = this._bgSessions.filter(s => !s.date || s.date < cutoff);
     if (!expired.length) return;
-    this._bgSessions = this._bgSessions.filter(s => !s.date || s.date >= cutoff);
+    this._bgSessions = this._bgSessions.filter(s => s.date && s.date >= cutoff);
     this._saveBgSessions();
-    await Promise.allSettled(expired.map(s => LiveSession.cleanupOrphan(s.roomCode)));
+    // Only clean up Firebase nodes for host-owned sessions; observer entries don't own the node.
+    await Promise.allSettled(expired.filter(s => s.isHost !== false).map(s => LiveSession.cleanupOrphan(s.roomCode)));
   }
 
   async _resumeBgSession(roomCode) {
     const entry = this._bgSessions.find(s => s.roomCode === roomCode);
     if (!entry) return;
     if (!await this.requireAuth('Sign in to resume your session')) return;
-    // host() will adopt the existing Firebase state (bhajans, phase, etc.)
-    // via the get() call in its implementation.
-    const sessionData = {
+    // Seed from the snapshot so the UI is populated immediately; Firebase then
+    // overwrites with authoritative state once the connection is established.
+    const sessionData = entry.snapshot ? { ...entry.snapshot } : {
       id: entry.roomCode,
       roomCode: entry.roomCode,
       label: entry.label,
@@ -3570,10 +3719,15 @@ class App {
     const entry = this._bgSessions.find(s => s.roomCode === roomCode);
     if (!entry) return;
     const label = entry.label || 'this session';
-    if (!confirm(`Discard "${label}"? This will close the session for all collaborators.`)) return;
+    if (!await this._confirm(
+      `Discard "${label}"?`,
+      'This will close the session for all collaborators. Bhajans will not be saved.',
+      'Discard', { danger: true }
+    )) return;
     this._bgSessions = this._bgSessions.filter(s => s.roomCode !== roomCode);
     this._saveBgSessions();
-    LiveSession.cleanupOrphan(roomCode).catch(() => {});
+    // Only the host owns the Firebase node; observers must never destroy it.
+    if (entry.isHost !== false) LiveSession.cleanupOrphan(roomCode).catch(() => {});
     this._renderSession();
     this._toast(`"${label}" discarded`);
   }
@@ -3582,10 +3736,10 @@ class App {
     if (!draft) return;
     const label = draft.label || 'this session';
     const bhCount = (draft.bhajans || []).length;
-    const msg = bhCount
-      ? `Discard "${label}"? ${bhCount} bhajan${bhCount !== 1 ? 's' : ''} will not be saved.`
-      : `Discard "${label}"? Nothing will be saved.`;
-    if (!confirm(msg)) return;
+    const body = bhCount
+      ? `${bhCount} bhajan${bhCount !== 1 ? 's' : ''} will not be saved.`
+      : 'Nothing will be saved.';
+    if (!await this._confirm(`Discard "${label}"?`, body, 'Discard', { danger: true })) return;
     this.sessions.clearDraft();
     this._bgSessions = (this._bgSessions || []).filter(s => s.roomCode !== draft.roomCode);
     this._saveBgSessions();
@@ -3594,9 +3748,9 @@ class App {
     this._toast(`"${label}" discarded`);
   }
 
-  _discardSession() {
+  async _discardSession() {
     const label         = this.liveState?.label || 'this session';
-    if (!confirm(`Discard "${label}"? Nothing will be saved.`)) return;
+    if (!await this._confirm(`Discard "${label}"?`, 'Nothing will be saved.', 'Discard', { danger: true })) return;
 
     const discardedCode = this.liveState?.roomCode;
     this.sessions.clearDraft();
@@ -4175,8 +4329,8 @@ class App {
       });
     }
 
-    document.getElementById('btn-detail-delete').addEventListener('click', () => {
-      if (confirm('Delete this session? This cannot be undone.')) {
+    document.getElementById('btn-detail-delete').addEventListener('click', async () => {
+      if (await this._confirm('Delete this session?', 'This cannot be undone.', 'Delete', { danger: true })) {
         this.sessions.delete(id);
         location.hash = '#history';
         this._toast('Session deleted');
