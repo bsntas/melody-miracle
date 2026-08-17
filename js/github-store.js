@@ -115,15 +115,16 @@ export class GitHubStore {
     this._commitTimer = null;
     this._busy = false;
 
+    const hadSessions = this._sessions.some(s => s.series === series);
     this._sessions = this._sessions.filter(s => s.series !== series);
+    if (this._knownSeries) this._knownSeries.delete(series);
     this._saveCache();
 
     this._setSync('syncing');
     try {
-      await Promise.all([
-        this._commitToGitHub(`Delete series "${series}"`),
-        this._deleteSeriesFile(series),
-      ]);
+      const ops = [this._deleteSeriesFile(series), this._commitSeriesIndex()];
+      if (hadSessions) ops.unshift(this._commitToGitHub(`Delete series "${series}"`));
+      await Promise.all(ops);
       this._setSync('ok', `Synced ${new Date().toLocaleTimeString()}`);
     } catch (e) {
       this._setSync('error', e.message || 'Sync failed');
