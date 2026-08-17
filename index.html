@@ -801,6 +801,23 @@
     </div>
   </div>
 
+  <!-- No-PAT Info Modal — shown when a write action is attempted without GitHub sync -->
+  <div id="modal-no-pat-warn" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Local only — not synced</h3>
+        <button class="modal-close" id="mnopat-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" id="mnopat-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mnopat-ok">Got it</button>
+        <button class="btn btn-outline" id="btn-mnopat-settings">Set up GitHub sync</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Observer List Modal — host taps observer count to see who is watching -->
   <div id="modal-observers" class="modal-overlay hidden">
     <div class="modal-box modal-sm">
@@ -879,7 +896,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260817.10"></script>
+  <script type="module" src="js/app.js?v=20260817.11"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

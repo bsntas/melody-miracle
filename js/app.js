@@ -476,7 +476,8 @@ class App {
     });
   }
 
-  _openNewSeriesModal() {
+  async _openNewSeriesModal() {
+    await this._warnNoPat('This new series');
     document.getElementById('mnewseries-name').value = '';
     this._openModal('modal-new-series');
     setTimeout(() => document.getElementById('mnewseries-name').focus(), 100);
@@ -1997,7 +1998,8 @@ class App {
 
   _editBhajanId = null;
 
-  _openNewBhajanModal() {
+  async _openNewBhajanModal() {
+    await this._warnNoPat('This new bhajan');
     this._editBhajanId = null;
     document.getElementById('mnb-modal-title').textContent = 'New Bhajan';
     document.getElementById('btn-mnb-submit').textContent = 'Add Bhajan';
@@ -2011,9 +2013,10 @@ class App {
     setTimeout(() => document.getElementById('mnb-title').focus(), 100);
   }
 
-  _openEditBhajanModal(id) {
+  async _openEditBhajanModal(id) {
     const b = this.bhajans.getById(id);
     if (!b) return;
+    await this._warnNoPat('Changes to this bhajan');
     this._editBhajanId = id;
     document.getElementById('mnb-modal-title').textContent = 'Edit Bhajan';
     document.getElementById('btn-mnb-submit').textContent = 'Save Changes';
@@ -4209,14 +4212,16 @@ class App {
     });
 
     // Edit mode toggle
-    document.getElementById('btn-detail-edit-toggle')?.addEventListener('click', () => {
+    document.getElementById('btn-detail-edit-toggle')?.addEventListener('click', async () => {
+      if (!this._detailEditMode) await this._warnNoPat('Changes to this session');
       this._detailEditMode = !this._detailEditMode;
       this._renderSessionDetail(id);
     });
 
     // Add bhajan (always available when canEdit, regardless of edit mode)
     if (canEdit) {
-      document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', () => {
+      document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', async () => {
+        await this._warnNoPat('Adding a bhajan to this session');
         this._openDetailAddBhajan(s);
       });
     }
@@ -4651,6 +4656,37 @@ class App {
     if (!confirmed) return false;
     try { await this._handleSignIn(); } catch { return false; }
     return !!(this.auth?.currentUser);
+  }
+
+  // Shows a non-blocking info modal when an action is taken without a GitHub PAT.
+  // Resolves when dismissed so callers can `await` it before opening a form modal.
+  _warnNoPat(actionLabel = 'This change') {
+    if (GitHubStore.getPat()) return Promise.resolve();
+    return new Promise(resolve => {
+      const modal = document.getElementById('modal-no-pat-warn');
+      document.getElementById('mnopat-message').textContent =
+        `${actionLabel} will be saved to this device only and won't be visible to other users. ` +
+        `Session history, bhajans, and series are all stored in GitHub — set up a GitHub token ` +
+        `in Settings to enable sync.`;
+
+      let settled = false;
+      const settle = () => {
+        if (settled) return;
+        settled = true;
+        modal.classList.add('hidden');
+        resolve();
+      };
+
+      document.getElementById('btn-mnopat-ok').onclick = () => settle();
+      document.getElementById('mnopat-close').onclick  = () => settle();
+      modal.onclick = (e) => { if (e.target === modal) settle(); };
+      document.getElementById('btn-mnopat-settings').onclick = () => {
+        settle();
+        this._openSettings();
+      };
+
+      modal.classList.remove('hidden');
+    });
   }
 
   _bindOnboarding() {
