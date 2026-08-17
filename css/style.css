@@ -236,6 +236,14 @@ img { max-width: 100%; }
   animation: pulse-dot 1.5s ease-in-out infinite;
 }
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+.bnav-bg-badge {
+  position: absolute; top: -4px; right: -7px;
+  min-width: 16px; height: 16px; border-radius: 8px;
+  background: var(--saffron); color: #fff;
+  font-size: 9px; font-weight: 800; letter-spacing: -0.01em;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 3px; line-height: 1; pointer-events: none;
+}
 
 /* ─── Page Header ────────────────────────────────────────────────────────── */
 .page-header {
@@ -774,6 +782,17 @@ img { max-width: 100%; }
 .session-role-observer {
   background: color-mix(in srgb, var(--text-3) 20%, transparent);
   color: var(--text-2);
+}
+.own-session-eyebrow {
+  font-size: 0.63rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--text-3);
+  margin-bottom: -0.15rem;
+}
+.own-session-draft-card {
+  box-shadow: inset 3px 0 0 var(--text-3);
+}
+.own-session-observer-card {
+  box-shadow: inset 3px 0 0 var(--text-2);
 }
 
 /* Live session view */

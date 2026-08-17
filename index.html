@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260817.2">
+  <link rel="stylesheet" href="css/style.css?v=20260817.3">
   <script>
     (function(){
       var t=localStorage.getItem('mm-theme');
@@ -285,6 +285,7 @@
             <circle cx="6" cy="18" r="3"/>
             <circle cx="18" cy="16" r="3"/>
           </svg>
+          <span id="bnav-bg-badge" class="bnav-bg-badge hidden" aria-label="backgrounded sessions"></span>
         </span>
         <span class="bnav-label">Session</span>
       </a>
@@ -767,6 +768,23 @@
   </div>
 
   <!-- Auth-required Dialog — shown when a feature needs sign-in -->
+  <!-- Generic Confirm Modal — replaces native confirm() dialogs app-wide -->
+  <div id="modal-confirm" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title" id="mconfirm-title">Confirm</h3>
+        <button class="modal-close" id="mconfirm-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" id="mconfirm-body"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mconfirm-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mconfirm-ok">Confirm</button>
+      </div>
+    </div>
+  </div>
+
   <div id="modal-require-auth" class="modal-overlay hidden">
     <div class="modal-box modal-sm">
       <div class="modal-header">
@@ -861,7 +879,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260817.5"></script>
+  <script type="module" src="js/app.js?v=20260817.6"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
