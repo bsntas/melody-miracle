@@ -1270,8 +1270,11 @@ class App {
     const app = document.getElementById('app');
     const onSession = document.getElementById('view-session')?.classList.contains('active');
     if (this.liveState && !onSession) {
+      const liveDate = this.liveState.date
+        ? new Date(this.liveState.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
+        : '';
       document.getElementById('global-live-text').textContent =
-        `Live: ${this.liveState.label || 'Bhajan Session'} · ${(this.liveState.bhajans || []).length} bhajans`;
+        `Live: ${this.liveState.label || 'Bhajan Session'}${liveDate ? ' · ' + liveDate : ''} · ${(this.liveState.bhajans || []).length} bhajans`;
       ribbon.classList.remove('hidden');
       app?.classList.add('live-ribbon-active');
     } else {
