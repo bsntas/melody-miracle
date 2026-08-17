@@ -2401,14 +2401,17 @@ class App {
             <div class="series-card-meta">${escHtml(meta)}</div>
           </div>
           <div class="series-card-actions">
-            <button class="series-delete-btn" data-delete-series="${escHtml(s)}" aria-label="Delete ${escHtml(s)}">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="3 6 5 6 21 6"/>
-                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-                <path d="M10 11v6M14 11v6"/>
-                <path d="M9 6V4h6v2"/>
-              </svg>
-            </button>
+            <div class="series-card-secondary">
+              <button class="series-delete-btn" data-delete-series="${escHtml(s)}" aria-label="Delete ${escHtml(s)}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6M14 11v6"/>
+                  <path d="M9 6V4h6v2"/>
+                </svg>
+              </button>
+            </div>
+            <button class="series-more-btn" data-series-more="${escHtml(s)}" aria-label="More options for ${escHtml(s)}">···</button>
             <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
           </div>
         </div>`;
@@ -2428,16 +2431,33 @@ class App {
     container.querySelectorAll('[data-series-history]').forEach(nameBtn => {
       const series = nameBtn.dataset.seriesHistory;
       nameBtn.addEventListener('click', () => {
+        hideAllSecondary();
         this._historyBackTo = '#session';
         this._setSeriesFilter(series);
         location.hash = '#history';
       });
     });
-    // Clean up any old secondary dismiss listener from before the redesign.
+    // ··· button → toggle the delete button for that card; dismiss others.
+    const hideAllSecondary = () =>
+      document.querySelectorAll('.series-card-secondary.visible')
+        .forEach(el => el.classList.remove('visible'));
+    container.querySelectorAll('[data-series-more]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const secondary = btn.closest('.series-card-actions').querySelector('.series-card-secondary');
+        const wasVisible = secondary.classList.contains('visible');
+        hideAllSecondary();
+        if (!wasVisible) secondary.classList.add('visible');
+      });
+    });
+    // Dismiss on outside tap — re-register so there's only ever one listener.
     if (this._seriesSecondaryDismiss) {
       document.removeEventListener('click', this._seriesSecondaryDismiss);
-      this._seriesSecondaryDismiss = null;
     }
+    this._seriesSecondaryDismiss = (e) => {
+      if (!e.target.closest('.series-card')) hideAllSecondary();
+    };
+    document.addEventListener('click', this._seriesSecondaryDismiss);
   }
 
   _bindSessionHome(draft) {
