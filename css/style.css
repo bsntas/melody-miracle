@@ -673,8 +673,10 @@ img { max-width: 100%; }
 .session-series-create-name {
   font-weight: 600; font-size: 0.9rem; flex: 1; min-width: 0;
   white-space: normal; word-break: break-word;
+  text-align: left; padding: 0; background: none; border: none;
+  color: var(--text-1); cursor: pointer; user-select: none;
 }
-.session-series-lp { cursor: pointer; user-select: none; }
+.session-series-create-name:hover { color: var(--saffron); }
 .session-series-create-actions { display: flex; align-items: center; gap: 0.3rem; flex-shrink: 0; }
 .series-row-secondary {
   display: flex; gap: 0.3rem; overflow: hidden;

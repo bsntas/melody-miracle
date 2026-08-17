@@ -619,7 +619,7 @@ class App {
     // filter-sung is a hidden select managed by the filter modal — no change listener needed
 
     // History
-    document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(null, true));
+    document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(this._selectedSeries, true));
     document.getElementById('btn-history-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
     // Singers directory back
@@ -2338,10 +2338,9 @@ class App {
       ? `<div class="session-no-series">No series yet. Create one to get started.</div>`
       : allSeries.map(s => `
           <div class="session-series-create-row">
-            <span class="session-series-create-name session-series-lp" data-lp-series="${escHtml(s)}">${escHtml(s)}</span>
+            <button class="btn btn-ghost session-series-create-name" data-series-history="${escHtml(s)}">${escHtml(s)}</button>
             <div class="session-series-create-actions">
               <div class="series-row-secondary">
-                <button class="btn btn-sm btn-outline" data-past-series="${escHtml(s)}">+ Past</button>
                 <button class="btn btn-sm btn-danger-ghost" data-delete-series="${escHtml(s)}">Delete</button>
               </div>
               <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
@@ -2378,9 +2377,6 @@ class App {
     document.querySelectorAll('[data-start-series]').forEach(btn =>
       btn.addEventListener('click', () => this._openNewSession(btn.dataset.startSeries, false))
     );
-    document.querySelectorAll('[data-past-series]').forEach(btn =>
-      btn.addEventListener('click', () => this._openNewSession(btn.dataset.pastSeries, true))
-    );
     document.querySelectorAll('[data-delete-series]').forEach(btn =>
       btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.deleteSeries))
     );
@@ -2389,12 +2385,25 @@ class App {
       document.querySelectorAll('.series-row-secondary.visible')
         .forEach(el => el.classList.remove('visible'));
 
-    document.querySelectorAll('[data-lp-series]').forEach(nameEl => {
-      const secondary = nameEl.closest('.session-series-create-row').querySelector('.series-row-secondary');
-      this._addLongPress(nameEl, () => {
+    // Tap series name → open its history. Long-press → reveal Delete.
+    document.querySelectorAll('[data-series-history]').forEach(nameBtn => {
+      const series = nameBtn.dataset.seriesHistory;
+      const secondary = nameBtn.closest('.session-series-create-row').querySelector('.series-row-secondary');
+      let lpFired = false;
+
+      this._addLongPress(nameBtn, () => {
+        lpFired = true;
         const wasVisible = secondary.classList.contains('visible');
         hideAllSecondary();
         if (!wasVisible) secondary.classList.add('visible');
+        setTimeout(() => { lpFired = false; }, 300);
+      });
+
+      nameBtn.addEventListener('click', () => {
+        if (lpFired) { lpFired = false; return; }
+        hideAllSecondary();
+        this._setSeriesFilter(series);
+        location.hash = '#history';
       });
     });
 
