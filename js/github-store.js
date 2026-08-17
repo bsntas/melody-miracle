@@ -548,9 +548,22 @@ export class GitHubStore {
     delete this._seriesShas[path];
   }
 
-  // Keeps data/series.json in sync with all series present in this._sessions.
+  // Add a series name immediately so observers can discover it within ~30 s via
+  // the existing _loadOpenSessions() auto-refresh, even before any session is completed.
+  addSeries(name) {
+    if (!name) return;
+    if (!this._knownSeries) this._knownSeries = new Set();
+    this._knownSeries.add(name);
+    this._commitSeriesIndex().catch(() => {});
+  }
+
+  // Keeps data/series.json in sync with all series present in this._sessions
+  // plus any series added via addSeries() (newly created, not yet completed).
   async _commitSeriesIndex() {
-    const allSeries = [...new Set(this._sessions.map(s => s.series).filter(Boolean))].sort();
+    const allSeries = [...new Set([
+      ...this._sessions.map(s => s.series).filter(Boolean),
+      ...(this._knownSeries || []),
+    ])].sort();
     const path = 'data/series.json';
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(allSeries, null, 2))));
     let sha = this._seriesIndexSha;

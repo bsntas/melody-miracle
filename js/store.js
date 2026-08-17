@@ -209,6 +209,9 @@ export class SessionStore {
     this._save();
   }
 
+  // No-op in base class; GitHubStore overrides to commit the series to GitHub.
+  addSeries(_name) {}
+
   knownSeries() {
     const s = new Set();
     for (const sess of this._sessions) if (sess.series) s.add(sess.series);

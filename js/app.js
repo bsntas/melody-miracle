@@ -503,6 +503,9 @@ class App {
     if (!allKnown.includes(name)) {
       this._localSeries.push(name);
       try { localStorage.setItem('mm-local-series', JSON.stringify(this._localSeries)); } catch {}
+      // Commit the new series to GitHub immediately so observers can discover it
+      // within ~30 s via the existing Live Now auto-refresh.
+      this.sessions.addSeries(name);
     }
     this._setSeriesFilter(name);
   }
