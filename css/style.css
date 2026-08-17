@@ -666,7 +666,16 @@ img { max-width: 100%; }
   font-weight: 600; font-size: 0.9rem; flex: 1; min-width: 0;
   white-space: normal; word-break: break-word;
 }
-.session-series-create-actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
+.session-series-lp { cursor: pointer; user-select: none; }
+.session-series-create-actions { display: flex; align-items: center; gap: 0.3rem; flex-shrink: 0; }
+.series-row-secondary {
+  display: flex; gap: 0.3rem; overflow: hidden;
+  max-width: 0; opacity: 0; pointer-events: none;
+  transition: max-width 0.22s ease, opacity 0.18s ease;
+}
+.series-row-secondary.visible {
+  max-width: 14rem; opacity: 1; pointer-events: auto;
+}
 .session-no-series {
   font-size: 0.88rem; color: var(--text-3);
   padding: 0.55rem 0; text-align: center;
