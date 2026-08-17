@@ -236,6 +236,8 @@ img { max-width: 100%; }
   animation: pulse-dot 1.5s ease-in-out infinite;
 }
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+/* Hide the red dot when the count badge is already visible — they occupy the same spot */
+.live-session-icon.is-live:has(.bnav-bg-badge:not(.hidden))::after { display: none; }
 .bnav-bg-badge {
   position: absolute; top: -4px; right: -7px;
   min-width: 16px; height: 16px; border-radius: 8px;
