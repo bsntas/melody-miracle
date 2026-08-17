@@ -477,7 +477,7 @@ class App {
   }
 
   async _openNewSeriesModal() {
-    await this._warnNoPat('This new series');
+    if (!await this._warnNoPat('This new series')) return;
     document.getElementById('mnewseries-name').value = '';
     this._openModal('modal-new-series');
     setTimeout(() => document.getElementById('mnewseries-name').focus(), 100);
@@ -1999,7 +1999,7 @@ class App {
   _editBhajanId = null;
 
   async _openNewBhajanModal() {
-    await this._warnNoPat('This new bhajan');
+    if (!await this._warnNoPat('This new bhajan')) return;
     this._editBhajanId = null;
     document.getElementById('mnb-modal-title').textContent = 'New Bhajan';
     document.getElementById('btn-mnb-submit').textContent = 'Add Bhajan';
@@ -2016,7 +2016,7 @@ class App {
   async _openEditBhajanModal(id) {
     const b = this.bhajans.getById(id);
     if (!b) return;
-    await this._warnNoPat('Changes to this bhajan');
+    if (!await this._warnNoPat('Changes to this bhajan')) return;
     this._editBhajanId = id;
     document.getElementById('mnb-modal-title').textContent = 'Edit Bhajan';
     document.getElementById('btn-mnb-submit').textContent = 'Save Changes';
@@ -4213,7 +4213,7 @@ class App {
 
     // Edit mode toggle
     document.getElementById('btn-detail-edit-toggle')?.addEventListener('click', async () => {
-      if (!this._detailEditMode) await this._warnNoPat('Changes to this session');
+      if (!this._detailEditMode && !await this._warnNoPat('Changes to this session')) return;
       this._detailEditMode = !this._detailEditMode;
       this._renderSessionDetail(id);
     });
@@ -4221,7 +4221,7 @@ class App {
     // Add bhajan (always available when canEdit, regardless of edit mode)
     if (canEdit) {
       document.getElementById('btn-detail-add-bhajan')?.addEventListener('click', async () => {
-        await this._warnNoPat('Adding a bhajan to this session');
+        if (!await this._warnNoPat('Adding a bhajan to this session')) return;
         this._openDetailAddBhajan(s);
       });
     }
@@ -4660,8 +4660,9 @@ class App {
 
   // Shows a non-blocking info modal when an action is taken without a GitHub PAT.
   // Resolves when dismissed so callers can `await` it before opening a form modal.
+  // Returns true if the action should proceed, false if the user chose to set up sync instead.
   _warnNoPat(actionLabel = 'This change') {
-    if (GitHubStore.getPat()) return Promise.resolve();
+    if (GitHubStore.getPat()) return Promise.resolve(true);
     return new Promise(resolve => {
       const modal = document.getElementById('modal-no-pat-warn');
       document.getElementById('mnopat-message').textContent =
@@ -4670,18 +4671,18 @@ class App {
         `in Settings to enable sync.`;
 
       let settled = false;
-      const settle = () => {
+      const settle = (proceed) => {
         if (settled) return;
         settled = true;
         modal.classList.add('hidden');
-        resolve();
+        resolve(proceed);
       };
 
-      document.getElementById('btn-mnopat-ok').onclick = () => settle();
-      document.getElementById('mnopat-close').onclick  = () => settle();
-      modal.onclick = (e) => { if (e.target === modal) settle(); };
+      document.getElementById('btn-mnopat-ok').onclick = () => settle(true);
+      document.getElementById('mnopat-close').onclick  = () => settle(true);
+      modal.onclick = (e) => { if (e.target === modal) settle(true); };
       document.getElementById('btn-mnopat-settings').onclick = () => {
-        settle();
+        settle(false);
         this._openSettings();
       };
 
