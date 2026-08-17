@@ -1102,14 +1102,69 @@ img { max-width: 100%; }
 /* ─── Session Detail ─────────────────────────────────────────────────────── */
 .session-detail-header {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem;
+  border-radius: var(--radius); padding: 1rem 1.1rem 1.1rem; margin-bottom: 1.25rem;
 }
-.session-detail-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
-.session-detail-date { font-size: 0.85rem; color: var(--text-2); }
-.session-detail-date.date-editable { cursor: pointer; }
-.session-detail-date.date-editable:hover { text-decoration: underline; color: var(--saffron); }
-.session-detail-stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-2); }
-
+.sdh-top { display: flex; align-items: flex-start; gap: 0.5rem; }
+.session-detail-title {
+  flex: 1; font-size: 1.1rem; font-weight: 700; line-height: 1.35;
+}
+.sdh-more-wrap { position: relative; flex-shrink: 0; padding-top: 0.05rem; }
+.sdh-more-btn {
+  color: var(--text-3); padding: 0.2rem 0.35rem;
+  border-radius: var(--radius-sm); background: none; border: none; cursor: pointer;
+  font-size: 0.9rem; letter-spacing: 0.08em; line-height: 1;
+  transition: color 0.15s, background 0.15s;
+}
+.sdh-more-btn:hover { color: var(--text-2); background: var(--surface-2); }
+.sdh-more-menu {
+  position: absolute; top: calc(100% + 4px); right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-md);
+  padding: 0.2rem; min-width: 148px; z-index: 20; display: none;
+}
+.sdh-more-menu.visible { display: block; }
+.sdh-more-item {
+  display: block; width: 100%; text-align: left;
+  padding: 0.45rem 0.65rem; border-radius: var(--radius-sm);
+  font-size: 0.85rem; background: none; border: none; cursor: pointer;
+  color: var(--text-2); font-family: inherit;
+  transition: background 0.12s;
+}
+.sdh-more-item:hover { background: var(--surface-2); }
+.sdh-more-danger { color: var(--red); }
+.sdh-more-danger:hover { background: var(--red-light); color: var(--red); }
+.sdh-meta {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem 0.4rem;
+  margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-2);
+}
+.sdh-meta .date-editable { cursor: pointer; }
+.sdh-meta .date-editable:hover { text-decoration: underline; color: var(--saffron); }
+.sdh-sep { color: var(--text-3); }
+.sdh-singer-stack {
+  display: flex; align-items: center; margin-top: 0.75rem; padding-left: 2px;
+}
+.sdh-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--saffron); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem; font-weight: 700;
+  border: 2px solid var(--surface); margin-left: -5px;
+  flex-shrink: 0; cursor: pointer; position: relative; z-index: 1;
+  transition: transform 0.12s, z-index 0s;
+  font-family: inherit;
+}
+.sdh-avatar:first-child { margin-left: 0; }
+.sdh-avatar:hover { transform: scale(1.15); z-index: 10; }
+.sdh-avatar-more {
+  background: var(--surface-2); color: var(--text-3);
+  cursor: default; font-size: 0.62rem;
+}
+.sdh-avatar-more:hover { transform: none; }
+.sdh-actions {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin-top: 0.9rem; flex-wrap: wrap;
+}
+/* keep old class in case referenced elsewhere */
 .session-singers-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
 
 .session-bhajan-timeline { }
