@@ -621,7 +621,10 @@ class App {
 
     // History
     document.getElementById('btn-add-backdated')?.addEventListener('click', () => this._openNewSession(this._selectedSeries, true));
-    document.getElementById('btn-history-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+    document.getElementById('btn-history-back')?.addEventListener('click', () => {
+      location.hash = this._historyBackTo || '#dashboard';
+      this._historyBackTo = null;
+    });
 
     // Singers directory back
     document.getElementById('btn-singers-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
@@ -2405,6 +2408,7 @@ class App {
       nameBtn.addEventListener('click', () => {
         if (lpFired) { lpFired = false; return; }
         hideAllSecondary();
+        this._historyBackTo = '#session';
         this._setSeriesFilter(series);
         location.hash = '#history';
       });
@@ -3852,6 +3856,8 @@ class App {
   _renderHistory() {
     const titleEl = document.querySelector('#view-history .page-title');
     if (titleEl) titleEl.textContent = this._selectedSeries ? `${this._selectedSeries} — History` : 'Session History';
+    const backBtn = document.getElementById('btn-history-back');
+    if (backBtn) backBtn.textContent = this._historyBackTo === '#session' ? '← Sessions' : '← Dashboard';
 
     const all = this.sessions.activeAll();
     const el  = document.getElementById('history-list');
