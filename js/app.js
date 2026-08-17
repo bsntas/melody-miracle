@@ -293,8 +293,10 @@ class App {
       el.classList.toggle('active', el.dataset.view === view);
     });
 
-    // Series strip is only meaningful on the dashboard (analytics context).
-    if (view === 'dashboard') {
+    // Series strip is shown on the dashboard and all its analytics sub-views so
+    // the filter context is always visible and the stats stay consistent.
+    const dashboardViews = new Set(['dashboard', 'singers', 'sung', 'singer']);
+    if (dashboardViews.has(view)) {
       this._renderSeriesStrip();
     } else {
       document.getElementById('series-strip')?.classList.add('hidden');
