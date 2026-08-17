@@ -553,6 +553,10 @@ class App {
       return;
     }
 
+    // Drop from in-memory remote-series cache so the strip and home page
+    // don't re-show the series before the next _fetchKnownSeries() call.
+    if (this._remoteSeries) this._remoteSeries = this._remoteSeries.filter(s => s !== series);
+
     // Switch away from the deleted series
     if (this._selectedSeries === series) {
       const remaining = [...this.sessions.knownSeries(), ...this._localSeries].filter(s => s !== series);
