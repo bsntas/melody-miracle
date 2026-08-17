@@ -1272,7 +1272,8 @@ class App {
     const ribbon = document.getElementById('global-live-ribbon');
     if (!ribbon) return;
     const app = document.getElementById('app');
-    if (this.liveState) {
+    const onSession = document.getElementById('view-session')?.classList.contains('active');
+    if (this.liveState && !onSession) {
       document.getElementById('global-live-text').textContent =
         `Live: ${this.liveState.label || 'Bhajan Session'} · ${(this.liveState.bhajans || []).length} bhajans`;
       ribbon.classList.remove('hidden');
