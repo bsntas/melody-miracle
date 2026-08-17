@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260817.4';
+const CACHE = 'melody-miracle-20260817.5';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260817.4'; // app.js (series secondary actions on long-press in session tab)
+const V_APP  = '20260817.5'; // app.js (show date in live ribbon)
 const V_GH   = '20260811.1';  // github-store.js (unchanged)
 const V_CSS  = '20260817.2'; // style.css (series-row-secondary reveal animation)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
