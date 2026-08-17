@@ -356,6 +356,9 @@ class App {
 
     this.sessions.setSeriesFilter(this._selectedSeries);
     this._renderSeriesStrip();
+    // Background-fetch data/series.json so the strip shows series that exist on
+    // GitHub but haven't been completed locally yet (e.g. observer joining a new series).
+    this._fetchKnownSeries().then(() => this._renderSeriesStrip()).catch(() => {});
   }
 
   _setSeriesFilter(series) {
@@ -406,6 +409,11 @@ class App {
     // Merge locally-created series (persisted in localStorage, survive until
     // browser data is cleared — independent of which series is currently active).
     for (const s of this._localSeries) {
+      if (!allSeries.includes(s)) allSeries.push(s);
+    }
+    // Include series fetched from data/series.json (covers remote/observer devices
+    // that haven't completed any sessions locally for a given series).
+    for (const s of (this._remoteSeries || [])) {
       if (!allSeries.includes(s)) allSeries.push(s);
     }
     // Also include the draft's series (live session in progress).
@@ -1543,7 +1551,9 @@ class App {
         if (Array.isArray(defaults)) defaults.forEach(s => series.add(s));
       }
     } catch {}
-    return [...series].sort();
+    const result = [...series].sort();
+    this._remoteSeries = result; // keep strip in sync with GitHub-sourced series
+    return result;
   }
 
   _populateSeriesSelect(select, series, includeNew) {
