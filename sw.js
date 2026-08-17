@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260817.11';
+const CACHE = 'melody-miracle-20260817.12';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260817.11'; // app.js (no-PAT info popup on write actions without GitHub sync)
+const V_APP  = '20260817.12'; // app.js (fix no-PAT popup: "Set up sync" no longer opens form modal)
 const V_GH   = '20260811.1';  // github-store.js (unchanged)
 const V_CSS  = '20260817.4'; // style.css (series name button style)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
