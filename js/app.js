@@ -337,19 +337,19 @@ class App {
     // If a series is already selected (restored from localStorage), keep it —
     // it may belong to a live draft session not yet in knownSeries().
     // Only auto-select if there is genuinely no preference saved.
-    // Treat localStorage value of "" as an explicit "All" choice — don't override it.
+    // Default is "All" (null); only override when there's an in-progress draft.
     if (!this._selectedSeries) {
       let stored = null;
       try { stored = localStorage.getItem('mm-series-filter'); } catch {}
-      if (stored === '') {
-        // User explicitly chose "All" — leave _selectedSeries as null.
+      if (stored !== null) {
+        // Any stored value (including "") is an explicit choice — respect it.
+        // stored === "" means "All" → _selectedSeries stays null.
+        this._selectedSeries = stored || null;
       } else if (draft?.series) {
-        // Prefer the draft's series so the strip matches what's in progress.
+        // No stored preference and a draft is in progress — highlight its series.
         this._selectedSeries = draft.series;
-      } else if (allSeries.length > 0) {
-        const recent = this.sessions.all();
-        this._selectedSeries = recent[0]?.series || allSeries[0] || null;
       }
+      // Otherwise: no stored preference, no draft → default "All" (null).
     }
 
     this.sessions.setSeriesFilter(this._selectedSeries);
@@ -411,7 +411,10 @@ class App {
     if (draftSeries && !allSeries.includes(draftSeries)) allSeries.push(draftSeries);
     // Also include the currently selected series (catches edge cases).
     if (sel && !allSeries.includes(sel)) allSeries.push(sel);
-    allSeries = allSeries.sort();
+    // Sort by session count descending; ties broken alphabetically.
+    const counts = {};
+    for (const s of this.sessions.all()) if (s.series) counts[s.series] = (counts[s.series] || 0) + 1;
+    allSeries.sort((a, b) => (counts[b] || 0) - (counts[a] || 0) || a.localeCompare(b));
     strip.classList.remove('hidden');
     const pillsEl = document.getElementById('series-pills');
 
@@ -4740,6 +4743,11 @@ class App {
       if (this.auth?.currentUser) {
         document.getElementById('auth-dropdown')?.classList.toggle('hidden');
       } else {
+        if (!await this._confirm(
+          'Sign in with Google?',
+          'Your sessions, favourites, and live collaboration all require a Google account.',
+          'Sign in'
+        )) return;
         await this._handleSignIn();
       }
     });
