@@ -295,7 +295,7 @@ class App {
 
     // Series strip is shown on the dashboard and all its analytics sub-views so
     // the filter context is always visible and the stats stay consistent.
-    const dashboardViews = new Set(['dashboard', 'singers', 'sung', 'singer']);
+    const dashboardViews = new Set(['dashboard', 'singers', 'sung', 'singer', 'browse']);
     if (dashboardViews.has(view)) {
       this._renderSeriesStrip();
     } else {
