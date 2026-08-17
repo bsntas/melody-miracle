@@ -4200,30 +4200,40 @@ class App {
     const hasPat    = !!GitHubStore.getPat();
     const isEditMode = canEdit && this._detailEditMode;
 
+    const _bCount = (s.bhajans || []).length;
+    const _MAX_AVS = 8;
+    const _singers = s.singers || [];
+    const _shownSingers = _singers.slice(0, _MAX_AVS);
+    const _extraSingers = _singers.length - _MAX_AVS;
+    const _singerStackHTML = _singers.length ? `
+      <div class="sdh-singer-stack">
+        ${_shownSingers.map(name => `<button class="sdh-avatar" data-singer="${escHtml(name)}" title="${escHtml(name)}" aria-label="View ${escHtml(name)}">${escHtml(name[0]?.toUpperCase() || '?')}</button>`).join('')}
+        ${_extraSingers > 0 ? `<span class="sdh-avatar sdh-avatar-more" title="${escHtml(_singers.slice(_MAX_AVS).join(', '))}">+${_extraSingers}</span>` : ''}
+      </div>` : '';
+
     document.getElementById('session-detail-content').innerHTML = `
       <div class="session-detail-header">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
-          <div>
-            <div class="session-detail-title">${escHtml(s.label || 'Bhajan Session')}</div>
-            <div class="session-detail-date${isEditMode ? ' date-editable' : ''}" id="session-detail-date-display">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</div>
-          </div>
-          <div style="display:flex;gap:.4rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
-            ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
-            ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
-            ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-detail-edit-toggle">${isEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
-            <button class="btn btn-danger btn-sm" id="btn-detail-delete">Delete</button>
+        <div class="sdh-top">
+          <div class="session-detail-title">${escHtml(s.label || 'Bhajan Session')}</div>
+          <div class="sdh-more-wrap">
+            <button class="sdh-more-btn" id="btn-detail-more" aria-label="More options">···</button>
+            <div class="sdh-more-menu" id="sdh-more-menu">
+              <button class="sdh-more-item sdh-more-danger" id="btn-detail-delete">Delete session</button>
+            </div>
           </div>
         </div>
-        <div class="session-detail-stats">
-          <span>🎵 ${(s.bhajans || []).length} bhajans</span>
-          ${s.duration ? `<span>⏱ ${this._formatDuration(s.duration)}</span>` : ''}
+        <div class="sdh-meta">
+          <span class="${isEditMode ? 'date-editable' : ''}" id="session-detail-date-display">${formatDate(s.date)}${s.isBackdated ? ' · Backdated' : ''}</span>
+          <span class="sdh-sep">·</span>
+          <span>${_bCount} bhajan${_bCount !== 1 ? 's' : ''}</span>
+          ${s.duration ? `<span class="sdh-sep">·</span><span>${this._formatDuration(s.duration)}</span>` : ''}
         </div>
-        ${s.singers?.length ? `
-          <div class="session-singers-row">
-            ${s.singers.map(name => `<span class="singer-chip clickable" data-singer="${escHtml(name)}">
-              <span class="singer-avatar">${escHtml(name[0]?.toUpperCase() || '?')}</span>
-              ${escHtml(name)}</span>`).join('')}
-          </div>` : ''}
+        ${_singerStackHTML}
+        <div class="sdh-actions">
+          ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
+          ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
+          ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-detail-edit-toggle">${isEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
+        </div>
       </div>
 
       ${(s.bhajans || []).length
@@ -4264,8 +4274,8 @@ class App {
         : `<div class="empty-state"><p class="text-muted">No bhajans in this session${canEdit ? '. Use "+ Bhajan" to add.' : '.'}</p></div>`}
     `;
 
-    // Bind singer clicks
-    document.querySelectorAll('#session-detail-content .singer-chip.clickable').forEach(el => {
+    // Bind singer avatar clicks
+    document.querySelectorAll('#session-detail-content .sdh-avatar[data-singer]').forEach(el => {
       el.addEventListener('click', () => { location.hash = `#singer/${encodeURIComponent(el.dataset.singer)}`; });
     });
 
@@ -4413,6 +4423,25 @@ class App {
         e.stopPropagation();
         this._inlineDateEdit(e.currentTarget, id);
       });
+    }
+
+    // ··· menu toggle (reveals Delete)
+    if (this._detailMoreDismiss) {
+      document.removeEventListener('click', this._detailMoreDismiss);
+      this._detailMoreDismiss = null;
+    }
+    const _moreBtn = document.getElementById('btn-detail-more');
+    const _moreMenu = document.getElementById('sdh-more-menu');
+    if (_moreBtn && _moreMenu) {
+      _moreBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        _moreMenu.classList.toggle('visible');
+      });
+      this._detailMoreDismiss = (e) => {
+        if (!e.target.closest('#sdh-more-menu') && e.target !== _moreBtn)
+          _moreMenu.classList.remove('visible');
+      };
+      document.addEventListener('click', this._detailMoreDismiss);
     }
 
     document.getElementById('btn-detail-delete').addEventListener('click', async () => {
