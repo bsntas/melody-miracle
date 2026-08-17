@@ -2363,8 +2363,8 @@ class App {
       <div class="session-home">
         <div class="session-section">
           <div class="open-sessions-header">Series</div>
-          <div class="session-create-section" id="session-series-section">${this._seriesRowsHTML(allSeries)}</div>
-          <button class="btn btn-ghost btn-sm session-new-series-btn" id="btn-session-new-series">+ New Series</button>
+          <div class="series-list" id="session-series-section">${this._seriesRowsHTML(allSeries)}</div>
+          <button class="series-new-card" id="btn-session-new-series">+ New Series</button>
         </div>
         <div class="open-sessions-section"${ownSessions.length ? '' : ' hidden'} id="my-sessions-section">
           <div class="open-sessions-header">My Sessions</div>
@@ -2383,18 +2383,36 @@ class App {
   }
 
   _seriesRowsHTML(allSeries) {
-    return allSeries.length === 0
-      ? `<div class="session-no-series">No series yet. Create one to get started.</div>`
-      : allSeries.map(s => `
-          <div class="session-series-create-row">
-            <button class="btn btn-ghost session-series-create-name" data-series-history="${escHtml(s)}">${escHtml(s)}</button>
-            <div class="session-series-create-actions">
-              <div class="series-row-secondary">
-                <button class="btn btn-sm btn-danger-ghost" data-delete-series="${escHtml(s)}">Delete</button>
-              </div>
-              <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
-            </div>
-          </div>`).join('');
+    if (allSeries.length === 0) {
+      return `<div class="series-empty-state">No series yet. Create one to get started.</div>`;
+    }
+    const counts = {};
+    for (const s of this.sessions.all()) {
+      if (s.series) counts[s.series] = (counts[s.series] || 0) + 1;
+    }
+    return allSeries.map(s => {
+      const n = counts[s] || 0;
+      const meta = n === 0 ? 'No sessions yet' : `${n} session${n !== 1 ? 's' : ''}`;
+      return `
+        <div class="series-card">
+          <div class="series-card-accent"></div>
+          <div class="series-card-content">
+            <button class="series-card-name" data-series-history="${escHtml(s)}">${escHtml(s)}</button>
+            <div class="series-card-meta">${escHtml(meta)}</div>
+          </div>
+          <div class="series-card-actions">
+            <button class="series-delete-btn" data-delete-series="${escHtml(s)}" aria-label="Delete ${escHtml(s)}">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                <path d="M10 11v6M14 11v6"/>
+                <path d="M9 6V4h6v2"/>
+              </svg>
+            </button>
+            <button class="btn btn-sm btn-primary" data-start-series="${escHtml(s)}">+ Live</button>
+          </div>
+        </div>`;
+    }).join('');
   }
 
   // Bind event handlers for the series rows inside `container` (an Element or document).
@@ -2406,43 +2424,20 @@ class App {
     container.querySelectorAll('[data-delete-series]').forEach(btn =>
       btn.addEventListener('click', () => this._confirmDeleteSeries(btn.dataset.deleteSeries))
     );
-
-    const hideAllSecondary = () =>
-      document.querySelectorAll('.series-row-secondary.visible')
-        .forEach(el => el.classList.remove('visible'));
-
-    // Tap series name → open its history. Long-press → reveal Delete.
+    // Tap series name → navigate to its history.
     container.querySelectorAll('[data-series-history]').forEach(nameBtn => {
       const series = nameBtn.dataset.seriesHistory;
-      const secondary = nameBtn.closest('.session-series-create-row').querySelector('.series-row-secondary');
-      let lpFired = false;
-
-      this._addLongPress(nameBtn, () => {
-        lpFired = true;
-        const wasVisible = secondary.classList.contains('visible');
-        hideAllSecondary();
-        if (!wasVisible) secondary.classList.add('visible');
-        setTimeout(() => { lpFired = false; }, 300);
-      });
-
       nameBtn.addEventListener('click', () => {
-        if (lpFired) { lpFired = false; return; }
-        hideAllSecondary();
         this._historyBackTo = '#session';
         this._setSeriesFilter(series);
         location.hash = '#history';
       });
     });
-
-    // Dismiss secondary rows when tapping outside a series row.
-    // Re-register each time (remove old first) so there's only ever one listener.
+    // Clean up any old secondary dismiss listener from before the redesign.
     if (this._seriesSecondaryDismiss) {
       document.removeEventListener('click', this._seriesSecondaryDismiss);
+      this._seriesSecondaryDismiss = null;
     }
-    this._seriesSecondaryDismiss = (e) => {
-      if (!e.target.closest('.session-series-create-row')) hideAllSecondary();
-    };
-    document.addEventListener('click', this._seriesSecondaryDismiss);
   }
 
   _bindSessionHome(draft) {
