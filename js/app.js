@@ -303,6 +303,8 @@ class App {
     if (view !== 'session') clearInterval(this._openSessionsInterval);
 
 
+    this._updateLiveRibbon();
+
     switch (view) {
       case 'dashboard':     this._renderDashboard(); break;
       case 'browse':        this._renderBrowse(); break;
@@ -599,7 +601,7 @@ class App {
     document.getElementById('btn-refresh')?.addEventListener('click', () => this._refreshData());
 
     // Dashboard
-    document.getElementById('btn-dash-goto-live')?.addEventListener('click', () => { location.hash = '#session'; });
+    document.getElementById('btn-goto-live')?.addEventListener('click', () => { location.hash = '#session'; });
 
     // Browse — debounce typing to avoid Levenshtein search on every keystroke;
     // 'search' covers the clear-X button which should respond immediately.
@@ -1264,6 +1266,23 @@ class App {
     this._savePatSettings();
   }
 
+  // ─── Live Ribbon (global, visible across all tabs) ───────────────────────
+
+  _updateLiveRibbon() {
+    const ribbon = document.getElementById('global-live-ribbon');
+    if (!ribbon) return;
+    const app = document.getElementById('app');
+    if (this.liveState) {
+      document.getElementById('global-live-text').textContent =
+        `Live: ${this.liveState.label || 'Bhajan Session'} · ${(this.liveState.bhajans || []).length} bhajans`;
+      ribbon.classList.remove('hidden');
+      app?.classList.add('live-ribbon-active');
+    } else {
+      ribbon.classList.add('hidden');
+      app?.classList.remove('live-ribbon-active');
+    }
+  }
+
   // ─── Dashboard ────────────────────────────────────────────────────────────
 
   _renderDashboard() {
@@ -1288,15 +1307,7 @@ class App {
     document.getElementById('stat-bhajans-card')?.addEventListener('click', () => { location.hash = '#sung'; }, { once: true });
     document.getElementById('stat-singers-card')?.addEventListener('click', () => { location.hash = '#singers'; }, { once: true });
 
-    // Live alert
-    const liveAlert = document.getElementById('dash-live-alert');
-    if (this.liveState) {
-      liveAlert.classList.remove('hidden');
-      document.getElementById('dash-live-text').textContent =
-        `Live: ${this.liveState.label || 'Bhajan Session'} · ${(this.liveState.bhajans || []).length} bhajans`;
-    } else {
-      liveAlert.classList.add('hidden');
-    }
+    this._updateLiveRibbon();
 
     // Period tabs — must bind before chart so fromDate is ready
     document.querySelectorAll('#dash-period-tabs .period-tab').forEach(btn => {
@@ -2983,6 +2994,7 @@ class App {
   }
 
   _onLiveStateChange() {
+    this._updateLiveRibbon();
     // If session view is active, re-render live portion
     if (document.getElementById('view-session').classList.contains('active')) {
       const el = document.getElementById('session-content');
@@ -3082,6 +3094,7 @@ class App {
     const _exitObserver = () => {
       this.live = null;
       this.liveState = null;
+      this._updateLiveRibbon();
       el.innerHTML = this._sessionHomeHTML(this.sessions.getDraft());
       this._bindSessionHome(this.sessions.getDraft());
     };
@@ -3094,6 +3107,7 @@ class App {
           return;
         }
         this.liveState = state;
+        this._updateLiveRibbon();
         if (document.getElementById('view-session').classList.contains('active')) {
           this._renderLiveSession(el);
         }
@@ -3464,6 +3478,7 @@ class App {
     this.live?.detach();
     this.live = null;
     this.liveState = null;
+    this._updateLiveRibbon();
 
     // Track so the session can be resumed or discarded later even after the
     // localStorage draft is overwritten by a new session.
