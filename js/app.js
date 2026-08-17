@@ -4187,7 +4187,7 @@ class App {
   // ─── Session Detail ───────────────────────────────────────────────────────
 
   _renderSessionDetail(id) {
-    if (id !== this._detailSessionId) this._detailEditMode = false;
+    if (id !== this._detailSessionId) { this._detailEditMode = false; this._detailEditSnapshot = null; }
     this._detailSessionId = id;
     const s = this.sessions.get(id);
     if (!s) {
@@ -4232,6 +4232,7 @@ class App {
         <div class="sdh-actions">
           ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
           ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
+          ${isEditMode ? `<button class="btn btn-outline btn-sm" id="btn-detail-cancel">✕ Cancel</button>` : ''}
           ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-detail-edit-toggle">${isEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
         </div>
       </div>
@@ -4302,6 +4303,11 @@ class App {
     // Edit mode toggle
     document.getElementById('btn-detail-edit-toggle')?.addEventListener('click', async () => {
       if (!this._detailEditMode && !await this._warnNoPat('Changes to this session')) return;
+      if (!this._detailEditMode) {
+        this._detailEditSnapshot = JSON.parse(JSON.stringify(this.sessions.get(id)));
+      } else {
+        this._detailEditSnapshot = null;
+      }
       this._detailEditMode = !this._detailEditMode;
       this._renderSessionDetail(id);
     });
@@ -4321,12 +4327,21 @@ class App {
         this._toast('Saving to GitHub…', 'success');
       });
 
+      document.getElementById('btn-detail-cancel')?.addEventListener('click', () => {
+        if (this._detailEditSnapshot) {
+          this.sessions.save(this._detailEditSnapshot, { local: true });
+          this._detailEditSnapshot = null;
+        }
+        this._detailEditMode = false;
+        this._renderSessionDetail(id);
+      });
+
       // Drag-to-reorder for session detail timeline
       {
         const dc = document.getElementById('session-detail-content');
         if (dc) {
           let dragSrc = null, dragOver = null;
-          const tlRows = () => [...dc.querySelectorAll('.timeline-item[data-entry-id]')];
+          const tlRows = () => [...dc.querySelectorAll('.session-bhajan-entry[data-entry-id]')];
           const clearCls = () => tlRows().forEach(r => r.classList.remove('dragging', 'drag-over-above', 'drag-over-below'));
 
           const onMove = (e) => {
@@ -4398,7 +4413,7 @@ class App {
           dc.addEventListener('pointerdown', e => {
             if (!e.target.closest('.drag-handle') || e.button > 0) return;
             e.preventDefault();
-            dragSrc = e.target.closest('.timeline-item');
+            dragSrc = e.target.closest('.session-bhajan-entry');
             if (!dragSrc) return;
             dragSrc.classList.add('dragging');
             document.addEventListener('pointermove', onMove, { passive: false });
