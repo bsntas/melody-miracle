@@ -90,6 +90,8 @@ const ICONS = {
   microphoneLg: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`,
   heartLg:      `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
   musicLg:      `<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  chevronLeft:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>`,
+  chevronRight: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>`,
 };
 
 // ─── App ──────────────────────────────────────────────────────────────────────
@@ -3949,7 +3951,9 @@ class App {
     const titleEl = document.querySelector('#view-history .page-title');
     if (titleEl) titleEl.textContent = this._selectedSeries ? `${this._selectedSeries} — History` : 'Session History';
     const backBtn = document.getElementById('btn-history-back');
-    if (backBtn) backBtn.textContent = this._historyBackTo === '#session' ? '← Sessions' : '← Dashboard';
+    if (backBtn) backBtn.innerHTML = this._historyBackTo === '#session'
+      ? `${ICONS.chevronLeft}Sessions`
+      : `${ICONS.chevronLeft}Dashboard`;
 
     const all = this.sessions.activeAll();
     const el  = document.getElementById('history-list');

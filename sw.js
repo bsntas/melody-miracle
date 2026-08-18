@@ -1,11 +1,11 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260818.1';
+const CACHE = 'melody-miracle-20260818.2';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260818.1'; // app.js (UI uniformity: SVG icon system, replace all emoji/symbol icons)
+const V_APP  = '20260818.2'; // app.js (uniform back nav: chevronLeft/Right icons, innerHTML for dynamic back labels)
 const V_GH   = '20260817.15'; // github-store.js (deleteSeries: skip commitToGitHub if no sessions removed; remove from _knownSeries; update series index)
-const V_CSS  = '20260818.1'; // style.css (UI uniformity: SVG icon alignment, token fixes, pitch-label class)
+const V_CSS  = '20260818.2'; // style.css (uniform back nav: .btn-back flex alignment)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
 const V_LIVE = '20260816.2'; // live.js (reconnect() method via goOffline/goOnline)
 const V_CORE = '20260807.3'; // store.js (unchanged)
