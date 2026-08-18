@@ -23,7 +23,7 @@ const FIREBASE_CONFIG = {
 const PROFILE_BASE  = 'melody-miracle/users';
 const CONFIG_BASE   = 'melody-miracle/config';
 const REQUESTS_BASE = 'melody-miracle/access_requests';
-const ADMIN_EMAIL   = 'basantanickal@gmail.com';
+const ADMIN_EMAIL   = 'basantanickal13@gmail.com';
 
 function _getApp() {
   return getApps().length ? getApps()[0] : initializeApp(FIREBASE_CONFIG);

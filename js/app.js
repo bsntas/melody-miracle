@@ -1,7 +1,7 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
 import { GitHubStore } from './github-store.js?v=20260817.15';
 import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
-import { AuthManager } from './auth.js?v=20260818.1';
+import { AuthManager } from './auth.js?v=20260818.2';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
 console.log('[MM] app.js v20260815.24 loaded');
