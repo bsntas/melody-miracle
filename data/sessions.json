@@ -10403,5 +10403,51 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
+  },
+  {
+    "bhajans": [
+      {
+        "addedAt": 1787031419471,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "aganita-guna-abharana-vibhushani",
+        "bhajan_title": "Aganita Guna Abharana Vibhushani",
+        "id": "e_msy8d83y0vuh",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1787031445136,
+        "bhajan_deity": "Sarva Dharma",
+        "bhajan_id": "allah-sai-bolo",
+        "bhajan_title": "Allah Sai Bolo",
+        "id": "e_msy8drwwtzbd",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Basanta"
+        ]
+      }
+    ],
+    "createdAt": "2026-08-18T05:36:53.552Z",
+    "currentBhajan": "e_msy8viilpnj2",
+    "date": "2026-08-18",
+    "id": "bijanbarisamitibhajans-2026-08-18",
+    "isBackdated": false,
+    "label": "Bijanbari Samiti Bhajans",
+    "phase": "playing",
+    "roomCode": "bijanbarisamitibhajans-2026-08-18",
+    "series": "Bijanbari Samiti Bhajans",
+    "startedAt": "2026-08-18T05:51:12.765Z",
+    "status": "completed",
+    "singers": [
+      "Basanta"
+    ],
+    "endedAt": "2026-08-18T05:51:22.936Z",
+    "duration": 10
   }
 ]
