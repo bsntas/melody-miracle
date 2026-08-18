@@ -1216,6 +1216,7 @@ class App {
     document.getElementById('btn-share-pat')?.addEventListener('click', () => this._sharePatToFirebase());
     document.getElementById('btn-request-access')?.addEventListener('click', () => this._requestGithubAccess());
     document.getElementById('btn-refresh-access')?.addEventListener('click', () => this._loadAccessManagement());
+    document.getElementById('btn-check-sync')?.addEventListener('click', () => this._recheckGithubAccess());
   }
 
   _openSettings() {
@@ -1418,6 +1419,33 @@ class App {
     });
   }
 
+  // Non-admin: manually re-check access state (handles both grant and revoke).
+  async _recheckGithubAccess() {
+    const btn = document.getElementById('btn-check-sync');
+    if (btn) { btn.disabled = true; btn.textContent = 'Checking…'; }
+    try {
+      const hasSharedPat = (this.sessions instanceof GitHubStore) && !GitHubStore.getPat();
+      if (hasSharedPat) {
+        // Currently connected — verify PAT is still readable (not revoked)
+        const pat = await this.auth.fetchGithubPat();
+        if (!pat) {
+          this.sessions = new SessionStore();
+          this._updateSyncIndicator('local');
+          this._toast('GitHub sync access has been revoked', 'warn');
+        }
+      } else {
+        // Not yet connected — try to connect now
+        await this._tryAutoConnectGitHub();
+        if (this.sessions instanceof GitHubStore) {
+          this._toast('GitHub sync access granted — you\'re now connected!', 'success');
+        }
+      }
+      this._refreshGithubSection();
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = '↺ Refresh sync status'; }
+    }
+  }
+
   // Admin: publish the locally-stored PAT to Firebase so whitelisted users can sync automatically.
   async _sharePatToFirebase() {
     const pat = GitHubStore.getPat();
@@ -1531,7 +1559,7 @@ class App {
     const banner     = document.getElementById('sync-status-banner');
 
     // Reset the sections added for shared-access
-    ['settings-shared-banner','settings-request-row','settings-admin-share-row','settings-access-mgmt']
+    ['settings-shared-banner','settings-check-sync-row','settings-request-row','settings-admin-share-row','settings-access-mgmt']
       .forEach(id => document.getElementById(id)?.classList.add('hidden'));
     // Restore elements that may have been hidden in a prior open
     patGroup?.classList.remove('hidden');
@@ -1558,6 +1586,7 @@ class App {
         banner.innerHTML = `${ICONS.check} ${last ? `Synced ${last.toLocaleTimeString()}` : 'Connected via shared access'}`;
         banner.classList.remove('hidden');
       }
+      document.getElementById('settings-check-sync-row')?.classList.remove('hidden');
       return;
     }
 
@@ -1569,9 +1598,10 @@ class App {
       return;
     }
 
-    // Signed in, not whitelisted, no local PAT → show request-access row
+    // Signed in, not whitelisted, no local PAT → show request-access row + refresh button
     if (!hasLocalPat) {
       document.getElementById('settings-request-row')?.classList.remove('hidden');
+      document.getElementById('settings-check-sync-row')?.classList.remove('hidden');
     }
   }
 
@@ -3199,6 +3229,7 @@ class App {
 
   async _openNewSession(series = null, backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
+    if (!await this._warnNoPat('This session')) return;
 
     // If a session is currently live, background it before starting a new one.
     if (this.liveState) {
@@ -3935,6 +3966,7 @@ class App {
   // ─── End / Discard Session ────────────────────────────────────────────────
 
   async _confirmEndSession() {
+    if (!await this._warnNoPat('This session')) return;
     const bhCount = (this.liveState?.bhajans || []).length;
     if (!await this._confirm(
       'End session?',
