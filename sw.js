@@ -5,7 +5,7 @@ const CACHE = 'melody-miracle-20260818.3';
 // Per-file version strings — must match exactly what index.html and app.js request.
 const V_APP  = '20260818.3'; // app.js (mangala aarati: view-only placeholder in play mode, not stored in session data)
 const V_GH   = '20260817.15'; // github-store.js (deleteSeries: skip commitToGitHub if no sessions removed; remove from _knownSeries; update series index)
-const V_CSS  = '20260818.3'; // style.css (aarti-placeholder styles for view-only mangala aarati)
+const V_CSS  = '20260818.2'; // style.css (uniform back nav: .btn-back flex alignment)
 const V_AUTH = '20260807.1'; // auth.js (unchanged)
 const V_LIVE = '20260816.2'; // live.js (reconnect() method via goOffline/goOnline)
 const V_CORE = '20260807.3'; // store.js (unchanged)
