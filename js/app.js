@@ -1,7 +1,7 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
 import { GitHubStore } from './github-store.js?v=20260817.15';
 import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
-import { AuthManager } from './auth.js?v=20260807.1';
+import { AuthManager } from './auth.js?v=20260818.2';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
 console.log('[MM] app.js v20260815.24 loaded');
@@ -553,8 +553,7 @@ class App {
 
   _confirmDeleteSeries(series) {
     const count = this.sessions.all().filter(s => s.series === series).length;
-    const hasPat = !!(typeof GitHubStore !== 'undefined' ? GitHubStore.getPat() : '') ||
-      !!(this.sessions.constructor?.name === 'GitHubStore' ? true : false);
+    const hasPat = this.sessions instanceof GitHubStore;
     const syncNote = this.sessions.deleteSeries && this.sessions.constructor?.name !== 'SessionStore'
       ? ' Synced data will be removed from GitHub.'
       : '';
@@ -1214,6 +1213,9 @@ class App {
     document.getElementById('btn-gh-info')?.addEventListener('click', () => {
       document.getElementById('settings-how')?.classList.toggle('hidden');
     });
+    document.getElementById('btn-share-pat')?.addEventListener('click', () => this._sharePatToFirebase());
+    document.getElementById('btn-request-access')?.addEventListener('click', () => this._requestGithubAccess());
+    document.getElementById('btn-refresh-access')?.addEventListener('click', () => this._loadAccessManagement());
   }
 
   _openSettings() {
@@ -1269,6 +1271,7 @@ class App {
     document.getElementById('alias-to-list').innerHTML = datalistOpts(canonSingers);
 
     document.getElementById('settings-how')?.classList.add('hidden');
+    this._refreshGithubSection();
     this._openModal('modal-settings');
   }
 
@@ -1379,6 +1382,184 @@ class App {
     this._updateSyncIndicator('local');
     this._closeModal('modal-settings');
     this._toast('Disconnected from GitHub');
+  }
+
+  // Auto-connect to GitHub using a PAT fetched from Firebase (for whitelisted users).
+  async _tryAutoConnectGitHub() {
+    if (this.sessions instanceof GitHubStore) return;
+    if (!this.auth?.currentUser) return;
+    try {
+      const pat = await this.auth.fetchGithubPat();
+      if (!pat) return;
+      const ghStore = new GitHubStore(pat);
+      ghStore.onSyncChange = (status, msg) => this._onSyncChange(status, msg);
+      const localSessions = new SessionStore().all();
+      this.sessions = ghStore;
+      this._updateSyncIndicator('syncing');
+      try { await this.sessions.load(); } catch (e) { console.warn('Firebase PAT GitHub sync failed:', e); }
+      for (const s of localSessions) {
+        if (!this.sessions.get(s.id)) this.sessions.save(s);
+      }
+    } catch (_e) {
+      // User is not whitelisted or Firebase is unreachable — silently continue without sync
+    }
+  }
+
+  // Admin: publish the locally-stored PAT to Firebase so whitelisted users can sync automatically.
+  async _sharePatToFirebase() {
+    const pat = GitHubStore.getPat();
+    if (!pat) { this._toast('Save a token first', 'warn'); return; }
+    const btn = document.getElementById('btn-share-pat');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sharing…'; }
+    try {
+      await this.auth.setRemotePat(pat);
+      this._toast('Token shared — whitelisted users will sync automatically', 'success');
+    } catch (e) {
+      this._toast('Failed to share token — check Firebase rules', 'error');
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = 'Share this token with allowed users'; }
+    }
+  }
+
+  // Non-admin user: submit a request for GitHub sync access to the admin.
+  async _requestGithubAccess() {
+    const btn = document.getElementById('btn-request-access');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    try {
+      await this.auth.submitAccessRequest();
+      this._toast('Access request sent — admin will grant access soon', 'success');
+      if (btn) { btn.textContent = 'Request sent ✓'; }
+    } catch (e) {
+      this._toast('Failed to send request', 'error');
+      if (btn) { btn.disabled = false; btn.textContent = 'Request GitHub sync access'; }
+    }
+  }
+
+  // Admin: load and render the access management section in Settings.
+  async _loadAccessManagement() {
+    if (!this.auth?.isAdmin?.()) return;
+    const requestsSection = document.getElementById('settings-access-requests');
+    const requestsList    = document.getElementById('settings-access-requests-list');
+    const grantedList     = document.getElementById('settings-access-granted-list');
+    if (requestsList) requestsList.innerHTML = '<p class="text-small text-muted">Loading…</p>';
+    if (grantedList)  grantedList.innerHTML  = '<p class="text-small text-muted">Loading…</p>';
+    try {
+      const [requests, allowed] = await Promise.all([
+        this.auth.getAccessRequests(),
+        this.auth.getAllowedUids(),
+      ]);
+
+      // Pending requests
+      if (requests.length) {
+        requestsSection?.classList.remove('hidden');
+        requestsList.innerHTML = requests.map(r => `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:.83rem;color:var(--text-1)">${escHtml(r.email)}</span>
+            <button class="btn btn-primary btn-sm btn-grant" data-uid="${escHtml(r.uid)}" data-email="${escHtml(r.email)}">Grant</button>
+          </div>`).join('');
+        requestsList.querySelectorAll('.btn-grant').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            btn.disabled = true; btn.textContent = 'Granting…';
+            try {
+              await this.auth.grantAccess(btn.dataset.uid, btn.dataset.email);
+              this._toast(`Access granted to ${btn.dataset.email}`, 'success');
+              this._loadAccessManagement();
+            } catch {
+              this._toast('Failed to grant access', 'error');
+              btn.disabled = false; btn.textContent = 'Grant';
+            }
+          });
+        });
+      } else {
+        requestsSection?.classList.add('hidden');
+      }
+
+      // Allowed users
+      if (allowed.length) {
+        grantedList.innerHTML = allowed.map(u => `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:.83rem;color:var(--text-1)">${escHtml(u.email)}</span>
+            <button class="btn btn-ghost btn-sm btn-revoke" data-uid="${escHtml(u.uid)}" data-email="${escHtml(u.email)}" style="color:var(--text-3)">Revoke</button>
+          </div>`).join('');
+        grantedList.querySelectorAll('.btn-revoke').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            if (!await this._confirm(`Remove access for ${btn.dataset.email}?`, 'They will no longer sync automatically.', 'Remove')) return;
+            btn.disabled = true;
+            try {
+              await this.auth.revokeAccess(btn.dataset.uid);
+              this._toast(`Access revoked for ${btn.dataset.email}`);
+              this._loadAccessManagement();
+            } catch {
+              this._toast('Failed to revoke access', 'error');
+              btn.disabled = false;
+            }
+          });
+        });
+      } else {
+        grantedList.innerHTML = '<p class="text-small text-muted">No users granted access yet.</p>';
+      }
+    } catch {
+      if (requestsList) requestsList.innerHTML = '<p class="text-small text-muted">Failed to load.</p>';
+      if (grantedList)  grantedList.innerHTML  = '<p class="text-small text-muted">Failed to load.</p>';
+    }
+  }
+
+  // Update the GitHub sync section of the Settings modal based on auth state and access level.
+  _refreshGithubSection() {
+    const user        = this.auth?.currentUser;
+    const isAdmin     = this.auth?.isAdmin?.();
+    const hasLocalPat = !!GitHubStore.getPat();
+    const hasSharedPat = (this.sessions instanceof GitHubStore) && !hasLocalPat;
+
+    const patGroup   = document.getElementById('settings-pat-group');
+    const ghInfoBtn  = document.getElementById('btn-gh-info');
+    const howSection = document.getElementById('settings-how');
+    const clearRow   = document.getElementById('settings-clear-row');
+    const banner     = document.getElementById('sync-status-banner');
+
+    // Reset the sections added for shared-access
+    ['settings-shared-banner','settings-request-row','settings-admin-share-row','settings-access-mgmt']
+      .forEach(id => document.getElementById(id)?.classList.add('hidden'));
+    // Restore elements that may have been hidden in a prior open
+    patGroup?.classList.remove('hidden');
+    ghInfoBtn?.classList.remove('hidden');
+    clearRow?.classList.remove('hidden');
+
+    if (!user) return; // Not signed in — show default PAT entry flow
+
+    if (hasSharedPat && !isAdmin) {
+      // Whitelisted non-admin: hide PAT entry, show a status banner
+      patGroup?.classList.add('hidden');
+      ghInfoBtn?.classList.add('hidden');
+      howSection?.classList.add('hidden');
+      clearRow?.classList.add('hidden');
+      const sharedBanner = document.getElementById('settings-shared-banner');
+      if (sharedBanner) {
+        sharedBanner.className = 'sync-banner sync-banner-ok';
+        sharedBanner.innerHTML = `${ICONS.check} GitHub sync enabled via shared access`;
+        sharedBanner.classList.remove('hidden');
+      }
+      if (banner) {
+        const last = GitHubStore.lastSynced();
+        banner.className = 'sync-banner sync-banner-ok';
+        banner.innerHTML = `${ICONS.check} ${last ? `Synced ${last.toLocaleTimeString()}` : 'Connected via shared access'}`;
+        banner.classList.remove('hidden');
+      }
+      return;
+    }
+
+    if (isAdmin) {
+      // Admin: keep the normal PAT section, add share button and access management
+      if (hasLocalPat) document.getElementById('settings-admin-share-row')?.classList.remove('hidden');
+      document.getElementById('settings-access-mgmt')?.classList.remove('hidden');
+      this._loadAccessManagement();
+      return;
+    }
+
+    // Signed in, not whitelisted, no local PAT → show request-access row
+    if (!hasLocalPat) {
+      document.getElementById('settings-request-row')?.classList.remove('hidden');
+    }
   }
 
   async _migrateLocalToGitHub() {
@@ -4234,7 +4415,7 @@ class App {
     }
 
     const canEdit   = s.status === 'completed' || s.isBackdated;
-    const hasPat    = !!GitHubStore.getPat();
+    const hasPat    = this.sessions instanceof GitHubStore;
     const isEditMode = canEdit && this._detailEditMode;
 
     const _bCount = (s.bhajans || []).length;
@@ -4828,7 +5009,7 @@ class App {
   // Resolves when dismissed so callers can `await` it before opening a form modal.
   // Returns true if the action should proceed, false if the user chose to set up sync instead.
   _warnNoPat(actionLabel = 'This change') {
-    if (GitHubStore.getPat()) return Promise.resolve(true);
+    if (this.sessions instanceof GitHubStore) return Promise.resolve(true);
     return new Promise(resolve => {
       const modal = document.getElementById('modal-no-pat-warn');
       document.getElementById('mnopat-message').textContent =
@@ -5040,12 +5221,19 @@ class App {
       } catch (e) {
         console.warn('Favourites load failed:', e);
       }
+      // Auto-connect via Firebase-hosted PAT if the user is whitelisted
+      await this._tryAutoConnectGitHub();
       this._route(); // re-render to apply personalization (greeting, browse filter, etc.)
     } else {
       this._userProfile = null;
       this._renderAuthButton(user);
       this.favourites.unload();
       this._syncFavUI();
+      // If the session was using a Firebase-sourced PAT (no local PAT), revert to local store
+      if (this.sessions instanceof GitHubStore && !GitHubStore.getPat()) {
+        this.sessions = new SessionStore();
+        this._updateSyncIndicator('local');
+      }
       this._route();
     }
   }
