@@ -592,6 +592,12 @@
         <!-- Shared-access banner: shown for whitelisted users who have no local PAT -->
         <div id="settings-shared-banner" class="hidden" style="margin-top:.75rem"></div>
 
+        <!-- Refresh button: shown for non-admin signed-in users (waiting or connected) -->
+        <div id="settings-check-sync-row" class="hidden" style="margin-top:.35rem;text-align:right">
+          <button class="btn btn-ghost btn-sm" id="btn-check-sync"
+            style="color:var(--text-2);font-size:.78rem">↺ Refresh sync status</button>
+        </div>
+
         <!-- Request-access row: shown for signed-in users who are not yet whitelisted -->
         <div id="settings-request-row" class="hidden" style="margin-top:.75rem">
           <p class="text-small text-muted" style="margin-bottom:.4rem">
@@ -951,7 +957,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260818.7"></script>
+  <script type="module" src="js/app.js?v=20260818.8"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

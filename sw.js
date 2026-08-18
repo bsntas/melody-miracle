@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260818.7';
+const CACHE = 'melody-miracle-20260818.8';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260818.7'; // app.js (real-time listener: auto-connect when admin grants access)
+const V_APP  = '20260818.8'; // app.js (refresh sync status button for non-admin users)
 const V_GH   = '20260817.15'; // github-store.js (deleteSeries: skip commitToGitHub if no sessions removed; remove from _knownSeries; update series index)
 const V_CSS  = '20260818.2'; // style.css (uniform back nav: .btn-back flex alignment)
 const V_AUTH = '20260818.3'; // auth.js (add watchAccessGrant via onValue listener)
