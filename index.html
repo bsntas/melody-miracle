@@ -562,7 +562,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top:1rem">
+        <div class="form-group" id="settings-pat-group" style="margin-top:1rem">
           <label class="form-label">Personal Access Token</label>
           <input type="password" id="settings-pat" class="form-input"
             placeholder="github_pat_…" autocomplete="off" spellcheck="false">
@@ -587,6 +587,47 @@
         <div id="settings-clear-row" style="margin-top:1rem">
           <button class="btn btn-ghost btn-sm" id="btn-clear-pat"
             style="color:var(--text-3);font-size:.78rem">Remove token and use local storage only</button>
+        </div>
+
+        <!-- Shared-access banner: shown for whitelisted users who have no local PAT -->
+        <div id="settings-shared-banner" class="hidden" style="margin-top:.75rem"></div>
+
+        <!-- Request-access row: shown for signed-in users who are not yet whitelisted -->
+        <div id="settings-request-row" class="hidden" style="margin-top:.75rem">
+          <p class="text-small text-muted" style="margin-bottom:.4rem">
+            GitHub sync is managed by the admin. Request access to enable automatic sync.
+          </p>
+          <button class="btn btn-outline btn-sm btn-block" id="btn-request-access">
+            Request GitHub sync access
+          </button>
+        </div>
+
+        <!-- Admin: share the local PAT to Firebase so whitelisted users can use it -->
+        <div id="settings-admin-share-row" class="hidden" style="margin-top:.4rem">
+          <button class="btn btn-ghost btn-sm" id="btn-share-pat"
+            style="color:var(--primary);font-size:.78rem">
+            Share this token with allowed users
+          </button>
+        </div>
+
+        <!-- Admin: access management (pending requests + granted users) -->
+        <div id="settings-access-mgmt" class="hidden">
+          <div class="divider" style="margin-top:1.25rem"></div>
+          <div class="settings-section-title" style="margin-bottom:.5rem">
+            Access Management
+            <button class="btn btn-ghost btn-icon" id="btn-refresh-access" title="Refresh list"
+              style="vertical-align:middle;margin-left:.3rem;padding:0 .3rem;font-size:1rem">⟳</button>
+          </div>
+          <div id="settings-access-requests" class="hidden" style="margin-bottom:.75rem">
+            <p class="text-small" style="margin-bottom:.3rem;font-weight:600">Pending Requests</p>
+            <div id="settings-access-requests-list"></div>
+          </div>
+          <div id="settings-access-granted">
+            <p class="text-small" style="margin-bottom:.3rem;font-weight:600">Allowed Users</p>
+            <div id="settings-access-granted-list">
+              <p class="text-small text-muted">Loading…</p>
+            </div>
+          </div>
         </div>
 
         <div class="divider" style="margin-top:1.25rem"></div>
@@ -910,7 +951,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260818.3"></script>
+  <script type="module" src="js/app.js?v=20260818.4"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

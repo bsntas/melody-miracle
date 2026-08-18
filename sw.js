@@ -1,12 +1,12 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260818.3';
+const CACHE = 'melody-miracle-20260818.4';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260818.3'; // app.js (mangala aarati: view-only placeholder in play mode, not stored in session data)
+const V_APP  = '20260818.4'; // app.js (GitHub token email whitelist: auto-connect via Firebase PAT, access management in settings)
 const V_GH   = '20260817.15'; // github-store.js (deleteSeries: skip commitToGitHub if no sessions removed; remove from _knownSeries; update series index)
 const V_CSS  = '20260818.2'; // style.css (uniform back nav: .btn-back flex alignment)
-const V_AUTH = '20260807.1'; // auth.js (unchanged)
+const V_AUTH = '20260818.1'; // auth.js (fetchGithubPat, setRemotePat, grantAccess, revokeAccess, submitAccessRequest, isAdmin)
 const V_LIVE = '20260816.2'; // live.js (reconnect() method via goOffline/goOnline)
 const V_CORE = '20260807.3'; // store.js (unchanged)
 const V_FAV  = '20260806.2'; // favourites.js (unchanged)

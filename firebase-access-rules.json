@@ -1,0 +1,34 @@
+{
+  "_comment": "Merge these rules into your existing Firebase Realtime Database Security Rules.",
+  "_instructions": [
+    "1. Open Firebase Console → Realtime Database → Rules",
+    "2. Inside the 'melody-miracle' object in your existing rules, add the 'config' and 'access_requests' blocks below.",
+    "3. Publish the rules.",
+    "4. In the Firebase console, manually set 'melody-miracle/config/github_pat' to your GitHub PAT string.",
+    "   (or use the 'Share this token with allowed users' button in the app after setting up your local PAT).",
+    "5. Users will appear in 'melody-miracle/access_requests/<uid>' when they click 'Request access' in Settings.",
+    "   Use the Access Management section in Settings to grant them access."
+  ],
+  "rules": {
+    "melody-miracle": {
+      "config": {
+        "github_pat": {
+          ".read":  "auth != null && (auth.token.email == 'basantanickal@gmail.com' || root.child('melody-miracle/config/allowed_uids/' + auth.uid).exists())",
+          ".write": "auth != null && auth.token.email == 'basantanickal@gmail.com'"
+        },
+        "allowed_uids": {
+          ".read":  "auth != null && auth.token.email == 'basantanickal@gmail.com'",
+          "$uid": {
+            ".write": "auth != null && auth.token.email == 'basantanickal@gmail.com'"
+          }
+        }
+      },
+      "access_requests": {
+        "$uid": {
+          ".read":  "auth != null && (auth.uid == $uid || auth.token.email == 'basantanickal@gmail.com')",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+      }
+    }
+  }
+}
