@@ -1071,8 +1071,7 @@ img { max-width: 100%; }
 .ganesh-placeholder { opacity: 0.55; }
 .ganesh-placeholder .entry-num { background: transparent; border: 1.5px dashed var(--text-3); }
 .ganesh-placeholder-label { font-style: italic; color: var(--text-3); font-size: 0.85rem; }
-.aarti-placeholder { opacity: 0.5; pointer-events: none; }
-.aarti-placeholder .entry-num { background: transparent; border: 1.5px dashed var(--text-3); }
+
 
 /* Observer mode */
 .observer-meta {
