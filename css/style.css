@@ -277,7 +277,7 @@ img { max-width: 100%; }
 .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
 .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
 .btn-block { width: 100%; }
-.btn-back { padding: 0.4rem 0; margin-bottom: 1rem; font-size: 0.9rem; }
+.btn-back { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.4rem 0; margin-bottom: 1rem; font-size: 0.9rem; }
 .btn:disabled { opacity: .5; pointer-events: none; }
 
 /* ─── Stats ──────────────────────────────────────────────────────────────── */
