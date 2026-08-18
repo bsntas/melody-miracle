@@ -61,6 +61,37 @@ function splitPitchCombined(combined) {
   return { pitch_indian: parts[0]?.trim() || null, pitch_western: parts[1]?.trim() || null };
 }
 
+// ─── SVG Icon Library ─────────────────────────────────────────────────────────
+const ICONS = {
+  person:       `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>`,
+  persons:      `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 20c0-3.3-2-5.6-4.5-6"/></svg>`,
+  music:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  heart:        `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  heartFilled:  `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  heartSm:      `<svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  star:         `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  x:            `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`,
+  xSm:          `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>`,
+  check:        `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`,
+  pencil:       `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
+  trash:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`,
+  warning:      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  xCircle:      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>`,
+  info:         `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+  bulb:         `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>`,
+  eye:          `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  editSm:       `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>`,
+  refresh:      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>`,
+  moon:         `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`,
+  sun:          `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+  clock:        `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  calendarLg:   `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  searchLg:     `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>`,
+  microphoneLg: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`,
+  heartLg:      `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  musicLg:      `<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+};
+
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 class App {
@@ -593,10 +624,10 @@ class App {
       const btn = document.getElementById('btn-theme');
       if (theme === 'dark') {
         root.dataset.theme = 'dark';
-        if (btn) { btn.textContent = '☀️ Light mode'; btn.title = 'Switch to light mode'; }
+        if (btn) { btn.innerHTML = `${ICONS.sun} Light mode`; btn.title = 'Switch to light mode'; }
       } else {
         root.dataset.theme = 'light';
-        if (btn) { btn.textContent = '🌙 Dark mode'; btn.title = 'Switch to dark mode'; }
+        if (btn) { btn.innerHTML = `${ICONS.moon} Dark mode`; btn.title = 'Switch to dark mode'; }
       }
     };
     const saved = localStorage.getItem('mm-theme');
@@ -1188,7 +1219,7 @@ class App {
     const isDark = document.documentElement.dataset.theme === 'dark';
     const themeBtn = document.getElementById('btn-theme');
     if (themeBtn) {
-      themeBtn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+      themeBtn.innerHTML = isDark ? `${ICONS.sun} Light mode` : `${ICONS.moon} Dark mode`;
       themeBtn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     }
 
@@ -1204,11 +1235,11 @@ class App {
       const last = GitHubStore.lastSynced();
       const msg = last ? `Connected · Last synced ${last.toLocaleString()}` : 'Connected to GitHub';
       banner.className = 'sync-banner sync-banner-ok';
-      banner.textContent = `✓ ${msg}`;
+      banner.innerHTML = `${ICONS.check} ${msg}`;
       banner.classList.remove('hidden');
     } else {
       banner.className = 'sync-banner sync-banner-info';
-      banner.textContent = 'ℹ Session history is saved locally only on this device';
+      banner.innerHTML = `${ICONS.info} Session history is saved locally only on this device`;
       banner.classList.remove('hidden');
     }
 
@@ -1285,13 +1316,13 @@ class App {
       await GitHubStore.testPat(rawVal);
     } catch (err) {
       statusEl.className = 'pat-status pat-error';
-      statusEl.textContent = `✗ ${err.message}`;
+      statusEl.innerHTML = `${ICONS.xCircle} ${err.message}`;
       document.getElementById('btn-settings-save').disabled = false;
       return;
     }
 
     statusEl.className = 'pat-status pat-ok';
-    statusEl.textContent = '✓ Token valid!';
+    statusEl.innerHTML = `${ICONS.check} Token valid!`;
 
     // Save PAT and switch to GitHub store
     GitHubStore.setPat(rawVal);
@@ -1385,7 +1416,7 @@ class App {
     // Date / greeting
     const now = new Date();
     const singerName = this._userProfile?.singerName;
-    const greeting = singerName ? `Sairam, ${singerName} 🙏` : 'Sairam 🙏';
+    const greeting = singerName ? `Sairam, ${singerName}` : 'Sairam';
     document.getElementById('dash-greeting').textContent = greeting;
     document.getElementById('dash-date').textContent = now.toLocaleDateString('en-IN', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
@@ -1478,7 +1509,7 @@ class App {
     const recent = this.sessions.activeAll().slice(0, 4);
     document.getElementById('dash-recent-sessions').innerHTML = recent.length
       ? recent.map(s => this._sessionCardHTML(s)).join('')
-      : `<div class="empty-state"><div class="empty-icon">📅</div><p>No sessions recorded yet. Start one!</p></div>`;
+      : `<div class="empty-state"><div class="empty-icon">${ICONS.calendarLg}</div><p>No sessions recorded yet. Start one!</p></div>`;
 
     // Click on session cards (singer links inside handle their own navigation)
     document.querySelectorAll('#dash-recent-sessions .session-card').forEach(el => {
@@ -1512,9 +1543,9 @@ class App {
         ${badge}
       </div>
       <div class="session-card-meta">
-        ${singerLinks ? `<span class="session-meta-item session-meta-singers">👥 ${singerLinks}${singerExtra}</span>` : ''}
-        <span class="session-meta-item">🎵 ${bCount} bhajan${bCount !== 1 ? 's' : ''}</span>
-        ${s.duration ? `<span class="session-meta-item">⏱ ${this._formatDuration(s.duration)}</span>` : ''}
+        ${singerLinks ? `<span class="session-meta-item session-meta-singers">${ICONS.persons} ${singerLinks}${singerExtra}</span>` : ''}
+        <span class="session-meta-item">${ICONS.music} ${bCount} bhajan${bCount !== 1 ? 's' : ''}</span>
+        ${s.duration ? `<span class="session-meta-item">${ICONS.clock} ${this._formatDuration(s.duration)}</span>` : ''}
       </div>
     </div>`;
   }
@@ -1695,8 +1726,8 @@ class App {
     if (sungEl) {
       const prev = sungEl.value;
       sungEl.innerHTML = `<option value="">All Bhajans</option>
-        ${this.auth?.currentUser ? '<option value="favourites">★ My Favourites</option>' : ''}
-        ${mySingerName ? `<option value="${escHtml(mySingerName)}">★ Sung by me</option>` : ''}
+        ${this.auth?.currentUser ? '<option value="favourites">⭐ My Favourites</option>' : ''}
+        ${mySingerName ? `<option value="${escHtml(mySingerName)}">⭐ Sung by me</option>` : ''}
         <option value="sung">Sung Bhajans</option>
         ${singers.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('')}`;
       if (this._pendingBrowseFilter) {
@@ -1723,7 +1754,7 @@ class App {
       if (this.auth?.currentUser) {
         const btn = document.createElement('button');
         btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
-        btn.id = 'fmodal-toggle-favs'; btn.textContent = '★ My Favourites';
+        btn.id = 'fmodal-toggle-favs'; btn.innerHTML = `${ICONS.star} My Favourites`;
         btn.addEventListener('click', () => {
           const sEl = document.getElementById('filter-sung');
           if (!sEl) return;
@@ -1738,7 +1769,7 @@ class App {
       if (mySingerName) {
         const btn = document.createElement('button');
         btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
-        btn.id = 'fmodal-toggle-sung'; btn.textContent = '★ Sung by Me';
+        btn.id = 'fmodal-toggle-sung'; btn.innerHTML = `${ICONS.star} Sung by Me`;
         btn.addEventListener('click', () => {
           const sEl = document.getElementById('filter-sung');
           if (!sEl) return;
@@ -1753,7 +1784,7 @@ class App {
       {
         const btn = document.createElement('button');
         btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
-        btn.id = 'fmodal-toggle-allsung'; btn.textContent = '★ All Sung';
+        btn.id = 'fmodal-toggle-allsung'; btn.innerHTML = `${ICONS.star} All Sung`;
         btn.addEventListener('click', () => {
           const sEl = document.getElementById('filter-sung');
           if (!sEl) return;
@@ -1786,7 +1817,7 @@ class App {
       document.getElementById('browse-count-badge').textContent = '0';
       document.getElementById('browse-list').innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">♡</div>
+          <div class="empty-icon">${ICONS.heartLg}</div>
           <p>Sign in to see your favourites</p>
           <button class="btn btn-primary btn-sm" id="browse-signin-btn">Sign in with Google</button>
         </div>`;
@@ -1855,8 +1886,8 @@ class App {
     const wrap = strip.closest('.filter-bar-wrap');
     const mySingerName = this._userProfile?.singerName;
     const labels = [];
-    if (sung === 'favourites') labels.push('★ My Favourites');
-    else if (mySingerName && sung === mySingerName) labels.push('★ Sung by Me');
+    if (sung === 'favourites') labels.push('⭐ My Favourites');
+    else if (mySingerName && sung === mySingerName) labels.push('⭐ Sung by Me');
     else if (sung === 'sung') labels.push('All Sung Bhajans');
     else if (sung) labels.push(sung);
     if (deity) labels.push(deity);
@@ -1867,7 +1898,7 @@ class App {
     if (labels.length === 0) return;
     const clearChip = document.createElement('button');
     clearChip.className = 'filter-clear-chip';
-    clearChip.textContent = '✕';
+    clearChip.innerHTML = ICONS.xSm;
     clearChip.setAttribute('aria-label', 'Clear all filters');
     clearChip.addEventListener('click', e => { e.stopPropagation(); this._clearBrowseFilters(); });
     strip.append(clearChip);
@@ -1974,7 +2005,7 @@ class App {
   _renderBrowseList(bhajans) {
     const el = document.getElementById('browse-list');
     if (!bhajans.length) {
-      el.innerHTML = `<div class="empty-state"><div class="empty-icon">🔍</div><p>No bhajans match your search</p></div>`;
+      el.innerHTML = `<div class="empty-state"><div class="empty-icon">${ICONS.searchLg}</div><p>No bhajans match your search</p></div>`;
       return;
     }
     el.innerHTML = bhajans.map(b => this._bhajanItemHTML(b)).join('');
@@ -1997,12 +2028,12 @@ class App {
       : '';
     return `<div class="bhajan-item" data-id="${b.id}">
       <div class="bhajan-item-header">
-        <div class="bhajan-item-title">${escHtml(b.title)}${isFav ? '<span class="bhajan-fav-mark">♥</span>' : ''}</div>
+        <div class="bhajan-item-title">${escHtml(b.title)}${isFav ? `<span class="bhajan-fav-mark">${ICONS.heartSm}</span>` : ''}</div>
         ${deityPill}
       </div>
       <div class="bhajan-item-pitches">
-        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}">♂ ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
-        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}">♀ ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
+        ${b.gents_pitch ? `<span class="pitch-badge pitch-gents" title="Gents pitch: ${escHtml(b.gents_pitch_indian||'')} / ${escHtml(b.gents_pitch_western||'')}"><span class="pitch-label">G</span> ${escHtml(b.gents_pitch_indian || b.gents_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.gents_pitch_western || b.gents_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
+        ${b.ladies_pitch ? `<span class="pitch-badge pitch-ladies" title="Ladies pitch: ${escHtml(b.ladies_pitch_indian||'')} / ${escHtml(b.ladies_pitch_western||'')}"><span class="pitch-label">L</span> ${escHtml(b.ladies_pitch_indian || b.ladies_pitch.split('/')[0].trim())}<span class="pitch-western"> ${escHtml(b.ladies_pitch_western || b.ladies_pitch.split('/')[1]?.trim() || '')}</span>${b.scale ? `<span class="pitch-scale"> ${escHtml(b.scale)}</span>` : ''}</span>` : ''}
       </div>
       <div class="bhajan-item-tags">
         ${b.tempo ? `<span class="bhajan-tag ${tempoClass}">${escHtml(b.tempo)}</span>` : ''}
@@ -2165,7 +2196,7 @@ class App {
     document.getElementById('sung-count-badge').textContent = sorted.length;
     const el = document.getElementById('sung-list');
     if (!sorted.length) {
-      el.innerHTML = `<div class="empty-state"><div class="empty-icon">🎵</div><p>No bhajans sung yet. Start a session!</p></div>`;
+      el.innerHTML = `<div class="empty-state"><div class="empty-icon">${ICONS.musicLg}</div><p>No bhajans sung yet. Start a session!</p></div>`;
       return;
     }
     el.innerHTML = sorted.map(b => this._bhajanItemHTML(b)).join('');
@@ -2231,7 +2262,7 @@ class App {
       </div>
       ${b.audio_url ? `
         <div class="audio-player">
-          <span class="text-small text-muted">🎵 Listen:</span>
+          <span class="text-small text-muted">Listen:</span>
           <audio controls preload="none" src="${escHtml(b.audio_url)}"></audio>
         </div>` : ''}
       ${b.lyrics ? `
@@ -2248,7 +2279,7 @@ class App {
             return `<div class="bhajan-history-item">
               <span class="bh-date">${escHtml(formatDate(h.date))}${h.sessionLabel ? ` — ${escHtml(h.sessionLabel)}` : ''}</span>
               <div class="bh-details">
-                ${h.singer ? `<span class="bh-singer">👤 ${escHtml(h.singer)}</span>` : ''}
+                ${h.singer ? `<span class="bh-singer">${ICONS.person} ${escHtml(h.singer)}</span>` : ''}
                 ${pitch    ? `<span class="bh-pitch">${escHtml(pitch)}</span>` : ''}
               </div>
             </div>`;
@@ -2668,9 +2699,9 @@ class App {
 
     el.innerHTML = `
       <div class="live-session-view">
-        <button class="session-offline-banner" aria-live="polite" title="Tap to retry connection">↻ Reconnecting… · Tap to retry</button>
+        <button class="session-offline-banner" aria-live="polite" title="Tap to retry connection">${ICONS.refresh} Reconnecting… · Tap to retry</button>
         ${!isHost ? `<div class="observer-meta">
-          <span class="observer-meta-role">${isPlaying ? '👁 Observer' : '✏️ Co-editor'}</span>
+          <span class="observer-meta-role">${isPlaying ? `${ICONS.eye} Observer` : `${ICONS.editSm} Co-editor`}</span>
           <button class="btn btn-sm btn-outline" id="btn-claim-host">Claim host</button>
         </div>` : ''}
 
@@ -2720,13 +2751,13 @@ class App {
 
         <div class="section-header section-header-flush">
           <h3 class="section-title">${isPlaying ? 'Sequence' : 'Bhajans'} (${displayBhajans.length})</h3>
-          ${!isPlaying ? `<button class="btn btn-ghost btn-sm" id="btn-live-edit-toggle">${this._liveEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
+          ${!isPlaying ? `<button class="btn btn-ghost btn-sm btn-icon-text" id="btn-live-edit-toggle">${this._liveEditMode ? `${ICONS.check} Done` : `${ICONS.pencil} Edit`}</button>` : ''}
         </div>
         <div class="session-bhajans-list" id="live-bhajans-list">
           ${this._sessionBhajansHTML(displayBhajans, isHost, phase, this._liveEditMode)}
         </div>
 
-        ${!isHost ? '<div class="session-offline-note">🔄 Live updates as bhajans are added</div>' : ''}
+        ${!isHost ? '<div class="session-offline-note">Live updates as bhajans are added</div>' : ''}
         ${isPlaying && isHost ? (() => {
           const bh = st.bhajans || [];
           const ci = bh.findIndex(e => e.id === st.currentBhajan);
@@ -2856,9 +2887,9 @@ class App {
     return `<div class="now-singing-info">
       <div class="now-singing-bhajan-title">${escHtml(entry.bhajan_title)}</div>
       <div class="now-singing-bhajan-meta">
-        ${(entry.singers?.join(' · ') || entry.singer) ? `👤 ${escHtml(entry.singers?.join(' · ') || entry.singer)}` : ''}
+        ${(entry.singers?.join(' · ') || entry.singer) ? `${ICONS.person} ${escHtml(entry.singers?.join(' · ') || entry.singer)}` : ''}
         ${(entry.singers?.length || entry.singer) && pitchDisplay ? ' · ' : ''}
-        ${pitchDisplay ? `🎵 ${escHtml(pitchDisplay)}` : ''}
+        ${pitchDisplay ? escHtml(pitchDisplay) : ''}
       </div>
       ${lyrics ? `<div class="now-singing-lyrics">${escHtml(lyrics)}</div>` : ''}
     </div>`;
@@ -2919,7 +2950,7 @@ class App {
             </div>
           </div>
           ${(e.singers?.length || e.singer) ? `<div class="playing-singer-display">
-            <span class="playing-singer-pill" title="${escHtml(e.singers?.join(' · ') || e.singer)}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+            <span class="playing-singer-pill" title="${escHtml(e.singers?.join(' · ') || e.singer)}">${ICONS.person} ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
           </div>` : ''}
           ${e.pitch ? `<div class="playing-pitch-display">
             <span class="playing-pitch-indian">${escHtml(pitchIndian)}</span>
@@ -2934,7 +2965,7 @@ class App {
       const pitchWestern = e.pitch_western || e.pitch?.split(' / ')[1] || '';
       return `
       <div class="session-bhajan-entry${!isEditMode ? ' entry-view-mode' : ''}" data-entry-id="${e.id}">
-        ${isEditMode ? `<div class="entry-delete-bg"><span class="entry-delete-icon">🗑</span></div>` : ''}
+        ${isEditMode ? `<div class="entry-delete-bg"><span class="entry-delete-icon">${ICONS.trash}</span></div>` : ''}
         <div class="entry-content">
           ${!isPlaying && isEditMode ? `<div class="drag-handle" title="Hold and drag to reorder">⠿</div>` : ''}
           <div class="entry-num">${displayNum}</div>
@@ -2944,7 +2975,7 @@ class App {
               ${eDeity ? `<span class="deity-pill deity-${eDeitySlug}">${escHtml(eDeity)}</span>` : ''}
             </div>
             ${(e.singers?.length || e.singer) ? `<div class="entry-singer-row">
-              <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">👤 ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
+              <span class="entry-singer-chip${!isPlaying && isEditMode ? ' singer-editable' : ''}" data-entry-id="${e.id}" data-mode="live" title="${!isPlaying && isEditMode ? 'Edit singer' : ''}">${ICONS.person} ${escHtml(e.singers?.join(' · ') || e.singer)}</span>
               ${!isPlaying && isEditMode ? `<span class="notes-editable entry-notes-inline" data-entry-id="${e.id}" data-mode="live" title="Edit notes">${e.notes ? `<em>${escHtml(e.notes)}</em>` : '+ notes'}</span>` : (e.notes ? `<em class="entry-notes-inline">${escHtml(e.notes)}</em>` : '')}
             </div>` : `<div class="entry-meta">
               ${!isPlaying && isEditMode ? `<span class="singer-editable singer-empty" data-entry-id="${e.id}" data-mode="live" title="Add singer">+ singer</span>` : ''}
@@ -3479,7 +3510,7 @@ class App {
     const existing = this.liveState?.bhajans || [];
     const hintEl = document.getElementById('mab-session-hint');
     if (existing.some(e => e.bhajan_id === b.id)) {
-      hintEl.innerHTML = `<div class="mab-hint mab-hint-error">🚫 Already in this session</div>`;
+      hintEl.innerHTML = `<div class="mab-hint mab-hint-error">${ICONS.xCircle} Already in this session</div>`;
     } else {
       const deities = b.deity ? b.deity.split(/[,/]/).map(d => d.trim()).filter(Boolean) : [];
       const sameCount = deities.length ? existing.filter(e =>
@@ -3489,10 +3520,10 @@ class App {
       ).length : 0;
       const isGanesha = deities.some(d => d.toLowerCase() === 'ganesha');
       if (isGanesha && sameCount > 0) {
-        hintEl.innerHTML = `<div class="mab-hint mab-hint-warn">⚠️ ${sameCount} Ganesha bhajan${sameCount > 1 ? 's' : ''} already in session — add only if intentional</div>`;
+        hintEl.innerHTML = `<div class="mab-hint mab-hint-warn">${ICONS.warning} ${sameCount} Ganesha bhajan${sameCount > 1 ? 's' : ''} already in session — add only if intentional</div>`;
       } else if (sameCount > 0) {
         const label = deities.join(', ');
-        hintEl.innerHTML = `<div class="mab-hint mab-hint-info">ℹ️ ${sameCount} ${label} bhajan${sameCount > 1 ? 's' : ''} already in session</div>`;
+        hintEl.innerHTML = `<div class="mab-hint mab-hint-info">${ICONS.info} ${sameCount} ${label} bhajan${sameCount > 1 ? 's' : ''} already in session</div>`;
       } else {
         hintEl.innerHTML = '';
       }
@@ -3506,8 +3537,8 @@ class App {
     const lpLabel = b.ladies_pitch_indian
       ? `${b.ladies_pitch_indian} · ${b.ladies_pitch_western}${scaleSuffix}`
       : (b.ladies_pitch ? b.ladies_pitch.split('/')[0].trim() : '');
-    document.getElementById('btn-pitch-gents').textContent = gpLabel ? `♂ ${gpLabel}` : 'Gents';
-    document.getElementById('btn-pitch-ladies').textContent = lpLabel ? `♀ ${lpLabel}` : 'Ladies';
+    document.getElementById('btn-pitch-gents').textContent = gpLabel ? `G: ${gpLabel}` : 'Gents';
+    document.getElementById('btn-pitch-ladies').textContent = lpLabel ? `L: ${lpLabel}` : 'Ladies';
     document.getElementById('btn-pitch-gents').style.display = b.gents_pitch ? '' : 'none';
     document.getElementById('btn-pitch-ladies').style.display = b.ladies_pitch ? '' : 'none';
     const hasAnySugg = !!(b.gents_pitch || b.ladies_pitch);
@@ -3592,7 +3623,7 @@ class App {
       }
       const usual = this.sessions.singerUsualPitch(singer);
       if (usual) {
-        hintEl.textContent = `💡 ${singer}'s usual pitch: ${usual}`;
+        hintEl.innerHTML = `${ICONS.bulb} ${escHtml(singer)}'s usual pitch: ${escHtml(usual)}`;
         if (!combined) this._setMabPitch(usual);
         return;
       }
@@ -3890,7 +3921,7 @@ class App {
     const el = document.getElementById('session-content');
     el.innerHTML = `
       <div class="session-end-card">
-        <div class="session-end-icon">🙏</div>
+        <div class="session-end-icon">${ICONS.musicLg}</div>
         <div class="session-end-title">${escHtml(s.label || 'Bhajan Session')} Completed</div>
         <div class="text-muted text-small">${formatDate(s.date)}</div>
         <div class="session-end-stats">
@@ -3924,7 +3955,7 @@ class App {
     const el  = document.getElementById('history-list');
 
     if (!all.length) {
-      el.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div>
+      el.innerHTML = `<div class="empty-state"><div class="empty-icon">${ICONS.calendarLg}</div>
         <p>No sessions recorded yet.</p></div>`;
       return;
     }
@@ -4232,8 +4263,8 @@ class App {
         <div class="sdh-actions">
           ${isEditMode && hasPat ? `<button class="btn btn-outline btn-sm" id="btn-detail-save">↑ Save</button>` : ''}
           ${canEdit ? `<button class="btn btn-outline btn-sm" id="btn-detail-add-bhajan">+ Bhajan</button>` : ''}
-          ${isEditMode ? `<button class="btn btn-outline btn-sm" id="btn-detail-cancel">✕ Cancel</button>` : ''}
-          ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm" id="btn-detail-edit-toggle">${isEditMode ? '✓ Done' : '✎ Edit'}</button>` : ''}
+          ${isEditMode ? `<button class="btn btn-outline btn-sm" id="btn-detail-cancel">Cancel</button>` : ''}
+          ${canEdit ? `<button class="btn ${isEditMode ? 'btn-success' : 'btn-outline'} btn-sm btn-icon-text" id="btn-detail-edit-toggle">${isEditMode ? `${ICONS.check} Done` : `${ICONS.pencil} Edit`}</button>` : ''}
         </div>
       </div>
 
@@ -4277,7 +4308,7 @@ class App {
                   </div>
                   <div class="entry-actions">
                     <span class="tl-time">${formatTime(e.addedAt)}</span>
-                    ${isEditMode ? `<button class="entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">✕</button>` : ''}
+                    ${isEditMode ? `<button class="entry-action-btn" data-action="remove" data-entry-id="${e.id}" aria-label="Remove ${escHtml(e.bhajan_title)}">${ICONS.xSm}</button>` : ''}
                   </div>
                 </div>
               </div>`;
@@ -4610,7 +4641,7 @@ class App {
 
     if (!allSingers.length) {
       document.getElementById('singers-grid').innerHTML =
-        `<div class="empty-state"><div class="empty-icon">🎤</div><p>No singers recorded yet.</p></div>`;
+        `<div class="empty-state"><div class="empty-icon">${ICONS.microphoneLg}</div><p>No singers recorded yet.</p></div>`;
       return;
     }
 
@@ -5070,8 +5101,8 @@ class App {
       favouritesLink?.classList.remove('hidden');
     } else {
       avatarEl.replaceChildren();
-      avatarEl.textContent = '👤';
-      avatarEl.className   = 'auth-avatar';
+      avatarEl.innerHTML = ICONS.person;
+      avatarEl.className = 'auth-avatar';
       btn.title = 'Sign in with Google';
       profileLink?.classList.add('hidden');
       favouritesLink?.classList.add('hidden');
@@ -5087,7 +5118,7 @@ class App {
       const added = await this.favourites.toggle(bhajanId);
       this._updateFavButton(bhajanId);
       this._updateFavMark(bhajanId, added);
-      this._toast(added ? 'Added to favourites ♥' : 'Removed from favourites', added ? 'success' : '');
+      this._toast(added ? 'Added to favourites' : 'Removed from favourites', added ? 'success' : '');
     } catch {
       this._toast('Could not update favourites', 'error');
     }
@@ -5097,7 +5128,7 @@ class App {
     const btn = document.getElementById('mbhajan-fav');
     if (!btn) return;
     const active = !!(this.auth?.currentUser && this.favourites.isFavourite(bhajanId));
-    btn.textContent = active ? '♥' : '♡';
+    btn.innerHTML = active ? ICONS.heartFilled : ICONS.heart;
     btn.classList.toggle('fav-active', active);
     btn.title = active ? 'Remove from favourites' : 'Add to favourites';
   }
@@ -5108,7 +5139,7 @@ class App {
       if (isFav && !mark) {
         mark = document.createElement('span');
         mark.className = 'bhajan-fav-mark';
-        mark.textContent = '♥';
+        mark.innerHTML = ICONS.heartSm;
         titleEl.appendChild(mark);
       } else if (!isFav && mark) {
         mark.remove();

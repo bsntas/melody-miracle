@@ -67,7 +67,7 @@ img { max-width: 100%; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 1rem; z-index: 100;
 }
-.loading-logo { font-size: 3rem; animation: pulse 1.5s ease-in-out infinite; }
+.loading-logo { display: flex; align-items: center; justify-content: center; animation: pulse 1.5s ease-in-out infinite; }
 .loading-title { font-size: 1.5rem; font-weight: 700; color: var(--saffron); }
 .loading-spinner {
   width: 36px; height: 36px; border: 3px solid var(--saffron-light);
@@ -99,7 +99,7 @@ img { max-width: 100%; }
   display: flex; align-items: center; gap: 0.5rem;
   text-decoration: none; color: inherit;
 }
-.logo-om { font-size: 1.4rem; }
+.logo-om { display: flex; align-items: center; }
 .logo-text { font-size: 1.1rem; font-weight: 700; color: var(--saffron); }
 
 .top-nav { display: none; gap: 0.25rem; }
@@ -117,7 +117,7 @@ img { max-width: 100%; }
 .header-actions { display: flex; align-items: center; gap: 0.25rem; }
 
 /* ─── Refresh button spin animation ─────────────────────────────────────── */
-#btn-refresh { font-size: 1.1rem; transition: transform .2s; }
+#btn-refresh { font-size: 0.85rem; transition: transform .2s; }
 #btn-refresh.spinning { animation: spin 0.7s linear infinite; }
 
 /* ─── Global Live Ribbon ─────────────────────────────────────────────────── */
@@ -174,9 +174,9 @@ img { max-width: 100%; }
 .series-pill-pressing { animation: pill-press 0.6s ease forwards; cursor: wait; }
 .series-readonly-display {
   padding: 0.55rem 0.75rem;
-  background: var(--surface-2, #f9fafb);
+  background: var(--surface-2);
   border: 1.5px solid var(--border);
-  border-radius: var(--radius, 0.5rem);
+  border-radius: var(--radius);
   font-size: 0.9rem; font-weight: 500; color: var(--text);
 }
 
@@ -232,7 +232,7 @@ img { max-width: 100%; }
 .live-session-icon { position: relative; }
 .live-session-icon.is-live::after {
   content: ''; position: absolute; top: -3px; right: -5px;
-  width: 8px; height: 8px; border-radius: 50%; background: #ef4444;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--red);
   animation: pulse-dot 1.5s ease-in-out infinite;
 }
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
@@ -373,7 +373,7 @@ img { max-width: 100%; }
 
 /* ─── Empty State ────────────────────────────────────────────────────────── */
 .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-2); }
-.empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.empty-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; color: var(--text-3); }
 .empty-state p { font-size: 0.95rem; }
 
 /* ─── Search & Filters ───────────────────────────────────────────────────── */
@@ -1327,7 +1327,7 @@ img { max-width: 100%; }
 .modal-close {
   width: 28px; height: 28px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-2); font-size: 1rem; transition: background .1s;
+  color: var(--text-2); transition: background .1s;
 }
 .modal-close:hover { background: var(--surface-2); }
 
@@ -1515,8 +1515,15 @@ img { max-width: 100%; }
 
 /* ─── Bhajan list favourite mark ─────────────────────────────────────────── */
 .bhajan-fav-mark {
-  font-size: 0.72rem; color: var(--red, #dc2626);
+  display: inline-flex; align-items: center;
+  color: var(--red);
   margin-left: 0.3rem; vertical-align: middle; line-height: 1;
+}
+
+/* ─── Pitch label (G: / L: prefix on pitch badges) ──────────────────────── */
+.pitch-label {
+  font-size: 0.7em; font-weight: 700; opacity: 0.75;
+  margin-right: 0.15em; letter-spacing: 0;
 }
 
 /* ─── Singer alias management (settings) ────────────────────────────────── */
@@ -1979,9 +1986,8 @@ img { max-width: 100%; }
   gap: 0.75rem;
 }
 .install-prompt-icon {
-  font-size: 1.75rem;
+  display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  line-height: 1;
 }
 .install-prompt-body { flex: 1; min-width: 0; }
 .install-prompt-title {
@@ -2072,7 +2078,6 @@ img { max-width: 100%; }
   position: relative;
 }
 .auth-avatar {
-  font-size: 1rem;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-flex;
@@ -2158,7 +2163,7 @@ img { max-width: 100%; }
 
 /* ─── Favourites ─────────────────────────────────────────────────────────── */
 .btn-fav {
-  font-size: 1.25rem;
+  display: inline-flex; align-items: center; justify-content: center;
   color: var(--text-3);
   padding: 0.1rem 0.4rem;
   transition: color 0.15s, transform 0.1s;
