@@ -553,8 +553,7 @@ class App {
 
   _confirmDeleteSeries(series) {
     const count = this.sessions.all().filter(s => s.series === series).length;
-    const hasPat = !!(typeof GitHubStore !== 'undefined' ? GitHubStore.getPat() : '') ||
-      !!(this.sessions.constructor?.name === 'GitHubStore' ? true : false);
+    const hasPat = this.sessions instanceof GitHubStore;
     const syncNote = this.sessions.deleteSeries && this.sessions.constructor?.name !== 'SessionStore'
       ? ' Synced data will be removed from GitHub.'
       : '';
@@ -4416,7 +4415,7 @@ class App {
     }
 
     const canEdit   = s.status === 'completed' || s.isBackdated;
-    const hasPat    = !!GitHubStore.getPat();
+    const hasPat    = this.sessions instanceof GitHubStore;
     const isEditMode = canEdit && this._detailEditMode;
 
     const _bCount = (s.bhajans || []).length;

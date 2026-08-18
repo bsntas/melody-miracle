@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260818.4';
+const CACHE = 'melody-miracle-20260818.5';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP  = '20260818.4'; // app.js (GitHub token email whitelist: auto-connect via Firebase PAT, access management in settings)
+const V_APP  = '20260818.5'; // app.js (fix all hasPat/warnNoPat checks to use instanceof GitHubStore, covering shared-PAT users)
 const V_GH   = '20260817.15'; // github-store.js (deleteSeries: skip commitToGitHub if no sessions removed; remove from _knownSeries; update series index)
 const V_CSS  = '20260818.2'; // style.css (uniform back nav: .btn-back flex alignment)
 const V_AUTH = '20260818.1'; // auth.js (fetchGithubPat, setRemotePat, grantAccess, revokeAccess, submitAccessRequest, isAdmin)
