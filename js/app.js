@@ -3229,6 +3229,7 @@ class App {
 
   async _openNewSession(series = null, backdated = false) {
     if (!await this.requireAuth('Sign in to create or manage sessions')) return;
+    if (!await this._warnNoPat('This session')) return;
 
     // If a session is currently live, background it before starting a new one.
     if (this.liveState) {
@@ -3965,6 +3966,7 @@ class App {
   // ─── End / Discard Session ────────────────────────────────────────────────
 
   async _confirmEndSession() {
+    if (!await this._warnNoPat('This session')) return;
     const bhCount = (this.liveState?.bhajans || []).length;
     if (!await this._confirm(
       'End session?',
