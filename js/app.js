@@ -1,7 +1,7 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
 import { GitHubStore } from './github-store.js?v=20260817.15';
 import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
-import { AuthManager } from './auth.js?v=20260818.2';
+import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 
 console.log('[MM] app.js v20260815.24 loaded');
@@ -1403,6 +1403,19 @@ class App {
     } catch (_e) {
       // User is not whitelisted or Firebase is unreachable — silently continue without sync
     }
+  }
+
+  // Watch for access being granted in real time and auto-connect when it is.
+  _setupAccessGrantWatcher(uid) {
+    if (this._accessGrantWatcher) return;
+    this._accessGrantWatcher = this.auth.watchAccessGrant(uid, async () => {
+      if (this._accessGrantWatcher) { this._accessGrantWatcher(); this._accessGrantWatcher = null; }
+      await this._tryAutoConnectGitHub();
+      this._refreshGithubSection();
+      if (this.sessions instanceof GitHubStore) {
+        this._toast('GitHub sync access granted — you\'re now connected!', 'success');
+      }
+    });
   }
 
   // Admin: publish the locally-stored PAT to Firebase so whitelisted users can sync automatically.
@@ -5223,12 +5236,18 @@ class App {
       }
       // Auto-connect via Firebase-hosted PAT if the user is whitelisted
       await this._tryAutoConnectGitHub();
+      // If still not connected, watch for the admin granting access in real time
+      if (!(this.sessions instanceof GitHubStore) && !this.auth.isAdmin()) {
+        this._setupAccessGrantWatcher(user.uid);
+      }
       this._route(); // re-render to apply personalization (greeting, browse filter, etc.)
     } else {
       this._userProfile = null;
       this._renderAuthButton(user);
       this.favourites.unload();
       this._syncFavUI();
+      // Tear down any access-grant watcher
+      if (this._accessGrantWatcher) { this._accessGrantWatcher(); this._accessGrantWatcher = null; }
       // If the session was using a Firebase-sourced PAT (no local PAT), revert to local store
       if (this.sessions instanceof GitHubStore && !GitHubStore.getPat()) {
         this.sessions = new SessionStore();

@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 import {
-  getDatabase, ref, get, set, remove,
+  getDatabase, ref, get, set, remove, onValue,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
 
 const FIREBASE_CONFIG = {
@@ -118,5 +118,14 @@ export class AuthManager {
   // Admin: revoke access from a UID.
   async revokeAccess(uid) {
     await remove(ref(this._db, `${CONFIG_BASE}/allowed_uids/${uid}`));
+  }
+
+  // Watch for the moment a UID is added to allowed_uids and call callback once.
+  // Returns an unsubscribe function.
+  watchAccessGrant(uid, callback) {
+    const unsub = onValue(ref(this._db, `${CONFIG_BASE}/allowed_uids/${uid}`), snap => {
+      if (snap.exists()) callback();
+    });
+    return unsub;
   }
 }
