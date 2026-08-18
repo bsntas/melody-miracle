@@ -2927,7 +2927,7 @@ class App {
     </div>` : '';
     const indexOffset = showPlaceholder ? 1 : 0;
 
-    return placeholderHTML + bhajans.map((e, i) => {
+    const entriesHTML = placeholderHTML + bhajans.map((e, i) => {
       const displayNum = i + 1 + indexOffset;
       const isCurrent = isPlaying && e.id === currentId;
       const eScale = this.bhajans.getById(e.bhajan_id)?.scale || '';
@@ -2994,6 +2994,27 @@ class App {
         </div>
       </div>`;
     }).join('');
+
+    if (isPlaying) {
+      const aarti = this.bhajans.getById('mangala-aarati');
+      if (aarti) {
+        const aartiNum = bhajans.length + indexOffset + 1;
+        const aartiDeitySlug = this._deitySlug('Sai');
+        return entriesHTML + `<div class="session-bhajan-entry aarti-placeholder">
+          <div class="entry-content">
+            <div class="entry-num">${aartiNum}</div>
+            <div class="entry-main">
+              <div class="entry-title-row">
+                <span class="entry-title">${escHtml(aarti.title)}</span>
+                <span class="deity-pill deity-${aartiDeitySlug}">Sai</span>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      }
+    }
+
+    return entriesHTML;
   }
 
   // ─── New Session Modal ────────────────────────────────────────────────────
@@ -3197,17 +3218,8 @@ class App {
       this._toast('Add at least one bhajan before starting', 'warn');
       return;
     }
-    // Append Mangala Aarati as the final entry for play mode (removed again on _exitPlay)
-    const aarti = this.bhajans.getById('mangala-aarati');
-    const hasAarti = bhajans.some(e => e.bhajan_id === 'mangala-aarati');
-    const aartiEntry = (aarti && !hasAarti) ? {
-      id: genId('e'), bhajan_id: aarti.id, bhajan_title: aarti.title,
-      bhajan_deity: aarti.deity, singers: null, pitch: null,
-      pitch_indian: null, pitch_western: null, notes: null, addedAt: Date.now(),
-    } : null;
-    const newBhajans = aartiEntry ? [...bhajans, aartiEntry] : bhajans;
     const today = _localDate(new Date());
-    const updated = { ...this.liveState, phase: 'playing', currentBhajan: newBhajans[0].id, startedAt: new Date().toISOString(), date: today, bhajans: newBhajans };
+    const updated = { ...this.liveState, phase: 'playing', currentBhajan: bhajans[0].id, startedAt: new Date().toISOString(), date: today };
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
@@ -3242,8 +3254,7 @@ class App {
 
   _exitPlay() {
     this._liveEditMode = false;
-    const bhajans = (this.liveState?.bhajans || []).filter(e => e.bhajan_id !== 'mangala-aarati');
-    const updated = { ...this.liveState, phase: 'setup', bhajans };
+    const updated = { ...this.liveState, phase: 'setup' };
     this.liveState = updated;
     this.live.updateState(updated);
     this.sessions.saveDraft(updated);
@@ -3638,10 +3649,7 @@ class App {
     const b = this._mabSelected;
     if (!b) return;
 
-    const allBhajans = this.liveState?.bhajans || [];
-    // Strip Aarti for duplicate/sequencing checks; it gets re-appended after insertion
-    const aartiEntry = allBhajans.find(e => e.bhajan_id === 'mangala-aarati');
-    const existing = aartiEntry ? allBhajans.filter(e => e.bhajan_id !== 'mangala-aarati') : allBhajans;
+    const existing = this.liveState?.bhajans || [];
 
     // Hard block: same bhajan already in session
     if (existing.some(e => e.bhajan_id === b.id)) {
@@ -3692,9 +3700,7 @@ class App {
       addedAt:       Date.now(),
     };
 
-    const inserted = this._insertWithSequencing(existing, entry, b);
-    // Re-append Aarti at the end so it always stays last during play mode
-    const newBhajans = aartiEntry ? [...inserted, aartiEntry] : inserted;
+    const newBhajans = this._insertWithSequencing(existing, entry, b);
 
     const updated = { ...this.liveState, bhajans: newBhajans };
     this._applyLiveEdit(updated, { type: 'add-bhajan', entry });
