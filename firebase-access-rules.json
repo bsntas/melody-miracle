@@ -24,8 +24,9 @@
         }
       },
       "access_requests": {
+        ".read":  "auth != null && auth.token.email == 'basantanickal13@gmail.com'",
         "$uid": {
-          ".read":  "auth != null && (auth.uid == $uid || auth.token.email == 'basantanickal13@gmail.com')",
+          ".read":  "auth != null && auth.uid == $uid",
           ".write": "auth != null && auth.uid == $uid"
         }
       }
