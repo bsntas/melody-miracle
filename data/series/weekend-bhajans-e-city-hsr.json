@@ -2,6 +2,155 @@
   {
     "bhajans": [
       {
+        "addedAt": 1786793378810,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "vighneshwaram-bhajorey-manasa-vighna-haram",
+        "bhajan_title": "Vighneshwaram Bhajorey Manasa Vighna Haram",
+        "id": "e_msuan6re14mt",
+        "notes": "Major",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1786267445316,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "jaya-kailasa-pathey-shiva-shankara",
+        "bhajan_title": "Jaya Kailasa Pathey Shiva Shankara",
+        "id": "e_msllilvob3y8",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1786501458911,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "shiva-shambho-hara-hara-shambho",
+        "bhajan_title": "Shiva Shambho Hara Hara Shambho",
+        "id": "e_mspgubxbot1z",
+        "pitch": "2.5 Pancham / D#",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "D#",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1786799428048,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "shankara-sadashiva-sabha-pathey-manohara",
+        "bhajan_title": "Shankara Sadashiva Sabha Pathey Manohara",
+        "id": "e_msue8uds4fa1",
+        "pitch": "4 Pancham / F",
+        "pitch_indian": "4 Pancham",
+        "pitch_western": "F",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1786261040071,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "bhasma-bhooshitanga-sai-chandrashekara",
+        "bhajan_title": "Bhasma Bhooshitanga Sai Chandrashekara",
+        "id": "e_mslhpbk7mq2r",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1786765088122,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "namah-parvathi-pathayey-hara-hara",
+        "bhajan_title": "Namah Parvathi Pathayey Hara Hara",
+        "id": "e_msttstiypnyi",
+        "pitch": "3 Pancham / E",
+        "pitch_indian": "3 Pancham",
+        "pitch_western": "E",
+        "singers": [
+          "Pemila"
+        ]
+      },
+      {
+        "addedAt": 1786797755748,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "ganga-jatadhara-gowri-shankara-girija",
+        "bhajan_title": "Ganga Jatadhara Gowri Shankara Girija",
+        "id": "e_msud900zkvhx",
+        "notes": "Minor",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Ashik",
+          "Gigme"
+        ]
+      },
+      {
+        "addedAt": 1786791492225,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "shiva-shiva-hara-hara-bhola",
+        "bhajan_title": "Shiva Shiva Hara Hara Bhola",
+        "id": "e_msu9ir296mmu",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1786609683334,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "hari-om-namah-shivaya",
+        "bhajan_title": "Hari Om Namah Shivaya",
+        "id": "e_msr99yfaw3gy",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Bishal"
+        ]
+      }
+    ],
+    "createdAt": "2026-08-09T03:21:48.020Z",
+    "currentBhajan": "e_msueagxslmt7",
+    "date": "2026-08-15",
+    "id": "weekendbhajansecityhsr-2026-08-15",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-08-15",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-08-15T13:11:43.936Z",
+    "status": "completed",
+    "singers": [
+      "Karam",
+      "Bhawana",
+      "Anisha",
+      "Sayujya",
+      "Basanta",
+      "Pemila",
+      "Ashik",
+      "Gigme",
+      "Isha",
+      "Bishal"
+    ],
+    "endedAt": "2026-08-15T14:01:03.196Z",
+    "duration": 2959
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1786168191786,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "gowri-ganesh-uma-ganesh",
@@ -10247,161 +10396,5 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
-  },
-  {
-    "bhajans": [
-      {
-        "addedAt": 1786793378810,
-        "bhajan_deity": "Ganesha",
-        "bhajan_id": "vighneshwaram-bhajorey-manasa-vighna-haram",
-        "bhajan_title": "Vighneshwaram Bhajorey Manasa Vighna Haram",
-        "id": "e_msuan6re14mt",
-        "notes": "Major",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "singers": [
-          "Karam"
-        ]
-      },
-      {
-        "addedAt": 1786267445316,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "jaya-kailasa-pathey-shiva-shankara",
-        "bhajan_title": "Jaya Kailasa Pathey Shiva Shankara",
-        "id": "e_msllilvob3y8",
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "singers": [
-          "Bhawana"
-        ]
-      },
-      {
-        "addedAt": 1786501458911,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "shiva-shambho-hara-hara-shambho",
-        "bhajan_title": "Shiva Shambho Hara Hara Shambho",
-        "id": "e_mspgubxbot1z",
-        "pitch": "2.5 Pancham / D#",
-        "pitch_indian": "2.5 Pancham",
-        "pitch_western": "D#",
-        "singers": [
-          "Anisha"
-        ]
-      },
-      {
-        "addedAt": 1786799428048,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "shankara-sadashiva-sabha-pathey-manohara",
-        "bhajan_title": "Shankara Sadashiva Sabha Pathey Manohara",
-        "id": "e_msue8uds4fa1",
-        "pitch": "4 Pancham / F",
-        "pitch_indian": "4 Pancham",
-        "pitch_western": "F",
-        "singers": [
-          "Sayujya"
-        ]
-      },
-      {
-        "addedAt": 1786261040071,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "bhasma-bhooshitanga-sai-chandrashekara",
-        "bhajan_title": "Bhasma Bhooshitanga Sai Chandrashekara",
-        "id": "e_mslhpbk7mq2r",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "singers": [
-          "Basanta"
-        ]
-      },
-      {
-        "addedAt": 1786765088122,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "namah-parvathi-pathayey-hara-hara",
-        "bhajan_title": "Namah Parvathi Pathayey Hara Hara",
-        "id": "e_msttstiypnyi",
-        "pitch": "3 Pancham / E",
-        "pitch_indian": "3 Pancham",
-        "pitch_western": "E",
-        "singers": [
-          "Pemila"
-        ]
-      },
-      {
-        "addedAt": 1786797755748,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "ganga-jatadhara-gowri-shankara-girija",
-        "bhajan_title": "Ganga Jatadhara Gowri Shankara Girija",
-        "id": "e_msud900zkvhx",
-        "notes": "Minor",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "singers": [
-          "Ashik",
-          "Gigme"
-        ]
-      },
-      {
-        "addedAt": 1786791492225,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "shiva-shiva-hara-hara-bhola",
-        "bhajan_title": "Shiva Shiva Hara Hara Bhola",
-        "id": "e_msu9ir296mmu",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "singers": [
-          "Isha"
-        ]
-      },
-      {
-        "addedAt": 1786609683334,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "hari-om-namah-shivaya",
-        "bhajan_title": "Hari Om Namah Shivaya",
-        "id": "e_msr99yfaw3gy",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "singers": [
-          "Bishal"
-        ]
-      },
-      {
-        "addedAt": 1786799503936,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "mangala-aarati",
-        "bhajan_title": "Mangala Aarati",
-        "id": "e_msueagxslmt7"
-      }
-    ],
-    "createdAt": "2026-08-09T03:21:48.020Z",
-    "currentBhajan": "e_msueagxslmt7",
-    "date": "2026-08-15",
-    "id": "weekendbhajansecityhsr-2026-08-15",
-    "isBackdated": false,
-    "label": "Weekend Bhajans E-City HSR",
-    "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-08-15",
-    "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-08-15T13:11:43.936Z",
-    "status": "completed",
-    "singers": [
-      "Karam",
-      "Bhawana",
-      "Anisha",
-      "Sayujya",
-      "Basanta",
-      "Pemila",
-      "Ashik",
-      "Gigme",
-      "Isha",
-      "Bishal"
-    ],
-    "endedAt": "2026-08-15T14:01:03.196Z",
-    "duration": 2959
   }
 ]
