@@ -1,6 +1,6 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260819.6';
+const CACHE = 'melody-miracle-20260819.7';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
 const V_APP  = '20260819.4'; // app.js (modal footer: invis class for nav btns; no navRow)
