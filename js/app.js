@@ -2234,9 +2234,10 @@ class App {
       el.innerHTML = `<div class="empty-state"><div class="empty-icon">${ICONS.searchLg}</div><p>No bhajans match your search</p></div>`;
       return;
     }
+    const ids = bhajans.map(b => b.id);
     el.innerHTML = bhajans.map(b => this._bhajanItemHTML(b)).join('');
-    el.querySelectorAll('.bhajan-item').forEach(item => {
-      item.addEventListener('click', () => this._openBhajanModal(item.dataset.id));
+    el.querySelectorAll('.bhajan-item').forEach((item, idx) => {
+      item.addEventListener('click', () => this._openBhajanModal(item.dataset.id, { bhajans: ids, index: idx }));
     });
   }
 
@@ -2442,8 +2443,10 @@ class App {
     const prevBtn = document.getElementById('mbhajan-prev');
     const nextBtn = document.getElementById('mbhajan-next');
     if (context && context.bhajans.length > 1) {
-      prevBtn.classList.toggle('hidden', context.index <= 0);
-      nextBtn.classList.toggle('hidden', context.index >= context.bhajans.length - 1);
+      prevBtn.classList.remove('hidden');
+      prevBtn.disabled = context.index <= 0;
+      nextBtn.classList.remove('hidden');
+      nextBtn.disabled = context.index >= context.bhajans.length - 1;
     } else {
       prevBtn.classList.add('hidden');
       nextBtn.classList.add('hidden');
