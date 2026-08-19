@@ -1457,8 +1457,10 @@ img { max-width: 100%; }
 .session-code-label { font-size: 0.7rem; color: var(--text-3); margin-bottom: 0.2rem; }
 
 /* ─── Bhajan modal prev/next footer layout ───────────────────────────────── */
-.mbhajan-footer { justify-content: space-between; }
-.mbhajan-footer-actions { display: flex; gap: 0.5rem; align-items: center; }
+.mbhajan-footer { flex-direction: column; align-items: stretch; gap: 0.4rem; }
+.mbhajan-footer-actions { display: flex; justify-content: center; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.mbhajan-nav-row { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 0.4rem; margin-top: 0.1rem; }
+.mbhajan-nav-row.hidden { display: none !important; }
 
 /* ─── Drag-to-reorder handle ─────────────────────────────────────────────── */
 .drag-handle {
