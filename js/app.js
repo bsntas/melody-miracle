@@ -2443,13 +2443,14 @@ class App {
 
     const prevBtn = document.getElementById('mbhajan-prev');
     const nextBtn = document.getElementById('mbhajan-next');
-    const navRow  = document.getElementById('mbhajan-nav');
     if (context && context.bhajans.length > 1) {
-      navRow.classList.remove('hidden');
+      prevBtn.classList.remove('invis');
+      nextBtn.classList.remove('invis');
       prevBtn.disabled = context.index <= 0;
       nextBtn.disabled = context.index >= context.bhajans.length - 1;
     } else {
-      navRow.classList.add('hidden');
+      prevBtn.classList.add('invis');
+      nextBtn.classList.add('invis');
     }
 
     document.getElementById('mbhajan-title').textContent = b.title;
