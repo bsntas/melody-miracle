@@ -2234,10 +2234,11 @@ class App {
       el.innerHTML = `<div class="empty-state"><div class="empty-icon">${ICONS.searchLg}</div><p>No bhajans match your search</p></div>`;
       return;
     }
-    const ids = bhajans.map(b => b.id);
+    const allIds = (this._browseFiltered || bhajans).map(b => b.id);
     el.innerHTML = bhajans.map(b => this._bhajanItemHTML(b)).join('');
-    el.querySelectorAll('.bhajan-item').forEach((item, idx) => {
-      item.addEventListener('click', () => this._openBhajanModal(item.dataset.id, { bhajans: ids, index: idx }));
+    el.querySelectorAll('.bhajan-item').forEach(item => {
+      const idx = allIds.indexOf(item.dataset.id);
+      item.addEventListener('click', () => this._openBhajanModal(item.dataset.id, { bhajans: allIds, index: idx }));
     });
   }
 
