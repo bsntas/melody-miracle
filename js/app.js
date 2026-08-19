@@ -2456,7 +2456,8 @@ class App {
     document.getElementById('mbhajan-title').textContent = b.title;
     document.getElementById('mbhajan-add-to-session').dataset.bhajanId = id;
 
-    const canAdd = !!(this.liveState && this.liveState.phase === 'setup');
+    const alreadyInSession = !!(this.liveState && (this.liveState.bhajans || []).some(e => e.bhajan_id === id));
+    const canAdd = !!(this.liveState && this.liveState.phase === 'setup') && !alreadyInSession;
     document.getElementById('mbhajan-add-to-session').style.display = canAdd ? '' : 'none';
 
     const srcEl = document.getElementById('mbhajan-source-link');
