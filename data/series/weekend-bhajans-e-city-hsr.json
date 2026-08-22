@@ -10396,5 +10396,153 @@
     "createdAt": "2026-06-28T06:39:50.116Z",
     "startTime": null,
     "duration": null
+  },
+  {
+    "bhajans": [
+      {
+        "addedAt": 1786810440062,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "gajanana-gajanana",
+        "bhajan_title": "Gajanana Gajanana",
+        "id": "e_msuksvb2o8b5",
+        "pitch": "2.5 Pancham / D#",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "D#",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1787308417310,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "sri-lakshmi-ramana-narayana",
+        "bhajan_title": "Sri Lakshmi Ramana Narayana",
+        "id": "e_mt2ta90ejip2",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1786810146349,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "shesha-shaila-vasa-narayana",
+        "bhajan_title": "Shesha Shaila Vasa Narayana",
+        "id": "e_msukmkodm4tp",
+        "notes": "Minor",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1787403145762,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "ghana-ghana-neela-vadana-ati",
+        "bhajan_title": "Ghana Ghana Neela Vadana Ati",
+        "id": "e_mt4dolyaws59",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1786810645853,
+        "bhajan_deity": "Rama",
+        "bhajan_id": "yuga-avatara-sai-rama",
+        "bhajan_title": "Yuga Avatara Sai Rama",
+        "id": "e_msukxa3hw32e",
+        "pitch": "2 Madhyam / G",
+        "pitch_indian": "2 Madhyam",
+        "pitch_western": "G",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1786969607771,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "hey-deena-dayalu-harey-harey",
+        "bhajan_title": "Hey Deena Dayalu Harey Harey",
+        "id": "e_msx7kdwb7rvt",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1787403881130,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "man-ek-baar-hari-bol",
+        "bhajan_title": "Man Ek Baar Hari Bol",
+        "id": "e_mt4e4dd6htv5",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Sudhi"
+        ]
+      },
+      {
+        "addedAt": 1787402002737,
+        "bhajan_deity": "Sarva Dharma",
+        "bhajan_id": "hey-nirakari-allah-hey-avatari",
+        "bhajan_title": "Hey Nirakari Allah Hey Avatari",
+        "id": "e_mt4d03zl5unb",
+        "pitch": "5 Madhyam / C",
+        "pitch_indian": "5 Madhyam",
+        "pitch_western": "C",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1787402915074,
+        "bhajan_deity": "Narayana, Krishna",
+        "bhajan_id": "hari-narayana-hari-narayana-hari-0",
+        "bhajan_title": "Hari Narayana Hari Narayana Hari",
+        "id": "e_mt4djnyaawh2",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Ashik",
+          "Gigme"
+        ]
+      }
+    ],
+    "createdAt": "2026-08-15T16:01:47.231Z",
+    "currentBhajan": "e_mt4eeho5h44o",
+    "date": "2026-08-22",
+    "id": "weekendbhajansecityhsr-2026-08-22",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-08-22",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-08-22T13:12:33.269Z",
+    "status": "completed",
+    "singers": [
+      "Basanta",
+      "Bhawana",
+      "Bishal",
+      "Isha",
+      "Karam",
+      "Anisha",
+      "Sudhi",
+      "Sayujya",
+      "Ashik",
+      "Gigme"
+    ],
+    "endedAt": "2026-08-22T14:07:06.127Z",
+    "duration": 3273
   }
 ]
