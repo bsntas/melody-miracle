@@ -5455,8 +5455,11 @@ class App {
 
     const month      = this._fundsCurrentMonth();
     const isCashier  = this._isFundsCashier();
-    const payments   = (this._fundsData.payments || []).filter(p => (p.date?.slice(0, 7) || p.month) === month);
+    const allPayments = this._fundsData.payments || [];
+    const payments   = allPayments.filter(p => (p.date?.slice(0, 7) || p.month) === month);
     const totalAmt   = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
+    const cumAmt     = allPayments.reduce((s, p) => s + Number(p.amount || 0), 0);
+    const cumMembers = new Set(allPayments.map(p => p.member || p.memberEmail).filter(Boolean)).size;
     const pending    = this._fundsPending;
     const isSignedIn = !!this.auth?.currentUser;
 
@@ -5506,10 +5509,27 @@ class App {
         </div>
       </div>
 
+      <div class="funds-cumulative">
+        <div class="funds-cum-item">
+          <div class="funds-cum-num">${this._fundsFormatAmount(cumAmt)}</div>
+          <div class="funds-cum-label">Total Collected</div>
+        </div>
+        <div class="funds-cum-divider"></div>
+        <div class="funds-cum-item">
+          <div class="funds-cum-num">${allPayments.length}</div>
+          <div class="funds-cum-label">All Payments</div>
+        </div>
+        <div class="funds-cum-divider"></div>
+        <div class="funds-cum-item">
+          <div class="funds-cum-num">${cumMembers}</div>
+          <div class="funds-cum-label">Members</div>
+        </div>
+      </div>
+
       <div class="stats-row funds-stats">
         <div class="stat-card">
           <div class="stat-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
-          <div class="stat-label">Collected</div>
+          <div class="stat-label">This Month</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">${payments.length}</div>
