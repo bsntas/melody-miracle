@@ -690,7 +690,7 @@ class App {
     document.getElementById('btn-singers-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
     // Funds back
-    document.getElementById('btn-funds-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+    document.getElementById('btn-funds-back')?.addEventListener('click', () => { history.back(); });
 
     // Sung bhajans back
     document.getElementById('btn-sung-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
