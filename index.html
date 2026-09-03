@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260819.4">
+  <link rel="stylesheet" href="css/style.css?v=20260903.2">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD52K2S0BB"></script>
   <script>
@@ -997,11 +997,8 @@
       <div class="modal-body">
         <div class="form-group">
           <label class="form-label">Member Name <span style="color:var(--error)">*</span></label>
-          <input type="text" id="mfpay-member" class="form-input" placeholder="e.g. Karam Singh" autocomplete="off">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Member Email (optional)</label>
-          <input type="email" id="mfpay-email" class="form-input" placeholder="member@example.com" autocomplete="off">
+          <input type="text" id="mfpay-member" class="form-input" list="mfpay-member-list" placeholder="Select or type name…" autocomplete="off">
+          <datalist id="mfpay-member-list"></datalist>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
           <div class="form-group">
@@ -1009,13 +1006,17 @@
             <input type="number" id="mfpay-amount" class="form-input" placeholder="500" min="1" step="1">
           </div>
           <div class="form-group">
-            <label class="form-label">Month</label>
-            <input type="month" id="mfpay-month" class="form-input">
+            <label class="form-label">Receipt Date <span style="color:var(--error)">*</span></label>
+            <input type="date" id="mfpay-date" class="form-input">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Note (optional)</label>
-          <input type="text" id="mfpay-note" class="form-input" placeholder="e.g. Cash payment on 2nd Sep" autocomplete="off">
+          <label class="form-label">UTR / Transaction ID <span style="color:var(--error)">*</span></label>
+          <input type="text" id="mfpay-txn" class="form-input" placeholder="e.g. UPI ref, cheque no., cash" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notes (optional)</label>
+          <input type="text" id="mfpay-note" class="form-input" placeholder="Any general notes" autocomplete="off">
         </div>
       </div>
       <div class="modal-footer">
@@ -1035,23 +1036,30 @@
       <div class="modal-body">
         <p class="modal-desc" style="margin-bottom:.75rem">Submit your payment details. The cashier will review and approve.</p>
         <div class="form-group">
-          <label class="form-label">Your Name <span style="color:var(--error)">*</span></label>
-          <input type="text" id="mfsub-member" class="form-input" placeholder="Your singer name" autocomplete="off">
+          <label class="form-label">Your Name</label>
+          <input type="text" id="mfsub-member" class="form-input" readonly style="background:var(--bg-secondary,#f1f1f1);cursor:default" autocomplete="off">
         </div>
-        <input type="hidden" id="mfsub-email">
+        <div class="form-group">
+          <label class="form-label">Your Email</label>
+          <input type="email" id="mfsub-email" class="form-input" readonly style="background:var(--bg-secondary,#f1f1f1);cursor:default" autocomplete="off">
+        </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
           <div class="form-group">
             <label class="form-label">Amount (₹) <span style="color:var(--error)">*</span></label>
             <input type="number" id="mfsub-amount" class="form-input" placeholder="500" min="1" step="1">
           </div>
           <div class="form-group">
-            <label class="form-label">Month</label>
-            <input type="month" id="mfsub-month" class="form-input">
+            <label class="form-label">Receipt Date <span style="color:var(--error)">*</span></label>
+            <input type="date" id="mfsub-date" class="form-input">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Note / Receipt details (optional)</label>
-          <input type="text" id="mfsub-note" class="form-input" placeholder="e.g. Paid via UPI ref #1234" autocomplete="off">
+          <label class="form-label">UTR / Transaction ID <span style="color:var(--error)">*</span></label>
+          <input type="text" id="mfsub-txn" class="form-input" placeholder="e.g. UPI ref, cheque no." autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notes (optional)</label>
+          <input type="text" id="mfsub-note" class="form-input" placeholder="Any general notes" autocomplete="off">
         </div>
       </div>
       <div class="modal-footer">
@@ -1082,7 +1090,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260903.1"></script>
+  <script type="module" src="js/app.js?v=20260903.2"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
