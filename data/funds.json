@@ -1,4 +1,18 @@
 {
   "cashier": "anishalingsey1994@gmail.com",
-  "payments": []
+  "payments": [
+    {
+      "id": "id_mtlr3que288h",
+      "member": "Bhawana",
+      "memberEmail": null,
+      "amount": 100,
+      "date": "2026-08-22",
+      "transactionId": "623442674426",
+      "note": null,
+      "recordedAt": "2026-09-03T16:40:11.942Z",
+      "recordedBy": "anishalingsey1994@gmail.com",
+      "approvedAt": "2026-09-03T16:40:11.942Z",
+      "approvedBy": "anishalingsey1994@gmail.com"
+    }
+  ]
 }
