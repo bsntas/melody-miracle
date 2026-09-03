@@ -229,7 +229,6 @@ img { max-width: 100%; }
   transition: transform .22s cubic-bezier(.34, 1.56, .64, 1);
 }
 .bnav-item.active .bnav-icon { transform: translateY(-1px) scale(1.08); }
-.bnav-icon-rupee { font-size: 1.35rem; font-weight: 600; }
 .live-session-icon { position: relative; }
 .live-session-icon.is-live::after {
   content: ''; position: absolute; top: -3px; right: -5px;
