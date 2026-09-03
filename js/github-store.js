@@ -20,6 +20,7 @@ const REPO          = 'melody-miracle';
 const BRANCH        = 'main';
 const SESSIONS_PATH = 'data/sessions.json';
 const BHAJANS_PATH  = 'data/bhajans.json';
+const FUNDS_PATH_GH = 'data/funds.json';
 const SERIES_DIR    = 'data/series';
 const API_BASE      = 'https://api.github.com';
 const CACHE_KEY     = 'bm-sessions-v2';          // same key as SessionStore
@@ -33,6 +34,7 @@ export class GitHubStore {
     this._seriesFilter = null;
     this._sha           = null;   // SHA of data/sessions.json
     this._bhajansSha    = null;   // SHA of data/bhajans.json
+    this._fundsSha      = null;   // SHA of data/funds.json
     this._seriesShas    = {};     // { seriesPath: sha } for per-series files
     this._seriesIndexSha = null;  // SHA of data/series.json
     this._dirtySeries  = new Set(); // series whose files need updating after next commit
@@ -638,6 +640,38 @@ export class GitHubStore {
 
     const data = await res.json();
     this._bhajansSha = data.content?.sha;
+  }
+
+  // ── Funds ─────────────────────────────────────────────────────────────────────
+
+  async fetchFunds() {
+    const res = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${FUNDS_PATH_GH}?ref=${BRANCH}`);
+    if (res.status === 404) return { cashier: 'anishalingsey1994@gmail.com', payments: [] };
+    if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+    const data = await res.json();
+    this._fundsSha = data.sha;
+    return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+  }
+
+  async commitFunds(fundsData, message = 'Update funds') {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(fundsData, null, 2))));
+    const body = {
+      message: `${message} [${new Date().toISOString().slice(0, 10)}]`,
+      content,
+      branch: BRANCH,
+      ...(this._fundsSha ? { sha: this._fundsSha } : {}),
+    };
+    const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${FUNDS_PATH_GH}`, body);
+    if (res.status === 409 || res.status === 422) {
+      this._fundsSha = null;
+      return this.commitFunds(fundsData, message);
+    }
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || `GitHub write error: ${res.status}`);
+    }
+    const data = await res.json();
+    this._fundsSha = data.content?.sha;
   }
 
   _api(method, path, body, signal) {

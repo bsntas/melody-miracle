@@ -2267,3 +2267,189 @@ img { max-width: 100%; }
   padding: 1.5rem 0;
   margin: 0;
 }
+
+/* ─── Funds View ──────────────────────────────────────────────────────────── */
+
+.funds-loading {
+  text-align: center;
+  color: var(--text-3);
+  padding: 3rem 0;
+  font-size: 0.9rem;
+}
+
+.funds-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.funds-month-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.funds-month-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 8.5rem;
+  text-align: center;
+  color: var(--text-1);
+}
+
+.funds-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.funds-stats {
+  margin-bottom: 1.5rem;
+}
+
+.stat-card-warn {
+  border-color: var(--warning, #f59e0b);
+  background: color-mix(in srgb, var(--warning, #f59e0b) 8%, var(--card-bg));
+}
+
+.funds-stat-amount {
+  font-size: 1.35rem !important;
+}
+
+.funds-pending-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--error, #dc2626);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  padding: 0 0.3rem;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+
+.funds-pending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.funds-pending-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.125rem;
+  border-left: 3px solid var(--warning, #f59e0b);
+}
+
+.funds-pc-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.funds-pc-member {
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--text-1);
+}
+
+.funds-pc-amount {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--success, #16a34a);
+  white-space: nowrap;
+}
+
+.funds-pc-meta {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  margin-top: 0.2rem;
+}
+
+.funds-pc-email {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: 0.15rem;
+}
+
+.funds-pc-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.funds-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.funds-history-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+}
+
+.funds-hi-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.funds-hi-member {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.funds-hi-meta {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  margin-top: 0.1rem;
+}
+
+.funds-hi-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--success, #16a34a);
+  white-space: nowrap;
+}
+
+.funds-by-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--bg-2);
+  color: var(--text-3);
+  font-weight: 500;
+  margin-left: 0.3rem;
+}
+
+.funds-cashier-info {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}

@@ -1,10 +1,11 @@
 import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
-import { GitHubStore } from './github-store.js?v=20260817.15';
+import { GitHubStore } from './github-store.js?v=20260903.1';
 import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
+import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20260815.24 loaded');
+console.log('[MM] app.js v20260903.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -125,6 +126,13 @@ class App {
     this._userProfile = null;  // { singerName, displayName, email, photoURL }
     this.favourites  = new FavouritesStore();
 
+    // Funds
+    this._fundsData    = null;   // { cashier, payments[] } from GitHub
+    this._fundsPending = [];     // pending submissions from Firebase
+    this._fundsMonth   = null;   // YYYY-MM filter (null = current month)
+    this._fundsLive    = null;   // FundsLive instance
+    this._fundsLoaded  = false;
+
     // Series filter (null = all series)
     try {
       this._selectedSeries = localStorage.getItem('mm-series-filter') || null;
@@ -179,6 +187,7 @@ class App {
       this._populateFilters();
       this._bindGlobal();
       this._bindSettings();
+      this._bindFunds();
       this._initKeyboardAdjust();
     } catch (e) {
       console.error('App init error:', e);
@@ -316,7 +325,7 @@ class App {
     const hash = location.hash.slice(1) || 'dashboard';
     const [view, param] = hash.split('/');
 
-    const views = ['dashboard', 'browse', 'session', 'history', 'singers', 'sung', 'singer', 'session-detail'];
+    const views = ['dashboard', 'browse', 'session', 'history', 'singers', 'sung', 'singer', 'session-detail', 'funds'];
     views.forEach(v => document.getElementById(`view-${v}`)?.classList.remove('active'));
 
     const viewEl = document.getElementById(`view-${view}`);
@@ -350,6 +359,10 @@ class App {
       case 'sung':          this._renderSung(); break;
       case 'singer':        if (param) this._renderSinger(decodeURIComponent(param)); break;
       case 'session-detail': if (param) this._renderSessionDetail(param); break;
+      case 'funds':
+        if (!this._fundsLoaded) this._loadFunds();
+        else this._renderFunds();
+        break;
     }
   }
 
@@ -675,6 +688,9 @@ class App {
 
     // Singers directory back
     document.getElementById('btn-singers-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
+
+    // Funds back
+    document.getElementById('btn-funds-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
 
     // Sung bhajans back
     document.getElementById('btn-sung-back')?.addEventListener('click', () => { location.hash = '#dashboard'; });
@@ -5358,6 +5374,441 @@ class App {
       favouritesLink?.classList.add('hidden');
       if (setSingerBtn) setSingerBtn.textContent = 'Set singer name';
     }
+  }
+
+  // ─── Funds ────────────────────────────────────────────────────────────────
+
+  _isFundsCashier() {
+    const email = this.auth?.currentUser?.email;
+    return !!(email && this._fundsData && email === this._fundsData.cashier);
+  }
+
+  _fundsCurrentMonth() {
+    if (this._fundsMonth) return this._fundsMonth;
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  }
+
+  _fundsMonthLabel(ym) {
+    const [y, m] = ym.split('-');
+    return new Date(+y, +m - 1, 1).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+  }
+
+  _fundsFormatAmount(n) {
+    return '₹' + Number(n).toLocaleString('en-IN');
+  }
+
+  async _loadFunds() {
+    const container = document.getElementById('funds-content');
+    if (!container) return;
+    container.innerHTML = '<div class="funds-loading">Loading…</div>';
+
+    try {
+      if (this.sessions?.fetchFunds) {
+        this._fundsData = await this.sessions.fetchFunds();
+      } else {
+        // Fall back to local fetch (no PAT)
+        const res = await fetch('./data/funds.json');
+        this._fundsData = res.ok ? await res.json() : { cashier: 'anishalingsey1994@gmail.com', payments: [] };
+      }
+    } catch {
+      this._fundsData = { cashier: 'anishalingsey1994@gmail.com', payments: [] };
+    }
+
+    // Start listening to Firebase pending queue
+    if (this._fundsLive) { this._fundsLive.destroy(); this._fundsLive = null; }
+    this._fundsPending = [];
+    try {
+      const live = new FundsLive({
+        onPendingAdded: (id, item) => {
+          if (!this._fundsPending.find(p => p.id === id)) {
+            this._fundsPending.push(item);
+          }
+          if (location.hash === '#funds') this._renderFunds();
+        },
+        onPendingRemoved: (id) => {
+          this._fundsPending = this._fundsPending.filter(p => p.id !== id);
+          if (location.hash === '#funds') this._renderFunds();
+        },
+      });
+      live.listen();
+      this._fundsLive = live;
+      // One-shot fetch of existing pending entries
+      const existing = await live.getAll();
+      this._fundsPending = existing;
+    } catch (e) {
+      console.warn('[Funds] Firebase pending unavailable:', e.message);
+    }
+
+    this._fundsLoaded = true;
+    this._renderFunds();
+  }
+
+  _renderFunds() {
+    const container = document.getElementById('funds-content');
+    if (!container) return;
+
+    if (!this._fundsLoaded || !this._fundsData) {
+      container.innerHTML = '<div class="funds-loading">Loading funds data…</div>';
+      return;
+    }
+
+    const month      = this._fundsCurrentMonth();
+    const isCashier  = this._isFundsCashier();
+    const payments   = (this._fundsData.payments || []).filter(p => p.month === month);
+    const totalAmt   = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
+    const pending    = this._fundsPending;
+    const isSignedIn = !!this.auth?.currentUser;
+
+    // Month nav
+    const [y, m] = month.split('-').map(Number);
+    const prevMonth = m === 1
+      ? `${y - 1}-12`
+      : `${y}-${String(m - 1).padStart(2, '0')}`;
+    const nextMonth = m === 12
+      ? `${y + 1}-01`
+      : `${y}-${String(m + 1).padStart(2, '0')}`;
+    const now = new Date();
+    const thisMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const isCurrentMonth = month === thisMonth;
+
+    const pendingBadge = isCashier && pending.length
+      ? `<span class="funds-pending-badge">${pending.length}</span>`
+      : '';
+
+    const cashierSection = isCashier && pending.length ? `
+      <div class="section-header">
+        <h3 class="section-title">Pending Approvals ${pendingBadge}</h3>
+      </div>
+      <div class="funds-pending-list" id="funds-pending-list">
+        ${pending.map(p => this._fundsPendingCardHTML(p)).join('')}
+      </div>` : '';
+
+    const historyHTML = payments.length
+      ? payments.sort((a, b) => (b.approvedAt || '').localeCompare(a.approvedAt || ''))
+          .map(p => this._fundsPaymentRowHTML(p)).join('')
+      : `<div class="empty-state" style="padding:2rem 0">
+          <div class="empty-icon">${ICONS.info}</div>
+          <p>No payments recorded for ${this._fundsMonthLabel(month)}</p>
+        </div>`;
+
+    container.innerHTML = `
+      <div class="funds-header-row">
+        <div class="funds-month-nav">
+          <button class="btn btn-ghost btn-icon" id="btn-funds-prev" aria-label="Previous month">${ICONS.chevronLeft}</button>
+          <span class="funds-month-label">${this._fundsMonthLabel(month)}</span>
+          <button class="btn btn-ghost btn-icon" id="btn-funds-next" aria-label="Next month" ${isCurrentMonth ? 'disabled' : ''}>${ICONS.chevronRight}</button>
+        </div>
+        <div class="funds-header-actions">
+          ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
+          ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
+          ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
+        </div>
+      </div>
+
+      <div class="stats-row funds-stats">
+        <div class="stat-card">
+          <div class="stat-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
+          <div class="stat-label">Collected</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">${payments.length}</div>
+          <div class="stat-label">Payments</div>
+        </div>
+        ${isCashier ? `<div class="stat-card ${pending.length ? 'stat-card-warn' : ''}">
+          <div class="stat-num">${pending.length}</div>
+          <div class="stat-label">Pending ${pending.length ? '⚠' : ''}</div>
+        </div>` : ''}
+      </div>
+
+      ${!isCashier && !isSignedIn ? `
+        <div class="info-banner" style="margin-bottom:1rem">
+          <a href="#" id="btn-funds-signin-prompt">Sign in</a> to submit a payment receipt for cashier approval.
+        </div>` : ''}
+
+      ${cashierSection}
+
+      <div class="section-header" style="margin-top:${isCashier && pending.length ? '0' : '0.25rem'}">
+        <h3 class="section-title">Payment History</h3>
+      </div>
+      <div class="funds-history-list">${historyHTML}</div>
+
+      ${isCashier ? `<div class="funds-cashier-info">Cashier: ${escHtml(this._fundsData.cashier)}</div>` : ''}
+    `;
+
+    // Bind month nav
+    document.getElementById('btn-funds-prev')?.addEventListener('click', () => {
+      this._fundsMonth = prevMonth;
+      this._renderFunds();
+    });
+    document.getElementById('btn-funds-next')?.addEventListener('click', () => {
+      if (!isCurrentMonth) { this._fundsMonth = nextMonth; this._renderFunds(); }
+    });
+
+    // Cashier: record payment directly
+    document.getElementById('btn-funds-add')?.addEventListener('click', () => {
+      this._openFundsPayModal(month);
+    });
+
+    // Member: submit receipt
+    document.getElementById('btn-funds-submit')?.addEventListener('click', async () => {
+      if (!await this.requireAuth('Sign in to submit a payment receipt')) return;
+      this._openFundsSubmitModal(month);
+    });
+
+    // Cashier settings
+    document.getElementById('btn-funds-settings')?.addEventListener('click', () => {
+      this._openFundsSettingsModal();
+    });
+
+    // Sign-in prompt
+    document.getElementById('btn-funds-signin-prompt')?.addEventListener('click', async e => {
+      e.preventDefault();
+      await this.requireAuth('Sign in to submit a payment receipt');
+    });
+
+    // Pending approval buttons
+    document.getElementById('funds-pending-list')?.addEventListener('click', e => {
+      const approveBtn = e.target.closest('.btn-funds-approve');
+      const rejectBtn  = e.target.closest('.btn-funds-reject');
+      if (approveBtn) this._fundsApprove(approveBtn.dataset.id);
+      if (rejectBtn)  this._fundsReject(rejectBtn.dataset.id);
+    });
+  }
+
+  _fundsPendingCardHTML(p) {
+    const user  = this.auth?.currentUser;
+    const canAct = user?.email === this._fundsData?.cashier;
+    return `
+      <div class="funds-pending-card">
+        <div class="funds-pc-row">
+          <span class="funds-pc-member">${escHtml(p.member || p.memberEmail || 'Unknown')}</span>
+          <span class="funds-pc-amount">${this._fundsFormatAmount(p.amount)}</span>
+        </div>
+        <div class="funds-pc-meta">
+          ${escHtml(this._fundsMonthLabel(p.month || ''))}
+          ${p.note ? ` · "${escHtml(p.note)}"` : ''}
+          · submitted ${p.submittedAt ? new Date(p.submittedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short' }) : ''}
+          ${p.memberEmail ? `<span class="funds-pc-email">${escHtml(p.memberEmail)}</span>` : ''}
+        </div>
+        ${canAct ? `
+          <div class="funds-pc-actions">
+            <button class="btn btn-ghost btn-sm btn-funds-reject" data-id="${escHtml(p.id)}">Reject</button>
+            <button class="btn btn-primary btn-sm btn-funds-approve" data-id="${escHtml(p.id)}">Approve ✓</button>
+          </div>` : ''}
+      </div>`;
+  }
+
+  _fundsPaymentRowHTML(p) {
+    const isCashier = this._isFundsCashier();
+    const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
+    return `
+      <div class="funds-history-item">
+        <div class="funds-hi-body">
+          <div class="funds-hi-member">${escHtml(p.member || p.memberEmail || '—')}</div>
+          <div class="funds-hi-meta">
+            ${p.note ? escHtml(p.note) + ' · ' : ''}
+            ${p.approvedAt ? new Date(p.approvedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' }) : ''}
+            <span class="funds-by-badge">${byLabel}</span>
+          </div>
+        </div>
+        <div class="funds-hi-amount">${this._fundsFormatAmount(p.amount)}</div>
+      </div>`;
+  }
+
+  _openFundsPayModal(month) {
+    document.getElementById('mfpay-month').value = month;
+    document.getElementById('mfpay-member').value = '';
+    document.getElementById('mfpay-email').value = '';
+    document.getElementById('mfpay-amount').value = '';
+    document.getElementById('mfpay-note').value = '';
+    this._openModal('modal-funds-pay');
+    setTimeout(() => document.getElementById('mfpay-member')?.focus(), 60);
+  }
+
+  _openFundsSubmitModal(month) {
+    const user = this.auth?.currentUser;
+    document.getElementById('mfsub-month').value = month;
+    document.getElementById('mfsub-member').value = this._userProfile?.singerName || user?.displayName || '';
+    document.getElementById('mfsub-email').value = user?.email || '';
+    document.getElementById('mfsub-amount').value = '';
+    document.getElementById('mfsub-note').value = '';
+    this._openModal('modal-funds-submit');
+    setTimeout(() => document.getElementById('mfsub-amount')?.focus(), 60);
+  }
+
+  _openFundsSettingsModal() {
+    document.getElementById('mfsettings-cashier').value = this._fundsData?.cashier || '';
+    this._openModal('modal-funds-settings');
+  }
+
+  async _fundsCashierRecord() {
+    const member = document.getElementById('mfpay-member').value.trim();
+    const email  = document.getElementById('mfpay-email').value.trim();
+    const amount = parseFloat(document.getElementById('mfpay-amount').value);
+    const month  = document.getElementById('mfpay-month').value;
+    const note   = document.getElementById('mfpay-note').value.trim();
+
+    if (!member) { this._toast('Member name is required', 'error'); return; }
+    if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
+    if (!month) { this._toast('Month is required', 'error'); return; }
+
+    const user = this.auth?.currentUser;
+    const payment = {
+      id:          genId(),
+      member,
+      memberEmail: email || null,
+      amount,
+      month,
+      note:        note || null,
+      recordedAt:  new Date().toISOString(),
+      recordedBy:  user?.email || 'cashier',
+      approvedAt:  new Date().toISOString(),
+      approvedBy:  user?.email || 'cashier',
+    };
+
+    await this._fundsCommitPayment(payment, `Record payment: ${member}`);
+    this._closeModal('modal-funds-pay');
+  }
+
+  async _fundsSubmitReceipt() {
+    const member = document.getElementById('mfsub-member').value.trim();
+    const email  = document.getElementById('mfsub-email').value.trim();
+    const amount = parseFloat(document.getElementById('mfsub-amount').value);
+    const month  = document.getElementById('mfsub-month').value;
+    const note   = document.getElementById('mfsub-note').value.trim();
+    const user   = this.auth?.currentUser;
+
+    if (!member) { this._toast('Your name is required', 'error'); return; }
+    if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
+
+    const btn = document.getElementById('btn-mfsub-submit');
+    if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+
+    try {
+      if (!this._fundsLive) throw new Error('Firebase not available');
+      await this._fundsLive.submitPayment({
+        member,
+        memberEmail: email || user?.email || null,
+        amount,
+        month,
+        note:        note || null,
+        submittedAt: new Date().toISOString(),
+        submittedBy: user?.email || 'unknown',
+      });
+      this._closeModal('modal-funds-submit');
+      this._toast('Receipt submitted — awaiting cashier approval', 'success');
+    } catch (e) {
+      this._toast('Could not submit receipt: ' + (e.message || 'error'), 'error');
+      if (btn) { btn.disabled = false; btn.textContent = 'Submit for Approval'; }
+    }
+  }
+
+  async _fundsApprove(pendingId) {
+    const item = this._fundsPending.find(p => p.id === pendingId);
+    if (!item) return;
+
+    const user = this.auth?.currentUser;
+    const payment = {
+      id:          genId(),
+      member:      item.member,
+      memberEmail: item.memberEmail || null,
+      amount:      item.amount,
+      month:       item.month,
+      note:        item.note || null,
+      recordedAt:  item.submittedAt || new Date().toISOString(),
+      recordedBy:  item.submittedBy || 'member',
+      approvedAt:  new Date().toISOString(),
+      approvedBy:  user?.email || 'cashier',
+    };
+
+    try {
+      await this._fundsCommitPayment(payment, `Approve payment: ${item.member}`);
+      await this._fundsLive?.removePending(pendingId);
+      this._toast('Payment approved and recorded', 'success');
+    } catch (e) {
+      this._toast('Error approving payment: ' + (e.message || ''), 'error');
+    }
+  }
+
+  async _fundsReject(pendingId) {
+    const item = this._fundsPending.find(p => p.id === pendingId);
+    if (!item) return;
+    const ok = await this._confirm(
+      'Reject submission',
+      `Reject the ₹${item.amount} submission from ${item.member || item.memberEmail}?`,
+      'Reject',
+      { danger: true }
+    );
+    if (!ok) return;
+    try {
+      await this._fundsLive?.removePending(pendingId);
+      this._toast('Submission rejected', '');
+    } catch (e) {
+      this._toast('Error: ' + (e.message || ''), 'error');
+    }
+  }
+
+  async _fundsCommitPayment(payment, msg) {
+    if (!this._fundsData) return;
+    this._fundsData.payments = [...(this._fundsData.payments || []), payment];
+
+    if (this.sessions?.commitFunds) {
+      await this.sessions.commitFunds(this._fundsData, msg);
+      this._toast('Payment recorded and saved to GitHub', 'success');
+    } else {
+      this._toast('Payment recorded locally (GitHub sync not enabled)', '');
+    }
+    this._renderFunds();
+  }
+
+  async _fundsSaveCashier() {
+    const email = document.getElementById('mfsettings-cashier').value.trim().toLowerCase();
+    if (!email || !email.includes('@')) { this._toast('Enter a valid email', 'error'); return; }
+    if (!this._fundsData) return;
+    const old = this._fundsData.cashier;
+    this._fundsData.cashier = email;
+
+    if (this.sessions?.commitFunds) {
+      try {
+        await this.sessions.commitFunds(this._fundsData, `Update cashier to ${email}`);
+        this._toast('Cashier updated and saved', 'success');
+      } catch (e) {
+        this._fundsData.cashier = old;
+        this._toast('Error saving: ' + (e.message || ''), 'error');
+        return;
+      }
+    } else {
+      this._toast('Cashier updated locally (GitHub sync not enabled)', '');
+    }
+    this._closeModal('modal-funds-settings');
+    this._renderFunds();
+  }
+
+  _bindFunds() {
+    // Payment record modal (cashier)
+    document.getElementById('mfpay-close')?.addEventListener('click', () => this._closeModal('modal-funds-pay'));
+    document.getElementById('btn-mfpay-cancel')?.addEventListener('click', () => this._closeModal('modal-funds-pay'));
+    document.getElementById('modal-funds-pay')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-funds-pay')) this._closeModal('modal-funds-pay');
+    });
+    document.getElementById('btn-mfpay-submit')?.addEventListener('click', () => this._fundsCashierRecord());
+
+    // Submit receipt modal (member)
+    document.getElementById('mfsub-close')?.addEventListener('click', () => this._closeModal('modal-funds-submit'));
+    document.getElementById('btn-mfsub-cancel')?.addEventListener('click', () => this._closeModal('modal-funds-submit'));
+    document.getElementById('modal-funds-submit')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-funds-submit')) this._closeModal('modal-funds-submit');
+    });
+    document.getElementById('btn-mfsub-submit')?.addEventListener('click', () => this._fundsSubmitReceipt());
+
+    // Settings modal
+    document.getElementById('mfsettings-close')?.addEventListener('click', () => this._closeModal('modal-funds-settings'));
+    document.getElementById('btn-mfsettings-cancel')?.addEventListener('click', () => this._closeModal('modal-funds-settings'));
+    document.getElementById('modal-funds-settings')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-funds-settings')) this._closeModal('modal-funds-settings');
+    });
+    document.getElementById('btn-mfsettings-save')?.addEventListener('click', () => this._fundsSaveCashier());
   }
 
   // ─── Favourites ───────────────────────────────────────────────────────────
