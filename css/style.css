@@ -2453,3 +2453,38 @@ img { max-width: 100%; }
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
+
+/* Cumulative summary bar */
+.funds-cumulative {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--saffron);
+  border-radius: 12px;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.funds-cum-item {
+  flex: 1;
+  text-align: center;
+}
+.funds-cum-num {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+.funds-cum-label {
+  font-size: 0.72rem;
+  opacity: .85;
+  margin-top: .15rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.funds-cum-divider {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255,255,255,.35);
+  margin: 0 .25rem;
+}
