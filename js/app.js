@@ -5496,19 +5496,6 @@ class App {
         </div>`;
 
     container.innerHTML = `
-      <div class="funds-header-row">
-        <div class="funds-month-nav">
-          <button class="btn btn-ghost btn-icon" id="btn-funds-prev" aria-label="Previous month">${ICONS.chevronLeft}</button>
-          <span class="funds-month-label">${this._fundsMonthLabel(month)}</span>
-          <button class="btn btn-ghost btn-icon" id="btn-funds-next" aria-label="Next month" ${isCurrentMonth ? 'disabled' : ''}>${ICONS.chevronRight}</button>
-        </div>
-        <div class="funds-header-actions">
-          ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
-          ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
-          ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
-        </div>
-      </div>
-
       <div class="funds-cumulative">
         <div class="funds-cum-item">
           <div class="funds-cum-num">${this._fundsFormatAmount(cumAmt)}</div>
@@ -5526,18 +5513,34 @@ class App {
         </div>
       </div>
 
-      <div class="stats-row funds-stats">
-        <div class="stat-card">
-          <div class="stat-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
-          <div class="stat-label">This Month</div>
+      <div class="funds-header-row">
+        <div class="funds-month-nav">
+          <button class="btn btn-ghost btn-icon" id="btn-funds-prev" aria-label="Previous month">${ICONS.chevronLeft}</button>
+          <span class="funds-month-label">${this._fundsMonthLabel(month)}</span>
+          <button class="btn btn-ghost btn-icon" id="btn-funds-next" aria-label="Next month" ${isCurrentMonth ? 'disabled' : ''}>${ICONS.chevronRight}</button>
         </div>
-        <div class="stat-card">
-          <div class="stat-num">${payments.length}</div>
-          <div class="stat-label">Payments</div>
+        <div class="funds-header-actions">
+          ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
+          ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
+          ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
         </div>
-        ${isCashier ? `<div class="stat-card ${pending.length ? 'stat-card-warn' : ''}">
-          <div class="stat-num">${pending.length}</div>
-          <div class="stat-label">Pending ${pending.length ? '⚠' : ''}</div>
+      </div>
+
+      <div class="funds-month-stats">
+        <div class="funds-month-stat">
+          <div class="funds-ms-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
+          <div class="funds-ms-label">This Month</div>
+        </div>
+        <div class="funds-ms-divider"></div>
+        <div class="funds-month-stat">
+          <div class="funds-ms-num">${payments.length}</div>
+          <div class="funds-ms-label">Payments</div>
+        </div>
+        ${isCashier ? `
+        <div class="funds-ms-divider"></div>
+        <div class="funds-month-stat ${pending.length ? 'funds-ms-warn' : ''}">
+          <div class="funds-ms-num">${pending.length}</div>
+          <div class="funds-ms-label">Pending${pending.length ? ' ⚠' : ''}</div>
         </div>` : ''}
       </div>
 
