@@ -274,6 +274,17 @@
         </div>
       </div>
 
+      <!-- Funds Collection -->
+      <div id="view-funds" class="view">
+        <div class="view-content">
+          <button class="btn btn-ghost btn-back" id="btn-funds-back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Dashboard</button>
+          <div class="page-header">
+            <h2 class="page-title">Funds</h2>
+          </div>
+          <div id="funds-content"></div>
+        </div>
+      </div>
+
     </main>
 
     <!-- Bottom nav (mobile) -->
@@ -308,6 +319,17 @@
           <span id="bnav-bg-badge" class="bnav-bg-badge hidden" aria-label="backgrounded sessions"></span>
         </span>
         <span class="bnav-label">Session</span>
+      </a>
+      <a href="#funds" class="bnav-item" data-view="funds">
+        <span class="bnav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M14.5 9a3.5 2.5 0 1 0 0 6H12"/>
+            <line x1="12" y1="7" x2="12" y2="9"/>
+            <line x1="12" y1="15" x2="12" y2="17"/>
+          </svg>
+        </span>
+        <span class="bnav-label">Funds</span>
       </a>
     </nav>
 
@@ -965,7 +987,102 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20260819.5"></script>
+  <!-- Funds: Record Payment (cashier direct) -->
+  <div id="modal-funds-pay" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Record Payment</h3>
+        <button class="modal-close" id="mfpay-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Member Name <span style="color:var(--error)">*</span></label>
+          <input type="text" id="mfpay-member" class="form-input" placeholder="e.g. Karam Singh" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Member Email (optional)</label>
+          <input type="email" id="mfpay-email" class="form-input" placeholder="member@example.com" autocomplete="off">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div class="form-group">
+            <label class="form-label">Amount (₹) <span style="color:var(--error)">*</span></label>
+            <input type="number" id="mfpay-amount" class="form-input" placeholder="500" min="1" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Month</label>
+            <input type="month" id="mfpay-month" class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note (optional)</label>
+          <input type="text" id="mfpay-note" class="form-input" placeholder="e.g. Cash payment on 2nd Sep" autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mfpay-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mfpay-submit">Record Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funds: Submit Receipt (member) -->
+  <div id="modal-funds-submit" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Submit Receipt</h3>
+        <button class="modal-close" id="mfsub-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" style="margin-bottom:.75rem">Submit your payment details. The cashier will review and approve.</p>
+        <div class="form-group">
+          <label class="form-label">Your Name <span style="color:var(--error)">*</span></label>
+          <input type="text" id="mfsub-member" class="form-input" placeholder="Your singer name" autocomplete="off">
+        </div>
+        <input type="hidden" id="mfsub-email">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div class="form-group">
+            <label class="form-label">Amount (₹) <span style="color:var(--error)">*</span></label>
+            <input type="number" id="mfsub-amount" class="form-input" placeholder="500" min="1" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Month</label>
+            <input type="month" id="mfsub-month" class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Note / Receipt details (optional)</label>
+          <input type="text" id="mfsub-note" class="form-input" placeholder="e.g. Paid via UPI ref #1234" autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mfsub-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mfsub-submit">Submit for Approval</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funds: Settings (cashier only) -->
+  <div id="modal-funds-settings" class="modal-overlay hidden">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3 class="modal-title">Funds Settings</h3>
+        <button class="modal-close" id="mfsettings-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Cashier Email</label>
+          <input type="email" id="mfsettings-cashier" class="form-input" placeholder="cashier@example.com" autocomplete="off">
+          <div class="form-hint">The person who can record payments and approve member submissions.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-mfsettings-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-mfsettings-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=20260903.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;
