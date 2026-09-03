@@ -5455,7 +5455,7 @@ class App {
 
     const month      = this._fundsCurrentMonth();
     const isCashier  = this._isFundsCashier();
-    const payments   = (this._fundsData.payments || []).filter(p => p.month === month);
+    const payments   = (this._fundsData.payments || []).filter(p => (p.date?.slice(0, 7) || p.month) === month);
     const totalAmt   = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
     const pending    = this._fundsPending;
     const isSignedIn = !!this.auth?.currentUser;
@@ -5577,8 +5577,11 @@ class App {
   }
 
   _fundsPendingCardHTML(p) {
-    const user  = this.auth?.currentUser;
+    const user   = this.auth?.currentUser;
     const canAct = user?.email === this._fundsData?.cashier;
+    const dateLabel = p.date
+      ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
+      : (p.month ? this._fundsMonthLabel(p.month) : '');
     return `
       <div class="funds-pending-card">
         <div class="funds-pc-row">
@@ -5586,7 +5589,8 @@ class App {
           <span class="funds-pc-amount">${this._fundsFormatAmount(p.amount)}</span>
         </div>
         <div class="funds-pc-meta">
-          ${escHtml(this._fundsMonthLabel(p.month || ''))}
+          ${dateLabel ? escHtml(dateLabel) : ''}
+          ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
           ${p.note ? ` · "${escHtml(p.note)}"` : ''}
           · submitted ${p.submittedAt ? new Date(p.submittedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short' }) : ''}
           ${p.memberEmail ? `<span class="funds-pc-email">${escHtml(p.memberEmail)}</span>` : ''}
@@ -5600,15 +5604,18 @@ class App {
   }
 
   _fundsPaymentRowHTML(p) {
-    const isCashier = this._isFundsCashier();
     const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
+    const dateLabel = p.date
+      ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
+      : (p.approvedAt ? new Date(p.approvedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' }) : '');
     return `
       <div class="funds-history-item">
         <div class="funds-hi-body">
           <div class="funds-hi-member">${escHtml(p.member || p.memberEmail || '—')}</div>
           <div class="funds-hi-meta">
-            ${p.note ? escHtml(p.note) + ' · ' : ''}
-            ${p.approvedAt ? new Date(p.approvedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' }) : ''}
+            ${dateLabel}
+            ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
+            ${p.note ? ` · ${escHtml(p.note)}` : ''}
             <span class="funds-by-badge">${byLabel}</span>
           </div>
         </div>
@@ -5617,21 +5624,29 @@ class App {
   }
 
   _openFundsPayModal(month) {
-    document.getElementById('mfpay-month').value = month;
+    const today = new Date().toISOString().slice(0, 10);
+    document.getElementById('mfpay-date').value = today;
     document.getElementById('mfpay-member').value = '';
-    document.getElementById('mfpay-email').value = '';
     document.getElementById('mfpay-amount').value = '';
+    document.getElementById('mfpay-txn').value = '';
     document.getElementById('mfpay-note').value = '';
+    const list = document.getElementById('mfpay-member-list');
+    if (list) {
+      const names = this.sessions?.allSingerNames?.() || [];
+      list.innerHTML = names.map(n => `<option value="${escHtml(n)}">`).join('');
+    }
     this._openModal('modal-funds-pay');
     setTimeout(() => document.getElementById('mfpay-member')?.focus(), 60);
   }
 
   _openFundsSubmitModal(month) {
     const user = this.auth?.currentUser;
-    document.getElementById('mfsub-month').value = month;
+    const today = new Date().toISOString().slice(0, 10);
+    document.getElementById('mfsub-date').value = today;
     document.getElementById('mfsub-member').value = this._userProfile?.singerName || user?.displayName || '';
     document.getElementById('mfsub-email').value = user?.email || '';
     document.getElementById('mfsub-amount').value = '';
+    document.getElementById('mfsub-txn').value = '';
     document.getElementById('mfsub-note').value = '';
     this._openModal('modal-funds-submit');
     setTimeout(() => document.getElementById('mfsub-amount')?.focus(), 60);
@@ -5644,27 +5659,29 @@ class App {
 
   async _fundsCashierRecord() {
     const member = document.getElementById('mfpay-member').value.trim();
-    const email  = document.getElementById('mfpay-email').value.trim();
     const amount = parseFloat(document.getElementById('mfpay-amount').value);
-    const month  = document.getElementById('mfpay-month').value;
+    const date   = document.getElementById('mfpay-date').value;
+    const txn    = document.getElementById('mfpay-txn').value.trim();
     const note   = document.getElementById('mfpay-note').value.trim();
 
     if (!member) { this._toast('Member name is required', 'error'); return; }
     if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
-    if (!month) { this._toast('Month is required', 'error'); return; }
+    if (!date) { this._toast('Receipt date is required', 'error'); return; }
+    if (!txn) { this._toast('UTR / Transaction ID is required', 'error'); return; }
 
     const user = this.auth?.currentUser;
     const payment = {
-      id:          genId(),
+      id:            genId(),
       member,
-      memberEmail: email || null,
+      memberEmail:   null,
       amount,
-      month,
-      note:        note || null,
-      recordedAt:  new Date().toISOString(),
-      recordedBy:  user?.email || 'cashier',
-      approvedAt:  new Date().toISOString(),
-      approvedBy:  user?.email || 'cashier',
+      date,
+      transactionId: txn,
+      note:          note || null,
+      recordedAt:    new Date().toISOString(),
+      recordedBy:    user?.email || 'cashier',
+      approvedAt:    new Date().toISOString(),
+      approvedBy:    user?.email || 'cashier',
     };
 
     await this._fundsCommitPayment(payment, `Record payment: ${member}`);
@@ -5672,15 +5689,18 @@ class App {
   }
 
   async _fundsSubmitReceipt() {
-    const member = document.getElementById('mfsub-member').value.trim();
-    const email  = document.getElementById('mfsub-email').value.trim();
-    const amount = parseFloat(document.getElementById('mfsub-amount').value);
-    const month  = document.getElementById('mfsub-month').value;
-    const note   = document.getElementById('mfsub-note').value.trim();
     const user   = this.auth?.currentUser;
+    const member = document.getElementById('mfsub-member').value.trim();
+    const email  = document.getElementById('mfsub-email').value.trim() || user?.email || null;
+    const amount = parseFloat(document.getElementById('mfsub-amount').value);
+    const date   = document.getElementById('mfsub-date').value;
+    const txn    = document.getElementById('mfsub-txn').value.trim();
+    const note   = document.getElementById('mfsub-note').value.trim();
 
-    if (!member) { this._toast('Your name is required', 'error'); return; }
+    if (!member) { this._toast('Your name is required — please sign in', 'error'); return; }
     if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
+    if (!date) { this._toast('Receipt date is required', 'error'); return; }
+    if (!txn) { this._toast('UTR / Transaction ID is required', 'error'); return; }
 
     const btn = document.getElementById('btn-mfsub-submit');
     if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
@@ -5689,12 +5709,13 @@ class App {
       if (!this._fundsLive) throw new Error('Firebase not available');
       await this._fundsLive.submitPayment({
         member,
-        memberEmail: email || user?.email || null,
+        memberEmail:   email,
         amount,
-        month,
-        note:        note || null,
-        submittedAt: new Date().toISOString(),
-        submittedBy: user?.email || 'unknown',
+        date,
+        transactionId: txn,
+        note:          note || null,
+        submittedAt:   new Date().toISOString(),
+        submittedBy:   user?.email || 'unknown',
       });
       this._closeModal('modal-funds-submit');
       this._toast('Receipt submitted — awaiting cashier approval', 'success');
@@ -5710,16 +5731,17 @@ class App {
 
     const user = this.auth?.currentUser;
     const payment = {
-      id:          genId(),
-      member:      item.member,
-      memberEmail: item.memberEmail || null,
-      amount:      item.amount,
-      month:       item.month,
-      note:        item.note || null,
-      recordedAt:  item.submittedAt || new Date().toISOString(),
-      recordedBy:  item.submittedBy || 'member',
-      approvedAt:  new Date().toISOString(),
-      approvedBy:  user?.email || 'cashier',
+      id:            genId(),
+      member:        item.member,
+      memberEmail:   item.memberEmail || null,
+      amount:        item.amount,
+      date:          item.date || null,
+      transactionId: item.transactionId || null,
+      note:          item.note || null,
+      recordedAt:    item.submittedAt || new Date().toISOString(),
+      recordedBy:    item.submittedBy || 'member',
+      approvedAt:    new Date().toISOString(),
+      approvedBy:    user?.email || 'cashier',
     };
 
     try {
