@@ -115,6 +115,7 @@ img { max-width: 100%; }
 
 /* ─── Header actions group ───────────────────────────────────────────────── */
 .header-actions { display: flex; align-items: center; gap: 0.25rem; }
+#btn-funds-nav.active { color: var(--saffron); }
 
 /* ─── Refresh button spin animation ─────────────────────────────────────── */
 #btn-refresh { font-size: 0.85rem; transition: transform .2s; }
