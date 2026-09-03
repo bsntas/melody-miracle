@@ -1,6 +1,6 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260903.8';
+const CACHE = 'melody-miracle-20260903.9';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
 const V_APP        = '20260903.5'; // app.js (funds: reorder layout, compact month stats strip)
