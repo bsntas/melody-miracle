@@ -5590,13 +5590,6 @@ class App {
       await this.requireAuth('Sign in to submit a payment receipt');
     });
 
-    // Pending approval buttons
-    document.getElementById('funds-pending-list')?.addEventListener('click', e => {
-      const approveBtn = e.target.closest('.btn-funds-approve');
-      const rejectBtn  = e.target.closest('.btn-funds-reject');
-      if (approveBtn) this._fundsApprove(approveBtn.dataset.id);
-      if (rejectBtn)  this._fundsReject(rejectBtn.dataset.id);
-    });
   }
 
   _fundsPendingCardHTML(p) {
@@ -5752,6 +5745,9 @@ class App {
     const item = this._fundsPending.find(p => p.id === pendingId);
     if (!item) return;
 
+    const btn = document.querySelector(`.btn-funds-approve[data-id="${pendingId}"]`);
+    if (btn) { btn.disabled = true; btn.textContent = 'Approving…'; }
+
     const user = this.auth?.currentUser;
     const payment = {
       id:            genId(),
@@ -5854,6 +5850,15 @@ class App {
       if (e.target === document.getElementById('modal-funds-settings')) this._closeModal('modal-funds-settings');
     });
     document.getElementById('btn-mfsettings-save')?.addEventListener('click', () => this._fundsSaveCashier());
+
+    // Pending approve/reject buttons — delegated to the stable outer container
+    // so it survives every _renderFunds() innerHTML replacement.
+    document.getElementById('funds-content')?.addEventListener('click', e => {
+      const approveBtn = e.target.closest('.btn-funds-approve');
+      const rejectBtn  = e.target.closest('.btn-funds-reject');
+      if (approveBtn) this._fundsApprove(approveBtn.dataset.id);
+      if (rejectBtn)  this._fundsReject(rejectBtn.dataset.id);
+    });
   }
 
   // ─── Favourites ───────────────────────────────────────────────────────────
