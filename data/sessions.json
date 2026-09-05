@@ -2,6 +2,154 @@
   {
     "bhajans": [
       {
+        "addedAt": 1786810440062,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "gajanana-gajanana",
+        "bhajan_title": "Gajanana Gajanana",
+        "id": "e_msuksvb2o8b5",
+        "pitch": "2.5 Pancham / D#",
+        "pitch_indian": "2.5 Pancham",
+        "pitch_western": "D#",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1787308417310,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "sri-lakshmi-ramana-narayana",
+        "bhajan_title": "Sri Lakshmi Ramana Narayana",
+        "id": "e_mt2ta90ejip2",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1786810146349,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "shesha-shaila-vasa-narayana",
+        "bhajan_title": "Shesha Shaila Vasa Narayana",
+        "id": "e_msukmkodm4tp",
+        "notes": "Minor",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1787403145762,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "ghana-ghana-neela-vadana-ati",
+        "bhajan_title": "Ghana Ghana Neela Vadana Ati",
+        "id": "e_mt4dolyaws59",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1786810645853,
+        "bhajan_deity": "Rama",
+        "bhajan_id": "yuga-avatara-sai-rama",
+        "bhajan_title": "Yuga Avatara Sai Rama",
+        "id": "e_msukxa3hw32e",
+        "pitch": "2 Madhyam / G",
+        "pitch_indian": "2 Madhyam",
+        "pitch_western": "G",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1786969607771,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "hey-deena-dayalu-harey-harey",
+        "bhajan_title": "Hey Deena Dayalu Harey Harey",
+        "id": "e_msx7kdwb7rvt",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1787403881130,
+        "bhajan_deity": "Narayana",
+        "bhajan_id": "man-ek-baar-hari-bol",
+        "bhajan_title": "Man Ek Baar Hari Bol",
+        "id": "e_mt4e4dd6htv5",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Sudhi"
+        ]
+      },
+      {
+        "addedAt": 1787402002737,
+        "bhajan_deity": "Sarva Dharma",
+        "bhajan_id": "hey-nirakari-allah-hey-avatari",
+        "bhajan_title": "Hey Nirakari Allah Hey Avatari",
+        "id": "e_mt4d03zl5unb",
+        "pitch": "5 Madhyam / C",
+        "pitch_indian": "5 Madhyam",
+        "pitch_western": "C",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1787402915074,
+        "bhajan_deity": "Narayana, Krishna",
+        "bhajan_id": "hari-narayana-hari-narayana-hari-0",
+        "bhajan_title": "Hari Narayana Hari Narayana Hari",
+        "id": "e_mt4djnyaawh2",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Ashik",
+          "Gigme"
+        ]
+      }
+    ],
+    "createdAt": "2026-08-15T16:01:47.231Z",
+    "currentBhajan": "e_mt4eeho5h44o",
+    "date": "2026-08-22",
+    "id": "weekendbhajansecityhsr-2026-08-22",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-08-22",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-08-22T13:12:33.269Z",
+    "status": "completed",
+    "singers": [
+      "Basanta",
+      "Bhawana",
+      "Bishal",
+      "Isha",
+      "Karam",
+      "Anisha",
+      "Sudhi",
+      "Sayujya",
+      "Ashik",
+      "Gigme"
+    ],
+    "endedAt": "2026-08-22T14:07:06.127Z",
+    "duration": 3273
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1786793378810,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "vighneshwaram-bhajorey-manasa-vighna-haram",
@@ -10400,77 +10548,50 @@
   {
     "bhajans": [
       {
-        "addedAt": 1786810440062,
+        "addedAt": 1788604107248,
         "bhajan_deity": "Ganesha",
-        "bhajan_id": "gajanana-gajanana",
-        "bhajan_title": "Gajanana Gajanana",
-        "id": "e_msuksvb2o8b5",
-        "pitch": "2.5 Pancham / D#",
-        "pitch_indian": "2.5 Pancham",
-        "pitch_western": "D#",
-        "singers": [
-          "Basanta"
-        ]
-      },
-      {
-        "addedAt": 1787308417310,
-        "bhajan_deity": "Narayana",
-        "bhajan_id": "sri-lakshmi-ramana-narayana",
-        "bhajan_title": "Sri Lakshmi Ramana Narayana",
-        "id": "e_mt2ta90ejip2",
-        "pitch": "5.5 Pancham / G#",
-        "pitch_indian": "5.5 Pancham",
-        "pitch_western": "G#",
+        "bhajan_id": "parvathi-tanaya-siddhi-vinayaka",
+        "bhajan_title": "Parvathi Tanaya Siddhi Vinayaka",
+        "id": "e_mto8pdrktmh6",
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
         "singers": [
           "Bhawana"
         ]
       },
       {
-        "addedAt": 1786810146349,
-        "bhajan_deity": "Narayana",
-        "bhajan_id": "shesha-shaila-vasa-narayana",
-        "bhajan_title": "Shesha Shaila Vasa Narayana",
-        "id": "e_msukmkodm4tp",
-        "notes": "Minor",
-        "pitch": "1.5 Pancham / C#",
-        "pitch_indian": "1.5 Pancham",
-        "pitch_western": "C#",
-        "singers": [
-          "Bishal"
-        ]
-      },
-      {
-        "addedAt": 1787403145762,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "ghana-ghana-neela-vadana-ati",
-        "bhajan_title": "Ghana Ghana Neela Vadana Ati",
-        "id": "e_mt4dolyaws59",
-        "pitch": "6 Pancham / A",
-        "pitch_indian": "6 Pancham",
-        "pitch_western": "A",
-        "singers": [
-          "Isha"
-        ]
-      },
-      {
-        "addedAt": 1786810645853,
-        "bhajan_deity": "Rama",
-        "bhajan_id": "yuga-avatara-sai-rama",
-        "bhajan_title": "Yuga Avatara Sai Rama",
-        "id": "e_msukxa3hw32e",
-        "pitch": "2 Madhyam / G",
-        "pitch_indian": "2 Madhyam",
-        "pitch_western": "G",
-        "singers": [
-          "Karam"
-        ]
-      },
-      {
-        "addedAt": 1786969607771,
+        "addedAt": 1788615065443,
         "bhajan_deity": "Sai",
-        "bhajan_id": "hey-deena-dayalu-harey-harey",
-        "bhajan_title": "Hey Deena Dayalu Harey Harey",
-        "id": "e_msx7kdwb7rvt",
+        "bhajan_id": "kamala-nayana-sai-ranga",
+        "bhajan_title": "Kamala Nayana Sai Ranga",
+        "id": "e_mtof895vooy2",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Gigme"
+        ]
+      },
+      {
+        "addedAt": 1788507375075,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "anupama-sundara-nanda-kishora",
+        "bhajan_title": "Anupama Sundara Nanda Kishora",
+        "id": "e_mtmn42qrn10m",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1788453017843,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "krishna-krishna-yaduvara-krishna",
+        "bhajan_title": "Krishna Krishna Yaduvara Krishna",
+        "id": "e_mtlqr0fntafp",
         "pitch": "5.5 Pancham / G#",
         "pitch_indian": "5.5 Pancham",
         "pitch_western": "G#",
@@ -10479,70 +10600,80 @@
         ]
       },
       {
-        "addedAt": 1787403881130,
-        "bhajan_deity": "Narayana",
-        "bhajan_id": "man-ek-baar-hari-bol",
-        "bhajan_title": "Man Ek Baar Hari Bol",
-        "id": "e_mt4e4dd6htv5",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "singers": [
-          "Sudhi"
-        ]
-      },
-      {
-        "addedAt": 1787402002737,
-        "bhajan_deity": "Sarva Dharma",
-        "bhajan_id": "hey-nirakari-allah-hey-avatari",
-        "bhajan_title": "Hey Nirakari Allah Hey Avatari",
-        "id": "e_mt4d03zl5unb",
-        "pitch": "5 Madhyam / C",
-        "pitch_indian": "5 Madhyam",
-        "pitch_western": "C",
+        "addedAt": 1788536990227,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "radhey-krishna-radhey-krishna-jai",
+        "bhajan_title": "Radhey Krishna Radhey Krishna Jai",
+        "id": "e_mtn4qtxv80aw",
+        "pitch": "4 Madhyam / A#",
+        "pitch_indian": "4 Madhyam",
+        "pitch_western": "A#",
         "singers": [
           "Sayujya"
         ]
       },
       {
-        "addedAt": 1787402915074,
-        "bhajan_deity": "Narayana, Krishna",
-        "bhajan_id": "hari-narayana-hari-narayana-hari-0",
-        "bhajan_title": "Hari Narayana Hari Narayana Hari",
-        "id": "e_mt4djnyaawh2",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
+        "addedAt": 1788599444856,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "muralidhara-murahara-natavara",
+        "bhajan_title": "Muralidhara Murahara Natavara",
+        "id": "e_mto5xg8ozt48",
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
         "singers": [
-          "Ashik",
-          "Gigme"
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1788601759184,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "giridhari-lal-shyama-gopal",
+        "bhajan_title": "Giridhari Lal Shyama Gopal",
+        "id": "e_mto7b1zkgqtd",
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1788417678666,
+        "bhajan_deity": "Anjaneya",
+        "bhajan_id": "rama-lakshmana-janaki-jai-bolo",
+        "bhajan_title": "Rama Lakshmana Janaki Jai Bolo",
+        "id": "e_mtl5pkjurxlr",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Ashik"
         ]
       }
     ],
-    "createdAt": "2026-08-15T16:01:47.231Z",
-    "currentBhajan": "e_mt4eeho5h44o",
-    "date": "2026-08-22",
-    "id": "weekendbhajansecityhsr-2026-08-22",
+    "createdAt": "2026-09-01T12:22:44.872Z",
+    "currentBhajan": "e_mtog4oeztfqe",
+    "date": "2026-09-05",
+    "id": "weekendbhajansecityhsr-2026-09-05",
     "isBackdated": false,
     "label": "Weekend Bhajans E-City HSR",
     "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-08-22",
+    "roomCode": "weekendbhajansecityhsr-2026-09-05",
     "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-08-22T13:12:33.269Z",
+    "startedAt": "2026-09-05T13:56:18.204Z",
     "status": "completed",
     "singers": [
-      "Basanta",
       "Bhawana",
+      "Gigme",
+      "Basanta",
+      "Anisha",
+      "Sayujya",
       "Bishal",
       "Isha",
-      "Karam",
-      "Anisha",
-      "Sudhi",
-      "Sayujya",
-      "Ashik",
-      "Gigme"
+      "Ashik"
     ],
-    "endedAt": "2026-08-22T14:07:06.127Z",
-    "duration": 3273
+    "endedAt": "2026-09-05T14:51:07.026Z",
+    "duration": 3289
   }
 ]
