@@ -5620,6 +5620,7 @@ class App {
   }
 
   _fundsPaymentRowHTML(p) {
+    const isCashier = this._isFundsCashier();
     const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
     const dateLabel = p.date
       ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
@@ -5635,24 +5636,37 @@ class App {
             <span class="funds-by-badge">${byLabel}</span>
           </div>
         </div>
-        <div class="funds-hi-amount">${this._fundsFormatAmount(p.amount)}</div>
+        <div class="funds-hi-right">
+          <div class="funds-hi-amount">${this._fundsFormatAmount(p.amount)}</div>
+          ${isCashier ? `
+          <div class="funds-hi-actions">
+            <button class="btn btn-ghost btn-icon btn-sm btn-funds-edit" data-id="${escHtml(p.id)}" title="Edit payment" aria-label="Edit payment">${ICONS.editSm}</button>
+            <button class="btn btn-ghost btn-icon btn-sm btn-funds-delete" data-id="${escHtml(p.id)}" title="Delete payment" aria-label="Delete payment" style="color:var(--error)">${ICONS.trash}</button>
+          </div>` : ''}
+        </div>
       </div>`;
   }
 
-  _openFundsPayModal(month) {
+  _openFundsPayModal(month, payment = null) {
     const today = new Date().toISOString().slice(0, 10);
-    document.getElementById('mfpay-date').value = today;
-    document.getElementById('mfpay-member').value = '';
-    document.getElementById('mfpay-amount').value = '';
-    document.getElementById('mfpay-txn').value = '';
-    document.getElementById('mfpay-note').value = '';
+    const isEdit = !!payment;
+    document.getElementById('mfpay-edit-id').value = payment?.id || '';
+    document.getElementById('mfpay-date').value   = payment?.date || today;
+    document.getElementById('mfpay-member').value = payment?.member || '';
+    document.getElementById('mfpay-amount').value = payment?.amount != null ? payment.amount : '';
+    document.getElementById('mfpay-txn').value    = payment?.transactionId || '';
+    document.getElementById('mfpay-note').value   = payment?.note || '';
+    const titleEl = document.getElementById('mfpay-title');
+    if (titleEl) titleEl.textContent = isEdit ? 'Edit Payment' : 'Record Payment';
+    const submitBtn = document.getElementById('btn-mfpay-submit');
+    if (submitBtn) { submitBtn.textContent = isEdit ? 'Save Changes' : 'Record Payment'; submitBtn.disabled = false; }
     const list = document.getElementById('mfpay-member-list');
     if (list) {
       const names = this.sessions?.allSingerNames?.() || [];
       list.innerHTML = names.map(n => `<option value="${escHtml(n)}">`).join('');
     }
     this._openModal('modal-funds-pay');
-    setTimeout(() => document.getElementById('mfpay-member')?.focus(), 60);
+    setTimeout(() => document.getElementById(isEdit ? 'mfpay-amount' : 'mfpay-member')?.focus(), 60);
   }
 
   _openFundsSubmitModal(month) {
@@ -5674,34 +5688,90 @@ class App {
   }
 
   async _fundsCashierRecord() {
-    const member = document.getElementById('mfpay-member').value.trim();
-    const amount = parseFloat(document.getElementById('mfpay-amount').value);
-    const date   = document.getElementById('mfpay-date').value;
-    const txn    = document.getElementById('mfpay-txn').value.trim();
-    const note   = document.getElementById('mfpay-note').value.trim();
+    const member  = document.getElementById('mfpay-member').value.trim();
+    const amount  = parseFloat(document.getElementById('mfpay-amount').value);
+    const date    = document.getElementById('mfpay-date').value;
+    const txn     = document.getElementById('mfpay-txn').value.trim();
+    const note    = document.getElementById('mfpay-note').value.trim();
+    const editId  = document.getElementById('mfpay-edit-id')?.value || '';
 
     if (!member) { this._toast('Member name is required', 'error'); return; }
     if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
     if (!date) { this._toast('Receipt date is required', 'error'); return; }
     if (!txn) { this._toast('UTR / Transaction ID is required', 'error'); return; }
 
-    const user = this.auth?.currentUser;
-    const payment = {
-      id:            genId(),
-      member,
-      memberEmail:   null,
-      amount,
-      date,
-      transactionId: txn,
-      note:          note || null,
-      recordedAt:    new Date().toISOString(),
-      recordedBy:    user?.email || 'cashier',
-      approvedAt:    new Date().toISOString(),
-      approvedBy:    user?.email || 'cashier',
-    };
+    const btn = document.getElementById('btn-mfpay-submit');
+    if (btn) { btn.disabled = true; btn.textContent = editId ? 'Saving…' : 'Recording…'; }
 
-    await this._fundsCommitPayment(payment, `Record payment: ${member}`);
-    this._closeModal('modal-funds-pay');
+    try {
+      const user = this.auth?.currentUser;
+      if (editId) {
+        // Edit existing payment in place
+        const payments = this._fundsData.payments || [];
+        const idx = payments.findIndex(p => p.id === editId);
+        if (idx === -1) throw new Error('Payment not found');
+        payments[idx] = {
+          ...payments[idx],
+          member,
+          amount,
+          date,
+          transactionId: txn,
+          note: note || null,
+        };
+        this._fundsData.payments = payments;
+        if (this.sessions?.commitFunds) {
+          await this.sessions.commitFunds(this._fundsData, `Edit payment: ${member}`);
+          this._toast('Payment updated and saved to GitHub', 'success');
+        } else {
+          this._toast('Payment updated locally', '');
+        }
+        this._renderFunds();
+      } else {
+        const payment = {
+          id:            genId(),
+          member,
+          memberEmail:   null,
+          amount,
+          date,
+          transactionId: txn,
+          note:          note || null,
+          recordedAt:    new Date().toISOString(),
+          recordedBy:    user?.email || 'cashier',
+          approvedAt:    new Date().toISOString(),
+          approvedBy:    user?.email || 'cashier',
+        };
+        await this._fundsCommitPayment(payment, `Record payment: ${member}`);
+      }
+      this._closeModal('modal-funds-pay');
+    } catch (e) {
+      this._toast('Error: ' + (e.message || 'could not save'), 'error');
+      if (btn) { btn.disabled = false; btn.textContent = editId ? 'Save Changes' : 'Record Payment'; }
+    }
+  }
+
+  async _fundsDeletePayment(paymentId) {
+    const payment = (this._fundsData?.payments || []).find(p => p.id === paymentId);
+    if (!payment) return;
+    const ok = await this._confirm(
+      'Delete payment',
+      `Delete the ₹${payment.amount} payment from ${payment.member || '—'}? This cannot be undone.`,
+      'Delete',
+      { danger: true }
+    );
+    if (!ok) return;
+    this._fundsData.payments = this._fundsData.payments.filter(p => p.id !== paymentId);
+    if (this.sessions?.commitFunds) {
+      try {
+        await this.sessions.commitFunds(this._fundsData, `Delete payment: ${payment.member}`);
+        this._toast('Payment deleted', 'success');
+      } catch (e) {
+        this._toast('Error deleting: ' + (e.message || ''), 'error');
+        return;
+      }
+    } else {
+      this._toast('Payment deleted locally', '');
+    }
+    this._renderFunds();
   }
 
   async _fundsSubmitReceipt() {
@@ -5851,13 +5921,19 @@ class App {
     });
     document.getElementById('btn-mfsettings-save')?.addEventListener('click', () => this._fundsSaveCashier());
 
-    // Pending approve/reject buttons — delegated to the stable outer container
-    // so it survives every _renderFunds() innerHTML replacement.
+    // Delegated click handler for all dynamic funds buttons (survives _renderFunds re-renders)
     document.getElementById('funds-content')?.addEventListener('click', e => {
       const approveBtn = e.target.closest('.btn-funds-approve');
       const rejectBtn  = e.target.closest('.btn-funds-reject');
+      const editBtn    = e.target.closest('.btn-funds-edit');
+      const deleteBtn  = e.target.closest('.btn-funds-delete');
       if (approveBtn) this._fundsApprove(approveBtn.dataset.id);
       if (rejectBtn)  this._fundsReject(rejectBtn.dataset.id);
+      if (editBtn) {
+        const payment = (this._fundsData?.payments || []).find(p => p.id === editBtn.dataset.id);
+        if (payment) this._openFundsPayModal(null, payment);
+      }
+      if (deleteBtn) this._fundsDeletePayment(deleteBtn.dataset.id);
     });
   }
 
