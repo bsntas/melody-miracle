@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "melody-miracle": {
+      "notifications": {
+        "$emailSlug": { ".read": true, ".write": true }
+      },
+      "broadcasts": { ".read": true, ".write": true },
+      "fcm-tokens": {
+        "$emailSlug": { ".read": false, ".write": true }
+      }
+    }
+  }
+}
