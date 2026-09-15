@@ -4,8 +4,9 @@ import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
+import { NotificationCenter } from './notifications.js?v=20260915.1';
 
-console.log('[MM] app.js v20260903.1 loaded');
+console.log('[MM] app.js v20260915.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -133,6 +134,9 @@ class App {
     this._fundsLive    = null;   // FundsLive instance
     this._fundsLoaded  = false;
 
+    // Notifications
+    this._notifications = null;  // NotificationCenter instance (set after auth)
+
     // Series filter (null = all series)
     try {
       this._selectedSeries = localStorage.getItem('mm-series-filter') || null;
@@ -188,6 +192,7 @@ class App {
       this._bindGlobal();
       this._bindSettings();
       this._bindFunds();
+      this._bindNotifications();
       this._initKeyboardAdjust();
     } catch (e) {
       console.error('App init error:', e);
@@ -3459,6 +3464,14 @@ class App {
     this.sessions.saveDraft(updated);
     this._acquireWakeLock();
     this._renderSession();
+    // Broadcast so logged-in members see a notification
+    NotificationCenter.broadcast({
+      type:     'session_started',
+      title:    '🎵 Session Started',
+      body:     updated.label || updated.series || 'A session is now playing',
+      roomCode: updated.roomCode,
+      series:   updated.series,
+    });
   }
 
   _nextBhajan() {
@@ -5293,6 +5306,8 @@ class App {
       if (!(this.sessions instanceof GitHubStore) && !this.auth.isAdmin()) {
         this._setupAccessGrantWatcher(user.uid);
       }
+      // Start notification listener
+      this._initNotifications(user);
       this._route(); // re-render to apply personalization (greeting, browse filter, etc.)
     } else {
       this._userProfile = null;
@@ -5301,6 +5316,7 @@ class App {
       this._syncFavUI();
       // Tear down any access-grant watcher
       if (this._accessGrantWatcher) { this._accessGrantWatcher(); this._accessGrantWatcher = null; }
+      this._teardownNotifications();
       // If the session was using a Firebase-sourced PAT (no local PAT), revert to local store
       if (this.sessions instanceof GitHubStore && !GitHubStore.getPat()) {
         this.sessions = new SessionStore();
@@ -5424,10 +5440,17 @@ class App {
           if (!this._fundsPending.find(p => p.id === id)) {
             this._fundsPending.push(item);
           }
-          if (location.hash === '#funds') this._renderFunds();
+          this._updateFundsBadge();
+          if (location.hash === '#funds') {
+            this._renderFunds();
+          } else if (this._isFundsCashier()) {
+            // Alert cashier when viewing another page
+            this._toast(`New payment receipt from ${item.member || 'a member'}`, 'info');
+          }
         },
         onPendingRemoved: (id) => {
           this._fundsPending = this._fundsPending.filter(p => p.id !== id);
+          this._updateFundsBadge();
           if (location.hash === '#funds') this._renderFunds();
         },
       });
@@ -5805,6 +5828,15 @@ class App {
       });
       this._closeModal('modal-funds-submit');
       this._toast('Receipt submitted — awaiting cashier approval', 'success');
+      // Notify cashier
+      const cashierEmail = this._fundsData?.cashier;
+      if (cashierEmail) {
+        NotificationCenter.notify(cashierEmail, {
+          type:  'payment_submitted',
+          title: 'New Payment Receipt',
+          body:  `${member} submitted ₹${amount}`,
+        });
+      }
     } catch (e) {
       this._toast('Could not submit receipt: ' + (e.message || 'error'), 'error');
       if (btn) { btn.disabled = false; btn.textContent = 'Submit for Approval'; }
@@ -5837,6 +5869,14 @@ class App {
       await this._fundsCommitPayment(payment, `Approve payment: ${item.member}`);
       await this._fundsLive?.removePending(pendingId);
       this._toast('Payment approved and recorded', 'success');
+      // Notify the member who submitted
+      if (item.memberEmail) {
+        NotificationCenter.notify(item.memberEmail, {
+          type:  'payment_approved',
+          title: 'Payment Approved ✓',
+          body:  `₹${item.amount} from ${item.member} has been recorded`,
+        });
+      }
     } catch (e) {
       this._toast('Error approving payment: ' + (e.message || ''), 'error');
     }
@@ -5855,6 +5895,14 @@ class App {
     try {
       await this._fundsLive?.removePending(pendingId);
       this._toast('Submission rejected', '');
+      // Notify the member who submitted
+      if (item.memberEmail) {
+        NotificationCenter.notify(item.memberEmail, {
+          type:  'payment_rejected',
+          title: 'Payment Not Approved',
+          body:  `₹${item.amount} receipt was not approved — please contact the cashier`,
+        });
+      }
     } catch (e) {
       this._toast('Error: ' + (e.message || ''), 'error');
     }
@@ -5949,6 +5997,168 @@ class App {
     } catch {
       this._toast('Could not update favourites', 'error');
     }
+  }
+
+  // ─── Notifications ────────────────────────────────────────────────────────
+
+  _initNotifications(user) {
+    this._teardownNotifications();
+    const email = user?.email;
+    if (!email) return;
+    this._notifications = new NotificationCenter({
+      email,
+      onNew:          item => this._onNewNotification(item),
+      onUnreadChange: count => this._updateNotifBadge(count),
+    });
+    this._notifications.attach();
+  }
+
+  _teardownNotifications() {
+    this._notifications?.detach();
+    this._notifications = null;
+    this._updateNotifBadge(0);
+  }
+
+  _onNewNotification(item) {
+    this._updateNotifBadge(this._notifications?.unreadCount ?? 0);
+
+    // Re-render panel if open
+    const listEl = document.getElementById('notif-list');
+    if (listEl && !document.getElementById('modal-notifications')?.classList.contains('hidden')) {
+      this._renderNotifications(listEl);
+    }
+
+    // Browser notification when tab is hidden
+    if (document.hidden && 'Notification' in window && Notification.permission === 'granted') {
+      try {
+        new Notification(item.title || 'Melody Miracle', {
+          body: item.body || '',
+          icon: './icons/icon-192.png',
+          tag:  item.key,
+        });
+      } catch { /* non-critical */ }
+    }
+  }
+
+  _updateNotifBadge(count) {
+    const badge = document.getElementById('notif-badge');
+    if (!badge) return;
+    if (count > 0) {
+      badge.textContent = count > 99 ? '99+' : String(count);
+      badge.classList.remove('hidden');
+    } else {
+      badge.classList.add('hidden');
+    }
+  }
+
+  _updateFundsBadge() {
+    const badge   = document.getElementById('funds-pending-badge');
+    const count   = this._isFundsCashier() ? (this._fundsPending?.length ?? 0) : 0;
+    if (!badge) return;
+    if (count > 0) {
+      badge.textContent = count > 99 ? '99+' : String(count);
+      badge.classList.remove('hidden');
+    } else {
+      badge.classList.add('hidden');
+    }
+  }
+
+  _relativeTime(ts) {
+    if (!ts) return '';
+    const diff = Date.now() - ts;
+    const m = Math.floor(diff / 60000);
+    if (m < 1)   return 'just now';
+    if (m < 60)  return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24)  return `${h}h ago`;
+    const d = Math.floor(h / 24);
+    return `${d}d ago`;
+  }
+
+  _renderNotifications(listEl) {
+    if (!listEl) return;
+    const items = this._notifications?.items ?? [];
+    if (!items.length) {
+      listEl.innerHTML = `<div class="notif-empty"><div class="notif-empty-icon">🔔</div><p>No notifications yet</p></div>`;
+      return;
+    }
+    listEl.innerHTML = items.map(item => {
+      const icon = item.type === 'session_started'  ? '🎵'
+                 : item.type === 'payment_submitted' ? '💰'
+                 : item.type === 'payment_approved'  ? '✅'
+                 : item.type === 'payment_rejected'  ? '❌'
+                 : '🔔';
+      return `<div class="notif-item${item.read ? '' : ' notif-unread'}" data-notif-key="${escHtml(item.key)}" role="button" tabindex="0">
+        <div class="notif-icon">${icon}</div>
+        <div class="notif-content">
+          <div class="notif-title">${escHtml(item.title || 'Notification')}</div>
+          ${item.body ? `<div class="notif-body">${escHtml(item.body)}</div>` : ''}
+          <div class="notif-time">${this._relativeTime(item.createdAt)}</div>
+        </div>
+      </div>`;
+    }).join('');
+    listEl.querySelectorAll('.notif-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const key  = el.dataset.notifKey;
+        const item = this._notifications?.items.find(i => i.key === key);
+        if (!item) return;
+        this._notifications?.markRead(key);
+        el.classList.remove('notif-unread');
+        if (item.type === 'session_started') {
+          this._closeModal('modal-notifications');
+          if (item.roomCode) {
+            document.getElementById('join-room-code').value = item.roomCode;
+            this._openModal('modal-join-session');
+          }
+        } else if (item.type?.startsWith('payment')) {
+          this._closeModal('modal-notifications');
+          location.hash = '#funds';
+        }
+      });
+    });
+  }
+
+  _bindNotifications() {
+    document.getElementById('btn-notifications')?.addEventListener('click', () => {
+      const listEl = document.getElementById('notif-list');
+      this._renderNotifications(listEl);
+      this._openModal('modal-notifications');
+    });
+
+    document.getElementById('btn-notif-read-all')?.addEventListener('click', () => {
+      this._notifications?.markAllRead();
+      this._renderNotifications(document.getElementById('notif-list'));
+    });
+
+    document.getElementById('btn-notif-push')?.addEventListener('click', async () => {
+      if (!('Notification' in window)) {
+        this._toast('Browser notifications not supported', 'warn');
+        return;
+      }
+      if (Notification.permission === 'granted') {
+        this._toast('Desktop alerts already enabled', 'success');
+        return;
+      }
+      const perm = await Notification.requestPermission();
+      if (perm === 'granted') {
+        this._toast('Desktop alerts enabled', 'success');
+        document.getElementById('btn-notif-push')?.classList.add('hidden');
+      } else {
+        this._toast('Permission denied — alerts not enabled', 'warn');
+      }
+    });
+
+    // Hide "Enable alerts" button if already granted
+    if ('Notification' in window && Notification.permission === 'granted') {
+      document.getElementById('btn-notif-push')?.classList.add('hidden');
+    }
+
+    // Close on backdrop click
+    document.getElementById('modal-notifications')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('modal-notifications')) {
+        this._closeModal('modal-notifications');
+      }
+    });
   }
 
   _updateFavButton(bhajanId) {

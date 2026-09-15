@@ -1,16 +1,17 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260906.1';
+const CACHE = 'melody-miracle-20260915.1';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP        = '20260906.1'; // app.js (cashier popup: prevent duplicate submissions, edit/delete payments)
-const V_GH         = '20260903.1'; // github-store.js (add fetchFunds/commitFunds for data/funds.json)
-const V_CSS        = '20260906.1'; // style.css (funds payment row: edit/delete action buttons)
-const V_FUNDS_LIVE = '20260903.1'; // funds-live.js (Firebase pending queue for funds)
+const V_APP        = '20260915.1'; // app.js (notification system: bell, panel, triggers)
+const V_GH         = '20260903.1'; // github-store.js (unchanged)
+const V_CSS        = '20260915.1'; // style.css (notification bell, badge, panel styles)
+const V_FUNDS_LIVE = '20260903.1'; // funds-live.js (unchanged)
 const V_AUTH       = '20260818.3'; // auth.js (unchanged)
 const V_LIVE       = '20260816.2'; // live.js (unchanged)
 const V_CORE       = '20260807.3'; // store.js (unchanged)
 const V_FAV        = '20260806.2'; // favourites.js (unchanged)
+const V_NOTIF      = '20260915.1'; // notifications.js (new: NotificationCenter)
 const PRECACHE = [
   './',
   './index.html',
@@ -23,6 +24,7 @@ const PRECACHE = [
   `./js/auth.js?v=${V_AUTH}`,
   `./js/favourites.js?v=${V_FAV}`,
   `./js/funds-live.js?v=${V_FUNDS_LIVE}`,
+  `./js/notifications.js?v=${V_NOTIF}`,
   './icons/icon-192.png',
   './icons/icon-512.png',
   './favicon.png',
