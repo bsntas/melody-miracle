@@ -653,7 +653,7 @@ export class GitHubStore {
     return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
   }
 
-  async commitFunds(fundsData, message = 'Update funds') {
+  async commitFunds(fundsData, message = 'Update funds', _retried = false) {
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(fundsData, null, 2))));
     const body = {
       message: `${message} [${new Date().toISOString().slice(0, 10)}]`,
@@ -663,8 +663,15 @@ export class GitHubStore {
     };
     const res = await this._api('PUT', `/repos/${OWNER}/${REPO}/contents/${FUNDS_PATH_GH}`, body);
     if (res.status === 409 || res.status === 422) {
-      this._fundsSha = null;
-      return this.commitFunds(fundsData, message);
+      if (_retried) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || `GitHub conflict: ${res.status}`);
+      }
+      // Re-fetch the current SHA (file may already exist or have changed) then retry once.
+      const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${FUNDS_PATH_GH}?ref=${BRANCH}`);
+      if (r.ok) { const d = await r.json(); this._fundsSha = d.sha; }
+      else this._fundsSha = null;
+      return this.commitFunds(fundsData, message, true);
     }
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
