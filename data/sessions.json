@@ -2,6 +2,141 @@
   {
     "bhajans": [
       {
+        "addedAt": 1789187897840,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "shambhu-kumara-gowri-tanaya",
+        "bhajan_title": "Shambhu Kumara Gowri Tanaya",
+        "id": "e_mtxwa1gwl65c",
+        "notes": "Major",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1789216573144,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "sai-charan-sukh-dayi-man",
+        "bhajan_title": "Sai Charan Sukh Dayi Man",
+        "id": "e_mtydcnh4hitl",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Ashik",
+          "Gigme"
+        ]
+      },
+      {
+        "addedAt": 1789218205960,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "janani-ma-sai-janani-ma",
+        "bhajan_title": "Janani Ma Sai Janani Ma",
+        "id": "e_mtyebnd4umjk",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1789187923119,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "gopala-radha-lola",
+        "bhajan_title": "Gopala Radha Lola",
+        "id": "e_mtxwakz2c2ks",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1789218017750,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "hara-hara-hara-hara-mahadeva",
+        "bhajan_title": "Hara Hara Hara Hara Mahadeva",
+        "id": "e_mtye7m523imo",
+        "notes": "Major",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Pemila"
+        ]
+      },
+      {
+        "addedAt": 1789215837109,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "bada-chitha-chora-brindavana-sanchara",
+        "bhajan_title": "Bada Chitha Chora Brindavana Sanchara",
+        "id": "e_mtycwvjp4dek",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1789059083858,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "bolo-jai-jai-kaar-bolo",
+        "bhajan_title": "Bolo Jai Jai Kaar Bolo",
+        "id": "e_mtvrl3yqdmyd",
+        "pitch": "3 Madhyam / A",
+        "pitch_indian": "3 Madhyam",
+        "pitch_western": "A",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1789217467477,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "jai-jai-vaishnavi-devi",
+        "bhajan_title": "Jai Jai Vaishnavi Devi",
+        "id": "e_mtydvtjpi96r",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Isha"
+        ]
+      }
+    ],
+    "createdAt": "2026-09-10T04:47:35.805Z",
+    "currentBhajan": "e_mtyf3jlsrj7t",
+    "date": "2026-09-12",
+    "id": "weekendbhajansecityhsr-2026-09-12",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-09-12",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-09-12T13:25:07.456Z",
+    "status": "completed",
+    "singers": [
+      "Bhawana",
+      "Ashik",
+      "Gigme",
+      "Bishal",
+      "Sayujya",
+      "Pemila",
+      "Anisha",
+      "Basanta",
+      "Isha"
+    ],
+    "endedAt": "2026-09-12T14:13:12.661Z",
+    "duration": 2885
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1788604107248,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "parvathi-tanaya-siddhi-vinayaka",
@@ -10679,52 +10814,51 @@
   {
     "bhajans": [
       {
-        "addedAt": 1789187897840,
+        "addedAt": 1789821790745,
         "bhajan_deity": "Ganesha",
-        "bhajan_id": "shambhu-kumara-gowri-tanaya",
-        "bhajan_title": "Shambhu Kumara Gowri Tanaya",
-        "id": "e_mtxwa1gwl65c",
-        "notes": "Major",
+        "bhajan_id": "lambodhara-hey-gowri-nandana",
+        "bhajan_title": "Lambodhara Hey Gowri Nandana",
+        "id": "e_mu8dokd4k2l4",
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
         "pitch_western": "D",
         "singers": [
-          "Bhawana"
+          "Gigme",
+          "Ashik"
         ]
       },
       {
-        "addedAt": 1789216573144,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "sai-charan-sukh-dayi-man",
-        "bhajan_title": "Sai Charan Sukh Dayi Man",
-        "id": "e_mtydcnh4hitl",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
+        "addedAt": 1789819400128,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "ganesha-charanam-sharanam-ganesha",
+        "bhajan_title": "Ganesha Charanam Sharanam Ganesha",
+        "id": "e_mu8c9br3cme5",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
         "singers": [
-          "Ashik",
-          "Gigme"
+          "Karam"
         ]
       },
       {
-        "addedAt": 1789218205960,
-        "bhajan_deity": "Devi",
-        "bhajan_id": "janani-ma-sai-janani-ma",
-        "bhajan_title": "Janani Ma Sai Janani Ma",
-        "id": "e_mtyebnd4umjk",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
+        "addedAt": 1789795923460,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "vighneshwara-gananatha-gajanana",
+        "bhajan_title": "Vighneshwara Gananatha Gajanana",
+        "id": "e_mu7ya51gaakw",
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
         "singers": [
-          "Bishal"
+          "Isha"
         ]
       },
       {
-        "addedAt": 1789187923119,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "gopala-radha-lola",
-        "bhajan_title": "Gopala Radha Lola",
-        "id": "e_mtxwakz2c2ks",
+        "addedAt": 1789790800053,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "vinayaka-vinayaka",
+        "bhajan_title": "Vinayaka Vinayaka",
+        "id": "e_mu7v8bsl4ezh",
         "pitch": "1 Pancham / C",
         "pitch_indian": "1 Pancham",
         "pitch_western": "C",
@@ -10733,82 +10867,96 @@
         ]
       },
       {
-        "addedAt": 1789218017750,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "hara-hara-hara-hara-mahadeva",
-        "bhajan_title": "Hara Hara Hara Hara Mahadeva",
-        "id": "e_mtye7m523imo",
-        "notes": "Major",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
+        "addedAt": 1789739439484,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "jai-ganesh-jai-ganesh-jai",
+        "bhajan_title": "Jai Ganesh Jai Ganesh Jai",
+        "id": "e_mu70nhq4nw0u",
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
         "singers": [
           "Pemila"
         ]
       },
       {
-        "addedAt": 1789215837109,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "bada-chitha-chora-brindavana-sanchara",
-        "bhajan_title": "Bada Chitha Chora Brindavana Sanchara",
-        "id": "e_mtycwvjp4dek",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
+        "addedAt": 1789532864683,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "maha-ganapathey-namostuthey-0",
+        "bhajan_title": "Maha Ganapathey Namostuthey",
+        "id": "e_mu3lnvl7rj01",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
         "singers": [
-          "Anisha"
+          "Bishal"
         ]
       },
       {
-        "addedAt": 1789059083858,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "bolo-jai-jai-kaar-bolo",
-        "bhajan_title": "Bolo Jai Jai Kaar Bolo",
-        "id": "e_mtvrl3yqdmyd",
-        "pitch": "3 Madhyam / A",
-        "pitch_indian": "3 Madhyam",
+        "addedAt": 1789532834003,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "parvathi-tanaya-siddhi-vinayaka",
+        "bhajan_title": "Parvathi Tanaya Siddhi Vinayaka",
+        "id": "e_mu3ln7wziaub",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
         "pitch_western": "A",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1789482459973,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "matanga-vadana-ananda-sadana",
+        "bhajan_title": "Matanga Vadana Ananda Sadana",
+        "id": "e_mu2rnj2dc364",
+        "notes": "Major",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
         "singers": [
           "Basanta"
         ]
       },
       {
-        "addedAt": 1789217467477,
-        "bhajan_deity": "Devi",
-        "bhajan_id": "jai-jai-vaishnavi-devi",
-        "bhajan_title": "Jai Jai Vaishnavi Devi",
-        "id": "e_mtydvtjpi96r",
-        "pitch": "1.5 Pancham / C#",
-        "pitch_indian": "1.5 Pancham",
-        "pitch_western": "C#",
+        "addedAt": 1789481425797,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "lambodhara-jaya-gajanana",
+        "bhajan_title": "Lambodhara Jaya Gajanana",
+        "id": "e_mu2r1d39maep",
+        "pitch": "6 Pancham / A",
+        "pitch_indian": "6 Pancham",
+        "pitch_western": "A",
         "singers": [
-          "Isha"
+          "Anisha"
         ]
       }
     ],
-    "createdAt": "2026-09-10T04:47:35.805Z",
-    "currentBhajan": "e_mtyf3jlsrj7t",
-    "date": "2026-09-12",
-    "id": "weekendbhajansecityhsr-2026-09-12",
+    "createdAt": "2026-09-15T14:09:55.539Z",
+    "currentBhajan": "e_mu8el7aoi3cc",
+    "date": "2026-09-19",
+    "id": "weekendbhajansecityhsr-2026-09-19",
     "isBackdated": false,
     "label": "Weekend Bhajans E-City HSR",
     "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-09-12",
+    "roomCode": "weekendbhajansecityhsr-2026-09-19",
     "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-09-12T13:25:07.456Z",
+    "startedAt": "2026-09-19T13:08:33.457Z",
     "status": "completed",
     "singers": [
-      "Bhawana",
-      "Ashik",
       "Gigme",
-      "Bishal",
+      "Ashik",
+      "Karam",
+      "Isha",
       "Sayujya",
       "Pemila",
-      "Anisha",
+      "Bishal",
+      "Bhawana",
       "Basanta",
-      "Isha"
+      "Anisha"
     ],
-    "endedAt": "2026-09-12T14:13:12.661Z",
-    "duration": 2885
+    "endedAt": "2026-09-19T14:02:28.079Z",
+    "duration": 3235
   }
 ]
