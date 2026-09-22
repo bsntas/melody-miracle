@@ -667,10 +667,21 @@ export class GitHubStore {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.message || `GitHub conflict: ${res.status}`);
       }
-      // Re-fetch the current SHA (file may already exist or have changed) then retry once.
+      // Conflict: fetch the current remote state, merge our new payments on top, then retry once.
+      // Without merging, a stale local fundsData would silently overwrite payments committed
+      // from another device or tab since this session's last load.
       const r = await this._api('GET', `/repos/${OWNER}/${REPO}/contents/${FUNDS_PATH_GH}?ref=${BRANCH}`);
-      if (r.ok) { const d = await r.json(); this._fundsSha = d.sha; }
-      else this._fundsSha = null;
+      if (r.ok) {
+        const d = await r.json();
+        this._fundsSha = d.sha;
+        const remote = JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\n/g, '')))));
+        const remoteIds = new Set((remote.payments || []).map(p => p.id));
+        const newPayments = (fundsData.payments || []).filter(p => !remoteIds.has(p.id));
+        fundsData.payments = [...(remote.payments || []), ...newPayments];
+        fundsData.cashier  = remote.cashier;
+      } else {
+        this._fundsSha = null;
+      }
       return this.commitFunds(fundsData, message, true);
     }
     if (!res.ok) {
