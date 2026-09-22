@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20260922.1 loaded');
+console.log('[MM] app.js v20260922.2 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -5398,6 +5398,23 @@ class App {
     return '₹' + Number(n).toLocaleString('en-IN');
   }
 
+  async _fundsRefresh() {
+    const btn = document.getElementById('btn-funds-refresh');
+    if (btn) { btn.disabled = true; btn.classList.add('loading'); }
+    try {
+      if (this.sessions?.fetchFunds) {
+        this._fundsData = await this.sessions.fetchFunds();
+      } else {
+        const res = await fetch('./data/funds.json?_=' + Date.now());
+        this._fundsData = res.ok ? await res.json() : this._fundsData;
+      }
+    } catch (e) {
+      console.warn('[Funds] Refresh failed:', e.message);
+    } finally {
+      this._renderFunds();
+    }
+  }
+
   async _loadFunds() {
     const container = document.getElementById('funds-content');
     if (!container) return;
@@ -5522,6 +5539,7 @@ class App {
         <div class="funds-header-actions">
           ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
           ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
+          <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
           ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
         </div>
       </div>
@@ -5566,6 +5584,11 @@ class App {
     });
     document.getElementById('btn-funds-next')?.addEventListener('click', () => {
       if (!isCurrentMonth) { this._fundsMonth = nextMonth; this._renderFunds(); }
+    });
+
+    // Refresh funds data from GitHub
+    document.getElementById('btn-funds-refresh')?.addEventListener('click', () => {
+      this._fundsRefresh();
     });
 
     // Cashier: record payment directly
