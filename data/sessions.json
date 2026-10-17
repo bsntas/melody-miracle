@@ -2,6 +2,152 @@
   {
     "bhajans": [
       {
+        "addedAt": 1791636765780,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "jai-ganesha-paahi-maam-sri",
+        "bhajan_title": "Jai Ganesha Paahi Maam Sri",
+        "id": "e_mv2e9s2cqux1",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Ashik"
+        ]
+      },
+      {
+        "addedAt": 1791614573907,
+        "bhajan_deity": "Rama",
+        "bhajan_id": "sri-sai-rama-sundara-naama",
+        "bhajan_title": "Sri Sai Rama Sundara Naama",
+        "id": "e_mv2124pf1lij",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1791634675364,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "anandamaya-bhagawan",
+        "bhajan_title": "Anandamaya Bhagawan",
+        "id": "e_mv2d0z37ksl5",
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1791634980366,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "partheeshwari-jagat-janani",
+        "bhajan_title": "Partheeshwari Jagat Janani",
+        "id": "e_mv2d7ifinmo9",
+        "notes": "Minor",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1791637384479,
+        "bhajan_deity": "Shiva",
+        "bhajan_id": "hara-hara-shankara-samba-sadashiva",
+        "bhajan_title": "Hara Hara Shankara Samba Sadashiva",
+        "id": "e_mv2en1gf7egk",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1791638902849,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "radhika-jeevana",
+        "bhajan_title": "Radhika Jeevana",
+        "id": "e_mv2fjl1dditv",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
+        "singers": [
+          "Basanta"
+        ]
+      },
+      {
+        "addedAt": 1791635243616,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "sai-mata-partheeshwari",
+        "bhajan_title": "Sai Mata Partheeshwari",
+        "id": "e_mv2dd5k0kp7i",
+        "pitch": "6.5 Pancham / A#",
+        "pitch_indian": "6.5 Pancham",
+        "pitch_western": "A#",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1791638507840,
+        "bhajan_deity": "Anjaneya",
+        "bhajan_id": "veera-maruti-gambhira-maruti",
+        "bhajan_title": "Veera Maruti Gambhira Maruti",
+        "id": "e_mv2fb48wz7ht",
+        "pitch": "5.5 Pancham / G#",
+        "pitch_indian": "5.5 Pancham",
+        "pitch_western": "G#",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1791614621545,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "jaya-guru-omkara-jaya-jaya",
+        "bhajan_title": "Jaya Guru Omkara Jaya Jaya",
+        "id": "e_mv2135gpn34c",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Pemila"
+        ]
+      }
+    ],
+    "createdAt": "2026-10-10T06:36:32.320Z",
+    "currentBhajan": "e_mv2fwybh9rhh",
+    "date": "2026-10-10",
+    "id": "weekendbhajansecityhsr-2026-10-10",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-10-10",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-10-10T13:38:46.596Z",
+    "status": "completed",
+    "singers": [
+      "Ashik",
+      "Karam",
+      "Isha",
+      "Bishal",
+      "Sayujya",
+      "Basanta",
+      "Bhawana",
+      "Anisha",
+      "Pemila"
+    ],
+    "endedAt": "2026-10-10T16:24:21.449Z",
+    "duration": 9935
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1791019600908,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "gananatha-sai-gajanana",
@@ -11256,116 +11402,64 @@
   {
     "bhajans": [
       {
-        "addedAt": 1791636765780,
+        "addedAt": 1792236921008,
         "bhajan_deity": "Ganesha",
-        "bhajan_id": "jai-ganesha-paahi-maam-sri",
-        "bhajan_title": "Jai Ganesha Paahi Maam Sri",
-        "id": "e_mv2e9s2cqux1",
-        "pitch": "5 Pancham / G",
-        "pitch_indian": "5 Pancham",
-        "pitch_western": "G",
-        "singers": [
-          "Ashik"
-        ]
-      },
-      {
-        "addedAt": 1791614573907,
-        "bhajan_deity": "Rama",
-        "bhajan_id": "sri-sai-rama-sundara-naama",
-        "bhajan_title": "Sri Sai Rama Sundara Naama",
-        "id": "e_mv2124pf1lij",
-        "pitch": "1.5 Pancham / C#",
-        "pitch_indian": "1.5 Pancham",
-        "pitch_western": "C#",
-        "singers": [
-          "Karam"
-        ]
-      },
-      {
-        "addedAt": 1791634675364,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "anandamaya-bhagawan",
-        "bhajan_title": "Anandamaya Bhagawan",
-        "id": "e_mv2d0z37ksl5",
-        "pitch": "6.5 Pancham / A#",
-        "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#",
-        "singers": [
-          "Isha"
-        ]
-      },
-      {
-        "addedAt": 1791634980366,
-        "bhajan_deity": "Devi",
-        "bhajan_id": "partheeshwari-jagat-janani",
-        "bhajan_title": "Partheeshwari Jagat Janani",
-        "id": "e_mv2d7ifinmo9",
-        "notes": "Minor",
-        "pitch": "1.5 Pancham / C#",
-        "pitch_indian": "1.5 Pancham",
-        "pitch_western": "C#",
-        "singers": [
-          "Bishal"
-        ]
-      },
-      {
-        "addedAt": 1791637384479,
-        "bhajan_deity": "Shiva",
-        "bhajan_id": "hara-hara-shankara-samba-sadashiva",
-        "bhajan_title": "Hara Hara Shankara Samba Sadashiva",
-        "id": "e_mv2en1gf7egk",
-        "pitch": "5.5 Pancham / G#",
-        "pitch_indian": "5.5 Pancham",
-        "pitch_western": "G#",
-        "singers": [
-          "Sayujya"
-        ]
-      },
-      {
-        "addedAt": 1791638902849,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "radhika-jeevana",
-        "bhajan_title": "Radhika Jeevana",
-        "id": "e_mv2fjl1dditv",
-        "pitch": "1.5 Pancham / C#",
-        "pitch_indian": "1.5 Pancham",
-        "pitch_western": "C#",
+        "bhajan_id": "amba-bhavani-shiva-shambhu-kumara",
+        "bhajan_title": "Amba Bhavani Shiva Shambhu Kumara",
+        "id": "e_mvcbl6swa661",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
         "singers": [
           "Basanta"
         ]
       },
       {
-        "addedAt": 1791635243616,
-        "bhajan_deity": "Devi",
-        "bhajan_id": "sai-mata-partheeshwari",
-        "bhajan_title": "Sai Mata Partheeshwari",
-        "id": "e_mv2dd5k0kp7i",
-        "pitch": "6.5 Pancham / A#",
-        "pitch_indian": "6.5 Pancham",
-        "pitch_western": "A#",
-        "singers": [
-          "Bhawana"
-        ]
-      },
-      {
-        "addedAt": 1791638507840,
-        "bhajan_deity": "Anjaneya",
-        "bhajan_id": "veera-maruti-gambhira-maruti",
-        "bhajan_title": "Veera Maruti Gambhira Maruti",
-        "id": "e_mv2fb48wz7ht",
-        "pitch": "5.5 Pancham / G#",
-        "pitch_indian": "5.5 Pancham",
-        "pitch_western": "G#",
+        "addedAt": 1792041233613,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "pranava-swaroopa-hari-om-sai",
+        "bhajan_title": "Pranava Swaroopa Hari Om Sai",
+        "id": "e_mv932xfxjc24",
+        "notes": "Major",
+        "pitch": "5 Madhyam / C",
+        "pitch_indian": "5 Madhyam",
+        "pitch_western": "C",
         "singers": [
           "Anisha"
         ]
       },
       {
-        "addedAt": 1791614621545,
-        "bhajan_deity": "Guru",
-        "bhajan_id": "jaya-guru-omkara-jaya-jaya",
-        "bhajan_title": "Jaya Guru Omkara Jaya Jaya",
-        "id": "e_mv2135gpn34c",
+        "addedAt": 1792237898751,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "mata-maheshwari-tribhuvana-janani",
+        "bhajan_title": "Mata Maheshwari Tribhuvana Janani",
+        "id": "e_mvcc658fwqsg",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Karam"
+        ]
+      },
+      {
+        "addedAt": 1792232391902,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "kaali-kaali-maha-kaali-kapalini",
+        "bhajan_title": "Kaali Kaali Maha Kaali Kapalini",
+        "id": "e_mvc8w44em6l6",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1792235350107,
+        "bhajan_deity": "Devi",
+        "bhajan_id": "jai-durga-lakshmi-saraswathi-sai-jaganmata",
+        "bhajan_title": "Jai Durga Lakshmi Saraswathi Sai Jaganmata",
+        "id": "e_mvcaniorp4i0",
         "pitch": "2 Pancham / D",
         "pitch_indian": "2 Pancham",
         "pitch_western": "D",
@@ -11374,29 +11468,25 @@
         ]
       }
     ],
-    "createdAt": "2026-10-10T06:36:32.320Z",
-    "currentBhajan": "e_mv2fwybh9rhh",
-    "date": "2026-10-10",
-    "id": "weekendbhajansecityhsr-2026-10-10",
+    "createdAt": "2026-10-12T13:00:03.970Z",
+    "currentBhajan": "e_mvcdsgv7hl6n",
+    "date": "2026-10-17",
+    "id": "weekendbhajansecityhsr-2026-10-17",
     "isBackdated": false,
     "label": "Weekend Bhajans E-City HSR",
     "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-10-10",
+    "roomCode": "weekendbhajansecityhsr-2026-10-17",
     "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-10-10T13:38:46.596Z",
+    "startedAt": "2026-10-17T12:36:59.875Z",
     "status": "completed",
     "singers": [
-      "Ashik",
+      "Basanta",
+      "Anisha",
       "Karam",
       "Isha",
-      "Bishal",
-      "Sayujya",
-      "Basanta",
-      "Bhawana",
-      "Anisha",
       "Pemila"
     ],
-    "endedAt": "2026-10-10T16:24:21.449Z",
-    "duration": 9935
+    "endedAt": "2026-10-17T13:03:52.268Z",
+    "duration": 1612
   }
 ]
