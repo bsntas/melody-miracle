@@ -338,6 +338,19 @@
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-11-01T05:30:44.362Z",
       "approvedBy": "anishalingsey1994@gmail.com"
+    },
+    {
+      "id": "id_mw504xqe9gbm",
+      "member": "Basanta",
+      "memberEmail": "basantanickal13@gmail.com",
+      "amount": 300,
+      "date": "2026-11-06",
+      "transactionId": "667611908681",
+      "note": null,
+      "recordedAt": "2026-11-06T13:19:44.497Z",
+      "recordedBy": "basantanickal13@gmail.com",
+      "approvedAt": "2026-11-06T13:20:06.087Z",
+      "approvedBy": "anishalingsey1994@gmail.com"
     }
   ]
 }
