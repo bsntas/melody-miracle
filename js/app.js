@@ -1,11 +1,11 @@
-import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20260807.3';
+import { BhajanStore, SessionStore, genId, formatDate, formatTime, todayISO, monthLabel, escHtml } from './store.js?v=20261107.1';
 import { GitHubStore } from './github-store.js?v=20260922.1';
 import { LiveSession, listOpenSessions } from './live.js?v=20260811.3';
 import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20260922.2 loaded');
+console.log('[MM] app.js v20261107.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -203,6 +203,26 @@ class App {
     this._cleanupExpiredBgSessions();
     this._updateBgBadge();
     this._initAuth();
+    if (bhajansOk) this._initBhajanRefresh();
+  }
+
+  // Pull bhajan edits straight from the repo instead of waiting for GitHub Pages
+  // to redeploy: once after startup, then whenever the app comes back to the
+  // foreground (throttled so we stay well inside GitHub's API rate limit).
+  _initBhajanRefresh() {
+    let last = 0;
+    const refresh = async () => {
+      if (!navigator.onLine || Date.now() - last < 2 * 60 * 1000) return;
+      last = Date.now();
+      const changed = await this.bhajans.refreshFromRepo(GitHubStore.getPat());
+      if (!changed) return;
+      const view = (location.hash.slice(1) || 'dashboard').split('/')[0];
+      if (view === 'browse') this._renderBrowse();
+    };
+    refresh();
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') refresh();
+    });
   }
 
   // Backfill pitch_indian / pitch_western on any session entries that pre-date this feature
@@ -2400,6 +2420,8 @@ class App {
     }
 
     this.bhajans._buildIndex();
+    // Keep the edit visible across reloads until GitHub Pages serves it
+    this.bhajans.recordLocalEdit(bhajan);
     this._editBhajanId = null;
     this._closeModal('modal-new-bhajan');
     this._renderBrowse();

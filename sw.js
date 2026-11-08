@@ -1,15 +1,15 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20260922.2';
+const CACHE = 'melody-miracle-20261107.1';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP        = '20260922.2'; // app.js (funds page: refresh button)
+const V_APP        = '20261107.1'; // app.js (bhajan edits: local overlay + refresh from repo)
 const V_GH         = '20260922.1'; // github-store.js (merge remote payments on conflict to prevent overwrite)
 const V_CSS        = '20260906.1'; // style.css (funds payment row: edit/delete action buttons)
 const V_FUNDS_LIVE = '20260903.1'; // funds-live.js (Firebase pending queue for funds)
 const V_AUTH       = '20260818.3'; // auth.js (unchanged)
 const V_LIVE       = '20260816.2'; // live.js (unchanged)
-const V_CORE       = '20260807.3'; // store.js (unchanged)
+const V_CORE       = '20261107.1'; // store.js (bhajans.json: no-cache, edit overlay, fetch by commit SHA)
 const V_FAV        = '20260806.2'; // favourites.js (unchanged)
 const PRECACHE = [
   './',
@@ -67,6 +67,9 @@ self.addEventListener('activate', e => {
 // Everything else: cache-first for offline reliability.
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
+  // Cross-origin requests (GitHub API, raw.githubusercontent.com, Firebase) go
+  // straight to the network — never cache them here.
+  if (url.origin !== self.location.origin) return;
   const isData = url.pathname.endsWith('.json') && url.pathname.includes('/data/');
 
   if (isData) {

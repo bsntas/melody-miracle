@@ -1,19 +1,123 @@
 // ─── BhajanStore ─────────────────────────────────────────────────────────────
 // Loads and indexes the bhajans.json catalog; provides search + filter.
 
+const REPO_SLUG     = 'bsntas/melody-miracle';
+const OVERRIDES_KEY = 'mm-bhajan-overrides';
+const OVERRIDE_TTL  = 3 * 24 * 60 * 60 * 1000;
+
+function _readOverrides() {
+  try { return JSON.parse(localStorage.getItem(OVERRIDES_KEY) || '{}') || {}; } catch { return {}; }
+}
+function _writeOverrides(o) {
+  try {
+    if (Object.keys(o).length) localStorage.setItem(OVERRIDES_KEY, JSON.stringify(o));
+    else localStorage.removeItem(OVERRIDES_KEY);
+  } catch { /* storage full / unavailable — overlay is best-effort */ }
+}
+function _sameBhajan(a, b) {
+  const norm = x => JSON.stringify(Object.keys(x).sort().map(k => [k, x[k] ?? null]));
+  return norm(a) === norm(b);
+}
+
 export class BhajanStore {
   constructor() {
     this.bhajans = [];
     this._index = null; // fuse-style simple index
   }
 
+  // Load the catalog from the deployed site (GitHub Pages). 'no-cache' forces a
+  // conditional revalidation so the browser's HTTP cache (max-age=600 on Pages)
+  // can't serve a copy that is up to 10 minutes stale. Local edits that Pages
+  // hasn't caught up with yet are layered on top (see recordLocalEdit).
   async load() {
-    const res = await fetch('data/bhajans.json');
+    const res = await fetch('data/bhajans.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Failed to load bhajan catalog');
-    this.bhajans = await res.json();
+    const lm = Date.parse(res.headers.get('last-modified') || '');
+    this._setCatalog(await res.json(), Number.isFinite(lm) ? lm : null);
+    return this.bhajans;
+  }
+
+  _setCatalog(list, sourceTime) {
+    this.bhajans = list;
+    this._sourceTime = sourceTime;
+    this._applyOverrides();
     this._originalCount = this.bhajans.length;
     this._buildIndex();
-    return this.bhajans;
+  }
+
+  // ── Local edit overlay ──────────────────────────────────────────────────────
+  // After an edit is committed, GitHub Pages takes a minute or more to redeploy,
+  // so a reload would otherwise show the old version. Edited bhajans are kept in
+  // localStorage and re-applied until the loaded catalog is newer than the edit
+  // (or contains it verbatim). Entries expire after 3 days regardless.
+
+  recordLocalEdit(bhajan) {
+    const o = _readOverrides();
+    o[bhajan.id] = { bhajan, at: Date.now() };
+    _writeOverrides(o);
+  }
+
+  _applyOverrides() {
+    const o = _readOverrides();
+    const ids = Object.keys(o);
+    if (!ids.length) return;
+    const now = Date.now();
+    let changed = false;
+    for (const id of ids) {
+      const { bhajan, at } = o[id] || {};
+      const idx = this.bhajans.findIndex(b => b.id === id);
+      const current = idx >= 0 ? this.bhajans[idx] : null;
+      const caughtUp = (this._sourceTime && this._sourceTime > at)
+        || (current && _sameBhajan(current, bhajan));
+      if (!bhajan || caughtUp || now - at > OVERRIDE_TTL) { delete o[id]; changed = true; continue; }
+      if (idx >= 0) this.bhajans[idx] = bhajan;
+      else          this.bhajans.push(bhajan);
+    }
+    if (changed) _writeOverrides(o);
+  }
+
+  // ── Fresh copy straight from the repo ───────────────────────────────────────
+  // Asks the GitHub API for the latest commit touching data/bhajans.json. If the
+  // copy we loaded predates it (Pages not redeployed yet, or a stale cache), the
+  // file is fetched from raw.githubusercontent.com at that exact commit SHA —
+  // an immutable URL, so it is never stale. Resolves true if the catalog changed.
+  async refreshFromRepo(pat = null) {
+    if (this._refreshing) return false;
+    this._refreshing = true;
+    try {
+      const headers = { Accept: 'application/vnd.github+json' };
+      if (pat) headers.Authorization = `Bearer ${pat}`;
+      const res = await fetch(
+        `https://api.github.com/repos/${REPO_SLUG}/commits?path=data/bhajans.json&sha=main&per_page=1`,
+        { headers, cache: 'no-store' },
+      );
+      if (!res.ok) return false;
+      const [latest] = await res.json();
+      const sha = latest?.sha;
+      if (!sha) return false;
+      const commitTime = Date.parse(latest.commit?.committer?.date || '') || null;
+
+      if (sha === this._sha) return false;  // already showing this commit
+      if (this._sha == null && commitTime && this._sourceTime && this._sourceTime >= commitTime) {
+        this._sha = sha;                    // Pages copy was deployed after this commit
+        return false;
+      }
+
+      const raw = await fetch(
+        `https://raw.githubusercontent.com/${REPO_SLUG}/${sha}/data/bhajans.json`,
+        { cache: 'no-store' },
+      );
+      if (!raw.ok) return false;
+      const list = await raw.json();
+      if (!Array.isArray(list) || !list.length) return false;
+      this._sha = sha;
+      this._setCatalog(list, commitTime);
+      return true;
+    } catch {
+      return false;
+    } finally {
+      this._refreshing = false;
+    }
   }
 
   _buildIndex() {
