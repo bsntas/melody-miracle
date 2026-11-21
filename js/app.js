@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261121.3 loaded');
+console.log('[MM] app.js v20261121.4 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -5748,7 +5748,6 @@ class App {
           ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
           ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
           <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
-          <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
           ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
         </div>
       </div>
@@ -5783,11 +5782,6 @@ class App {
       const [y, m] = this._fundsCurrentMonth().split('-').map(Number);
       this._fundsMonth = m === 12 ? `${y + 1}-01` : `${y}-${String(m + 1).padStart(2, '0')}`;
       this._renderFunds();
-    });
-
-    // Refresh funds data from GitHub
-    document.getElementById('btn-funds-refresh')?.addEventListener('click', () => {
-      this._fundsRefresh();
     });
 
     // Refresh funds data from GitHub
