@@ -2,6 +2,124 @@
   {
     "bhajans": [
       {
+        "addedAt": 1794641719231,
+        "bhajan_deity": "Ganesha",
+        "bhajan_id": "jaya-ho-jaya-ho-mooshika",
+        "bhajan_title": "Jaya Ho Jaya Ho Mooshika",
+        "id": "e_mwg3cczjt3tf",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Anisha"
+        ]
+      },
+      {
+        "addedAt": 1794642176704,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "bhaktha-vatsala-tero-naam-o",
+        "bhajan_title": "Bhaktha Vatsala Tero Naam O",
+        "id": "e_mwg3m5z4nhh3",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1794642674926,
+        "bhajan_deity": "Krishna",
+        "bhajan_id": "chitha-chora-yashoda-ke-bal",
+        "bhajan_title": "Chitha Chora Yashoda Ke Bal",
+        "id": "e_mwg3wuemjiy9",
+        "notes": "Minor",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Sayujya"
+        ]
+      },
+      {
+        "addedAt": 1794660591469,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "deena-bandhava-baba-daya-sagara",
+        "bhajan_title": "Deena Bandhava Baba Daya Sagara",
+        "id": "e_mwgekuwdaz8v",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
+        "singers": [
+          "Bishal"
+        ]
+      },
+      {
+        "addedAt": 1794661671647,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "sakshath-parabrahma-sai-guru-vandana",
+        "bhajan_title": "Sakshath Parabrahma Sai Guru Vandana",
+        "id": "e_mwgf80dbhmlj",
+        "pitch": "4.5 Pancham / F#",
+        "pitch_indian": "4.5 Pancham",
+        "pitch_western": "F#",
+        "singers": [
+          "Isha"
+        ]
+      },
+      {
+        "addedAt": 1794662021505,
+        "bhajan_deity": "Sarva Dharma, Guru",
+        "bhajan_id": "mata-pitha-guru-bandhu-sakha-0",
+        "bhajan_title": "Mata Pitha Guru Bandhu Sakha",
+        "id": "e_mwgffiblyi9y",
+        "pitch": "2 Madhyam / G",
+        "pitch_indian": "2 Madhyam",
+        "pitch_western": "G",
+        "singers": [
+          "Gigme"
+        ]
+      },
+      {
+        "addedAt": 1794662316822,
+        "bhajan_deity": "Rama, Krishna",
+        "bhajan_id": "jai-hari-bol-jai-sita",
+        "bhajan_title": "Jai Hari Bol Jai Sita",
+        "id": "e_mwgflu6u71gx",
+        "pitch": "7 Pancham / B",
+        "pitch_indian": "7 Pancham",
+        "pitch_western": "B",
+        "singers": [
+          "Basanta"
+        ]
+      }
+    ],
+    "createdAt": "2026-11-14T05:09:23.972Z",
+    "currentBhajan": "e_mwggpr3c05tw",
+    "date": "2026-11-14",
+    "id": "weekendbhajansecityhsr-2026-11-14",
+    "isBackdated": false,
+    "label": "Weekend Bhajans E-City HSR",
+    "phase": "playing",
+    "roomCode": "weekendbhajansecityhsr-2026-11-14",
+    "series": "Weekend Bhajans E-City HSR",
+    "startedAt": "2026-11-14T13:49:39.055Z",
+    "status": "completed",
+    "singers": [
+      "Anisha",
+      "Bhawana",
+      "Sayujya",
+      "Bishal",
+      "Isha",
+      "Gigme",
+      "Basanta"
+    ],
+    "endedAt": "2026-11-14T14:08:59.281Z",
+    "duration": 1160
+  },
+  {
+    "bhajans": [
+      {
         "addedAt": 1794053591202,
         "bhajan_deity": "Ganesha",
         "bhajan_id": "ganesha-charanam-sharanam-ganesha",
@@ -11790,119 +11908,118 @@
   {
     "bhajans": [
       {
-        "addedAt": 1794641719231,
+        "addedAt": 1794971136439,
         "bhajan_deity": "Ganesha",
-        "bhajan_id": "jaya-ho-jaya-ho-mooshika",
-        "bhajan_title": "Jaya Ho Jaya Ho Mooshika",
-        "id": "e_mwg3cczjt3tf",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "singers": [
-          "Anisha"
-        ]
-      },
-      {
-        "addedAt": 1794642176704,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "bhaktha-vatsala-tero-naam-o",
-        "bhajan_title": "Bhaktha Vatsala Tero Naam O",
-        "id": "e_mwg3m5z4nhh3",
-        "pitch": "1 Pancham / C",
-        "pitch_indian": "1 Pancham",
-        "pitch_western": "C",
-        "singers": [
-          "Bhawana"
-        ]
-      },
-      {
-        "addedAt": 1794642674926,
-        "bhajan_deity": "Krishna",
-        "bhajan_id": "chitha-chora-yashoda-ke-bal",
-        "bhajan_title": "Chitha Chora Yashoda Ke Bal",
-        "id": "e_mwg3wuemjiy9",
-        "notes": "Minor",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
-        "singers": [
-          "Sayujya"
-        ]
-      },
-      {
-        "addedAt": 1794660591469,
-        "bhajan_deity": "Sai",
-        "bhajan_id": "deena-bandhava-baba-daya-sagara",
-        "bhajan_title": "Deena Bandhava Baba Daya Sagara",
-        "id": "e_mwgekuwdaz8v",
-        "pitch": "2 Pancham / D",
-        "pitch_indian": "2 Pancham",
-        "pitch_western": "D",
+        "bhajan_id": "sri-ganesha-vinayaka",
+        "bhajan_title": "Sri Ganesha Vinayaka",
+        "id": "e_mwljgwxjxi9q",
+        "pitch": "1.5 Pancham / C#",
+        "pitch_indian": "1.5 Pancham",
+        "pitch_western": "C#",
         "singers": [
           "Bishal"
         ]
       },
       {
-        "addedAt": 1794661671647,
-        "bhajan_deity": "Guru",
-        "bhajan_id": "sakshath-parabrahma-sai-guru-vandana",
-        "bhajan_title": "Sakshath Parabrahma Sai Guru Vandana",
-        "id": "e_mwgf80dbhmlj",
-        "pitch": "4.5 Pancham / F#",
-        "pitch_indian": "4.5 Pancham",
-        "pitch_western": "F#",
+        "addedAt": 1795250770943,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "antaranga-sai-anatha-natha-sai",
+        "bhajan_title": "Antaranga Sai Anatha Natha Sai",
+        "id": "e_mwq5yganzw19",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
         "singers": [
           "Isha"
         ]
       },
       {
-        "addedAt": 1794662021505,
-        "bhajan_deity": "Sarva Dharma, Guru",
-        "bhajan_id": "mata-pitha-guru-bandhu-sakha-0",
-        "bhajan_title": "Mata Pitha Guru Bandhu Sakha",
-        "id": "e_mwgffiblyi9y",
-        "pitch": "2 Madhyam / G",
-        "pitch_indian": "2 Madhyam",
-        "pitch_western": "G",
+        "addedAt": 1795267651730,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "jaya-sayeesha-jaya-sayeesha",
+        "bhajan_title": "Jaya Sayeesha Jaya Sayeesha",
+        "id": "e_mwqg09le6wmh",
+        "pitch": "5 Madhyam / C",
+        "pitch_indian": "5 Madhyam",
+        "pitch_western": "C",
         "singers": [
-          "Gigme"
+          "Sayujya"
         ]
       },
       {
-        "addedAt": 1794662316822,
-        "bhajan_deity": "Rama, Krishna",
-        "bhajan_id": "jai-hari-bol-jai-sita",
-        "bhajan_title": "Jai Hari Bol Jai Sita",
-        "id": "e_mwgflu6u71gx",
-        "pitch": "7 Pancham / B",
-        "pitch_indian": "7 Pancham",
-        "pitch_western": "B",
+        "addedAt": 1795267067991,
+        "bhajan_deity": "Guru",
+        "bhajan_id": "sadguru-dev-raaha-dikhao",
+        "bhajan_title": "Sadguru Dev Raaha Dikhao",
+        "id": "e_mwqfnr6f39ko",
+        "pitch": "2 Pancham / D",
+        "pitch_indian": "2 Pancham",
+        "pitch_western": "D",
         "singers": [
           "Basanta"
         ]
+      },
+      {
+        "addedAt": 1795268204483,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "sai-darbar-mey-aao-gao",
+        "bhajan_title": "Sai Darbar Mey Aao Gao",
+        "id": "e_mwqgc43ngehg",
+        "pitch": "5 Pancham / G",
+        "pitch_indian": "5 Pancham",
+        "pitch_western": "G",
+        "singers": [
+          "Bhawana"
+        ]
+      },
+      {
+        "addedAt": 1795266417351,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "prashanthi-sai-prashanthi-baba",
+        "bhajan_title": "Prashanthi Sai Prashanthi Baba",
+        "id": "e_mwqf9t53anyy",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Ashik"
+        ]
+      },
+      {
+        "addedAt": 1795266977223,
+        "bhajan_deity": "Sai",
+        "bhajan_id": "hey-sai-jagannatha-hey-sai",
+        "bhajan_title": "Hey Sai Jagannatha Hey Sai",
+        "id": "e_mwqflt53cb8p",
+        "pitch": "1 Pancham / C",
+        "pitch_indian": "1 Pancham",
+        "pitch_western": "C",
+        "singers": [
+          "Gigme"
+        ]
       }
     ],
-    "createdAt": "2026-11-14T05:09:23.972Z",
-    "currentBhajan": "e_mwggpr3c05tw",
-    "date": "2026-11-14",
-    "id": "weekendbhajansecityhsr-2026-11-14",
+    "createdAt": "2026-11-18T03:05:01.734Z",
+    "currentBhajan": "e_mwqgdc0798z8",
+    "date": "2026-11-21",
+    "id": "weekendbhajansecityhsr-2026-11-21",
     "isBackdated": false,
     "label": "Weekend Bhajans E-City HSR",
     "phase": "playing",
-    "roomCode": "weekendbhajansecityhsr-2026-11-14",
+    "roomCode": "weekendbhajansecityhsr-2026-11-21",
     "series": "Weekend Bhajans E-City HSR",
-    "startedAt": "2026-11-14T13:49:39.055Z",
+    "startedAt": "2026-11-21T13:37:41.383Z",
     "status": "completed",
     "singers": [
-      "Anisha",
-      "Bhawana",
-      "Sayujya",
       "Bishal",
       "Isha",
-      "Gigme",
-      "Basanta"
+      "Sayujya",
+      "Basanta",
+      "Bhawana",
+      "Ashik",
+      "Gigme"
     ],
-    "endedAt": "2026-11-14T14:08:59.281Z",
-    "duration": 1160
+    "endedAt": "2026-11-21T14:25:21.384Z",
+    "duration": 2860
   }
 ]
