@@ -4,42 +4,27 @@
   "startWeek": "2026-08-22",
   "households": [
     {
-      "id": "hh_basanta",
-      "name": "Basanta",
-      "emails": [
-        "basantanickal13@gmail.com"
+      "id": "hh_bishal-bhawana",
+      "name": "Bishal & Bhawana",
+      "members": [
+        "Bishal Chettri",
+        "Bhawana"
       ],
-      "since": "2026-08-22",
-      "until": null
-    },
-    {
-      "id": "hh_bhawana",
-      "name": "Bhawana",
       "emails": [
-        "saivavna999@gmail.com"
-      ],
-      "since": "2026-08-22",
-      "until": null
-    },
-    {
-      "id": "hh_bishal-chettri",
-      "name": "Bishal Chettri",
-      "emails": [
+        "saivavna999@gmail.com",
         "saibishal999@gmail.com"
       ],
       "since": "2026-08-22",
       "until": null
     },
     {
-      "id": "hh_gigme",
-      "name": "Gigme",
-      "emails": [],
-      "since": "2026-08-22",
-      "until": null
-    },
-    {
-      "id": "hh_isha",
-      "name": "Isha",
+      "id": "hh_gigme-ashik-isha",
+      "name": "Gigme, Ashik & Isha",
+      "members": [
+        "Gigme",
+        "Ashik",
+        "Isha"
+      ],
       "emails": [
         "ishagurung919@gmail.com"
       ],
@@ -47,8 +32,25 @@
       "until": null
     },
     {
-      "id": "hh_pemila",
-      "name": "Pemila",
+      "id": "hh_anisha-basanta",
+      "name": "Anisha & Basanta",
+      "members": [
+        "Anisha",
+        "Basanta"
+      ],
+      "emails": [
+        "basantanickal13@gmail.com"
+      ],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_karam-pemila",
+      "name": "Karam & Pemila",
+      "members": [
+        "Karam",
+        "Pemila"
+      ],
       "emails": [],
       "since": "2026-08-22",
       "until": null
@@ -67,7 +69,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-03T16:40:11.942Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bhawana",
+      "household": "hh_bishal-bhawana",
       "weeks": [
         "2026-08-22"
       ]
@@ -84,7 +86,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-04T15:47:21.205Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-08-22"
       ]
@@ -101,9 +103,9 @@
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-09-06T01:59:43.299Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bishal-chettri",
+      "household": "hh_bishal-bhawana",
       "weeks": [
-        "2026-08-22"
+        "2026-09-26"
       ]
     },
     {
@@ -118,7 +120,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-06T08:26:47.621Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-09-05"
       ]
@@ -135,7 +137,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-06T08:28:50.558Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_gigme",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
         "2026-08-22",
         "2026-08-29"
@@ -153,7 +155,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-06T08:29:40.709Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-08-22",
         "2026-08-29",
@@ -172,7 +174,7 @@
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-09-15T07:39:39.827Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bishal-chettri",
+      "household": "hh_bishal-bhawana",
       "weeks": [
         "2026-08-29"
       ]
@@ -189,9 +191,9 @@
       "recordedBy": "ishagurung919@gmail.com",
       "approvedAt": "2026-09-15T07:39:43.436Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
-        "2026-08-22"
+        "2026-10-17"
       ]
     },
     {
@@ -206,7 +208,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-16T17:02:03.344Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-08-29"
       ]
@@ -223,9 +225,9 @@
       "recordedBy": "saivavna999@gmail.com",
       "approvedAt": "2026-09-22T11:30:46.007Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bhawana",
+      "household": "hh_bishal-bhawana",
       "weeks": [
-        "2026-08-29"
+        "2026-10-03"
       ]
     },
     {
@@ -240,7 +242,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-22T11:30:48.633Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-09-12"
       ]
@@ -257,7 +259,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-22T11:33:23.968Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-09-12"
       ]
@@ -274,7 +276,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:53:39.436Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bhawana",
+      "household": "hh_bishal-bhawana",
       "weeks": [
         "2026-09-05",
         "2026-09-12"
@@ -292,7 +294,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:55:23.827Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-09-26"
       ]
@@ -309,7 +311,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:58:21.753Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-09-19"
       ]
@@ -326,10 +328,10 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T22:04:37.324Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
-        "2026-08-29",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-10-24"
       ]
     },
     {
@@ -344,7 +346,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T22:06:10.634Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
         "2026-09-12"
       ]
@@ -361,7 +363,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-08T02:31:02.848Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-09-19",
         "2026-09-26"
@@ -379,7 +381,7 @@
       "recordedBy": "saivavna999@gmail.com",
       "approvedAt": "2026-10-11T04:23:28.111Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bhawana",
+      "household": "hh_bishal-bhawana",
       "weeks": [
         "2026-09-19"
       ]
@@ -396,7 +398,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-11T04:30:31.820Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-10-03"
       ]
@@ -413,7 +415,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-15T05:14:13.796Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-10-03"
       ]
@@ -430,7 +432,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-15T05:31:25.807Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
         "2026-09-19"
       ]
@@ -447,7 +449,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-18T13:44:33.510Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-10-10"
       ]
@@ -464,7 +466,7 @@
       "recordedBy": "ishagurung919@gmail.com",
       "approvedAt": "2026-10-18T13:47:40.485Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
         "2026-09-26"
       ]
@@ -481,7 +483,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-18T13:49:27.596Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-10-10"
       ]
@@ -498,11 +500,11 @@
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-11-01T05:30:44.362Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_bishal-chettri",
+      "household": "hh_bishal-bhawana",
       "weeks": [
-        "2026-09-05",
-        "2026-09-12",
-        "2026-09-19"
+        "2026-10-10",
+        "2026-10-17",
+        "2026-10-24"
       ]
     },
     {
@@ -517,7 +519,7 @@
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-11-06T13:20:06.087Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_basanta",
+      "household": "hh_anisha-basanta",
       "weeks": [
         "2026-10-17",
         "2026-10-24",
@@ -536,7 +538,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-14T06:51:44.784Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_isha",
+      "household": "hh_gigme-ashik-isha",
       "weeks": [
         "2026-10-03",
         "2026-10-10"
@@ -554,7 +556,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-14T06:54:45.302Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-10-17",
         "2026-10-24"
@@ -572,7 +574,7 @@
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-21T10:19:36.820Z",
       "approvedBy": "anishalingsey1994@gmail.com",
-      "household": "hh_pemila",
+      "household": "hh_karam-pemila",
       "weeks": [
         "2026-10-31",
         "2026-11-07"

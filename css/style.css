@@ -2644,3 +2644,4 @@ button.fg-cell:not(.fg-na):hover { filter: brightness(.95); box-shadow: 0 0 0 2p
 .funds-house-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 .funds-house-dates label { font-size: 0.7rem; color: var(--text-3); display: flex; flex-direction: column; gap: 0.15rem; }
 .funds-house-row .form-input { padding: 0.4rem 0.6rem; font-size: 0.85rem; }
+.funds-house-field { font-size: 0.7rem; color: var(--text-3); display: flex; flex-direction: column; gap: 0.15rem; }
