@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261121.2 loaded');
+console.log('[MM] app.js v20261121.3 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -5411,8 +5411,9 @@ class App {
   //   payments    [{ id, household, member, memberEmail, amount, date, transactionId,
   //                  note, weeks[], recordedAt, recordedBy, approvedAt, approvedBy }]
   //
-  // Every calendar week (Mon–Sun) is due for every active house. A week is keyed
-  // by its Saturday (the usual session day). A payment covers the weeks listed in
+  // A week (Mon–Sun, keyed by its Saturday — the usual session day) is due for
+  // every active house only if a session was held that week. The current week
+  // becomes due once its session is completed; future weeks can be paid ahead. A payment covers the weeks listed in
   // `weeks[]`; any amount beyond weeks × rate is shown as unallocated credit.
 
   _isFundsCashier() {
@@ -5486,11 +5487,26 @@ class App {
   }
 
   // Weeks a house owes for, up to and including the current week.
-  _fundsDueWeeks(hh) {
+  // Week keys in which a completed session was held (optionally limited to fundsData.series).
+  _fundsSessionWeeks() {
+    const series = this._fundsData?.series || null;
+    return new Set((this.sessions?.all?.() || [])
+      .filter(s => s.date && s.status === 'completed' && (!series || s.series === series))
+      .map(s => this._fundsWeekKey(s.date)));
+  }
+
+  // Can a payment be assigned to this week? Past weeks only if a session was held;
+  // the current and future weeks always (the session may still happen).
+  _fundsIsPayableWeek(w, sessionWeeks, thisWeek = this._fundsThisWeek()) {
+    return w >= thisWeek || sessionWeeks.has(w);
+  }
+
+  // Weeks a house owes for: session weeks from its start, up to and including the current week.
+  _fundsDueWeeks(hh, sessionWeeks = this._fundsSessionWeeks()) {
     const start = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
     let end = this._fundsThisWeek();
     if (hh.until) { const u = this._fundsWeekKey(hh.until); if (u < end) end = u; }
-    return start <= end ? this._fundsWeekRange(start, end) : [];
+    return start <= end ? this._fundsWeekRange(start, end).filter(w => sessionWeeks.has(w)) : [];
   }
 
   // Map<weekKey, payment> of weeks covered for a house, optionally ignoring one payment.
@@ -5509,10 +5525,12 @@ class App {
     if (!hh || n <= 0) return [];
     const covered = this._fundsCoverage(hhId, excludePaymentId);
     const start = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
+    const sessionWeeks = this._fundsSessionWeeks();
+    const thisWeek = this._fundsThisWeek();
     const out = [];
-    for (let w = start; out.length < n && out.length < 520; w = this._fundsAddWeeks(w, 1)) {
+    for (let w = start, i = 0; out.length < n && i < 520; w = this._fundsAddWeeks(w, 1), i++) {
       if (hh.until && w > this._fundsWeekKey(hh.until)) break;
-      if (!covered.has(w)) out.push(w);
+      if (!covered.has(w) && this._fundsIsPayableWeek(w, sessionWeeks, thisWeek)) out.push(w);
     }
     return out;
   }
@@ -5530,16 +5548,19 @@ class App {
         || hhs.find(h => (h.members || []).some(m => m.toLowerCase() === n)) || null;
   }
 
-  // After houses are merged, two payments may cover the same week. The earliest
-  // payment keeps the week; later ones move to the house's next unpaid weeks.
-  _fundsResolveOverlaps(hhId) {
+  // Fix a house's week assignments: a week covered twice (e.g. after a merge) stays
+  // with the earliest payment, and past weeks with no session are released. The
+  // freed weeks move to the house's next unpaid session weeks.
+  _fundsResolveOverlaps(hhId, sessionWeeks = this._fundsSessionWeeks()) {
+    const thisWeek = this._fundsThisWeek();
+    const payable  = w => !sessionWeeks.size || this._fundsIsPayableWeek(w, sessionWeeks, thisWeek);
     const payments = (this._fundsData.payments || [])
       .filter(p => p.household === hhId)
       .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.recordedAt || '').localeCompare(b.recordedAt || ''));
     const claimed = new Set();
     const short = [];
     for (const p of payments) {
-      const keep = (p.weeks || []).filter(w => !claimed.has(w));
+      const keep = (p.weeks || []).filter(w => !claimed.has(w) && payable(w));
       keep.forEach(w => claimed.add(w));
       if (keep.length < (p.weeks || []).length) short.push([p, (p.weeks || []).length - keep.length]);
       p.weeks = keep;
@@ -5548,7 +5569,7 @@ class App {
     let w = this._fundsWeekKey(hh?.since || this._fundsData.startWeek || todayISO());
     for (const [p, n] of short) {
       for (let added = 0; added < n; w = this._fundsAddWeeks(w, 1)) {
-        if (!claimed.has(w)) { p.weeks.push(w); claimed.add(w); added++; }
+        if (!claimed.has(w) && payable(w)) { p.weeks.push(w); claimed.add(w); added++; }
       }
       p.weeks.sort();
     }
@@ -5580,10 +5601,14 @@ class App {
         p.weeks = this._fundsSuggestWeeks(p.household, Math.floor(Number(p.amount || 0) / data.rate), p.id);
       }
     }
-    // Two payments in one house covering the same week (e.g. after a merge) → shift the later one
+    // Shift weeks covered twice in a house, or past weeks with no session. Skipped
+    // only while session history is unavailable, so nothing moves on bad data.
+    const sessionWeeks = this._fundsSessionWeeks();
+    const thisWeek = this._fundsThisWeek();
     for (const h of data.households) {
       const weeks = data.payments.filter(p => p.household === h.id).flatMap(p => p.weeks);
-      if (new Set(weeks).size !== weeks.length) this._fundsResolveOverlaps(h.id);
+      const skipped = sessionWeeks.size && weeks.some(w => !this._fundsIsPayableWeek(w, sessionWeeks, thisWeek));
+      if (skipped || new Set(weeks).size !== weeks.length) this._fundsResolveOverlaps(h.id, sessionWeeks);
     }
     return data;
   }
@@ -5591,8 +5616,9 @@ class App {
   // Per-house ledger used by the weekly grid.
   _fundsLedger() {
     const rate = this._fundsRate();
+    const sessionWeeks = this._fundsSessionWeeks();
     return this._fundsHouseholds().map(hh => {
-      const due      = this._fundsDueWeeks(hh);
+      const due      = this._fundsDueWeeks(hh, sessionWeeks);
       const coverage = this._fundsCoverage(hh.id);
       const unpaid   = due.filter(w => !coverage.has(w));
       const payments = (this._fundsData.payments || []).filter(p => p.household === hh.id);
@@ -5804,20 +5830,22 @@ class App {
                                    this._fundsWeekKey(this._fundsData.startWeek || todayISO()));
     let end = thisWeek;
     for (const l of ledger) for (const w of l.coverage.keys()) if (w > end) end = w;
-    const weeks = this._fundsWeekRange(start, end);
-
-    // Session dates (any series) for a small "session held" marker in the header
-    const sessionWeeks = new Set((this.sessions?.all?.() || []).map(s => s.date && this._fundsWeekKey(s.date)).filter(Boolean));
+    // Weeks without a session aren't charged, so they get no column
+    const sessionWeeks = this._fundsSessionWeeks();
+    const weeks = this._fundsWeekRange(start, end).filter(w => w >= thisWeek || sessionWeeks.has(w));
+    const curHeld = sessionWeeks.has(thisWeek);
+    const isActive = (hh, w) => w >= this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO())
+                             && (!hh.until || w <= this._fundsWeekKey(hh.until));
 
     const curPaid   = ledger.filter(l => l.coverage.has(thisWeek)).length;
-    const curActive = ledger.filter(l => l.due.includes(thisWeek)).length;
+    const curActive = ledger.filter(l => isActive(l.hh, thisWeek)).length;
     const clear     = ledger.filter(l => !l.unpaid.length).length;
 
     const head = weeks.map(w => {
       const d = new Date(w + 'T00:00:00');
-      return `<th class="fg-week ${w === thisWeek ? 'fg-cur' : ''} ${w > thisWeek ? 'fg-future' : ''}" title="${this._fundsWeekRangeLabel(w)}">
+      const pending = w === thisWeek && !curHeld;
+      return `<th class="fg-week ${w === thisWeek ? 'fg-cur' : ''} ${w > thisWeek || pending ? 'fg-future' : ''}" title="${this._fundsWeekRangeLabel(w)}${pending ? ' · session not held yet' : ''}">
         <span class="fg-day">${d.getDate()}</span><span class="fg-mon">${d.toLocaleDateString('en-IN', { month: 'short' })}</span>
-        ${sessionWeeks.has(w) ? '<span class="fg-session-dot" title="Session held"></span>' : ''}
       </th>`;
     }).join('');
 
@@ -5831,6 +5859,7 @@ class App {
         let cls, mark, label;
         if (p)                     { cls = w > thisWeek ? 'fg-adv' : 'fg-paid'; mark = '✓'; label = 'Paid'; }
         else if (l.due.includes(w)) { cls = w === thisWeek ? 'fg-due-cur' : 'fg-due'; mark = ''; label = 'Unpaid'; }
+        else if (w === thisWeek && isActive(l.hh, w)) { cls = 'fg-pending'; mark = ''; label = 'Session not held yet'; }
         else                       { cls = 'fg-na'; mark = ''; label = 'Not due'; }
         return `<td class="${w === thisWeek ? 'fg-cur' : ''}"><button class="fg-cell ${cls}" data-hh="${escHtml(l.hh.id)}" data-week="${w}" ${p ? `data-pay="${escHtml(p.id)}"` : ''} aria-label="${escHtml(l.hh.name)}, week of ${this._fundsWeekLabel(w)}: ${label}">${mark}</button></td>`;
       }).join('');
@@ -5838,7 +5867,7 @@ class App {
     }).join('');
 
     const foot = weeks.map(w => {
-      const active = ledger.filter(l => l.due.includes(w)).length;
+      const active = ledger.filter(l => l.due.includes(w) || (w === thisWeek && isActive(l.hh, w))).length;
       const paid   = ledger.filter(l => l.coverage.has(w)).length;
       return `<td class="${w === thisWeek ? 'fg-cur' : ''}">${w > thisWeek ? (paid || '') : `${paid}/${active}`}</td>`;
     }).join('');
@@ -5871,9 +5900,9 @@ class App {
         <span><i class="fg-cell fg-paid">✓</i> Paid</span>
         <span><i class="fg-cell fg-due"></i> Unpaid</span>
         <span><i class="fg-cell fg-adv">✓</i> Paid in advance</span>
-        <span><i class="fg-session-dot"></i> Session held</span>
+        <span><i class="fg-cell fg-pending"></i> Session not held yet</span>
       </div>
-      <p class="fg-hint">Weeks run Mon–Sun and are labelled by their Saturday. Tap a cell for details${this._isFundsCashier() ? ' or to record a payment' : ''}.</p>`;
+      <p class="fg-hint">Only weeks with a session are charged. Weeks run Mon–Sun and are labelled by their Saturday. Tap a cell for details${this._isFundsCashier() ? ' or to record a payment' : ''}.</p>`;
   }
 
   _fundsTransactionsHTML() {
@@ -6028,7 +6057,9 @@ class App {
     const start    = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
     let end = this._fundsAddWeeks(thisWeek, 8);
     for (const w of pk.selected) if (w > end) end = w;
+    const sessionWeeks = this._fundsSessionWeeks();
     const weeks = this._fundsWeekRange(start, end)
+      .filter(w => this._fundsIsPayableWeek(w, sessionWeeks, thisWeek) || pk.selected.has(w))
       .filter(w => !covered.has(w) || pk.selected.has(w))
       .filter(w => !hh.until || w <= this._fundsWeekKey(hh.until) || pk.selected.has(w));
     // Selected weeks outside the house's range (e.g. before `since`) still need to show

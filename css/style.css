@@ -2593,11 +2593,6 @@ img { max-width: 100%; }
 .fg-week.fg-future { opacity: .6; }
 .funds-grid .fg-cur { background: var(--saffron-bg); }
 .fg-week.fg-cur .fg-day { color: var(--saffron); }
-.fg-session-dot {
-  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--saffron); vertical-align: middle;
-}
-.fg-week .fg-session-dot { position: absolute; top: 4px; right: 4px; }
 .fg-cell {
   display: inline-flex; align-items: center; justify-content: center;
   width: 1.75rem; height: 1.75rem; border-radius: 6px;
@@ -2609,6 +2604,7 @@ img { max-width: 100%; }
 .fg-cell.fg-adv  { background: var(--blue-light); color: var(--blue); }
 .fg-cell.fg-due  { background: var(--red-light); border-color: color-mix(in srgb, var(--red) 35%, transparent); }
 .fg-cell.fg-due-cur { border: 1.5px dashed var(--red); }
+.fg-cell.fg-pending { border: 1.5px dashed var(--text-3); }
 .fg-cell.fg-na   { cursor: default; }
 .fg-cell.fg-na::after { content: '·'; color: var(--text-3); }
 button.fg-cell:not(.fg-na):hover { filter: brightness(.95); box-shadow: 0 0 0 2px var(--border-focus); }
