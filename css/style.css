@@ -2543,3 +2543,104 @@ img { max-width: 100%; }
   background: rgba(255,255,255,.35);
   margin: 0 .25rem;
 }
+
+/* Weekly / Transactions toggle */
+.funds-tabs { margin-bottom: 0; }
+.funds-month-nav-row { justify-content: center; margin-bottom: .75rem; }
+.funds-weeks-line { font-size: 0.75rem; color: var(--text-3); margin-top: 0.2rem; }
+.funds-warn-text { color: var(--gold); font-weight: 600; }
+
+/* House × week grid */
+.funds-grid-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  -webkit-overflow-scrolling: touch;
+}
+.funds-grid {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+  min-width: 100%;
+}
+.funds-grid th, .funds-grid td {
+  padding: 0.3rem 0.2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.funds-grid tbody tr:last-child th, .funds-grid tbody tr:last-child td { border-bottom-width: 2px; }
+.funds-grid tfoot th, .funds-grid tfoot td { border-bottom: none; color: var(--text-3); font-size: 0.7rem; font-weight: 600; }
+.funds-grid .fg-name {
+  position: sticky; left: 0; z-index: 1;
+  background: var(--surface);
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  min-width: 7.5rem; max-width: 9.5rem;
+  border-right: 1px solid var(--border);
+  font-weight: 400;
+}
+.funds-grid .fg-corner { font-size: 0.7rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; font-weight: 600; vertical-align: bottom; }
+.fg-hh { font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; }
+.fg-status { font-size: 0.7rem; display: flex; flex-direction: column; }
+.fg-owes { color: var(--red); font-weight: 600; }
+.fg-clear { color: var(--green); font-weight: 600; }
+.fg-credit { color: var(--gold); }
+.fg-week { position: relative; min-width: 2.4rem; line-height: 1.1; color: var(--text-2); font-weight: 600; }
+.fg-day { display: block; font-size: 0.85rem; }
+.fg-mon { display: block; font-size: 0.62rem; color: var(--text-3); text-transform: uppercase; font-weight: 500; }
+.fg-week.fg-future { opacity: .6; }
+.funds-grid .fg-cur { background: var(--saffron-bg); }
+.fg-week.fg-cur .fg-day { color: var(--saffron); }
+.fg-session-dot {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--saffron); vertical-align: middle;
+}
+.fg-week .fg-session-dot { position: absolute; top: 4px; right: 4px; }
+.fg-cell {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.75rem; height: 1.75rem; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 700; font-style: normal;
+  border: 1.5px solid transparent; background: none; padding: 0;
+  cursor: pointer; font-family: inherit; line-height: 1;
+}
+.fg-cell.fg-paid { background: var(--green-light); color: var(--green); }
+.fg-cell.fg-adv  { background: var(--blue-light); color: var(--blue); }
+.fg-cell.fg-due  { background: var(--red-light); border-color: color-mix(in srgb, var(--red) 35%, transparent); }
+.fg-cell.fg-due-cur { border: 1.5px dashed var(--red); }
+.fg-cell.fg-na   { cursor: default; }
+.fg-cell.fg-na::after { content: '·'; color: var(--text-3); }
+button.fg-cell:not(.fg-na):hover { filter: brightness(.95); box-shadow: 0 0 0 2px var(--border-focus); }
+.fg-legend {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1rem;
+  font-size: 0.75rem; color: var(--text-2);
+  margin: 0.6rem 0 0.25rem;
+}
+.fg-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.fg-legend .fg-cell { width: 1.1rem; height: 1.1rem; font-size: 0.65rem; cursor: default; }
+.fg-hint { font-size: 0.72rem; color: var(--text-3); margin: 0 0 1.25rem; }
+
+/* Week picker chips (record / submit modals) */
+.funds-week-picker { display: flex; flex-wrap: wrap; gap: 0.35rem; max-height: 9.5rem; overflow-y: auto; }
+.funds-week-chip {
+  padding: 0.25rem 0.6rem; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--text-2); font-size: 0.78rem; font-family: inherit; cursor: pointer;
+}
+.funds-week-chip small { color: var(--text-3); font-size: 0.65rem; }
+.funds-week-chip.current { border-style: dashed; border-color: var(--saffron); }
+.funds-week-chip.future:not(.active) { opacity: .7; }
+.funds-week-chip.active { background: var(--saffron); border-color: var(--saffron); color: #fff; font-weight: 600; }
+.funds-week-chip.active small { color: rgba(255,255,255,.8); }
+
+/* Houses editor (settings modal) */
+.funds-house-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.funds-house-row {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  padding: 0.6rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.funds-house-top { display: flex; gap: 0.35rem; align-items: center; }
+.funds-house-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+.funds-house-dates label { font-size: 0.7rem; color: var(--text-3); display: flex; flex-direction: column; gap: 0.15rem; }
+.funds-house-row .form-input { padding: 0.4rem 0.6rem; font-size: 0.85rem; }

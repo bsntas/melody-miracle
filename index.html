@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20260906.1">
+  <link rel="stylesheet" href="css/style.css?v=20261121.1">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD52K2S0BB"></script>
   <script>
@@ -991,19 +991,28 @@
       <div class="modal-body">
         <input type="hidden" id="mfpay-edit-id">
         <div class="form-group">
-          <label class="form-label">Member Name <span style="color:var(--error)">*</span></label>
-          <input type="text" id="mfpay-member" class="form-input" list="mfpay-member-list" placeholder="Select or type name…" autocomplete="off">
+          <label class="form-label">House <span style="color:var(--error)">*</span></label>
+          <select id="mfpay-household" class="form-input"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Paid by</label>
+          <input type="text" id="mfpay-member" class="form-input" list="mfpay-member-list" placeholder="Defaults to the house name" autocomplete="off">
           <datalist id="mfpay-member-list"></datalist>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
           <div class="form-group">
             <label class="form-label">Amount (₹) <span style="color:var(--error)">*</span></label>
-            <input type="number" id="mfpay-amount" class="form-input" placeholder="500" min="1" step="1">
+            <input type="number" id="mfpay-amount" class="form-input" placeholder="100" min="1" step="1">
           </div>
           <div class="form-group">
             <label class="form-label">Receipt Date <span style="color:var(--error)">*</span></label>
             <input type="date" id="mfpay-date" class="form-input">
           </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Weeks covered</label>
+          <div class="funds-week-picker" id="mfpay-weeks"></div>
+          <div class="form-hint" id="mfpay-weeks-hint"></div>
         </div>
         <div class="form-group">
           <label class="form-label">UTR / Transaction ID <span style="color:var(--error)">*</span></label>
@@ -1038,15 +1047,24 @@
           <label class="form-label">Your Email</label>
           <input type="email" id="mfsub-email" class="form-input" readonly style="background:rgba(128,128,128,0.15);cursor:default" autocomplete="off">
         </div>
+        <div class="form-group">
+          <label class="form-label">Paying for house <span style="color:var(--error)">*</span></label>
+          <select id="mfsub-household" class="form-input"></select>
+        </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
           <div class="form-group">
             <label class="form-label">Amount (₹) <span style="color:var(--error)">*</span></label>
-            <input type="number" id="mfsub-amount" class="form-input" placeholder="500" min="1" step="1">
+            <input type="number" id="mfsub-amount" class="form-input" placeholder="100" min="1" step="1">
           </div>
           <div class="form-group">
             <label class="form-label">Receipt Date <span style="color:var(--error)">*</span></label>
             <input type="date" id="mfsub-date" class="form-input">
           </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Weeks covered</label>
+          <div class="funds-week-picker" id="mfsub-weeks"></div>
+          <div class="form-hint" id="mfsub-weeks-hint"></div>
         </div>
         <div class="form-group">
           <label class="form-label">UTR / Transaction ID <span style="color:var(--error)">*</span></label>
@@ -1077,6 +1095,22 @@
           <input type="email" id="mfsettings-cashier" class="form-input" placeholder="cashier@example.com" autocomplete="off">
           <div class="form-hint">The person who can record payments and approve member submissions.</div>
         </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div class="form-group">
+            <label class="form-label">₹ per house per week</label>
+            <input type="number" id="mfsettings-rate" class="form-input" min="1" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Collection started</label>
+            <input type="date" id="mfsettings-start" class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Houses</label>
+          <div class="form-hint" style="margin-bottom:.5rem">Each house owes every week from its "From" date (until its "Until" date, if set). Emails let members' receipts match their house automatically.</div>
+          <div id="mfsettings-houses" class="funds-house-list"></div>
+          <button type="button" class="btn btn-outline btn-sm" id="btn-mfsettings-add-house" style="margin-top:.5rem">+ Add house</button>
+        </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-ghost" id="btn-mfsettings-cancel">Cancel</button>
@@ -1085,7 +1119,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20261107.1"></script>
+  <script type="module" src="js/app.js?v=20261121.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

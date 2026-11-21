@@ -1,5 +1,59 @@
 {
   "cashier": "anishalingsey1994@gmail.com",
+  "rate": 100,
+  "startWeek": "2026-08-22",
+  "households": [
+    {
+      "id": "hh_basanta",
+      "name": "Basanta",
+      "emails": [
+        "basantanickal13@gmail.com"
+      ],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_bhawana",
+      "name": "Bhawana",
+      "emails": [
+        "saivavna999@gmail.com"
+      ],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_bishal-chettri",
+      "name": "Bishal Chettri",
+      "emails": [
+        "saibishal999@gmail.com"
+      ],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_gigme",
+      "name": "Gigme",
+      "emails": [],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_isha",
+      "name": "Isha",
+      "emails": [
+        "ishagurung919@gmail.com"
+      ],
+      "since": "2026-08-22",
+      "until": null
+    },
+    {
+      "id": "hh_pemila",
+      "name": "Pemila",
+      "emails": [],
+      "since": "2026-08-22",
+      "until": null
+    }
+  ],
   "payments": [
     {
       "id": "id_mtlr3que288h",
@@ -12,7 +66,11 @@
       "recordedAt": "2026-09-03T16:40:11.942Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-03T16:40:11.942Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bhawana",
+      "weeks": [
+        "2026-08-22"
+      ]
     },
     {
       "id": "id_mtn4nmydaudt",
@@ -25,7 +83,11 @@
       "recordedAt": "2026-09-04T15:33:50.625Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-04T15:47:21.205Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-08-22"
+      ]
     },
     {
       "id": "id_mtp5z003enab",
@@ -38,7 +100,11 @@
       "recordedAt": "2026-09-05T19:14:33.182Z",
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-09-06T01:59:43.299Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bishal-chettri",
+      "weeks": [
+        "2026-08-22"
+      ]
     },
     {
       "id": "id_mtpjss05xj6s",
@@ -51,7 +117,11 @@
       "recordedAt": "2026-09-06T08:14:54.563Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-06T08:26:47.621Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-09-05"
+      ]
     },
     {
       "id": "id_mtpjvev2zycp",
@@ -64,7 +134,12 @@
       "recordedAt": "2026-09-06T08:28:50.558Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-06T08:28:50.558Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_gigme",
+      "weeks": [
+        "2026-08-22",
+        "2026-08-29"
+      ]
     },
     {
       "id": "id_mtpjwhk4bwm0",
@@ -77,7 +152,13 @@
       "recordedAt": "2026-09-06T08:29:40.709Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-06T08:29:40.709Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-08-22",
+        "2026-08-29",
+        "2026-09-05"
+      ]
     },
     {
       "id": "id_mu2d2u2b2qwz",
@@ -90,7 +171,11 @@
       "recordedAt": "2026-09-12T16:11:45.263Z",
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-09-15T07:39:39.827Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bishal-chettri",
+      "weeks": [
+        "2026-08-29"
+      ]
     },
     {
       "id": "id_mu2d2wukxu6x",
@@ -103,7 +188,11 @@
       "recordedAt": "2026-09-12T16:12:59.515Z",
       "recordedBy": "ishagurung919@gmail.com",
       "approvedAt": "2026-09-15T07:39:43.436Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-08-22"
+      ]
     },
     {
       "id": "id_mu4clxe8g7kb",
@@ -116,7 +205,11 @@
       "recordedAt": "2026-09-15T09:13:15.318Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-16T17:02:03.344Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-08-29"
+      ]
     },
     {
       "id": "id_muclezxz1md2",
@@ -129,7 +222,11 @@
       "recordedAt": "2026-09-20T12:06:39.694Z",
       "recordedBy": "saivavna999@gmail.com",
       "approvedAt": "2026-09-22T11:30:46.007Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bhawana",
+      "weeks": [
+        "2026-08-29"
+      ]
     },
     {
       "id": "id_muclf1yx31r5",
@@ -142,7 +239,11 @@
       "recordedAt": "2026-09-20T07:55:34.082Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-09-22T11:30:48.633Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-09-12"
+      ]
     },
     {
       "id": "id_muclidtszhfm",
@@ -155,7 +256,11 @@
       "recordedAt": "2026-09-22T11:33:23.968Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-09-22T11:33:23.968Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-09-12"
+      ]
     },
     {
       "id": "id_muyn9tgssglf",
@@ -168,7 +273,12 @@
       "recordedAt": "2026-10-07T21:53:39.436Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:53:39.436Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bhawana",
+      "weeks": [
+        "2026-09-05",
+        "2026-09-12"
+      ]
     },
     {
       "id": "id_muync20j512u",
@@ -181,7 +291,11 @@
       "recordedAt": "2026-10-07T21:55:23.827Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:55:23.827Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-09-26"
+      ]
     },
     {
       "id": "id_muynfvax5xbl",
@@ -194,7 +308,11 @@
       "recordedAt": "2026-10-07T21:58:21.753Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T21:58:21.753Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-09-19"
+      ]
     },
     {
       "id": "id_muynnx3gthrc",
@@ -207,7 +325,12 @@
       "recordedAt": "2026-10-07T22:04:37.324Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T22:04:37.324Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-08-29",
+        "2026-09-05"
+      ]
     },
     {
       "id": "id_muynpx3elown",
@@ -220,7 +343,11 @@
       "recordedAt": "2026-10-07T22:06:10.634Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-07T22:06:10.634Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-09-12"
+      ]
     },
     {
       "id": "id_muyx6jls6hcj",
@@ -233,7 +360,12 @@
       "recordedAt": "2026-10-08T02:04:07.992Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-08T02:31:02.848Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-09-19",
+        "2026-09-26"
+      ]
     },
     {
       "id": "id_mv3bioa77w36",
@@ -246,7 +378,11 @@
       "recordedAt": "2026-10-10T14:38:26.839Z",
       "recordedBy": "saivavna999@gmail.com",
       "approvedAt": "2026-10-11T04:23:28.111Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bhawana",
+      "weeks": [
+        "2026-09-19"
+      ]
     },
     {
       "id": "id_mv3brr7w6sjk",
@@ -259,7 +395,11 @@
       "recordedAt": "2026-10-11T04:30:31.820Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-11T04:30:31.820Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-10-03"
+      ]
     },
     {
       "id": "id_mv933d0kbiqc",
@@ -272,7 +412,11 @@
       "recordedAt": "2026-10-11T05:05:36.688Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-15T05:14:13.796Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-10-03"
+      ]
     },
     {
       "id": "id_mv93phbjh44c",
@@ -285,7 +429,11 @@
       "recordedAt": "2026-10-15T05:31:25.807Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-15T05:31:25.807Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-09-19"
+      ]
     },
     {
       "id": "id_mvdvn7c6hmos",
@@ -298,7 +446,11 @@
       "recordedAt": "2026-10-18T13:42:51.467Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-10-18T13:44:33.510Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-10-10"
+      ]
     },
     {
       "id": "id_mvdvr7lxwegw",
@@ -311,7 +463,11 @@
       "recordedAt": "2026-10-18T13:47:04.298Z",
       "recordedBy": "ishagurung919@gmail.com",
       "approvedAt": "2026-10-18T13:47:40.485Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-09-26"
+      ]
     },
     {
       "id": "id_mvdvti98hcqi",
@@ -324,7 +480,11 @@
       "recordedAt": "2026-10-18T13:49:27.596Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-10-18T13:49:27.596Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-10-10"
+      ]
     },
     {
       "id": "id_mvxe62oa3szm",
@@ -337,7 +497,13 @@
       "recordedAt": "2026-10-31T14:14:15.745Z",
       "recordedBy": "saibishal999@gmail.com",
       "approvedAt": "2026-11-01T05:30:44.362Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_bishal-chettri",
+      "weeks": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-09-19"
+      ]
     },
     {
       "id": "id_mw504xqe9gbm",
@@ -350,7 +516,13 @@
       "recordedAt": "2026-11-06T13:19:44.497Z",
       "recordedBy": "basantanickal13@gmail.com",
       "approvedAt": "2026-11-06T13:20:06.087Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_basanta",
+      "weeks": [
+        "2026-10-17",
+        "2026-10-24",
+        "2026-10-31"
+      ]
     },
     {
       "id": "id_mwg1sbnzcyjk",
@@ -363,7 +535,12 @@
       "recordedAt": "2026-11-14T06:51:44.783Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-14T06:51:44.784Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_isha",
+      "weeks": [
+        "2026-10-03",
+        "2026-10-10"
+      ]
     },
     {
       "id": "id_mwg1w6yedvk5",
@@ -376,7 +553,12 @@
       "recordedAt": "2026-11-14T06:54:45.302Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-14T06:54:45.302Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-10-17",
+        "2026-10-24"
+      ]
     },
     {
       "id": "id_mwq9altg2g6n",
@@ -389,7 +571,12 @@
       "recordedAt": "2026-11-21T10:19:36.820Z",
       "recordedBy": "anishalingsey1994@gmail.com",
       "approvedAt": "2026-11-21T10:19:36.820Z",
-      "approvedBy": "anishalingsey1994@gmail.com"
+      "approvedBy": "anishalingsey1994@gmail.com",
+      "household": "hh_pemila",
+      "weeks": [
+        "2026-10-31",
+        "2026-11-07"
+      ]
     }
   ]
 }
