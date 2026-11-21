@@ -23772,6 +23772,27 @@
     "scale": "Minor"
   },
   {
+    "id": "sai-darbar-mey-aao-gao",
+    "title": "Sai Darbar Mey Aao Gao",
+    "deity": "Sai",
+    "language": "Sanskrit / Hindi",
+    "raga": "Darbari",
+    "beat": "8 Beat / Keherwa / Adi",
+    "tempo": "Medium Slow",
+    "level": "Advanced",
+    "gents_pitch": "1.5 Pancham / C#",
+    "ladies_pitch": "5.5 Pancham / G#",
+    "lyrics": "Sai Darbar Mey Aao Gao\nKeertana Karoon Mein Sai Ke (San)\nPeetambara Dhara Nayana Manohara\nSai Sab Ke Prana Sakha\nCharan Kamal Par Sharan Padoon Main [ Keertana Karoon ... ]",
+    "meaning": "Welcome to the assembly of devotees and sing His name, in the Divine presence of Lord Sai. The thirst of the gathered devotees is quenched by the singing of devotional songs in praise of the Lord. He is enthralling to our eyes, wearing a yellow costume. We fall at Your feet and take refuge at the Lotus Feet of our Sai, who is the dearest of all friends.\n\n---\n\n*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*",
+    "audio_url": null,
+    "source_url": "https://sairhythms.sathyasai.org/song/sai-darbar-mey-aao-gao",
+    "gents_pitch_indian": "1.5 Pancham",
+    "gents_pitch_western": "C#",
+    "ladies_pitch_indian": "5.5 Pancham",
+    "ladies_pitch_western": "G#",
+    "scale": "Minor"
+  },
+  {
     "id": "sai-deva-sri-ganesha",
     "title": "Sai Deva Sri Ganesha",
     "deity": "Ganesha",
