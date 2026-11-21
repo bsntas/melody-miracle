@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261121.1 loaded');
+console.log('[MM] app.js v20261121.2 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -5406,7 +5406,8 @@ class App {
   //   cashier     email of the cashier
   //   rate        ₹ per house per week (default 100)
   //   startWeek   first week dues are collected (week key, see _fundsWeekKey)
-  //   households  [{ id, name, emails[], since, until }]  — cashier-managed roster
+  //   households  [{ id, name, members[], emails[], since, until }]  — cashier-managed roster;
+  //               members[] are the payer names that belong to the house
   //   payments    [{ id, household, member, memberEmail, amount, date, transactionId,
   //                  note, weeks[], recordedAt, recordedBy, approvedAt, approvedBy }]
   //
@@ -5524,7 +5525,33 @@ class App {
       if (byEmail) return byEmail;
     }
     const n = (name || '').trim().toLowerCase();
-    return n ? hhs.find(h => h.name.toLowerCase() === n) || null : null;
+    if (!n) return null;
+    return hhs.find(h => h.name.toLowerCase() === n)
+        || hhs.find(h => (h.members || []).some(m => m.toLowerCase() === n)) || null;
+  }
+
+  // After houses are merged, two payments may cover the same week. The earliest
+  // payment keeps the week; later ones move to the house's next unpaid weeks.
+  _fundsResolveOverlaps(hhId) {
+    const payments = (this._fundsData.payments || [])
+      .filter(p => p.household === hhId)
+      .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.recordedAt || '').localeCompare(b.recordedAt || ''));
+    const claimed = new Set();
+    const short = [];
+    for (const p of payments) {
+      const keep = (p.weeks || []).filter(w => !claimed.has(w));
+      keep.forEach(w => claimed.add(w));
+      if (keep.length < (p.weeks || []).length) short.push([p, (p.weeks || []).length - keep.length]);
+      p.weeks = keep;
+    }
+    const hh = this._fundsHousehold(hhId);
+    let w = this._fundsWeekKey(hh?.since || this._fundsData.startWeek || todayISO());
+    for (const [p, n] of short) {
+      for (let added = 0; added < n; w = this._fundsAddWeeks(w, 1)) {
+        if (!claimed.has(w)) { p.weeks.push(w); claimed.add(w); added++; }
+      }
+      p.weeks.sort();
+    }
   }
 
   // Bring older funds.json shapes up to date: defaults, roster, and week allocations.
@@ -5535,11 +5562,12 @@ class App {
     data.households = data.households || [];
     data.payments   = data.payments || [];
     this._fundsData = data;
+    for (const h of data.households) h.members = h.members || [h.name];
     for (const p of data.payments) {
       if (!p.household || !this._fundsHousehold(p.household)) {
         let hh = this._fundsFindHousehold(p.member, p.memberEmail);
         if (!hh) {
-          hh = { id: genId('hh'), name: p.member || p.memberEmail || 'Unknown',
+          hh = { id: genId('hh'), name: p.member || p.memberEmail || 'Unknown', members: p.member ? [p.member] : [],
                  emails: p.memberEmail ? [p.memberEmail] : [], since: data.startWeek, until: null };
           data.households.push(hh);
         }
@@ -5551,6 +5579,11 @@ class App {
         p.weeks = [];
         p.weeks = this._fundsSuggestWeeks(p.household, Math.floor(Number(p.amount || 0) / data.rate), p.id);
       }
+    }
+    // Two payments in one house covering the same week (e.g. after a merge) → shift the later one
+    for (const h of data.households) {
+      const weeks = data.payments.filter(p => p.household === h.id).flatMap(p => p.weeks);
+      if (new Set(weeks).size !== weeks.length) this._fundsResolveOverlaps(h.id);
     }
     return data;
   }
@@ -6030,7 +6063,9 @@ class App {
       if (!amtEl.value && pk.selected.size) amtEl.value = pk.selected.size * this._fundsRate();
       if (prefix === 'mfpay') {
         const memberEl = document.getElementById('mfpay-member');
-        if (!memberEl.value.trim()) memberEl.value = this._fundsHousehold(hhId)?.name || '';
+        const hh = this._fundsHousehold(hhId);
+        if (!memberEl.value.trim() && (hh?.members || []).length <= 1) memberEl.value = hh?.members?.[0] || hh?.name || '';
+        this._fundsPayerSuggestions(hhId);
       }
       this._fundsPickerRender();
     });
@@ -6060,23 +6095,32 @@ class App {
     const isEdit = !!payment;
     document.getElementById('mfpay-edit-id').value = payment?.id || '';
     document.getElementById('mfpay-date').value   = payment?.date || today;
-    document.getElementById('mfpay-member').value = payment?.member || this._fundsHousehold(household)?.name || '';
+    const preHh = this._fundsHousehold(household);
+    document.getElementById('mfpay-member').value = payment?.member
+      || ((preHh?.members || []).length === 1 ? preHh.members[0] : '');
     document.getElementById('mfpay-txn').value    = payment?.transactionId || '';
     document.getElementById('mfpay-note').value   = payment?.note || '';
     const titleEl = document.getElementById('mfpay-title');
     if (titleEl) titleEl.textContent = isEdit ? 'Edit Payment' : 'Record Payment';
     const submitBtn = document.getElementById('btn-mfpay-submit');
     if (submitBtn) { submitBtn.textContent = isEdit ? 'Save Changes' : 'Record Payment'; submitBtn.disabled = false; }
-    const list = document.getElementById('mfpay-member-list');
-    if (list) {
-      const names = this.sessions?.allSingerNames?.() || [];
-      list.innerHTML = names.map(n => `<option value="${escHtml(n)}">`).join('');
-    }
+    this._fundsPayerSuggestions(isEdit ? payment.household : household);
     this._fundsPickerInit('mfpay', isEdit
       ? { household: payment.household, weeks: payment.weeks || [], amount: payment.amount, editId: payment.id }
       : { household, weeks });
     this._openModal('modal-funds-pay');
     setTimeout(() => document.getElementById(isEdit || household ? 'mfpay-amount' : 'mfpay-household')?.focus(), 60);
+  }
+
+  // "Paid by" suggestions: the house's payers first, then every known singer.
+  _fundsPayerSuggestions(hhId) {
+    const list = document.getElementById('mfpay-member-list');
+    if (!list) return;
+    const members = this._fundsHousehold(hhId)?.members || [];
+    const names = [...new Set([...members, ...(this.sessions?.allSingerNames?.() || [])])];
+    list.innerHTML = names.map(n => `<option value="${escHtml(n)}">`).join('');
+    const input = document.getElementById('mfpay-member');
+    if (input) input.placeholder = members.length ? members.join(' / ') : 'Defaults to the house name';
   }
 
   _openFundsSubmitModal({ household = '', weeks = null } = {}) {
@@ -6116,7 +6160,19 @@ class App {
           <label>From <input type="date" class="form-input fh-since" value="${escHtml(h.since || this._fundsData?.startWeek || '')}"></label>
           <label>Until <input type="date" class="form-input fh-until" value="${escHtml(h.until || '')}"></label>
         </div>
-        <input type="text" class="form-input fh-emails" placeholder="Member emails (comma-separated, optional)" value="${escHtml((h.emails || []).join(', '))}" autocomplete="off">
+        <label class="funds-house-field">Payers
+          <input type="text" class="form-input fh-members" placeholder="Names, comma-separated" value="${escHtml((h.members || []).join(', '))}" autocomplete="off">
+        </label>
+        <label class="funds-house-field">Emails
+          <input type="text" class="form-input fh-emails" placeholder="Comma-separated, optional" value="${escHtml((h.emails || []).join(', '))}" autocomplete="off">
+        </label>
+        ${h.id ? `
+        <label class="funds-house-field">Merge into
+          <select class="form-input fh-merge">
+            <option value="">— keep separate —</option>
+            ${this._fundsHouseholds().filter(o => o.id !== h.id).map(o => `<option value="${escHtml(o.id)}">${escHtml(o.name)}</option>`).join('')}
+          </select>
+        </label>` : ''}
       </div>`;
   }
 
@@ -6269,7 +6325,7 @@ class App {
     // Resolve the house (older submissions only carry a name/email)
     let hh = this._fundsHousehold(item.household) || this._fundsFindHousehold(item.member, item.memberEmail);
     if (!hh) {
-      hh = { id: genId('hh'), name: item.member || item.memberEmail || 'Unknown',
+      hh = { id: genId('hh'), name: item.member || item.memberEmail || 'Unknown', members: item.member ? [item.member] : [],
              emails: item.memberEmail ? [item.memberEmail] : [], since: this._fundsData.startWeek, until: null };
       this._fundsData.households.push(hh);
     }
@@ -6353,39 +6409,72 @@ class App {
     if (!this._fundsData) return;
 
     const households = [];
+    const merges = new Map();   // merged-away house id → target id
     const names = new Set();
+    const splitList = v => v.split(',').map(x => x.trim()).filter(Boolean);
     for (const row of document.querySelectorAll('#mfsettings-houses .funds-house-row')) {
       const name = row.querySelector('.fh-name').value.trim();
       if (!name) continue;
+      const mergeInto = row.querySelector('.fh-merge')?.value;
+      if (mergeInto) merges.set(row.dataset.id, mergeInto);
       const key = name.toLowerCase();
-      if (names.has(key)) { this._toast(`Duplicate house name: ${name}`, 'error'); return; }
-      names.add(key);
+      if (!mergeInto && names.has(key)) { this._toast(`Duplicate house name: ${name}`, 'error'); return; }
+      if (!mergeInto) names.add(key);
       const until = row.querySelector('.fh-until').value || null;
       const since = row.querySelector('.fh-since').value || start;
       if (until && until < since) { this._toast(`${name}: "Until" is before "From"`, 'error'); return; }
       households.push({
         id:     row.dataset.id || genId('hh'),
         name,
-        emails: row.querySelector('.fh-emails').value.split(',').map(s => s.trim().toLowerCase()).filter(Boolean),
+        members: splitList(row.querySelector('.fh-members').value),
+        emails:  splitList(row.querySelector('.fh-emails').value.toLowerCase()),
         since,
         until,
       });
     }
-    const kept = new Set(households.map(h => h.id));
-    const orphaned = (this._fundsData.payments || []).filter(p => !kept.has(p.household));
+
+    // Merge houses: follow chains (A→B→C), refuse cycles, fold payers/emails/dates into the target
+    const finalTarget = id => {
+      const seen = new Set();
+      while (merges.has(id)) { if (seen.has(id)) return null; seen.add(id); id = merges.get(id); }
+      return id;
+    };
+    const byId = new Map(households.map(h => [h.id, h]));
+    const reassign = new Map();
+    for (const [from] of merges) {
+      const to = finalTarget(from);
+      if (!to || !byId.has(to)) { this._toast('Houses can\'t be merged into each other in a loop', 'error'); return; }
+      const src = byId.get(from), dst = byId.get(to);
+      dst.members = [...new Set([...dst.members, ...src.members])];
+      dst.emails  = [...new Set([...dst.emails, ...src.emails])];
+      if (src.since < dst.since) dst.since = src.since;
+      reassign.set(from, to);
+    }
+    const mergedHouses = households.filter(h => !merges.has(h.id));
+    const kept = new Set(mergedHouses.map(h => h.id));
+    const orphaned = (this._fundsData.payments || []).filter(p => !kept.has(reassign.get(p.household) || p.household));
     if (orphaned.length) {
       const orphanNames = [...new Set(orphaned.map(p => this._fundsHousehold(p.household)?.name || p.member))].join(', ');
       this._toast(`Can't remove ${orphanNames} — they have payments. Set an "Until" date instead.`, 'error');
       return;
     }
 
-    const old = { cashier: this._fundsData.cashier, rate: this._fundsData.rate,
-                  startWeek: this._fundsData.startWeek, households: this._fundsData.households };
-    Object.assign(this._fundsData, { cashier: email, rate, startWeek: this._fundsWeekKey(start), households });
+    if (merges.size) {
+      const list = [...merges.keys()].map(id => `${byId.get(id).name} → ${byId.get(finalTarget(id)).name}`).join(', ');
+      const ok = await this._confirm('Merge houses',
+        `Merge ${list}? Their payments move to the combined house; weeks paid twice are shifted to the next unpaid weeks.`, 'Merge');
+      if (!ok) return;
+    }
+
+    const old = JSON.parse(JSON.stringify({ cashier: this._fundsData.cashier, rate: this._fundsData.rate,
+                  startWeek: this._fundsData.startWeek, households: this._fundsData.households, payments: this._fundsData.payments }));
+    Object.assign(this._fundsData, { cashier: email, rate, startWeek: this._fundsWeekKey(start), households: mergedHouses });
+    for (const p of this._fundsData.payments || []) if (reassign.has(p.household)) p.household = reassign.get(p.household);
+    for (const id of new Set(reassign.values())) this._fundsResolveOverlaps(id);
 
     if (this.sessions?.commitFunds) {
       try {
-        await this.sessions.commitFunds(this._fundsData, 'Update funds settings');
+        await this.sessions.commitFunds(this._fundsData, merges.size ? 'Merge funds houses' : 'Update funds settings');
         this._toast('Funds settings saved', 'success');
       } catch (e) {
         Object.assign(this._fundsData, old);
