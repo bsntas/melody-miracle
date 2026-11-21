@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261121.3 loaded');
+console.log('[MM] app.js v20261121.4 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -5748,7 +5748,6 @@ class App {
           ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
           ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
           <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
-          <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
           ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
         </div>
       </div>
@@ -5783,11 +5782,6 @@ class App {
       const [y, m] = this._fundsCurrentMonth().split('-').map(Number);
       this._fundsMonth = m === 12 ? `${y + 1}-01` : `${y}-${String(m + 1).padStart(2, '0')}`;
       this._renderFunds();
-    });
-
-    // Refresh funds data from GitHub
-    document.getElementById('btn-funds-refresh')?.addEventListener('click', () => {
-      this._fundsRefresh();
     });
 
     // Refresh funds data from GitHub
@@ -5976,7 +5970,10 @@ class App {
 
   _fundsPaymentRowHTML(p) {
     const isCashier = this._isFundsCashier();
-    const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
+    // How the payment came in: entered by the cashier, or a member's receipt the cashier approved
+    const byCashier = !p.recordedBy || p.recordedBy === 'cashier' || p.recordedBy === p.approvedBy;
+    const byLabel   = byCashier ? 'cashier' : 'member';
+    const byTitle   = byCashier ? `Recorded by the cashier` : `Submitted by ${p.recordedBy} and approved by the cashier`;
     const hh        = this._fundsHousehold(p.household);
     const dateLabel = p.date
       ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
@@ -5990,7 +5987,7 @@ class App {
             ${hh && p.member && p.member !== hh.name ? `by ${escHtml(p.member)} · ` : ''}${dateLabel}
             ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
             ${p.note ? ` · ${escHtml(p.note)}` : ''}
-            <span class="funds-by-badge">${byLabel}</span>
+            <span class="funds-by-badge" title="${escHtml(byTitle)}">${byLabel}</span>
           </div>
           <div class="funds-weeks-line">Weeks: ${escHtml(this._fundsWeeksSummary(p.weeks))}${unassigned > 0 ? ` · <span class="funds-warn-text">${this._fundsFormatAmount(unassigned)} unassigned</span>` : ''}</div>
         </div>
