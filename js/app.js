@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261107.1 loaded');
+console.log('[MM] app.js v20261121.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -127,11 +127,13 @@ class App {
     this.favourites  = new FavouritesStore();
 
     // Funds
-    this._fundsData    = null;   // { cashier, payments[] } from GitHub
+    this._fundsData    = null;   // { cashier, rate, startWeek, households[], payments[] } from GitHub
     this._fundsPending = [];     // pending submissions from Firebase
     this._fundsMonth   = null;   // YYYY-MM filter (null = current month)
     this._fundsLive    = null;   // FundsLive instance
     this._fundsLoaded  = false;
+    this._fundsTab     = 'weekly';  // 'weekly' | 'transactions'
+    this._fundsPicker  = null;   // { prefix, editId, selected:Set<weekKey> } for the open pay/submit modal
 
     // Series filter (null = all series)
     try {
@@ -5399,6 +5401,18 @@ class App {
   }
 
   // ─── Funds ────────────────────────────────────────────────────────────────
+  //
+  // Data model (data/funds.json):
+  //   cashier     email of the cashier
+  //   rate        ₹ per house per week (default 100)
+  //   startWeek   first week dues are collected (week key, see _fundsWeekKey)
+  //   households  [{ id, name, emails[], since, until }]  — cashier-managed roster
+  //   payments    [{ id, household, member, memberEmail, amount, date, transactionId,
+  //                  note, weeks[], recordedAt, recordedBy, approvedAt, approvedBy }]
+  //
+  // Every calendar week (Mon–Sun) is due for every active house. A week is keyed
+  // by its Saturday (the usual session day). A payment covers the weeks listed in
+  // `weeks[]`; any amount beyond weeks × rate is shown as unallocated credit.
 
   _isFundsCashier() {
     const email = this.auth?.currentUser?.email;
@@ -5420,15 +5434,152 @@ class App {
     return '₹' + Number(n).toLocaleString('en-IN');
   }
 
+  _fundsRate() {
+    return Number(this._fundsData?.rate) || 100;
+  }
+
+  // Saturday of the Mon–Sun week containing dateStr (YYYY-MM-DD).
+  _fundsWeekKey(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    const dow = d.getDay();
+    d.setDate(d.getDate() + (dow === 0 ? -1 : 6 - dow));
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  _fundsAddWeeks(weekKey, n) {
+    const d = new Date(weekKey + 'T00:00:00');
+    d.setDate(d.getDate() + 7 * n);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  _fundsWeekLabel(weekKey, withYear = false) {
+    return new Date(weekKey + 'T00:00:00').toLocaleDateString('en-IN',
+      withYear ? { day: 'numeric', month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' });
+  }
+
+  // "Mon 17 – Sun 23 Aug 2026" for a week key
+  _fundsWeekRangeLabel(weekKey) {
+    const mon = new Date(weekKey + 'T00:00:00'); mon.setDate(mon.getDate() - 5);
+    const sun = new Date(weekKey + 'T00:00:00'); sun.setDate(sun.getDate() + 1);
+    return `Mon ${mon.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })} – Sun ${sun.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+  }
+
+  _fundsThisWeek() {
+    return this._fundsWeekKey(todayISO());
+  }
+
+  // Week keys from `from` to `to` inclusive.
+  _fundsWeekRange(from, to) {
+    const out = [];
+    for (let w = from; w <= to; w = this._fundsAddWeeks(w, 1)) out.push(w);
+    return out;
+  }
+
+  _fundsHouseholds() {
+    return [...(this._fundsData?.households || [])]
+      .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+  }
+
+  _fundsHousehold(id) {
+    return (this._fundsData?.households || []).find(h => h.id === id) || null;
+  }
+
+  // Weeks a house owes for, up to and including the current week.
+  _fundsDueWeeks(hh) {
+    const start = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
+    let end = this._fundsThisWeek();
+    if (hh.until) { const u = this._fundsWeekKey(hh.until); if (u < end) end = u; }
+    return start <= end ? this._fundsWeekRange(start, end) : [];
+  }
+
+  // Map<weekKey, payment> of weeks covered for a house, optionally ignoring one payment.
+  _fundsCoverage(hhId, excludePaymentId = null) {
+    const map = new Map();
+    for (const p of this._fundsData?.payments || []) {
+      if (p.household !== hhId || p.id === excludePaymentId) continue;
+      for (const w of p.weeks || []) if (!map.has(w)) map.set(w, p);
+    }
+    return map;
+  }
+
+  // Oldest-first unpaid weeks for a house (past dues, then future weeks in advance).
+  _fundsSuggestWeeks(hhId, n, excludePaymentId = null) {
+    const hh = this._fundsHousehold(hhId);
+    if (!hh || n <= 0) return [];
+    const covered = this._fundsCoverage(hhId, excludePaymentId);
+    const start = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
+    const out = [];
+    for (let w = start; out.length < n && out.length < 520; w = this._fundsAddWeeks(w, 1)) {
+      if (hh.until && w > this._fundsWeekKey(hh.until)) break;
+      if (!covered.has(w)) out.push(w);
+    }
+    return out;
+  }
+
+  _fundsFindHousehold(name, email) {
+    const hhs = this._fundsData?.households || [];
+    const e = (email || '').toLowerCase();
+    if (e) {
+      const byEmail = hhs.find(h => (h.emails || []).some(x => x.toLowerCase() === e));
+      if (byEmail) return byEmail;
+    }
+    const n = (name || '').trim().toLowerCase();
+    return n ? hhs.find(h => h.name.toLowerCase() === n) || null : null;
+  }
+
+  // Bring older funds.json shapes up to date: defaults, roster, and week allocations.
+  _fundsNormalize(data) {
+    data.rate      = Number(data.rate) || 100;
+    data.startWeek = data.startWeek || this._fundsWeekKey(
+      (data.payments || []).map(p => p.date).filter(Boolean).sort()[0] || todayISO());
+    data.households = data.households || [];
+    data.payments   = data.payments || [];
+    this._fundsData = data;
+    for (const p of data.payments) {
+      if (!p.household || !this._fundsHousehold(p.household)) {
+        let hh = this._fundsFindHousehold(p.member, p.memberEmail);
+        if (!hh) {
+          hh = { id: genId('hh'), name: p.member || p.memberEmail || 'Unknown',
+                 emails: p.memberEmail ? [p.memberEmail] : [], since: data.startWeek, until: null };
+          data.households.push(hh);
+        }
+        p.household = hh.id;
+      }
+    }
+    for (const p of data.payments) {
+      if (!Array.isArray(p.weeks)) {
+        p.weeks = [];
+        p.weeks = this._fundsSuggestWeeks(p.household, Math.floor(Number(p.amount || 0) / data.rate), p.id);
+      }
+    }
+    return data;
+  }
+
+  // Per-house ledger used by the weekly grid.
+  _fundsLedger() {
+    const rate = this._fundsRate();
+    return this._fundsHouseholds().map(hh => {
+      const due      = this._fundsDueWeeks(hh);
+      const coverage = this._fundsCoverage(hh.id);
+      const unpaid   = due.filter(w => !coverage.has(w));
+      const payments = (this._fundsData.payments || []).filter(p => p.household === hh.id);
+      const paidAmt  = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
+      const allocAmt = payments.reduce((s, p) => s + (p.weeks || []).length * rate, 0);
+      const thisWeek = this._fundsThisWeek();
+      const advance  = [...coverage.keys()].filter(w => w > thisWeek).length;
+      return { hh, due, coverage, unpaid, owes: unpaid.length * rate, credit: Math.max(0, paidAmt - allocAmt), advance };
+    });
+  }
+
   async _fundsRefresh() {
     const btn = document.getElementById('btn-funds-refresh');
     if (btn) { btn.disabled = true; btn.classList.add('loading'); }
     try {
       if (this.sessions?.fetchFunds) {
-        this._fundsData = await this.sessions.fetchFunds();
+        this._fundsNormalize(await this.sessions.fetchFunds());
       } else {
         const res = await fetch('./data/funds.json?_=' + Date.now());
-        this._fundsData = res.ok ? await res.json() : this._fundsData;
+        if (res.ok) this._fundsNormalize(await res.json());
       }
     } catch (e) {
       console.warn('[Funds] Refresh failed:', e.message);
@@ -5442,17 +5593,17 @@ class App {
     if (!container) return;
     container.innerHTML = '<div class="funds-loading">Loading…</div>';
 
+    let data;
     try {
       if (this.sessions?.fetchFunds) {
-        this._fundsData = await this.sessions.fetchFunds();
+        data = await this.sessions.fetchFunds();
       } else {
         // Fall back to local fetch (no PAT)
         const res = await fetch('./data/funds.json');
-        this._fundsData = res.ok ? await res.json() : { cashier: 'anishalingsey1994@gmail.com', payments: [] };
+        data = res.ok ? await res.json() : null;
       }
-    } catch {
-      this._fundsData = { cashier: 'anishalingsey1994@gmail.com', payments: [] };
-    }
+    } catch { data = null; }
+    this._fundsNormalize(data || { cashier: 'anishalingsey1994@gmail.com', payments: [] });
 
     // Start listening to Firebase pending queue
     if (this._fundsLive) { this._fundsLive.destroy(); this._fundsLive = null; }
@@ -5491,97 +5642,56 @@ class App {
       container.innerHTML = '<div class="funds-loading">Loading funds data…</div>';
       return;
     }
+    // commitFunds() may have merged in remote payments without houses/weeks
+    this._fundsNormalize(this._fundsData);
 
-    const month      = this._fundsCurrentMonth();
-    const isCashier  = this._isFundsCashier();
+    const tab         = this._fundsTab || 'weekly';
+    const isCashier   = this._isFundsCashier();
     const allPayments = this._fundsData.payments || [];
-    const payments   = allPayments.filter(p => (p.date?.slice(0, 7) || p.month) === month);
-    const totalAmt   = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
-    const cumAmt     = allPayments.reduce((s, p) => s + Number(p.amount || 0), 0);
-    const cumMembers = new Set(allPayments.map(p => p.member || p.memberEmail).filter(Boolean)).size;
-    const pending    = this._fundsPending;
-    const isSignedIn = !!this.auth?.currentUser;
-
-    // Month nav
-    const [y, m] = month.split('-').map(Number);
-    const prevMonth = m === 1
-      ? `${y - 1}-12`
-      : `${y}-${String(m - 1).padStart(2, '0')}`;
-    const nextMonth = m === 12
-      ? `${y + 1}-01`
-      : `${y}-${String(m + 1).padStart(2, '0')}`;
-    const now = new Date();
-    const thisMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-    const isCurrentMonth = month === thisMonth;
-
-    const pendingBadge = isCashier && pending.length
-      ? `<span class="funds-pending-badge">${pending.length}</span>`
-      : '';
+    const cumAmt      = allPayments.reduce((s, p) => s + Number(p.amount || 0), 0);
+    const ledger      = this._fundsLedger();
+    const outstanding = ledger.reduce((s, l) => s + l.owes, 0);
+    const pending     = this._fundsPending;
+    const isSignedIn  = !!this.auth?.currentUser;
 
     const cashierSection = isCashier && pending.length ? `
       <div class="section-header">
-        <h3 class="section-title">Pending Approvals ${pendingBadge}</h3>
+        <h3 class="section-title">Pending Approval <span class="funds-pending-badge">${pending.length}</span></h3>
       </div>
       <div class="funds-pending-list" id="funds-pending-list">
         ${pending.map(p => this._fundsPendingCardHTML(p)).join('')}
       </div>` : '';
 
-    const historyHTML = payments.length
-      ? payments.sort((a, b) => (b.approvedAt || '').localeCompare(a.approvedAt || ''))
-          .map(p => this._fundsPaymentRowHTML(p)).join('')
-      : `<div class="empty-state" style="padding:2rem 0">
-          <div class="empty-icon">${ICONS.info}</div>
-          <p>No payments recorded for ${this._fundsMonthLabel(month)}</p>
-        </div>`;
-
     container.innerHTML = `
       <div class="funds-cumulative">
         <div class="funds-cum-item">
           <div class="funds-cum-num">${this._fundsFormatAmount(cumAmt)}</div>
-          <div class="funds-cum-label">Total Collected</div>
+          <div class="funds-cum-label">Collected</div>
         </div>
         <div class="funds-cum-divider"></div>
         <div class="funds-cum-item">
-          <div class="funds-cum-num">${allPayments.length}</div>
-          <div class="funds-cum-label">All Payments</div>
+          <div class="funds-cum-num">${this._fundsFormatAmount(outstanding)}</div>
+          <div class="funds-cum-label">Outstanding</div>
         </div>
         <div class="funds-cum-divider"></div>
         <div class="funds-cum-item">
-          <div class="funds-cum-num">${cumMembers}</div>
-          <div class="funds-cum-label">Members</div>
+          <div class="funds-cum-num">${ledger.length}</div>
+          <div class="funds-cum-label">Houses</div>
         </div>
       </div>
 
       <div class="funds-header-row">
-        <div class="funds-month-nav">
-          <button class="btn btn-ghost btn-icon" id="btn-funds-prev" aria-label="Previous month">${ICONS.chevronLeft}</button>
-          <span class="funds-month-label">${this._fundsMonthLabel(month)}</span>
-          <button class="btn btn-ghost btn-icon" id="btn-funds-next" aria-label="Next month" ${isCurrentMonth ? 'disabled' : ''}>${ICONS.chevronRight}</button>
+        <div class="period-tabs funds-tabs">
+          <button class="period-tab ${tab === 'weekly' ? 'active' : ''}" data-funds-tab="weekly">Weekly</button>
+          <button class="period-tab ${tab === 'transactions' ? 'active' : ''}" data-funds-tab="transactions">Transactions</button>
         </div>
         <div class="funds-header-actions">
           ${isCashier ? `<button class="btn btn-primary btn-sm" id="btn-funds-add">+ Record Payment</button>` : ''}
           ${isSignedIn && !isCashier ? `<button class="btn btn-outline btn-sm" id="btn-funds-submit">Submit Receipt</button>` : ''}
           <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
+          <button class="btn btn-ghost btn-icon" id="btn-funds-refresh" title="Refresh from GitHub" aria-label="Refresh funds data">${ICONS.refresh}</button>
           ${isCashier ? `<button class="btn btn-ghost btn-icon" id="btn-funds-settings" title="Funds settings" aria-label="Funds settings">${ICONS.pencil}</button>` : ''}
         </div>
-      </div>
-
-      <div class="funds-month-stats">
-        <div class="funds-month-stat">
-          <div class="funds-ms-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
-          <div class="funds-ms-label">This Month</div>
-        </div>
-        <div class="funds-ms-divider"></div>
-        <div class="funds-month-stat">
-          <div class="funds-ms-num">${payments.length}</div>
-          <div class="funds-ms-label">Payments</div>
-        </div>
-        ${isCashier ? `
-        <div class="funds-ms-divider"></div>
-        <div class="funds-month-stat ${pending.length ? 'funds-ms-warn' : ''}">
-          <div class="funds-ms-num">${pending.length}</div>
-          <div class="funds-ms-label">Pending${pending.length ? ' ⚠' : ''}</div>
-        </div>` : ''}
       </div>
 
       ${!isCashier && !isSignedIn ? `
@@ -5591,21 +5701,34 @@ class App {
 
       ${cashierSection}
 
-      <div class="section-header" style="margin-top:${isCashier && pending.length ? '0' : '0.25rem'}">
-        <h3 class="section-title">Payment History</h3>
-      </div>
-      <div class="funds-history-list">${historyHTML}</div>
+      ${tab === 'weekly' ? this._fundsWeeklyHTML(ledger) : this._fundsTransactionsHTML()}
 
-      ${isCashier ? `<div class="funds-cashier-info">Cashier: ${escHtml(this._fundsData.cashier)}</div>` : ''}
+      ${isCashier ? `<div class="funds-cashier-info">Cashier: ${escHtml(this._fundsData.cashier)} · ${this._fundsFormatAmount(this._fundsRate())} per house per week</div>` : ''}
     `;
 
-    // Bind month nav
+    // Keep the most recent weeks in view
+    const wrap = container.querySelector('.funds-grid-wrap');
+    if (wrap) requestAnimationFrame(() => { wrap.scrollLeft = wrap.scrollWidth; });
+
+    container.querySelectorAll('[data-funds-tab]').forEach(btn => {
+      btn.addEventListener('click', () => { this._fundsTab = btn.dataset.fundsTab; this._renderFunds(); });
+    });
+
+    // Bind month nav (transactions tab)
     document.getElementById('btn-funds-prev')?.addEventListener('click', () => {
-      this._fundsMonth = prevMonth;
+      const [y, m] = this._fundsCurrentMonth().split('-').map(Number);
+      this._fundsMonth = m === 1 ? `${y - 1}-12` : `${y}-${String(m - 1).padStart(2, '0')}`;
       this._renderFunds();
     });
     document.getElementById('btn-funds-next')?.addEventListener('click', () => {
-      if (!isCurrentMonth) { this._fundsMonth = nextMonth; this._renderFunds(); }
+      const [y, m] = this._fundsCurrentMonth().split('-').map(Number);
+      this._fundsMonth = m === 12 ? `${y + 1}-01` : `${y}-${String(m + 1).padStart(2, '0')}`;
+      this._renderFunds();
+    });
+
+    // Refresh funds data from GitHub
+    document.getElementById('btn-funds-refresh')?.addEventListener('click', () => {
+      this._fundsRefresh();
     });
 
     // Refresh funds data from GitHub
@@ -5615,13 +5738,13 @@ class App {
 
     // Cashier: record payment directly
     document.getElementById('btn-funds-add')?.addEventListener('click', () => {
-      this._openFundsPayModal(month);
+      this._openFundsPayModal();
     });
 
     // Member: submit receipt
     document.getElementById('btn-funds-submit')?.addEventListener('click', async () => {
       if (!await this.requireAuth('Sign in to submit a payment receipt')) return;
-      this._openFundsSubmitModal(month);
+      this._openFundsSubmitModal();
     });
 
     // Cashier settings
@@ -5634,28 +5757,153 @@ class App {
       e.preventDefault();
       await this.requireAuth('Sign in to submit a payment receipt');
     });
+  }
 
+  // House × week grid. Columns run from startWeek to the current week, plus any
+  // future weeks already paid in advance.
+  _fundsWeeklyHTML(ledger) {
+    if (!ledger.length) {
+      return `<div class="empty-state"><p>No houses yet.${this._isFundsCashier() ? ' Add houses in Funds settings (✎).' : ''}</p></div>`;
+    }
+    const rate     = this._fundsRate();
+    const thisWeek = this._fundsThisWeek();
+    const start    = ledger.reduce((min, l) => (l.due[0] && l.due[0] < min ? l.due[0] : min),
+                                   this._fundsWeekKey(this._fundsData.startWeek || todayISO()));
+    let end = thisWeek;
+    for (const l of ledger) for (const w of l.coverage.keys()) if (w > end) end = w;
+    const weeks = this._fundsWeekRange(start, end);
+
+    // Session dates (any series) for a small "session held" marker in the header
+    const sessionWeeks = new Set((this.sessions?.all?.() || []).map(s => s.date && this._fundsWeekKey(s.date)).filter(Boolean));
+
+    const curPaid   = ledger.filter(l => l.coverage.has(thisWeek)).length;
+    const curActive = ledger.filter(l => l.due.includes(thisWeek)).length;
+    const clear     = ledger.filter(l => !l.unpaid.length).length;
+
+    const head = weeks.map(w => {
+      const d = new Date(w + 'T00:00:00');
+      return `<th class="fg-week ${w === thisWeek ? 'fg-cur' : ''} ${w > thisWeek ? 'fg-future' : ''}" title="${this._fundsWeekRangeLabel(w)}">
+        <span class="fg-day">${d.getDate()}</span><span class="fg-mon">${d.toLocaleDateString('en-IN', { month: 'short' })}</span>
+        ${sessionWeeks.has(w) ? '<span class="fg-session-dot" title="Session held"></span>' : ''}
+      </th>`;
+    }).join('');
+
+    const rows = ledger.map(l => {
+      const status = l.owes
+        ? `<span class="fg-owes">Owes ${this._fundsFormatAmount(l.owes)}</span>`
+        : `<span class="fg-clear">Paid up${l.advance ? ` · +${l.advance} wk` : ''}</span>`;
+      const credit = l.credit ? `<span class="fg-credit" title="Paid but not assigned to a week">${this._fundsFormatAmount(l.credit)} unassigned</span>` : '';
+      const cells = weeks.map(w => {
+        const p = l.coverage.get(w);
+        let cls, mark, label;
+        if (p)                     { cls = w > thisWeek ? 'fg-adv' : 'fg-paid'; mark = '✓'; label = 'Paid'; }
+        else if (l.due.includes(w)) { cls = w === thisWeek ? 'fg-due-cur' : 'fg-due'; mark = ''; label = 'Unpaid'; }
+        else                       { cls = 'fg-na'; mark = ''; label = 'Not due'; }
+        return `<td class="${w === thisWeek ? 'fg-cur' : ''}"><button class="fg-cell ${cls}" data-hh="${escHtml(l.hh.id)}" data-week="${w}" ${p ? `data-pay="${escHtml(p.id)}"` : ''} aria-label="${escHtml(l.hh.name)}, week of ${this._fundsWeekLabel(w)}: ${label}">${mark}</button></td>`;
+      }).join('');
+      return `<tr><th class="fg-name" scope="row"><div class="fg-hh">${escHtml(l.hh.name)}</div><div class="fg-status">${status}${credit}</div></th>${cells}</tr>`;
+    }).join('');
+
+    const foot = weeks.map(w => {
+      const active = ledger.filter(l => l.due.includes(w)).length;
+      const paid   = ledger.filter(l => l.coverage.has(w)).length;
+      return `<td class="${w === thisWeek ? 'fg-cur' : ''}">${w > thisWeek ? (paid || '') : `${paid}/${active}`}</td>`;
+    }).join('');
+
+    return `
+      <div class="funds-month-stats">
+        <div class="funds-month-stat">
+          <div class="funds-ms-num">${curPaid}/${curActive}</div>
+          <div class="funds-ms-label">Paid this week</div>
+        </div>
+        <div class="funds-ms-divider"></div>
+        <div class="funds-month-stat">
+          <div class="funds-ms-num">${clear}/${ledger.length}</div>
+          <div class="funds-ms-label">Houses paid up</div>
+        </div>
+        <div class="funds-ms-divider"></div>
+        <div class="funds-month-stat">
+          <div class="funds-ms-num">${this._fundsFormatAmount(rate)}</div>
+          <div class="funds-ms-label">Per week</div>
+        </div>
+      </div>
+      <div class="funds-grid-wrap">
+        <table class="funds-grid">
+          <thead><tr><th class="fg-name fg-corner">House</th>${head}</tr></thead>
+          <tbody>${rows}</tbody>
+          <tfoot><tr><th class="fg-name">Paid</th>${foot}</tr></tfoot>
+        </table>
+      </div>
+      <div class="fg-legend">
+        <span><i class="fg-cell fg-paid">✓</i> Paid</span>
+        <span><i class="fg-cell fg-due"></i> Unpaid</span>
+        <span><i class="fg-cell fg-adv">✓</i> Paid in advance</span>
+        <span><i class="fg-session-dot"></i> Session held</span>
+      </div>
+      <p class="fg-hint">Weeks run Mon–Sun and are labelled by their Saturday. Tap a cell for details${this._isFundsCashier() ? ' or to record a payment' : ''}.</p>`;
+  }
+
+  _fundsTransactionsHTML() {
+    const month     = this._fundsCurrentMonth();
+    const payments  = (this._fundsData.payments || []).filter(p => (p.date?.slice(0, 7) || p.month) === month);
+    const totalAmt  = payments.reduce((s, p) => s + Number(p.amount || 0), 0);
+    const now       = new Date();
+    const isCurrentMonth = month === `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const historyHTML = payments.length
+      ? payments.sort((a, b) => (b.date || '').localeCompare(a.date || '') || (b.approvedAt || '').localeCompare(a.approvedAt || ''))
+          .map(p => this._fundsPaymentRowHTML(p)).join('')
+      : `<div class="empty-state">
+          <p>No payments recorded for ${this._fundsMonthLabel(month)}</p>
+        </div>`;
+    return `
+      <div class="funds-month-nav funds-month-nav-row">
+        <button class="btn btn-ghost btn-icon" id="btn-funds-prev" aria-label="Previous month">${ICONS.chevronLeft}</button>
+        <span class="funds-month-label">${this._fundsMonthLabel(month)}</span>
+        <button class="btn btn-ghost btn-icon" id="btn-funds-next" aria-label="Next month" ${isCurrentMonth ? 'disabled' : ''}>${ICONS.chevronRight}</button>
+      </div>
+      <div class="funds-month-stats">
+        <div class="funds-month-stat">
+          <div class="funds-ms-num funds-stat-amount">${this._fundsFormatAmount(totalAmt)}</div>
+          <div class="funds-ms-label">Received this month</div>
+        </div>
+        <div class="funds-ms-divider"></div>
+        <div class="funds-month-stat">
+          <div class="funds-ms-num">${payments.length}</div>
+          <div class="funds-ms-label">Payments</div>
+        </div>
+      </div>
+      <div class="funds-history-list">${historyHTML}</div>`;
+  }
+
+  _fundsWeeksSummary(weeks) {
+    if (!weeks?.length) return 'no weeks assigned';
+    const sorted = [...weeks].sort();
+    return sorted.map(w => this._fundsWeekLabel(w)).join(', ');
   }
 
   _fundsPendingCardHTML(p) {
     const user   = this.auth?.currentUser;
     const canAct = user?.email === this._fundsData?.cashier;
+    const hh     = this._fundsHousehold(p.household) || this._fundsFindHousehold(p.member, p.memberEmail);
     const dateLabel = p.date
       ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
       : (p.month ? this._fundsMonthLabel(p.month) : '');
     return `
       <div class="funds-pending-card">
         <div class="funds-pc-row">
-          <span class="funds-pc-member">${escHtml(p.member || p.memberEmail || 'Unknown')}</span>
+          <span class="funds-pc-member">${escHtml(hh?.name || p.member || p.memberEmail || 'Unknown')}</span>
           <span class="funds-pc-amount">${this._fundsFormatAmount(p.amount)}</span>
         </div>
         <div class="funds-pc-meta">
+          ${hh && p.member && p.member !== hh.name ? `Paid by ${escHtml(p.member)} · ` : ''}
           ${dateLabel ? escHtml(dateLabel) : ''}
           ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
           ${p.note ? ` · "${escHtml(p.note)}"` : ''}
           · submitted ${p.submittedAt ? new Date(p.submittedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short' }) : ''}
           ${p.memberEmail ? `<span class="funds-pc-email">${escHtml(p.memberEmail)}</span>` : ''}
         </div>
+        <div class="funds-weeks-line">For weeks: ${escHtml(Array.isArray(p.weeks) ? this._fundsWeeksSummary(p.weeks) : 'oldest unpaid (auto)')}</div>
+        ${!hh ? `<div class="funds-weeks-line funds-warn-text">No matching house — one will be created on approval.</div>` : ''}
         ${canAct ? `
           <div class="funds-pc-actions">
             <button class="btn btn-ghost btn-sm btn-funds-reject" data-id="${escHtml(p.id)}">Reject</button>
@@ -5667,19 +5915,22 @@ class App {
   _fundsPaymentRowHTML(p) {
     const isCashier = this._isFundsCashier();
     const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
+    const hh        = this._fundsHousehold(p.household);
     const dateLabel = p.date
       ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
       : (p.approvedAt ? new Date(p.approvedAt).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' }) : '');
+    const unassigned = Number(p.amount || 0) - (p.weeks || []).length * this._fundsRate();
     return `
       <div class="funds-history-item">
         <div class="funds-hi-body">
-          <div class="funds-hi-member">${escHtml(p.member || p.memberEmail || '—')}</div>
+          <div class="funds-hi-member">${escHtml(hh?.name || p.member || p.memberEmail || '—')}</div>
           <div class="funds-hi-meta">
-            ${dateLabel}
+            ${hh && p.member && p.member !== hh.name ? `by ${escHtml(p.member)} · ` : ''}${dateLabel}
             ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
             ${p.note ? ` · ${escHtml(p.note)}` : ''}
             <span class="funds-by-badge">${byLabel}</span>
           </div>
+          <div class="funds-weeks-line">Weeks: ${escHtml(this._fundsWeeksSummary(p.weeks))}${unassigned > 0 ? ` · <span class="funds-warn-text">${this._fundsFormatAmount(unassigned)} unassigned</span>` : ''}</div>
         </div>
         <div class="funds-hi-right">
           <div class="funds-hi-amount">${this._fundsFormatAmount(p.amount)}</div>
@@ -5692,13 +5943,124 @@ class App {
       </div>`;
   }
 
-  _openFundsPayModal(month, payment = null) {
-    const today = new Date().toISOString().slice(0, 10);
+  // Grid cell tap: paid → payment details (cashier: edit); unpaid → record/submit for that week.
+  _fundsCellClick(btn) {
+    const hhId = btn.dataset.hh, week = btn.dataset.week, payId = btn.dataset.pay;
+    const isCashier = this._isFundsCashier();
+    if (payId) {
+      const p = (this._fundsData.payments || []).find(x => x.id === payId);
+      if (!p) return;
+      if (isCashier) { this._openFundsPayModal({ payment: p }); return; }
+      const when = p.date ? this._fundsWeekLabel(p.date, true) : '';
+      this._toast(`Paid ${this._fundsFormatAmount(p.amount)}${when ? ' on ' + when : ''} — covers ${this._fundsWeeksSummary(p.weeks)}`, '');
+      return;
+    }
+    if (btn.classList.contains('fg-na')) return;
+    if (isCashier) { this._openFundsPayModal({ household: hhId, weeks: [week] }); return; }
+    const user = this.auth?.currentUser;
+    if (!user) { this._toast(`Week of ${this._fundsWeekLabel(week)} is unpaid`, ''); return; }
+    this._openFundsSubmitModal({ household: hhId, weeks: [week] });
+  }
+
+  // ── Week picker (shared by the cashier "Record Payment" and member "Submit Receipt" modals)
+
+  _fundsPickerInit(prefix, { household = '', weeks = null, amount = null, editId = null } = {}) {
+    const sel = document.getElementById(`${prefix}-household`);
+    sel.innerHTML = `<option value="">Select house…</option>` +
+      this._fundsHouseholds().map(h => `<option value="${escHtml(h.id)}">${escHtml(h.name)}</option>`).join('');
+    sel.value = household || '';
+    this._fundsPicker = { prefix, editId, selected: new Set(weeks || []) };
+    if (!weeks && household && amount) {
+      this._fundsPicker.selected = new Set(this._fundsSuggestWeeks(household, Math.floor(amount / this._fundsRate()), editId));
+    }
+    document.getElementById(`${prefix}-amount`).value =
+      amount != null ? amount : (weeks?.length ? weeks.length * this._fundsRate() : '');
+    this._fundsPickerRender();
+  }
+
+  _fundsPickerRender() {
+    const pk = this._fundsPicker;
+    if (!pk) return;
+    const box  = document.getElementById(`${pk.prefix}-weeks`);
+    const hint = document.getElementById(`${pk.prefix}-weeks-hint`);
+    const hhId = document.getElementById(`${pk.prefix}-household`).value;
+    const hh   = this._fundsHousehold(hhId);
+    if (!hh) {
+      box.innerHTML = '<div class="form-hint">Select a house to choose weeks.</div>';
+      hint.textContent = '';
+      return;
+    }
+    const covered  = this._fundsCoverage(hhId, pk.editId);
+    const thisWeek = this._fundsThisWeek();
+    const start    = this._fundsWeekKey(hh.since || this._fundsData.startWeek || todayISO());
+    let end = this._fundsAddWeeks(thisWeek, 8);
+    for (const w of pk.selected) if (w > end) end = w;
+    const weeks = this._fundsWeekRange(start, end)
+      .filter(w => !covered.has(w) || pk.selected.has(w))
+      .filter(w => !hh.until || w <= this._fundsWeekKey(hh.until) || pk.selected.has(w));
+    // Selected weeks outside the house's range (e.g. before `since`) still need to show
+    for (const w of pk.selected) if (!weeks.includes(w)) weeks.push(w);
+    weeks.sort();
+
+    box.innerHTML = weeks.length ? weeks.map(w => `
+      <button type="button" class="funds-week-chip ${pk.selected.has(w) ? 'active' : ''} ${w > thisWeek ? 'future' : ''} ${w === thisWeek ? 'current' : ''}" data-week="${w}">
+        ${this._fundsWeekLabel(w)}${w.slice(0, 4) !== thisWeek.slice(0, 4) ? ` <small>${w.slice(0, 4)}</small>` : ''}
+      </button>`).join('')
+      : '<div class="form-hint">No weeks available.</div>';
+
+    const rate   = this._fundsRate();
+    const amount = parseFloat(document.getElementById(`${pk.prefix}-amount`).value) || 0;
+    const n      = pk.selected.size;
+    const diff   = amount - n * rate;
+    const unpaidPast = this._fundsDueWeeks(hh).filter(w => !covered.has(w) && !pk.selected.has(w)).length;
+    hint.innerHTML = `${n} week${n === 1 ? '' : 's'} × ${this._fundsFormatAmount(rate)} = ${this._fundsFormatAmount(n * rate)}`
+      + (diff > 0 ? ` · <span class="funds-warn-text">${this._fundsFormatAmount(diff)} left unassigned</span>` : '')
+      + (diff < 0 ? ` · <span class="funds-warn-text">amount is ${this._fundsFormatAmount(-diff)} short</span>` : '')
+      + (unpaidPast ? ` · ${unpaidPast} other unpaid week${unpaidPast === 1 ? '' : 's'}` : '');
+  }
+
+  _bindFundsPicker(prefix) {
+    document.getElementById(`${prefix}-household`)?.addEventListener('change', () => {
+      const pk = this._fundsPicker;
+      if (!pk || pk.prefix !== prefix) return;
+      const hhId   = document.getElementById(`${prefix}-household`).value;
+      const amtEl  = document.getElementById(`${prefix}-amount`);
+      const n      = Math.max(1, Math.floor((parseFloat(amtEl.value) || 0) / this._fundsRate()));
+      pk.selected  = new Set(hhId ? this._fundsSuggestWeeks(hhId, n, pk.editId) : []);
+      if (!amtEl.value && pk.selected.size) amtEl.value = pk.selected.size * this._fundsRate();
+      if (prefix === 'mfpay') {
+        const memberEl = document.getElementById('mfpay-member');
+        if (!memberEl.value.trim()) memberEl.value = this._fundsHousehold(hhId)?.name || '';
+      }
+      this._fundsPickerRender();
+    });
+    document.getElementById(`${prefix}-amount`)?.addEventListener('input', () => {
+      const pk = this._fundsPicker;
+      if (!pk || pk.prefix !== prefix) return;
+      const hhId = document.getElementById(`${prefix}-household`).value;
+      const amt  = parseFloat(document.getElementById(`${prefix}-amount`).value) || 0;
+      const n    = Math.floor(amt / this._fundsRate());
+      // Keep a hand-picked selection if it still matches the amount
+      if (hhId && n !== pk.selected.size) pk.selected = new Set(this._fundsSuggestWeeks(hhId, n, pk.editId));
+      this._fundsPickerRender();
+    });
+    document.getElementById(`${prefix}-weeks`)?.addEventListener('click', e => {
+      const chip = e.target.closest('.funds-week-chip');
+      const pk = this._fundsPicker;
+      if (!chip || !pk || pk.prefix !== prefix) return;
+      const w = chip.dataset.week;
+      if (pk.selected.has(w)) pk.selected.delete(w); else pk.selected.add(w);
+      document.getElementById(`${prefix}-amount`).value = pk.selected.size * this._fundsRate() || '';
+      this._fundsPickerRender();
+    });
+  }
+
+  _openFundsPayModal({ payment = null, household = '', weeks = null } = {}) {
+    const today = todayISO();
     const isEdit = !!payment;
     document.getElementById('mfpay-edit-id').value = payment?.id || '';
     document.getElementById('mfpay-date').value   = payment?.date || today;
-    document.getElementById('mfpay-member').value = payment?.member || '';
-    document.getElementById('mfpay-amount').value = payment?.amount != null ? payment.amount : '';
+    document.getElementById('mfpay-member').value = payment?.member || this._fundsHousehold(household)?.name || '';
     document.getElementById('mfpay-txn').value    = payment?.transactionId || '';
     document.getElementById('mfpay-note').value   = payment?.note || '';
     const titleEl = document.getElementById('mfpay-title');
@@ -5710,40 +6072,70 @@ class App {
       const names = this.sessions?.allSingerNames?.() || [];
       list.innerHTML = names.map(n => `<option value="${escHtml(n)}">`).join('');
     }
+    this._fundsPickerInit('mfpay', isEdit
+      ? { household: payment.household, weeks: payment.weeks || [], amount: payment.amount, editId: payment.id }
+      : { household, weeks });
     this._openModal('modal-funds-pay');
-    setTimeout(() => document.getElementById(isEdit ? 'mfpay-amount' : 'mfpay-member')?.focus(), 60);
+    setTimeout(() => document.getElementById(isEdit || household ? 'mfpay-amount' : 'mfpay-household')?.focus(), 60);
   }
 
-  _openFundsSubmitModal(month) {
+  _openFundsSubmitModal({ household = '', weeks = null } = {}) {
     const user = this.auth?.currentUser;
-    const today = new Date().toISOString().slice(0, 10);
-    document.getElementById('mfsub-date').value = today;
-    document.getElementById('mfsub-member').value = this._userProfile?.singerName || user?.displayName || '';
+    const name = this._userProfile?.singerName || user?.displayName || '';
+    document.getElementById('mfsub-date').value = todayISO();
+    document.getElementById('mfsub-member').value = name;
     document.getElementById('mfsub-email').value = user?.email || '';
-    document.getElementById('mfsub-amount').value = '';
     document.getElementById('mfsub-txn').value = '';
     document.getElementById('mfsub-note').value = '';
+    const hhId = household || this._fundsFindHousehold(name, user?.email)?.id || '';
+    this._fundsPickerInit('mfsub', {
+      household: hhId,
+      weeks: weeks || (hhId ? this._fundsSuggestWeeks(hhId, 1) : null),
+    });
     this._openModal('modal-funds-submit');
     setTimeout(() => document.getElementById('mfsub-amount')?.focus(), 60);
   }
 
   _openFundsSettingsModal() {
     document.getElementById('mfsettings-cashier').value = this._fundsData?.cashier || '';
+    document.getElementById('mfsettings-rate').value    = this._fundsRate();
+    document.getElementById('mfsettings-start').value   = this._fundsData?.startWeek || '';
+    const box = document.getElementById('mfsettings-houses');
+    box.innerHTML = this._fundsHouseholds().map(h => this._fundsHouseRowHTML(h)).join('');
     this._openModal('modal-funds-settings');
+  }
+
+  _fundsHouseRowHTML(h = {}) {
+    return `
+      <div class="funds-house-row" data-id="${escHtml(h.id || '')}">
+        <div class="funds-house-top">
+          <input type="text" class="form-input fh-name" placeholder="House name" value="${escHtml(h.name || '')}" autocomplete="off">
+          <button type="button" class="btn btn-ghost btn-icon btn-sm fh-remove" title="Remove house" aria-label="Remove house" style="color:var(--error)">${ICONS.trash}</button>
+        </div>
+        <div class="funds-house-dates">
+          <label>From <input type="date" class="form-input fh-since" value="${escHtml(h.since || this._fundsData?.startWeek || '')}"></label>
+          <label>Until <input type="date" class="form-input fh-until" value="${escHtml(h.until || '')}"></label>
+        </div>
+        <input type="text" class="form-input fh-emails" placeholder="Member emails (comma-separated, optional)" value="${escHtml((h.emails || []).join(', '))}" autocomplete="off">
+      </div>`;
   }
 
   async _fundsCashierRecord() {
     const member  = document.getElementById('mfpay-member').value.trim();
+    const hhId    = document.getElementById('mfpay-household').value;
     const amount  = parseFloat(document.getElementById('mfpay-amount').value);
     const date    = document.getElementById('mfpay-date').value;
     const txn     = document.getElementById('mfpay-txn').value.trim();
     const note    = document.getElementById('mfpay-note').value.trim();
     const editId  = document.getElementById('mfpay-edit-id')?.value || '';
+    const weeks   = [...(this._fundsPicker?.selected || [])].sort();
 
-    if (!member) { this._toast('Member name is required', 'error'); return; }
+    if (!hhId) { this._toast('Select a house', 'error'); return; }
     if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
     if (!date) { this._toast('Receipt date is required', 'error'); return; }
     if (!txn) { this._toast('UTR / Transaction ID is required', 'error'); return; }
+    if (weeks.length * this._fundsRate() > amount) { this._toast('Amount does not cover the selected weeks', 'error'); return; }
+    const payer = member || this._fundsHousehold(hhId)?.name || '';
 
     const btn = document.getElementById('btn-mfpay-submit');
     if (btn) { btn.disabled = true; btn.textContent = editId ? 'Saving…' : 'Recording…'; }
@@ -5757,15 +6149,17 @@ class App {
         if (idx === -1) throw new Error('Payment not found');
         payments[idx] = {
           ...payments[idx],
-          member,
+          household: hhId,
+          member: payer,
           amount,
           date,
           transactionId: txn,
           note: note || null,
+          weeks,
         };
         this._fundsData.payments = payments;
         if (this.sessions?.commitFunds) {
-          await this.sessions.commitFunds(this._fundsData, `Edit payment: ${member}`);
+          await this.sessions.commitFunds(this._fundsData, `Edit payment: ${payer}`);
           this._toast('Payment updated and saved to GitHub', 'success');
         } else {
           this._toast('Payment updated locally', '');
@@ -5774,18 +6168,20 @@ class App {
       } else {
         const payment = {
           id:            genId(),
-          member,
+          household:     hhId,
+          member:        payer,
           memberEmail:   null,
           amount,
           date,
           transactionId: txn,
           note:          note || null,
+          weeks,
           recordedAt:    new Date().toISOString(),
           recordedBy:    user?.email || 'cashier',
           approvedAt:    new Date().toISOString(),
           approvedBy:    user?.email || 'cashier',
         };
-        await this._fundsCommitPayment(payment, `Record payment: ${member}`);
+        await this._fundsCommitPayment(payment, `Record payment: ${payer}`);
       }
       this._closeModal('modal-funds-pay');
     } catch (e) {
@@ -5823,15 +6219,19 @@ class App {
     const user   = this.auth?.currentUser;
     const member = document.getElementById('mfsub-member').value.trim();
     const email  = document.getElementById('mfsub-email').value.trim() || user?.email || null;
+    const hhId   = document.getElementById('mfsub-household').value;
     const amount = parseFloat(document.getElementById('mfsub-amount').value);
     const date   = document.getElementById('mfsub-date').value;
     const txn    = document.getElementById('mfsub-txn').value.trim();
     const note   = document.getElementById('mfsub-note').value.trim();
+    const weeks  = [...(this._fundsPicker?.selected || [])].sort();
 
     if (!member) { this._toast('Your name is required — please sign in', 'error'); return; }
+    if (!hhId) { this._toast('Select the house you are paying for', 'error'); return; }
     if (!amount || amount <= 0) { this._toast('Enter a valid amount', 'error'); return; }
     if (!date) { this._toast('Receipt date is required', 'error'); return; }
     if (!txn) { this._toast('UTR / Transaction ID is required', 'error'); return; }
+    if (weeks.length * this._fundsRate() > amount) { this._toast('Amount does not cover the selected weeks', 'error'); return; }
 
     const btn = document.getElementById('btn-mfsub-submit');
     if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
@@ -5839,12 +6239,14 @@ class App {
     try {
       if (!this._fundsLive) throw new Error('Firebase not available');
       await this._fundsLive.submitPayment({
+        household:     hhId,
         member,
         memberEmail:   email,
         amount,
         date,
         transactionId: txn,
         note:          note || null,
+        weeks,
         submittedAt:   new Date().toISOString(),
         submittedBy:   user?.email || 'unknown',
       });
@@ -5852,6 +6254,7 @@ class App {
       this._toast('Receipt submitted — awaiting cashier approval', 'success');
     } catch (e) {
       this._toast('Could not submit receipt: ' + (e.message || 'error'), 'error');
+    } finally {
       if (btn) { btn.disabled = false; btn.textContent = 'Submit for Approval'; }
     }
   }
@@ -5863,15 +6266,36 @@ class App {
     const btn = document.querySelector(`.btn-funds-approve[data-id="${pendingId}"]`);
     if (btn) { btn.disabled = true; btn.textContent = 'Approving…'; }
 
+    // Resolve the house (older submissions only carry a name/email)
+    let hh = this._fundsHousehold(item.household) || this._fundsFindHousehold(item.member, item.memberEmail);
+    if (!hh) {
+      hh = { id: genId('hh'), name: item.member || item.memberEmail || 'Unknown',
+             emails: item.memberEmail ? [item.memberEmail] : [], since: this._fundsData.startWeek, until: null };
+      this._fundsData.households.push(hh);
+    }
+    // Keep the member's chosen weeks unless another payment already covers them,
+    // then top up oldest-first to what the amount pays for.
+    const covered = this._fundsCoverage(hh.id);
+    const weeks   = (item.weeks || []).filter(w => !covered.has(w));
+    const n       = Math.floor(Number(item.amount || 0) / this._fundsRate());
+    if (!Array.isArray(item.weeks) || weeks.length < (item.weeks || []).length) {
+      for (const w of this._fundsSuggestWeeks(hh.id, n)) {
+        if (weeks.length >= n) break;
+        if (!weeks.includes(w)) weeks.push(w);
+      }
+    }
+
     const user = this.auth?.currentUser;
     const payment = {
       id:            genId(),
+      household:     hh.id,
       member:        item.member,
       memberEmail:   item.memberEmail || null,
       amount:        item.amount,
       date:          item.date || null,
       transactionId: item.transactionId || null,
       note:          item.note || null,
+      weeks:         weeks.sort(),
       recordedAt:    item.submittedAt || new Date().toISOString(),
       recordedBy:    item.submittedBy || 'member',
       approvedAt:    new Date().toISOString(),
@@ -5884,6 +6308,7 @@ class App {
       this._toast('Payment approved and recorded', 'success');
     } catch (e) {
       this._toast('Error approving payment: ' + (e.message || ''), 'error');
+      if (btn) { btn.disabled = false; btn.textContent = 'Approve ✓'; }
     }
   }
 
@@ -5920,22 +6345,55 @@ class App {
 
   async _fundsSaveCashier() {
     const email = document.getElementById('mfsettings-cashier').value.trim().toLowerCase();
+    const rate  = parseInt(document.getElementById('mfsettings-rate').value, 10);
+    const start = document.getElementById('mfsettings-start').value;
     if (!email || !email.includes('@')) { this._toast('Enter a valid email', 'error'); return; }
+    if (!rate || rate <= 0) { this._toast('Enter a valid weekly amount', 'error'); return; }
+    if (!start) { this._toast('Collection start date is required', 'error'); return; }
     if (!this._fundsData) return;
-    const old = this._fundsData.cashier;
-    this._fundsData.cashier = email;
+
+    const households = [];
+    const names = new Set();
+    for (const row of document.querySelectorAll('#mfsettings-houses .funds-house-row')) {
+      const name = row.querySelector('.fh-name').value.trim();
+      if (!name) continue;
+      const key = name.toLowerCase();
+      if (names.has(key)) { this._toast(`Duplicate house name: ${name}`, 'error'); return; }
+      names.add(key);
+      const until = row.querySelector('.fh-until').value || null;
+      const since = row.querySelector('.fh-since').value || start;
+      if (until && until < since) { this._toast(`${name}: "Until" is before "From"`, 'error'); return; }
+      households.push({
+        id:     row.dataset.id || genId('hh'),
+        name,
+        emails: row.querySelector('.fh-emails').value.split(',').map(s => s.trim().toLowerCase()).filter(Boolean),
+        since,
+        until,
+      });
+    }
+    const kept = new Set(households.map(h => h.id));
+    const orphaned = (this._fundsData.payments || []).filter(p => !kept.has(p.household));
+    if (orphaned.length) {
+      const orphanNames = [...new Set(orphaned.map(p => this._fundsHousehold(p.household)?.name || p.member))].join(', ');
+      this._toast(`Can't remove ${orphanNames} — they have payments. Set an "Until" date instead.`, 'error');
+      return;
+    }
+
+    const old = { cashier: this._fundsData.cashier, rate: this._fundsData.rate,
+                  startWeek: this._fundsData.startWeek, households: this._fundsData.households };
+    Object.assign(this._fundsData, { cashier: email, rate, startWeek: this._fundsWeekKey(start), households });
 
     if (this.sessions?.commitFunds) {
       try {
-        await this.sessions.commitFunds(this._fundsData, `Update cashier to ${email}`);
-        this._toast('Cashier updated and saved', 'success');
+        await this.sessions.commitFunds(this._fundsData, 'Update funds settings');
+        this._toast('Funds settings saved', 'success');
       } catch (e) {
-        this._fundsData.cashier = old;
+        Object.assign(this._fundsData, old);
         this._toast('Error saving: ' + (e.message || ''), 'error');
         return;
       }
     } else {
-      this._toast('Cashier updated locally (GitHub sync not enabled)', '');
+      this._toast('Settings updated locally (GitHub sync not enabled)', '');
     }
     this._closeModal('modal-funds-settings');
     this._renderFunds();
@@ -5965,6 +6423,18 @@ class App {
       if (e.target === document.getElementById('modal-funds-settings')) this._closeModal('modal-funds-settings');
     });
     document.getElementById('btn-mfsettings-save')?.addEventListener('click', () => this._fundsSaveCashier());
+    document.getElementById('btn-mfsettings-add-house')?.addEventListener('click', () => {
+      const box = document.getElementById('mfsettings-houses');
+      box.insertAdjacentHTML('beforeend', this._fundsHouseRowHTML());
+      box.lastElementChild?.querySelector('.fh-name')?.focus();
+    });
+    document.getElementById('mfsettings-houses')?.addEventListener('click', e => {
+      e.target.closest('.fh-remove')?.closest('.funds-house-row')?.remove();
+    });
+
+    // Week pickers in the record / submit modals
+    this._bindFundsPicker('mfpay');
+    this._bindFundsPicker('mfsub');
 
     // Delegated click handler for all dynamic funds buttons (survives _renderFunds re-renders)
     document.getElementById('funds-content')?.addEventListener('click', e => {
@@ -5972,11 +6442,13 @@ class App {
       const rejectBtn  = e.target.closest('.btn-funds-reject');
       const editBtn    = e.target.closest('.btn-funds-edit');
       const deleteBtn  = e.target.closest('.btn-funds-delete');
+      const cellBtn    = e.target.closest('.fg-cell[data-week]');
+      if (cellBtn) this._fundsCellClick(cellBtn);
       if (approveBtn) this._fundsApprove(approveBtn.dataset.id);
       if (rejectBtn)  this._fundsReject(rejectBtn.dataset.id);
       if (editBtn) {
         const payment = (this._fundsData?.payments || []).find(p => p.id === editBtn.dataset.id);
-        if (payment) this._openFundsPayModal(null, payment);
+        if (payment) this._openFundsPayModal({ payment });
       }
       if (deleteBtn) this._fundsDeletePayment(deleteBtn.dataset.id);
     });
