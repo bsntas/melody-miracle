@@ -5970,7 +5970,10 @@ class App {
 
   _fundsPaymentRowHTML(p) {
     const isCashier = this._isFundsCashier();
-    const byLabel   = p.approvedBy === this._fundsData?.cashier ? 'cashier' : 'member';
+    // How the payment came in: entered by the cashier, or a member's receipt the cashier approved
+    const byCashier = !p.recordedBy || p.recordedBy === 'cashier' || p.recordedBy === p.approvedBy;
+    const byLabel   = byCashier ? 'cashier' : 'member';
+    const byTitle   = byCashier ? `Recorded by the cashier` : `Submitted by ${p.recordedBy} and approved by the cashier`;
     const hh        = this._fundsHousehold(p.household);
     const dateLabel = p.date
       ? new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
@@ -5984,7 +5987,7 @@ class App {
             ${hh && p.member && p.member !== hh.name ? `by ${escHtml(p.member)} · ` : ''}${dateLabel}
             ${p.transactionId ? ` · Ref: ${escHtml(p.transactionId)}` : ''}
             ${p.note ? ` · ${escHtml(p.note)}` : ''}
-            <span class="funds-by-badge">${byLabel}</span>
+            <span class="funds-by-badge" title="${escHtml(byTitle)}">${byLabel}</span>
           </div>
           <div class="funds-weeks-line">Weeks: ${escHtml(this._fundsWeeksSummary(p.weeks))}${unassigned > 0 ? ` · <span class="funds-warn-text">${this._fundsFormatAmount(unassigned)} unassigned</span>` : ''}</div>
         </div>
