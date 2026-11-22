@@ -1,0 +1,33 @@
+# Sai Baba will never let you go
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sai-baba-will-never-let-you-go)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sai Baba will never let you go
+You are safe in the arms of His Love
+And He keeps you so close in His Heart
+that He knows every need of your soul.
+(Chorus)
+Why fear? I am always here
+Sai Baba knows all your cares
+Why fear? I am always here
+The Lord can hear all your prayers.
+Sai Baba will never let you fall
+He will lead you away from all harm.
+He will carry you over the storm
+to the heavenly peace you desire.
+(Chorus)
+Why fear? I am always here
+Sai Baba knows all your cares
+Why fear? .....
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

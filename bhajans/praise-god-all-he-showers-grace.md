@@ -1,0 +1,32 @@
+# Praise God, on all He showers grace
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/praise-god-all-he-showers-grace)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Praise God, on all He showers grace
+We are His children, every race
+He comes to any name we call
+He is the love within us all
+Praise Jesus, Buddha, any name
+Allah, Sai - they're all the same
+He lives in You, He lives in me
+Praise one and all, God's family
+Praise the Lord in song, all the world over
+Make a joyful noise, come to Him with glad hearts singing
+He is Love, Love without end
+Praise the Lord in song, all the world over
+Thank the Lord within your heart, bless His holy name
+He is so good, His mercy everlasting
+God is Truth, Truth without end
+God is Love, Love without end
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

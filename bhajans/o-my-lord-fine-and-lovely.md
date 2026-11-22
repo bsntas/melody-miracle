@@ -1,0 +1,42 @@
+# O, my Lord is fine and lovely
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/o-my-lord-fine-and-lovely)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+O, my Lord is fine and lovely
+With His dark and curly hair
+And the graceful way He walks about
+In the robe that He does wear
+And the gentle kindness of His face
+When you're seeing Him close by
+Has brought a tear of gratitude
+And joy to many an eye
+O, I love to sing His praises
+Yes, I love to say His name
+And to think about Him here on Earth
+And the reasons why He came
+Just to contemplate His powers grand
+His majesty and might
+And His vow to lead this world of ours
+From darkness into light
+O, the sense of sweet security
+To know He really cares
+That He watches over us ceaselessly
+And that He is everywhere
+And the gentle glow of blissful peace
+When you're feeling Him close by
+Will bring a tear of happiness
+For the love of Sathya Sai
+Will bring a tear of happiness
+For the love of Sathya Sai
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

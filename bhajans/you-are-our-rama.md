@@ -1,0 +1,27 @@
+# You are our Rama
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/you-are-our-rama)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+You are our Rama
+You are our Krishna
+You are our Budha
+You are our Jesus
+You are our Father
+You are our Mother
+You are our Teacher
+The Lord of the universe
+Bless me Bless Me Bless Me
+Bless me Bless Me Bless Me
+Come my Lord and Bless me
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

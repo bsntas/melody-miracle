@@ -1,0 +1,34 @@
+# In the ocean’s rolling waves
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/ocean%E2%80%99s-rolling-waves)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+In the ocean's rolling waves
+Hear Him calling to you
+In the golden leaves of fall
+See Him beckoning to you
+Hey Ram (Hey Ram)
+Bhagavaan (Bhagavaan)
+Sathya Sai Bhagavaan, Sai Krishna Bhagavaan
+Can't you hear Him calling to you (1X)
+Can't you see Him beckoning to you (2X)
+Don't you know that He is you (3X)
+When a cool breeze brushes your face
+Feel Him calling to You
+In the sweet smell of fresh rain
+Sense Him beckoning to you
+When tears are in your eyes
+Can't you hear Him crying for you
+When happiness enters your heart
+Can't you hear Him laughing for you
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

@@ -1,0 +1,31 @@
+# How many lives have I been through
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/how-many-lives-have-i-been-through)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+How many lives have I been through, seeking your Glory forever?
+I have searched here and there and could never find You,
+I am pining for You more than ever
+I have waited so long, for You to come along
+Now You're here, please hear this devotee's song
+How many times have I lost You, yet You have brought us together?
+I want You to Know, O my dear dear Lord,
+I want You to know that I need You
+I have strayed and been lost and have hurt You so much,
+But I want to tell You I love You
+How many times have I left You, yet You have loved me forever?
+I want You to know, O my dear dear Lord,
+I want You to know that I love You
+When this body is weak and the time comes to sleep,
+Be with me, O my Lord, be with me
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

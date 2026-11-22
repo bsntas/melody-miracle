@@ -1,0 +1,27 @@
+# Buddham Sharanam Gatchami
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/buddham-sharanam-gatchami)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Buddham Sharanam Gatchami
+Sangam Sharanam Gatchami (2X)
+Dharmam Sharanam Gatchami
+Surrender to the Consiousness of Lord Buddha
+Surrender to the holy ones of the world
+Surrender to the dharma of righteousness
+You will find the Truth of the Universe
+Lord Buddha, You came to this world
+To show man the path
+The path of Truth, the path of Peace
+The path Eternal that man does seek
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

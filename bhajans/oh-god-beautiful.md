@@ -1,0 +1,37 @@
+# Oh God beautiful
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/oh-god-beautiful)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Oh God beautiful, Oh God beautiful
+At Thy feet oh I do bow.
+Oh God beautiful, Oh God beautiful.
+In the forest Thou art green.
+In the mountain Thou art high.
+In the river Thou art restless.
+In the ocean Thou art great.
+Oh God beautiful, Oh God beautiful
+At Thy feet oh I do bow.
+Oh God beautiful, Oh God beautiful.
+To the serviceful Thou art service.
+To the bhakta Thou art Love.
+To the sorrowful Thou art sympathy.
+To the yogi Thou art bliss.
+Oh God beautiful, Oh God beautiful
+At Thy feet oh I do bow.
+Oh God beautiful, Oh God beautiful.
+To the Hindu Thou art Krishna.
+To the Buddhist Thou art Buddha.
+To the Christian Thou art Jesus.
+Now on the earth as Sai Baba.
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

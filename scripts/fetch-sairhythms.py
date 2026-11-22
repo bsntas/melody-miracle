@@ -162,7 +162,7 @@ def main(argv):
     argv = [a for a in argv if a != '--force']
     if argv[:1] == ['--file']:
         with open(argv[1], encoding='utf-8') as f:
-            argv = [l for l in f.read().split() if l]
+            argv = [l.strip(' \t\r') for l in f.read().split('\n') if l.strip()]
     if not argv:
         print(__doc__)
         return 1

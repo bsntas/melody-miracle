@@ -1,0 +1,26 @@
+# When we realize the greatness of God
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/when-we-realize-greatness-god)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+When we realize the greatness of God
+When we trust Him to protect us from harm
+All that He does is only for our good
+Then we really feel Sai's sweetness
+Lord prepare us to receive your eternally
+When He gives us what is hard to accept
+Let our hearts remember all of His Love
+Sorrow and pain are the things we must feel
+only to receive Sai's sweetness
+Lord prepare us to receive you eternally
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

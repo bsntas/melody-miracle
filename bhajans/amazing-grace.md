@@ -1,0 +1,32 @@
+# Amazing Grace
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/amazing-grace)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Amazing Grace, how sweet the sound
+That saved a wretch like me
+I once was lost, but now I am found
+Was blind, but now I see
+Through many trials, toils and snares
+I have already come
+His Grace has brought me safe so far
+And Grace will lead me on
+Twas Grace that taught my heart to fear
+And Grace my fears relieved
+How precious did that Grace appear
+The hour I first believed
+When we've been there ten thousand years
+Bright shining as the sun
+We've no less days to sing God's praise
+Than when we first begun.
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

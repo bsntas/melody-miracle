@@ -1,0 +1,28 @@
+# Sai Prema Sai (Shiva)
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sai-prema-sai-shiva)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sai Prema Sai (Shiva)
+O Lord Divine, Its into You we're dying
+Sai Prema Sai (Shiva)
+You're here within us all, shining as our heart
+Let's not miss the chance to merge in Sai
+Feel the flowing power as we open up in God
+Radiance of Bliss exploding in the fire of Love
+O ecstacy divine - to melt in Sai
+You're here within us all, shining as our heart
+There's no time to lose, lets merge in Sai
+We love You Sai (3X)
+Premavathaara Bhagavaan Sathya Sai (4X)
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

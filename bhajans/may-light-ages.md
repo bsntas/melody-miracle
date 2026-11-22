@@ -1,0 +1,32 @@
+# May the Light of the ages
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/may-light-ages)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+May the Light of the ages shine down on me
+And the Truth that I'm feelin' fill an eternity
+May the stars above, give me Thine Light
+And when I look at You, let me know it's alright
+May I swim in the ocean of Thy divine Love
+And remember Thy Grace from the heavens above
+May I fly with Thy Shaanthi on the wings of a dove
+And know the bliss of Thy glorious Love
+May the trees of the forest sing out Thy Name
+And the people around me hear it the same
+May I remember this life's divine Game
+And allow me to feel it, be I healthy or lame
+May I be grateful and thankful to Thee
+And know that one day we'll be immersed in the sea
+May I give to others, and allow them to be
+And be sure that one day we'll all meet in Thee
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

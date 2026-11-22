@@ -1,0 +1,46 @@
+# According to your faith
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/according-your-faith)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Deity** | Sai |
+| **Language** | English |
+| **Raga** | Major (Shankarabharanam / Bilawal) |
+| **Beat** | 8 Beat / Keherwa / Adi |
+| **Tempo** | Medium Slow |
+| **Level** | Intermediate |
+
+### Raga Notes
+
+```
+Notes:* showing details for Shankarabharanam / Bilawal
+S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G F E D C
+```
+
+## Lyrics
+
+According to your faith, my friend, it is done unto you
+According to your faith you’ll find the things you hold are true
+For it’s Faith that is the fuel that brings that thing into your life
+So change your mind and use that faith to bring peace instead of strife
+You have the choice to make this life anyway you see
+For life is not just happening but comes forth from belief
+So know the Truth and live it now and put an end to a life of grief
+For it is in placing trust in anything sends it forth and sets it free
+So be wise and pure as the little ones who embrace God’s love alone
+Then you will know the Truth of abundant life It’s within you you’ll find your Home
+At all times we’re planting seeds of which the fruit will surely tell
+If we are sowing seeds of falsity or the Christ where all is well
+The Truth of God can be your life..the Truth of God will be your life
+The Truth of God it is your life..it’s in Him we forever dwell
+
+## Audio
+
+[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/according-your-faith.mp3)
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

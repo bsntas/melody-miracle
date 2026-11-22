@@ -1,0 +1,28 @@
+# I feel You in my heart
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/i-feel-you-my-heart)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+I feel You in my heart and I know You are there
+Say something to me
+I know You in my heart and I feel You are there
+Say something to me
+Come close so I can see You
+I know that Your love is true
+Your divine love surrounds me
+I feel a sense of peace in me
+The light shines within and I know You are there
+Say something to me
+You are all and You're everywhere
+Say something to me
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

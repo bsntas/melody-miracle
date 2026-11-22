@@ -1,0 +1,28 @@
+# Sora ni Ukanda Shiroi Kumo
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sora-ni-ukanda-shiroi-kumo)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sora ni Ukanda Shiroi Kumo
+Akai Yuuhi ni Somari Yuku
+Haha no Koromo no Iro ni Nite
+Namida Afurete Tomedo nashi
+Ware mo Hitorigo Kimi mo Mata
+Fukaki Mimune ni Idakaren
+Aa Sai Haha yo Mina Yobeba
+Kodama Yasashii Sai Rama
+Akai Yuuhi wo Abite Tatsu
+Ware wa Hikari no Ko to Naran
+Itoshiki Haha no Furusato e
+Omoi Todokeyo Kaze ni Nori
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

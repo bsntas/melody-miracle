@@ -1,0 +1,29 @@
+# Sai You are in my heart
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sai-you-are-my-heart)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sai You are in my heart as I am in Your heart forever
+We're one heart called Soham called Love
+Sai Hrudaya Vihari You're Dharma and Shanthi,
+You're Sathya, You're Prema Omnipresent One Soham
+You are the ocean Lord, I am your wave
+You are the mountain Sai, I am your cave
+You are the blue sky I am your star
+Sai Divine Mother One we always are (Sai You are ...)
+You are the Love tree, I am your clinging vine
+You're the Divine Poet, my life is Your rhyme
+You are the Father, I'm Your loving son
+We are Omnipresence from where all has come
+(Sai You are ...)
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

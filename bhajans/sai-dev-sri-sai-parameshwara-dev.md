@@ -1,0 +1,26 @@
+# Sai Dev, Sri Sai Parameshwara Dev
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sai-dev-sri-sai-parameshwara-dev)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sai Dev, Sai Dev, Sri Sai Parameshwara Dev
+(Sai) in the name of Truth You are come
+Sathya Sai Messiah has come
+Sai Dev, Sai Dev, Sri Sai Parameshwara Dev
+Sai Dev, Sai Dev, Sri Sai Parameshwara Dev
+In this world of Darkness, pain and fear
+There's warm reassurance, You are here
+Sai Dev, Sai Dev, Sri Sai Parameshwara Dev
+(Sai) rising up with me like a dove
+Comes a yearning to dissolve in Your Love
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*
