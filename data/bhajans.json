@@ -23709,6 +23709,27 @@
     "scale": "Minor"
   },
   {
+    "id": "sai-baba-youre-child-krishna",
+    "title": "Sai Baba, You’re Child Krishna",
+    "deity": "Krishna",
+    "language": "English",
+    "raga": "Minor (Hindolam / Malkauns)",
+    "beat": "8 Beat / Keherwa / Adi",
+    "tempo": "Medium Fast",
+    "level": "Intermediate",
+    "gents_pitch": "2 Madhyam / G",
+    "ladies_pitch": "6 Madhyam / D",
+    "lyrics": "Sai Baba, You're Child Krishna\nLeela Love Dancer stealing the heart\nForm and Name Sai, You walk here among us\nSai Baba You are Omnipresent (Sai Baba, You're ...)\nLet us be Murali - play Your song through us\nO Enchanter Sathya Sai Baba\n\n---\n\n*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*",
+    "meaning": null,
+    "audio_url": null,
+    "source_url": "https://sairhythms.sathyasai.org/song/sai-baba-you%E2%80%99re-child-krishna",
+    "gents_pitch_indian": "2 Madhyam",
+    "gents_pitch_western": "G",
+    "ladies_pitch_indian": "6 Madhyam",
+    "ladies_pitch_western": "D",
+    "scale": ""
+  },
+  {
     "id": "sai-bhajana-vaibhavamu",
     "title": "Sai Bhajana Vaibhavamu",
     "deity": "Sai",
