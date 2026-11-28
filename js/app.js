@@ -5,12 +5,20 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261128.1 loaded');
+console.log('[MM] app.js v20261128.2 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
   return `${y}-${m}-${day}`;
 };
+
+// ─── Closing Aarati ────────────────────────────────────────────────────────────
+// Appended automatically as the last entry in play mode and stripped before the
+// session is saved. Only the auto-appended entry (flag) is stripped, so the same
+// bhajan added on purpose stays. 'mangala-aarati' is the old id of this entry
+// (merged into Om Jai Jagadeesha Harey) and still appears in live/draft sessions.
+const AARTI_ID = 'om-jai-jagadeesha-harey';
+const _isAutoAarti = e => !!e.autoAarti || e.bhajan_id === 'mangala-aarati';
 
 // ─── Song types ────────────────────────────────────────────────────────────────
 // bhajan.type, from Sai Rhythms tags (scripts/build-bhajans.py song_type); missing = bhajan
@@ -3568,13 +3576,14 @@ class App {
       this._toast('Add at least one bhajan before starting', 'warn');
       return;
     }
-    // Append Mangala Aarati as the final navigable entry for play mode (stripped before save in _endSession/_exitPlay)
-    const aarti = this.bhajans.getById('mangala-aarati');
-    const hasAarti = bhajans.some(e => e.bhajan_id === 'mangala-aarati');
+    // Append the Aarati as the final navigable entry for play mode (stripped before save in _endSession/_exitPlay)
+    const aarti = this.bhajans.getById(AARTI_ID);
+    const hasAarti = bhajans.some(e => e.bhajan_id === AARTI_ID || _isAutoAarti(e));
     const aartiEntry = (aarti && !hasAarti) ? {
       id: genId('e'), bhajan_id: aarti.id, bhajan_title: aarti.title,
       bhajan_deity: aarti.deity, singers: null, pitch: null,
       pitch_indian: null, pitch_western: null, notes: null, addedAt: Date.now(),
+      autoAarti: true,
     } : null;
     const newBhajans = aartiEntry ? [...bhajans, aartiEntry] : bhajans;
     const today = _localDate(new Date());
@@ -3613,7 +3622,7 @@ class App {
 
   _exitPlay() {
     this._liveEditMode = false;
-    const bhajans = (this.liveState?.bhajans || []).filter(e => e.bhajan_id !== 'mangala-aarati');
+    const bhajans = (this.liveState?.bhajans || []).filter(e => !_isAutoAarti(e));
     const updated = { ...this.liveState, phase: 'setup', bhajans };
     this.liveState = updated;
     this.live.updateState(updated);
@@ -4011,8 +4020,8 @@ class App {
 
     const allBhajans = this.liveState?.bhajans || [];
     // Strip Aarti for duplicate/sequencing checks; it gets re-appended after insertion
-    const aartiEntry = allBhajans.find(e => e.bhajan_id === 'mangala-aarati');
-    const existing = aartiEntry ? allBhajans.filter(e => e.bhajan_id !== 'mangala-aarati') : allBhajans;
+    const aartiEntry = allBhajans.find(_isAutoAarti);
+    const existing = aartiEntry ? allBhajans.filter(e => !_isAutoAarti(e)) : allBhajans;
 
     // Hard block: same bhajan already in session
     if (existing.some(e => e.bhajan_id === b.id)) {
@@ -4064,8 +4073,9 @@ class App {
     };
 
     const inserted = this._insertWithSequencing(existing, entry, b);
-    // Re-append Aarti at the end so it always stays last during play mode
-    const newBhajans = aartiEntry ? [...inserted, aartiEntry] : inserted;
+    // Re-append Aarti at the end so it always stays last during play mode —
+    // unless the Aarati itself was just added on purpose (no second copy)
+    const newBhajans = aartiEntry && b.id !== AARTI_ID ? [...inserted, aartiEntry] : inserted;
 
     const updated = { ...this.liveState, bhajans: newBhajans };
     this._applyLiveEdit(updated, { type: 'add-bhajan', entry });
@@ -4262,7 +4272,7 @@ class App {
     const duration  = started ? Math.round((Date.now() - started.getTime()) / 1000) : null;
     const endedCode = this.liveState.roomCode;
 
-    const bhajans = (this.liveState.bhajans || []).filter(e => e.bhajan_id !== 'mangala-aarati');
+    const bhajans = (this.liveState.bhajans || []).filter(e => !_isAutoAarti(e));
     const singers = [...new Set(bhajans.flatMap(e => e.singers || (e.singer ? [e.singer] : [])))];
 
     const finalSession = {
