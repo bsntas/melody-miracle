@@ -56,6 +56,54 @@ def meta_field(page, label):
     return text(m.group(1)) if m else None
 
 
+AUDIO_ROW_RE = re.compile(
+    r"<div class='row devotional-song-meta-data-grid [\w-]+'>\s*"
+    r"<div class='col[^']*strong'>\s*(.*?)\s*</div>"
+    r"(.*?)(?=<div class='row devotional-song-meta-data-grid|\Z)", re.S)
+
+# Sai Rhythms audio row label -> track type, and the heading used in the .md files
+TRACK_TYPES = {'Audio': 'main', 'Golden Voice': 'golden', 'Instrumental': 'instrumental',
+               'Tutorial': 'tutorial', 'Karaoke Tracks for Practice': 'karaoke'}
+TRACK_HEADINGS = {'main': 'Audio', 'golden': "Swami's Voice", 'instrumental': 'Instrumental',
+                  'tutorial': 'Tutorial', 'karaoke': 'Karaoke'}
+
+
+def make_track(row_label, url, caption=''):
+    """{type, label, url} for one recording, or None for rows we don't know."""
+    kind = TRACK_TYPES.get(row_label)
+    if not kind:
+        return None
+    caption = re.sub(r'\s*Karaoke Tracks?\b', '', caption or '').strip()
+    return {'type': kind, 'label': caption, 'url': url}
+
+
+def audio_tracks(page):
+    """Every recording in the page's labelled audio rows, in page order.
+    Each track's caption is the text just before its player, e.g.
+    "Reference Track 1 Madhyam / F" on karaoke rows."""
+    tracks, seen = [], set()
+    for label, body in AUDIO_ROW_RE.findall(page):
+        label, pos = text(label), 0
+        for m in re.finditer(r"""<source src=['"]([^'"]+\.mp3)""", body):
+            cap = re.sub(r"<a [^>]*>[^<]*\.mp3\s*</a>", ' ', body[pos:m.start()])
+            pos = body.find('>', m.end()) + 1 or m.end()
+            url = urllib.parse.urljoin(BASE + '/', m.group(1))
+            t = make_track(label, url, re.sub(r'\s+', ' ', text(re.sub(r'<[^>]+>', ' ', cap))))
+            if t and url not in seen:
+                seen.add(url); tracks.append(t)
+    order = list(TRACK_HEADINGS)   # main recording first, then Swami's Voice, …
+    return sorted(tracks, key=lambda t: order.index(t['type']))
+
+
+def tracks_markdown(tracks):
+    """Lines for the .md "## Audio" section (read back by build-bhajans.py)."""
+    out = []
+    for t in tracks:
+        cap = f" ({t['label']})" if t['label'] else ''
+        out.append(f"- **{TRACK_HEADINGS[t['type']]}**{cap}: [▶ Listen]({t['url']})")
+    return out
+
+
 def parse(page, slug):
     m = re.search(r"<div class='song-first-line'>.*?</div>\s*</div>", page, re.S)
     if not m:
@@ -81,10 +129,7 @@ def parse(page, slug):
     else:
         raga = meta_field(page, 'Raga')
 
-    m = re.search(r'(https?://[^"\'\s]+\.mp3)', page)
-    if not m:
-        m = re.search(r'["\'](/sites/default/files/[^"\']+\.mp3)', page)
-    audio = (BASE + m.group(1) if m.group(1).startswith('/') else m.group(1)) if m else None
+    tracks = audio_tracks(page)
 
     return {
         'title': title,
@@ -99,7 +144,7 @@ def parse(page, slug):
         'ladies': meta_field(page, 'Reference Ladies Pitch'),
         'lyrics': lyrics,
         'meaning': meaning,
-        'audio': audio,
+        'tracks': tracks,
     }
 
 
@@ -118,8 +163,8 @@ def to_markdown(b, slug):
     out += ['## Lyrics', '', *b['lyrics'], '']
     if b['meaning']:
         out += ['## Meaning', '', b['meaning'], '']
-    if b['audio']:
-        out += ['## Audio', '', f"[▶ Listen]({b['audio']})", '']
+    if b['tracks']:
+        out += ['## Audio', '', *tracks_markdown(b['tracks']), '']
     out += ['---', '',
             f"*Scraped from [sairhythms.sathyasai.org]({BASE}) — Sri Sathya Sai International Organization*"]
     return '\n'.join(out)

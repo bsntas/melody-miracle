@@ -2060,6 +2060,19 @@ class App {
         });
         toggleRow.append(btn);
       }
+      {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'fmodal-toggle-btn';
+        btn.id = 'fmodal-toggle-golden'; btn.innerHTML = `${ICONS.star} Swami's Voice`;
+        btn.addEventListener('click', () => {
+          const gEl = document.getElementById('filter-golden');
+          if (!gEl) return;
+          gEl.value = gEl.value ? '' : '1';
+          this._syncFilterModalUI();
+          this._applyBrowseFilters();
+        });
+        toggleRow.append(btn);
+      }
       const showSection = document.getElementById('fmodal-section-show');
       if (showSection) showSection.classList.toggle('hidden', !toggleRow.children.length);
     }
@@ -2075,6 +2088,7 @@ class App {
     const tempo    = document.getElementById('filter-tempo').value;
     const level    = document.getElementById('filter-level').value;
     const sung     = document.getElementById('filter-sung')?.value || '';
+    const golden   = !!document.getElementById('filter-golden')?.value;
 
     if (sung === 'favourites' && !this.auth?.currentUser) {
       this._browseFiltered = [];
@@ -2090,6 +2104,7 @@ class App {
     }
 
     this._browseFiltered = this.bhajans.search(q, { deity, language, tempo, level });
+    if (golden) this._browseFiltered = this._browseFiltered.filter(b => (b.audio_tracks || []).some(t => t.type === 'golden'));
 
     if (sung) {
       const sungIds = this._sungIdsForFilter(sung);
@@ -2117,7 +2132,7 @@ class App {
     if (doneBtn) doneBtn.textContent = count ? `Show ${count} Results` : 'Show Results';
 
     // Update funnel/✕ button state
-    const hasActiveFilter = !!(q || deity || language || tempo || level || sung);
+    const hasActiveFilter = !!(q || deity || language || tempo || level || sung || golden);
     const clearBtn = document.getElementById('btn-clear-filters');
     if (clearBtn) {
       clearBtn.classList.toggle('active', hasActiveFilter);
@@ -2126,14 +2141,14 @@ class App {
     }
 
     // Render read-only active filter chips in the strip
-    this._renderActiveFilterChips({ q, deity, language, tempo, level, sung });
+    this._renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden });
 
     this._renderBrowsePage();
   }
 
   _clearBrowseFilters() {
     document.getElementById('browse-search').value = '';
-    ['filter-sung', 'filter-deity', 'filter-language', 'filter-tempo', 'filter-level'].forEach(id => {
+    ['filter-sung', 'filter-deity', 'filter-language', 'filter-tempo', 'filter-level', 'filter-golden'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.value = '';
     });
@@ -2143,7 +2158,7 @@ class App {
     this._applyBrowseFilters();
   }
 
-  _renderActiveFilterChips({ q, deity, language, tempo, level, sung }) {
+  _renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden }) {
     const strip = document.getElementById('browse-filter-chips');
     if (!strip) return;
     strip.innerHTML = '';
@@ -2158,6 +2173,7 @@ class App {
     if (language) labels.push(language);
     if (tempo) labels.push(tempo);
     if (level) labels.push(level);
+    if (golden) labels.push("Swami's Voice");
     if (wrap) wrap.classList.toggle('hidden', labels.length === 0);
     if (labels.length === 0) return;
     const clearChip = document.createElement('button');
@@ -2184,6 +2200,8 @@ class App {
     if (sungBtn) sungBtn.classList.toggle('active', !!(mySingerName && sungVal === mySingerName));
     const allSungBtn = document.getElementById('fmodal-toggle-allsung');
     if (allSungBtn) allSungBtn.classList.toggle('active', sungVal === 'sung');
+    const goldenBtn = document.getElementById('fmodal-toggle-golden');
+    if (goldenBtn) goldenBtn.classList.toggle('active', !!document.getElementById('filter-golden')?.value);
 
     const isSingerToggle = sungVal === 'favourites' || sungVal === 'sung' || (mySingerName && sungVal === mySingerName);
     const bySingerEl = document.getElementById('filter-by-singer');
@@ -2414,6 +2432,16 @@ class App {
       meaning:      document.getElementById('mnb-meaning').value.trim(),
     };
 
+    // The Audio URL field edits the main recording; keep the track list in step
+    if (bhajan.audio_tracks?.length && bhajan.audio_url !== (existing?.audio_url || '')) {
+      const others = bhajan.audio_tracks.filter(t => t.type !== 'main');
+      const main = (existing?.audio_tracks || []).filter(t => t.type === 'main' && t.url !== existing?.audio_url);
+      bhajan.audio_tracks = [
+        ...(bhajan.audio_url ? [{ type: 'main', label: '', url: bhajan.audio_url }] : []),
+        ...main, ...others,
+      ];
+    }
+
     if (isEdit) {
       const idx = this.bhajans.bhajans.findIndex(b => b.id === id);
       if (idx >= 0) this.bhajans.bhajans[idx] = bhajan;
@@ -2534,11 +2562,7 @@ class App {
             <div class="detail-value">${escHtml(v)}</div>
           </div>`).join('')}
       </div>
-      ${b.audio_url ? `
-        <div class="audio-player">
-          <span class="text-small text-muted">Listen:</span>
-          <audio controls preload="none" src="${escHtml(b.audio_url)}"></audio>
-        </div>` : ''}
+      ${this._audioTracksHTML(b)}
       ${b.lyrics ? `
         <div class="bhajan-section-title">Lyrics</div>
         <div class="bhajan-lyrics">${escHtml(b.lyrics)}</div>` : ''}
@@ -2578,6 +2602,38 @@ class App {
       a.removeAttribute('src');
       a.load();
     });
+  }
+
+  // Every recording on the bhajan, labelled by kind (Sai Rhythms' audio rows).
+  // Older/hand-added entries only have audio_url.
+  _audioTracksHTML(b) {
+    const KIND = {
+      main: 'Listen', golden: "Swami's Voice", instrumental: 'Instrumental',
+      tutorial: 'Tutorial', karaoke: 'Karaoke',
+    };
+    const tracks = b.audio_tracks?.length ? b.audio_tracks
+      : b.audio_url ? [{ type: 'main', label: '', url: b.audio_url }] : [];
+    if (!tracks.length) return '';
+    // Uncaptioned tracks of the same kind are numbered, e.g. two recordings → "1 of 2", "2 of 2"
+    const perKind = {};
+    tracks.forEach(t => { perKind[t.type] = (perKind[t.type] || 0) + 1; });
+    const seen = {};
+    return `
+      <div class="audio-tracks">
+        ${tracks.map(t => {
+          seen[t.type] = (seen[t.type] || 0) + 1;
+          const kind = KIND[t.type] || 'Audio';
+          const caption = t.label || (perKind[t.type] > 1 ? `${seen[t.type]} of ${perKind[t.type]}` : '');
+          return `
+          <div class="audio-player audio-track audio-track-${escHtml(t.type)}">
+            <div class="audio-track-label">
+              <span class="audio-track-kind">${escHtml(kind)}</span>
+              ${caption ? `<span class="audio-track-caption">${escHtml(caption)}</span>` : ''}
+            </div>
+            <audio controls preload="none" src="${escHtml(t.url)}"></audio>
+          </div>`;
+        }).join('')}
+      </div>`;
   }
 
   // ─── Session View ─────────────────────────────────────────────────────────

@@ -7,6 +7,11 @@ import json
 import sys
 
 
+# ## Audio section headings -> track type (see fetch-sairhythms.py)
+TRACK_KINDS = {'Audio': 'main', "Swami's Voice": 'golden', 'Instrumental': 'instrumental',
+               'Tutorial': 'tutorial', 'Karaoke': 'karaoke'}
+
+
 def clean_pitch(raw):
     """Extract just the pitch value (e.g., '2 Pancham / D') from raw field."""
     if not raw:
@@ -41,9 +46,19 @@ def parse_bhajan(filepath):
     m = re.search(r'\[Sai Rhythms\]\(([^)]+)\)', content)
     source_url = m.group(1) if m else None
 
-    # Audio URL
-    m = re.search(r'\[▶ Listen\]\(([^)]+)\)', content)
-    audio_url = m.group(1) if m else None
+    # Audio — "- **Kind** (caption): [▶ Listen](url)" lines, or the older single
+    # "[▶ Listen](url)" line, in the ## Audio section
+    audio_tracks = []
+    m = re.search(r'## Audio\n\n(.*?)(?=\n## |\n---|\Z)', content, re.DOTALL)
+    for line in (m.group(1).splitlines() if m else []):
+        t = re.match(r'^- \*\*(.+?)\*\*(?: \((.*)\))?: \[▶ Listen\]\((\S+)\)$', line.strip())
+        if t and t.group(1) in TRACK_KINDS:
+            audio_tracks.append({'type': TRACK_KINDS[t.group(1)], 'label': t.group(2) or '', 'url': t.group(3)})
+            continue
+        t = re.match(r'^\[▶ Listen\]\((\S+)\)$', line.strip())
+        if t:
+            audio_tracks.append({'type': 'main', 'label': '', 'url': t.group(1)})
+    audio_url = next((t['url'] for t in audio_tracks if t['type'] == 'main'), None)
 
     # Details table fields
     def get_field(field_name):
@@ -73,6 +88,7 @@ def parse_bhajan(filepath):
         'lyrics': lyrics,
         'meaning': meaning,
         'audio_url': audio_url,
+        'audio_tracks': audio_tracks,
         'source_url': source_url,
     }
 
