@@ -30,6 +30,8 @@ Subete wa Sai Narayana
 Hari Narayana Hari Narayana
 Sathya Sai Narayana
 
+Narayana Hari Narayana (4)
+
 ## Meaning
 
 O Sai Narayana, God of Love, You live within me and make up everything in the universe.

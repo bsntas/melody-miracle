@@ -25,6 +25,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 Greater is He than in the whole wide world
 HE is greater than he
+
+HE that is within me is greater than he that is in the world
 HE that is within me is greater than he that is in the world
 Greater is He than in the world
 Greater is He than in the world

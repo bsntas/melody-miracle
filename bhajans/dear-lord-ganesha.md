@@ -29,9 +29,13 @@ Dear Lord Ganesha, protector of my soul
 We bow before Thee here this day
 Give us the strength to live God’s way
 Oh Lord Ganesha, clear our path with love
+
+My Saraswathi, Goddess of my heart
 Cleansing me with Your Gayathri
 You are the music in my heart
 My Saraswathi, You are my friend
+
+Dear Lord my Swami, lotus of my heart
 My Lord Sai Baba, never shall we part
 Your omnipresence, omnipresence
 Dear Lord Sai Baba, lotus of my heart

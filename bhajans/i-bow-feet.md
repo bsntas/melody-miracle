@@ -26,7 +26,11 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 I bow to the feet, the lotus feet, the lotus feet of the Lord
 I surrender to Sai, to Sathya Sai, Bhagawan Sathya Sai
+
+You are master, Guru and friend
 You grant blessings without end
+
+From Your hands come all I see
 You are the wish-fulfilling tree
 
 ## Audio

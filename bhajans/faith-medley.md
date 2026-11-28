@@ -24,25 +24,37 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Faith Medley
+
+I can of my own self do nothing..do nothing
 I can of my own self do nothing..do nothing
 For it is The Father within..It is The Father within
 It is The Father within that doeth the works
+
+I can of my own self do nothing..do nothing
 I can of my own self do nothing..do nothing
 For it is The Father within..It is The Father within
 It is The Father within that doeth the works
+
+Trust in The Lord with all thine heart
 And lean not unto thine own understanding
 Trust in The Lord with all thine heart
 And lean not unto thine own understanding
+
+I rely upon Thee and Thee alone
 I rely upon Thee and Thee alone
 Trust in Me He tells me
 For I Am your own
 Trust in Me He tells me
 For I Am your home
+
+There is Only One
 There is Only One
 There is Only One
 In God I trust..in God I place my faith
 There is Only One
 In God I find True Peace
+
+Peace be still..I live at One with God’s Will
 Peace be still..I love to live in God’s Will
 Peace be still..I live at One with God’s Will
 Peace be still..I love to live in God’s Will

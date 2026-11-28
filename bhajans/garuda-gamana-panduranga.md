@@ -26,7 +26,7 @@ Lowest Note: n2 / B (lower octave)Highest Note: G2 / E (higher octave)* Western 
 
 Garuda Gamana Panduranga
 Kamala Vadana Panduranga
-Vittala Ranga Panduranga 
+Vittala Ranga Panduranga
 Vittala Ranga Jaya Sai Ranga [ Garuda Gamana ... ]
 Maya Lola Panduranga (3) [ Vittala Ranga ... ]
 Vittala Ranga Jaya Sai Ranga

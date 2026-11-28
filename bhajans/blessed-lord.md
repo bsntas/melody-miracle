@@ -27,6 +27,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 Blessed Lord of light beams soul I unite
 Lay Your sacred hands upon my soul
+
+Blessed Lord of light beams soul I unite
 In a flash of joy we do unite
 In a flash of love and joy you and I unite
 

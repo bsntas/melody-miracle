@@ -26,14 +26,32 @@ Notes:S R2 G2 P N2 SS N2 P G2 R2 SIn the Key of C:C D E G B C C B G E D C
 
 Ēkadantaṃ mahākāyaṃ taptakāñcana sannibhaṃ |
 Lambōdaraṃ viśālākṣaṃ vandē'haṃ gaṇanāyakam | |
+
+Mauñjikṛṣṇājinadharaṃ nāgayajñopavītinaṃ  |
 Bālendu vilasanmauliṃ vandē'haṃ gaṇanāyakam | |
+
+Ambikāhṛdayānandaṃ mātṛbhiḥ paripālitaṃ |
 Bhaktapriyaṃ  madōnmattam vandē'haṃ gaṇanāyakam | |
+
+Citraratnavicitrāṅgaṃ citramālāvibhūṣitaṃ |
 Citrarūpadharaṃdevaṃ vandē'haṃ gaṇanāyakam | |
+
+Gajavaktraṃ suraśreṣṭhaṃ karṇacāmara bhūṣitaṃ |
 Pāśāṅkuśadharaṃ devaṃ vandē'haṃ gaṇanāyakam | |
+
+Mūṣikōttamamāruhya dēvāsura mahāhavē |
 Yōddhukāmaṃ mahāvīryaṃ vandē'haṃ gaṇanāyakam | |
+
+Yakṣa kinnara gandharva siddha vidyadharai sadā |
 Stūyamānaṃ mahātmānaṃ vandē'haṃ gaṇanāyakam | |
+
+Sarvavighnaharaṃ dēvaṃ sarvavighnavivarjitaṃ |
 Sarva siddhi pradātāraṃ  vandē'haṃ gaṇanāyakam | |
+
+Gaṇāṣṭakaṃ idaṃ puṇyaṃ bhaktyā yaḥ paṭhennaraḥ
 Vimuktasarvapāpebhyo śivalokaṃ sa gacchati | |
+
+--------- Ganesha Stotram / Ganashtakam ---------
 
 ## Meaning
 

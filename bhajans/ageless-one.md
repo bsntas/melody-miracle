@@ -35,12 +35,18 @@ Help me see,
 Let Your love ...
 wash over me.
 (Sweet, sweet love, wash over me)
+
+By Your love
 All souls shall know,
 Through Your grace All blessings flow,
 As we serve
 With heart and mind,
 Thy will be done
 On earth this time.
+
+[ Ageless One ... wash over me ]
+
+Thy will be done .. on earth this time. (4x)
 (Sweet, sweet Lord)
 
 ## Audio

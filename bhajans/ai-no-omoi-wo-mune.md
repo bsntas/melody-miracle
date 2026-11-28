@@ -28,6 +28,8 @@ Ai no Omoi wo Mune ni
 Ai no Kotoba wo Katari
 Ai no Michi wo Tadorou
 Sonshin Sathya Sai Baba he
+
+Kami no Mina wo Tonae
 Kami no Shukufuku wo Dakishimete
 Kami no Michi wo Tadorou
 Sonshin Sathya Sai Baba he

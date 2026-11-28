@@ -29,6 +29,8 @@ Govinda Hari Gopala Hari Radha Ramana Hari Govinda (3)
 Nanda Mukunda Govinda Navaneetha Chora Govinda
 Nithyananda Govinda Nigamoddhara Govinda
 
+Govinda Jaya Govinda (4)
+
 ## Meaning
 
 Praise be to Lord Krishna, the protector of the cows and the beloved of Radha. He is the son of Nanda and the stealer of butter (devotees' hearts). He is the very embodiment of infinite bliss who liberated the Vedas. Victory to Lord Govinda.

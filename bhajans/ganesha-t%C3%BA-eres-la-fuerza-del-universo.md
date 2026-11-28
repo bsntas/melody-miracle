@@ -23,11 +23,11 @@ Notes:* showing details for Shankarabharanam / BilawalS R2 G2 M1 P D2 N2 SS N2 D
 
 ## Lyrics
 
-Ganesha tú eres la fuerza del universo, 
-Eres ternura, eres amor, 
-Siempre te llevo en el corazón 
-Y te rogamos que nos conduzcas por el sendero, 
-con paso firme en la devoción 
+Ganesha tú eres la fuerza del universo,
+Eres ternura, eres amor,
+Siempre te llevo en el corazón
+Y te rogamos que nos conduzcas por el sendero,
+con paso firme en la devoción
 hasta llegar a la salvación
 
 ## Meaning

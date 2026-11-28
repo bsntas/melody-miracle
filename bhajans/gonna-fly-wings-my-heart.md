@@ -30,6 +30,8 @@ Gonna carry me across the sea
 Gonna fly on the wings of my love
 And sit at Sai Baba's feet.
 (repeat first 4 lines)
+
+Well I love my Baba, yes I love Him so
 Wings of my heart gonna carry me
 And I know He's with me wherever I go
 Wings of my love gonna set me free

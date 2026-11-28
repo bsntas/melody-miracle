@@ -26,7 +26,11 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 I rejoice, I rejoice in God always (3x)
+
+Oh loving Lord I surrender all to You
 Oh loving Father I live my life for You
+
+I rejoice in the Grace of the Lord
 I rejoice in the Light of the Lord
 And I rejoice in the Love of the Lord
 

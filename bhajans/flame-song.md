@@ -25,6 +25,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Flame Song
+
+Oh Lord, make the whole of my life,
 As pure as the flame before me.
 Let it consume itself in the fire,
 Scattering light and the warmth of love to all around me.

@@ -24,7 +24,7 @@ Lowest Note: n2 / B (lower octave)Highest Note: D2 / A* Western notes are in the
 
 ## Lyrics
 
-Hari Guru Natha Prabhu Guru Natha Partheesha Natha 
+Hari Guru Natha Prabhu Guru Natha Partheesha Natha
 Sri Sathya Sai Guru Natha
 Talli Tandriyu Neevey Kadaa Daari Chupe Guru Devudu Kadaa
 Narayana Govinda Mukunda Maaku Prapanchamu Neevey Kadaa

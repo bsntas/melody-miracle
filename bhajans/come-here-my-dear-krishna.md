@@ -29,6 +29,8 @@ For You My Dear Khana Banaya
 Butter Mishty Dhood Malai Khoob Maangaya
 So Much Delay So Much Delay Tumne Lagayi [ Maine Terey ... ]
 [ Come Here ... ]
+
+Remembering You Every Day Mein Aasun Bahavun
 Come To House My Dear Arathi Utarun
 Why Far Why Far Rahey Kanhayi [ Maine Terey ... ]
 

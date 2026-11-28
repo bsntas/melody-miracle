@@ -28,42 +28,68 @@ S R1 M1 P N1 SS N1 P M1 R1 SIn the Key of C:C C# F G B♭ C C B♭ G F C# C
 Trinetran Cha Triyaa Yudham
 Trijanma Paapa Samhaaram
 Eka Bilvam Shivaarpanam
+
+2. Trishaakhair Bilva Patraishcha
 Achidrai Komalai Shubhaih
 Thava Pujaam Karishhyaami
 Eka Bilvam Shivaarpanam
+
+3. Koti Kanyaa Mahaadaanam
 Thila Parvatha Kotayaha
 Kaanchanam Shailadaanena
 Eka Bilvam Shivaarpanam
+
+4. Kashi Kshetra Nivaasam Cha
 Kaala Bhairava Darshanam
 Prayaage Maadhavam Drishtvaa
 Eka Bilvam Shivaarpanam
+
+5. Induvaare Vratam Sthitvaa
 Niraahaaro Maheshvaraha
 Naktam Houshyaami Devesha
 Eka Bilvam Shivaarpanam
+
+6. Raamalinga Pratishtaa Cha
 Vaivaahika Krutham Thathaa
 Tataakaa Nicha Sandhaanam
 Eka Bilvam Shivaarpanam
+
+7. Akhanda Bilva Patram Cha
 Aayutham Shivapoojanam
 Krutham Naama Sahasrena
 Eka Bilvam Shivaarpanam
+
+8. Umayaa Saha Devesha
 Nandi Vaahana Meva Cha
 Bhasmalepana Sarvaangam
 Eka Bilvam Shivaarpanam
+
+9. Saalagrameshu Vipraanaam
 Tataakam Dashakoopayo
 Yagnakoti Sahasrashcha
 Eka Bilvam Shivaarpanam
+
+10. Dantikoti Sahasreshu
 Ashvamedha Shatakratau
 Kotikanyaa Mahaa Dhaanam
 Eka Bilvam Shivaarpanam
+
+11. Bilvaanaam Darshanam Punyam
 Sparshanam Paapa Naashanam
 Aghora Paapa Samhaaram
 Eka Bilvam Shivaarpanam
+
+12. Sahasra Veda Paateshu
 Brahmastaapanam Uchyate
 Anekavrata Koteenaam
 Eka Bilvam Shivaarpanam
+
+13. Annadaana Sahasreshu
 Sahasropanayanam Tathaa
 Aneka Janma Paapaani
 Eka Bilvam Shivaarpanam
+
+14. Bilva Stothram Idam Punyam
 Yah Pateth Shiva Sannidhau
 Shiva Loka Mavaapnoti
 Eka Bilvam Shivaarpanam

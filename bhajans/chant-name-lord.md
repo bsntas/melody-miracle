@@ -25,6 +25,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Chant The Name of the Lord
+
+In every scripture that you read
 One things stays the same
 If you want your soul set free
 Call upon the Name
@@ -32,6 +34,8 @@ Call upon the Name of God
 To lead you across that sea
 Chant the Name of the Lord
 To set you free, to set you free
+
+(chorus)
 Why don't you chant the Name of the Lord
 Chant the Name of the Lord
 Chant the Name of the Lord
@@ -40,10 +44,16 @@ Won't you chant the Name of the Lord
 To lead you across that sea
 Chant the Name of the Lord
 To set you free, to set you free
+
+Yeshu, Yeshua, Yeshua (2)
 Allah, Allah, Allah, Allah (2)
 (chorus)
+
+Harey Krishna, Krishna, Krishna (2)
 Buddha, Buddha, Buddha, Buddha (2)
 (chorus)
+
+Sathya Sai Baba Om Sathya Sai (4)
 (chorus)
 
 ## Audio

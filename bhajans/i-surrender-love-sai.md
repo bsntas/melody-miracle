@@ -27,10 +27,26 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 I surrender to the love of Sai, flowing through my life  (5x)
 (Swami says…)
+
+I surrender to the love of Swami, flowing through my life  (5x)
 (Swami says…)
+
+I surrender to the love of Krishna, flowing through my life  (5x)
 (Swami says…)
+
+I surrender to the love of Sai, flowing through my life  (2x)
+
+I surrender to the love of Shirdi, flowing through my life  (5x)
 (Our Lord has said…)
+
+I surrender to the love of Rama, flowing through my life  (5x)
 (How lucky we are…)
+
+I surrender to the love of Sai, Oh my Sai, I love you  (2x)
+
+I surrender to the love of Sai, flowing through my life  (3x)
+
+Flowing through my life, flowing through my life
 Flowing through my life
 (All praise and victory to Lord Sai.)
 

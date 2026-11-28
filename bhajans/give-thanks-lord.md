@@ -28,9 +28,13 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Give thanks to the Lord for He is good and His love endures forever (2)
 He is good, He is good, and His love will forever endure
 We will bless His name as we all proclaim that His love endures forever
+
+He made the moon and the stars at night and His love endures forever
 With outstreached arm and by His mind and His love endures forever
 Adonai, Adonai, aluch mazen Adonai
 Adonai malach, Adonai malach, Adonai Yesu our saviour
+
+Give thanks to the Lord for He is good and His love endures forever (2)
 He is good, He is good, and His love will forever endure
 We will bless His name as we all proclaim that His love endures forever
 You are good, You are good, and your love will forever endure

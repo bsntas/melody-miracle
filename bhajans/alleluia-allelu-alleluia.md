@@ -27,9 +27,13 @@ Alleluia Allelu Alleluia
 Alleluia Alleluia
 Alleluia Allelu Alleluia
 Alleluia Alleluia
+
+Alleluia
 Alleluia
 Alleluia
 Alleluia Alleluia
+
+Lord we are one, we are one, we are One
 Sai we are one, we are all one
 Lord we are one, we are one, we are One
 Sai we are one, we are one with You

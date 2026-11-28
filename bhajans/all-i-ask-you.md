@@ -24,7 +24,7 @@ Lowest Note: d2 / A (lower octave)Highest Note: D2 / A* Western notes are in the
 
 ## Lyrics
 
-All I ask of You is forever to remember Me--as loving You 
+All I ask of You is forever to remember Me--as loving You
 Ishk Allah Mahbud Illah (2)
 
 ## Audio

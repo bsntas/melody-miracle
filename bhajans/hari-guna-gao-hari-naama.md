@@ -26,7 +26,7 @@ Lowest Note: n2 / B (lower octave)Highest Note: S / C (higher octave)* Western n
 
 Hari Guna Gao Hari Naama Gao
 Nanda Ananda Hari Naama Re [ Hari Guna ... ]
-Japana Manana Karo Hari Naama Re 
+Japana Manana Karo Hari Naama Re
 Shravana Smarana Karo Hari Naama Re
 Sai Om Sai Om Bhajo Mana Re
 

@@ -25,7 +25,7 @@ Notes:* showing details for Gavatin1 S G2 M1 P N1 SS N1 D2 P M1 G2 P M1 G2 M1 R2
 
 I bow down at the Feet of Ganesha
 Ganesha Ganesha [ I bow down … ]
-Ganesha, I Pray, You will clear my way (3) 
+Ganesha, I Pray, You will clear my way (3)
 Ganesha Ganesha [ I bow down … ]
 Jai Ganesha, Sai Ganesha, clear my way to Baba
 Jai Ganesha, Sai Ganesha, clear my way to Swami

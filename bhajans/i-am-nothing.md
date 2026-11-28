@@ -26,6 +26,8 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 ## Lyrics
 
 I Am Nothing
+
+Baba, Baba, Baba, Baba
 I long for You, I sing to you, I yearn for You to be near
 Baba, Baba, Baba, Baba
 I’m lost without You, I am in pain without You, I’m sad and lonely without You

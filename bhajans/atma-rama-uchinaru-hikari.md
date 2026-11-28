@@ -27,6 +27,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 Atma Rama, Uchinaru Hikari
 Sai Rama, Makoto no Watashi
 Atma Rama, Sai Rama, Sai Krishna, Sathya Sai Baba
+
+Atma Rama, Subete ni Yadoru
 Sai Rama, Uchuu wo Mitasu
 Atma Rama, Sai Rama, Sai Baba, Shifuku no Izumi
 

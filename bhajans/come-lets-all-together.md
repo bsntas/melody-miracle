@@ -28,6 +28,8 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Come Let's All together, Light The Lamps Of Our Hearts
 Light The Truth Sathya Sai Has Ignited
 Let Our Souls Merge With The Light
+
+Aao Hum Sab Milkar Deep Se Deep Jalayey
 Sathya Deep Sai Ne Jalaya
 Hum Man Ka Deep Jalayey
 

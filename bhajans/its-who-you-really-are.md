@@ -26,6 +26,8 @@ S R2 G2 P D2 SS D2 P G2 R2 SIn the Key of C:C D E G A C C A G E D C
 ## Lyrics
 
 It’s who you really are
+
+Something’s watching you, something’s loving you
 It’s not far, it’s who you really are
 It was there at your birth, it was there as you grew
 It’s not far, it’s who you really are

@@ -15,6 +15,8 @@ Then the sun will come your way.
 If we learn how to give,
 This is how we should live,
 Give a little bit of love every day.
+
+Give a little bit of kindness every day,
 Then a smile will come your way.
 If we learn how to give, this is how we should live.
 Give a little bit of kindness every day.

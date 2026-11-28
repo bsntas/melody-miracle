@@ -25,7 +25,7 @@ Lowest Note: p / G (lower octave)Highest Note: P / G* Western notes are in the K
 ## Lyrics
 
 Bhajo Man Bhajo Rama Ram
-Sri Ram Sri Rama Ram 
+Sri Ram Sri Rama Ram
 Sai Rama Rama Rama Ram [ Bhajo Man Bhajo ... ]
 Bhajo Bhajo Man Baba Naam
 Bhajo Bhajo Man Sai Naam

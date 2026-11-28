@@ -27,25 +27,41 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 
 Hold on, hold on (3x)
 Hold on to the light
+
+If you’re looking for peace
 If you’re looking for joy
 If you’re looking for love
 Hold on to the light
+
+Light a candle for unity
 Light a candle for you and me
 Light a candle for the angels above
 Light a candle for love
+
+If you’re looking for peace, hold on
 If you’re looking for joy, hold on
 If you’re looking for love, hold on
 Hold on to the light
+
+Hold on, hold on (3x)
 Hold on to the light
+
+If you’re looking for peace, hold on
 If you’re looking for joy, hold on
 If you’re looking for love, hold on
 Hold on to the light
+
+Light a candle for unity
 Light a candle for you and me
 Light a candle for the angels above
 Light a candle for love
+
+If you’re looking for peace, hold on
 If you’re looking for joy, hold on
 If you’re looking for love, hold on
 Hold on to the light
+
+Hold on, hold on (3x)
 Hold on to the light
 
 ## Audio

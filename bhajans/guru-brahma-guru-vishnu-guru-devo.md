@@ -24,12 +24,12 @@ Lowest Note: G1 / E♭Highest Note: M1 / F (higher octave)* Western notes are in
 
 ## Lyrics
 
-Guru Brahma Guru Vishnu Guru Devo Maheshwara 
-Guru Sakshath Parabrahma 
+Guru Brahma Guru Vishnu Guru Devo Maheshwara
+Guru Sakshath Parabrahma
 Tasmai Sri Guruvey Namah [ Guru Brahma ... ]
-Dharma Kshetra Sthapaka 
-Taraka Mantra Bodhaka 
-Shantha (Prashantha) Swaroopa Nayaka 
+Dharma Kshetra Sthapaka
+Taraka Mantra Bodhaka
+Shantha (Prashantha) Swaroopa Nayaka
 Sharanam Sharanam Guru (Sai) Deva
 
 ## Meaning

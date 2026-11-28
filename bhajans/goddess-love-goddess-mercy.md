@@ -26,7 +26,11 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 Goddess of Love, Goddess of mercy, I pray to You, come to me
 Goddess of Love, Goddess of mercy, I pray to You, set me free
+
+Free from the ups and downs of life, free from the sorrow and pain
 Free from bondage of my soul that causes birth and pain [ Goddess of Love ... set me free ]
+
+Make my heart an ocean of love, that makes me one with all
 Let mercy be the flower of love that blooms in one and all [ Goddess of Love ... set me free ]
 
 ## Audio

@@ -29,6 +29,8 @@ Every minute, every day, every night
 I wanna be the Divine Inner Light
 Every breath, every word, every thought
 I wanna know truly that I am God
+
+I am Jesus, I am Allah
 I am Buddha and Zohrashtra
 I am Krishna, Shiva, Rama
 Bhagawan Sri Sai Baba
