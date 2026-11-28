@@ -1,0 +1,30 @@
+# Say the Name, say the Name
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/say-name-say-name)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Say the Name, say the Name, say the Name
+The holy Name can remove a mountain of blame
+Say the Name, say the Name, say the Name, say the Name
+Om Sai Ram, Hari Om Sai Ram
+Hari Om Sai Ram
+Say the Name, say the Name, Say the Name,
+Say the holy Name, say it with devotion
+Purify the heart, quiet the emotions
+It's the little raft that takes us 'cross the ocean
+Say the Name
+Om Sai Ram, Hari Om Sai Ram
+Hari Om Sai Ram
+Say the Name, say the Name, say the Name,
+Say the Name, say the Name, say the Name
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

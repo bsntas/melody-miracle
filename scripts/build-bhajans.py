@@ -12,10 +12,16 @@ def clean_pitch(raw):
     if not raw:
         return None
     raw = raw.strip()
-    # Match patterns like "1 Pancham / C", "2.5 Madhyam / G#"
-    m = re.match(r'^(\d+\.?\d*\s+\w+\s*/\s*[A-G][#♭b]?)', raw)
+    # Match patterns like "1 Pancham / C", "2.5 Madhyam / G#", "2.5 Pancham / E Flat"
+    m = re.match(r'^(\d+\.?\d*\s+\w+)\s*/\s*([A-G])(#|♭|b|\s*Flat|\s*Sharp)?', raw)
     if m:
-        return m.group(1).strip()
+        note, acc = m.group(2), (m.group(3) or '').strip()
+        if acc in ('#', 'Sharp'):
+            note += '#'
+        elif acc in ('♭', 'b', 'Flat'):
+            # The app's pitch vocabulary uses sharps only (E♭ → D#, B♭ → A#)
+            note = {'C': 'B', 'D': 'C#', 'E': 'D#', 'F': 'E', 'G': 'F#', 'A': 'G#', 'B': 'A#'}[note]
+        return f'{m.group(1)} / {note}'
     # Match just a note or number as fallback
     return raw[:40].strip()
 

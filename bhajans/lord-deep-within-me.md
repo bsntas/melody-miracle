@@ -1,0 +1,32 @@
+# The Lord is deep within me
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/lord-deep-within-me)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+The Lord is deep within me
+The Lord is deep within me
+Loving and holy so I want to be
+a vessel of honor for Him
+a vessel of honor for God
+a vessel of honor for God
+loving and holy so I want to be
+a vessel of honor for God
+I praise the Lord by serving Him
+I praise the Lord by serving Him
+loving and holy so I want to be
+a vessel of honor for God
+a vessel of honor for God
+a vessel of honor for God
+loving and holy so I want to be
+a vessel of honor for God
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

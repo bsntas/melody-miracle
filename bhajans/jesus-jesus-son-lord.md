@@ -1,0 +1,24 @@
+# Jesus, Jesus, Son of the Lord
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/jesus-jesus-son-lord)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Jesus, Jesus, Son of the Lord
+Jesus, Jesus, dear Son of God
+Let me call your Name, let man cry in shame
+That the love You taught, my Lord, is lost again
+Love was Your Life, love was Your call
+Love was the reason why You gave Your life, my Lord
+Love God and most of all, those who hate you, love them all
+Love your neighbor as yourself was Your Call
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

@@ -1,0 +1,23 @@
+# Om Sai Ram, as we waken to Thee
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/om-sai-ram-we-waken-thee)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Om Sai Ram, as we waken to Thee the sun will rise
+O Love divine, sleeping within our hearts, the sun will shine
+(The gentle) turning of the season brings Your Voice upon the breeze
+(O love) the chanting of Your memory sings whispers through the leaves
+I hear Your Voice within me calling, with every leaf and raindrop falling
+I hear Your Voice within me calling, with every newborn baby crying
+O God of all, we seek You in everything and everywhere
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

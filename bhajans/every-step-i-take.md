@@ -1,0 +1,34 @@
+# Every step I take
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/every-step-i-take)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Every step I take along the way
+You are there to guide me
+Every step I take along the way
+You are there beside me.
+O Lord please take my hand
+Sweet Sai please smile at me
+O Lord fill my thoughts with Thee
+Clouds above are very quickly passing
+Only You are everlasting
+Clouds above are very quickly passing
+You are Lord and everlasting
+O Sai please hear this prayer
+Dear Lord please speak to me
+Sweet Lord please sing to me.
+May I hear Your guiding words within me
+Sathya Dharma Shaanthi Prema
+May I hear Your gentle voice within me
+Holy words of sweetest love.
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

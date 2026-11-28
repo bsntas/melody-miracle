@@ -1,0 +1,38 @@
+# Like The Sunlight
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sunlight)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Deity** | Sai |
+| **Language** | English |
+| **Raga** | Major (Shankarabharanam / Bilawal) |
+| **Beat** | 8 Beat / Keherwa / Adi |
+| **Tempo** | Medium Fast |
+| **Level** | Simple |
+| **Gents Pitch** | 3 Pancham / E |
+| **Ladies Pitch** | 7 Pancham / B |
+
+### Raga Notes
+
+```
+Notes:* showing details for Shankarabharanam / Bilawal
+S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G F E D C
+```
+
+## Lyrics
+
+Like The Sunlight, Like The Moon Bright, Always Always I Am With You
+Like The Ocean, Like The River, Always I Am Flowing Towards You
+Like The Sky Above, So Is Divine Love, Always Always Surrounding You
+Like The Earth So Fair, Like The Birds Of The Air Always I Am Caring For You
+
+## Audio
+
+[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sunlight.mp3)
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

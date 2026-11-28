@@ -1,0 +1,26 @@
+# Bhagavaan Sathya Sai Baba
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/bhagavaan-sathya-sai-baba)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Bhagavaan Sathya Sai Baba
+You are is this Presence in my heart
+You are this Light so shining, You are this Peace so silent
+(Sai) You are the One Who sets us free
+Baba, You open up the heart
+Baba, You purify the mind
+Bhagavaan Sathya Sai Baba
+You are the reason for this life
+You are this Love so soothing, You are this Bliss so gentle
+(Sai) You are the one who sets us free
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

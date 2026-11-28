@@ -1,0 +1,32 @@
+# Let me touch Your feet
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/let-me-touch-your-feet)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Let me touch Your feet, let me touch Your feet, Swami my Swami (2X)
+Padnamaskar Padnamaskar
+My beloved Lord, My beloved Lord
+Let me touch Your feet, let me touch Your feet, Swami my Swami
+You are everything, with your breath I sing
+My beloved Lord, My beloved Lord
+Let me touch Your feet, let me touch Your feet, Swami my Swami
+It's for you I long as I sing this song
+My beloved Lord, My beloved Lord
+Let me touch Your feet, let me touch Your feet, Swami my Swami
+Grant my highest goal, please receive my soul
+My beloved Lord, My beloved Lord
+Let me touch Your feet, let me touch Your feet, Swami my Swami
+Padnamaskar, from near or far
+My beloved Lord, My beloved Lord
+Let me touch Your feet, let me touch Your feet, Swami my Swami
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

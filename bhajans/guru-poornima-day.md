@@ -1,0 +1,23 @@
+# On This Guru Poornima Day
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/guru-poornima-day)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+On This Guru Poornima Day
+With Love We Offer Homage To Thy Feet
+Sai Baba Dear Gurudev (2)
+Lead Us From Darkness Into The Light
+Fill Us With Knowledge, Make Us Wise
+(Baba) Lead Us To Our Salvation
+Blessed Are We, Blessed Are We, Blessed Are We To Be With You
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

@@ -12,29 +12,36 @@ from pathlib import Path
 
 # ── Pitch parser ──────────────────────────────────────────────────────────────
 
-PITCH_RE = re.compile(r'^([\d.]+\s+(?:Madhyam|Pancham))\s*/\s*(.+)$', re.IGNORECASE)
+PITCH_RE = re.compile(r'^([\d.]+)\s+(Madhyam|Pancham)\s*(?:/\s*(.+))?$', re.IGNORECASE)
 
-# Positions whose western label should be A# (not B)
-A_SHARP_INDIAN = {'4 Madhyam', '6.5 Pancham'}
+NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+# Semitones above C for each Pancham position; Madhyam is a fourth (5) higher
+POSITION = {'1': 0, '1.5': 1, '2': 2, '2.5': 3, '3': 4, '4': 5,
+            '4.5': 6, '5': 7, '5.5': 8, '6': 9, '6.5': 10, '7': 11}
 
 def split_pitch(raw):
-    """Return (indian, western) from "X Pancham / Y" or similar."""
+    """Return (indian, western) from "X Pancham / Y" or similar.
+
+    The western note is derived from the Indian position (the source labels
+    were unreliable: "E Flat" was truncated to "E", "B Flat" to "B")."""
     if not raw:
         return '', ''
     m = PITCH_RE.match(raw.strip())
-    if not m:
+    if not m or m.group(1) not in POSITION:
         return raw.strip(), ''
-    indian = m.group(1).strip()
-    western = m.group(2).strip()
-    # Fix the two positions that should be A# (historically labelled B)
-    if indian in A_SHARP_INDIAN and western == 'B':
-        western = 'A#'
+    series = m.group(2).capitalize()
+    indian = f'{m.group(1)} {series}'
+    western = NOTES[(POSITION[m.group(1)] + (5 if series == 'Madhyam' else 0)) % 12]
     return indian, western
 
 # ── Raga → scale mapping ──────────────────────────────────────────────────────
-# Classification: Major = bright (primarily shuddha / natural Ga)
-#                 Minor = dark  (primarily komal Ga)
-#                 Mixed = both Ga variants, or double madhyam, or complex chromatic
+# Classification is by the third (Ga) alone, since that decides the chord
+# (C vs Cm) an accompanist plays:
+#                 Major = shuddha Ga only
+#                 Minor = komal Ga only
+#                 Mixed = both Ga variants
+# Ragas with no Ga at all are classified by ear/convention.
+# Verified against the "In the Key of C" note lists on Sai Rhythms.
 
 SCALE_MAP = {
     # ── Explicitly labelled ──
@@ -59,7 +66,7 @@ SCALE_MAP = {
     'Bowli':                             'Major',   # Shankarabharanam janya
     'Brindavan Sarang':                  'Major',   # Bilaval thaat
     'Desh':                              'Major',   # Khamaj thaat, shuddha Ga
-    'Gara':                              'Major',   # Khamaj thaat
+    'Gara':                              'Mixed',   # Khamaj thaat — uses both Ga
     'Gavati':                            'Major',   # Shankarabharanam janya
     'Hamir Kalyani / Kedar':             'Major',   # Kalyani janya + Bilaval thaat
     'Hamsa Vahini':                      'Major',   # Shankarabharanam janya
@@ -67,7 +74,7 @@ SCALE_MAP = {
     'Hamsanadam':                        'Major',   # Major pentatonic variant
     'Hamsavinodini':                     'Major',   # Major feel
     'Harikamboji':                       'Major',   # 28th mela, shuddha Ga (Khamaj)
-    'Kalyana Vasantham':                 'Major',   # Kalyani janya
+    'Kalyana Vasantham':                 'Minor',   # 21st mela janya — Komal Ga
     'Kalyani / Yaman':                   'Major',   # 65th mela, Lydian/Yaman — all major
     'Khamaj':                            'Major',   # Shuddha Ga, komal Ni (dominant)
     'Khamas':                            'Major',   # Harikamboji janya
@@ -76,7 +83,7 @@ SCALE_MAP = {
     'Mohanam / Bhoop':                   'Major',   # Sa Re Ga Pa Dha — major pentatonic
     'Maru Bihag':                        'Major',   # Primarily Bilaval with shuddha Ga
     'Natakurinji':                       'Major',   # Harikamboji janya
-    'Nattai':                            'Major',   # Shuddha Ga, vigorous character
+    'Nattai':                            'Major',   # Shuddha Ga (the E♭ in its scale is R3, not a komal Ga)
     'Pahadi':                            'Major',   # Khamaj thaat, shuddha Ga
     'Sama':                              'Major',   # Harikamboji janya, pentatonic
     'Saraswathi':                        'Major',   # Shuddha Ga (28th mela variant)
@@ -96,7 +103,7 @@ SCALE_MAP = {
 
     # Mishra (mixed-context renditions that stay in the base raga's scale)
     'Mishra Gavati':                     'Major',
-    'Mishra Gara':                       'Major',
+    'Mishra Gara':                       'Mixed',
     'Mishra Maand':                      'Major',
     'Mishra Pahadi':                     'Major',
     'Mishra Shankarabharanam / Bilawal': 'Major',
@@ -120,16 +127,16 @@ SCALE_MAP = {
     'Keeravani':                        'Minor',   # 21st mela — harmonic minor
     'Kuntalavarali':                    'Minor',   # 49th mela janya, Komal Ga
     'Madhyamavati / Madhmad Sarang':    'Minor',   # Komal Ga in descent
-    'Malayamarutham':                   'Minor',   # Komal Ga
+    'Malayamarutham':                   'Major',   # 16th mela janya — Shuddha Ga
     'Miyan ki Malhar':                  'Minor',   # Komal Ga, Komal Ni
-    'Nadanamakriya':                    'Minor',   # Natabhairavi janya, Komal Ga
+    'Nadanamakriya':                    'Major',   # 15th mela janya — Shuddha Ga
     'Naga Gandhari':                    'Minor',   # Minor character
     'Natabhairavi':                     'Minor',   # 20th mela — natural minor
     'Panchamkauns / Jayanthashri':      'Minor',   # Komal Ga
     'Parameshwari':                     'Minor',   # 68th mela, Komal Ga
     'Punnagavarali':                    'Minor',   # 8th mela janya, Komal Ga
-    'Rageshri':                         'Minor',   # Komal Ga, no Pa
-    'Revagupti':                        'Minor',   # Komal Ga
+    'Rageshri':                         'Major',   # Khamaj thaat — Shuddha Ga, Komal Ni
+    'Revagupti':                        'Major',   # Sa Re♭ Ga Pa Dha♭ — Shuddha Ga
     'Revathi / Bhairagi Bhairav':       'Minor',   # Komal Ga
     'Salaga Bhairavi':                  'Minor',   # Bhairavi thaat, Komal Ga
     'Saramathi':                        'Minor',   # Minor character
@@ -142,11 +149,11 @@ SCALE_MAP = {
     'Sindhu Bhairavi / Bhairavi':       'Minor',   # Komal Ga (Bhairavi thaat)
     'Sriranjani':                       'Minor',   # Karaharapriya janya, Komal Ga
     'Sumanesa Ranjani / Madhukauns':    'Minor',   # Komal Ga
-    'Suryakantham':                     'Minor',   # Natabhairavi janya, Komal Ga
+    'Suryakantham':                     'Major',   # 17th mela — Shuddha Ga
     'Todi - Carnatic':                  'Minor',   # 8th mela — Komal Ga, Komal Re
-    'Vakulabharanam / Basant Mukhari':  'Minor',   # Komal Ga
+    'Vakulabharanam / Basant Mukhari':  'Major',   # 14th mela — Komal Re, Shuddha Ga, Komal Dha/Ni
     'Varali':                           'Minor',   # Komal Ga, Komal Re, Tivra Ma
-    'Janasammohini':                    'Minor',   # Minor feel
+    'Janasammohini':                    'Major',   # Shuddha Ga
 
     # Mishra minor
     'Mishra Abheri / Bhimpalas':        'Minor',
@@ -156,54 +163,84 @@ SCALE_MAP = {
     'Mishra Gowri Manohari / Patdeep':  'Minor',
     'Mishra Hindolam / Malkauns':       'Minor',
     'Mishra Keeravani':                 'Minor',
-    'Mishra Rageshri':                  'Minor',
+    'Mishra Rageshri':                  'Major',
     'Mishra Shanmukhapriya':            'Minor',
     'Mishra Shekara Chandrika / Gujari Todi': 'Minor',
     'Mishra Shivaranjani':              'Minor',
     'Mishra Sindhu Bhairavi / Bhairavi': 'Minor',
-    'Mishra Vakulabharanam / Basant Mukhari': 'Minor',
+    'Mishra Vakulabharanam / Basant Mukhari': 'Major',
 
     # ── Mixed ragas ──
-    'Amruthavarshini':                  'Mixed',   # Tivra Ma + Shuddha Ga, Komal Dha
-    'Basanth':                          'Mixed',   # Double madhyam, Komal Ga
-    'Bhatiyar':                         'Mixed',   # Complex — both Ga types
-    'Chakravakam / Ahir Bhairav':       'Mixed',   # Komal Re + Shuddha Ga + Komal Dha
-    'Charukeshi':                       'Mixed',   # 26th mela — Shuddha Ga + Komal Dha/Ni
-    'Dharmavati':                       'Mixed',   # 59th mela — Shuddha Ga + Tivra Ma + Komal Ni
+    'Amruthavarshini':                  'Major',   # Sa Ga Ma# Pa Ni — Shuddha Ga
+    'Basanth':                          'Major',   # Komal Re/Dha, Shuddha Ga, both Ma
+    'Bhatiyar':                         'Major',   # Komal Re, Shuddha Ga, both Ma
+    'Chakravakam / Ahir Bhairav':       'Major',   # Komal Re, Shuddha Ga, Komal Ni
+    'Charukeshi':                       'Major',   # 26th mela — Shuddha Ga, Komal Dha/Ni
+    'Dharmavati':                       'Minor',   # 59th mela — Komal Ga, Tivra Ma
     'Dwijavanti / Jaijaivanti':         'Mixed',   # Both Ga and Komal Ga, both Ni types
-    'Gambhira Nattai':                  'Mixed',   # Complex character
-    'Hemavati':                         'Mixed',   # 58th mela — Shuddha Ga + Komal Dha/Ni
-    'Hamsanandi / Marwa':               'Mixed',   # Komal Re + Tivra Ma, complex
-    'Hamsanandi / Sohini':              'Mixed',   # Similar complexity to Marwa
+    'Gambhira Nattai':                  'Major',   # Shuddha Ga (the E♭ in its scale is R3, not a komal Ga)
+    'Hemavati':                         'Minor',   # 58th mela — Komal Ga, Tivra Ma, Komal Ni
+    'Hamsanandi / Marwa':               'Major',   # Komal Re, Shuddha Ga, Tivra Ma
+    'Hamsanandi / Sohini':              'Major',   # Komal Re, Shuddha Ga, Tivra Ma
     'Jog':                              'Mixed',   # Both Ga and Komal Ga
-    'Kapi':                             'Mixed',   # Both Ga variants used
-    'Lalit':                            'Mixed',   # Double madhyam + Komal Re
-    'Madhuvanti':                       'Mixed',   # Komal Ga + Tivra Ma
-    'Mayamalavagowla / Bhairav':        'Mixed',   # 15th mela — Komal Re + Shuddha Ga + Komal Dha
-    'Pantuvarali / Puriya Dhanashri':   'Mixed',   # 51st mela — Komal Re + Shuddha Ga + Tivra Ma
+    'Kapi':                             'Minor',   # Komal Ga, both Ni
+    'Lalit':                            'Major',   # Komal Re, Shuddha Ga, both Ma
+    'Madhuvanti':                       'Minor',   # Komal Ga, Tivra Ma
+    'Mayamalavagowla / Bhairav':        'Major',   # 15th mela — Komal Re/Dha, Shuddha Ga
+    'Pantuvarali / Puriya Dhanashri':   'Major',   # 51st mela — Komal Re, Shuddha Ga, Tivra Ma
     'Pilu':                             'Mixed',   # Multiple Ga variants
-    'Purvikalyani / Puriya Kalyan':     'Mixed',   # Komal Re + Shuddha Ga
+    'Purvikalyani / Puriya Kalyan':     'Major',   # Komal Re, Shuddha Ga, Tivra Ma
     'Raga Mishran':                     'Mixed',   # Mixed by name and nature
-    'Ragavardhini':                     'Mixed',   # 32nd mela — Komal Re + Shuddha Ga + Komal Dha/Ni
-    'Sarasangi / Nat Bhairav':          'Mixed',   # 27th mela — Shuddha Ga + Komal Dha
-    'Shree - Carnatic':                 'Mixed',   # Double madhyam + Komal Re
-    'Shuddha Sarang':                   'Mixed',   # Wait, keeping Major above; correcting: actually Major
-    'Vachaspati':                       'Mixed',   # 64th mela — Shuddha Ga + Tivra Ma + Komal Ni
-    'Vibhas':                           'Mixed',   # Komal Re + Komal Dha + Shuddha Ga
+    'Ragavardhini':                     'Major',   # 32nd mela — Shuddha Ga
+    'Sarasangi / Nat Bhairav':          'Major',   # 27th mela — Shuddha Ga, Komal Dha
+    'Shree - Carnatic':                 'Minor',   # 22nd mela janya — Komal Ga
+    'Vachaspati':                       'Major',   # 64th mela — Shuddha Ga, Tivra Ma, Komal Ni
+    'Vibhas':                           'Major',   # Komal Re/Dha, Shuddha Ga
 
     # Mishra mixed
     'Mishra Jog':                       'Mixed',
-    'Mishra Kapi':                      'Mixed',
+    'Mishra Kapi':                      'Minor',
     'Mishra Pilu':                      'Mixed',
-    'Mishra Sarasangi / Nat Bhairav':   'Mixed',
-    'Mishra Srothaswini':               'Mixed',
-    'Mishra Gara':                      'Major',   # Gara is major-based
+    'Mishra Sarasangi / Nat Bhairav':   'Major',
+    'Mishra Srothaswini':               'Minor',
+
+    # Ragas added with the Sai Rhythms import
+    'Ananda Bhairavi':                  'Minor',   # 20th mela janya, Komal Ga
+    'Asavari Todi':                     'Minor',
+    'Bahudari':                         'Major',
+    'Bhairavi - Carnatic':              'Minor',
+    'Bilaskhani Todi':                  'Minor',
+    'Gaud Sarang':                      'Major',
+    'Karna Ranjani':                    'Minor',
+    'Megh':                             'Minor',   # No Ga; Kafi thaat
+    'Nand':                             'Major',
+    'Ranjani':                          'Minor',
+    'Shuddh Kalyani':                   'Major',
+    'Shuddha Hindolam':                 'Minor',
+    'Srothaswini':                      'Minor',
+    'Vasantha':                         'Major',
+    'Vijaya Saraswathi':                'Minor',
 }
 
+LABEL_RE = re.compile(r'^(Major and Minor|Major|Minor)\s*\((.*)\)$')
+
 def get_scale(raga):
+    """Scale for a raga name as written on Sai Rhythms. Handles the site's
+    decorations: "~ X" (approximately X), "Major (X)" / "Minor (X)" /
+    "Major and Minor (X)" (the explicit label wins), and "Mishra X"."""
     if not raga:
         return ''
-    return SCALE_MAP.get(raga, '')
+    raga = raga.strip()
+    if raga in SCALE_MAP:
+        return SCALE_MAP[raga]
+    m = LABEL_RE.match(raga)
+    if m:
+        return 'Mixed' if m.group(1) == 'Major and Minor' else m.group(1)
+    if raga.startswith('~'):
+        return get_scale(raga[1:])
+    if raga.startswith('Mishra '):
+        return get_scale(raga[len('Mishra '):])
+    return ''
 
 # ── Main transform ────────────────────────────────────────────────────────────
 
@@ -212,20 +249,23 @@ def transform(src, dst):
 
     missing_ragas = set()
     for b in data:
-        # Split pitches
-        gi, gw = split_pitch(b.get('gents_pitch', ''))
-        li, lw = split_pitch(b.get('ladies_pitch', ''))
-        b['gents_pitch_indian']  = gi
-        b['gents_pitch_western'] = gw
-        b['ladies_pitch_indian'] = li
-        b['ladies_pitch_western'] = lw
+        # Split pitches (and rewrite the combined string to match)
+        for g in ('gents', 'ladies'):
+            ind, west = split_pitch(b.get(f'{g}_pitch') or '')
+            b[f'{g}_pitch_indian'] = ind
+            b[f'{g}_pitch_western'] = west
+            if west:
+                b[f'{g}_pitch'] = f'{ind} / {west}'
 
-        # Scale
-        raga = b.get('raga', '')
-        scale = get_scale(raga)
-        b['scale'] = scale
-        if raga and not scale:
-            missing_ragas.add(raga)
+        # Scale — entries with no raga keep any hand-set value
+        raga = b.get('raga') or ''
+        if raga:
+            scale = get_scale(raga)
+            b['scale'] = scale
+            if not scale:
+                missing_ragas.add(raga)
+        elif not b.get('scale'):
+            b['scale'] = ''
 
     if missing_ragas:
         print(f'WARNING — {len(missing_ragas)} ragas not in SCALE_MAP:')

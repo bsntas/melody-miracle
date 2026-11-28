@@ -1,0 +1,22 @@
+# O Swami, O Swami
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/o-swami-o-swami)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+O Swami, O Swami, O Swami, Swami
+Your form is Love, your form is Love,
+your form is Love, Love, Love (O Swami)
+Sathya Dharma Shaanthi Prema, Sathya Dharma Shaanthi Prema
+Your form is Love, your form is Love,
+Your form is Love, Love, Love (O Swami)
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

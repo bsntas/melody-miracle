@@ -1,0 +1,28 @@
+# Sai Baba says embodiments of truth
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/sai-baba-says-embodiments-truth)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Sai Baba says embodiments of truth and love are we
+Full of peace and inner beauty, if we just could see
+Sai Baba says the inner Self is the reality
+We are really only One, so know this and be free
+Baba, let us know You, let us find the One
+Baba, let us flow through into only One
+Sai Baba says the world is just illusion and not real
+Disappointment, anger, fear are only things we feel
+The truth that God is really us, will help our hearts to heal
+And Overflow with precious love, for love is all that's real
+Baba, let us know You, let us find the One
+Baba, let us flow through into only One
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

@@ -1,0 +1,25 @@
+# Namo Tassa, Namo Tassa
+
+> **Source:** [Sai Rhythms](https://sairhythms.sathyasai.org/song/namo-tassa-namo-tassa)
+
+## Details
+
+| Field | Value |
+|---|---|
+| **Language** | English |
+
+## Lyrics
+
+Namo Tassa, Namo Tassa (2x)
+Namo Tassa, Gautama Buddha (2X)
+Hail to the Enlightened One
+Praises to Our Blessed Lord, showing us the righteous way
+Joyously we sing to Thee, with hearts so full of love
+O what glorious Light shines forth from Lord Buddha's calm, gentle face
+Unfolding the Middle Path for man's enlightment
+Meditate upon His Dharma, cultivate the truth within
+Buddha's radiant Light shall lead us to the abode of Niravana's Bliss
+
+---
+
+*Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*
