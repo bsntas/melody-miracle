@@ -140,8 +140,14 @@ def parse(page, slug):
     m = re.search(r"<div class='song-first-line'>.*?</div>\s*</div>", page, re.S)
     if not m:
         return None
-    lines = re.findall(r"<div class='song-(?:first-)?line'>(.*?)</div>", m.group(0), re.S)
-    lyrics = [text(l) for l in lines if text(l)]
+    # Stanzas after the first open with 'song-first-line-stanza'; keep a blank line there
+    lyrics = []
+    for cls, line in re.findall(r"<div class='song-(first-line-stanza|first-line|line)'>(.*?)</div>", m.group(0), re.S):
+        if not text(line):
+            continue
+        if cls == 'first-line-stanza' and lyrics:
+            lyrics.append('')
+        lyrics.append(text(line))
     title = lyrics[0] if lyrics else slug.replace('-', ' ').title()
     t = re.search(r'<title>(.*?) \| Sai Rhythms</title>', page)
     if t:

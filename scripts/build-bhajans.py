@@ -101,11 +101,11 @@ def parse_bhajan(filepath):
     tags = [t.strip() for t in (get_field('Tags') or '').split(',') if t.strip()]
 
     # Lyrics section
-    m = re.search(r'## Lyrics\n\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
+    m = re.search(r'## Lyrics\r?\n\r?\n(.*?)(?=\r?\n## |\r?\n---\r?\n|\Z)', content, re.DOTALL)
     lyrics = m.group(1).strip() if m else None
 
     # Meaning section
-    m = re.search(r'## Meaning\n\n(.*?)(?=\n## |\Z)', content, re.DOTALL)
+    m = re.search(r'## Meaning\r?\n\r?\n(.*?)(?=\r?\n## |\r?\n---\r?\n|\Z)', content, re.DOTALL)
     meaning = m.group(1).strip() if m else None
 
     return {
