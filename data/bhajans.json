@@ -4906,7 +4906,7 @@
       "108",
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "time-our-devotion",
@@ -8648,7 +8648,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "bismillah-alhamdullila-la-illaha-illalah",
@@ -16018,7 +16018,7 @@
     "ladies_pitch_western": "",
     "scale": "",
     "tags": [],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "ganesha-agameyo-inori-no-kokoro",
@@ -16258,7 +16258,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "ganesha-t%C3%BA-eres-la-fuerza-del-universo",
@@ -40528,7 +40528,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "lingodhbhavakara-lingeshwara",
@@ -73895,7 +73895,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "sri-guru-parthi-vasa",
@@ -74104,7 +74104,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "sri-lakshmi-ramana-narayana",
@@ -81662,7 +81662,7 @@
     "tags": [
       "Prayers"
     ],
-    "type": "prayer"
+    "type": "stotram"
   },
   {
     "id": "vittala-bhajo-sai-vittala-bhajo",

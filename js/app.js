@@ -15,7 +15,7 @@ const _localDate = d => {
 // ─── Song types ────────────────────────────────────────────────────────────────
 // bhajan.type, from Sai Rhythms tags (scripts/build-bhajans.py song_type); missing = bhajan
 const SONG_TYPES = {
-  bhajan: 'Bhajans', prayer: 'Prayers & Stotrams', arathi: 'Arathi',
+  bhajan: 'Bhajans', stotram: 'Stotrams', prayer: 'Prayers & Mantras', arathi: 'Arathi',
   kriti: 'Kritis', carol: 'Carols', song: 'Devotional Songs',
 };
 

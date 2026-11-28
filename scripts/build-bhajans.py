@@ -14,13 +14,15 @@ TRACK_KINDS = {'Audio': 'main', "Swami's Voice": 'golden', 'Instrumental': 'inst
 
 # Song type, from Sai Rhythms' song tags plus title keywords (the site's tagging
 # is incomplete — e.g. several ashtakams/mantras carry no "Prayers" tag).
-# bhajan | prayer (stotrams, mantras, ashtakams, suprabhatham) | arathi | kriti | carol | song
+# bhajan | stotram (stotrams, ashtakams, ashtothrams) | prayer (prayers & mantras,
+# e.g. suprabhatham, gayathri mantra) | arathi | kriti | carol | song
 ALBUM_TAGS = {'Abhayankara Sai', 'Ageless One', "Flyin' Free", 'Heart Voice', 'I Keep Feeling',
               'Living Love', 'Love To Love', 'My Light Never Dims', 'My Sweet', 'Now And Forever',
               'O Holy Presence', 'Reveal Yourself', 'Ribbons Of Light', 'Sai Of Love',
               'Second Coming', 'Solar Love'}
 PRAYER_TAGS = {'Prayers', 'Suprabhatham', '108', 'Food'}
-PRAYER_TITLE = re.compile(r'sto?th?ram|ashtak|ashto?th?ram|suprabha|\bmantr', re.I)
+STOTRAM_TITLE = re.compile(r'sto?th?ram|ashtak|ashto?th?ram', re.I)
+PRAYER_TITLE = re.compile(r'suprabha|\bmantr', re.I)
 ARATHI_TITLE = re.compile(r'^(mangala\s+)?aa?rat(h)?i$', re.I)
 
 
@@ -32,6 +34,8 @@ def song_type(title, tags):
         return 'carol'
     if 'Arathi' in tags or ARATHI_TITLE.match(title or ''):
         return 'arathi'
+    if STOTRAM_TITLE.search(title or ''):
+        return 'stotram'
     if tags & PRAYER_TAGS or PRAYER_TITLE.search(title or ''):
         return 'prayer'
     if tags & ALBUM_TAGS:
