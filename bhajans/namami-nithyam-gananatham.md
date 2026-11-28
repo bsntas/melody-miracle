@@ -25,7 +25,7 @@ Lowest Note: d2 / A (lower octave)Highest Note: S / C (higher octave)* Western n
 ## Lyrics
 
 Namami Nithyam Gananatham Smarami Nithyam Gajavadanam
-Namami Nithyam Gananatham 
+Namami Nithyam Gananatham
 Smarami Nithyam Gajavadanam
 
 ## Meaning

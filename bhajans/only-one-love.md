@@ -30,6 +30,8 @@ Only one heart dwells in all sacred places
 So many names for the one Lord we serve
 We all are one when that one Lord is love
 
+Om Shirdi Sai, Jai Sathya Sai, Om Prema Sai, Baba how I love You
+
 ## Audio
 
 - **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/only-one-love.mp3)

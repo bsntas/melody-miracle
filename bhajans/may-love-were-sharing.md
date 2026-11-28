@@ -26,7 +26,7 @@ Lowest Note: n1 / B♭ (lower octave)Highest Note: P / G* Western notes are in t
 ## Lyrics
 
 May The Love We're Sharing Spread Its Wings
-Fly Across The Earth And Bring 
+Fly Across The Earth And Bring
 New Joy To Every Soul That Is Alive
 Samastha Loka Sukhino Bhavanthu
 May All The Beings In All The Worlds Be Happy

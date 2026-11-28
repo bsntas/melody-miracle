@@ -29,6 +29,8 @@ Kokoro ni Ai no Hi Tomosu Kotoba Sore wa
 Sugite Shimatta Koto wo Kuyokuyo Kangaeru nara
 Ashita wa Egao de Aru youni Tonaeyou Sore wa
 
+Sai Ram (8)
+
 ## Meaning
 
 If something sad happens, chant His name from the bottom of your heart. The loving flame within our hearts burns and says these words. If you ever are worried about something, come with a smile and chant His name from the bottom of your heart.

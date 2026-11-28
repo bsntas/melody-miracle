@@ -32,6 +32,8 @@ Murahara Narayana
 Sri Sathya Narayana
 Sathya Sai Narayana
 
+Sai Narayana (3)
+
 ## Meaning
 
 O Lord Sai Narayana, enamored by your divine charms, we sing the praise of Your several names - Keshava, Narahari, Murahara.

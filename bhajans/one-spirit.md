@@ -25,6 +25,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 One Spirit
+
+In this world with it’s sorrow and strife
 There’s one source that we look to for light
 In this world when we need to make a start
 It’s one spirit, one heart
@@ -32,6 +34,8 @@ One spirit to make our journey whole
 One spirit, one light, one heart, one soul
 One spirit, one ancient holy dove
 One spirit, one love
+
+One people, one world that understands
 One family, one woman, one child, one man
 One spirit, to lead us out of night
 One spirit, one light

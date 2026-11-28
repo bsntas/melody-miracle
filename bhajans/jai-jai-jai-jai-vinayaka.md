@@ -28,6 +28,8 @@ Vinayaka Vinayaka [ Jai Jai ... ]
 Sindhura Vadana Jagat Paripala
 Sankata Harana Vinayaka
 Vinayaka (Sai) Vinayaka (2)
+
+Jai Jai Jai Jai Vinayaka (3)
 Vinayaka Sai Vinayaka
 
 ## Meaning

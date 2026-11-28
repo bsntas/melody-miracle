@@ -30,6 +30,8 @@ Namidatsu Kokoro mo Seishi no Umi mo
 Subete Torisari Sukui Ataeru
 Kagirinaki Ai de Sukuri Ataeru
 
+Namu Kanzeon Daibosatsu (3)
+
 ## Meaning
 
 Salutations to the Kannon Bodhisattva (Avalokiteshvara). You eliminate our pain and the turmoil within our hearts with Your endless love and help.

@@ -26,8 +26,14 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 
 Love is my song for Love is what I AM
 Love is my song for Love is what I AM
+
+Love is ever giving..giving and giving
 Love is ever pouring..pouring and pouring [ Love is my song ... ]
+
+Love is ever serving..helping, forgiving
 Love is ever sharing..caring, self-forgetting [ Love is my song ... ]
+
+Love is ever free..joyful and trusting
 Love is you and me..peaceful & humble  [ Love is my song ... ]
 
 ## Audio

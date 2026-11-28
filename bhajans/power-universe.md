@@ -29,8 +29,12 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Power of the universe bring my soul to light
 Awaken my heart, teach me who I am
 I am God (3x)
+
+Lord living in my heart let me know the truth
 Let illusion disappear, reveal the true reality
 I am God (3x)
+
+Lord I wait for You to place this knowledge in my hands
 I will awaken from this dream and know who I am
 I am God (4x)
 

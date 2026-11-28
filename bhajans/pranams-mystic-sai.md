@@ -33,11 +33,15 @@ Reveals Himself as a God
 He showed that all forms are one
 Pranams to the Mystic Sai Baba
 Pranams to Shirdi Sai
+
+I am Rama, I am Krishna, I am Vittala
 I am Datta, I am Lakshmi, Narayana
 All names and forms are one
 All names and forms are one
 All name and forms are one
 Said the sage of Shirdi Sai Baba
+
+I Muslim, I am Hindu, I am all faiths
 I am Allah, I am Sathya Narayana
 All names and forms are one
 All names and forms are one

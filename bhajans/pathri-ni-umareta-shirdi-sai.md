@@ -29,6 +29,8 @@ Pathri ni Umareta Shirdi Sai
 Shiva no Keshin Shirdi Sai [ Pathri ... ]
 Shiva to Parvathi ga Darshan Atae
 Devagiri Amma ga Haha to Natta
+
+Shirdi Sai Parthi Sai Sai Baba (2)
 Sai Baba (2)
 
 ## Meaning

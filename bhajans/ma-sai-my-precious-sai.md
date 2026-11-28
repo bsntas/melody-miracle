@@ -30,6 +30,8 @@ May this thread of love never break
 Let me always be with You, Sathya Sai
 You will never ever leave my heart
 We will always belong to You, dearest Sai
+
+Ma Sai, Mana Bangaru Baba
 Ma Sai, O Sathya Sai [ Ma Sai, Mana ... ]
 Yeh Prem Ki Dori Toot Na Jaaye
 Tera Sath Kabhi bhi Chod Na Jaaye

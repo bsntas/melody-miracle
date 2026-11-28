@@ -30,9 +30,13 @@ God, let me be one with all beings
 God, let me see all that’s divine
 God, You fill my life with light, joy to all the heavens
 Make me gold and shining bright, joy to all the world
+
+God, let me be one with all beings
 God, let me see all that’s divine
 God, You fill me with Your light, shine brightly upon me
 Pour Your precious love on all, bring peace to the world
+
+God, let me be one with all beings
 God, let me see all that’s divine
 
 ## Audio

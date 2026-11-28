@@ -30,27 +30,43 @@ S R2 G1 P D2 SS D2 P G1 R2 SIn the Key of C:C D E♭ G A C C A G E♭ D C
 Nirmala Bhaashitha Shobhitha Lingam
 Janmaja Dhukha Vinaashaka Lingam
 Tatpranamaami Sadaashiva Lingam
+
+2. Devamuni Pravaraarchitha Lingam
 Kaama Dahana Karunaakara Lingam
 Raavana Darpa Vinaashaka Lingam
 Tatpranamaami Sadaashiva Lingam
+
+3. Sarva Sugandha Sulepitha Lingam
 Buddhi Vivardhana Kaarana Lingam
 Siddha Suraasura Vandhitha Lingam
 Tatpranamaami Sadaashiva Lingam
+
+4. Kanaka Mahaamani Bhooshitha Lingam
 Phanipati Veshtitha Shobitha Lingam
 Daksha Suyajna Vinaashaka Lingam
 Tatpranamaami Sadaashiva Lingam
+
+5. Kunkuma Chandhana Lepitha Lingam
 Pankaja-Haara Sushobhitha Lingam
 Sanchitha Paapa Vinaashaka Lingam
 Tatpranamaami Sadaashiva Lingam
+
+6. Deva Ganaarchita Sevitha Lingam
 Bhavair Bhakhi Bhirevacha Lingam
 Dinakara Koti Prabhaakara Lingam
 Tatpranamaami Sadaashiva Lingam
+
+7. Ashta Dalo Pari Veshtitha Lingam
 Sarva Samud Bhava Kaarana Lingam
 Ahshta Daridra Vinaashaka Lingam
 Tatpranamaami Sadaashiva Lingam
+
+8. Suraguru Suravara Poojitha Lingam
 Suravana Pushpa Sadaarchitha Lingam
 Parama Padam Paramaatmaka Lingam
 Tat Pranamaami Sadaashiva Lingam (3x)
+
+9. Lingashtakam Idam Punyam
 Yah Pateth Shiva Sannidhau
 Shivaloka Mavaapnoti
 Shivena Saha Modatheh

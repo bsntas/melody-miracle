@@ -26,7 +26,7 @@ Lowest Note: d1 / G# (lower octave)Highest Note: M1 / F (higher octave)* Western
 
 Jaya Ma Jaya Ma Jagadeeshwari Sai Ma
 Jagadeeshwari Maheshwari Sayeeshwari Sai Ma
-Jaya Ma Jaya Ma, Jagadeeshwari Sai Ma 
+Jaya Ma Jaya Ma, Jagadeeshwari Sai Ma
 Jagadeeshwari Maheshwari Sayeeshwari Sai Ma (2)
 
 ## Meaning

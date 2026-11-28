@@ -30,6 +30,8 @@ We start the day with Your Name O Lord Ganesha
 You show us the Divine Light O Lord Ganesha
 Protect us forever more, loving God we adore
 
+Protect us forever more, loving God we adore (3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

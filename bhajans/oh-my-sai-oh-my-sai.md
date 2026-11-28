@@ -28,14 +28,24 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 Oh my Sai, oh my Sai
 Oh my Sai, oh my Sai
 Oh my Sai, oh my Sai, oh my Sai
+
+Hold onto me, never let me go
 Hold onto me, never let me go
 Oh my Sai, oh my Sai, oh my Sai
+
+Oh my Sai, oh my Sai
 Oh my Sai, oh my Sai
 Oh my Sai, oh my Sai, oh my Sai
+
+Oh my Sai, sweet Sathya Sai
 Oh my Sai, sweet Sathya Sai
 Oh my Sai, oh my Sai, oh my Sai
+
+Let me always be devoted to You
 Let me always be devoted to You
 Oh my Sai, oh my Sai, oh my Sai
+
+Oh my Sai, sweet Sathya Sai
 Oh my Sai, sweet Sathya Sai
 Oh my Sai, oh my Sai, oh my Sai
 

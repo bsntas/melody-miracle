@@ -27,10 +27,18 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 Lord, You are here again - do I remember when?
 Did my footsteps follow Yours, was my lamp held high?
 Did You hear my cry of love? Krishna, Krishna, Krishna....
+
+Hold my heart in Yours, as once You did,
 Free my soul to soar, in the light of the Lord, beloved Sathya Sai Avatar.
+
+Lord, You are here again - was I the Gopi then?
 Did tears fall from my eyes, as I heard Your flute divine?
 Did You hear my cry of love? Krishna, Krishna, Krishna....
+
+Bending to Your glance, I weep in ecstacy,
 My heart rings out, as I drink Your cup once more,
+
+Beloved Sathya Sai Avatar (2x)
 
 ## Audio
 

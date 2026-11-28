@@ -28,6 +28,8 @@ Sriman Narayana Narayana Hari Hari
 Sai Narayana Narayana Hari Hari
 Alakha Niranjana Hari Hari
 Asura Nikhandana Hari Hari [ Sriman Narayana ... ]
+
+Narayana Hari Jai Jai Narayana Hari
 Sriman Narayana Narayana Hari Hari
 Sai Narayana Narayana Hari Hari
 

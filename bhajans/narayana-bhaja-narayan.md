@@ -26,10 +26,16 @@ n2 S G2 M1 P N2 SS N1 D2 P M1 G1 R2 S n2 S G1 R2 SIn the Key of C:b C E F G B C 
 
 Narayana Bhaja Narayan Narayana Bhaja Narayan Narayan
 Tan Man Ranjana Bhava Bhaya Bhanjana Asura Nikhandana Narayan [ Narayana Bhaja ... ]
+
+Jab Jab Peeda Padey Bhaktha Par Baar Baar Avatar Kiya
 Paap Mitakar Dheer Dikhakar Manav Ko Uddhar Kiya
 Kunja Vihari Krishna Murari Hey Giridhari Narayan [ Narayana Bhaja ... ]
+
+Mathsya Kurma Varaha Narahari Vaman Ka Avatar Kiya
 Parashuram Aur Rama Krishna Ban Dushton Ko Samhar Kiya
 Hey Avatari Leela Dhari Kunja Vihari Narayan [ Narayana Bhaja ... ]
+
+Bhajan Se Man Ko Sajan Banakar Bhakthi Marg Dikhladiya
 Sai Bhajan Se Bhava Sagar Mey Taaran Bhi Sikhladiya
 Patithodhari Parthi Vihari Hey Giridhari Narayan
 Patithodhari Parthi Vihari Sai Murari Narayan [ Narayana Bhaja ... ]

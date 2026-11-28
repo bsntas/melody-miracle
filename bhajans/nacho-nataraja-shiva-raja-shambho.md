@@ -28,6 +28,8 @@ Nacho Nataraja Nacho Shiva Raja
 Dama Dama Damaru Nachey Shankara
 Nacho Hey Nataraja [ Nacho Nataraja ... ]
 
+Nacho Nataraja Nacho Shiva Raja (3)
+
 ## Meaning
 
 Dance, O Lord Shiva, You are the king of all. Your drum resounds as You dance.

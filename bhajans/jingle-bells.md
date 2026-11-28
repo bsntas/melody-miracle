@@ -33,6 +33,8 @@ Bells On Bobtail Ring
 Making Spirits Bright
 What Fun It Is To Ride And Sing
 A Sleighing Song Tonight!
+
+2. Jingle Bells, Jingle Bells,
 Jingle All The Way.
 Oh! What Fun It Is To Ride
 In A One-horse Open Sleigh.
@@ -40,6 +42,8 @@ Jingle Bells, Jingle Bells,
 Jingle All The Way;
 Oh! What Fun It Is To Ride
 In A One-horse Open Sleigh.
+
+3. A Day Or Two Ago
 I Thought I'd Take A Ride
 And Soon, Miss Fanny Bright
 Was Seated By My Side,
@@ -47,6 +51,8 @@ The Horse Was Lean And Lank
 Misfortune Seemed His Lot
 He Got Into A Drifted Bank
 And Then We Got Upset.
+
+4. Jingle Bells, Jingle Bells,
 Jingle All The Way.
 Oh! What Fun It Is To Ride
 In A One-horse Open Sleigh.

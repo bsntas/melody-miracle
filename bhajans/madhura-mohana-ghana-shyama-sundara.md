@@ -25,9 +25,13 @@ Notes:S G1 M1 P N1 SS N1 D2 P M1 G1 R2 SIn the Key of C:C E♭ F G B♭ C C B♭
 
 Madhura Mohana Ghana Shyama Sundara Sai
 Ananda Pradayi Na Andala Rasivoyi (2)
+
+Neeve Na Mata Pitha Bhrata Ve Sada
 Sakhudavu Guru Daivamu Mari Antha Neeve Ga
 Neede Tanuvu Neede Manasu Antha Neede Ga
 Anuvanuvuna Kanakanamuna Nindi Unna Sadaya Hrudaya (2) [ Madhura Mohana… ]
+
+Ninne Poojinchaleni Ee Karamulelano
 Ninne Dhyaninchaleni Ee Dehamelano
 Kanu Vinduga Ninu Choodani Kannulelano
 Ninne Marichi Ninthalanchani Janmamelano

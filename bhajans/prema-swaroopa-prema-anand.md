@@ -25,16 +25,16 @@ Lowest Note: n1 / B♭ (lower octave)Highest Note: P / G* Western notes are in t
 ## Lyrics
 
 Prema Swaroopa Prema Anand Prema Swaroopa Prema Bhagawan
- Your will is my will, Your will is mine
- Your will is my will, Your will's divine
- My will is Your will, my will is Yours
- My will is Your will, our wills entwine
- Prema Swaroopa Prema Anand Prema Swaroopa Prema Bhagawan
- There's no place to go, there's nothing left to do,
- There's nothing left to see, there's no one left to be
- For Your will is my will, Your will is mine
- Your will is my will, Your will's divine
- Prema Swaroopa Prema Anand Prema Swaroopa Prema Bhagawan
+Your will is my will, Your will is mine
+Your will is my will, Your will's divine
+My will is Your will, my will is Yours
+My will is Your will, our wills entwine
+Prema Swaroopa Prema Anand Prema Swaroopa Prema Bhagawan
+There's no place to go, there's nothing left to do,
+There's nothing left to see, there's no one left to be
+For Your will is my will, Your will is mine
+Your will is my will, Your will's divine
+Prema Swaroopa Prema Anand Prema Swaroopa Prema Bhagawan
 
 ## Audio
 

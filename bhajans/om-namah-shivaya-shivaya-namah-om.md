@@ -27,8 +27,14 @@ S G1 M1 P N1 SS N1 P M1 G1 SIn the Key of C:C E♭ F G B♭ C C B♭ G F E♭ C
 
 Om Namah Shivaya, Shivaya Namah Om (6x)
 Om Sathya Sai, Sai Baba (6x)
+
+Harey Krishna, Harey Krishna, Krishna, Krishna, Harey Harey
 Harey Rama, Harey Rama, Rama Rama, Harey Harey ... (2x)
+
+Om Namah Shivaya, Shivaya Namah Om (4x)
 Om Sathya Sai, Sai Baba (4x)
+
+Harey Krishna, Harey Krishna, Krishna, Krishna, Harey Harey
 Harey Rama, Harey Rama, Rama Rama, Harey Harey ... (4x)
 
 ## Audio

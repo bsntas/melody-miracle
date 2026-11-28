@@ -30,6 +30,8 @@ Miashi wo Agameyou
 Subete wo Sasageyou
 Kami no Mina wo Tataeyou
 Sai no Mina wo (Sathya)
+
+Oh Sai Baba
 Jaya Sai Baba
 Sathya Sai Baba
 Harey Harey

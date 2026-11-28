@@ -25,12 +25,22 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 Praise be to Thee O Lord
 From whom all blessings flow
+
+All blessings are flowing from God alone (3x)
+Praise be to Thee O Lord
+
 Praise be to Thee O Lord
 From whom all blessings flow
+
+All blessings are flowing from God alone (3x)
 PRAISE BE TO THE LORD
+
+Thank You My Lord My God
 Thank You My All My Everything
 Thank You My Lord My God
 My Lord Thank You My God
+
+Thank You My Lord My God
 Thank You My All My Everything
 Thank You My Lord My God
 My Lord Thank You My God

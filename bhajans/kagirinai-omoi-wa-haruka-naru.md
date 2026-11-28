@@ -30,6 +30,8 @@ Inori wo Sasagetsutsu Kiyoraka ni Mawaru
 Warera wo Mamori Terasu Kono Yasashisa yo
 Afure Kuru Takanari wa Anata no Moto e
 
+Sai Ram O Swami (4)
+
 ## Meaning
 
 O Lord Sai, for a long time I have been filled with these endless thoughts of You. They come straight from You. I offer You these pure prayers so that You may protect me and shine Your light of kindness on me.

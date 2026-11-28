@@ -29,6 +29,8 @@ Jaya Ma Jaya Ma Jaya Ma Jagat Janani [ Jaya Durga ... ]
 Tum Hi Durga Lakshmi Saraswati Aur Kaali
 Adi Parashakthi Sai Jagat Janani
 Trishoola Dharini Ma Jagat Janani Sai [ Jaya Ma ... ]
+
+Jaya Ma Jaya Ma Jaya Ma Sai Ma (3)
 Jaya Ma Jaya Ma Jaya Ma Jagat Janani
 
 ## Meaning

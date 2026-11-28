@@ -28,9 +28,13 @@ On paths of joy, Lord Sai leads us home,
 On a lane so familiar, from so long ago.
 Life was simple, sweet and kind,
 Places I have known, from so long ago.
+
+He takes me back, before I was young,
 An age before memory had begun.
 Mountains of truth, streams of peace,
 Places I have known, from so long ago.
+
+(Close)
 Places I have known, from so long ago.
 
 ## Audio

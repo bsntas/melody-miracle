@@ -26,7 +26,7 @@ Lowest Note: d2 / A (lower octave)Highest Note: D2 / A* Western notes are in the
 
 Madhava Murahara Madhura Manohara Giridhara Gopala
 Hey Giridhara Gopala Hey Giridhara Gopala Hey Giridhara Gopala
-Nanda Kumara Navaneetha Chora Brindavana Sanchara
+Nanda Kumara Navaneetha Chora Brindavana Sanchara
 Bhakthoddhara Bala Gopala Giridhara Gopala [ Hey Giridhara Gopala ... ]
 Murali Lola Munijana Pala Radha Hrudaya Vihara
 Navaneetha Chora Nanda Kumara Giridhara Gopala [ Hey Giridhara Gopala ... ]

@@ -23,27 +23,49 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Love Is All
+
+The Lord am I, a part from Sai
 I am at one with my Lord Sai
 I say I do remember You
 You gave me stars, the sun, and moon
+
+We love You Sri Sathya Sai Baba
 Love is all Sathya Sai Baba
+
+You’ve come to say no longer wait
 This is our time, this is our fate
 Our fears removed, our strength renewed
 Our lives our love and peace and truth
+
+We love You Sri Sathya Sai Baba
 Love is all Sathya Sai Baba
+
+You gazed upon our souls, and knew who we always were
 Long ago and now we’re always made from love
 You drew us close to You, You took our hand in Yours
 Gave us all we’ll need forever more
+
+We love You Sri Sathya Sai Baba
 Love is all Sathya Sai Baba (2x)
+
+Christ still will call for all
 The heart spring as the weakest part
 Of our grace lifts us back to You
 Swami make peace us brave and true
+
+When our life ends and this dream is through
 We’ll wear all our smiles for You (3x)
+
+When life ends and this dream is through
 We’ll wear all our smiles for You (2x)
 For You my Lord, for You
+
+You’ve come to say no longer wait
 This is our time, this is our fate
 Our fears removed, our strength renewed
 Our lives our love and peace and truth
+
+We love You Sri Sathya Sai Baba
 Love is all Sathya Sai Baba (2x)
 Love is all
 

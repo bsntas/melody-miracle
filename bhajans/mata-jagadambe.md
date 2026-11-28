@@ -30,6 +30,8 @@ Jai Jai Ambe Jai Jai Ambe Jai Jagadambe
 Jai Jagadambe Jai Jagadambe Jai Jai Ambe
 Terey Charanon Mey Sheesh Namaoon
 Maiya Arathi Teri Utarun
+
+Jai Jai Mata Jagadambe (6)
 Mein Arathi Teri Utarun (2)
 Maiya Arathi Teri Utarun
 Mein Arathi Teri Utarun (2)

@@ -33,6 +33,8 @@ Hrudayeshwari Mata Vishweshwari
 (Mata) Durgati Nashini Jyothirmayi
 Ma Jaya Ma (Jai Jai)
 Jaya Jaya Ma Jaya Ma
+
+Mata Rani Devi Jaya Ma (Jaya Jaya Ma) (4)
 Jai Jai Jai Jai Jai Jai Ma
 
 ## Meaning

@@ -24,10 +24,10 @@ Notes:* showing details for Mohanam / BhoopS R2 G2 P D2 SS D2 P G2 R2 SIn the Ke
 ## Lyrics
 
 Lord Sathya Sai Bhagawan Sathya Sai
- Bless Us, Protect us, Sri Sathya Sai
- Shirdi Sai Parthi Sai Prema Sai Jai Jai
- Puttaparthi Sai Jai Jai Brindavan Sai Jai Jai
- Ram Sai Krishna Sai Yesu Sai Jai Jai
+Bless Us, Protect us, Sri Sathya Sai
+Shirdi Sai Parthi Sai Prema Sai Jai Jai
+Puttaparthi Sai Jai Jai Brindavan Sai Jai Jai
+Ram Sai Krishna Sai Yesu Sai Jai Jai
 
 ## Audio
 

@@ -27,12 +27,18 @@ S R2 M1 P N2 SS N1 D2 N1 P M1 G1 R2 SIn the Key of C:C D F G B C C B♭ A B♭ G
 ## Lyrics
 
 Poojinthamu Mana Sai Nee Jaya Sai Nee Sarveshunee Jagadeeshunee
+
+Chithravathi Teeramu Parama Pavanamu
 Veda Vedanthudaina Sai Mahaatmuni
 Nammina Bhakthula Baadala Maapaga
 Velasiyunde Parthi Sayeeshuni Maheshwaru Nee Parathparu Nee Krupakaru Nee [ Poojinthamu … Jagadeeshunee ]
+
+Maruvamalya Roja Haaramulane Vesi
 Dhoopa Deepamulane Veleginche Swami Ki
 Pancha Bhakshana Naivedyamulane Chesi
 Palinchi Broche Sai Nathu Nee Shirdi Vasu Nee Partheeshu Nee Sathya Swami Nee [ Poojinthamu … Jagadeeshunee ]
+
+Bhaktha Vatsalanee Paadame Gatiyani
 Bhajanalu Chesi Bhakthi Shraddhalato
 Vandanamulu Chesi Varamulane Vedi
 Mangalamulu Padi Jaya Harathi Mangala Harathi Mutyaala Harathi Karpoora Harathi [ Poojinthamu … Jagadeeshunee ]

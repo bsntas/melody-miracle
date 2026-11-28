@@ -28,6 +28,8 @@ My Lord Sai, You are the light of the world
 My beloved Sai, Truth is Your very name
 You have taught me to love, Love is the key to every heart
 You have opened up the windows of my soul
+
+My Lord Sai, help me to do Thy will
 My beloved Sai, Peace is Your very name
 You have taught me to love, Love is the key to every heart
 Love has opened up the windows of my soul

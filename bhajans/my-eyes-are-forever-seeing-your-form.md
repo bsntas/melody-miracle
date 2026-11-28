@@ -24,14 +24,14 @@ Notes:* showing details for NatabhairaviThis Raga is similar to the Asavari thaa
 ## Lyrics
 
 My eyes are forever seeing Your form,
- My ears are forever hearing Sai Ram
- My voice is forever singing Your glory, My Lord
- Sai Natha Sai Natha, Jaya Jaya Hey Sai Natha
- Make my body Your Puttaparthi
- Make my heart Your Prashanthi
- Fill my life with Love, Peace and Joy
- And the music of Your glory Sai Natha,
- Sai Natha Sai Natha, Jaya Jaya Hey Sai Natha
+My ears are forever hearing Sai Ram
+My voice is forever singing Your glory, My Lord
+Sai Natha Sai Natha, Jaya Jaya Hey Sai Natha
+Make my body Your Puttaparthi
+Make my heart Your Prashanthi
+Fill my life with Love, Peace and Joy
+And the music of Your glory Sai Natha,
+Sai Natha Sai Natha, Jaya Jaya Hey Sai Natha
 
 ## Audio
 

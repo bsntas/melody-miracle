@@ -25,9 +25,9 @@ Lowest Note: p / G (lower octave)Highest Note: P / G* Western notes are in the K
 
 ## Lyrics
 
-Radha Radha Gokula Bala 
-Nanda Nanda Mukunda Gopala 
-Navaneetha Chora Shyama Gopala 
+Radha Radha Gokula Bala
+Nanda Nanda Mukunda Gopala
+Navaneetha Chora Shyama Gopala
 Radha Madhava Raasa Vilola
 
 ## Meaning
