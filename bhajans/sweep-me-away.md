@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -30,7 +31,7 @@ You sweep me away with Your love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweep-me-away.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweep-me-away.mp3)
 
 ---
 

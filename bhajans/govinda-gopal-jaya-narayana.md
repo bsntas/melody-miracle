@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_475_GOVINDA_GOPAL_JAYA_NARAYAN_GOPAL.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -33,7 +34,8 @@ Victory to You, Oh Narayana, Gopal and Govinda, You are the slayer of demon Ma
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopal-jaya-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopal-jaya-narayana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_475_GOVINDA_GOPAL_JAYA_NARAYAN_GOPAL.mp3)
 
 ---
 

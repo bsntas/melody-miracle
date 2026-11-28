@@ -45,7 +45,7 @@ O Sai, the Lord of Shirdi and Parthi, we pray that from darkness, lead us to the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thamaso-ma-jyotir-gamaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thamaso-ma-jyotir-gamaya.mp3)
 
 ---
 

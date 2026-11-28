@@ -37,7 +37,7 @@ Victory to the auspicious conferring Lord Ganesha, the son of Mother Parvathi. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parvathi-tanaya-siddhi-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parvathi-tanaya-siddhi-vinayaka.mp3)
 
 ---
 

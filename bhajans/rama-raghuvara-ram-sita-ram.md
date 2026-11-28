@@ -36,7 +36,7 @@ Chant the name of Lord Rama, the consort of Mother Sita and the son of King Da
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-raghuvara-ram-sita-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-raghuvara-ram-sita-ram.mp3)
 
 ---
 

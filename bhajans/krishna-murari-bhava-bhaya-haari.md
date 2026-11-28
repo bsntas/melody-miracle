@@ -34,7 +34,7 @@ The slayer of demon Murari also destroys the fear of the cycle of birth and deat
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-murari-bhava-bhaya-haari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-murari-bhava-bhaya-haari.mp3)
 
 ---
 

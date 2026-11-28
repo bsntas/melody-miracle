@@ -37,7 +37,7 @@ Glory to Lord Gopala (Krishna), the beautiful one who enjoys music, the liberato
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gaana-lola-gopala-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gaana-lola-gopala-0.mp3)
 
 ---
 

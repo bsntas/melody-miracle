@@ -31,7 +31,7 @@ Victory to Lord Rama, Lakshmana, Sita. Victory to Hanuman (monkey devotee of Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-lakshmana-janaki-jai-bolo-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-lakshmana-janaki-jai-bolo-0.mp3)
 
 ---
 

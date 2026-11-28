@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Let us pay our foremost obeisance and surrender to the Lord of the divine force
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-sharana-gananayaka-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-sharana-gananayaka-om.mp3)
 
 ---
 

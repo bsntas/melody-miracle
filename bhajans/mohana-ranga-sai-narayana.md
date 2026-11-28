@@ -38,7 +38,7 @@ O Lord Sai Narayana, enamored by your divine charms, we sing the praise of Your 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-ranga-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-ranga-sai-narayana.mp3)
 
 ---
 

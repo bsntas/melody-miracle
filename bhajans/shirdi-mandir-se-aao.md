@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Abhayankara Sai |
 
 ### Raga Notes
 
@@ -44,7 +45,7 @@ O Lord Sai, come from the temple at Shirdi. O Lord Sathya Sai, please come from 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-mandir-se-aao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-mandir-se-aao.mp3)
 
 ---
 

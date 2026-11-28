@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Values |
 
 ## Lyrics
 
@@ -19,7 +20,7 @@ And I'm very happy with that.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-way-i-am.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-way-i-am.mp3)
 
 ---
 

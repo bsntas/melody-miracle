@@ -38,7 +38,7 @@ O Lord Sai, the dweller of Shirdi, grace us with Your divine presence. You are t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhila-jagat-ke-daata-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhila-jagat-ke-daata-sai.mp3)
 
 ---
 

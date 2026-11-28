@@ -36,7 +36,7 @@ Glory to Lord Govinda (Narayana) who resides in the seven hills and has now in
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sankata-harana-govinda-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sankata-harana-govinda-0.mp3)
 
 ---
 

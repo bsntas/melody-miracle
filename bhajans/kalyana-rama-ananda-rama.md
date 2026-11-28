@@ -34,7 +34,7 @@ Salutations to Lord Rama, who confers bliss and causes the welfare of the world.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kalyana-rama-ananda-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kalyana-rama-ananda-rama.mp3)
 
 ---
 

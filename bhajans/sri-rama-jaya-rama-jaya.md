@@ -35,7 +35,8 @@ Victory to Lord Rama, the most beautiful one whose name is auspicious, the one 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-jaya-rama-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-jaya-rama-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-jaya-rama-jaya_1.mp3)
 
 ---
 

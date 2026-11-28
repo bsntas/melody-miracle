@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Welcome Sai Narayana grant us Your Darshan. You are Brahma, Vishnu, Shiva, Rama,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-sai-narayana-darshan-deejo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-sai-narayana-darshan-deejo.mp3)
 
 ---
 

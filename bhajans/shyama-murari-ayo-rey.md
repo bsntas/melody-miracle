@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_438_SHYAM_MURARI_AAYO_RE.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Sing in ecstasy of the arrival of Lord Krishna who is none other than Lord Sai. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-murari-ayo-rey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-murari-ayo-rey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_438_SHYAM_MURARI_AAYO_RE.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ The beautiful Lord Rama is Supreme among the Raghu dynasty. He is worshipped by 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-sundara-rama-raghuvara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-sundara-rama-raghuvara.mp3)
 
 ---
 

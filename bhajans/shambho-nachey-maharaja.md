@@ -36,7 +36,7 @@ Sing the glory of Lord Shiva (Shambho) who is worshipped in the form of the cosm
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-nachey-maharaja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-nachey-maharaja.mp3)
 
 ---
 

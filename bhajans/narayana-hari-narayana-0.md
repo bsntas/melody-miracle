@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 4.5 Pancham / F# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Glory to Lord Narayana, the abode of all beings. O Lord, You are Lord Hari, and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_378_NARAYANA_HARI_NARAYANA.mp3)
 
 ---
 

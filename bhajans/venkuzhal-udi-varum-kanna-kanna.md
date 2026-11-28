@@ -38,7 +38,7 @@ O Sai, You are Lord Krishna playing the flute. Your divine play happens through 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/venkuzhal-udi-varum-kanna-kanna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/venkuzhal-udi-varum-kanna-kanna.mp3)
 
 ---
 

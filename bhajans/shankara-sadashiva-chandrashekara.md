@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 4.5 Pancham / F# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Obeisance to Lord Sai who is none other than Lord Shankara (Shiva), the one who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-chandrashekara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-chandrashekara.mp3)
 
 ---
 

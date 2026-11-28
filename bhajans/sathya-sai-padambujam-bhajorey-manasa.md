@@ -38,7 +38,8 @@ Meditate incessantly upon the most holy and auspicious Lotus Feet of Lord Sathya
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-padambujam-bhajorey-manasa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-padambujam-bhajorey-manasa.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_168_SATHYA_SAI_PADAMBUJAM.mp3)
 
 ---
 

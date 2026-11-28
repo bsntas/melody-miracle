@@ -34,7 +34,7 @@ Oh Mind! Sing blissfully the divine attributes of Hari, Rama, Krishna and Sairam
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-guna-gaana-karo-mana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-guna-gaana-karo-mana.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -33,7 +34,9 @@ Shirdi Baba, Sathya Baba, Prema Baba Jai Jai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-my-form.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-my-form.mp3)
+- **Karaoke** (Reference Track 3 Pancham / E - Unison): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Love%20Is%20My%20Form%20-%20Unison.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (unison)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Love%20Is%20My%20Form%20-%20Unison%20-%203P%20Emaj.mp3)
 
 ---
 

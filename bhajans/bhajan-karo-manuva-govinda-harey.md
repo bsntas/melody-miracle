@@ -34,7 +34,7 @@ O mind, worship Lord Krishna, known by many names - Govinda, Murari, Gopala, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajan-karo-manuva-govinda-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajan-karo-manuva-govinda-harey.mp3)
 
 ---
 

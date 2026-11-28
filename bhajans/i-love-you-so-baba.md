@@ -37,7 +37,7 @@ Sathya Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-love-you-so-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-love-you-so-baba.mp3)
 
 ---
 

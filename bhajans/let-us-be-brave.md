@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Values |
 
 ## Lyrics
 
@@ -19,7 +20,7 @@ Go from darkness into light.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-us-be-brave.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-us-be-brave.mp3)
 
 ---
 

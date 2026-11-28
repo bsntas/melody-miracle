@@ -33,7 +33,7 @@ Chant the name of Lord Panduranga Vittala, who is none other than Lord Krishna. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyam-panduranga-vittaley-rakhumayi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyam-panduranga-vittaley-rakhumayi.mp3)
 
 ---
 

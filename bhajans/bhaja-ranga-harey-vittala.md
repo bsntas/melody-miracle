@@ -33,7 +33,7 @@ Chant the Holy name of Lord Vittala. Glory to Lord Panduranga, the consort of Ra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-ranga-harey-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-ranga-harey-vittala.mp3)
 
 ---
 

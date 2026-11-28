@@ -39,7 +39,7 @@ Know that God is there by your side.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sunshine.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sunshine.mp3)
 
 ---
 

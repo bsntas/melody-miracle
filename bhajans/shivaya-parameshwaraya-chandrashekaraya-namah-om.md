@@ -34,7 +34,16 @@ Chant the name of Lord Shiva, the supreme one, who dispels the fear of the mater
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shivaya-parameshwaraya-chandrashekaraya-namah-om_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shivaya-parameshwaraya-chandrashekaraya-namah-om.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shivaya-parameshwaraya-chandrashekaraya-namah-om_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shivaya-parameshwaraya-chandrashekaraya-namah-om_2.mp3)
+- **Karaoke** (Reference Track 4.5 Pancham / F#): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Gents_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Gents_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Gents_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Ladies_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Ladies_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shivaya_Parameshwaraya_Ladies_Karaoke_B_Pancham.mp3)
 
 ---
 

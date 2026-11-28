@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Multi-lingual, Prayers, Suprabhatham |
 
 ### Raga Notes
 
@@ -61,7 +62,7 @@ Oh Auspicious Sri Sathya Sai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/suprabhatham-english.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/suprabhatham-english.mp3)
 
 ---
 

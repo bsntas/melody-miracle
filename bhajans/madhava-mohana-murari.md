@@ -36,7 +36,7 @@ Glory to the sweet and enchanting Lord Krishna, the slayer of demon Madhu an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-murari.mp3)
 
 ---
 

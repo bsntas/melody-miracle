@@ -36,7 +36,7 @@ O Lord Krishna, child of Nanda, You are the child of Yadavas, the cowherd cla
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalal-nandalal-nandalal-yadu-nandalal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalal-nandalal-nandalal-yadu-nandalal.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -43,7 +44,8 @@ How much we love You is something that You alone know, dear Lord Sai. You Sai, a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hum-ko-tum-se-pyaar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hum-ko-tum-se-pyaar.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hum-ko-tum-se-pyaar_1.mp3)
 
 ---
 

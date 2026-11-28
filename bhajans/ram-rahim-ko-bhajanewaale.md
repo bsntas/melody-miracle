@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ O Lord Sai Baba, for the devotees of Lord Rama (Hindus) and of Rahim (Islam), 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-rahim-ko-bhajanewaale.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-rahim-ko-bhajanewaale.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-rahim-ko-bhajanewaale_1.mp3)
 
 ---
 

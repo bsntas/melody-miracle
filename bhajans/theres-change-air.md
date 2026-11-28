@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Heart Voice |
 
 ### Raga Notes
 
@@ -44,7 +45,8 @@ Let's open our hearts and go out and do it [ Sathya Sai, to You we pray ... we'l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air_1.mp3)
 
 ---
 

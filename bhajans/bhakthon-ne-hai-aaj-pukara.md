@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -39,7 +40,9 @@ O Lord Baba, I personally appeal and all devotees also appeal to You earnestly.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhakthon-ne-hai-aaj-pukara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhakthon-ne-hai-aaj-pukara.mp3)
+- **Karaoke** (Reference Track 4 Pancham / F): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Bhakto%20Ne%20Hai%20Aaj%20Pukara.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Bhakto%20Ne%20Hai%20Aaj%20Pukara%204P%20Fmaj.mp3)
 
 ---
 

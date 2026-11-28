@@ -36,7 +36,8 @@ O Mind, chant the name of Lord Krishna, the beautiful, dark-complexioned Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-shyama-sundara-giridhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-shyama-sundara-giridhari.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_511_BHAJAMANA_SHYAM_SUNDARA_GIRIDHARI.mp3)
 
 ---
 

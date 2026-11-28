@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium |
 | **Level** | Simple |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -45,7 +46,7 @@ Peace be still I am fulfilled (3x) Om Peace Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-be-still.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-be-still.mp3)
 
 ---
 

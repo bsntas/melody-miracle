@@ -34,7 +34,7 @@ Just a cry from my heart, a prayer upon my soul, dearest Lord never ever leave m
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one.mp3)
 
 ---
 

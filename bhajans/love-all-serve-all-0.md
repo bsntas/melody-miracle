@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | O Holy Presence |
 
 ### Raga Notes
 
@@ -49,7 +50,7 @@ Be willing to see The One in your fellowman
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-0.mp3)
 
 ---
 

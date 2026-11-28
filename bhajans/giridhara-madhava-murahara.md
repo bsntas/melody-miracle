@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Abhayankara Sai |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Victory to Lord Krishna, the one who lifted the Govardhana hill, the one who van
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-madhava-murahara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-madhava-murahara.mp3)
 
 ---
 

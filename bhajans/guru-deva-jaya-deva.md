@@ -35,7 +35,7 @@ Victory to our Divine Preceptor and God of Gods, Lord Sai. We surrender to Thee
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-jaya-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-jaya-deva.mp3)
 
 ---
 

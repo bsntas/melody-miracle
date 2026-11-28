@@ -36,7 +36,7 @@ Worshipping the Lotus Feet of Lord Ram endows one with happiness. Reciting only 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-charan-sukha-dayi-bhajorey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-charan-sukha-dayi-bhajorey.mp3)
 
 ---
 

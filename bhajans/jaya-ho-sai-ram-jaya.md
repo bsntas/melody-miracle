@@ -35,7 +35,7 @@ Glory to Sai Ram who is an ocean of compassion and Lord of Parthi. He had incarn
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-sai-ram-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-sai-ram-jaya.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Chant the name of Gopala, who lifted the Govardhana mountain, who is the boy of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-giridhara-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-giridhara-bala.mp3)
 
 ---
 

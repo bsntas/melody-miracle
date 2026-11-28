@@ -36,7 +36,7 @@ Salutation to Lord Narayana who is the beloved of Goddess Lakshmi. Salutations t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-lakshmi-ramana-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-lakshmi-ramana-narayana.mp3)
 
 ---
 

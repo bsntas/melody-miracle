@@ -35,7 +35,7 @@ Chant the divine names of Govinda and Madhava (names of Lord Krishna) who prot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-madhava-gopala-keshava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-madhava-gopala-keshava.mp3)
 
 ---
 

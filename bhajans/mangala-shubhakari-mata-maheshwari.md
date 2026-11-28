@@ -36,7 +36,8 @@ I propitiate Mother Maheshwari (Parvathi), who bestows auspiciousness, Mother B
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-shubhakari-mata-maheshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-shubhakari-mata-maheshwari.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_178_MANGALA_SHUBAKARI_MATA_MAHESHWARI.mp3)
 
 ---
 

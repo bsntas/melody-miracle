@@ -46,7 +46,7 @@ Let us merge into Thee (2X)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-you-are-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-you-are-heart.mp3)
 
 ---
 

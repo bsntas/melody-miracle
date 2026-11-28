@@ -35,7 +35,7 @@ Oh Lord Sai, You are the kinsman of the destitute and the afflicted. Oh Lord of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhava-sri-sai-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhava-sri-sai-deva.mp3)
 
 ---
 

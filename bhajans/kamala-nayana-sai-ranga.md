@@ -36,7 +36,7 @@ O Lord Sai with lotus-petal shaped eyes, You are the bestower of happiness and a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-sai-ranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-sai-ranga.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Sing the glory of Raghava, the scion of Raghu dynasty, Lord Rama. He is also the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-raghu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-raghu-nandana.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / ATutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_464_LAMBODARA_HE_VINAYAKA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Glory be to the Lord of the Ganas, Lord Ganesha, the remover of obstacles, son o
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_464_LAMBODARA_HE_VINAYAKA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_464_LAMBODARA_HE_VINAYAKA.mp3)
 
 ---
 

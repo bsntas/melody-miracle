@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Chant the name of Lord Krishna, Govinda (foster of cow herd) who gives liberatio
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_436_GOVINDA_GOVINDA.mp3)
 
 ---
 

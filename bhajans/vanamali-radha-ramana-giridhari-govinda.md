@@ -38,7 +38,8 @@ Chant the name of Lord Govinda (Krishna) who wears a garland of forest flowe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vanamali-radha-ramana-giridhari-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vanamali-radha-ramana-giridhari-govinda.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_309_VANAMALI_RADHA_RAMANA.mp3)
 
 ---
 

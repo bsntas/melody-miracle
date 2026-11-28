@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium |
 | **Level** | Simple |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Po-mai-ka-i na mea a-pau
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ekolu-mea-nui-three-important-things.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ekolu-mea-nui-three-important-things.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ekolu-mea-nui-three-important-things_1.mp3)
 
 ---
 

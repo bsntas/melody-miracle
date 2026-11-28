@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Folk, Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Chant the name of Lord Krishna, the one with flute with His consort Radha, the 
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_388_KRISHNA_KRISHNA_RADHA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_388_KRISHNA_KRISHNA_RADHA.mp3)
 
 ---
 

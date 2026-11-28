@@ -36,7 +36,7 @@ Chant the name of Lord Shiva, the one who is synonymous with the primordial and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-om-namah-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-om-namah-om.mp3)
 
 ---
 

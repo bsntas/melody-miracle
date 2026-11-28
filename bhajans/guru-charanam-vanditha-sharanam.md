@@ -37,7 +37,7 @@ Let us worship and surrender at the Lotus feet of our Guru Sai. Lord Sai grants 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-charanam-vanditha-sharanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-charanam-vanditha-sharanam.mp3)
 
 ---
 

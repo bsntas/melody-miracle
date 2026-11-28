@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Reveal Yourself |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Lord Sai has freed me, I am one.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-heart-blazing-sun.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-heart-blazing-sun.mp3)
 
 ---
 

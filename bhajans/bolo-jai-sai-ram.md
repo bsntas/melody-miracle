@@ -38,7 +38,8 @@ Chant victory to Lord Sai Rama whose form is Truth and who is the dweller of Tem
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-jai-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-jai-sai-ram.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_317_BOLO_JAI_SAI_RAM.mp3)
 
 ---
 

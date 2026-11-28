@@ -34,7 +34,7 @@ Let us chant the divine names of Shiva or Shambho who is the consort of Uma, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-bhola-natha-uma-pathey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-bhola-natha-uma-pathey.mp3)
 
 ---
 

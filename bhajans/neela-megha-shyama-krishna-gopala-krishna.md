@@ -36,7 +36,7 @@ Chant the name of the dark-hued Lord Krishna, protector of cows and the beloved 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neela-megha-shyama-krishna-gopala-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neela-megha-shyama-krishna-gopala-krishna.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Ageless One |
 
 ### Raga Notes
 
@@ -40,7 +41,7 @@ Selfless servant, you’re the Lord’s true friend (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bodhisattva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bodhisattva.mp3)
 
 ---
 

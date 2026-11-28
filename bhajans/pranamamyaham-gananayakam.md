@@ -36,7 +36,7 @@ We offer ourselves at the Lotus Feet of Lord Ganesha. Ganesha is the son of Moth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranamamyaham-gananayakam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranamamyaham-gananayakam.mp3)
 
 ---
 

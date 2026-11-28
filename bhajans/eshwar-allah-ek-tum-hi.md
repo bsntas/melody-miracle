@@ -37,7 +37,8 @@ Eshwara (refers to God in Hinduism) and Allah (God in Islam) are both one and th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwar-allah-ek-tum-hi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwar-allah-ek-tum-hi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwar-allah-ek-tum-hi_1.mp3)
 
 ---
 

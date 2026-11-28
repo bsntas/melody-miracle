@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Madhyam / F# |
 | **Ladies Pitch** | 5.5 Madhyam / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_431_NACHE_TRIBHANG_KRISHNA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Glory to Lord Krishna who dances in the pose of tribhanga (three bends). Let t
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_431_NACHE_TRIBHANG_KRISHNA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_431_NACHE_TRIBHANG_KRISHNA.mp3)
 
 ---
 

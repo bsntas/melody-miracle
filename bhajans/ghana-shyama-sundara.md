@@ -38,7 +38,7 @@ O beautiful Lord Krishna holding the flute and of blue color, You only are my 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-shyama-sundara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-shyama-sundara.mp3)
 
 ---
 

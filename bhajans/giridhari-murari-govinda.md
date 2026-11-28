@@ -34,7 +34,7 @@ Chant the name of Giridhari Govinda who is the destroyer of the demon 'Mura' cha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-murari-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-murari-govinda.mp3)
 
 ---
 

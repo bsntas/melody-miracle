@@ -33,7 +33,7 @@ He is All names and All forms Almighty One
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chant-name-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chant-name-god.mp3)
 
 ---
 

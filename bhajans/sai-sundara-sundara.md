@@ -35,7 +35,9 @@ This song praises Lord Sai as the most beautiful in the world, the one who is n
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-sundara-sundara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-sundara-sundara.mp3)
+- **Karaoke** (Reference Track 6 Pancham / A): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sai%20Sundara%20Sundara.mp3)
+- **Karaoke** (Ladies Pitch 6 Pancham / A (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sai%20Sundara%20Sundara%206P%20Amaj.mp3)
 
 ---
 

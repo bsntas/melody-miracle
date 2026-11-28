@@ -34,7 +34,7 @@ Victory to Lord Sai who is verily Lord Shyam (Krishna). O Lord, You are Lord Ram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-radhey-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-radhey-shyam.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Victory to Thee, O Mother Sai, You are Bliss personified. Bless us all dear Moth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-anandamayi-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-anandamayi-janani.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Places I have known, from so long ago.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paths-joy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paths-joy.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Oh Krishna! You are the cowherd boy, the one who grants liberation. You are the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-mukunda-hari-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-mukunda-hari-gopala.mp3)
 
 ---
 

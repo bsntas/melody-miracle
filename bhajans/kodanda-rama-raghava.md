@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Victory to Lord Rama, who was born in Raghu dynasty and who held the great Kodan
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_485_KODANDA_RAMA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_485_KODANDA_RAMA.mp3)
 
 ---
 

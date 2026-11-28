@@ -37,7 +37,7 @@ O Lord Sai, the Divine Preceptor who is the verily the Trinity - Brahma, Vi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-brahma-guru-vishnu-guru-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-brahma-guru-vishnu-guru-0.mp3)
 
 ---
 

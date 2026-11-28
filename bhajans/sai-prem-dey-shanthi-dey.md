@@ -38,7 +38,7 @@ O Lord Sai, please grant us peace, bliss and love. O Lord, You are an ocean of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-prem-dey-shanthi-dey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-prem-dey-shanthi-dey.mp3)
 
 ---
 

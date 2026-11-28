@@ -35,7 +35,7 @@ Victory and salutations to the auspiciousness Mother Sai, who is the destroyer o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-bhavani-sai-bhavani-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-bhavani-sai-bhavani-sai.mp3)
 
 ---
 

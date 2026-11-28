@@ -35,7 +35,8 @@ O mind pray to Govinda (Krishna), the protector of cows. O mind, when the time
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindam-bhaja-mooda-mathey-bhaja_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindam-bhaja-mooda-mathey-bhaja.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindam-bhaja-mooda-mathey-bhaja_1.mp3)
 
 ---
 

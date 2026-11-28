@@ -34,7 +34,7 @@ Victory to Lord Sai, who is verily Lord Krishna incarnated again on Earth, who i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sayeesha-jaya-sayeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sayeesha-jaya-sayeesha.mp3)
 
 ---
 

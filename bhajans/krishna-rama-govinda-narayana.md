@@ -35,7 +35,7 @@ Glory to Lord Narayana, the one who resides in the heart of Nara (man) who is 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-rama-govinda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-rama-govinda-narayana.mp3)
 
 ---
 

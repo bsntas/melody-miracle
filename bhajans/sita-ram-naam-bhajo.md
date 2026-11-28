@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Madhyam / B Flat |
 | **Ladies Pitch** | 1 Madhyam / FTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_395_SITARAM_NAM_BHAJO.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -33,7 +34,7 @@ Sing the Name and Glory of Lord Rama (Sita Ram), Lord Krishna (Radhey Shyam) and
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_395_SITARAM_NAM_BHAJO.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_395_SITARAM_NAM_BHAJO.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ God, let me see all that’s divine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-me-be-one-all-beings.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-me-be-one-all-beings.mp3)
 
 ---
 

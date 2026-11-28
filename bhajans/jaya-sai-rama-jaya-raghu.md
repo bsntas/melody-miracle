@@ -35,7 +35,8 @@ Sing the glory of Lord Sai and the scion of Raghu Clan, Lord Rama. Sai Rama is 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-rama-jaya-raghu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-rama-jaya-raghu.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_185_JAI_SAIRAMA_JAI_RAGHURAMA.mp3)
 
 ---
 

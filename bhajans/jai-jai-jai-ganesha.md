@@ -32,7 +32,7 @@ La Liberacion Oh Ganesha En La Era Sai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-ganesha.mp3)
 
 ---
 

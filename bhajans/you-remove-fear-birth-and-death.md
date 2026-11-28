@@ -32,7 +32,7 @@ You Are Lord Krishna Lord Sai [ Victory to Krishna... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-remove-fear-birth-and-death.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-remove-fear-birth-and-death.mp3)
 
 ---
 

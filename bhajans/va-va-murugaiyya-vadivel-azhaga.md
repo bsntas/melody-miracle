@@ -36,7 +36,7 @@ Come O beautiful Lord Muruga, protect us, Lord Karthikeya, the youthful son of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/va-va-murugaiyya-vadivel-azhaga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/va-va-murugaiyya-vadivel-azhaga.mp3)
 
 ---
 

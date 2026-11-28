@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ We are one, Sai Baba, Sai Baba we are one (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-one.mp3)
 
 ---
 

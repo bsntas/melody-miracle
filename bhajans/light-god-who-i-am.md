@@ -11,6 +11,7 @@
 | **Raga** | Major (Shankarabharanam / Bilawal) |
 | **Tempo** | Slow |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -31,7 +32,7 @@ The Light of God is who I Am…(repeat)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/light-god-who-i-am.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/light-god-who-i-am.mp3)
 
 ---
 

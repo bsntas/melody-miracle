@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Living Love |
 
 ### Raga Notes
 
@@ -58,7 +59,7 @@ I’m BEIN’ a channel for The Love of God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bein’-channel-love-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bein’-channel-love-god.mp3)
 
 ---
 

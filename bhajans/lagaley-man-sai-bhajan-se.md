@@ -38,7 +38,7 @@ Chant the name of Lord Sai Ram, who is the real friend and kin, who will always 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lagaley-man-sai-bhajan-se.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lagaley-man-sai-bhajan-se.mp3)
 
 ---
 

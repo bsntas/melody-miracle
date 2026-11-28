@@ -34,7 +34,7 @@ Pray to Lord Krishna (Ranga) , the beautiful cowherd boy with dark blue complexi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyama-gopala-radhika-jeevana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyama-gopala-radhika-jeevana.mp3)
 
 ---
 

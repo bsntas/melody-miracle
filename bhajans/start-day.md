@@ -33,7 +33,7 @@ That is the way to God (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/start-day.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/start-day.mp3)
 
 ---
 

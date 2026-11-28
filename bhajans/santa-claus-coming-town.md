@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Madhyam / D |
 | **Ladies Pitch** | 3 Madhyam / A |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -46,7 +47,7 @@ Santa Claus is coming to town (END HIGH)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/santa-claus-coming-town.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/santa-claus-coming-town.mp3)
 
 ---
 

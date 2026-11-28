@@ -29,7 +29,7 @@ Sathya Sai, Sathya Sai, Sathya Sai, whoa Sathya Sai (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jesus-christ-jesus-christ.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jesus-christ-jesus-christ.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ God is Love; Love is God. Lord Sai is the indweller of the heart and is the sus
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-eshwar-hai-eshwar-prem.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-eshwar-hai-eshwar-prem.mp3)
 
 ---
 

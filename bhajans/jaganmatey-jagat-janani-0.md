@@ -36,7 +36,7 @@ Victory to the Divine Mother Shankari (Parvathi), the consort of Shiva, who prot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaganmatey-jagat-janani-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaganmatey-jagat-janani-0.mp3)
 
 ---
 

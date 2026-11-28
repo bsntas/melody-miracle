@@ -36,7 +36,9 @@ Chant the name 'Om Shakthi Om' repeatedly, which extols the Divine Mother as Ma
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadani-suguna-manohari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadani-suguna-manohari.mp3)
+- **Karaoke** (Reference Track 4 Pancham / F): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sundara%20Vadani%20Suguna%20Manohari.mp3)
+- **Karaoke** (Ladies Pitch 4 Pancham / F (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sundara%20Vadani%20-%20Karaoke%20-%204P%20Fmaj.mp3)
 
 ---
 

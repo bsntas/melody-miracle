@@ -34,7 +34,7 @@ Sing the glory of the Lord Vittala, also known as Panduranga, the Lord of Pandha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vittala-bhajo-sai-vittala-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vittala-bhajo-sai-vittala-bhajo.mp3)
 
 ---
 

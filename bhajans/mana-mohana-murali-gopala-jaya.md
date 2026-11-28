@@ -33,7 +33,7 @@ Gopala with the flute in His hands has a bewitching form, which lures the mind, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-murali-gopala-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-murali-gopala-jaya.mp3)
 
 ---
 

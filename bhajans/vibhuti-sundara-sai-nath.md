@@ -34,7 +34,7 @@ Chant the name of Lord Sathya Sai who is none other than Lord Shiva who is cove
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sundara-sai-nath.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sundara-sai-nath.mp3)
 
 ---
 

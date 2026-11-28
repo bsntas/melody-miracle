@@ -37,7 +37,7 @@ Victory to Lord Ganesha, the lord of Ganas who is ever auspicious, always engage
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganesh-jai-ganesh-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganesh-jai-ganesh-jai.mp3)
 
 ---
 

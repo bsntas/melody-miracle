@@ -36,7 +36,7 @@ The star is shining so bright
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/star-shining-so-bright.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/star-shining-so-bright.mp3)
 
 ---
 

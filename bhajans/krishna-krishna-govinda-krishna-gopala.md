@@ -35,7 +35,7 @@ Glory to Lord Krishna, the son of Nanda and the one who is dear to His devotee
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-govinda-krishna-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-govinda-krishna-gopala.mp3)
 
 ---
 

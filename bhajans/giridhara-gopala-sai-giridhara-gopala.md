@@ -35,7 +35,7 @@ O Lord Sai Gopala, the lifter of the Govardhana mountain, the Lord of Meera, You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-sai-giridhara-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-sai-giridhara-gopala.mp3)
 
 ---
 

@@ -16,7 +16,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=20261121.3">
+  <link rel="stylesheet" href="css/style.css?v=20261128.1">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD52K2S0BB"></script>
   <script>
@@ -930,8 +930,10 @@
         <select id="filter-sung" hidden></select>
         <select id="filter-tempo" hidden><option value=""></option></select>
         <select id="filter-level" hidden><option value=""></option></select>
+        <input type="hidden" id="filter-golden" value="">
+        <select id="filter-type" hidden><option value=""></option></select>
 
-        <!-- Show: My Favourites / Sung by Me / All Sung toggles -->
+        <!-- Show: My Favourites / Sung by Me / All Sung / Swami's Voice toggles -->
         <div class="fmodal-section" id="fmodal-section-show">
           <div class="fmodal-label">Show</div>
           <div class="fmodal-toggle-row" id="fmodal-toggle-row"></div>
@@ -959,6 +961,12 @@
           <select class="fmodal-select" id="filter-language">
             <option value="">Any Language</option>
           </select>
+        </div>
+
+        <!-- Type chip buttons: bhajans / stotrams / prayers & mantras … (added by JS) -->
+        <div class="fmodal-section">
+          <div class="fmodal-label">Type</div>
+          <div class="fmodal-chip-group" id="fmodal-type-chips"></div>
         </div>
 
         <!-- Tempo chip buttons (options added by JS) -->
@@ -1119,7 +1127,7 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=20261121.4"></script>
+  <script type="module" src="js/app.js?v=20261128.1"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let _swReloading = false;

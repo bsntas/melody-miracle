@@ -41,7 +41,7 @@ Grant Your Divine Darshan, O the most beautiful Lord Krishna of Brija (Brindavan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darashana-do-more-shyam-sundarawa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darashana-do-more-shyam-sundarawa.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ We offer our obeisance to You, Mother Durga (Sister of Vishnu), Jagad Ambe (the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranamami-sri-durge-sai-narayani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranamami-sri-durge-sai-narayani.mp3)
 
 ---
 

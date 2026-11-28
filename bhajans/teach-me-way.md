@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Lead me to eternal freedom (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/teach-me-way.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/teach-me-way.mp3)
 
 ---
 

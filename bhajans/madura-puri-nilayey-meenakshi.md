@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_419_MADURAIPURI_NILAYE_MEENAKSHI.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Goddess Meenakshi has Her Abode in Madurai while Kamakshi has Her Abode in Kanch
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_419_MADURAIPURI_NILAYE_MEENAKSHI.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_419_MADURAIPURI_NILAYE_MEENAKSHI.mp3)
 
 ---
 

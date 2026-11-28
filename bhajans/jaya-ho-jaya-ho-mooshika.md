@@ -34,7 +34,7 @@ Victory to the son of Shiva and Parvathi who moves on a mouse and the one who is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-mooshika.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-mooshika.mp3)
 
 ---
 

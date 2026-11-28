@@ -34,7 +34,7 @@ Sing the praises of Lord Krishna who is also known as Govinda and Gopala, who is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ghana-shyam-sai-ghana-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ghana-shyam-sai-ghana-shyam.mp3)
 
 ---
 

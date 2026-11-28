@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,9 @@ O Lord Sai, You incarnate through different ages as Rama, Krishna and as Sai Ba
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yuga-yuga-ke-avatara-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yuga-yuga-ke-avatara-sai.mp3)
+- **Karaoke** (Reference Track 3 Pancham / E): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Yuga%20Yuga%20Ke%20Avatara.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Yuga%20Yuga%20Ke%20Avatara%203P%20Emin.mp3)
 
 ---
 

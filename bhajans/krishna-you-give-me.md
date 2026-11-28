@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -33,7 +34,7 @@ Understanding of love, understanding of Atma within me, within me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-you-give-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-you-give-me.mp3)
 
 ---
 

@@ -36,7 +36,8 @@ Singing the glory of Lord Sai is the penance for Kali Yuga. He is verily Lord K
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naama-keertana-kali-yuga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naama-keertana-kali-yuga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naama-keertana-kali-yuga_1.mp3)
 
 ---
 

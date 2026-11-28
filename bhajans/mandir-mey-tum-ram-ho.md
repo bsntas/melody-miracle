@@ -37,7 +37,7 @@ You are adored as Ram in the Temple, as the light of Mohammad in the mosque; You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandir-mey-tum-ram-ho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandir-mey-tum-ram-ho.mp3)
 
 ---
 

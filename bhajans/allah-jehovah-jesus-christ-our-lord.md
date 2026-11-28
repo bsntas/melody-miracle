@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -33,7 +34,7 @@ God Is Love, We Are Love Ever Expanding (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-jehovah-jesus-christ-our-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-jehovah-jesus-christ-our-lord.mp3)
 
 ---
 

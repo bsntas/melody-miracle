@@ -36,7 +36,7 @@ This song extols Lord Krishna as the blue, dark complexioned Shyama, the suprem
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-shyam-nayanabhi-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-shyam-nayanabhi-ram.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Sing the Glory of the Lord Krishna by chanting His names - Govinda, Gopala, Srid
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-murarey-madhukaitabhaarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-murarey-madhukaitabhaarey.mp3)
 
 ---
 

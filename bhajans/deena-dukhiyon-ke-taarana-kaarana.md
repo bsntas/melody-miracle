@@ -37,7 +37,7 @@ O Lord Sai Baba, You are the destroyer of the miseries and pain of the destitut
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_506_DEENADUKHIYON_KE_TARAN_KARAN.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_506_DEENADUKHIYON_KE_TARAN_KARAN.mp3)
 
 ---
 

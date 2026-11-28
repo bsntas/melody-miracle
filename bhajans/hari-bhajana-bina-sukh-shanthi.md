@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -40,7 +41,10 @@ O Mind, understand that there is no peace without chanting the glory of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bhajana-bina-sukh-shanthi_2.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bhajana-bina-sukh-shanthi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bhajana-bina-sukh-shanthi_1.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bhajana-bina-sukh-shanthi_2.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_100_Hari_Bhajana_bina_Sukh_Shanti_Nahi.mp3)
 
 ---
 

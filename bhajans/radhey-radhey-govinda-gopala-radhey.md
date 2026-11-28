@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Folk, Vintage |
 
 ### Raga Notes
 
@@ -31,7 +32,7 @@ Chant the various names of Lord Krishna - Govinda and Gopala, the one who is the
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_417_RADHE_RADHE_GOVIND_GOPAL_RADHE.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_417_RADHE_RADHE_GOVIND_GOPAL_RADHE.mp3)
 
 ---
 

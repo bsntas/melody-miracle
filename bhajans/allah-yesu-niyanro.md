@@ -38,7 +38,7 @@ Lord Sai, You are Allah and Jesus. Everything visible is Your own form. You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-yesu-niyanro.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-yesu-niyanro.mp3)
 
 ---
 

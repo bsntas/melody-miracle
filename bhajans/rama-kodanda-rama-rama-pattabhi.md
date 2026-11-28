@@ -42,7 +42,8 @@ Glory to Lord Rama who bears the bow and arrow, the crowned King of Ayodhya, who
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-kodanda-rama-rama-pattabhi_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-kodanda-rama-rama-pattabhi.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-kodanda-rama-rama-pattabhi_1.mp3)
 
 ---
 

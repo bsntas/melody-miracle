@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://media.radiosai.org/www/mp3download/Pancharatna-krithi-02.mp3 |
+| **Tags** | Kritis |
 
 ### Raga Notes
 
@@ -93,7 +94,8 @@ The embodiment of love with a compassionate heart. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-sadaa-bhaavayaami.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-sadaa-bhaavayaami.mp3)
+- **Tutorial**: [▶ Listen](https://media.radiosai.org/www/mp3download/Pancharatna-krithi-02.mp3)
 
 ---
 

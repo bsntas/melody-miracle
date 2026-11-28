@@ -36,7 +36,7 @@ Praise be to Lord Krishna who has bewitched our minds with the music of His flut
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-mana-mohana-muralidhar-mohana-murali.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-mana-mohana-muralidhar-mohana-murali.mp3)
 
 ---
 

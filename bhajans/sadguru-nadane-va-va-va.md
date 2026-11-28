@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Madhyam / B Flat |
 | **Ladies Pitch** | 1 Madhyam / F |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ O come, our Divine Preceptor Lord Sathya Sai, the embodiment of true bliss, me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-nadane-va-va-va.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-nadane-va-va-va.mp3)
 
 ---
 

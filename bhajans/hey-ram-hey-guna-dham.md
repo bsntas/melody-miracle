@@ -37,7 +37,7 @@ Glory to Lord Rama, the repository of virtues, the most beautiful one, the desc
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-ram-hey-guna-dham.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-ram-hey-guna-dham.mp3)
 
 ---
 

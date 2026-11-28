@@ -37,7 +37,7 @@ Chant the name of the Lord of seven hills, Narayana, who is bliss incarnate. He 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalai-vaasam-parthipuri-natham.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalai-vaasam-parthipuri-natham.mp3)
 
 ---
 

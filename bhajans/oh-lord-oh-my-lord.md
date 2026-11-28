@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Second Coming |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Oh Lord, oh my Lord (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-lord-oh-my-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-lord-oh-my-lord.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Shower Your choicest blessings on us, O Mother Sai. You are the Sovereign Mothe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janani-krupa-karo-ambe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janani-krupa-karo-ambe.mp3)
 
 ---
 

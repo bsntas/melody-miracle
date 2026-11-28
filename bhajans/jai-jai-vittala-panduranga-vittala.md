@@ -34,7 +34,7 @@ Sing the praises of Lord Vittala, standing on a brick. Victory to Lord Panduran
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-vittala-panduranga-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-vittala-panduranga-vittala.mp3)
 
 ---
 

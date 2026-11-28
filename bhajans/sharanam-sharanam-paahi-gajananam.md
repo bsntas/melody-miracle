@@ -35,7 +35,7 @@ Surrender to Lord Gajanana, who removes and destroys all obstacles in our path t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharanam-sharanam-paahi-gajananam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharanam-sharanam-paahi-gajananam.mp3)
 
 ---
 

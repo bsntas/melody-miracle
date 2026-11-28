@@ -32,7 +32,7 @@ For He's blessed us with the light that there is only one.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-baba.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -37,7 +38,9 @@ Meditate on the divine word 'Soham' which means 'I am That'. Meditate on Sai who
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_469_SOHAM_SOHAM_DHYAN_KARO.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_469_SOHAM_SOHAM_DHYAN_KARO.mp3)
+- **Karaoke** (Reference Track 1.5 Pancham / C#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Soham%20Soham%20Dhyan%20Karo.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Soham%20Soham%20Dhyan%20Karo%201.5P%20C%23maj.mp3)
 
 ---
 

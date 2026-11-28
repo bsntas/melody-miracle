@@ -38,7 +38,8 @@ Chant the name of Lord Rama, who has incarnated in this Kali Age as Lord Sai R
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sai-rama-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sai-rama-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sai-rama-sai-rama_1.mp3)
 
 ---
 

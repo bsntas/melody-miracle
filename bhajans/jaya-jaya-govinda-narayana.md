@@ -36,7 +36,7 @@ Prostrations to Lord Narayana, who incarnated as Govinda (Krishna), who is the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-govinda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-govinda-narayana.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Victory to Lord Rama, the valiant hero of the battlefield, the son of Dasharatha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ramachandra-jaya-ramachandra.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ramachandra-jaya-ramachandra.mp3)
 
 ---
 

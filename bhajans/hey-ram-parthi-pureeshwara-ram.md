@@ -38,7 +38,7 @@ Lord Rama, You are the loving prince of Mother Kausalya and beloved Sita. You lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-ram-parthi-pureeshwara-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-ram-parthi-pureeshwara-ram.mp3)
 
 ---
 

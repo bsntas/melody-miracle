@@ -35,7 +35,9 @@ O Lord, we worship Your Holy Feet that frees us from the continuous cycle of bir
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-bhaya-harana-vanditha-charana_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-bhaya-harana-vanditha-charana.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-bhaya-harana-vanditha-charana_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_016_Bhava_Bhaya_Harana_Vanditha_Charana.mp3)
 
 ---
 

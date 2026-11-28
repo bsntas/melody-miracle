@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Living Love |
 
 ### Raga Notes
 
@@ -39,7 +40,7 @@ You Are the Mystery that fills my heart with Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-sweet-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-sweet-lord.mp3)
 
 ---
 

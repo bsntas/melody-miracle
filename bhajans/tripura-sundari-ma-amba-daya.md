@@ -34,7 +34,8 @@ O Mother of Parthi, You are the most beautiful in all the three worlds, You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tripura-sundari-ma-amba-daya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tripura-sundari-ma-amba-daya.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_249_TRIPURA_SUNDARI_MA.mp3)
 
 ---
 

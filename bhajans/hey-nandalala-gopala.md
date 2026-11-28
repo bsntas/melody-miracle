@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Sing the Glory of Lord Gopala (Krishna) who is of dark complexion, the dear son
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nandalala-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nandalala-gopala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_390_HEY_NANDLALA_GOPALA.mp3)
 
 ---
 

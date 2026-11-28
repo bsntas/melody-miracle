@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_403_JAYA_GURUNATHA_SHIVA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Salutations to the venerable Preceptor Sathya Sai, who is the Sovereign Lord, th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-natha-shiva-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-natha-shiva-guru.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_403_JAYA_GURUNATHA_SHIVA.mp3)
 
 ---
 

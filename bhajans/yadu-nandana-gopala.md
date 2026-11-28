@@ -34,7 +34,7 @@ Chant the name of Sai Gopala, the son of Yadu dynasty, who moved around in Brind
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-gopala.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ Worship Mother Sai, Mother Saraswathi (Goddess of knowledge and wisdom), Mother 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devi-sai-ma-devi-saraswathi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devi-sai-ma-devi-saraswathi.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devi-sai-ma-devi-saraswathi_1.mp3)
 
 ---
 

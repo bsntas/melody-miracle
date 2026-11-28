@@ -36,7 +36,14 @@ Victory to Mother Durga, the ocean of compassion. Glory to Mother Kaali, who is 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durge-durge-durge-jai-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durge-durge-durge-jai-jai.mp3)
+- **Karaoke** (Reference Track 6 Pancham / A): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Gents_Karaoke_A_Pancham.mp3)
+- **Karaoke** (Gents Pitch 5.5 Pancham / G# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Gents_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Gents_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Ladies_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2.5 Pancham / E Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Ladies_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Durge_Durge_Durge_Jai_Jai_Maa_Ladies_Karaoke_D_Pancham.mp3)
 
 ---
 

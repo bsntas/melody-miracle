@@ -34,7 +34,7 @@ Thy will be done Sai, Thy will be done
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thy-will-be-done-earth.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thy-will-be-done-earth.mp3)
 
 ---
 

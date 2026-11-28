@@ -37,7 +37,7 @@ Glory to the supremely blissful Lord Govinda, Gopala, Mukunda, Keshava, Madhav
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paramananda-govinda-gopal-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paramananda-govinda-gopal-jai.mp3)
 
 ---
 

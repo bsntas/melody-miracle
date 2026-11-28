@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -37,7 +38,8 @@ O Lord Rama, Prince of King Dasharatha, O Lord of Sita, You are constantly w
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-ram-janaki-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-ram-janaki-ram.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_420_DASHARATHA_RAM_JANAKI_RAM.mp3)
 
 ---
 

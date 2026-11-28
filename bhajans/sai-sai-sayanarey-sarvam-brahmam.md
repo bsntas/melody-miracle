@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / C |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ Chant the name of Sai and realize that the universe is Brahman (the ultimate and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-sai-sayanarey-sarvam-brahmam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-sai-sayanarey-sarvam-brahmam.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Folk |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Chant the different names of Lord Krishna - Gopala, Radha Krishna and Govinda. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-radhey-krishna-govinda-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-radhey-krishna-govinda-govinda.mp3)
 
 ---
 

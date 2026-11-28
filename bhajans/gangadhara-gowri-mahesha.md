@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5.5 Madhyam / C# |
 | **Ladies Pitch** | 2.5 Madhyam / G#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_397_GANGADHAR_GOURI_MAHESHA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Sing the glory of Lord Shiva, the consort of Gowri and the one who bears the Gan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-gowri-mahesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-gowri-mahesha.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_397_GANGADHAR_GOURI_MAHESHA.mp3)
 
 ---
 

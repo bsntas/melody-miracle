@@ -37,7 +37,7 @@ Chant the various names of Lord Krishna - Hari and Govinda. Glory to the beaut
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-sundara-hari-govinda-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-sundara-hari-govinda-bolo.mp3)
 
 ---
 

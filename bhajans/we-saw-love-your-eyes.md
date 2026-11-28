@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Slow |
 | **Level** | Intermediate |
+| **Tags** | Love To Love |
 
 ### Raga Notes
 
@@ -32,7 +33,7 @@ When we received Your love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-saw-love-your-eyes.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-saw-love-your-eyes.mp3)
 
 ---
 

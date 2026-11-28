@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -42,7 +43,7 @@ Oh come let us adore Him, Christ the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-come-all-ye-faithful.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-come-all-ye-faithful.mp3)
 
 ---
 

@@ -39,7 +39,8 @@ I bow to Lord Rama, Krishna, Jesus Christ, Allah, Buddha, Zohrashtra, Mahavir�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-sai-rama_1.mp3)
 
 ---
 

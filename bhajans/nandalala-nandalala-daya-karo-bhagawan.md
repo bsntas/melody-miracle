@@ -35,7 +35,7 @@ Oh child of Nanda! Oh Lord! Have compassion on me. Help me cross this Ocean of l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-daya-karo-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-daya-karo-bhagawan.mp3)
 
 ---
 

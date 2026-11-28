@@ -34,7 +34,7 @@ Chant the pure and sacred name of Lord Sai Ram of Parthi, the sacred name that i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/patitha-pavana-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/patitha-pavana-ram.mp3)
 
 ---
 

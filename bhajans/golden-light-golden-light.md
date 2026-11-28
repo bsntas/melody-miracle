@@ -33,7 +33,8 @@ All my life, all my life, Sathya Sai You be my life
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/golden-light-golden-light.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/golden-light-golden-light.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/golden-light-golden-light_1.mp3)
 
 ---
 

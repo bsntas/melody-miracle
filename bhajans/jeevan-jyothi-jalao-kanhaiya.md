@@ -35,7 +35,7 @@ Light the Lamp of my Life, O Young Krishna, I owe everything to You. O Lord, a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jeevan-jyothi-jalao-kanhaiya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jeevan-jyothi-jalao-kanhaiya.mp3)
 
 ---
 

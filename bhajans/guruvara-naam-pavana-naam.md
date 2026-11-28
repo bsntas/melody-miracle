@@ -36,7 +36,7 @@ Sing the names of the Guru - Guru Nanak and Sai Baba; these names purify one's 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guruvara-naam-pavana-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guruvara-naam-pavana-naam.mp3)
 
 ---
 

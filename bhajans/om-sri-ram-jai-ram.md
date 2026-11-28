@@ -33,7 +33,9 @@ Victory to Lord Rama, the Lord of Sita and Shyam, the beloved of Radha. Chant th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sri-ram-jai-ram_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sri-ram-jai-ram.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sri-ram-jai-ram_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sri-ram-jai-ram_2.mp3)
 
 ---
 

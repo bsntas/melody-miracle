@@ -34,7 +34,7 @@ This song extols Mother Durga who has a peaceful appearance, attractive dark c
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shantha-durge-shanthi-swaroopini.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shantha-durge-shanthi-swaroopini.mp3)
 
 ---
 

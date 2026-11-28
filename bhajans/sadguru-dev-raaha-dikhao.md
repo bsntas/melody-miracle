@@ -35,7 +35,8 @@ O Lord Sai, our Divine Preceptor, show us the path to liberation, You are our l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-dev-raaha-dikhao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-dev-raaha-dikhao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-dev-raaha-dikhao_1.mp3)
 
 ---
 

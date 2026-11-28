@@ -35,7 +35,7 @@ I surrender to Thee, O valorous Lord Rama of the Raghu Dynasty, the one who is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-rama-rama-raghuveera.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-rama-rama-raghuveera.mp3)
 
 ---
 

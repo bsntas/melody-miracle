@@ -8,6 +8,7 @@
 |---|---|
 | **Deity** | Jesus |
 | **Language** | English |
+| **Tags** | Carols |
 
 ## Lyrics
 

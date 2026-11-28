@@ -34,7 +34,7 @@ Sing the glory of the Sovereign Lord of the Universe, Shiva, the benevolent one.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-harey-prabhuvara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-harey-prabhuvara.mp3)
 
 ---
 

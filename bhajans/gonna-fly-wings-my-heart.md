@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Heart Voice |
 
 ### Raga Notes
 
@@ -55,7 +56,8 @@ Wings of my love gonna set me free [ Gonna fly ... Sai Baba's feet. ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-fly-wings-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-fly-wings-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-fly-wings-my-heart_1.mp3)
 
 ---
 

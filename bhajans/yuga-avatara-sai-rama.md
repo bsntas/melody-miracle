@@ -36,7 +36,7 @@ O Lord Sai, You are the incarnation of this Kali age. You are verily Lord Rama,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yuga-avatara-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yuga-avatara-sai-rama.mp3)
 
 ---
 

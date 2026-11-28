@@ -34,7 +34,7 @@ Sing the glory of the child of Nanda, Lord Krishna, the protector of cows, wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-lal-bhajo-murali.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-lal-bhajo-murali.mp3)
 
 ---
 

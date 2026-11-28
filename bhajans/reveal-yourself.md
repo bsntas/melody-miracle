@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Reveal Yourself |
 
 ### Raga Notes
 
@@ -51,7 +52,7 @@ And show me You’re the light inside of me.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/reveal-yourself.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/reveal-yourself.mp3)
 
 ---
 

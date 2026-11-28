@@ -37,7 +37,7 @@ Lord Sathya Sai, merciful protector.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/remover-obstacles.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/remover-obstacles.mp3)
 
 ---
 

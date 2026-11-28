@@ -37,7 +37,7 @@ Salutations to Hanuman who is also known as Maruti Raya (King of the monkey clan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maruti-raya-namo-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maruti-raya-namo-namo.mp3)
 
 ---
 

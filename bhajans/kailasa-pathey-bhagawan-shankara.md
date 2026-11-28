@@ -34,7 +34,7 @@ Shankara is the Lord of Kailasa. Sri Rama belongs to Raghu lineage and is the Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-pathey-bhagawan-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-pathey-bhagawan-shankara.mp3)
 
 ---
 

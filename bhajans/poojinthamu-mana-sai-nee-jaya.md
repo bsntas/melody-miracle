@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Arathi |
 
 ### Raga Notes
 
@@ -54,7 +55,7 @@ We offer our prayers to our Lord Sai, the Lord of all, the Lord of the Universe.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/poojinthamu-mana-sai-nee-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/poojinthamu-mana-sai-nee-jaya.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Chant the name of Lord Narayana who has an eternally blissful form. His form giv
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nithyananda-ati-baibhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nithyananda-ati-baibhava.mp3)
 
 ---
 

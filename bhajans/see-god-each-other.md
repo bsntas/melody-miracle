@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Slow |
 | **Level** | Intermediate |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -59,7 +60,7 @@ See God living as you
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/see-god-each-other.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/see-god-each-other.mp3)
 
 ---
 

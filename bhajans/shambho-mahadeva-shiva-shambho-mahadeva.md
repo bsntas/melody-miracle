@@ -34,7 +34,15 @@ Sing the glory of Lord Shiva who is also called Shambho and Mahadeva. He is th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-shiva-shambho-mahadeva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-shiva-shambho-mahadeva.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-shiva-shambho-mahadeva_1.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Ladies_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Ladies_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shambho_Mahadeva_Shiva_Shambho_Mahadeva_Ladies_Karaoke_F_Sharp_Pancham.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ We pray to our Lord Sai who is the embodiment of Lord Shiva and Lord Narayana wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shambho-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shambho-narayana.mp3)
 
 ---
 

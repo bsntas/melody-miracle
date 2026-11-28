@@ -32,7 +32,7 @@ Let us chant and meditate on Lord Rama whose consort is Mother Sita, and Lord Sh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manuva-bolo-jai-sita-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manuva-bolo-jai-sita-ram.mp3)
 
 ---
 

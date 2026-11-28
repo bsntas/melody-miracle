@@ -37,7 +37,7 @@ Victory to Mother Sai who bestows auspiciousness and wealth, who is the destroye
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-kaarini-jai-sai-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-kaarini-jai-sai-ma.mp3)
 
 ---
 

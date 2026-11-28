@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Voctory to Mother Durga who is also known as Gowri, Shankari, Parvathi and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-durga-gowri-shankari.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-durga-gowri-shankari.mp3)
 
 ---
 

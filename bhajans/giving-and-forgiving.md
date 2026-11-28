@@ -35,7 +35,7 @@ Loving All The Living Living Only Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giving-and-forgiving.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giving-and-forgiving.mp3)
 
 ---
 

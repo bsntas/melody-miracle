@@ -38,7 +38,9 @@ Sing the name of Lord Sai who is verily Lord Govinda (Krishna). Chant the nam
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naam-bolo-govinda-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naam-bolo-govinda-naam.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sai%20Naam%20Bolo.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sai%20Naam%20Bolo%202P%20Dmaj.mp3)
 
 ---
 

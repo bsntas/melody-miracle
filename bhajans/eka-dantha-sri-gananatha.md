@@ -38,7 +38,7 @@ Pray to Lord Ganesha, Lord of the Ganaas (Shiva's hordes), the elephant-faced 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eka-dantha-sri-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eka-dantha-sri-gananatha.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Victory to the elephant-headed and the big-bellied Lord Ganesha, the beloved so
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-jaya-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-jaya-gajanana.mp3)
 
 ---
 

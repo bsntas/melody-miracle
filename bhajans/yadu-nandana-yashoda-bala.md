@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2.5 Madhyam / G# |
 | **Ladies Pitch** | 6.5 Madhyam / E FlatTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_446_YADU_NANDANA_YASHODA_BALA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Glory be to You, Oh Lord Krishna, the son of Yadu dynasty, the son of Yashoda, Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-yashoda-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-yashoda-bala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_446_YADU_NANDANA_YASHODA_BALA.mp3)
 
 ---
 

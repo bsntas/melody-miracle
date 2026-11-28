@@ -36,7 +36,7 @@ Swami give us the future You want with Your eyes [ Thank you Sai ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thank-you-sai-thank-you-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thank-you-sai-thank-you-sai.mp3)
 
 ---
 

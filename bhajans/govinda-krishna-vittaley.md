@@ -31,7 +31,7 @@ Chant the Holy names of Govinda, Gopala, Krishna and Vittala.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittaley.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittaley.mp3)
 
 ---
 

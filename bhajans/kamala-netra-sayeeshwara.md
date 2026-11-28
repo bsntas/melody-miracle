@@ -35,7 +35,7 @@ Salutations to Sayeeshwara the Lotus eyed One who confers Liberation, whose comp
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-netra-sayeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-netra-sayeeshwara.mp3)
 
 ---
 

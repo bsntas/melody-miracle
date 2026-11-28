@@ -31,7 +31,7 @@ Victory to Lord Rama, the consort of Mother Sita.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-jaya-raja-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-jaya-raja-ram.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -56,7 +57,7 @@ Slowly - Allelieu Allelieu Alleliua …
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/make-me-instrument-peace.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/make-me-instrument-peace.mp3)
 
 ---
 

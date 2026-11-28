@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Values |
 
 ## Lyrics
 
@@ -22,7 +23,7 @@ You are very welcome.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/please-and-thank-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/please-and-thank-you.mp3)
 
 ---
 

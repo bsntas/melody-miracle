@@ -38,7 +38,7 @@ Victory to Lord Rama, Krishna, Hari (Vishnu) and Lord Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-ram-krishna-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-ram-krishna-harey.mp3)
 
 ---
 

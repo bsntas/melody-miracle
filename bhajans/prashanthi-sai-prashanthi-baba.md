@@ -35,6 +35,11 @@ Sai Namo Namo Sainatha
 
 Chant the name of Lord Sai, whose abode is Prashanthi Nilayam at Parthi. He is the very embodiment of Lord Shiva and Lord Krishna. Worship and sing the Holy name of Sai who is also the Lord of Shirdi.
 
+## Audio
+
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Prashanthi%20Sai%20Prashanthi%20Baba.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Prashanthi%20Sai%20Prashanthi%20Baba%206P%20Amaj.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

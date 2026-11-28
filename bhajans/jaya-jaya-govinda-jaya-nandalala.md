@@ -37,7 +37,7 @@ Victory to Lord Govinda (Krishna), the son of Nanda, and who is dear to Radh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-govinda-jaya-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-govinda-jaya-nandalala.mp3)
 
 ---
 

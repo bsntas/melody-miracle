@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Sing (chant) the name of Lord Shiva and the name of Sai Ram.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-namami.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-namami.mp3)
 
 ---
 

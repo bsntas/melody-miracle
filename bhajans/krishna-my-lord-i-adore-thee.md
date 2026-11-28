@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Heart Voice |
 
 ### Raga Notes
 
@@ -45,7 +46,7 @@ Krishna, my love, come to me [ Dance through ... never be apart ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-my-lord-i-adore-thee.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-my-lord-i-adore-thee.mp3)
 
 ---
 

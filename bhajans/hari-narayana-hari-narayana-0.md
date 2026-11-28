@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2.5 Pancham / E Flat |
 | **Ladies Pitch** | 6.5 Pancham / B Flat |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Glory to Lord Narayana, the eternally pure one who incarnated as Lord Narasimha.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-hari-narayana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-hari-narayana-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_376_HARI_NARAYANA_HARI_NARAYANA.mp3)
 
 ---
 

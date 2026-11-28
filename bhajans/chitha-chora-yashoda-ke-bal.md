@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -34,7 +35,11 @@ O Lord Gopala (Krishna), the beloved Prince of Mother Yashoda, You are the capti
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-yashoda-ke-bal_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-yashoda-ke-bal.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-yashoda-ke-bal_1.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-yashoda-ke-bal_2.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-yashoda-ke-bal_3.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_504_CHITTA_CHORA_YASHODA_KE_BAL.mp3)
 
 ---
 

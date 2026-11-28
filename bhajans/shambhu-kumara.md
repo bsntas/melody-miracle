@@ -37,7 +37,7 @@ Worship Lord Karthikeya residing on the hills of Pazhani, the son of Lord Shiva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambhu-kumara-haro-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambhu-kumara-haro-hara.mp3)
 
 ---
 

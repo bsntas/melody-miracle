@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 2.5 Pancham / E Flat |
 | **Ladies Pitch** | 6.5 Pancham / B Flat |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ Sai, the flame eternal
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/light-flame-eternal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/light-flame-eternal.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Chant the name of Lord Shiva who is also known as Lord Shankara and Samba Sadash
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-hara-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-hara-hara.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ My eyes are forever seeing Your form,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-eyes-are-forever-seeing-your-form.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-eyes-are-forever-seeing-your-form.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Victory to Lord Sai, the Lord and Redeemer of the Universe. Lord Sathya Sai is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeesha-harey-jaya-ho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeesha-harey-jaya-ho.mp3)
 
 ---
 

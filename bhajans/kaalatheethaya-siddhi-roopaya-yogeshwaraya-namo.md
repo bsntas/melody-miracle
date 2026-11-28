@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,9 @@ We bow to the Lord of Yogis, Lord Sai who is beyond time and who is the embodime
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kaalatheethaya-siddhi-roopaya-yogeshwaraya-namo_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kaalatheethaya-siddhi-roopaya-yogeshwaraya-namo_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kaalatheethaya-siddhi-roopaya-yogeshwaraya-namo.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kaalatheethaya-siddhi-roopaya-yogeshwaraya-namo_2.mp3)
 
 ---
 

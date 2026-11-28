@@ -34,7 +34,7 @@ Glory to Lord Shiva Shankara who is the consort of Mother Parvathi, the one who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shankara-parvathi-ramana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shankara-parvathi-ramana.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -41,7 +42,7 @@ Call on the name of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sathya-sai-our-heavenly-host.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sathya-sai-our-heavenly-host.mp3)
 
 ---
 

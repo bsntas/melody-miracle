@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Prayers |
 
 ### Raga Notes
 
@@ -154,7 +155,7 @@ And destroys the sins of thousands of lifetimes
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bilva-stothram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bilva-stothram.mp3)
 
 ---
 

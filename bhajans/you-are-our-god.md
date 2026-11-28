@@ -13,6 +13,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Love To Love |
 
 ### Raga Notes
 
@@ -30,7 +31,7 @@ Every day and every night
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-our-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-our-god.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ And I'm So Happy, So Very Happy
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i’ve-got-joy-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i’ve-got-joy-sai.mp3)
 
 ---
 

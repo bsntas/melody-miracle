@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,9 @@ Protect us O Sai, the Lord of Parthi, You are Lingeshwara and the one who create
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lingodhbhavakara-lingeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lingodhbhavakara-lingeshwara.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lingodhbhavakara-lingeshwara_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_440_LINGODBHAVAKARA_LINGESHWARA.mp3)
 
 ---
 

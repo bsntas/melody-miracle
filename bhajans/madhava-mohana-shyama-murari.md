@@ -35,7 +35,7 @@ Chant the names of Krishna who is the consort of Radha and who is the indweller 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-shyama-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-shyama-murari.mp3)
 
 ---
 

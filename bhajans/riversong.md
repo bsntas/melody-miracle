@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Reveal Yourself |
 
 ### Raga Notes
 
@@ -54,7 +55,7 @@ Oooh, take me to the sea.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/riversong.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/riversong.mp3)
 
 ---
 

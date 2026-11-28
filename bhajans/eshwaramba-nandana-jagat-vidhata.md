@@ -37,7 +37,7 @@ O Lord Sai Baba, son of Eshwaramba, creator of the universe, dweller of Puttapa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-nandana-jagat-vidhata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-nandana-jagat-vidhata.mp3)
 
 ---
 

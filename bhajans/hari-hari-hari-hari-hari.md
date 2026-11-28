@@ -38,7 +38,7 @@ Sing the Holy Name and divine attributes of Lord Hari, Govinda who has incarnate
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-hari-hari-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-hari-hari-hari.mp3)
 
 ---
 

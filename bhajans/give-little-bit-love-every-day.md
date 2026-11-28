@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Values |
 
 ## Lyrics
 
@@ -20,7 +21,7 @@ Give a little bit of kindness every day.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/give-little-bit-love-every-day.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/give-little-bit-love-every-day.mp3)
 
 ---
 

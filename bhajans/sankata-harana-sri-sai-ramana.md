@@ -36,7 +36,9 @@ Salutations to Lord Sai (who is also the Lord Srinivasa of Tirupati), the one wi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sankata-harana-sri-sai-ramana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sankata-harana-sri-sai-ramana.mp3)
+- **Karaoke** (Reference Track 6.5 Pancham / B Flat): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sankata%20Harana%20Sri%20Sai%20Ramana.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sankata%20Harana%20Sri%20Sai%20Ramana%206.5P%20A%23Maj.mp3)
 
 ---
 

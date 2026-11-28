@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | My Light Never Dims |
 
 ### Raga Notes
 
@@ -73,7 +74,7 @@ Your Kingdom is mine to share
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-hands-are-upon-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-hands-are-upon-me.mp3)
 
 ---
 

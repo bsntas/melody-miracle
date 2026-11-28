@@ -31,7 +31,7 @@ Let mercy be the flower of love that blooms in one and all [ Goddess of Love ...
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/goddess-love-goddess-mercy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/goddess-love-goddess-mercy.mp3)
 
 ---
 

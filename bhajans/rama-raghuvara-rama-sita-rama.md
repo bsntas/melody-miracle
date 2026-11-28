@@ -35,7 +35,7 @@ Chant the name of Lord Rama of Raghu dynasty whose consort is Mother Sita; He is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-raghuvara-rama-sita-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-raghuvara-rama-sita-rama.mp3)
 
 ---
 

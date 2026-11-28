@@ -37,7 +37,7 @@ Victory to Lord Rama of Raghu dynasty, the son of Dasharatha and the consort of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-jaya-rama-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-jaya-rama-1.mp3)
 
 ---
 

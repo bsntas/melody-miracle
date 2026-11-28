@@ -36,7 +36,7 @@ Oh Mind! Chant the various names of the same Lord Ram, Rahim the gracious One, K
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rahiman-rahiman-ram-rahim.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rahiman-rahiman-ram-rahim.mp3)
 
 ---
 

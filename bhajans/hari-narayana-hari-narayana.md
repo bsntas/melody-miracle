@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Sing the glory of Lord Narayana and Hari (names of Lord Vishnu). Victory to Lord
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_383_HARI_NARAYANA_HARI.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_383_HARI_NARAYANA_HARI.mp3)
 
 ---
 

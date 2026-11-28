@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C# |
+| **Tags** | Folk |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Glory to Lord Krishna also known as Govinda, Gopala, and the one who is the son
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-hey-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-hey-nandalala.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-hey-nandalala_1.mp3)
 
 ---
 

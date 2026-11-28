@@ -34,7 +34,7 @@ Oh Krishna, You play the flute, You are charmer of the minds of sages, enchantin
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-vinodana-munijana-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-vinodana-munijana-mohana.mp3)
 
 ---
 

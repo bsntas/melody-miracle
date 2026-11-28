@@ -36,7 +36,7 @@ Oh Sai! You are verily my Lord, for You are the indweller and champion of distra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-anatha-nath-sai-tum.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-anatha-nath-sai-tum.mp3)
 
 ---
 

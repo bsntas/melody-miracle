@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Abhayankara Sai |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Chant the name of Lord Sai who destroys the fear of birth and death. He is veri
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhayankara-sai-shiva_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhayankara-sai-shiva_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhayankara-sai-shiva.mp3)
 
 ---
 

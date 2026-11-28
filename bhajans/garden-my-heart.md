@@ -31,7 +31,7 @@ O my Lord hear my prayer sweet Lord come to me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/garden-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/garden-my-heart.mp3)
 
 ---
 

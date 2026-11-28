@@ -35,7 +35,8 @@ Mother Bhavani is the Goddess of the entire universe. She sustains the three wor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeeshwari-jaya-mata-bhavani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeeshwari-jaya-mata-bhavani.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_264_JAGADEESHWARI_JAI_MATA.mp3)
 
 ---
 

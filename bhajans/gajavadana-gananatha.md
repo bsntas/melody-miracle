@@ -35,7 +35,7 @@ O Lord Ganesha, the elephant-faced Lord, the son of Mother Parvathi, You are ex
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha.mp3)
 
 ---
 

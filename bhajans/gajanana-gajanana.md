@@ -35,7 +35,7 @@ O Lord Ganesha, the elephant-faced one, You are the one whom all worship and p
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-gajanana.mp3)
 
 ---
 

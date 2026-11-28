@@ -39,7 +39,7 @@ I see You, I see You, I see You in one and all
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-my-everything.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-my-everything.mp3)
 
 ---
 

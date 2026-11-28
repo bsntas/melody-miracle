@@ -37,7 +37,7 @@ Praise be to the sweet, bewitching Lord Sai Krishna. He dances with the sounds o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-harey-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-harey-harey.mp3)
 
 ---
 

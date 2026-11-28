@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Values |
 
 ## Lyrics
 
@@ -16,7 +17,7 @@ But what I must try to understand is, they do it because they care.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-parents-really-love-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-parents-really-love-me.mp3)
 
 ---
 

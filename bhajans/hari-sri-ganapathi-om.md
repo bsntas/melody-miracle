@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Glory to the Lord of Ganaas (Lord Shiva's army), Lord Ganesha, the valiant one w
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_483_HARI_SHRI_GANAPATHI_OM.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_483_HARI_SHRI_GANAPATHI_OM.mp3)
 
 ---
 

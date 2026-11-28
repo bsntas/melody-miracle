@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Folk, Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ O Lord Krishna, You are the ocean of bliss and the one who plays captivating mu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-sagara-muralidhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-sagara-muralidhara.mp3)
 
 ---
 

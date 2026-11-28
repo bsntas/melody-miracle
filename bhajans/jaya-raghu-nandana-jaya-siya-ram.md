@@ -39,7 +39,7 @@ Victory to Lord Rama who belongs to the Raghu clan and who is the consort of Mot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-raghu-nandana-jaya-siya-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-raghu-nandana-jaya-siya-ram.mp3)
 
 ---
 

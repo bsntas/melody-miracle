@@ -37,7 +37,7 @@ Salutations to Lord Rama, son of Dasharatha and to Lord Krishna, son of Vasudeva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-namo-rama-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-namo-rama-namo.mp3)
 
 ---
 

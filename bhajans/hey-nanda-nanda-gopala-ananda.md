@@ -33,7 +33,7 @@ Glory to the divine child Gopala (Krishna), the one who gives delight to Nand
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nanda-nanda-gopala-ananda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nanda-nanda-gopala-ananda.mp3)
 
 ---
 

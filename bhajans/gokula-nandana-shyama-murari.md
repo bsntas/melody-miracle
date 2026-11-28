@@ -36,7 +36,7 @@ O Lord Shyama (Krishna), the dark complexioned one who plays the flute, You a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gokula-nandana-shyama-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gokula-nandana-shyama-murari.mp3)
 
 ---
 

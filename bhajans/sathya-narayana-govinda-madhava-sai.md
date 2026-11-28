@@ -34,7 +34,7 @@ Salutations to Lord Sathya Narayana, also known as Govinda, Madhava, Narayana, K
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-narayana-govinda-madhava-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-narayana-govinda-madhava-sai.mp3)
 
 ---
 

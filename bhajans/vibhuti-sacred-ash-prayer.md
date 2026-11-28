@@ -12,6 +12,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / DTutorialhttps://media.radiosai.org/journals/vol_12/01FEB14/vibhuti-the-Making-of-the-Wondrous-Holy-Ash.htm |
+| **Tags** | Prayers |
 
 ### Raga Notes
 
@@ -80,7 +81,8 @@ Vibhuti, or Sacred Ash, is distributed at the end of a devotional meeting sessio
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/paramam_pavithram/Sacred_Holy_and_Supreme.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sacred-ash-prayer.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/paramam_pavithram/Sacred_Holy_and_Supreme.mp3)
 
 ---
 

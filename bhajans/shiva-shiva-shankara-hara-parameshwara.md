@@ -35,7 +35,7 @@ Worship Shiva who is also known as Hara, Shankara, Gangadhara, Parameshwara and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shankara-hara-parameshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shankara-hara-parameshwara.mp3)
 
 ---
 

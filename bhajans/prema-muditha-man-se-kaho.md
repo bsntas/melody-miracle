@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -41,7 +42,8 @@ With the heart and mind full of love and devotion, recite the name of Lord Rama.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-muditha-man-se-kaho_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-muditha-man-se-kaho.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-muditha-man-se-kaho_1.mp3)
 
 ---
 

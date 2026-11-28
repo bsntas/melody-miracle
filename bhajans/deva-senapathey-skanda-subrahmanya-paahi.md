@@ -35,7 +35,7 @@ O Lord Subrahmanya (son of Shiva), the chief of the battalion of Gods (Devas), 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-senapathey-skanda-subrahmanya-paahi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-senapathey-skanda-subrahmanya-paahi.mp3)
 
 ---
 

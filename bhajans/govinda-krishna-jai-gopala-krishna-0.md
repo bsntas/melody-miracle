@@ -35,7 +35,7 @@ Victory to Lord Govinda, Gopala, Krishna, Madhava, Keshava, Narayana. Victory to
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-jai-gopala-krishna-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-jai-gopala-krishna-0.mp3)
 
 ---
 

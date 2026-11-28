@@ -35,7 +35,7 @@ Show us Your compassion, O Lord Shankara, the blue-throated one who adorns the s
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-bhagawan-shankara-daya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-bhagawan-shankara-daya.mp3)
 
 ---
 

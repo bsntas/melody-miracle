@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Victory to the elephant-faced Lord Ganesha, the son of Parvathi and the blue-thr
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_410_JAYA_JAYA_JAYA_HE_GAJANANA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_410_JAYA_JAYA_JAYA_HE_GAJANANA.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | My Sweet |
 
 ### Raga Notes
 
@@ -42,7 +43,7 @@ My sweet Lord, my sweet Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-sweet-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-sweet-lord.mp3)
 
 ---
 

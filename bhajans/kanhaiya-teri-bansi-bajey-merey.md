@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Folk |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Play Your enchanting flute, dear Lord Krishna, while I chant Your name everyday.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanhaiya-teri-bansi-bajey-merey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanhaiya-teri-bansi-bajey-merey.mp3)
 
 ---
 

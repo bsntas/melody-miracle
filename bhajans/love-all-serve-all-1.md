@@ -49,7 +49,7 @@ All the love that is inside of me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-1.mp3)
 
 ---
 

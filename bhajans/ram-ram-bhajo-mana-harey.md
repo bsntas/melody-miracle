@@ -35,7 +35,14 @@ O mind, worship Lord Rama of the Raghu Dynasty. The Lord of Sita, Lord Rama, d
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-ram-bhajo-mana-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-ram-bhajo-mana-harey.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Gents_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Gents_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Gents_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Ladies_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Ladies_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Bhajoman_Hare_Hare_Karaoke_Ladies_A_Sharp_Pancham.mp3)
 
 ---
 

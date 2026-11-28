@@ -36,7 +36,8 @@ The lotus-eyed Lord Rama, son of Kausalya and enchanter of Vaidehi (Sita) is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kausalya-nandana-vaidehi-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kausalya-nandana-vaidehi-mohana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_207_KAUSALYA_NANDANA.mp3)
 
 ---
 

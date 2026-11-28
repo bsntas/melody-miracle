@@ -35,7 +35,7 @@ Victory to the Lord of Pandari, Lord Vittala, who waited patiently for His devot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittala-jai-pandari-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittala-jai-pandari-natha.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -37,7 +38,8 @@ O Lord Ganesha, son of Parvathi, we seek refuge in You, please protect us. You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-paahi-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-paahi-gajanana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_372_PAHI_PAHI_GAJANANA.mp3)
 
 ---
 

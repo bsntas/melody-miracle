@@ -34,7 +34,7 @@ Victory be to Sayeeshwara, who is in the Form of a Linga (denotes without beginn
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-lingeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-lingeshwara.mp3)
 
 ---
 

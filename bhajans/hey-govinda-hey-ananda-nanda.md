@@ -34,7 +34,9 @@ Glory to the Lord Gopala (Krishna), son of Nanda. He is ever blissful, having an
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_081_Hey_Govinda_Hey_Ananda_Nanda_Gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-govinda-hey-ananda-nanda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-govinda-hey-ananda-nanda_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_081_Hey_Govinda_Hey_Ananda_Nanda_Gopala.mp3)
 
 ---
 

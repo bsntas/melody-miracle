@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,8 @@ Sai Baba Sai Baba, the light of mankind Sai Baba
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-universe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-universe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-universe_1.mp3)
 
 ---
 

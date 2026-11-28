@@ -37,7 +37,7 @@ Sing the Glory of Lord Gopala (Krishna), the beloved son of Nanda of Gokula. He 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-gokula-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-gokula-bala.mp3)
 
 ---
 

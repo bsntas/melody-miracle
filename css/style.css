@@ -645,6 +645,11 @@ img { max-width: 100%; }
 
 .audio-player { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.75rem; }
 .audio-player audio { flex: 1; height: 36px; }
+.audio-tracks { display: flex; flex-direction: column; margin-top: 0.25rem; }
+.audio-track-label { display: flex; flex-direction: column; min-width: 6.5rem; max-width: 40%; line-height: 1.2; }
+.audio-track-kind { font-size: 0.8rem; font-weight: 600; color: var(--text-2); }
+.audio-track-caption { font-size: 0.72rem; color: var(--text-3); overflow-wrap: anywhere; }
+.audio-track-golden .audio-track-kind { color: var(--gold); }
 
 /* ─── Session View ───────────────────────────────────────────────────────── */
 .session-home {

@@ -35,7 +35,7 @@ Oh my Lord I plea Baba have mercy on this soul (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/have-mercy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/have-mercy.mp3)
 
 ---
 

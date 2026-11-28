@@ -36,7 +36,7 @@ Divine Mother of Parthi, Sai Ma, the One who sustains the Universe, victory to y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwari-jagat-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwari-jagat-janani.mp3)
 
 ---
 

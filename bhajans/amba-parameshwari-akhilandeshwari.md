@@ -34,7 +34,7 @@ O Divine Mother of the Universe (Bhuvaneshwari, Raja Rajeshwari) and the Consor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-parameshwari-akhilandeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-parameshwari-akhilandeshwari.mp3)
 
 ---
 

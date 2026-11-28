@@ -36,7 +36,7 @@ We offer our humble salutations to Lord Shankara (Shiva) who is the source of al
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-namami-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-namami-shankara.mp3)
 
 ---
 

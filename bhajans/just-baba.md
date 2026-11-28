@@ -38,7 +38,7 @@ Just Baba and you
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/just-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/just-baba.mp3)
 
 ---
 

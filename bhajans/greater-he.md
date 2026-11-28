@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Fast |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -33,7 +34,7 @@ HE is greater than he
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/greater-he.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/greater-he.mp3)
 
 ---
 

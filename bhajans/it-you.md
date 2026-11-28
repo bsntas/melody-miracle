@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Love To Love |
 
 ### Raga Notes
 
@@ -37,7 +38,8 @@ Sai our only love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/it-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/it-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/it-you-0.mp3)
 
 ---
 

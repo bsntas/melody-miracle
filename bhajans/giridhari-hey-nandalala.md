@@ -35,7 +35,7 @@ Oh Giridhari, the son of Nanda and Yashoda The protector and sustainer of all th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-hey-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-hey-nandalala.mp3)
 
 ---
 

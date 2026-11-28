@@ -39,7 +39,8 @@ O Lord Shiva who rides the divine bull Nandi, You are the Lord of cosmic dance
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandi-vahana-nataraja-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandi-vahana-nataraja-harey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_162_Nandi_Vahana_Nataraja_Harey.mp3)
 
 ---
 

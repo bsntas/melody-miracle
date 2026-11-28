@@ -37,7 +37,7 @@ Glory to Lord Krishna who charms the Mind, who held aloft the mountain high, who
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-shyama-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-shyama-murari.mp3)
 
 ---
 

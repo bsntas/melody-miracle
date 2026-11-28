@@ -34,7 +34,7 @@ Glory to Lord Vittala who is all compassionate and merciful. Salutations to Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ranga-harey-vittala-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ranga-harey-vittala-sai.mp3)
 
 ---
 

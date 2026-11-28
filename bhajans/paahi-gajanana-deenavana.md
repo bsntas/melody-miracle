@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,10 @@ We pray to Lord Ganesha to protect us - the unprotected. O Lord, with Your shini
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-gajanana-deenavana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-gajanana-deenavana.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-gajanana-deenavana_1.mp3)
+- **Karaoke** (Reference Track 5.5 Pancham / G#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Pahi%20Gajanana%20Deenavana.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Pahi%20Gajanana%20-%20Karaoke%20-%205.5P%20G%23maj.mp3)
 
 ---
 

@@ -37,7 +37,9 @@ Glory to Thee, O Ganesha, the elephant faced one, the bestower of boons, the one
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganapathi-om-jaya-ganapathi-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganapathi-om-jaya-ganapathi-om.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganapathi-om-jaya-ganapathi-om_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_043_Ganapathi_Om_Jaya_Ganapathi_Om.mp3)
 
 ---
 

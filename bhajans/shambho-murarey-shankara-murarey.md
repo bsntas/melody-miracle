@@ -34,7 +34,7 @@ Sing the Glory of Lord Shankara (Shiva), the slayer of the three demons of Tri
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-murarey-shankara-murarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-murarey-shankara-murarey.mp3)
 
 ---
 

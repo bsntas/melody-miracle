@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Sing the glory of Lord Krishna, also known as Gopala, the beloved son of Nanda. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-radha-gokula-bala​.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-radha-gokula-bala​.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_455_RADHA_RADHA_GOKUL.mp3)
 
 ---
 

@@ -34,6 +34,11 @@ Dasha Bhuja Dharini Asura Vinashini [ Tribhuvana Palini ... ]
 
 Salutations to Mother Sai residing in Parthi, who is the embodiment of compassion, the one who is ruler of the three worlds, the one residing in everyone's hearts, the one who is the most beautiful in all the three worlds and the one who annihilated demons.
 
+## Audio
+
+- **Karaoke** (Reference Track 5.5 Pancham / G#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Karuna%20Swaroopini.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Karuna%20Swaroopini%205.5P%20G%23maj.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

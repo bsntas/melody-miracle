@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ Chant the name of Lord Shiva who dispels the fear of the materialistic world, He
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_447_SHIV_SHIV_SHIVAY_NAMAH_OM.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_447_SHIV_SHIV_SHIVAY_NAMAH_OM.mp3)
 
 ---
 

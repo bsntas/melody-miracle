@@ -37,7 +37,7 @@ Victory to Lord Ganesha, the one who removes obstacles, destroyer of sorrows and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganesha-vighna-vinashaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganesha-vighna-vinashaka.mp3)
 
 ---
 

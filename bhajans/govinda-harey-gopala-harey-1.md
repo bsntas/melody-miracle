@@ -36,7 +36,7 @@ Glory to Govinda, Gopala, the one who plays the flute and the one is dark comple
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-1.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ O Lord Rama, the ever Compassionate one, the real friend of the devotee and des
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-niketana-bhaktha-sakha-prabho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-niketana-bhaktha-sakha-prabho.mp3)
 
 ---
 

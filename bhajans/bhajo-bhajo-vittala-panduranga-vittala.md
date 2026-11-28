@@ -35,7 +35,7 @@ Worship Lord Vittala of Pandharpur, Sai Vittala of Parthi who is the supreme Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-bhajo-vittala-panduranga-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-bhajo-vittala-panduranga-vittala.mp3)
 
 ---
 

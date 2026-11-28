@@ -31,7 +31,7 @@ Take our love and let it flow to You make us lamps of love today
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-we-sing-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-we-sing-you.mp3)
 
 ---
 

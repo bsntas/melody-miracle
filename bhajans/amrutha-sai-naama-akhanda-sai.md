@@ -34,7 +34,7 @@ The name of Sri Sathya Sai is verily an infinite stream of love in the form of n
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amrutha-sai-naama-akhanda-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amrutha-sai-naama-akhanda-sai.mp3)
 
 ---
 

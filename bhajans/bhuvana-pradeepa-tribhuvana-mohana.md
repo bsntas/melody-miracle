@@ -36,7 +36,7 @@ O Lord Sai who resides at Prashanthi Nilayam in Puttaparthi, the one who illumin
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhuvana-pradeepa-tribhuvana-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhuvana-pradeepa-tribhuvana-mohana.mp3)
 
 ---
 

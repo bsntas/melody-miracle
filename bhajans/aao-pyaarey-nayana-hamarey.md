@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,8 @@ Welcome, O Beloved Lord Sai, You are our protector. Without You, there is no 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-pyaarey-nayana-hamarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-pyaarey-nayana-hamarey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_354_AAO_PYARE_NAYAN_HAMARE.mp3)
 
 ---
 

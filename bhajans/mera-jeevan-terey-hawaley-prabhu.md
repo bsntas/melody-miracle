@@ -39,7 +39,9 @@ I submit my life in Your care, O Lord. Please take care of it every moment. The
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mera-jeevan-terey-hawaley-prabhu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mera-jeevan-terey-hawaley-prabhu.mp3)
+- **Karaoke** (Reference Track 2 Madhyam / G): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Mera%20Jeevan%20Tere%20Hawale%20Prabhu.mp3)
+- **Karaoke** (Gents Pitch 2 Madhyam / G (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Mera%20Jeevan%20Tere%20Hawale%20Prabhu%20-%20Karaoke%205P%20Gmin.mp3)
 
 ---
 

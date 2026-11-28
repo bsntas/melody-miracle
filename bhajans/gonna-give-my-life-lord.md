@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Ageless One |
 
 ### Raga Notes
 
@@ -48,7 +49,7 @@ I’m gonna give my life to the Lord, to the Lord again.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-give-my-life-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-give-my-life-lord.mp3)
 
 ---
 

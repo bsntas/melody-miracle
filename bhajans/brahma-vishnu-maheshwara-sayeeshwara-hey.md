@@ -35,7 +35,7 @@ O Lord Sai, You are verily the Trinity - Brahma, Vishnu and Shiva (Creator, Su
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brahma-vishnu-maheshwara-sayeeshwara-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brahma-vishnu-maheshwara-sayeeshwara-hey.mp3)
 
 ---
 

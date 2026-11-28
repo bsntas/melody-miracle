@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Solar Love |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Sathya Sai Baba Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he’s-one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he’s-one.mp3)
 
 ---
 

@@ -33,6 +33,11 @@ Hari Om (Om Om) Hari Om Hari Om Namah Shivaya
 
 We sing the glory of Lord Shiva (Shambho Mahadeva), the one who has consumed the poison to save the world and the one who is compassionate and protects the needy and downtrodden. We pray to You, O Lord Shiva and offer our salutations.
 
+## Audio
+
+- **Karaoke** (Reference Track 7 Pancham / B): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Shiva%20Shambho%20Shambho%20Shiva%20Shambho%20Mahadeva.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Shiva%20Shambho%20Shambo%20-%20Karaoke%20-%207P%20Bmaj.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

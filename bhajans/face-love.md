@@ -40,7 +40,7 @@ When you serve the world the way Sai serves you.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/face-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/face-love.mp3)
 
 ---
 

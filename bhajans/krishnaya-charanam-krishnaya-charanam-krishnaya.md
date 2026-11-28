@@ -35,7 +35,7 @@ Many prostrations at the Feet of Lord Krishna and Lord Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishnaya-charanam-krishnaya-charanam-krishnaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishnaya-charanam-krishnaya-charanam-krishnaya.mp3)
 
 ---
 

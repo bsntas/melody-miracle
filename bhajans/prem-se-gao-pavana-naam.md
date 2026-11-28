@@ -34,7 +34,7 @@ With love and devotion, sing the purifying and uplifting name of Lord Rama of th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-gao-pavana-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-gao-pavana-naam.mp3)
 
 ---
 

@@ -33,7 +33,7 @@ Sing in praise of Lord Gopala (Krishna), the playful son of Nanda and the one
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-prabhu-giridhari-natavara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-prabhu-giridhari-natavara.mp3)
 
 ---
 

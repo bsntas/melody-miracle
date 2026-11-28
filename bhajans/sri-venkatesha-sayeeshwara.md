@@ -37,7 +37,7 @@ Salutations to Lord Sai who is verily Lord Venkatesha or Balaji who resides in T
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-venkatesha-sayeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-venkatesha-sayeeshwara.mp3)
 
 ---
 

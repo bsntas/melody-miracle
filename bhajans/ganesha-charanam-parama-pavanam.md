@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Let us bow in reverence to Lord Ganesha, let us bow in absolute purity to the na
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-charanam-parama-pavanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-charanam-parama-pavanam.mp3)
 
 ---
 

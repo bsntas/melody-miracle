@@ -32,6 +32,10 @@ Hey Krupa Nidhey Bhagawan
 
 Oh Lord, bestow on us your compassion and mercy, Oh Lord Sai, who is the treasure house of compassion.
 
+## Audio
+
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-bhagawan-krupa-karo.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

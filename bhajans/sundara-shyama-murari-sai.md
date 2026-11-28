@@ -34,7 +34,7 @@ Sing the praises of beautiful Lord Sai, who is none other than Lord Krishna als
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-shyama-murari-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-shyama-murari-sai.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ I bow down to the feet of the eternal Guru, the embodiment of Om or the Pranava.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naman-karoon-mein-guru-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naman-karoon-mein-guru-charanam.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ O Lord Rama! You are indweller of hearts and You are the embodiment of bliss. Ch
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-rama-ananda-ramana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-rama-ananda-ramana.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ O Sai, Lord of Parthi, You are the king of my mind (Chitha - the spiritual Hea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-raja-chitha-raja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-raja-chitha-raja.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-raja-chitha-raja_1.mp3)
 
 ---
 

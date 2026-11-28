@@ -34,7 +34,7 @@ Lord Shiva, who is eternal and unchanging, wears the crescent moon on His head a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandrakala-dhara-samba-sadashiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandrakala-dhara-samba-sadashiva.mp3)
 
 ---
 

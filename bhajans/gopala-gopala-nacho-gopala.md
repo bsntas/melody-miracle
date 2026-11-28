@@ -34,7 +34,7 @@ Please dance and give us the enjoyment of seeing you dance - Gopala and son of N
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-gopala-nacho-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-gopala-nacho-gopala.mp3)
 
 ---
 

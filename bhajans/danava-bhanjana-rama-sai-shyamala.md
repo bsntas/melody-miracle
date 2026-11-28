@@ -35,7 +35,7 @@ O charming and sweet Lord Rama, You annihilated the demons (Danavas). Victory to
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/danava-bhanjana-rama-sai-shyamala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/danava-bhanjana-rama-sai-shyamala.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to Lord Krishna who lifted the Govardhana mountain, which was earlier kno
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandara-giridhara-madana-manohara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandara-giridhara-madana-manohara.mp3)
 
 ---
 

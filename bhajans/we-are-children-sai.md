@@ -49,7 +49,7 @@ We love You Mother, show us the way (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-children-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-children-sai.mp3)
 
 ---
 

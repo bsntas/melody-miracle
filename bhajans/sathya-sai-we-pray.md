@@ -41,7 +41,7 @@ Make a temple of our lives (Sathya Sai... )
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-we-pray.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-we-pray.mp3)
 
 ---
 

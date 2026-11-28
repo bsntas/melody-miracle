@@ -35,7 +35,7 @@ Let it shine, let it shine, let it shine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/little-light-mine.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/little-light-mine.mp3)
 
 ---
 

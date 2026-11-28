@@ -37,7 +37,7 @@ O Lord Hari, You are mine and mine alone. You are Krishna, Narayana, Govinda, Go
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-mhana-tuhi-govinda-mhana-tuhi-gopala-mhana-tuhi-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-mhana-tuhi-govinda-mhana-tuhi-gopala-mhana-tuhi-narayana.mp3)
 
 ---
 

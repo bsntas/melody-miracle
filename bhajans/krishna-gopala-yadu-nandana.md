@@ -35,7 +35,7 @@ Sing the Glory of God by chanting His various names. Krishna, Gopala, Yadu Nanda
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-gopala-yadu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-gopala-yadu-nandana.mp3)
 
 ---
 

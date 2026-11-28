@@ -37,7 +37,7 @@ Sing the glory of Lord Krishna, the enchanting one who holds the flute and who s
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-muralidhari-sri-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-muralidhari-sri-hari.mp3)
 
 ---
 

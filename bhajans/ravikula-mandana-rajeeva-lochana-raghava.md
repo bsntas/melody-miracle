@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Multi-lingual, Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Lord Sai took the form of Lord Rama of Raghu dynasty. In Dwapara age, He was th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ravikula-mandana-rajeeva-lochana-raghava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ravikula-mandana-rajeeva-lochana-raghava.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_477_RAVIKULA_MANDANA_RAJIVA_LOCHANA.mp3)
 
 ---
 

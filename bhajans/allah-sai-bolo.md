@@ -35,7 +35,7 @@ Chant the name of Lord Sai who is verily Allah. Chant with love the name of any 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-sai-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-sai-bolo.mp3)
 
 ---
 

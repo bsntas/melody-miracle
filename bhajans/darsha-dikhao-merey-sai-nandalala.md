@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,8 @@ O Lord Gopala (Krishna), the beloved son of Nanda, grant me Your Vision and sh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darsha-dikhao-merey-sai-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darsha-dikhao-merey-sai-nandalala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_493_DARSHA_DIKHAO_MERE_SAI_NANADALALA.mp3)
 
 ---
 

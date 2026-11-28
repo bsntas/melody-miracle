@@ -34,7 +34,7 @@ Salutations to Lord Sai, the Lord of Puttaparthi, who is none other than Lord S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shankara-shiva-shambho-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shankara-shiva-shambho-shankara.mp3)
 
 ---
 

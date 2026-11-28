@@ -37,7 +37,7 @@ Perform the Divine dance, O Lord Krishna, the darling son of Nanda. You play div
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-dularey-bhaiyya-nacho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-dularey-bhaiyya-nacho.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ O Lord Hari Narayana, bestow on us Your mercy, You are the Lord of the destitut
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hari-narayana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hari-narayana-0.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Sing the praises of Lord Krishna, who is of a beautiful dark complexion and is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyam-ghana-shyam-megha-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyam-ghana-shyam-megha-shyam.mp3)
 
 ---
 

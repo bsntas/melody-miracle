@@ -37,7 +37,7 @@ There is no peace (of mind) without surrendering at the lotus feet of Lord Shiva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharana-bina-shanthi-nahin.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharana-bina-shanthi-nahin.mp3)
 
 ---
 

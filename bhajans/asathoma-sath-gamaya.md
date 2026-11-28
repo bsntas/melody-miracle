@@ -12,6 +12,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / DKaraoke Tracks for Practicesource: https://media.radiosai.org/journals/vol_15/01JUL17/Sai-Bhajans-Karaoke.htmReference Track2 Pancham / DGents Pitch Karaoke Tracks2 Pancham / D (reference) |
+| **Tags** | Prayers |
 
 ### Raga Notes
 
@@ -36,7 +37,10 @@ Aum Peace, Peace, Peace
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/asathoma-sath-gamaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/asathoma-sath-gamaya_1.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/asathoma-sath-gamaya.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://media.radiosai.org/www/mp3download/Asato_Ma_Sadgamaya_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Asato_Maa_Sadgamaya_Karaoke_D_Pancham.mp3)
 
 ---
 

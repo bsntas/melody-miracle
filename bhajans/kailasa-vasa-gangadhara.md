@@ -38,7 +38,7 @@ Glory to Lord Shiva who holds the holy river Ganges and who dwells in Kailasa i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-vasa-gangadhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-vasa-gangadhara.mp3)
 
 ---
 

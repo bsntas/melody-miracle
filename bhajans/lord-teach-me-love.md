@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Values |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Truth, Righteousness, Peace, Love, and Nonviolence  (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-teach-me-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-teach-me-love.mp3)
 
 ---
 

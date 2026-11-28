@@ -39,7 +39,7 @@ Hari Om, Hari Om, Om Sai Ram (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lead-kindly-light.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lead-kindly-light.mp3)
 
 ---
 

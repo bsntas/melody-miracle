@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Dance on in ecstacy, O the gentle, smiling, beautiful lotus-faced Lord Krishna, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mitha-smitha-sundara-mukharavinda-nacho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mitha-smitha-sundara-mukharavinda-nacho.mp3)
 
 ---
 

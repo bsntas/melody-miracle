@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Beloved Baba, come to us as we sing to You the song of Your glory; O Lord who re
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-sanbi-no-uta-ni-kitare.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-sanbi-no-uta-ni-kitare.mp3)
 
 ---
 

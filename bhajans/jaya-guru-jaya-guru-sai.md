@@ -36,7 +36,7 @@ Prostrations to Lord Sathya Sai Rama, the Divine Preceptor of the Universe. He
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-jaya-guru-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-jaya-guru-sai.mp3)
 
 ---
 

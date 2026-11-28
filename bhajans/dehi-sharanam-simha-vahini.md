@@ -36,7 +36,7 @@ Grant me protection, oh Goddess Durga, who rides the lion. Oh Sai Narayani, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dehi-sharanam-simha-vahini.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dehi-sharanam-simha-vahini.mp3)
 
 ---
 

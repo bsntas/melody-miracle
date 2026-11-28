@@ -35,7 +35,7 @@ Salutations to Lord Shiva who is also known by other names such as Hara, Bhola M
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-hara-hara-bhola.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-hara-hara-bhola.mp3)
 
 ---
 

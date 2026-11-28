@@ -35,7 +35,7 @@ O Ganesha, the elephant-faced Lord, You are the Lord of the Divine Forces. O be
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha-natha.mp3)
 
 ---
 

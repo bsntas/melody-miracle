@@ -35,7 +35,7 @@ Lord Rama was the descendant of the Raghu clan, the son of Dasharatha, who confe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-rama-jaya-raghu-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-rama-jaya-raghu-0.mp3)
 
 ---
 

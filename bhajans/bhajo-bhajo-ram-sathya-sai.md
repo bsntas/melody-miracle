@@ -35,7 +35,7 @@ Worship Lord Sai Bhagawan, who has incarnated in the Kali Age to uplift humanity
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-bhajo-ram-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-bhajo-ram-sathya-sai.mp3)
 
 ---
 

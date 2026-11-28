@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Prayers |
 
 ### Raga Notes
 
@@ -72,7 +73,7 @@ Vimuktasarvapāpebhyo śivalokaṃ sa gacchati | |
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-stotram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-stotram.mp3)
 
 ---
 

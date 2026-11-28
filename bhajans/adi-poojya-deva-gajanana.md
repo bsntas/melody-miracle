@@ -34,7 +34,7 @@ At the outset, worship Lord Ganesha, son of Mother Gowri who bestows good fortun
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/adi-poojya-deva-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/adi-poojya-deva-gajanana.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ Salutations to Lord Ganesha, the one with the face of elephant (Matanga), who i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/matanga-vadana-ananda-sadana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/matanga-vadana-ananda-sadana.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/matanga-vadana-ananda-sadana_1.mp3)
 
 ---
 

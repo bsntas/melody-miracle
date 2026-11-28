@@ -40,7 +40,7 @@ Joy In My Heart, Peace In My Soul,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/temple-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/temple-my-heart.mp3)
 
 ---
 

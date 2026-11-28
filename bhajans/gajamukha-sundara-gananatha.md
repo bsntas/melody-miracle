@@ -39,7 +39,7 @@ Glory to the beautiful elephant-faced Lord Ganesha. The lover of the sweet Modak
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajamukha-sundara-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajamukha-sundara-gananatha.mp3)
 
 ---
 

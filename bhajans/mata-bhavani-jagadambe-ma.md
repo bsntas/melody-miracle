@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_415_MATA_BHAVANI_JAGADAMBE.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Glory to the Mother of the Universe, Mother Katyayani (Parvathi), the bestower o
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_415_MATA_BHAVANI_JAGADAMBE.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_415_MATA_BHAVANI_JAGADAMBE.mp3)
 
 ---
 

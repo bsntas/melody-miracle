@@ -37,7 +37,7 @@ Let us sing in praise of our sacred Preceptor Sathya Sai, the embodiment of Trut
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-sri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-sri.mp3)
 
 ---
 

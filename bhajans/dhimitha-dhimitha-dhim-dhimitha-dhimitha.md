@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Lord Shiva dances in ecstacy with the tune, "Dhimita Dhimita Dhim". The Mrudanga
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhimitha-dhimitha-dhim-dhimitha-dhimitha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhimitha-dhimitha-dhim-dhimitha-dhimitha.mp3)
 
 ---
 

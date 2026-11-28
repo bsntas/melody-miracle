@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Lord Narayana has incarnated as Krishna and is known by various names such as Go
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_448_JAI_JAI_JAI_NARAYANA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_448_JAI_JAI_JAI_NARAYANA.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Glory to Goddess Bhavani, the Mother of Universe and the destroyer of cycle of b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devi-bhavani-jagat-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devi-bhavani-jagat-janani.mp3)
 
 ---
 

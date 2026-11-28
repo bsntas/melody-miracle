@@ -37,7 +37,7 @@ Praise the Divine Mother, embodied as the sacred Lingam. Bearing the trident, sh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sambhavi-shankari-linga-bhairavi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sambhavi-shankari-linga-bhairavi.mp3)
 
 ---
 

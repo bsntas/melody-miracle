@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_400_RAKSHA_KARO_BHAGVAN.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -38,7 +39,8 @@ Protect us, O Lord Sathya Sai, You are the compassionate and merciful Lord of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raksha-karo-bhagawan-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raksha-karo-bhagawan-sathya-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_400_RAKSHA_KARO_BHAGVAN.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Flyin' Free |
 
 ### Raga Notes
 
@@ -49,7 +50,7 @@ I loa’a e ke ola mau (ia oe)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanaka-wai-wai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanaka-wai-wai.mp3)
 
 ---
 

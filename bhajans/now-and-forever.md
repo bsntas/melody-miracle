@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Slow |
 | **Level** | Intermediate |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -53,7 +54,7 @@ I live in The Heart of My Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/now-and-forever.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/now-and-forever.mp3)
 
 ---
 

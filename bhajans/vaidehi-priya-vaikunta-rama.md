@@ -35,7 +35,7 @@ Salutations to You O Lord Rama of Vaikunta, beloved of Vaidehi / Janaki (other
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaidehi-priya-vaikunta-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaidehi-priya-vaikunta-rama.mp3)
 
 ---
 

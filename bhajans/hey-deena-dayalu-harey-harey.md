@@ -35,7 +35,7 @@ Glory be to the Lord Sai Rama who has a soft corner to the deprived ones, the On
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-deena-dayalu-harey-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-deena-dayalu-harey-harey.mp3)
 
 ---
 

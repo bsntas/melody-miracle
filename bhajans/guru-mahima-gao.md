@@ -36,7 +36,7 @@ Sing about the greatness of the eternal, universal and ever-blissful teacher, Sa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-mahima-gao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-mahima-gao.mp3)
 
 ---
 

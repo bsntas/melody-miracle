@@ -37,7 +37,7 @@ Come O Lord Muruga, Lord of six faces. We worship Thee and Lord Shiva, Mother Sh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-muruga-va-muruga-shanmukha-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-muruga-va-muruga-shanmukha-natha.mp3)
 
 ---
 

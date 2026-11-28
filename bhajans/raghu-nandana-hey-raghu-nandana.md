@@ -37,7 +37,7 @@ I bow to the lotus-eyed Lord Rama of Raghu Dynasty who is beloved to me. He is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghu-nandana-hey-raghu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghu-nandana-hey-raghu-nandana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Victory to Lord Shiva, Lord of Gowri, who bears Mother Ganges in His matted loc
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-partheesha-jaya-paramesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-partheesha-jaya-paramesha.mp3)
 
 ---
 

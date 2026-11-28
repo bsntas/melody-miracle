@@ -37,7 +37,7 @@ O Mind, meditate upon the name of Lord Hari, who is your body, mind and wealth.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-sumiran-hari-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-sumiran-hari-hari.mp3)
 
 ---
 

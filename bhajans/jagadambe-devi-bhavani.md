@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,8 @@ Bhavani or Durga is the Goddess and Mother of the entire Universe. Chant the var
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadambe-devi-bhavani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadambe-devi-bhavani.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_462_JAGADAMBE_DEVI_BHAVANI.mp3)
 
 ---
 

@@ -34,7 +34,8 @@ Soothing Our Souls With His Avatar Eyes, Avatar Eyes, Sai Avatar Eyes
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-re-never-away-avatar-eyes_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-re-never-away-avatar-eyes_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-re-never-away-avatar-eyes.mp3)
 
 ---
 

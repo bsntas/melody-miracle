@@ -34,7 +34,7 @@ You are Lord Krishna, the flute-player who blessed us with the Gita, the one who
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kuzhaludhi-geetai-pozhiyum-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kuzhaludhi-geetai-pozhiyum-deva.mp3)
 
 ---
 

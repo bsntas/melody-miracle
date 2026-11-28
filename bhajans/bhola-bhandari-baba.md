@@ -34,7 +34,8 @@ O Lord Sai Baba, You are the Lord who can be pleased easily, You are the treasu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-bhandari-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-bhandari-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-bhandari-baba_1.mp3)
 
 ---
 

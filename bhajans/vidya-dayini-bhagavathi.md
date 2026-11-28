@@ -33,7 +33,7 @@ Obeisance to the Goddess who bestows Knowledge and who plays musical instruments
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vidya-dayini-bhagavathi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vidya-dayini-bhagavathi.mp3)
 
 ---
 

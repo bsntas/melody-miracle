@@ -32,7 +32,7 @@ Shirdi Shiva Sathya Shiva Sai Shiva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-auspicious-shiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-auspicious-shiva.mp3)
 
 ---
 

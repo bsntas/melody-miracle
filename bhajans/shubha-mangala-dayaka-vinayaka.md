@@ -37,7 +37,7 @@ Praise be to Lord Ganesha, the bestower of auspiciousness. His vehicle is the mo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shubha-mangala-dayaka-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shubha-mangala-dayaka-vinayaka.mp3)
 
 ---
 

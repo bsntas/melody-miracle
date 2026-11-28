@@ -35,7 +35,7 @@ Victory to Lord Vighneshwara (Lord Ganesha), the Lord of Lords, the destroyer of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-maha-devadi-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-maha-devadi-deva.mp3)
 
 ---
 

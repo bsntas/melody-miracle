@@ -35,7 +35,7 @@ Glory be to Lord Rama, son of Dasharatha and the consort of Mother Sita. Glory 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-sai-ram-sita.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-sai-ram-sita.mp3)
 
 ---
 

@@ -35,7 +35,14 @@ Mother Sai is the mother of the Universe. She is known by names like Durga, Bha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-mata-sai-mata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-mata-sai-mata.mp3)
+- **Karaoke** (Reference Track 4.5 Madhyam / B): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 4.5 Madhyam / B (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Gents_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Madhyam / B Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Gents_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 3 Madhyam / A (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Gents_Karaoke_A_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Madhyam / E Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Ladies_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6 Madhyam / D (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Ladies_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Madhyam / C# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mata_Mata_Sai_Mata_Ladies_Karaoke_C_Sharp_Pancham.mp3)
 
 ---
 

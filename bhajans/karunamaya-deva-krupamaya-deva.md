@@ -36,7 +36,7 @@ We chant Your Glory, O compassionate Lord Hari. You are the most merciful one a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunamaya-deva-krupamaya-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunamaya-deva-krupamaya-deva.mp3)
 
 ---
 

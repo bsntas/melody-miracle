@@ -36,7 +36,7 @@ Oh Mind, sing the glory of Guru and adhere to the feet of Sathya Sai, the one se
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam-0.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ O Lord Krishna, You are the Lord of Meera, You are the beloved of Radha and th
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_459_MEERA_NATHA_HARE_GIRIDHARI.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_459_MEERA_NATHA_HARE_GIRIDHARI.mp3)
 
 ---
 

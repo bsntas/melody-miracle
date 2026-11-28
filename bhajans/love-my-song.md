@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Fast |
 | **Level** | Simple |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -31,7 +32,7 @@ Love is you and me..peaceful & humble  [ Love is my song ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-my-song.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-my-song.mp3)
 
 ---
 

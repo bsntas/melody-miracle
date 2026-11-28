@@ -12,6 +12,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | O Holy Presence |
 
 ### Raga Notes
 
@@ -39,7 +40,7 @@ HE performeth the thing that is given me to do
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-performeth.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-performeth.mp3)
 
 ---
 

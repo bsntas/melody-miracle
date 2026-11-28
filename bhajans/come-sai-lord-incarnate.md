@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -33,7 +34,7 @@ You Are Destroyer Of Darkness (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/come-sai-lord-incarnate.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/come-sai-lord-incarnate.mp3)
 
 ---
 

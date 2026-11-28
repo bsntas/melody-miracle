@@ -36,7 +36,7 @@ Lord Gopala who had taken birth in the Dwapara age, Lord of Meera, son of Nanda 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-shyama-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-mohana-shyama-gopala.mp3)
 
 ---
 

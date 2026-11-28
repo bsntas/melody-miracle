@@ -35,7 +35,7 @@ Glory to Lord Shiva, the Lord of the Universe whose consort is Amba. He remov
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeesha-harey-shiva-shambho-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadeesha-harey-shiva-shambho-0.mp3)
 
 ---
 

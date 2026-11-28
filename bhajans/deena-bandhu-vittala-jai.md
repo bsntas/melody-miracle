@@ -35,7 +35,10 @@ Victory to Lord Panduranga Vittala of Pandharpur, who is the refuge of the downt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhu-vittala-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhu-vittala-jai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_229_DEENA_BANDHU_VITTHALA.mp3)
+- **Karaoke** (Reference Track 4 Pancham / F): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Deena%20Bandhu%20Vithala%20Jai.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Deena%20Bandhu%20Vithala%20Jai%204P%20Fmin.mp3)
 
 ---
 

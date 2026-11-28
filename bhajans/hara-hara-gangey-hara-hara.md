@@ -35,7 +35,8 @@ Let us chant the glorious name of Shiva who adorns the Ganges in His matted hair
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-gangey-hara-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-gangey-hara-hara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_201_HARA_HARA_GANGEY.mp3)
 
 ---
 

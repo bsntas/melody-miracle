@@ -37,7 +37,7 @@ Lord Sai is an embodiment of Love, the ocean of compassion who removes sin and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sagara-prema-swaroopa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sagara-prema-swaroopa.mp3)
 
 ---
 

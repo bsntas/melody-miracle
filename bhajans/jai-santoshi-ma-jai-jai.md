@@ -33,7 +33,7 @@ Glory be to Mother Santoshi, who removes misfortune of Her devotees and promotes
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-santoshi-ma-jai-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-santoshi-ma-jai-jai.mp3)
 
 ---
 

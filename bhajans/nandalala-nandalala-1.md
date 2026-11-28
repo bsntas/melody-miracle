@@ -34,7 +34,7 @@ Oh child of Nanda! Rejoice in dance, dance and dance! You are the Lord of the co
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-1.mp3)
 
 ---
 

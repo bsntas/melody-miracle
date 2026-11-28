@@ -15,7 +15,7 @@ Lu wate leno leno Ma Ote, Hi ya no, Hi ya no, Hi ya no (3)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-me-be-one-infinite-son.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-me-be-one-infinite-son.mp3)
 
 ---
 

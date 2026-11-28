@@ -37,7 +37,8 @@ Salutations to Lord Sai who is none other than Lord Shiva, the consort of Parvat
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-mahesha-girisha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-mahesha-girisha.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/SHORT_BHAJAN_TUTOR_010_SHIVA_SHIVA_SHAMBHO.mp3)
 
 ---
 

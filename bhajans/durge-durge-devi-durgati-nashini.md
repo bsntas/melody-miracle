@@ -35,7 +35,7 @@ Chant the name of Durga, the goddess who removes poverty. Chant the name of Kaal
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durge-durge-devi-durgati-nashini.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durge-durge-devi-durgati-nashini.mp3)
 
 ---
 

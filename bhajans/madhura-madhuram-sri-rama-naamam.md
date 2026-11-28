@@ -37,7 +37,7 @@ Chant the name of Lord Rama which is sweetness personified. Songs on His glory 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhuram-sri-rama-naamam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhuram-sri-rama-naamam.mp3)
 
 ---
 

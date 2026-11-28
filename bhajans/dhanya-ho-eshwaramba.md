@@ -39,7 +39,9 @@ Glory to Thee, O auspicious Mother Eshwaramba, You have gifted Lord Sai to th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhanya-ho-eshwaramba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhanya-ho-eshwaramba.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Dhanya%20Ho%20Eshwaramma.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Dhanya%20Ho%20Eshwaramma%205P%20Gmin.mp3)
 
 ---
 

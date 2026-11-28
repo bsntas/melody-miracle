@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5.5 Pancham / G# |
 | **Ladies Pitch** | 2.5 Pancham / E Flat |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Chant the names of Lord Krishna - Govinda, Gopala and Lord Narayana.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-narayana-gopala-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-narayana-gopala-narayana.mp3)
 
 ---
 

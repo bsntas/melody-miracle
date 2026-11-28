@@ -31,7 +31,7 @@ Lord Draw Me Near To You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-need-worship-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-need-worship-you.mp3)
 
 ---
 

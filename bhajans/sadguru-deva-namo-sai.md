@@ -36,7 +36,7 @@ Chant the name of the divine preceptor, Lord Sai. Residing in Puttaparthi, He re
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-deva-namo-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-deva-namo-sai.mp3)
 
 ---
 

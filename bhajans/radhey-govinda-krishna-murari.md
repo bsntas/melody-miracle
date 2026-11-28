@@ -36,7 +36,7 @@ O blue-complexioned Lord Krishna, beloved of Radha, You are the destroyer of t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-krishna-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-krishna-murari.mp3)
 
 ---
 

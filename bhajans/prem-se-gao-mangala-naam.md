@@ -37,7 +37,7 @@ With love and devotion chant the auspicious name of the merciful and loving Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-gao-mangala-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-gao-mangala-naam.mp3)
 
 ---
 

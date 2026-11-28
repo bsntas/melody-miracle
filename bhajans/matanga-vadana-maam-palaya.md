@@ -33,7 +33,7 @@ O elephant-faced Lord Ganesha, protect me. O beloved son of Lord Shiva and Go
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/matanga-vadana-maam-palaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/matanga-vadana-maam-palaya.mp3)
 
 ---
 

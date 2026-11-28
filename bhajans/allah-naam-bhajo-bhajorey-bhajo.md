@@ -36,7 +36,7 @@ Chant the divine names Allah, Maulah, Nanak, Mahavir, Buddha, Shirdi Sai Baba, R
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-naam-bhajo-bhajorey-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-naam-bhajo-bhajorey-bhajo.mp3)
 
 ---
 

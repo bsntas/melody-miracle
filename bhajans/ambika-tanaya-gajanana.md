@@ -37,7 +37,9 @@ O loving son of Mother Parvathi, the elephant-headed Lord Ganesha, kindly protec
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ambika-tanaya-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ambika-tanaya-gajanana.mp3)
+- **Karaoke** (Reference Track 2 Madhyam / G): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Ambika%20Tanaya.mp3)
+- **Karaoke** (Gents Pitch 2 Madhyam / G (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Ambika%20Tanaya%20-%20Karaoke%20-%205P%20Gmaj.mp3)
 
 ---
 

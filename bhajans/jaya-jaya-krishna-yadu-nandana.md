@@ -35,7 +35,7 @@ Victory to Lord Krishna of  Yadu lineage, the shining star of Brindavan, the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-krishna-yadu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-krishna-yadu-nandana.mp3)
 
 ---
 

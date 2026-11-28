@@ -33,7 +33,14 @@ Bow down to Lord Shiva who gives happiness and prosperity and who is the best
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-shivaya-om-shivaya.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-shivaya-om-shivaya.mp3)
+- **Karaoke** (Reference Track 6.5 Pancham / B Flat): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 6.5 Pancham / B Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Gents_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Gents_Karaoke_A_Pancham.mp3)
+- **Karaoke** (Gents Pitch 5.5 Pancham / G# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Gents_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Ladies_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4 Pancham / F (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Ladies_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Shivaya_Om_Shivaya_Ladies_Karaoke_E_Pancham.mp3)
 
 ---
 

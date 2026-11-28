@@ -35,7 +35,7 @@ Salutations to Lord Sai who is the embodiment of all religions and faiths. He is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-dharma-priya-sai-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-dharma-priya-sai-deva.mp3)
 
 ---
 

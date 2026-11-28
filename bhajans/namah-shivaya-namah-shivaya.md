@@ -36,7 +36,7 @@ Prostrations to Shiva, One who is with Divine Mother Parvathi, Who is Eternal, W
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namah-shivaya-namah-shivaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namah-shivaya-namah-shivaya.mp3)
 
 ---
 

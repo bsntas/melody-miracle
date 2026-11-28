@@ -45,7 +45,8 @@ O Lord Ganesha, son of Shiva, please listen to our prayers; we pay our obeisance
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-shivuni-kumara-shritha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-shivuni-kumara-shritha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-shivuni-kumara-shritha_1.mp3)
 
 ---
 

@@ -40,7 +40,7 @@ Understand O Mind, the Mantra 'Namah Shivaya' is the embodiment of that Suprem
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-tat-sath-namah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-tat-sath-namah.mp3)
 
 ---
 

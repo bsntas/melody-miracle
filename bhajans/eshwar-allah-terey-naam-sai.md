@@ -36,7 +36,9 @@ O Lord Sai, Eshwara is your name, so is the name Allah (the names Eshwar and A
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwar-allah-terey-naam-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwar-allah-terey-naam-sai.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Ishwar%20Allah%20Tere%20Naam%20Sai%20Tere%20Naam.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Eshwar%20Allah%20Tere%20Naam%20-%20Karaoke%20-%202P%20Dmin.mp3)
 
 ---
 

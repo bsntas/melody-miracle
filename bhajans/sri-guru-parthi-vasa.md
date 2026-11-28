@@ -35,7 +35,7 @@ Chant the name of Lord of Parthi who is Guru, Brahma, Vishnu, Mahesha, Allah, Zo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-guru-parthi-vasa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-guru-parthi-vasa.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ O Lord Ganesha, the son of Lord Shiva and Mother Gowri, the entire Universe bow
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shiva-nandana-jaya-jaga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shiva-nandana-jaya-jaga.mp3)
 
 ---
 

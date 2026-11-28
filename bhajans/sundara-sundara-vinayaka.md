@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Victory to Lord Ganesha who is very beautiful, who bestows everything good and a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-vinayaka.mp3)
 
 ---
 

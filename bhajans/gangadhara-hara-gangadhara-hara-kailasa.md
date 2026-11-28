@@ -33,7 +33,7 @@ We praise the Lord Sathya Sai Shiva Shankara-The One who is Auspicious, Captivat
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-hara-gangadhara-hara-kailasa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-hara-gangadhara-hara-kailasa.mp3)
 
 ---
 

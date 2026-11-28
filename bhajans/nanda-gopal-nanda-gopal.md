@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Glory to the son of Nanda, Lord Krishna, whose is dark-complexioned, the one who
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_453_NANDAGOPAL_NANDAGOPAL.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_453_NANDAGOPAL_NANDAGOPAL.mp3)
 
 ---
 

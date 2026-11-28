@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Chant the name of the handsome boy Gopala (Krishna) who is the supreme dancer a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-lal-shyama-gopal.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-lal-shyama-gopal.mp3)
 
 ---
 

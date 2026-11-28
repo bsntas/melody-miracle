@@ -36,7 +36,8 @@ Protect me Lord Ganesha, the Lord of Ganaas, who has an elephant head and is th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-gananatha-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-gananatha-gajanana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_179_LAMBODHARA_GANANATH_GAJANANA.mp3)
 
 ---
 

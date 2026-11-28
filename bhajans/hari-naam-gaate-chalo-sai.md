@@ -35,7 +35,8 @@ Let every moment be spent in singing and contemplating on the Lord's name Hari,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-naam-gaate-chalo-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-naam-gaate-chalo-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_331_HARI_NAM_GATE_CHALO.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ The Merciful Mother Sai is delighted by Music. Chant the names of the Deities Ka
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gaana-priyey-sai-karunamayi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gaana-priyey-sai-karunamayi.mp3)
 
 ---
 

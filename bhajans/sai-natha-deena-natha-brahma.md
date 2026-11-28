@@ -37,7 +37,7 @@ Salutations to You, O Lord Sai, the Supreme Guru, who is the protector of the w
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-natha-deena-natha-brahma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-natha-deena-natha-brahma.mp3)
 
 ---
 

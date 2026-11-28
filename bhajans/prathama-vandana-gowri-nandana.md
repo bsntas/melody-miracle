@@ -35,7 +35,8 @@ Foremost obeisance to Lord Ganesh, the beloved Prince of Lord Shiva and Mother
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-vandana-gowri-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-vandana-gowri-nandana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_164_Prathama_Vandana.mp3)
 
 ---
 

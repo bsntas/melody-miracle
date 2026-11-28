@@ -35,7 +35,7 @@ Chant the names of Lord Krishna, Rama and Govinda. Chant the name of Gopala, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-rama-govinda-gokula-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-rama-govinda-gokula-nandana.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Victory to Sri Rama who responds to a devotee's yearning. You are Sai Rama of Pr
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_413_SHRI_RAMA_JAI_RAMA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_413_SHRI_RAMA_JAI_RAMA.mp3)
 
 ---
 

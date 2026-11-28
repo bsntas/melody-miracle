@@ -35,7 +35,7 @@ Victory to Lord Krishna, the son of Nanda and the consort of Radha, who danc
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-nandalala-jaya-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-nandalala-jaya-nandalala.mp3)
 
 ---
 

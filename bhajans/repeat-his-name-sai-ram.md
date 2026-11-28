@@ -32,7 +32,7 @@ Rama Rama Ram Ram, Sai Rama Ram Ram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/repeat-his-name-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/repeat-his-name-sai-ram.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -43,7 +44,7 @@ You'll go down in history!” (LIKE GEORGE WASHINGTON)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rudolph-red-nosed-reindeer.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rudolph-red-nosed-reindeer.mp3)
 
 ---
 

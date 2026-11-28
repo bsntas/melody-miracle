@@ -34,7 +34,8 @@ Let the Mind dwell incessantly on the Lotus Feet of Hari, let the hands indulge 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-hari-hari-smaran_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-hari-hari-smaran.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-hari-hari-smaran_1.mp3)
 
 ---
 

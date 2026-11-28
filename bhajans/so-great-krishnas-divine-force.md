@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -32,7 +33,7 @@ In the heart, in the heart, Pray keeps going (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/so-great-krishna’s-divine-force.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/so-great-krishna’s-divine-force.mp3)
 
 ---
 

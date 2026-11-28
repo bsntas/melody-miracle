@@ -36,7 +36,7 @@ Chant the name of dark-hued Lord Krishna, who is Radha’s beloved. He steals th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/makhan-chora-radha-lola.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/makhan-chora-radha-lola.mp3)
 
 ---
 

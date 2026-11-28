@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Chant the Holy names of the Noble Teacher Dattatreya and Lord Sai. Reciting the
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_461_DUTTA_GURU_DUTTA_GURU_DATTATREYA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_461_DUTTA_GURU_DUTTA_GURU_DATTATREYA.mp3)
 
 ---
 

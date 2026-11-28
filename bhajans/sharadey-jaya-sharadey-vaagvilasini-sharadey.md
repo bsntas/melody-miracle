@@ -35,7 +35,8 @@ Victory to Mother Sharada (Saraswathi) who resides in our speech, who is the em
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharadey-jaya-sharadey-vaagvilasini-sharadey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharadey-jaya-sharadey-vaagvilasini-sharadey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_492_SHARADE_JAYA_SHARADE.mp3)
 
 ---
 

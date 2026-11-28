@@ -34,7 +34,7 @@ Victory to Mother Sathya Sai, the Goddess of Puttaparthi, who destroys fears
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-jaya-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-jaya-ma.mp3)
 
 ---
 

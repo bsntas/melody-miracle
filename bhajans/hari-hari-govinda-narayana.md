@@ -34,7 +34,7 @@ Sing the Glory of the Lord Hari who is also known by different names Govinda, Na
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-govinda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-govinda-narayana.mp3)
 
 ---
 

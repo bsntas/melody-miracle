@@ -34,7 +34,8 @@ Fear And Grief Can Never Touch Me [ I Am Om ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-god-i-am-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-god-i-am-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-god-i-am-god_1.mp3)
 
 ---
 

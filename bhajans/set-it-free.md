@@ -31,7 +31,7 @@ Let me fly through the darkest night, until I'm home again.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/set-it-free.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/set-it-free.mp3)
 
 ---
 

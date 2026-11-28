@@ -34,7 +34,7 @@ Hail the Great God, master of the universe, Lord Sai. We pray to that Supreme Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-mahesha-hey-jagadeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paahi-mahesha-hey-jagadeesha.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Constantly chant and pray to the Lotus feet of Lord Rama. Pray to the Lord of Ja
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajarey-rama-charan-satatam-bhajarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajarey-rama-charan-satatam-bhajarey.mp3)
 
 ---
 

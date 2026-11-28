@@ -35,7 +35,7 @@ Glory to Lord Rama of Raghu dynasty, the consort of Sita. Glory to the one who�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-sri-raghu-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-sri-raghu-rama.mp3)
 
 ---
 

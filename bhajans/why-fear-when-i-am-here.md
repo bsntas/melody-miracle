@@ -36,7 +36,7 @@ So Says Baba, Sathya Sai Baba, Sathya Sai Baba, My Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/why-fear-when-i-am-here.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/why-fear-when-i-am-here.mp3)
 
 ---
 

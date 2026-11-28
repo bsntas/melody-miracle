@@ -31,7 +31,7 @@ I Am Thine I Am Thine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-i-am-thine.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-i-am-thine.mp3)
 
 ---
 

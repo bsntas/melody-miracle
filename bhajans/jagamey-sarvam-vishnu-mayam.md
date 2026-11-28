@@ -36,7 +36,7 @@ Lord Vishnu, whose incarnation is our sacred preceptor Sathya Sai, is the Supre
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagamey-sarvam-vishnu-mayam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagamey-sarvam-vishnu-mayam.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C# |
+| **Tags** | Folk |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Chant "Victory to Lord Sai" blissfully and suffused in Love. Victory be to Mothe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anand-se-bolo-jai-baba-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anand-se-bolo-jai-baba-jai.mp3)
 
 ---
 

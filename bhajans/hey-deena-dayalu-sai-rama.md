@@ -36,7 +36,7 @@ Repeat the name of Sai Rama, the redeemer of the forlorn, the ever compassionate
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-deena-dayalu-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-deena-dayalu-sai-rama.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Sing the glory of Lord Krishna, the son of Devaki and the dear child of Gokula,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-harey-krishna-madhura-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-harey-krishna-madhura-mohana.mp3)
 
 ---
 

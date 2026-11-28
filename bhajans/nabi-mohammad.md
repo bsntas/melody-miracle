@@ -33,7 +33,7 @@ May the peace and blessings of Allah be upon Prophet Mohammad.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nabi-mohammad.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nabi-mohammad.mp3)
 
 ---
 

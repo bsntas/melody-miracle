@@ -34,7 +34,7 @@ Sing the glory of the Lord of Pandharpur, Panduranga. He is the resident of Part
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pandari-nivasa-hey-panduranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pandari-nivasa-hey-panduranga.mp3)
 
 ---
 

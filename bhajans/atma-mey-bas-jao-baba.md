@@ -36,7 +36,7 @@ Baba, please reside in our empty heart; the temple is empty without You. You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-mey-bas-jao-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-mey-bas-jao-baba.mp3)
 
 ---
 

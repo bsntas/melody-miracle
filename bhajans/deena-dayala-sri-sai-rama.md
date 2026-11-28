@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,8 @@ O Lord Sri Rama, Sai Rama, You are merciful and kind towards the weak and the m
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-sri-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-sri-sai-rama.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_406_DEENA_DAYALA_SHRI.mp3)
 
 ---
 

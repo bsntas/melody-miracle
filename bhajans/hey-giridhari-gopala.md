@@ -38,7 +38,7 @@ Oh Lord Gopala (Krishna) also known by names Giridhari, Keshava, Madhava, Mukun
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-giridhari-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-giridhari-gopala.mp3)
 
 ---
 

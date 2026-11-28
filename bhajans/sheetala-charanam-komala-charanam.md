@@ -36,7 +36,7 @@ The Feet of my Divine Preceptor Sai are cool and soft, are tender to touch and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sheetala-charanam-komala-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sheetala-charanam-komala-charanam.mp3)
 
 ---
 

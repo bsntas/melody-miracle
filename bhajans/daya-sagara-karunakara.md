@@ -34,7 +34,7 @@ Oh Lord Sai, you are the ocean of compassion and mercy. Oh Lord of the entire cr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-sagara-karunakara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-sagara-karunakara.mp3)
 
 ---
 

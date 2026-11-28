@@ -34,7 +34,7 @@ Chant the names of the Lord Rama, Krishna, Narayana, Keshava and Madhava (names
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-govinda-narayana-keshava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-govinda-narayana-keshava.mp3)
 
 ---
 

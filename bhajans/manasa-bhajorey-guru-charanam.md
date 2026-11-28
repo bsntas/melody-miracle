@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 1.5 Pancham / C# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -38,7 +39,17 @@ O mind, adhere to the feet of the Guru by singing His glory and take refuge unde
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manasa-bhajorey-guru-charanam_2.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_499_MANASA_BHAJARE_GURU_CHARANAM.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam__Karaoke_Gents_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam_Karaoke_Gents_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam_Karaoke_Gents_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam__Karaoke_Ladies_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam_Karaoke_Ladies_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Manasa_Bhajare_Guru_Charanam_Karaoke_Ladies_B_Pancham.mp3)
 
 ---
 

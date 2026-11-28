@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_391_AUM_HARI_AUM.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Glory to Lord Sai of Shirdi and Parthi, the very embodiment of Om. O Sai, You a
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_391_AUM_HARI_AUM.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_391_AUM_HARI_AUM.mp3)
 
 ---
 

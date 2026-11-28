@@ -34,7 +34,7 @@ O Lord Sathya Sai, the most venerable one, shower on us Your immense love and b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-rama-hey-ghana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-rama-hey-ghana.mp3)
 
 ---
 

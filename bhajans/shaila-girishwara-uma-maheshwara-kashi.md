@@ -34,7 +34,8 @@ Salutations to Lord Shiva who is the Lord of Kashi (also known as Banares) and t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shaila-girishwara-uma-maheshwara-kashi_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shaila-girishwara-uma-maheshwara-kashi.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shaila-girishwara-uma-maheshwara-kashi_1.mp3)
 
 ---
 

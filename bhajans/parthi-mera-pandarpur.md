@@ -38,7 +38,7 @@ Puttaparthi is my Pandarpur and Lord Sai is verily Lord Panduranga from whom th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-mera-pandarpur.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-mera-pandarpur.mp3)
 
 ---
 

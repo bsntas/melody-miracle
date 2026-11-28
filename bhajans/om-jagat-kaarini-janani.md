@@ -36,7 +36,7 @@ O Mother and Creator of the Universe, You are none other than Mother Sai of Putt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jagat-kaarini-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jagat-kaarini-janani.mp3)
 
 ---
 

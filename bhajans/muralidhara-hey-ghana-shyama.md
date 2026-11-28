@@ -37,7 +37,7 @@ Salutations to You Lord Sai, resident of Parthi. You are none other than Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-hey-ghana-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-hey-ghana-shyama.mp3)
 
 ---
 

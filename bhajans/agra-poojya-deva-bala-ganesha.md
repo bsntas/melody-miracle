@@ -36,7 +36,7 @@ Foremost prayers to the young Lord Ganesha, the beloved son of Mother Parvathi a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/agra-poojya-deva-bala-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/agra-poojya-deva-bala-ganesha.mp3)
 
 ---
 

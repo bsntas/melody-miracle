@@ -36,7 +36,7 @@ Maruti, the son of Wind God, is one of supreme valor, courage and is highly tale
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/veera-maruti-gambhira-maruti.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/veera-maruti-gambhira-maruti.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Let us all gather in the Divine presence of Lord Sai, glorify Him by singing swe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ke-darbar-mey-aao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ke-darbar-mey-aao.mp3)
 
 ---
 

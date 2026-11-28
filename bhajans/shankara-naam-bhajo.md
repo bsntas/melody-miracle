@@ -35,7 +35,7 @@ Chant the name of Lord Shankara (Shiva) the consort of Gowri. Lord Sai, the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-naam-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-naam-bhajo.mp3)
 
 ---
 

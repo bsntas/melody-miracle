@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Folk, Vintage |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ We sing in praise of Lord Sai Rama who is the embodiment of Lord Shankara and wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-roopa-sajjana-vanditha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-roopa-sajjana-vanditha.mp3)
 
 ---
 

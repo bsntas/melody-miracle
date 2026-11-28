@@ -34,7 +34,7 @@ Let me know that I am love.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/almighty-god-make-me-aware.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/almighty-god-make-me-aware.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Glory to Lord Shankara (Shiva), the one who holds the mighty Ganges in His Lock
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-samba-shiva-hara-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-samba-shiva-hara-hara.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Sing the glory of Lord Narayana, the one who is the ultimate refuge and the on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayanam-bhaja-narayanam-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayanam-bhaja-narayanam-0.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Mother Sai is the embodiment of Truth, the one who bestows protection from fear 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhaya-pradayini-ananda-roopini-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhaya-pradayini-ananda-roopini-0.mp3)
 
 ---
 

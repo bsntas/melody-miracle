@@ -32,7 +32,7 @@ I said “Yeah...yeah, yeah...yeah, yeah...God is!”
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/god-sanctuary.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/god-sanctuary.mp3)
 
 ---
 

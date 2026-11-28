@@ -38,7 +38,7 @@ Glory to the enchanting Lord Gopala (Krishna), the Lord of Meera. He moves 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-nidhey-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-nidhey-bhagawan.mp3)
 
 ---
 

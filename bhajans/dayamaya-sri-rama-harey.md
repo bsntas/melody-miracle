@@ -36,7 +36,7 @@ Chant the name of Rama, the compassionate one and Sai, who is highly merciful. R
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_346_DAYAMAYA_SHRI_RAM_HARE.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_346_DAYAMAYA_SHRI_RAM_HARE.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Chant the name of Krishna - the son of Nanda, bearing the blissful fragrance of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nanda-nandana-chandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nanda-nandana-chandana.mp3)
 
 ---
 

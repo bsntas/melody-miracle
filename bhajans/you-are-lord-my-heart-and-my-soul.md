@@ -37,7 +37,8 @@ Sai Ram Bhagawan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-my-heart-and-my-soul.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-my-heart-and-my-soul.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-my-heart-and-my-soul_1.mp3)
 
 ---
 

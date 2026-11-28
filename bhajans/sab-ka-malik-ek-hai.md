@@ -36,7 +36,7 @@ O Lord Sai, You are the Lord of all. You foster all religions, O Lord of Puttapa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sab-ka-malik-ek-hai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sab-ka-malik-ek-hai.mp3)
 
 ---
 

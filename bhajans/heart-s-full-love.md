@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Heart Voice, Multi-lingual |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ Rama Rama Ram, Rama Rama Ram, Rama Rama Ram, Sai Rama Rama Ram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/heart-s-full-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/heart-s-full-love.mp3)
 
 ---
 

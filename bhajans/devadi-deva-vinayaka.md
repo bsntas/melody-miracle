@@ -36,7 +36,7 @@ God of Gods Lord Ganesha, the elephant-faced one, You are the embodiment of Pran
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devadi-deva-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devadi-deva-vinayaka.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Sing the glory of Lord Krishna, the one with the Flute, who moves about in the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhuvana-murali-guna-gao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhuvana-murali-guna-gao.mp3)
 
 ---
 

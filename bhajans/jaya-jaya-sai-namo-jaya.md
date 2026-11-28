@@ -36,7 +36,7 @@ Victory to Lord Sai who confers all that is auspicious. Victory to Govinda, Gopa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-sai-namo-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-sai-namo-jaya.mp3)
 
 ---
 

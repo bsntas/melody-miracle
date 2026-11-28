@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -40,7 +41,7 @@ We Wish You A Merry Christmas And A Happy New Year (X3)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-wish-you-merry-christmas.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-wish-you-merry-christmas.mp3)
 
 ---
 

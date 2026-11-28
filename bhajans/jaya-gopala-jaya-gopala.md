@@ -35,7 +35,7 @@ Victory to Lord Gopala (Krishna), the consort of Radha. Victory to Lord Sai 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-gopala-jaya-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-gopala-jaya-gopala.mp3)
 
 ---
 

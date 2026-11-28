@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Sai Ram, Sai Ram, Everyday Please Help Me Say Sai Ram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/everyone-my-brother-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/everyone-my-brother-0.mp3)
 
 ---
 

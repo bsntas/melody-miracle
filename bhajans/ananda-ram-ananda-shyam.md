@@ -37,7 +37,8 @@ O blissful Lord Ram and Shyam (Krishna), we chant Your name Narayana, Hari an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-ram-ananda-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-ram-ananda-shyam.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-ram-ananda-shyam_1.mp3)
 
 ---
 

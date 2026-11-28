@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://media.radiosai.org/www/mp3download/Pancharatna-krithi-05.mp3 |
+| **Tags** | Kritis |
 
 ### Raga Notes
 
@@ -85,7 +86,8 @@ You are the source of Universal Love that established Sathya (Truth), Dharma (Ri
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-sathya-sai-avathaara-vaibhavam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-sathya-sai-avathaara-vaibhavam.mp3)
+- **Tutorial**: [▶ Listen](https://media.radiosai.org/www/mp3download/Pancharatna-krithi-05.mp3)
 
 ---
 

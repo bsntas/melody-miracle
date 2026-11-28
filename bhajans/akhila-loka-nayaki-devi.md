@@ -33,7 +33,7 @@ O Supreme Mother, You are the Master of the universe, the most beautiful one in 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhila-loka-nayaki-devi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhila-loka-nayaki-devi.mp3)
 
 ---
 

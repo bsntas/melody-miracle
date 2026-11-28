@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ O beloved Baba, grant Your Divine Darshan while we sing Your glory and help us
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-aao-merey-keertan-mey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-aao-merey-keertan-mey.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Glory be to Goddess Parvathi, the slayer of Mahisha, the remover of sins, the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahishasura-mardhini-mama-taapa-vimochani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahishasura-mardhini-mama-taapa-vimochani.mp3)
 
 ---
 

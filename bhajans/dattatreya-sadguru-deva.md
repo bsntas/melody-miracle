@@ -36,7 +36,8 @@ Oh God and Noble teacher Dattatreya, grant us to serve Your Feet. You are Brahma
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dattatreya-sadguru-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dattatreya-sadguru-deva.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_261_DATTATREYA_SADGURU_DEVA.mp3)
 
 ---
 

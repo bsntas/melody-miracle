@@ -33,7 +33,7 @@ Sing the names of Lord Rama, the consort of Mother Sita. Chant the names of Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ram-bolo-bolo-sita.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ram-bolo-bolo-sita.mp3)
 
 ---
 

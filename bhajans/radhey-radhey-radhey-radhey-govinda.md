@@ -34,7 +34,8 @@ Let us sing in praise of Lord Krishna and Radha. Praise be to Lord Krishna who i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-radhey-radhey-radhey-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-radhey-radhey-radhey-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-radhey-radhey-radhey-govinda_1.mp3)
 
 ---
 

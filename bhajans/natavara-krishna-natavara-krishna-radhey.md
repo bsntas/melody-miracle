@@ -34,7 +34,7 @@ Pray to Krishna, the little prankster, who is the soul of Radha. Hey Madhava (Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/natavara-krishna-natavara-krishna-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/natavara-krishna-natavara-krishna-radhey.mp3)
 
 ---
 

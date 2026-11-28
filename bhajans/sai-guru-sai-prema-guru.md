@@ -37,7 +37,7 @@ Meditate on the Divine Preceptor, Lord Sai. He eternally takes the form of the h
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-guru-sai-prema-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-guru-sai-prema-guru.mp3)
 
 ---
 

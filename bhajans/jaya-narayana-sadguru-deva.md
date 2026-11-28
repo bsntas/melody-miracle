@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Madhyam / F# |
 | **Ladies Pitch** | 5.5 Madhyam / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_330_JAYA_NARAYAN_SADGURU_DEVA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Victory to the Divine Preceptor Sai who is none other than Lord Narayana and L
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_330_JAYA_NARAYAN_SADGURU_DEVA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_330_JAYA_NARAYAN_SADGURU_DEVA.mp3)
 
 ---
 

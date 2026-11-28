@@ -34,7 +34,7 @@ O Lord Govinda, You are the beloved Lord of the mountains of Tirumala. O beloved
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalesha-prabhu-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalesha-prabhu-govinda.mp3)
 
 ---
 

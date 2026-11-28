@@ -35,7 +35,7 @@ O Lord Ganesha, the Lord of all Ganaas (Demigods), O Lord of Parthi, You relieve
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gananatha-sai-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gananatha-sai-gajanana.mp3)
 
 ---
 

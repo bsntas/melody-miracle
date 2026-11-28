@@ -37,7 +37,7 @@ Chant the many names of Lord Krishna, the captivator of the hearts and mind, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-nandalala.mp3)
 
 ---
 

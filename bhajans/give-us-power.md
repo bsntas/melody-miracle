@@ -37,7 +37,7 @@ Give us the power, give us the light, let it shine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/give-us-power.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/give-us-power.mp3)
 
 ---
 

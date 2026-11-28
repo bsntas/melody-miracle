@@ -38,7 +38,7 @@ Obeisance to Lord Shiva, who is the consort of Gowri and the Lord of the univer
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nathaya-vishwanathaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nathaya-vishwanathaya.mp3)
 
 ---
 

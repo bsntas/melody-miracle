@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -56,7 +57,7 @@ In A One-horse Open Sleigh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jingle-bells.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jingle-bells.mp3)
 
 ---
 

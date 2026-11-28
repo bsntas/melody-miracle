@@ -37,7 +37,7 @@ When I have learned what is Truth, Love, and Peace
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thank-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thank-you.mp3)
 
 ---
 

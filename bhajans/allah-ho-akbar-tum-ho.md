@@ -37,7 +37,7 @@ O Lord Sathya Sai, You are the most merciful and benevolent Allah, the suprem
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar-tum-ho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar-tum-ho.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Oh Lord Sai, You are none other than the Lord Gajanana (Ganesha), who bestows au
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-ranjana-duritha-bhanjana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-ranjana-duritha-bhanjana.mp3)
 
 ---
 

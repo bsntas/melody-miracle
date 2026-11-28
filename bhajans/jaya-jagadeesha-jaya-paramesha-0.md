@@ -36,7 +36,7 @@ Victory to Lord Shiva who is the Supreme Lord. He is the origin of all that is a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-jaya-paramesha-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-jaya-paramesha-0.mp3)
 
 ---
 

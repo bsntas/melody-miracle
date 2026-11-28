@@ -33,7 +33,7 @@ You'll start to open up your hearts, to the one divinity.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/babas-message.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/babas-message.mp3)
 
 ---
 

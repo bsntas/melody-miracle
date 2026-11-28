@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ Hail Lord Shankara, the bestower of auspiciousness, the Lord of Uma and whose ab
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_386_NEELAKANTHA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_386_NEELAKANTHA.mp3)
 
 ---
 

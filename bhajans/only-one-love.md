@@ -32,7 +32,7 @@ We all are one when that one Lord is love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/only-one-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/only-one-love.mp3)
 
 ---
 

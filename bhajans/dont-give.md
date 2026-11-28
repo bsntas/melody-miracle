@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium |
 | **Level** | Simple |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -51,7 +52,7 @@ His Perfect Will
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dont-give.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dont-give.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ Salutations to Lord Shirdi Baba, the Lord of Dwarakamayi and to the Lord of Pras
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-dwarakamayi-prashanthi-vasi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-dwarakamayi-prashanthi-vasi.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-dwarakamayi-prashanthi-vasi_1.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to Lord Sathya Sai who is the Creator, Sustainer and Destroyer and the Sup
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-brahma-hey-vishnu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-brahma-hey-vishnu.mp3)
 
 ---
 

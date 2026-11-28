@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Reveal Yourself |
 
 ### Raga Notes
 
@@ -31,7 +32,7 @@ Let my words and thoughts be guided by Your love.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/be-heart-within-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/be-heart-within-my-heart.mp3)
 
 ---
 

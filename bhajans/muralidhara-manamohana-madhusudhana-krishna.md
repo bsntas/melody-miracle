@@ -34,7 +34,7 @@ O Lord Sai Krishna, son of Yadu Dynasty, the one holding the Flute, You are a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-manamohana-madhusudhana-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-manamohana-madhusudhana-krishna.mp3)
 
 ---
 

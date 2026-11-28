@@ -39,7 +39,7 @@ O-o-o-om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/beautiful-god-hallelujah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/beautiful-god-hallelujah.mp3)
 
 ---
 

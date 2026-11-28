@@ -35,7 +35,7 @@ O Lord Krishna of the Yadu clan, You have an enchanting form, You are the ve
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-mana-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-mana-mohana.mp3)
 
 ---
 

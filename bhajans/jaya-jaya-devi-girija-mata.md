@@ -34,7 +34,7 @@ Praises be to the Universal Mother Girija, the embodiment of the Primordial Soun
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-devi-girija-mata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-devi-girija-mata.mp3)
 
 ---
 

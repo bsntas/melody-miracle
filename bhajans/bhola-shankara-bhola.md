@@ -34,7 +34,7 @@ O Lord Shankara (Shiva), the giver of prosperity, You are easily pleased. You a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-shankara-bhola.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-shankara-bhola.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Salutations to You O Lord Shankara (Shiva), the bestower of happiness. You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-natha-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-natha-shankara.mp3)
 
 ---
 

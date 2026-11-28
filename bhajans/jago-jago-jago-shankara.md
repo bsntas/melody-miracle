@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -39,7 +40,8 @@ Awake us to the inner reality, O bestower of auspiciousness, the supreme Lord w
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jago-jago-jago-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jago-jago-jago-shankara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_435_JAGO_JAGO_SHANKARA.mp3)
 
 ---
 

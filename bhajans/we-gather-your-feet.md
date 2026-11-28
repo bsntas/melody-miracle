@@ -35,7 +35,7 @@ On The Lonely Path Home
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-gather-your-feet.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-gather-your-feet.mp3)
 
 ---
 

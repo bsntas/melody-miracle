@@ -12,6 +12,7 @@
 | **Beat** | 6 Beat / Dadra |
 | **Tempo** | Slow |
 | **Level** | Intermediate |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 
@@ -36,7 +37,7 @@ From the Life and the Love that is ours..
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abide-word.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abide-word.mp3)
 
 ---
 

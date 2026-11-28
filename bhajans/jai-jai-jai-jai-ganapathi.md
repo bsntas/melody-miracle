@@ -35,7 +35,7 @@ Glory to the elephant-faced Lord of Ganaas (Shiva's tribe) whose Mother is Parva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-jai-ganapathi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-jai-ganapathi.mp3)
 
 ---
 

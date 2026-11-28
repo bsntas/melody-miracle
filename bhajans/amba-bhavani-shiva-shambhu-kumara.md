@@ -34,7 +34,8 @@ O Lord Ganesha, beloved son of Shiva and Mother Parvathi, You are the embodiment
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-bhavani-shiva-shambhu-kumara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-bhavani-shiva-shambhu-kumara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-bhavani-shiva-shambhu-kumara_1.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 4.5 Pancham / F# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ Glory to the beautiful Flutist Lord Krishna, the stealer of hearts, the one who 
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_382_MURALIDHARA_BADA_CHITACHOR.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_382_MURALIDHARA_BADA_CHITACHOR.mp3)
 
 ---
 

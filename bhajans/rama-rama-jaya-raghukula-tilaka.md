@@ -35,7 +35,7 @@ Worship the lotus-eyed Lord Rama, who is the auspicious symbol of the Raghu dyna
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-jaya-raghukula-tilaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-jaya-raghukula-tilaka.mp3)
 
 ---
 

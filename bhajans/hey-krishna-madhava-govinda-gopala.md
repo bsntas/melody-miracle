@@ -34,7 +34,7 @@ Chant the various names of Gopala, Govinda, Krishna, Madhava, the One who gives 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-krishna-madhava-govinda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-krishna-madhava-govinda-gopala.mp3)
 
 ---
 

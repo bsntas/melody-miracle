@@ -35,7 +35,7 @@ Let us worship the Lotus Feet of Lord Sai, meditate upon the nectar of His Name,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-sai-pada-pankajam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-sai-pada-pankajam.mp3)
 
 ---
 

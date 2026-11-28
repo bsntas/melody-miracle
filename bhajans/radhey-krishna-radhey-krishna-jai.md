@@ -36,7 +36,8 @@ Repeat the names of Radhey Krishna, of Shirdi Krishna and Parthi Krishna. Victor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-krishna-radhey-krishna-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-krishna-radhey-krishna-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-krishna-radhey-krishna-jai_1.mp3)
 
 ---
 

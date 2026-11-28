@@ -34,7 +34,7 @@ O Lord Ganesha, the Leader of Ganas, son of Mother Girija (Parvathi), You a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganadhi-pathayey-paahi-maam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganadhi-pathayey-paahi-maam.mp3)
 
 ---
 

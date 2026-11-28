@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 2 Pancham / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_449_GOVINDETI_SADA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Always immerse (wash sins away) yourself in the name of Lord Govinda. Always cha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindethi-sada-snanam.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindethi-sada-snanam.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_449_GOVINDETI_SADA.mp3)
 
 ---
 

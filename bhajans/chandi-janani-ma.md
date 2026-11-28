@@ -37,7 +37,7 @@ Victory to Mother Durga, the vanquisher of the demon Chanda. She bestows wisdom 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandi-janani-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandi-janani-ma.mp3)
 
 ---
 

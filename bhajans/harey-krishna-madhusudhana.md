@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -30,7 +31,8 @@ Harey Krishna Yadu Nandana
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-madhusudhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-madhusudhana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_441_HARE_KRISHNA_MADHUSUDANA.mp3)
 
 ---
 

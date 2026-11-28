@@ -29,7 +29,8 @@ Chant the name of Sai Narayani who rides on the Lion and who is known by many na
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/simha-vahini-sai-narayani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/simha-vahini-sai-narayani.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_314_SIMHAVAHINI_SAI.mp3)
 
 ---
 

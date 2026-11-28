@@ -38,7 +38,7 @@ Surrender to the Supreme Lord, Divine Preceptor Sai, who is Brahma (creator), Vi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-brahma-guru-vishnu-guru-devo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-brahma-guru-vishnu-guru-devo.mp3)
 
 ---
 

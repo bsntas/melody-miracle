@@ -35,7 +35,7 @@ O elephant-faced Lord Ganesha, You are the loving son of Mother Gowri and the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-shubhanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-shubhanana.mp3)
 
 ---
 

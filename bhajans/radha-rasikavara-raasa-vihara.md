@@ -36,7 +36,7 @@ Praise be to Lord Krishna and His Divine Consort, Radha, who are engrossed in th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-rasikavara-raasa-vihara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-rasikavara-raasa-vihara.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Worship Lord Narayana who is none other than Hari, Govinda, Gopala, the master o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-narayana.mp3)
 
 ---
 

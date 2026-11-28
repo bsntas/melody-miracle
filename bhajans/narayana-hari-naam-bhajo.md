@@ -36,7 +36,7 @@ Sing the glorious Name of Lord Narayana, also known as Hari, who is verily Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-naam-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-naam-bhajo.mp3)
 
 ---
 

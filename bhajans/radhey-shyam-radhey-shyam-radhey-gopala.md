@@ -35,7 +35,7 @@ Chant the name of Lord Shyam (Krishna), the dark-complexioned one who is the bel
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyam-radhey-shyam-radhey-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyam-radhey-shyam-radhey-gopala.mp3)
 
 ---
 

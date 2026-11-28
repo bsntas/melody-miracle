@@ -35,7 +35,7 @@ Oh Lord Sai, You are the ocean of compassion. You are verily the lotus-eyed N
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-deva-jagadeesha-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-deva-jagadeesha-deva.mp3)
 
 ---
 

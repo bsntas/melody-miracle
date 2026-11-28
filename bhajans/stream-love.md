@@ -12,6 +12,7 @@
 | **Beat** | 6 Beat / Dadra |
 | **Tempo** | Medium |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Reach up take Love off the shelf [ There’s a Stream ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/stream-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/stream-love.mp3)
 
 ---
 

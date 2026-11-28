@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -46,7 +47,7 @@ Sweet Ganesha, sweet Ganesha, dancing in my heart
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweet-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweet-ganesha.mp3)
 
 ---
 

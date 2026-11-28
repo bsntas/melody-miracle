@@ -36,7 +36,7 @@ Lord Sai Ram, with eyes shaped like lotus petals, is the uplifter of the downtro
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aravinda-lochana-aartha-janavana-parthi-pureeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aravinda-lochana-aartha-janavana-parthi-pureeshwara.mp3)
 
 ---
 

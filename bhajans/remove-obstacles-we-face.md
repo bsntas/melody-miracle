@@ -33,7 +33,7 @@ Hold our lives in Your kind hand, lead us to Your blissful land
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/remove-obstacles-we-face.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/remove-obstacles-we-face.mp3)
 
 ---
 

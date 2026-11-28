@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / ETutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_430_HE_MADHAVA_HE_YADUNANDANA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Glory to Lord Krishna, the beloved son of the Yadhava clan, the one who vanqui
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-madhava-yadu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-madhava-yadu-nandana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_430_HE_MADHAVA_HE_YADUNANDANA.mp3)
 
 ---
 

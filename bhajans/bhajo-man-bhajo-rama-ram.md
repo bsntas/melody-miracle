@@ -37,7 +37,8 @@ O mind, chant the name of the Lord Rama and Lord Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-man-bhajo-rama-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-man-bhajo-rama-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-man-bhajo-rama-ram_1.mp3)
 
 ---
 

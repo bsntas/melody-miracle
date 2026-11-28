@@ -35,7 +35,7 @@ Lord Sai, the resident of Parthi is none other than Lord Shankara, who wears the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shankara-parthi-pureeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shankara-parthi-pureeshwara.mp3)
 
 ---
 

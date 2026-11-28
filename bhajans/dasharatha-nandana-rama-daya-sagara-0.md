@@ -35,7 +35,7 @@ O merciful Lord Rama, beloved son of King Dasharatha, You are an ocean of merc
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-rama-daya-sagara-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-rama-daya-sagara-0.mp3)
 
 ---
 

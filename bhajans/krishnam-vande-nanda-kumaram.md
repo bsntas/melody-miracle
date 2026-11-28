@@ -34,7 +34,7 @@ I bow to the little Krishna, the son of Nanda and the consort of Radha and the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishnam-vande-nanda-kumaram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishnam-vande-nanda-kumaram.mp3)
 
 ---
 

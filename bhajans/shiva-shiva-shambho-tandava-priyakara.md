@@ -36,7 +36,14 @@ This song extols the attributes associated with Lord Sai who is none other than
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-tandava-priyakara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-tandava-priyakara.mp3)
+- **Karaoke** (Reference Track 4 Pancham / F): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Gents_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Gents_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Gents_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Ladies_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Ladies_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Shiva_Shambho_Tandava_Priyakara_Ladies_Karaoke_A_Sharp_Pancham.mp3)
 
 ---
 

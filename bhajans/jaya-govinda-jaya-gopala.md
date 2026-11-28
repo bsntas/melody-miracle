@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / ATutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_374_JAI_GOVINDA_JAI_GOPALA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,8 @@ Chant the name of Gopala, the consort of Radha, who is fond of the Raasa leela (
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-govinda-jaya-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-govinda-jaya-gopala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_374_JAI_GOVINDA_JAI_GOPALA.mp3)
 
 ---
 

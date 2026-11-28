@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | My Sweet |
 
 ### Raga Notes
 
@@ -58,7 +59,7 @@ Whenever You're here [ People say ... never apart ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/id-give-it-all-away.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/id-give-it-all-away.mp3)
 
 ---
 

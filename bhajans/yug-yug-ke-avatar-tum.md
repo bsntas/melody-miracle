@@ -36,7 +36,7 @@ O Lord Sai of Shirdi and Parthi, You have incarnated from age to age, You are m
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yug-yug-ke-avatar-tum.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yug-yug-ke-avatar-tum.mp3)
 
 ---
 

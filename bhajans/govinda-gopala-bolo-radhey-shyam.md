@@ -34,7 +34,7 @@ Chant the glorious names of Lord Krishna - Govinda, Ghana Shyam and Lord Sai wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-bolo-radhey-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-bolo-radhey-shyam.mp3)
 
 ---
 

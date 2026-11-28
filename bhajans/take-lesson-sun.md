@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Values |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ Serve all in the spirit of pure love.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-lesson-sun-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-lesson-sun-0.mp3)
 
 ---
 

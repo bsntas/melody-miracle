@@ -37,7 +37,7 @@ O Divine Preceptor Sai, the Lord of the destitute, You are the embodiment of l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-natha-sai-guru-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-natha-sai-guru-natha.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Oh Lord Ganesh, son of Mother Gowri, You are blemishless and Your countenance 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-gajanana-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-gajanana-hey.mp3)
 
 ---
 

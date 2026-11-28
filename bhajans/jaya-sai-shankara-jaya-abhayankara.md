@@ -35,7 +35,8 @@ Glory to Lord Sai who is verily Lord Shankara (Shiva) who bestows freedom fro
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-shankara-jaya-abhayankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-shankara-jaya-abhayankara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_141_Jaya_Sai_Shankara_Jaya_Abhayankara.mp3)
 
 ---
 

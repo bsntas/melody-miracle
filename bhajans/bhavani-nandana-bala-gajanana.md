@@ -33,7 +33,7 @@ O young Lord Ganesh, the elephant-headed son of Mother Bhavani (Parvathi), 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhavani-nandana-bala-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhavani-nandana-bala-gajanana.mp3)
 
 ---
 

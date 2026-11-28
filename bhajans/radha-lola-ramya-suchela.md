@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2.5 Pancham / E Flat |
 | **Ladies Pitch** | 5.5 Pancham / G#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_385_RADHA_LOLA_RAMYA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ O Lord Gopala (Krishna), the delightful, elegant and the beautiful one who ad
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_385_RADHA_LOLA_RAMYA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_385_RADHA_LOLA_RAMYA.mp3)
 
 ---
 

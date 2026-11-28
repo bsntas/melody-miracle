@@ -36,7 +36,7 @@ O Mother Sai residing in Parthi, You are the personification of the Primordial 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-roopini-janani-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-roopini-janani-ma.mp3)
 
 ---
 

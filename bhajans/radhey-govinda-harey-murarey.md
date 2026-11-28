@@ -34,7 +34,7 @@ Chant the many names of Lord Krishna, the one who destroys the miseries of life
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-harey-murarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-harey-murarey.mp3)
 
 ---
 

@@ -32,7 +32,7 @@ We help ever, hurt never
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/were-path-purity.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/were-path-purity.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ O Mind, chant the name of Lord Rama, the one who bestows welfare, who wields 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-ramam-bhaja-ramam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-ramam-bhaja-ramam.mp3)
 
 ---
 

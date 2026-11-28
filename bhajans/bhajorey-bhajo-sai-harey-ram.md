@@ -37,7 +37,7 @@ Chant the holy name and sing the glory of Lord Sai, Govinda, Gopala, Madhava 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhajo-sai-harey-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhajo-sai-harey-ram.mp3)
 
 ---
 

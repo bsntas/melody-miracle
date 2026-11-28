@@ -35,7 +35,7 @@ Victory to Lord Ganesha, the big-bellied one, the Lord of the Ganas (Shiva's ar
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-jaya-gowri-sutha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-jaya-gowri-sutha.mp3)
 
 ---
 

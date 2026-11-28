@@ -35,7 +35,7 @@ Victory to Lord Vighneshwara (Lord Ganesha) the son of Parvathi,, having a pleas
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-gananatha-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-gananatha-gajanana.mp3)
 
 ---
 

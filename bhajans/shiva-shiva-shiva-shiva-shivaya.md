@@ -37,7 +37,7 @@ Worship Lord Shiva with the mantra "Shivaya Namah Om Haraya Namah Om". Pray to L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shiva-shiva-shivaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shiva-shiva-shivaya.mp3)
 
 ---
 

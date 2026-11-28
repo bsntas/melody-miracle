@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_405_JAI_JAI_SADGURU_SAI_SADASHIV.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -33,7 +34,9 @@ Let us bow down in reverence to the Sacred Preceptor Sai Sadashiva, the one who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-sadguru-sai-sadashiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-sadguru-sai-sadashiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-sadguru-sai-sadashiva_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_405_JAI_JAI_SADGURU_SAI_SADASHIV.mp3)
 
 ---
 

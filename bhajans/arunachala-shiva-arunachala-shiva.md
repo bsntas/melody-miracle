@@ -35,7 +35,7 @@ O Lord Shiva, You reside in the Arunachala hill in the form of imperishable 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/arunachala-shiva-arunachala-shiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/arunachala-shiva-arunachala-shiva.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Lord Rama is our very own relative and is the ocean of mercy and compassion. He 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-mama-bandho-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-mama-bandho-sai-rama.mp3)
 
 ---
 

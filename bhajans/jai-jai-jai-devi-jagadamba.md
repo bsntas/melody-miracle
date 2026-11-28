@@ -35,7 +35,7 @@ Glory be to Universal Mother, destroyer of sorrows and promoter of the well bein
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-devi-jagadamba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-devi-jagadamba.mp3)
 
 ---
 

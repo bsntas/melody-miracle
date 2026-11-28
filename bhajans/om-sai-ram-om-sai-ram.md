@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2.5 Pancham / E Flat |
 | **Ladies Pitch** | 6.5 Pancham / B Flat |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 
@@ -35,7 +36,7 @@ My sweet Lord, Sathya Sai Bhagawan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-ram-om-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-ram-om-sai-ram.mp3)
 
 ---
 

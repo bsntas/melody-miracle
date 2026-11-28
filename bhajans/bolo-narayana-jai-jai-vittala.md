@@ -36,7 +36,8 @@ Let us chant the many names of the Lord: Narayana, Vittala, Govinda, Gopala, Pa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-narayana-jai-jai-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-narayana-jai-jai-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-narayana-jai-jai-vittala_1.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Sing the glory of Lord Krishna, the dark complexioned son of Nanda and dear con
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-gopala.mp3)
 
 ---
 

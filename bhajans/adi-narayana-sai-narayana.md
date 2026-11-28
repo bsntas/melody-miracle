@@ -36,7 +36,7 @@ Victory to Lord Sai who is verily Lord Narayana, the primordial one. O Lord, Yo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/adi-narayana-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/adi-narayana-sai-narayana.mp3)
 
 ---
 

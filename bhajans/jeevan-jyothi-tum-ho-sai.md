@@ -35,7 +35,9 @@ You are the Lamp of Life O Lord Sai, light in us the lamp of Love. Enlighten o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jeevan-jyothi-tum-ho-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jeevan-jyothi-tum-ho-sai.mp3)
+- **Karaoke** (Reference Track 4.5 Pancham / F#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Jeevan%20Jyothi%20Tum%20Ho%20Sai.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Jeevan%20Jyothi%20Tum%20Ho%20Sai%20-%20Karaoke%20-%204.5P%20F%23min.mp3)
 
 ---
 

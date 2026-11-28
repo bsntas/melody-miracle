@@ -37,7 +37,10 @@ O Sai, the Lord of Parthi, we chant Your name, which is loved by Your devotees 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaktha-vatsala-tero-naam-o.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaktha-vatsala-tero-naam-o.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_300_BHAGATAVATSAL_TERO_NAAM.mp3)
+- **Karaoke** (Reference Track 7 Pancham / B): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Bhagat%20Vatsala%20Tero%20Naam.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Bhagat%20Vatsala%20Tero%20Naam%207P%20Bmin.mp3)
 
 ---
 

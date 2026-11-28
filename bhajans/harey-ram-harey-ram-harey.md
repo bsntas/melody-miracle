@@ -36,7 +36,14 @@ Chant the different names of the Lord, Rama, Krishna, Mukunda, Madhava, Govinda,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-ram-harey-ram-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-ram-harey-ram-harey.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Gents_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Gents_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Gents_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Ladies_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Ladies_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Ram_Hare_Ram_Hare_Rama_Krishna_Hare_Ram_Ladies_Karaoke_A_Sharp_Pancham.mp3)
 
 ---
 

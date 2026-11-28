@@ -35,7 +35,7 @@ Chant the name of Purandara Ranga, the Indweller. Glory to Lord Vittala, the L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/purandara-ranga-harey-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/purandara-ranga-harey-vittala.mp3)
 
 ---
 

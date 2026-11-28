@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Carols |
 
 ### Raga Notes
 
@@ -48,7 +49,7 @@ And Wonders, Wonders, Of His Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joy-world.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joy-world.mp3)
 
 ---
 

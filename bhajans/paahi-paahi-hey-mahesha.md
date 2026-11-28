@@ -37,7 +37,7 @@ Protect us, O Lord Shiva, the greatest Lord and the consort of Mother Gowri (Par
 
 ## Audio
 
-[▶ Listen](https://saisundaram.org/wp-content/uploads/2021/05/43-PAHI-PAHI-HEY-MAHESHA.mp3)
+- **Audio**: [▶ Listen](https://saisundaram.org/wp-content/uploads/2021/05/43-PAHI-PAHI-HEY-MAHESHA.mp3)
 
 ---
 

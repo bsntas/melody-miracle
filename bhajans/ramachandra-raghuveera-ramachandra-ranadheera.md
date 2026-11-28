@@ -37,7 +37,8 @@ Glory to Lord Rama, the hero of the Raghu dynasty. Glory to Ramachandra, the ill
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ramachandra-raghuveera-ramachandra-ranadheera.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ramachandra-raghuveera-ramachandra-ranadheera.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_278_RAMCHANDRA_RAGHUVEERA.mp3)
 
 ---
 

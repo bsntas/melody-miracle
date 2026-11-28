@@ -35,7 +35,7 @@ Glory to You, O Lord Sai of Parthi, You are verily Lord Narayana. You are the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sanathana-nithya-niranjana-bhaktha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sanathana-nithya-niranjana-bhaktha.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Heart Voice |
 
 ### Raga Notes
 
@@ -32,7 +33,7 @@ Guide us all the way, Om Sai Ganapathi Jai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ganapathi-jai-please-help-us-find-our-way.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ganapathi-jai-please-help-us-find-our-way.mp3)
 
 ---
 

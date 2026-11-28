@@ -37,7 +37,8 @@ Glory to Lord Gopala (Krishna), the Lord and sustainer of the Universe. Victory
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagatpathey-hari-sai-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagatpathey-hari-sai-gopala.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagatpathey-hari-sai-gopala_1.mp3)
 
 ---
 

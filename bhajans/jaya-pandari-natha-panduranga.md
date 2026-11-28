@@ -37,7 +37,7 @@ Victory to Lord Panduranga, the Lord of Pandari, the one who blessed Pundalika. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-pandari-natha-panduranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-pandari-natha-panduranga.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ For all the universe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-peace-peace.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-peace-peace.mp3)
 
 ---
 

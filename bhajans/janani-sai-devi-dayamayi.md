@@ -35,7 +35,7 @@ Oh Mother Sathya Sai You are the One of compassion and personification of Love. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janani-sai-devi-dayamayi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janani-sai-devi-dayamayi.mp3)
 
 ---
 

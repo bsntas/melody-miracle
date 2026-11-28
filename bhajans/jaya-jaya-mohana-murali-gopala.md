@@ -34,7 +34,7 @@ Chant the names of the charming Gopala who plays on the Flute, the lad of Brinda
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-mohana-murali-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-mohana-murali-gopala.mp3)
 
 ---
 

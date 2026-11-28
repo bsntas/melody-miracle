@@ -35,7 +35,7 @@ Glory to Lord Krishna, the son of Nanda and the one who stole butter. Oh Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-navaneetha-chora-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-navaneetha-chora-sai.mp3)
 
 ---
 

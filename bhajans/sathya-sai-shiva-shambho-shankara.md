@@ -36,7 +36,7 @@ Oh Lord Sathya Sai, You are Lord Shiva (also called, Shambho, Shankara, Neelakan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-shiva-shambho-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-shiva-shambho-shankara.mp3)
 
 ---
 

@@ -40,7 +40,7 @@ Salutations to Anjaneya, who is always immersed in meditation on Lord Rama, who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-dhyana-nirata-anjaneya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-dhyana-nirata-anjaneya.mp3)
 
 ---
 

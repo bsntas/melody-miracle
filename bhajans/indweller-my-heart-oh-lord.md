@@ -32,7 +32,7 @@ Sai Ram, Sai Ram, Lets All Rejoice, Sing Sai Ram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/indweller-my-heart-oh-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/indweller-my-heart-oh-lord.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to Thee, Lord Nataraja (dancing Shiva), the beloved of Gowri, You are the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-manohara-hey-nataraja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-manohara-hey-nataraja.mp3)
 
 ---
 

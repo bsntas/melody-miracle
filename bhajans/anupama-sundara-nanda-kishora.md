@@ -38,7 +38,8 @@ O Krishna, son of Nanda, You are unsurpassingly beautiful. You are dark as the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anupama-sundara-nanda-kishora.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anupama-sundara-nanda-kishora.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_271_ANUPAM_SUNDAR.mp3)
 
 ---
 

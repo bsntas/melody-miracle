@@ -34,7 +34,7 @@ Love has opened up the windows of my soul
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-lord-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-lord-sai.mp3)
 
 ---
 

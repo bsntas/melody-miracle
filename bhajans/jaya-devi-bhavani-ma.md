@@ -35,7 +35,8 @@ Victory to Goddess Bhavani, the very existence. Victory to Divine Mother Sathy
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-bhavani-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-bhavani-ma.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_336_JAYA_DEVI_BHAVANI_MA.mp3)
 
 ---
 

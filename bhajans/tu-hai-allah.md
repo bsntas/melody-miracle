@@ -36,7 +36,7 @@ O Lord, You are verily Allah, Maulah, Jehovah, Mahavira, Ahura Mazda, Buddha, Gu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tu-hai-allah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tu-hai-allah.mp3)
 
 ---
 

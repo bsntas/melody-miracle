@@ -36,7 +36,7 @@ Chant the names Kanda, Kumara and Karthikeya which are the names of Lord Subra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanda-kumara-vadivela.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanda-kumara-vadivela.mp3)
 
 ---
 

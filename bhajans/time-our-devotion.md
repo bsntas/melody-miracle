@@ -34,7 +34,7 @@ Bless us, bless us, Sai Ganesha (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/time-our-devotion.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/time-our-devotion.mp3)
 
 ---
 

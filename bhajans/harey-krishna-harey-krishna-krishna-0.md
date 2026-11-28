@@ -35,7 +35,7 @@ Chant the names of Lord Hari (Narayana), Lord Krishna, Lord Rama incessantly. Gl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-krishna-krishna-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-krishna-krishna-0.mp3)
 
 ---
 

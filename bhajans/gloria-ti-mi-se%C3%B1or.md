@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Arathi, Multi-lingual, Prayers |
 
 ### Raga Notes
 
@@ -63,7 +64,9 @@ Om Paz, Paz, Paz
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gloria-ti-mi-señor.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gloria-ti-mi-señor.mp3)
+- **Karaoke** (Reference Track 2 Pancham D): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Karaoke_D_Pancham.mp3)
 
 ---
 

@@ -42,7 +42,9 @@ Always chant the names of the Divine Preceptor Vahey Guru, Lords Rama, Krishna,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vahey-guru-vahey-guru-vahey_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vahey-guru-vahey-guru-vahey.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vahey-guru-vahey-guru-vahey_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_502_VAHE_GURU.mp3)
 
 ---
 

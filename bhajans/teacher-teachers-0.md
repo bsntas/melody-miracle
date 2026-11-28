@@ -35,7 +35,7 @@ Lord of all lords.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/teacher-teachers-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/teacher-teachers-0.mp3)
 
 ---
 

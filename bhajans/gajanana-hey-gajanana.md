@@ -37,7 +37,7 @@ Glory to Lord Gajanana (Ganesha), beloved son of Mother Gowri (Parvathi). O 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-gajanana.mp3)
 
 ---
 

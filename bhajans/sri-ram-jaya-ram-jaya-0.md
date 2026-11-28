@@ -34,7 +34,7 @@ Victory to Lord Rama, the embodiment of auspiciousness, the very life of Janaki 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ram-jaya-ram-jaya-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ram-jaya-ram-jaya-0.mp3)
 
 ---
 

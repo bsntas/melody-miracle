@@ -36,7 +36,7 @@ O Lord Shiva Nataraj, who is none other than the great Lord Sathya Sai, You are 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/señor-señor-señor-shiva-nataraja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/señor-señor-señor-shiva-nataraja.mp3)
 
 ---
 

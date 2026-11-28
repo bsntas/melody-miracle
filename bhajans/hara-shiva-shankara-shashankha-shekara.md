@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4.5 Madhyam / B |
 | **Ladies Pitch** | 1.5 Madhyam / F# |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -33,7 +34,8 @@ Chant the name of Lord Shiva, dancing to the rhythm of drums. Shankara, Lord of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-shiva-shankara-shashankha-shekara_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-shiva-shankara-shashankha-shekara.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-shiva-shankara-shashankha-shekara_1.mp3)
 
 ---
 

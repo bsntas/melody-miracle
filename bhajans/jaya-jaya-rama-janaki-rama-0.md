@@ -35,7 +35,7 @@ Praise be to Lord Rama, the consort of Mother Janaki (Sita) and the Crown Jewe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-rama-janaki-rama-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-rama-janaki-rama-0.mp3)
 
 ---
 

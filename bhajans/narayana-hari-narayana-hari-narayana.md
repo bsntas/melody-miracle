@@ -33,7 +33,7 @@ Glory to Lord Narayana, the author of Vedas. Glory to Lord Shiva who is ever b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-hari-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-hari-narayana.mp3)
 
 ---
 

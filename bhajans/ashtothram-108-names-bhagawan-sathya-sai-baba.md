@@ -8,6 +8,7 @@
 |---|---|
 | **Deity** | Sai |
 | **Language** | Sanskrit / Hindi |
+| **Tags** | 108, Prayers |
 
 ## Lyrics
 
@@ -545,7 +546,7 @@ Let us bow down to Bhagawan Sri Sathya Sai Baba (the True Divine Mother and Fath
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ashtothram-108-names-bhagawan-sathya-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ashtothram-108-names-bhagawan-sathya-sai-baba.mp3)
 
 ---
 

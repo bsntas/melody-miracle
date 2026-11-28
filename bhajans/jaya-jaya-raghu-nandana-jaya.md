@@ -35,7 +35,8 @@ Extol the lotus-eyed son of Raghu clan, Lord Rama, the very life of Mother Jan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-raghu-nandana-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-raghu-nandana-jaya.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-raghu-nandana-jaya_1.mp3)
 
 ---
 

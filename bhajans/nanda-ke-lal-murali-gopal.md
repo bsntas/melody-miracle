@@ -38,7 +38,7 @@ Oh son of Nanda! Oh Lord Krishna, the player of the flute and the cowherd boy! T
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-lal-murali-gopal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-lal-murali-gopal.mp3)
 
 ---
 

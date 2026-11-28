@@ -36,7 +36,8 @@ Chant the name of Sai Ram, the divine preceptor. He is none other than Allah, Bu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/SHORT_BHAJAN_TUTOR_139_SAIRAM_SAIRAM_SAIRAM_BHAJO.mp3)
 
 ---
 

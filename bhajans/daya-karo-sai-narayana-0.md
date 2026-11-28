@@ -38,7 +38,8 @@ O Lord Narayana, show us Your mercy. You are the ocean of compassion, the lotu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-sai-narayana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-sai-narayana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-sai-narayana-0_1.mp3)
 
 ---
 

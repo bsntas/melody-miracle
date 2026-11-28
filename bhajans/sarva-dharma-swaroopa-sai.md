@@ -36,7 +36,7 @@ Glory to Lord Sai of Shirdi and Parthi who is the embodiment of all religions an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-dharma-swaroopa-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-dharma-swaroopa-sai.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ Sing the praises of the elephant-faced Lord, the Leader of the demigods (Ganas),
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-gajanana-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-gajanana-gananatha.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_104_Jaya_Jaya_Gajanana_Gananatha.mp3)
 
 ---
 

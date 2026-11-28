@@ -35,7 +35,7 @@ Chant the many names of the Lord Hari, Rama, Krishna and Sathya Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bolo-harey-rama-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bolo-harey-rama-naam.mp3)
 
 ---
 

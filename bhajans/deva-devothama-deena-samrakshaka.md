@@ -36,7 +36,7 @@ O Lord Sri Sai, You are Supreme among Gods, the protector of the afflicted. Oh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-devothama-deena-samrakshaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-devothama-deena-samrakshaka.mp3)
 
 ---
 

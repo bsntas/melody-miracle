@@ -36,7 +36,7 @@ Chant the mantra 'Om Namah Shivaya' and bow to Lord Shiva who is the embodiment
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-om-namah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-om-namah.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ We bow to the Guru of Gurus, Lord Sai of Parthi, the supremely compassionate res
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-pureeshwaram-parama-dayalam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-pureeshwaram-parama-dayalam.mp3)
 
 ---
 

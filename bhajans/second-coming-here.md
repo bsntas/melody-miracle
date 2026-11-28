@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Second Coming |
 
 ### Raga Notes
 
@@ -44,7 +45,7 @@ Spotted Eagle, Sacred Man, Wanka Tanka, Great Spirit
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/second-coming-here.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/second-coming-here.mp3)
 
 ---
 

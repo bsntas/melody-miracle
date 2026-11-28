@@ -39,7 +39,8 @@ Chant the Name Lord Narayana who reclines on the Ocean of Milk, consort of Sri L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ksheerabdhi-shayana-narayana_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ksheerabdhi-shayana-narayana.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ksheerabdhi-shayana-narayana_1.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1.5 Madhyam / F# |
 | **Ladies Pitch** | 5.5 Madhyam / C# |
+| **Tags** | Folk |
 
 ### Raga Notes
 
@@ -34,7 +35,7 @@ Chant the various names of Lord Krishna - Govinda, Madhava, Madhusudhana, Mukund
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bansidhara-kanhaiya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bansidhara-kanhaiya.mp3)
 
 ---
 

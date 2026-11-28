@@ -40,7 +40,7 @@ I bow down to Lord Shiva who is the Lord of the cosmic dance. He is the doer of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-namo-nataraja-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-namo-nataraja-namo.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Chant the names of Lord Govinda, Gopala, Krishna and Sai. O Lord Krishna, You 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janardhana-nandalala-govinda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/janardhana-nandalala-govinda-gopala.mp3)
 
 ---
 

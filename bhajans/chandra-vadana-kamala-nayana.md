@@ -34,7 +34,7 @@ Glory to Lord Narayana who has a face pleasing like the moon and whose eyes 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandra-vadana-kamala-nayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandra-vadana-kamala-nayana.mp3)
 
 ---
 

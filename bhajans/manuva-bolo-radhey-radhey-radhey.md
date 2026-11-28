@@ -37,7 +37,7 @@ Meditate on the various names of the Lord such as Shyam (Krishna), Ram and Pa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manuva-bolo-radhey-radhey-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/manuva-bolo-radhey-radhey-radhey.mp3)
 
 ---
 

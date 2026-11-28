@@ -32,7 +32,7 @@ Lord of the Lingam Shivaraja
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-lord-dance.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-lord-dance.mp3)
 
 ---
 

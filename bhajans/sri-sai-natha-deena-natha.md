@@ -37,7 +37,7 @@ Salutations to the Lord of Parthi, the compassionate Lord of the needy and downt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-natha-deena-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-natha-deena-natha.mp3)
 
 ---
 

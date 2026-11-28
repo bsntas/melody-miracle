@@ -36,7 +36,7 @@ The beautiful eyes of Lord Krishna have entranced us. This child of Brindavan ha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nayana-sunayana-sundara-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nayana-sunayana-sundara-shyama.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 4 Pancham / F |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -32,7 +33,7 @@ The Lord unites our many faiths
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-unites-our-many-faiths.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-unites-our-many-faiths.mp3)
 
 ---
 

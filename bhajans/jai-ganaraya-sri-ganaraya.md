@@ -36,7 +36,7 @@ Victory to Lord Ganesha, the leader of Shiva's army (Ganas), who confers and i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganaraya-sri-ganaraya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-ganaraya-sri-ganaraya.mp3)
 
 ---
 

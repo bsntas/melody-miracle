@@ -36,7 +36,7 @@ Glory to Mother Sai, the most auspicious one residing in Parthi, who is verily 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-mangala-sai-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-mangala-sai-janani.mp3)
 
 ---
 

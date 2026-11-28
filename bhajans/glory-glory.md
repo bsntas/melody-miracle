@@ -43,7 +43,7 @@ His truth is marching on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/glory-glory.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/glory-glory.mp3)
 
 ---
 

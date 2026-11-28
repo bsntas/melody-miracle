@@ -43,7 +43,7 @@ We are the love that lives inside
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-daughters.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-daughters.mp3)
 
 ---
 

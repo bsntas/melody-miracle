@@ -36,7 +36,7 @@ Victory to the enchanter of our minds, Lord Krishna, the vanquisher of demon Mu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-mana-mohana-krishna-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-mana-mohana-krishna-murari.mp3)
 
 ---
 

@@ -32,7 +32,7 @@ Om Sai Ram, Jai Om Sai Ram (4x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/free-me-worship-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/free-me-worship-you.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Lord Sai of Shirdi and Parthi is verily Lord Vittala of Pandharpur. O Lord Sath
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-pandarpura-parthipura-pandarpura.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-pandarpura-parthipura-pandarpura.mp3)
 
 ---
 

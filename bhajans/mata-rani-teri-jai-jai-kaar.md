@@ -39,7 +39,7 @@ Victory be to the divine mother, who rides majestically on a lion, who is effulg
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-rani-teri-jai-jai-kaar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-rani-teri-jai-jai-kaar.mp3)
 
 ---
 

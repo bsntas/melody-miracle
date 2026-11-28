@@ -35,7 +35,7 @@ Glory to the Lord Narayana, the one who is resting on the Celestial Serpent Adis
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-hari-om-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-hari-om-hari.mp3)
 
 ---
 

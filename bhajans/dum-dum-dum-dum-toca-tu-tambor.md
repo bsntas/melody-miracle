@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -36,7 +37,13 @@ Y ha venido al mundo a traernos la paz
 
 ## Audio
 
-[▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Gents_Reference_Track.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Gents_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Gents_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Gents_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Gents_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Ladies_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Ladies_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Dum_Dum_Dum_Dum_Damaru_Baje_Ladies_Karaoke_C_Pancham.mp3)
 
 ---
 

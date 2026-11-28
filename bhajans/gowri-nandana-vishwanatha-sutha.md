@@ -35,7 +35,7 @@ O Lord Ganesha, son of Parvathi and Shiva and elder brother of Skanda (Karthikey
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-vishwanatha-sutha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-vishwanatha-sutha.mp3)
 
 ---
 

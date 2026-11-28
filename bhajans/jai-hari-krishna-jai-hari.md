@@ -34,7 +34,7 @@ Praise be to the Lord Krishna who raised the Govardhana Hill on His little fing
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-hari-krishna-jai-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-hari-krishna-jai-hari.mp3)
 
 ---
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Reveal Yourself |
 
 ### Raga Notes
 
@@ -29,7 +30,7 @@ Swami, we are Your children, open our hearts, Lord, open our hearts.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sing-we.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sing-we.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Sing the glory of Lord Shiva who performs the Celestial dance while His drum "D
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nacho-hey-nataraj-shiva-shambho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nacho-hey-nataraj-shiva-shambho.mp3)
 
 ---
 

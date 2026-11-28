@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Second Coming |
 
 ### Raga Notes
 
@@ -37,7 +38,7 @@ To show us how to love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-sai-avatara-sai-avatara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-sai-avatara-sai-avatara.mp3)
 
 ---
 

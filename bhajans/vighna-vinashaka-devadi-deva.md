@@ -36,7 +36,7 @@ O Lord Ganesha, Lord of the Ganaas (the attendants of Lord Shiva), You are a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-vinashaka-devadi-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-vinashaka-devadi-deva.mp3)
 
 ---
 

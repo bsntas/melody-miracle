@@ -36,7 +36,8 @@ Hail Shiva, the destroyer of demon King Tripura. Victory to Lord Shiva who is re
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-hey-tripurari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-hey-tripurari.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-hey-tripurari_1.mp3)
 
 ---
 

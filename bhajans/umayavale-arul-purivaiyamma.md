@@ -36,7 +36,7 @@ Grace us O Goddess Uma! Ruler of the Universe! You are the personification of Au
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/umayavale-arul-purivaiyamma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/umayavale-arul-purivaiyamma.mp3)
 
 ---
 

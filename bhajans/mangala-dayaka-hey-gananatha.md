@@ -34,7 +34,7 @@ Glory to Lord Ganesha, the bestower of auspiciousness, Lord of the Ganaas, the v
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-dayaka-hey-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mangala-dayaka-hey-gananatha.mp3)
 
 ---
 

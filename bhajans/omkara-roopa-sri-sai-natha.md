@@ -36,7 +36,7 @@ Pray to Lord Sathya Sai who is the embodiment of Omkara; who is the True Guru, t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-roopa-sri-sai-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-roopa-sri-sai-natha.mp3)
 
 ---
 

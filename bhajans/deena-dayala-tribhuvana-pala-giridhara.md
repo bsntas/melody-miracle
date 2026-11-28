@@ -35,7 +35,7 @@ O Giridhara (Krishna), darling son of Nanda, You are the protector of three worl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-tribhuvana-pala-giridhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-tribhuvana-pala-giridhara.mp3)
 
 ---
 

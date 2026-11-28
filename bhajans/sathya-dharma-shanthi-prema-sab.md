@@ -35,7 +35,8 @@ O Lord Sai, our Divine Preceptor, You are the personification of Truth, Righteo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-dharma-shanthi-prema-sab.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-dharma-shanthi-prema-sab.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_039_Sathya_Dharma_Shanthi_Prema_Sab_Ko_Dheejo.mp3)
 
 ---
 

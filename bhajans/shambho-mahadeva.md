@@ -37,7 +37,7 @@ Glory to Lord Shiva who is also known as Mahadeva and Shambho, the one who ado
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva.mp3)
 
 ---
 

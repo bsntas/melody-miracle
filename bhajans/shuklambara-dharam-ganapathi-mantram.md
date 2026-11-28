@@ -35,7 +35,8 @@ Chant daily the Mantra of Lord Ganapathi (Ganesha), the one who wears a white 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shuklambara-dharam-ganapathi-mantram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shuklambara-dharam-ganapathi-mantram.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shuklambara-dharam-ganapathi-mantram_1.mp3)
 
 ---
 

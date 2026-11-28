@@ -45,7 +45,7 @@ You and I are one
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/who-can-still-stirring-soul.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/who-can-still-stirring-soul.mp3)
 
 ---
 

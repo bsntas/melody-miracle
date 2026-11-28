@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | My Light Never Dims |
 
 ### Raga Notes
 
@@ -50,7 +51,7 @@ Receive Me…Receive My Love...Receive Me...Receive My Love….Right Now
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/receive-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/receive-me.mp3)
 
 ---
 

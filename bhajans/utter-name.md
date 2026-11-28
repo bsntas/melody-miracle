@@ -34,7 +34,7 @@ God will grant the golden key to His secret treasury
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/utter-name.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/utter-name.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Victory to Lord Krishna, the slayer of demon Madhu. Victory to the Lord of Math
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-madhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-madhava.mp3)
 
 ---
 

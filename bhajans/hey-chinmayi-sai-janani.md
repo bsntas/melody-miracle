@@ -36,7 +36,7 @@ Oh Mother Sai! You are that Pure Consciousness, Mother of the entire universe an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-chinmayi-sai-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-chinmayi-sai-janani.mp3)
 
 ---
 

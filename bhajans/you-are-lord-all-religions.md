@@ -39,7 +39,7 @@ Om Sai Ram (3X)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-all-religions.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-lord-all-religions.mp3)
 
 ---
 

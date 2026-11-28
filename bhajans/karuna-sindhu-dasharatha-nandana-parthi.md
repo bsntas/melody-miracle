@@ -34,7 +34,7 @@ Glory to the compassionate, lotus-eyed Lord Rama, the son of Dasharatha and the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sindhu-dasharatha-nandana-parthi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sindhu-dasharatha-nandana-parthi.mp3)
 
 ---
 

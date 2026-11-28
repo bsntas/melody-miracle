@@ -32,7 +32,8 @@ Let Me Come Into Your Heart And Stay Forever More (Baba)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-loving-lord-all.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-loving-lord-all.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-loving-lord-all_1.mp3)
 
 ---
 

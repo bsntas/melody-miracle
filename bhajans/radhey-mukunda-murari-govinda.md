@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_467_RADHE_MUKUND_MURARI_GOVIND.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -33,7 +34,8 @@ Chant the names of the Lord Krishna, the Lord of Radha, Mukunda - bestower of li
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-mukunda-murari-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-mukunda-murari-govinda.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_467_RADHE_MUKUND_MURARI_GOVIND.mp3)
 
 ---
 

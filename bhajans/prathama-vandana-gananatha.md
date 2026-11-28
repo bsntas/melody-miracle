@@ -35,7 +35,8 @@ Our first prayers to the Lord of the ganaas, the elephant-faced Lord Ganesh who�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-vandana-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathama-vandana-gananatha.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_370_PRATHAM_VANDANA_GANANATHA.mp3)
 
 ---
 

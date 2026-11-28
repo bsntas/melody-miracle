@@ -35,7 +35,7 @@ Salutations to Lord Sai who is none other than Lord Shiva, who is the Lord of th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandrakala-dhara-shambho-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chandrakala-dhara-shambho-deva.mp3)
 
 ---
 

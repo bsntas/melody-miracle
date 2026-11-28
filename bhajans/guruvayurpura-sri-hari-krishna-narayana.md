@@ -34,7 +34,7 @@ Chant the names of the Lord of Guruvayur, Lord Hari, Krishna, Narayana, Gopal, M
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guruvayurpura-sri-hari-krishna-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guruvayurpura-sri-hari-krishna-narayana.mp3)
 
 ---
 

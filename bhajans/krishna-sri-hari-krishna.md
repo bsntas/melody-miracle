@@ -37,7 +37,7 @@ Chant the Various names of the Lord, Krishna, Hari, Govinda, Gopala, Mukunda, of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-sri-hari-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-sri-hari-krishna.mp3)
 
 ---
 

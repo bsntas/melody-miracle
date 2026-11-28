@@ -38,7 +38,7 @@ We pray to Sai Rama, who loves the Omkar (Primordial sound), who is always worsh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-priya-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/omkara-priya-sai-rama.mp3)
 
 ---
 

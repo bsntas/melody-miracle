@@ -36,7 +36,7 @@ Glory to Lord Narayana who reclines on the serpent Adi Sesha and the one who fo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shesha-shayana-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shesha-shayana-narayana.mp3)
 
 ---
 

@@ -32,7 +32,7 @@ O Lord, Take My Everything, And Let Me Be An Instrument For Thee
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-lord-take-my-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-lord-take-my-love.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Glory to Lord Gopala (Lord Krishna), the Lord of the universe and the indweller 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadodhara-shyama-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadodhara-shyama-gopala.mp3)
 
 ---
 

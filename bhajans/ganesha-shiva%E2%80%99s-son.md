@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 4 Pancham / F |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -35,7 +36,14 @@ Lord Sai I Pray Thou Art Kept In Mind Before Me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-shiva’s-son.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-shiva’s-son.mp3)
+- **Karaoke** (Reference Track 7 Pancham / B): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 7 Pancham / B (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Karaoke_Gents_B_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6.5 Pancham / B Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Sharanam_Karaoke_Gents_A_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Sharanam_Karaoke_Gents_A_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4 Pancham / F (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Karaoke_Ladies_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Sharanam_Karaoke_Ladies_E_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2.5 Pancham / E Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ganesha_Charanam_Sharanam_Karaoke_Ladies_D_Sharp_Pancham.mp3)
 
 ---
 

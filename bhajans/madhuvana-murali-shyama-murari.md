@@ -35,7 +35,7 @@ O dear Lord Krishna who danced the Raasa leela (celestial dance), O dear chil
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhuvana-murali-shyama-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhuvana-murali-shyama-murari.mp3)
 
 ---
 

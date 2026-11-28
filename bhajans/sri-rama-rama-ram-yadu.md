@@ -34,7 +34,7 @@ Sing the name of Rama, who is beloved of Sita and son of Dasharatha and star of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-rama-ram-yadu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-rama-ram-yadu.mp3)
 
 ---
 

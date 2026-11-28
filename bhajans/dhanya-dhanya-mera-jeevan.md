@@ -37,7 +37,7 @@ O Lord Sai, my life is blessed as I have received Your Divine Darshan and have o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhanya-dhanya-mera-jeevan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dhanya-dhanya-mera-jeevan.mp3)
 
 ---
 

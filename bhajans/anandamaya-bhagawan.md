@@ -37,7 +37,8 @@ O Lord Sai, You are love and bliss personified, repository of compassion and kin
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anandamaya-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anandamaya-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anandamaya-bhagawan_1.mp3)
 
 ---
 

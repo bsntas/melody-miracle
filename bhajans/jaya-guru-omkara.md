@@ -36,7 +36,7 @@ Victory to Sadguru Sai, the embodiment of the sacred sound Pranava. You are the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-omkara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-omkara.mp3)
 
 ---
 

@@ -36,7 +36,9 @@ O Lord Sai, You are the personification of all Names (of Gods), You live in eve
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-naama-swaroopam-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarva-naama-swaroopam-sai-baba.mp3)
+- **Karaoke** (Reference Track 6 Pancham / A): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sarva%20Naama%20Swaroopam%20Sai%20baba.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sarva%20Naama%20Swaroopam%20Sai%20Baba%20-%20Karaoke%20-%206P%20Amaj.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Sing the glory of Lord Gopala who sustains the whole Universe and the protecto
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwa-pala-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwa-pala-gopala.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ We bow to Lord Ganesha, son of Mother Gowri, remover of obstacles and destroyer 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-suthaya-om-namah-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-suthaya-om-namah-om.mp3)
 
 ---
 

@@ -37,7 +37,9 @@ O Lord Sai, uplift and help us cross the ocean of life and death. You are Alla
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/beda-paar-karo-merey-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/beda-paar-karo-merey-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/beda-paar-karo-merey-sai_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_041_Beda_Paar_Karo_Mere_Sai.mp3)
 
 ---
 

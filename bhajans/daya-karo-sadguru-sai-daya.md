@@ -38,7 +38,7 @@ O Lord Sai, our divine Preceptor who dispells the darkness of ignorance, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-sadguru-sai-daya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-sadguru-sai-daya.mp3)
 
 ---
 

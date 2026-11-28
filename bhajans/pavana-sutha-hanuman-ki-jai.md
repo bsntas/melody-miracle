@@ -34,7 +34,8 @@ Victory to Hanuman, the son of the wind God, victory to the chosen Lord of Sita,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pavana-sutha-hanuman-ki-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pavana-sutha-hanuman-ki-jai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_245_PAVANA_SUTA_HANUMAN_KI_JAI.mp3)
 
 ---
 

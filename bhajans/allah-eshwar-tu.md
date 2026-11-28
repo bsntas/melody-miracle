@@ -40,7 +40,7 @@ O Lord Sai, You are Allah, Eshwar, Jesus, Buddha, Zohrashtra, Mahavir, Rama, K
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-eshwar-tu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-eshwar-tu.mp3)
 
 ---
 

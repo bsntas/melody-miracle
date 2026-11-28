@@ -35,7 +35,9 @@ O Lord Krishna, the beloved child of Nanda and Yashoda, O the protector of c
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-dularey-yashoda-ke.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-dularey-yashoda-ke.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-ke-dularey-yashoda-ke_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_198_NANDA_KE_DULARE.mp3)
 
 ---
 

@@ -31,7 +31,7 @@ You're the way and the light.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-jesus-son-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-jesus-son-god.mp3)
 
 ---
 

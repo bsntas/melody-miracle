@@ -35,7 +35,7 @@ Praise be to Lord Gopala (Krishna), the son of Nanda and the most charming on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-nandalala-jai-jai-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-nandalala-jai-jai-gopala.mp3)
 
 ---
 

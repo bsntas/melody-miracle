@@ -37,7 +37,9 @@ Sing continuously the glories of Lord Krishna, the one who lifted the Govardhan 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-madhura-manohara-giridhara_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-madhura-manohara-giridhara.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-madhura-manohara-giridhara_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-madhura-manohara-giridhara_2.mp3)
 
 ---
 

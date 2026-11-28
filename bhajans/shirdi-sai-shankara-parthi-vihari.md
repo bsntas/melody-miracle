@@ -35,7 +35,8 @@ Obeisance to Lord Sai of Shirdi who has now incarnated at Parthi. He is the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-shankara-parthi-vihari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-shankara-parthi-vihari.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-shankara-parthi-vihari_1.mp3)
 
 ---
 

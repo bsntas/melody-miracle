@@ -35,7 +35,7 @@ Worship Lord Rama, Krishna, Govinda and Narayana, the Lord of the Goddess of P
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-govinda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-govinda-narayana.mp3)
 
 ---
 

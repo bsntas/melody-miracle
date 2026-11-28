@@ -34,7 +34,7 @@ My Lord Sai will be very happy, if you love and serve those afflicted with miser
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dukhiyon-se-prem-karo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dukhiyon-se-prem-karo.mp3)
 
 ---
 

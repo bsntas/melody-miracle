@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -34,6 +35,10 @@ Ghat Ghat Vasi Antaryami
 ## Meaning
 
 Welcome O Lord Sai. Bless and grant auspiciousness and peace. You are the ocean of compassion, the temple of virtues. You are the Truth and Eternal Bliss and the one who is omnipresent in every being.
+
+## Audio
+
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-hey-bhagawan.mp3)
 
 ---
 

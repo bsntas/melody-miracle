@@ -37,7 +37,7 @@ We surrender to Ayyappa, the Lord of Mount Sabari. He is the son of Mohini, a ca
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sabari-girisha-engal-nayaga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sabari-girisha-engal-nayaga.mp3)
 
 ---
 

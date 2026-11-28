@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Slow |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -42,7 +43,7 @@ God The Good..OMNIPOTENT
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/theres-only-one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/theres-only-one.mp3)
 
 ---
 

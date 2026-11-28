@@ -38,7 +38,7 @@ Do Not Look Outside For Me, I Am In Your Heart
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-love-you-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-love-you-lord.mp3)
 
 ---
 

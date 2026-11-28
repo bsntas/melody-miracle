@@ -35,7 +35,7 @@ Oh Mother of the Universe, Sai. Your form is the Pranava, Mother Sai. You are th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jagat-janani-sai-mata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jagat-janani-sai-mata.mp3)
 
 ---
 

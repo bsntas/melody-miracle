@@ -36,7 +36,7 @@ O Lord Rama, who resides in the heart of devotees and holder of the Kodanda bow
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dayabhi-rama-janaki-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dayabhi-rama-janaki-rama.mp3)
 
 ---
 

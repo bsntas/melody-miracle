@@ -35,7 +35,7 @@ Salutations to Lord Rama from Raghu dynasty, who is the consort of Mother Sita a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-rama-sri-raghu-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-rama-sri-raghu-rama.mp3)
 
 ---
 

@@ -33,7 +33,7 @@ When we walk hand in hand, and let go of the darkness.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/walk-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/walk-lord.mp3)
 
 ---
 

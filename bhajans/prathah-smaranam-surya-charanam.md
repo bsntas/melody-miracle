@@ -34,7 +34,7 @@ In the early morning, remember and worship the feet of Surya, the Sun God, who s
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-surya-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-surya-charanam.mp3)
 
 ---
 

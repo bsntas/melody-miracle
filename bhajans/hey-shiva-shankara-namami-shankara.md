@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 
@@ -34,7 +35,15 @@ Prostrations to Lord Shiva or Shankara, the One who bestows auspiciousness. He i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shiva-shankara-namami-shankara_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shiva-shankara-namami-shankara.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shiva-shankara-namami-shankara_1.mp3)
+- **Karaoke** (Reference Track 4 Pancham / F): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 4 Pancham / F (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Karaoke_Gents_F_Pancham.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Shankara_Karaoke_Gents_E_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Shankara_Karaoke_Gents_D_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Karaoke_Ladies_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Shankara_Karaoke_Ladies_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hey_Shiva_Shankara_Namami_Shankara_Karaoke_Ladies_A_Sharp_Pancham.mp3)
 
 ---
 

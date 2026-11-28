@@ -35,7 +35,7 @@ This song extols the attributes of Lord Krishna who is also called Gopala (prot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mathura-natha-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mathura-natha-gopala.mp3)
 
 ---
 

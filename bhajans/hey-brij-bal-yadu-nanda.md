@@ -34,7 +34,7 @@ Oh Lord Gopala, You are the son of Nanda and Yashoda and of the Yadava lineage. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-brij-bal-yadu-nanda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-brij-bal-yadu-nanda.mp3)
 
 ---
 

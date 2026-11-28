@@ -38,7 +38,7 @@ Victory to Lord Sathya Sai, the incarnation of Supreme Love and the complete man
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-sai-ram-jai-sai-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-sai-ram-jai-sai-0.mp3)
 
 ---
 

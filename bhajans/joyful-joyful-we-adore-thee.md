@@ -34,7 +34,7 @@ Teach us how to love each other, lift us to the joy divine.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joyful-joyful-we-adore-thee.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joyful-joyful-we-adore-thee.mp3)
 
 ---
 

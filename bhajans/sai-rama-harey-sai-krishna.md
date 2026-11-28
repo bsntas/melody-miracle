@@ -36,7 +36,8 @@ Salutations to You, Lord Sai, residing in Parthi. You are verily Lord Rama, the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-rama-harey-sai-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-rama-harey-sai-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-rama-harey-sai-krishna_1.mp3)
 
 ---
 

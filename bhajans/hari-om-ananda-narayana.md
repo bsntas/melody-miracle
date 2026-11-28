@@ -35,7 +35,8 @@ Glory to Lord Narayana, sustainer of the three worlds, embodiment of Bliss and t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-ananda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-ananda-narayana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_368_HARI_OM_ANAND_NARAYANA.mp3)
 
 ---
 

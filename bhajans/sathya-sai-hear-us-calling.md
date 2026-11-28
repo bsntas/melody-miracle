@@ -34,7 +34,9 @@ Losing ourselves we touch Your fiery Heart
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-hear-us-calling.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-hear-us-calling.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D - Unison): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sathya%20Sai%20Hear%20Us%20-%20Unison.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (unison)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sathya%20Sai%20Hear%20Us%20-%20Unison%20-%202P%20Dmin.mp3)
 
 ---
 

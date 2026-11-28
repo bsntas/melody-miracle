@@ -36,7 +36,7 @@ Prema Sai Guna Gaoon [ Janam ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-tero-naam-tero-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-tero-naam-tero-naam.mp3)
 
 ---
 

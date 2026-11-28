@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 7 Pancham / B |
 | **Ladies Pitch** | 4.5 Pancham / F# |
+| **Tags** | Vintage |
 
 ### Raga Notes
 
@@ -38,7 +39,8 @@ Hail the lotus-faced Lord Ranga who is the Absolute reality. Sing in praise of L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-kamala-vadana-sai-ranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-kamala-vadana-sai-ranga.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_458_HEY_KAMAL_VADAN_SAI_RANGA.mp3)
 
 ---
 

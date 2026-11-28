@@ -35,7 +35,14 @@ Chant the name of the Lord Krishna, the Lord of Radha and the protector of al
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-radhey-gopala-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-radhey-gopala-sai.mp3)
+- **Karaoke** (Reference Track 1.5 Pancham / C#): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Gents Pitch 7 Pancham / B (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Gents_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Ladies_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Ladies_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6 Pancham / A (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Radhey_Govinda_Radhey_Gopala_Ladies_Karaoke_A_Pancham.mp3)
 
 ---
 

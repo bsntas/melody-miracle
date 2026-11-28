@@ -35,7 +35,8 @@ O Lord Rama, the indweller of hearts, Your form gives happiness, bliss and love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-rama-ananda-naama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-rama-ananda-naama.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-rama-ananda-naama_1.mp3)
 
 ---
 

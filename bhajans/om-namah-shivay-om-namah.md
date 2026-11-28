@@ -34,7 +34,7 @@ Praise be to Lord Shiva, the embodiment of the primordial sound Om.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivay-om-namah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivay-om-namah.mp3)
 
 ---
 

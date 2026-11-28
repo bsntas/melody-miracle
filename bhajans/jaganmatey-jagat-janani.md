@@ -34,7 +34,7 @@ Victory to the Divine Mother who nourishes the entire Universe. You are verily
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaganmatey-jagat-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaganmatey-jagat-janani.mp3)
 
 ---
 

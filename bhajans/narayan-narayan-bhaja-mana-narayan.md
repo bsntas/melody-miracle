@@ -35,7 +35,7 @@ O mind, sing the glory of Lord Narayana, the abode of all being. He is the dark
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayan-narayan-bhaja-mana-narayan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayan-narayan-bhaja-mana-narayan.mp3)
 
 ---
 

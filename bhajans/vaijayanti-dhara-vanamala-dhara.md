@@ -35,7 +35,7 @@ Glory to the dark-hued Lord Krishna who wears a garland of flowers and plays the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaijayanti-dhara-vanamala-dhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaijayanti-dhara-vanamala-dhara.mp3)
 
 ---
 

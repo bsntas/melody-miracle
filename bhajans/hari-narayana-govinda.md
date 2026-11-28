@@ -37,7 +37,7 @@ Contemplate on the sweet names of the Lord Narayana - Hari, Govinda, Keshava a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-govinda.mp3)
 
 ---
 

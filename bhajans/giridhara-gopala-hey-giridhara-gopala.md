@@ -34,7 +34,7 @@ Chant the name of Lord Gopala, One who lifted the mountain The Lord of Meera and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-hey-giridhara-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-hey-giridhara-gopala.mp3)
 
 ---
 

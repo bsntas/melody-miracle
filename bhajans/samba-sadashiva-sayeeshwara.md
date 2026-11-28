@@ -34,7 +34,7 @@ Oh Lord Sayeeshwara you are none other than Lord Shiva also called by other name
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/samba-sadashiva-sayeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/samba-sadashiva-sayeeshwara.mp3)
 
 ---
 

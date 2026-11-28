@@ -12,6 +12,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | O Holy Presence |
 
 ### Raga Notes
 
@@ -48,7 +49,7 @@ Peace be still..I love to live in God’s Will
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/faith-medley.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/faith-medley.mp3)
 
 ---
 

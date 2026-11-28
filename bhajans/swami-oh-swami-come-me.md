@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Second Coming |
 
 ### Raga Notes
 
@@ -32,7 +33,7 @@ To kiss Your feet, oh I wish I were there
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-oh-swami-come-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-oh-swami-come-me.mp3)
 
 ---
 

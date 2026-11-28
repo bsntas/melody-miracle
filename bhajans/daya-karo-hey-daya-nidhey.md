@@ -35,7 +35,7 @@ Oh Bhagawan, the treasure house of mercy, have mercy on us. This body, mind and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hey-daya-nidhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hey-daya-nidhey.mp3)
 
 ---
 

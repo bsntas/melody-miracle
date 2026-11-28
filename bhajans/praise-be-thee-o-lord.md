@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Fast |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 
@@ -38,7 +39,7 @@ PRAISE BE TO THE LORD
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-thee-o-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-thee-o-lord.mp3)
 
 ---
 

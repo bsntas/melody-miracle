@@ -39,7 +39,7 @@ Salutations to Hara or Shiva, who is the Lord of Parvathi. You are Shankara or d
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namah-parvathi-pathayey-hara-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namah-parvathi-pathayey-hara-hara.mp3)
 
 ---
 

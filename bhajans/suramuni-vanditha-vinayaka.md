@@ -36,7 +36,9 @@ Salutations to Lord Sai who is none other than Lord Vinayaka (Ganesha), son of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/suramuni-vanditha-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/suramuni-vanditha-vinayaka.mp3)
+- **Karaoke** (Reference Track 4.5 Pancham / F#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Suramuni%20Vandita.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Suramuni%20Vandita%204.5P%20F%23maj.mp3)
 
 ---
 

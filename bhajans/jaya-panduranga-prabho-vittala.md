@@ -39,7 +39,8 @@ Victory to Lord Panduranga Vittala, the Lord of Pandharpur, the liberator of the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-panduranga-prabho-vittala_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-panduranga-prabho-vittala.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-panduranga-prabho-vittala_1.mp3)
 
 ---
 
