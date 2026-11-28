@@ -25,12 +25,18 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Darshan In Our Hearts
+
+Sri Sathya Sai Om Sri Sathya Sai
 Your darshan of Love is in our hearts
 Sri Sathya Sai Om Sri Sathya Sai
 Stay with us (stay with us)
 Be our Love (be our Love)
 Till the end of time
+
+We need Your Grace to give us peace
 We need Your Love to give us strength
+
+Sri Sathya Sai Om Sri Sathya Sai
 Hear our prayer (hear our prayer)
 Hear our prayer (hear our prayer)
 Love from now on

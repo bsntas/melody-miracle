@@ -28,7 +28,7 @@ Bhola Nath Shambho Shankara
 Sai Nath Bhola Maheshwara
 Dama Dama Damaru Bholey Shankara
 Dhimi Dhimi Dhimi Dhimi Natana Manohara
-Parthi Pureeshwara Sai Shankara 
+Parthi Pureeshwara Sai Shankara
 Bhola Maheshwara Sai Shankara
 
 ## Meaning

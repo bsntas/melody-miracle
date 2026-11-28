@@ -33,6 +33,8 @@ For he is as a tree planted by the waters
 That spreads its roots by the sea
 For he does not fear when heart comes near
 He knows that his Lord is always here
+
+Blessed is the man who trusts in the Lord
 And whose trust the Lord is
 Blessed is the man who trusts in the Lord
 And whose trust the Lord is

@@ -29,6 +29,8 @@ And think upon my Bhagawan.
 Each flower and tree, tells me of Thee,
 Sings praise to Thee, oh Bhagawan.
 Sai Ram, Sai Ram, Sai Ram, Sai Ram.
+
+(Close)
 Sai Ram, Sai Ram, Sai Ram, Sai Ram.
 
 ## Audio

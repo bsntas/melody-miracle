@@ -27,8 +27,12 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 Almighty God, make me aware of You
 In every moment of my life.
 Let me know that I am You.
+
+Almighty God, show me the light of You
 In every moment of my life.
 Let me know that I am light.
+
+Almighty God, fill me with love of You
 In every moment of my life.
 Let me know that I am love.
 

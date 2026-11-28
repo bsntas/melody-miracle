@@ -26,15 +26,29 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 ## Lyrics
 
 Atma Vichara
+
+(chorus)
 Atma Vichara
 Atma Vichara
 Atma Vichara, liberation
+
+Purify the mind
 Purify the mind
 Through seva, japa, meditation
+
+(chorus)
+
+Satsang with the sages
 Conquers maya from the ages
 Births, sorrow, and death
+
+(chorus)
+
+I lay myself at Your feet
 Without You I’ll never meet
 The heart of myself, oh my sweet Lord
+
+(chorus)
 Atma Vichara, liberation (3x)
 
 ## Audio

@@ -26,12 +26,20 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 ## Lyrics
 
 Hum Ko Tum Se Pyaar Kitna
+
+Aalap:
 Sunlo Dil Ki Pukar
 Sunlo Sunlo Sunlo
+
+Hum Ko Tum Se Pyaar Kitna
 Sai Tum Hi Jantey Hain
 Dilon Ki Dhadkan Tum Ho Sai
 Tum Hamarey Pran Ho
 Hum Ko Tum Se Pyaar Hain
+
+We love You dearest Lord (Sai), we love You (2)
+
+Neevu Leni Maa Jeevanam
 Neeru Leni Chepa Vedanam
 Nee Sannidhe Maaku Pennidhi
 Needu Chupe Prana Samanam

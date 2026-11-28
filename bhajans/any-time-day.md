@@ -26,7 +26,7 @@ Notes:The Indian Raga Keeravani is considered to be the equivalent of this scale
 (At) Any Time of Day, Morning Noon or Night
 I Always Sing Sai Ram
 Sai Rama Sai Rama Sai Rama Sai Rama (3)
-Sai Rama Sai Rama Sai Rama 
+Sai Rama Sai Rama Sai Rama
 His Love Brings Us joy, Eternal Happiness Within, His Name is Bliss, Ananda
 Ananda Ananda Ananda Ananda (3)
 Ananda Ananda Ananda

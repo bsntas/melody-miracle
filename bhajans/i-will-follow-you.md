@@ -28,7 +28,11 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 I will follow, follow You
 Wherever You may go
 I'll always be with You
+
+You shine forever bright
 You are my guiding light
+
+Baba soft and kind
 Take my heart and mind
 Take me home in Your love forever
 

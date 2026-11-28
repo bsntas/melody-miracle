@@ -25,6 +25,8 @@ S R2 G1 M1 P D1 N2 SS N2 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B C C B 
 ## Lyrics
 
 Have Mercy
+
+My Lord dear Lord send to You Your love I feel
 My Lord sweet Lord You give me all the strength I need
 Baba my Lord, Give Your darshan, make me whole
 Do not test me more my Lord, have mercy on this soul

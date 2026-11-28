@@ -32,10 +32,14 @@ I who made the stars of night
 I will make their darkness bright
 Who will bear My light to them?
 Whom shall I send?
+
+(Chorus)
 Here I am Lord, It is I, Lord
 I have heard You calling in the night
 I will go Lord, if You lead me
 I will hold Your people in my heart
+
+I, the Lord of snow and rain
 I have borne my people's pain
 I have wept for love of them
 They turn away
@@ -43,6 +47,8 @@ I will break their hearts of stone
 Give them hearts for love alone
 I will speak My word to them
 Whom shall I send?
+
+(Chorus)
 I, the Lord of wind and flame
 I will tend the poor and lame
 I will set a feast for them

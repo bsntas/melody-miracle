@@ -26,12 +26,18 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Avatar
+
+Sri Sathya Sai Baba
 Avatar of the ages
 We are Your children
 The children of the world
+
+You are our God
 You are our life
 You light up our lives
 Every day and every night
+
+Sri Sathya Sai Baba (3x)
 Our Lord, our God
 
 ## Audio

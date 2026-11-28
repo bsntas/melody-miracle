@@ -28,7 +28,11 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 God is dwelling in the beauty in the temple of my heart
 Of my heart, of my heart, of my heart, of my heart
 Soham, Soham, You and I are one (2)
+
+Te Matua kei roto Taku manawa, Kei roto Kei roto taku manawa
 Soham, Soham, kia kotahi e (2)
+
+Soham, Soham, You and I are one (2)
 
 ## Meaning
 

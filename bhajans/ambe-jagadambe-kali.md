@@ -28,7 +28,7 @@ Ambe Jagadambe Kali Ambe Jagadambe
 Bhaava Priyey Raga Priyey
 Gaana Priyey Bhaava Priyey
 Gaana Priyey Bhaava Priyey Amba Bhavani [ Ambe Jagadambe ... ]
-Mahalakshmi Ambe Gowri Mahalakshmi Ambe 
+Mahalakshmi Ambe Gowri Mahalakshmi Ambe
 Mahishasura Mardini Bhavani Mahalakshmi Ambe
 Jai Ambe Sri Ambe Amba Bhavani
 

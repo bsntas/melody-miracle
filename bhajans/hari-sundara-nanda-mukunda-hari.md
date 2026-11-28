@@ -27,6 +27,8 @@ Hari Sundara Nanda Mukunda Hari Narayana Hari Om
 Hari Keshava Hari Govinda Hari Narayana Hari Om
 Vanamali Muralidhari Govardhana Girivaradhari
 Nit Nit Kar Makhan Chori Gopi Mana Haari
+
+Aaorey Gaorey Gokul Ke Pyaarey
 Aaorey Kanharey Gokul Ke Pyaarey
 Aaorey Nachorey Raas Rachaorey
 Gaorey Nachorey Raas Rachaorey

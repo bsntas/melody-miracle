@@ -29,12 +29,18 @@ I am living in The Light
 I am giving all that’s bright
 I am loving with His Might
 I am living in The Light
+
+I am living in The Light
 I am letting go of all the fight
 I am knowing Him aright
+I am living in The Light
+
 I am living in The Light
 My soul is free at last
 It’s taken flight
 For I am rising to greater heights
+I am living in The Light
+
 I am living in The Light
 God has given me the Gift of Sight
 For I am seeing that We Are Light

@@ -14,13 +14,19 @@ Now is the time to care for our Earth,
 Whoever we may be.
 To join our hands, our souls and our hearts,
 And to work for unity.
+
+Chorus:
 For the world to be a beautiful place,
 Full of flowers, birds and trees.
 The future lies with nobody else,
 It depends on you and me.
+
+The time has come to plant more trees,
 Make the air pollution free.
 Respect all life, the animals too,
 And to live in harmony.
+
+Chorus:
 For the world to be a beautiful place,
 Full of flowers, birds and trees.
 The future lies with nobody else,

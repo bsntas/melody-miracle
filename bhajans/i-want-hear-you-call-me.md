@@ -26,15 +26,23 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 I Want To Hear You Call Me Bangaru
+
+(chorus)
 I want to hear You call me bangaru
 Sathya Sai my treasured Guru
 I want to be Your pure gold devotee
 Bhagawan Sri Sathya Sai
+
+Is my heart pure enough
 Do I always live in truth
 Do I love and serve my fellow man
+
+Are my thoughts, words, and deeds
 In harmony
 Enough to be Your pure gold devotee
 (chorus)
+
+Have I met each test with calm equanimity
 Have I seen through the mirrors of this world
 Have I surrendered myself as an instrument towards You
 Enough to be Your pure gold devotee

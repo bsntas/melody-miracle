@@ -35,6 +35,8 @@ Otsukai Kudasai, Kono Inochi
 Subete no Hito no Sachi no tame
 Yakudate Kudasai Sai Baba
 
+[ Haha Naru ... Shifuku wo Sazukeru ]
+
 ## Meaning
 
 O Lord Sai Baba, You have come to us to awaken our hearts with Your divine love. With Your Motherly love, You grant us salvation. With Your Fatherly love, You guide us to the truth. With Your Godly love, You present us with supreme bliss. Sai Baba, You are my Lord. Please use my life for Your divine purposes. Your existence is for the purpose of bringing good fortune to all people. Please continue to help us this way, Lord Sai Baba.

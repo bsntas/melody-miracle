@@ -26,6 +26,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Baba, I love You
+
+Sathya Sai, Sathya Sai, Sathya Sai Baba (2x)
 A crown of hair, a robe of red, Your name means truth (2x)
 Baba, I love You, Oh, Baba, I love You, Baba, I love You (2x)
 Avatar, Avatar, sweet Avatar (2x)

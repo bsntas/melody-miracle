@@ -28,7 +28,7 @@ Parthi Pureesham Prashanthi Nilayam Parama Pavitram Paramatma Roopam
 Shirdi Nivasam Shiva Sayeesham
 Shantha Swabhavam Shankara Roopam [ Bhaja Sai Natham ... ]
 Chinmayanandam Chithravathi Teeram Chitha Pariharam Chinni Sai Natham
-Neela Mandaram Divya Swabhavam 
+Neela Mandaram Divya Swabhavam
 Dattatreyam Deiva Swaroopam [ Bhaja Sai Natham ... ]
 Sathya Swaroopam Sadguru Charanam Samba Shivoham Sarthaka Naamam
 Jyothi Swaroopam Preeti Swabhavam Parthi Nivasam Paapa Vinasham

@@ -27,8 +27,12 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 He’s the one I turn to when I'm sad
 He’s the one I turn to when I'm bad
+
+He’s the one I turn to
 All of the time
 His name is Sathya Sai
+
+Sathya Sai Baba
 Sathya Sai Baba
 Sathya Sai Baba Lord
 (repeat)

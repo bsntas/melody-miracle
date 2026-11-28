@@ -24,7 +24,7 @@ Lowest Note: n1 / B♭ (lower octave)Highest Note: R2 / D (higher octave)* Weste
 
 ## Lyrics
 
-Devasena Pathey Subrahmanya 
+Devasena Pathey Subrahmanya
 Subrahmanya Shanmukha Natha [ (Valli) Devasena Pathey ... ]
 Hara Haro Hara Gowri Nandana
 Paahi Maam Paahi Maam Pazhani (Parthi) Pureesha

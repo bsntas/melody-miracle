@@ -31,10 +31,14 @@ I’m gonna give my life to the Lord, to the Lord again
 I’m gonna jump, I’m gonna shout, I’m gonna dance and sing
 I’m gonna tell my sweet Lord everything
 I’m gonna give my life to the Lord, to the Lord again.
+
+I’m gonna live my life for the Lord, for the Lord again
 I’m gonna live my life for the Lord, for the Lord again
 He picked me and turned me round,
 Put my feet on solid ground
 I’m gonna live my life for the Lord, for the Lord again.
+
+In times of trouble
 When the sky turns black
 Call His Name on the double
 He’ll provide what you lack
@@ -43,6 +47,8 @@ As tight as you can…
 And it won’t be long if your faith is strong
 You’ll soon be singing His victory song
 When you give your life to the Lord, to the Lord again.
+
+[ I’m gonna ... Lord everything ]
 I’m gonna give my life to the Lord, sweet Lord
 I’m gonna live my life for the Lord, my Lord
 I’m gonna give my life to the Lord, to the Lord again.

@@ -29,6 +29,8 @@ People say that You're everywhere
 People say why go over there?
 People say Sai lives in Your heart
 People say that we're never apart
+
+But I'll tell you what
 There's nothing like looking at You
 But I'll tell you what
 There's nothing like touching You
@@ -36,6 +38,8 @@ But I'll tell you what
 There's nothing like a word with You
 But I'll tell you what
 There's nothing like being with You [ People say ... never apart ]
+
+But I'd give it all away
 Just for one sweet, sweet day
 Yes, I'd give it all away
 Just for one sweet, sweet day
@@ -43,6 +47,8 @@ And I'd walk a thousand miles
 Just for one of Your smiles
 Yes, I'd walk a thousand miles
 Just for one of Your smiles [ People say ... never apart ]
+
+But I'll tell you what
 There's nothing like a look from You
 But I'll tell you what
 There's nothing like a touch from You
@@ -50,12 +56,18 @@ But I'll tell you what
 There's nothing like a word with You
 But I'll tell you what
 There's nothing like being with You [ People say ... never apart ]
+
+But, there's nothing so high
 As looking in Your sweet, sweet eyes
 Yes, there's nothing so high
 As looking in Your sweet, sweet eyes
+
+And all eyes fill with tears
 Every time You are near
 And all hearts lose fear
 Whenever You're here [ People say ... never apart ]
+
+[ But I'd give it all away ... Your smiles ]
 
 ## Audio
 

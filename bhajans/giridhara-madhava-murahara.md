@@ -25,7 +25,7 @@ Lowest Note: n2 / B (lower octave)Highest Note: G2 / E (higher octave)* Western 
 
 ## Lyrics
 
-Giridhara Madhava Murahara Natavara, Jaya Jaya Jaya Hey Madhusudhana 
+Giridhara Madhava Murahara Natavara, Jaya Jaya Jaya Hey Madhusudhana
 Jaya Jaya Jaya Hey Madhusudhana
 Jaya Jaya Jaya Hey Janardhana
 Venu Vilolana Vedoddharana

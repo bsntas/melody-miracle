@@ -25,7 +25,7 @@ Lowest Note: m1 / F (lower octave)Highest Note: D2 / A* Western notes are in the
 ## Lyrics
 
 Gopala Radhey Krishna Madhusudhana
-Gopala Radhey Krishna Mana Mohana 
+Gopala Radhey Krishna Mana Mohana
 Gopala Radhey Krishna Sai Madhava
 Radhey Radhey Radhey Madhusudhana
 Radhey Radhey Radhey Mana Mohana

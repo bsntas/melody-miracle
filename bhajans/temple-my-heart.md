@@ -24,18 +24,18 @@ Lowest Note: p / G (lower octave)Highest Note: P / G* Western notes are in the K
 
 ## Lyrics
 
-A Temple In My Heart, A Prayer In My Soul, 
-    A Song On My Lips, And I Sing To You
-[Chorus:] Baba Sai Baba, Sathya Sai Baba, 
-    Baba Sai Baba, I Sing To You
+A Temple In My Heart, A Prayer In My Soul,
+A Song On My Lips, And I Sing To You
+[Chorus:] Baba Sai Baba, Sathya Sai Baba,
+Baba Sai Baba, I Sing To You
 Sathya Sai Baba, Baba Sai Baba, Sathya Sai Baba, I Call To You
 
 A Light In My Heart, A Yearning In My Soul,
-    A Name On My Lips, And I Call To You
-[Chorus:] Baba Sai Baba, Sathya Sai Baba ... 
+A Name On My Lips, And I Call To You
+[Chorus:] Baba Sai Baba, Sathya Sai Baba ...
 
 Joy In My Heart, Peace In My Soul,
-    A Smile On My Lips And I Sing To You
+A Smile On My Lips And I Sing To You
 [Chorus:] Baba Sai Baba, Sathya Sai Baba ...
 
 ## Audio

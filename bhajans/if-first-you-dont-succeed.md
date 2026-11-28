@@ -15,6 +15,8 @@ If at first you don't succeed,
 Try try, try again
 Don't give up, don't despair,
 In the end you'll win you'll win, in the end you'll win.
+
+This world has many challenges
 To meet them you need pluck.
 You have to try so very hard,
 You can't rely on luck.

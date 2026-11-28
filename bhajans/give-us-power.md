@@ -30,6 +30,8 @@ Bring a vision of divinity our hearts can hold
 Give us hope in our despair
 That through the darkness You'll be there
 To help us reach the promised land)
+
+Give us the power, give us the light
 Let it shine, let it shine, give us the light
 You're the river, You're the sea, You're the power inside of me
 Let it shine, let it shine, let it shine (2X)

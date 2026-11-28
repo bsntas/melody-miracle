@@ -26,9 +26,13 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Dwell In Our Hearts
+
+From our hearts there’s a cry Sathya Sai
 We are yearning only for You
 For they say You are our only saviour
 Who will lead us to our destiny
+
+Come and dwell in our hearts Sathya Sai
 Never leave us alone Sathya Sai
 For we know You are our Mother/Father
 Without You there’s no one else for us

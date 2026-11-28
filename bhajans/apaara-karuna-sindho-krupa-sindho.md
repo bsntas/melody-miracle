@@ -24,9 +24,9 @@ Lowest Note: G1 / E♭Highest Note: M1 / F (higher octave)* Western notes are in
 
 ## Lyrics
 
-Apaara Karuna Sindho Krupa Sindho Daya Sindho 
-Aganita Gunagana Dhama Atma Rama Ananda Rama 
-Bhaashpavaari Paripoorna Lochanam 
+Apaara Karuna Sindho Krupa Sindho Daya Sindho
+Aganita Gunagana Dhama Atma Rama Ananda Rama
+Bhaashpavaari Paripoorna Lochanam
 Maruthim Bhajey Ram Ram Ram Sita Ram Ram Ram Raja Ram Ram Ram
 Bhaktha Jana Priya Sai Ram Sathya Sai Ram Parthi Sai Ram
 

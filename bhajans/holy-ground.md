@@ -26,9 +26,13 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Holy Ground
+
+We are standing on Holy Ground
 And I know that there are angels all around
 Let us praise our Father now
 We are standing in His presence on holy ground.
+
+We are standing on Holy Ground
 And I know that there are angels all around
 Let us praise our Mother now
 We are standing in Her presence on holy ground

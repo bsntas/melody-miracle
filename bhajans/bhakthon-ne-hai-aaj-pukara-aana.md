@@ -30,6 +30,8 @@ Bandhu Sakha Tum Sai Hamarey
 Bhava Sagar Se Paar Utharo Jeevan Ke Rakhwale
 Jeevan Daata Jeevan Taaro Ab To Jeevan Haarey [ Sai Baba Sai Baba ... ]
 
+Sai Baba Darsha Dikhao (5)
+
 ## Meaning
 
 O Lord Sai, the devotees have called out to You. You must come to us. O Lord, please show us Your beautiful form. You are our mother, father, and nearest friend. Take us across the ocean of life. You are the giver of life.

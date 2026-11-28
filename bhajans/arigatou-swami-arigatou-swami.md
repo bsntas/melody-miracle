@@ -28,6 +28,8 @@ Arigatou Swami, Arigatou Swami
 Kokoro no Naka ni Owasu Kami
 Watashi wo Michibiki Mamoru Kami
 
+Arigatou Swami, Arigatou Swami
+
 ## Meaning
 
 Thank you Swami, the one who dwells within my heart guiding and protecting me.

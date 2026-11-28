@@ -26,7 +26,7 @@ Notes:The Indian Raga Keeravani is considered to be the equivalent of this scale
 Guru Bhagawan Ai no Kami
 Anata no Miashi ni Inorimasu
 Kokoro o Tsukushite Anata o Aisuru
-Guru Bhagawan Ai no Kami 
+Guru Bhagawan Ai no Kami
 Subete no Inochi wa Michibikare
 Anata no Ai ni Furerutoki
 Tada Kami no Mi ga Ikirumichi

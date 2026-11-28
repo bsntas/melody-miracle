@@ -28,10 +28,16 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 In the dawn of creation You were there, You were there (2x)
 As my life passes away, as my life passes away
 You guide me each day
+
+At the birth of my soul, You were there, You were there (2x)
 As my life passes away, as my life passes away
 You guide me each day
+
+As I cross the ocean of life You were there, You are there (2x)
 As my life passes away, as my life passes away
 You guide me each day
+
+At the point of my death You’ll be there, You’ll be there (2x)
 As my life passes away, as my life passes away
 You guide me each day
 

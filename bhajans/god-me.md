@@ -26,19 +26,31 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 God Is in me
+
+I go to where God Is
 God Is in me..God Is in me
 I go to where God Is
 God Is in me..God Is in me
+
+I go to where God gives
 God gives through me..God gives through me
 I go to where God gives
 God gives through me..God gives through me
+
+I go to where God lives
 God lives as me..God lives as me
 I go to where God lives
 God lives as me..God lives as me
+
+I let go and there God Is
 God Is Me..God Is Me
 I let go and there God Is
 God Is Me..God Is Me
+
+God Is in me..God Is in Me
 God Is in me..God Is Me
+
+Remember Me, remember Me, I am with you always (2x)
 Remember My name, call Me anytime anywhere (2x)
 
 ## Audio

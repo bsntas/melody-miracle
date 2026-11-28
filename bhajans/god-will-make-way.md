@@ -26,9 +26,13 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 God Will Make A Way
+
+There are times when you feel you can’t go on
 The sky turns black and the road is just too long
 Lost and lonely, no help in sight
 You do your best but you just can’t get it right.
+
+Down so long and blinded by the pain
 The well runs dry and there’s just no sign of rain
 Bent and broken and wounded by your loss
 Call out His Name and He will bear your cross. …..
@@ -36,11 +40,17 @@ Call out His Name and He will bear your cross. …..
 God will make a way (…when you’ve lost your sight)
 God will make a way (…so stand and fight)
 God will make a way……
+
+Mind held hostage by doubt and fear
 The past still haunts you and the future is unclear
 Break those chains that bind you to this earth
 Trust the One who will free you through rebirth …..(Don’t ya know)
+
+God will make a way (Oh yes he wil)
 God will make a way (Don’t ya know that he will)
 God will make a way (Oh yes He will)
+
+If your heart is pure and true,
 He’ll be there beside you
 If your faith and love are strong,
 you’ll sing that victory song
@@ -52,12 +62,18 @@ you’ll reach that Promised Land. ….
 God will make a way (…When you’re all alone)
 God will make a way (…He will lead you home)
 God will make a way
+
+Feel the peace (feel the peace) that is on the other side
 Feel the truth, the truth you just can’t hide
 Love alone will take you to that shore
 The Lord Himself will open every door. …..
+
+(Don’t ya know) God will make a way (…In the wind and rain)
 God will make a way (...He will bear your pain)
 God will make a way (...So praise His name)
 God will make a way……
+
+Make a way, yeah................God will make a way
 Make a way, yeah................God will make a way
 Make a way, God will make a way .......................
 Make a way, God will make a way
@@ -71,6 +87,8 @@ Every tear you cry, He will be right there to dry your eyes
 (Yes, He will) In your darkest hour....... in your darkest hour......
 He will be your Power
 (Yes, He will) (8x)
+
+(Don’t ya know) God will make a way (When you can’t go on…)
 God will make a way (He will make you strong…)
 God will make a way (So hold on…)
 God will make a…

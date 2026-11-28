@@ -31,6 +31,8 @@ Namida ga Afure soshite Kami no Ko to Wakatta
 Yashiki Hitomi Kami no Hitomi
 Ome ni Kakareta Shiawase Kamishimete Imasu
 
+Jaya Jaya Sai Baba (5)
+
 ## Meaning
 
 When I met You, such joy overcame me that I was unable to speak. Tears welled up in my eyes as I understood that I am a child of God. Your kind eyes exude a happiness that we graciously accept.
