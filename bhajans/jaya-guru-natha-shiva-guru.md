@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_403_JAYA_GURUNATHA_SHIVA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

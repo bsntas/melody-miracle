@@ -11,6 +11,7 @@
 | **Raga** | Madhyamavati / Madhmad Sarang |
 | **Tempo** | Slow |
 | **Level** | Simple |
+| **Tags** | Prayers |
 
 ### Raga Notes
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1.5 Madhyam / F# |
 | **Ladies Pitch** | 5.5 Madhyam / C# |
+| **Tags** | Folk, Vintage |
 
 ### Raga Notes
 

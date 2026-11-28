@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_467_RADHE_MUKUND_MURARI_GOVIND.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

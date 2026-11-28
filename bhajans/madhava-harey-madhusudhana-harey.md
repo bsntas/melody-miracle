@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_465_MADHAVA_HARE_MADHUSUDANA_HARE.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

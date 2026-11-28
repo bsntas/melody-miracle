@@ -3,7 +3,7 @@
 const CACHE = 'melody-miracle-20261128.1';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP        = '20261128.1'; // app.js (stop bhajan audio on switch/close; labelled audio tracks; Swami's Voice filter)
+const V_APP        = '20261128.1'; // app.js (stop audio on switch/close; labelled audio tracks; Swami's Voice + Type filters)
 const V_GH         = '20260922.1'; // github-store.js (merge remote payments on conflict to prevent overwrite)
 const V_CSS        = '20261128.1'; // style.css (labelled audio track list in bhajan detail)
 const V_FUNDS_LIVE = '20260903.1'; // funds-live.js (Firebase pending queue for funds)

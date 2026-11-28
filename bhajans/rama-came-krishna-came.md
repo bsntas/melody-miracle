@@ -8,6 +8,7 @@
 |---|---|
 | **Deity** | Sai |
 | **Language** | English |
+| **Tags** | Multi-lingual |
 
 ## Lyrics
 

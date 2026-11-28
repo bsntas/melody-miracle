@@ -8,6 +8,7 @@
 |---|---|
 | **Deity** | Sai |
 | **Language** | Sanskrit / Hindi |
+| **Tags** | 108, Prayers |
 
 ## Lyrics
 

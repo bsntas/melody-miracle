@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 2 Pancham / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_468_SAI_SATYA_PALANA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

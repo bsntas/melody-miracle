@@ -7,6 +7,7 @@
 | Field | Value |
 |---|---|
 | **Language** | Japanese |
+| **Tags** | Multi-lingual |
 
 ## Lyrics
 

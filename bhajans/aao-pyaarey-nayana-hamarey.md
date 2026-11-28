@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 

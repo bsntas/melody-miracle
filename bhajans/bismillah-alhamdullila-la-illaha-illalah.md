@@ -8,6 +8,7 @@
 |---|---|
 | **Deity** | Allah |
 | **Language** | French, Arabic |
+| **Tags** | Multi-lingual |
 
 ## Lyrics
 

@@ -13,6 +13,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 

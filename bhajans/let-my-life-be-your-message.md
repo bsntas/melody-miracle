@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Living Love |
 
 ### Raga Notes
 

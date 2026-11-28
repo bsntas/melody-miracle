@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Madhyam / B Flat |
 | **Ladies Pitch** | 1 Madhyam / F |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 

@@ -12,6 +12,7 @@
 | **Beat** | 6 Beat / Dadra |
 | **Tempo** | Medium |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 

@@ -6,6 +6,7 @@
 
 | Field | Value |
 |---|---|
+| **Tags** | Prayers |
 
 ## Lyrics
 

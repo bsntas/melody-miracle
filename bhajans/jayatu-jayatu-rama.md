@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_381_JAYATU_JAYATU_RAMA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

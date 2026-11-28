@@ -12,6 +12,13 @@ const _localDate = d => {
   return `${y}-${m}-${day}`;
 };
 
+// ─── Song types ────────────────────────────────────────────────────────────────
+// bhajan.type, from Sai Rhythms tags (scripts/build-bhajans.py song_type); missing = bhajan
+const SONG_TYPES = {
+  bhajan: 'Bhajans', prayer: 'Prayers & Stotrams', arathi: 'Arathi',
+  kriti: 'Kritis', carol: 'Carols', song: 'Devotional Songs',
+};
+
 // ─── Pitch lookup ──────────────────────────────────────────────────────────────
 
 const PITCH_OPTIONS = [
@@ -1935,6 +1942,24 @@ class App {
     const levelEl    = document.getElementById('filter-level');
     const tempoChips = document.getElementById('fmodal-tempo-chips');
     const levelChips = document.getElementById('fmodal-level-chips');
+    const typeEl     = document.getElementById('filter-type');
+    const typeChips  = document.getElementById('fmodal-type-chips');
+
+    // Only offer types the catalog actually has
+    const present = new Set(this.bhajans.bhajans.map(b => b.type || 'bhajan'));
+    Object.entries(SONG_TYPES).filter(([k]) => present.has(k)).forEach(([key, label]) => {
+      typeEl?.append(new Option(label, key));
+      if (!typeChips) return;
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'fmodal-chip-btn';
+      btn.textContent = label; btn.dataset.type = key;
+      btn.addEventListener('click', () => {
+        typeEl.value = typeEl.value === key ? '' : key;
+        this._syncFilterModalUI();
+        this._applyBrowseFilters();
+      });
+      typeChips.append(btn);
+    });
 
     const deities = this.bhajans.uniqueValues('deity');
     const langs   = this.bhajans.uniqueValues('language');
@@ -2089,6 +2114,7 @@ class App {
     const level    = document.getElementById('filter-level').value;
     const sung     = document.getElementById('filter-sung')?.value || '';
     const golden   = !!document.getElementById('filter-golden')?.value;
+    const type     = document.getElementById('filter-type')?.value || '';
 
     if (sung === 'favourites' && !this.auth?.currentUser) {
       this._browseFiltered = [];
@@ -2104,6 +2130,7 @@ class App {
     }
 
     this._browseFiltered = this.bhajans.search(q, { deity, language, tempo, level });
+    if (type) this._browseFiltered = this._browseFiltered.filter(b => (b.type || 'bhajan') === type);
     if (golden) this._browseFiltered = this._browseFiltered.filter(b => (b.audio_tracks || []).some(t => t.type === 'golden'));
 
     if (sung) {
@@ -2132,7 +2159,7 @@ class App {
     if (doneBtn) doneBtn.textContent = count ? `Show ${count} Results` : 'Show Results';
 
     // Update funnel/✕ button state
-    const hasActiveFilter = !!(q || deity || language || tempo || level || sung || golden);
+    const hasActiveFilter = !!(q || deity || language || tempo || level || sung || golden || type);
     const clearBtn = document.getElementById('btn-clear-filters');
     if (clearBtn) {
       clearBtn.classList.toggle('active', hasActiveFilter);
@@ -2141,14 +2168,14 @@ class App {
     }
 
     // Render read-only active filter chips in the strip
-    this._renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden });
+    this._renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden, type });
 
     this._renderBrowsePage();
   }
 
   _clearBrowseFilters() {
     document.getElementById('browse-search').value = '';
-    ['filter-sung', 'filter-deity', 'filter-language', 'filter-tempo', 'filter-level', 'filter-golden'].forEach(id => {
+    ['filter-sung', 'filter-deity', 'filter-language', 'filter-tempo', 'filter-level', 'filter-golden', 'filter-type'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.value = '';
     });
@@ -2158,7 +2185,7 @@ class App {
     this._applyBrowseFilters();
   }
 
-  _renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden }) {
+  _renderActiveFilterChips({ q, deity, language, tempo, level, sung, golden, type }) {
     const strip = document.getElementById('browse-filter-chips');
     if (!strip) return;
     strip.innerHTML = '';
@@ -2173,6 +2200,7 @@ class App {
     if (language) labels.push(language);
     if (tempo) labels.push(tempo);
     if (level) labels.push(level);
+    if (type) labels.push(SONG_TYPES[type] || type);
     if (golden) labels.push("Swami's Voice");
     if (wrap) wrap.classList.toggle('hidden', labels.length === 0);
     if (labels.length === 0) return;
@@ -2217,6 +2245,10 @@ class App {
     const level = document.getElementById('filter-level')?.value || '';
     document.querySelectorAll('#fmodal-level-chips .fmodal-chip-btn')
       .forEach(b => b.classList.toggle('active', b.textContent === level));
+
+    const type = document.getElementById('filter-type')?.value || '';
+    document.querySelectorAll('#fmodal-type-chips .fmodal-chip-btn')
+      .forEach(b => b.classList.toggle('active', b.dataset.type === type));
   }
 
   _openFilterModal() {
@@ -2545,11 +2577,13 @@ class App {
       return indian || western;
     };
     const metaFields = [
+      ['Type', b.type && b.type !== 'bhajan' ? SONG_TYPES[b.type] : ''],
       ['Deity', b.deity], ['Language', b.language], ['Raga', b.raga],
       ['Scale', b.scale],
       ['Beat', b.beat], ['Tempo', b.tempo], ['Level', b.level],
       ['Gents Pitch', [fmtPitch(b.gents_pitch_indian, b.gents_pitch_western) || b.gents_pitch, b.scale].filter(Boolean).join(' · ')],
       ['Ladies Pitch', [fmtPitch(b.ladies_pitch_indian, b.ladies_pitch_western) || b.ladies_pitch, b.scale].filter(Boolean).join(' · ')],
+      ['Tags', (b.tags || []).join(', ')],
     ].filter(([, v]) => v);
 
     const history = this.sessions.bhajanHistory(b.id);

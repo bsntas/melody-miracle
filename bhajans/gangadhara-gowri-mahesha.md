@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5.5 Madhyam / C# |
 | **Ladies Pitch** | 2.5 Madhyam / G#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_397_GANGADHAR_GOURI_MAHESHA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

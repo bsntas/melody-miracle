@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Madhyam / B Flat |
 | **Ladies Pitch** | 1 Madhyam / FTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_395_SITARAM_NAM_BHAJO.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

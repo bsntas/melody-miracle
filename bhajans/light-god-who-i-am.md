@@ -11,6 +11,7 @@
 | **Raga** | Major (Shankarabharanam / Bilawal) |
 | **Tempo** | Slow |
 | **Level** | Simple |
+| **Tags** | Now And Forever |
 
 ### Raga Notes
 

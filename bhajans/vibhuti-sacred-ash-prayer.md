@@ -12,6 +12,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / DTutorialhttps://media.radiosai.org/journals/vol_12/01FEB14/vibhuti-the-Making-of-the-Wondrous-Holy-Ash.htm |
+| **Tags** | Prayers |
 
 ### Raga Notes
 

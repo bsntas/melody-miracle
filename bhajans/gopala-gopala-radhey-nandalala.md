@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / ETutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_457_GOPAL_GOPALA_RADHE.mp3 |
+| **Tags** | Folk, Vintage |
 
 ### Raga Notes
 

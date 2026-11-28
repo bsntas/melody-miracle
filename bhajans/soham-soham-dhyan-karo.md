@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

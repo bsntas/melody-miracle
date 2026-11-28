@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / DKaraoke Tracks for Practicesource: https://media.radiosai.org/journals/vol_15/01JUL17/Sai-Bhajans-Karaoke.htmReference Track2 Pancham / DGents Pitch Karaoke Tracks2 Pancham / D (reference) |
+| **Tags** | Prayers |
 
 ### Raga Notes
 

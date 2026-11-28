@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_463_KAMAL_NAYAN_PRABHU.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

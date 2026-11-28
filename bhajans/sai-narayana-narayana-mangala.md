@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2.5 Pancham / E Flat |
 | **Ladies Pitch** | 6.5 Pancham / B FlatTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_479_SAI_NARAYANA_NARAYANA_MANGALA_NAM.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

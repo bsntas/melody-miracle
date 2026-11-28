@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 6.5 Pancham / B Flat |
 | **Ladies Pitch** | 4.5 Pancham / F#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_442_SAI_BABA_TERA_NAM.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4.5 Pancham / F# |
 | **Ladies Pitch** | 1.5 Pancham / C#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_405_JAI_JAI_SADGURU_SAI_SADASHIV.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

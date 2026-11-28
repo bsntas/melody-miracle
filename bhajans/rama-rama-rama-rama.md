@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5.5 Pancham / G# |
 | **Ladies Pitch** | 2.5 Pancham / E Flat |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

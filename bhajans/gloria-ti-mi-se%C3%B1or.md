@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Arathi, Multi-lingual, Prayers |
 
 ### Raga Notes
 

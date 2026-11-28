@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2.5 Madhyam / G# |
 | **Ladies Pitch** | 6.5 Madhyam / E FlatTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_446_YADU_NANDANA_YASHODA_BALA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

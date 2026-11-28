@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Slow |
 | **Level** | Intermediate |
+| **Tags** | Sai Of Love |
 
 ### Raga Notes
 

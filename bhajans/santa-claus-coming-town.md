@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Madhyam / D |
 | **Ladies Pitch** | 3 Madhyam / A |
+| **Tags** | Carols |
 
 ### Raga Notes
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / G |
+| **Tags** | Ribbons Of Light |
 
 ### Raga Notes
 

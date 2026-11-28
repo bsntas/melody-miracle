@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://media.radiosai.org/www/mp3download/Pancharatna-krithi-02.mp3 |
+| **Tags** | Kritis |
 
 ### Raga Notes
 

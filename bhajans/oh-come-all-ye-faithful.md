@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 3 Pancham / E |
+| **Tags** | Carols |
 
 ### Raga Notes
 

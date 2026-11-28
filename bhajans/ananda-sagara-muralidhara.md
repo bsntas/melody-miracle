@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Folk, Multi-lingual |
 
 ### Raga Notes
 

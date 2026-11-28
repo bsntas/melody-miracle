@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G#Tutorialhttps://media.radiosai.org/journals/Vol_05/01FEB07/10-bhajans.htm#anchor1 |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 

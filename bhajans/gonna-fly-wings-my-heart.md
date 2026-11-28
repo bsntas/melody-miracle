@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / A |
+| **Tags** | Heart Voice |
 
 ### Raga Notes
 

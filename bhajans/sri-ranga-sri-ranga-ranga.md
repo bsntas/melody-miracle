@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 5 Madhyam / C |
 | **Ladies Pitch** | 2 Madhyam / G |
+| **Tags** | Folk |
 
 ### Raga Notes
 

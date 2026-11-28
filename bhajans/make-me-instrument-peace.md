@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Carols |
 
 ### Raga Notes
 

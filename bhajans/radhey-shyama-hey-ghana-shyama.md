@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 7 Madhyam / E |
 | **Ladies Pitch** | 4.5 Madhyam / B |
+| **Tags** | Multi-lingual |
 
 ### Raga Notes
 

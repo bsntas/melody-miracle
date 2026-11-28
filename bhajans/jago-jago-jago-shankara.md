@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Madhyam / G |
 | **Ladies Pitch** | 6 Madhyam / D |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

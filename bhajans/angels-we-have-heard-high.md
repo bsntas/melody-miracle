@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Carols, Multi-lingual |
 
 ### Raga Notes
 

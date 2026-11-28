@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium |
 | **Level** | Intermediate |
+| **Tags** | O Holy Presence |
 
 ### Raga Notes
 

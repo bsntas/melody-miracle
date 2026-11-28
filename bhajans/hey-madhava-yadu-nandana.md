@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 6 Pancham / A |
 | **Ladies Pitch** | 3 Pancham / ETutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_430_HE_MADHAVA_HE_YADUNANDANA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

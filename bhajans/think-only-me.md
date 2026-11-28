@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / B |
+| **Tags** | My Light Never Dims |
 
 ### Raga Notes
 

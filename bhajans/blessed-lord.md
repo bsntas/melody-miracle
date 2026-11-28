@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 4 Pancham / F |
 | **Ladies Pitch** | 1 Pancham / C |
+| **Tags** | Solar Love |
 
 ### Raga Notes
 

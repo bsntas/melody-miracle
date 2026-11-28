@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / DTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_445_ATMARAM_ANAND_DHAM.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

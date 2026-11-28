@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1.5 Pancham / C# |
 | **Ladies Pitch** | 5.5 Pancham / G#Tutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_471_KALAVATI_KALI_KAPALINI.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Pancham / C |
 | **Ladies Pitch** | 5 Pancham / GTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_407_TRIPURARI_SHIV_SHANKARA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

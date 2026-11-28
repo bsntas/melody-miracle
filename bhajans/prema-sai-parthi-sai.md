@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / ATutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_389_PREM_SAI_PARTI_SAI.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

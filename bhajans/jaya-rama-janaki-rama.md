@@ -14,6 +14,7 @@
 | **Level** | Intermediate |
 | **Gents Pitch** | 2 Pancham / D |
 | **Ladies Pitch** | 6 Pancham / ATutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_473_JAYA_RAM_JANAKI_RAMA.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

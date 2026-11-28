@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 5 Pancham / G |
 | **Ladies Pitch** | 2 Pancham / D |
+| **Tags** | Love To Love |
 
 ### Raga Notes
 

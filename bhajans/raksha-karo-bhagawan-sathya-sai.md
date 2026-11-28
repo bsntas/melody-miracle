@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / CTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_400_RAKSHA_KARO_BHAGVAN.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

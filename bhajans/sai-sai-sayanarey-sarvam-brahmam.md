@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 1 Madhyam / F |
 | **Ladies Pitch** | 5 Madhyam / C |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

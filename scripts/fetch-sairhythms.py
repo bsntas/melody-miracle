@@ -95,6 +95,19 @@ def audio_tracks(page):
     return sorted(tracks, key=lambda t: order.index(t['type']))
 
 
+# Tags that describe the recordings rather than the song (covered by audio tracks)
+MEDIA_TAGS = {'golden voice', 'instrumental', 'karaoke', 'lead-music', 'sheet-music', 'tutorial'}
+
+
+def song_tags(page):
+    """Song tags from the page's "Song Tags" row, e.g. ['Prayers', 'Vintage']."""
+    m = re.search(r"song-tags-row'>(.*?)(?=<div class='row devotional-song-meta-data-grid|\Z)", page, re.S)
+    if not m:
+        return []
+    names = [text(t) for t in re.findall(r"<a [^>]*href=['\"][^'\"]*/tags/[^'\"]*['\"][^>]*>(.*?)</a>", m.group(1), re.S)]
+    return [n for n in dict.fromkeys(names) if n and n.lower() not in MEDIA_TAGS]
+
+
 def tracks_markdown(tracks):
     """Lines for the .md "## Audio" section (read back by build-bhajans.py)."""
     out = []
@@ -130,6 +143,7 @@ def parse(page, slug):
         raga = meta_field(page, 'Raga')
 
     tracks = audio_tracks(page)
+    tags = song_tags(page)
 
     return {
         'title': title,
@@ -145,6 +159,7 @@ def parse(page, slug):
         'lyrics': lyrics,
         'meaning': meaning,
         'tracks': tracks,
+        'tags': ', '.join(tags),
     }
 
 
@@ -154,7 +169,7 @@ def to_markdown(b, slug):
            '## Details', '', '| Field | Value |', '|---|---|']
     for label, key in [('Deity', 'deity'), ('Language', 'language'), ('Raga', 'raga'),
                        ('Beat', 'beat'), ('Tempo', 'tempo'), ('Level', 'level'),
-                       ('Gents Pitch', 'gents'), ('Ladies Pitch', 'ladies')]:
+                       ('Gents Pitch', 'gents'), ('Ladies Pitch', 'ladies'), ('Tags', 'tags')]:
         if b[key]:
             out.append(f"| **{label}** | {b[key]} |")
     out.append('')

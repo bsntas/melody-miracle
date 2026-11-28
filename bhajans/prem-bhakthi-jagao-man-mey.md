@@ -14,6 +14,7 @@
 | **Level** | Advanced |
 | **Gents Pitch** | 3 Pancham / E |
 | **Ladies Pitch** | 7 Pancham / BTutorial https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_418_PREM_BHAKTI_JAGAO_MAN_ME.mp3 |
+| **Tags** | Vintage |
 
 ### Raga Notes
 

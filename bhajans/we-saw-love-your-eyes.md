@@ -12,6 +12,7 @@
 | **Beat** | 8 Beat / Keherwa / Adi |
 | **Tempo** | Medium Slow |
 | **Level** | Intermediate |
+| **Tags** | Love To Love |
 
 ### Raga Notes
 

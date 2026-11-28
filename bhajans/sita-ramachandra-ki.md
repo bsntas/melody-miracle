@@ -14,6 +14,7 @@
 | **Level** | Simple |
 | **Gents Pitch** | 5 Madhyam / C |
 | **Ladies Pitch** | 2 Madhyam / G |
+| **Tags** | Abhayankara Sai |
 
 ### Raga Notes
 
