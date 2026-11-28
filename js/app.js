@@ -5,7 +5,7 @@ import { AuthManager } from './auth.js?v=20260818.3';
 import { FavouritesStore } from './favourites.js?v=20260806.2';
 import { FundsLive } from './funds-live.js?v=20260903.1';
 
-console.log('[MM] app.js v20261121.4 loaded');
+console.log('[MM] app.js v20261128.1 loaded');
 
 const _localDate = d => {
   const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
@@ -2480,6 +2480,9 @@ class App {
     if (!b) return;
 
     this._bhajanModalContext = context;
+    // A playing <audio> keeps playing after innerHTML replaces it, so stop it
+    // before rendering the next bhajan (prev/next) or it plays under the new one.
+    this._stopBhajanAudio();
 
     const prevBtn = document.getElementById('mbhajan-prev');
     const nextBtn = document.getElementById('mbhajan-next');
@@ -2566,7 +2569,15 @@ class App {
   _closeBhajanModal() {
     this._bhajanModalContext = null;
     this._closeModal('modal-bhajan');
-    document.querySelector('#modal-bhajan audio')?.pause();
+    this._stopBhajanAudio();
+  }
+
+  _stopBhajanAudio() {
+    document.querySelectorAll('#modal-bhajan audio').forEach(a => {
+      a.pause();
+      a.removeAttribute('src');
+      a.load();
+    });
   }
 
   // ─── Session View ─────────────────────────────────────────────────────────

@@ -1,9 +1,9 @@
 // ─── Melody Miracle Service Worker ───────────────────────────────────────────
 // Cache version — bump this string whenever assets change (same cadence as ?v= query strings).
-const CACHE = 'melody-miracle-20261121.4';
+const CACHE = 'melody-miracle-20261128.1';
 
 // Per-file version strings — must match exactly what index.html and app.js request.
-const V_APP        = '20261121.4'; // app.js (funds: remove duplicate refresh button; fix cashier/member badge)
+const V_APP        = '20261128.1'; // app.js (stop bhajan audio when switching/closing the detail modal)
 const V_GH         = '20260922.1'; // github-store.js (merge remote payments on conflict to prevent overwrite)
 const V_CSS        = '20261121.3'; // style.css (funds: pending-session cell, drop session dots)
 const V_FUNDS_LIVE = '20260903.1'; // funds-live.js (Firebase pending queue for funds)
