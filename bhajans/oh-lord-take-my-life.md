@@ -30,24 +30,34 @@ Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om
+
+Oh Lord take my love
 Take it all, take it all in Your hands
 Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om
+
+Oh Lord take my actions
 Take them all, take them all in Your hands
 Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om
+
+Oh Lord take my heart
 Take it all, take it all in Your hands
 Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om
+
+Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om
+
+Om Sai Ram
 Om Sai Ram
 Om Sai Ram
 Om

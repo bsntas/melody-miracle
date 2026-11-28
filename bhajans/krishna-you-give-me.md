@@ -27,9 +27,17 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 
 Krishna You give me, You give me the vision of God
 Visions of divinity, visions of light within me
+
+Shiva You give me, You give me the fire of God
 Fire of the mission, fire of purity within me, within me
+
+Jesus You give me, You give me the Word of God
 Words of wisdom, words of love within me, within me
+
+Buddha You give me, You give me the teachings of God
 Teaching of service, teaching of visions within me, within me
+
+Sathya Sai Baba You give me, You give me the understanding of God
 Understanding of love, understanding of Atma within me, within me
 
 ## Audio

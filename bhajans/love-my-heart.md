@@ -29,7 +29,7 @@ Sai is my heart, Sai is my home, Sai is my life, Sai my own
 Love, love, love is God, live, live, live in Love (2x)
 Allelujah, Allelu Allelujah, Alleluia, Allelujah (2x)
 Allelujah, Alleujah (2x)
- (next two lines sung in rounds)
+(next two lines sung in rounds)
 Allelujah, Allelu Allelujah, Alleluia, Allelujah
 Allelujah, Alleujah
 

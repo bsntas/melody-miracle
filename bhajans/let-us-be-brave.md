@@ -14,6 +14,8 @@ Let us be brave and courageous,
 May we dare do what is right.
 Let us fail not, Let us ail not,
 Using all our strength and might.
+
+In our lives are many problems,
 Many obstacles in sight.
 We must dare to, we must care to,
 Go from darkness into light.

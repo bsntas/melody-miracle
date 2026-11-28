@@ -28,6 +28,8 @@ O Sai, O Sai, O Sai Baba (2)
 Anata to Tomo ni Warai, Anata to Tomo ni Utau
 Anata wa Watashi no Subete, Anata to Tomo ni Ikiru
 
+O Sai, O Sai, O Sai Baba
+
 ## Meaning
 
 O Lord Sai Baba, You are my everything. I laugh with you, sing with you, and live with you.

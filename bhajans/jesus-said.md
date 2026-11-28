@@ -28,10 +28,20 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 
 Jesus said, “He who sent me will come again” (2x)
 Sai, Sai, Sathya Sai Baba, Baba, Baba (2x)
+
+Jesus said, “The Lamb will sound His name” (2x)
 Baba Baba, Sathya Sai Baba, Baba, Baba (2x)
+
+Jesus said, “His name will mean the Truth” (2x)
 Sathya, Sathya, Sathya Sai Baba, Baba, Baba (2x)
+
+Jesus said, “His robe will be blood red” (2x)
 Sai, Sai, Sathya Sai Baba, Baba, Baba (2x)
+
+Jesus said, “His crown will be His hair” (2x)
 Baba Baba, Sathya Sai Baba, Baba, Baba (2x)
+
+Jesus said, “He who sent me will come again” (2x)
 Sathya, Sathya, Sathya Sai Baba, Baba, Baba (4x)
 
 ## Audio

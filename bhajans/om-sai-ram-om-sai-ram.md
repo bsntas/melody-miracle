@@ -29,9 +29,15 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Om Sai Ram, Om Sai Ram, divine God within
 Listen to your heart, listen to your soul, listen to the God within
 God’s in you, God’s in me, God is everywhere
+
+Om Sai Ram
 My sweet Lord, Sathya Sai Bhagawan
+
+Om Sai Ram, Om Sai Ram, divine God within
 Listen to Rama, listen to Rama, listen to the God within
 Divine Christ, Divine Sai, divine love in me
+
+Om Sai Ram
 My sweet Lord, Sathya Sai Bhagawan
 
 ## Audio

@@ -29,6 +29,8 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Lord, teach me to love my fellow man (4x)
 Keep me from the jealousy, jealousy and envy (2x)
 Grant us all we may need, let us love and cherish Thee (2x)
+
+Lord, teach me to keep my spirit clean (4x)
 Make us pure and always see, so that we may become free (2x)
 Keep our thoughts in harmony, words and deeds in unity (2x)
 Sathya, Dharma, Shanthi, Prema, Ahimsa (2x)

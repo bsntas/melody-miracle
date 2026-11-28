@@ -28,6 +28,8 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 Que todos los seres de todos los mundos
 Tengan paz y felicidad
 Samastha loka sukhino bhavanthu
+
+Por eso viniste Tú, Mi divino Sathya Sai
 Porque los sabios y santos oraron
 Samastha loka sukhino bhavanthu
 

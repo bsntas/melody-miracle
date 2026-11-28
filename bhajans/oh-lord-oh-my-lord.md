@@ -27,11 +27,23 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 ## Lyrics
 
 Oh Lord, oh my Lord
+
+CHORUS
 Oh Lord, oh my Lord (4)
+
+So many lifetimes I’ve been looking for You  (4)
 (CHORUS)
+
+We’ve walked a million miles, cried a billion tears  (4)
 (CHORUS)
+
+Take me home with You, Swami take me home with You  (4)
 (CHORUS)
+
+Oh Lord, can it be true, that I finally found You?  (4)
 (CHORUS)
+
+So many lifetimes, I’ve been looking for You
 
 ## Audio
 

@@ -25,11 +25,11 @@ Lowest Note: n2 / B (lower octave)Highest Note: S / C (higher octave)* Western n
 ## Lyrics
 
 Jhulana Mey Jhule Merey Sai Nandalala
-Jhulana Jhule Jhulana Jhule [ Jhulana Mey Jhule ... ] 
-Ma Eshwaramma Jhulana Jhulave 
-Godi Mey Bittake Kahani Sunaye 
-Hari Katha Choti Sai Ram Ko Sunaye 
-Apni Hi Katha Suno Sai Nandalala 
+Jhulana Jhule Jhulana Jhule [ Jhulana Mey Jhule ... ]
+Ma Eshwaramma Jhulana Jhulave
+Godi Mey Bittake Kahani Sunaye
+Hari Katha Choti Sai Ram Ko Sunaye
+Apni Hi Katha Suno Sai Nandalala
 Jhulana Mey Jhule Sai Bala Gopala
 
 ## Meaning

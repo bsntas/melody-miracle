@@ -27,6 +27,8 @@ Jaya Radha Madhava Jaya Kunja Vihari
 Jaya Gopijana Vallabha Jaya Girivara Dhari [ Jaya Radha ... ]
 Yashoda Nandana Vraja Jana Ranjana (2)
 Yamuna Teera Vihari
+
+Hare Krishna Hare Krishna Krishna Krishna Hare Hare
 Hare Rama Hare Rama Rama Rama Hare Hare
 
 ## Meaning

@@ -25,7 +25,7 @@ Lowest Note: n2 / B (lower octave)Highest Note: P / G* Western notes are in the 
 ## Lyrics
 
 Jaya Anjaneya Jaya Rama Dootha Sharanam Prabho Sharanam
-Vanara Veera Vayu Kumara 
+Vanara Veera Vayu Kumara
 Ranadheera Sharanam
 Rama Priyey Sharanam (Sai)
 Sathya Sai Hanuman Sharanam

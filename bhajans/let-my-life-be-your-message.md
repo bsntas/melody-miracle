@@ -31,16 +31,24 @@ A constant reminder that You are living as me
 Let every second that I breathe
 Be a respite ... yes, a final reprieve
 From a life that’s live not for You, but for me
+
+Let my life be Your Message
 Let every day I wake
 Be an offering to You, O Lord
 That You’re the Path I will take
+
+For steppin’ steps without You there
 Is a big mistake ... it’s in total error
 To live a life not for You but for me
+
+I keep seemin’ to learn over and over
 That bein’ the Doer makes the trip so much slower
 That given’ it all up leaves room for You
 Well, I’m livin’ much better now that I’ve been listenin’
 To a Voice inside that’ been gently whisperin’
 Be Stil l … so I can come through
+
+Let my life be Your Message
 As the Grace of God flows free
 Let everything that stands in The Way
 Be purified in me
@@ -53,6 +61,8 @@ An empty space for You to fill with Love
 With Peace and Light as my sufficiency
 I turn to You ...You’re all I need
 To Live a life not for me but for You
+
+I keep seemin’ to learn over and over
 That bein’ the Doer makes the trip so much slower
 That given’ it all up leaves room for You
 Well, I’m livin’ much better now that I’ve been listenin’

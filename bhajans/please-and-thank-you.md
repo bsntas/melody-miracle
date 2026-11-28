@@ -14,9 +14,13 @@ Please and Thank you are two words,
 Are two words, are two words.
 Please and Thank you are two words,
 We should often use.
+
+Can I help you, my dear friend?
 My dear friend, my dear friend?
 Can I help you, my dear friend?
 I am always very ready.
+
+Thank you for your kind words,
 Kind words, kind words.
 Thank you for your kind words,
 You are very welcome.

@@ -24,12 +24,12 @@ Notes:This Raga is also rendered with D1 instead of D2. S R1 G2 P D2 SS D2 P G2 
 ## Lyrics
 
 Parthi Vihara Paapa Vidhura
-Pavana Charana Sai Narayana 
+Pavana Charana Sai Narayana
 Allah Tum Ho Yeshu Tum Ho
 Sab Ka Malik Sai Tum Ho
 Buddha Zohrashtra Nanak Tum Ho
-Tum Ho Baba Antaryami 
-Sab Bhakton Ke Palanhaarey 
+Tum Ho Baba Antaryami
+Sab Bhakton Ke Palanhaarey
 Kaliyuga Avatara Sai Narayana
 
 ## Meaning

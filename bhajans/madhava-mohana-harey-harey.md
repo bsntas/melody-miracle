@@ -24,11 +24,11 @@ Lowest Note: n2 / B (lower octave)Highest Note: M1 / F (higher octave)* Western 
 
 ## Lyrics
 
-Madhava Mohana Harey Harey 
-Sai Krishna Harey Harey [ Madhava Mohana ... ] 
-Rhuma Jhuma Rhuma Jhuma Nachey Krishna 
-Payal Baajey Gopi Krishna 
-Bansi Bajaavey Radha Krishna 
+Madhava Mohana Harey Harey
+Sai Krishna Harey Harey [ Madhava Mohana ... ]
+Rhuma Jhuma Rhuma Jhuma Nachey Krishna
+Payal Baajey Gopi Krishna
+Bansi Bajaavey Radha Krishna
 Aao Aao Krishna Krishna
 
 ## Meaning

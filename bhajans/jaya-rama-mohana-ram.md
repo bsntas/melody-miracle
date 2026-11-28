@@ -24,11 +24,11 @@ Notes:This Raga is similar to the Asavari thaat of Hindustani music. S R2 G1 M1 
 ## Lyrics
 
 Jaya Rama Mohana Ram
-Jaya Rama Sri Raghu Ram
-Jaya Rama Sai Ram [ Jaya Rama Mohana ... ]
-Jaya Rama Sita Ram
-Jaya Rama Janaki Ram
-Jaya Ram Sai Ram
+Jaya Rama Sri Raghu Ram
+Jaya Rama Sai Ram [ Jaya Rama Mohana ... ]
+Jaya Rama Sita Ram
+Jaya Rama Janaki Ram
+Jaya Ram Sai Ram
 
 ## Meaning
 

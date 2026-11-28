@@ -29,6 +29,8 @@ Sharanam Dehi
 Gaana Vinodini Gowri Manohari
 Ananda Dayini Ma
 Adi Parashakthi Ma
+
+Jai Bhavani Jai Bhavani Jai Bhavani Gowri Ma
 Mata Rani Mata Rani Mata Rani Ambe Ma
 Jai Jai Ma Jai Jai Ma
 Ambe Ma Jai Jai Ma

@@ -26,21 +26,33 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 My Light Never Dims (8x)
+
+My Love is ever flowing
 My Love in your heart is constantly growing
 My Love is always showing
 That My Light can never dim
+
+My Peace is ever lasting
 My Peace passeth all human understanding
 My Peace is steadfasting
 My Light never dims
+
+My Life is Eternally One
 My Life is more brilliant than ten billion suns
 My Life is My Will and It’s being done
 My Light never dims
+
+My Bliss is the Essence called Me
 My Bliss is the Substance of the Living Tree
 My Bliss is completely and totally free
 My Light never dims
+
+I Am as the purest of gold
 Have no beginning..can never grow old
 Forever Am perfect, complete and whole
 My Light never dims
+
+I AM THE ONE OF THE ALL
 Belief in appearance has caused you to fall
 There’s Only One Presence..won’t you hear My Call
 My Light never dims

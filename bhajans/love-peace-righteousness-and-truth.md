@@ -24,15 +24,15 @@ Notes:* showing details for NatabhairaviThis Raga is similar to the Asavari thaa
 ## Lyrics
 
 Love, peace, righteousness and truth
- Holy spirit dwelling in us all
- Father in Heaven
- Give us Your love
- Father in Heaven
- Give us Your peace
- Love in every heart
- Peace in every mind
- Love here and now Sweet Jesus Christ, our Lord
- Love here and now Sri Sathya Sai Baba
+Holy spirit dwelling in us all
+Father in Heaven
+Give us Your love
+Father in Heaven
+Give us Your peace
+Love in every heart
+Peace in every mind
+Love here and now Sweet Jesus Christ, our Lord
+Love here and now Sri Sathya Sai Baba
 
 ---
 

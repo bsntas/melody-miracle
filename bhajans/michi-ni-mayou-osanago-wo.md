@@ -29,6 +29,8 @@ Kono Hoho ni Kobore Michita Namida Nuguu tame ni
 Ai no Sugata Sono Mama ni Anata wa Koko ni Korareta
 Sono Fukaki Kami no Ai Kagiri Naki Sai no Ai
 
+Sai Ram (6)
+
 ## Meaning
 
 When we lose our way, You are there to embrace us. You are there to make us laugh, You are there to wipe away our tears. Wherever love exists, You are there. O God of Love, Your profound love is without limits.

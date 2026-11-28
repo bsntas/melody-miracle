@@ -26,6 +26,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Kanaka Wai Wai
+
+Ma ke ala hele o Jesu
 (In the travels of Jesus)
 I halawai aku ai
 (He met)
@@ -33,6 +35,8 @@ Me ke kanaka opio hanohano
 (A prominent young man)
 Kaulana e ka wai wai
 (Known for his great wealth)
+
+Pane mai e ka opio.
 (Said the youth)
 E ku’u haku mai ka’i
 (My good Lord)
@@ -40,6 +44,8 @@ He aha ho’i ka’u e hana aku ai
 (What must I do)
 I loa’a e ke ola mau?
 (To have life eternal?)
+
+E ha’awi, e ha’awi lilo
 (Give…give away)
 I kou mau wai wai
 (All your possessions)

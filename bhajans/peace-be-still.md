@@ -24,17 +24,29 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Peace be still
+
+Thy Will is done in me this day
 Peace be still, Peace be still
+
+Thy Will is done in me this day
 Peace be still, Peace be still
+
+Peace be still, and let your life be mine
 Peace be still, stop wasting time
 Peace be still, trust I am in you
 Peace be still, to one I am the Truth [ Thy Will ... ]
+
+Peace be still, and know that I am God
 Peace be still, wait for my nod
 Peace be still, my child right now you’re free
 Peace be still, be glad there’s only me [ Thy Will ... ]
+
+Peace be still, it’s time for us to merge
 Peace be still, to follow that inner urge
 Peace be still, give the rest to me
 Peace be still, for you will finally see [ Thy Will ... ]
+
+Peace be still I am letting go (3x) Om Peace Om
 Peace be still I’m surrendering (3x) Om Peace Om
 Peace be still I am emptying (3x) Om Peace Om
 Peace be still I am listening (3x) Om Peace Om

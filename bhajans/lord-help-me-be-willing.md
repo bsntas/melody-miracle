@@ -25,9 +25,17 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Lord, help me to be willing ... willing to be changed by You (2x)
+
+Only You can see my heart and You know that it wants You
 Reveal Your Self to me, O One, that I might know The Truth
+
+Lord, help me to be willing ... willing to be changed by You (2x)
+
+Let me know Your Strength, O Lord, for I’m powerless alone
 Give to me Your Grace, O God, for my way Home
 And how willI know if I’m ready ... and how will I know unless I try ...
+
+Lord, help me to be willing ... willing to be changed by You (2x)
 Willing to be changed by YOU!
 
 ## Audio

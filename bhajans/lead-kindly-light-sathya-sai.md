@@ -27,9 +27,13 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 Lead kindly light Sathya Sai Baba (2)
 You have come to fill our hearts, fill our hearts with love,
 You have come to light the lamp, light the lamp of love
+
+Guide me, O Lord, Sathya Sai Baba
 Guard me, O Lord, Sathya Sai Baba
 You have come to show the way, lead me by the hand
 You will always watch for me, however far I am
+
+Picture His form, Sathya Sai Baba
 The universal light Sathya Sai Baba
 Sathyam Shivam Sundaram, Sathya Sai Baba
 Make the temple in your heart the place where He resides

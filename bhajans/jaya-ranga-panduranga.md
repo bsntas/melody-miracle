@@ -25,9 +25,9 @@ Lowest Note: d2 / A (lower octave)Highest Note: D2 / A* Western notes are in the
 ## Lyrics
 
 Jaya Ranga Panduranga
-Sri Ranga Pandareesha 
-Sai Ranga Pandareesha 
-Jaya Shirdeesha Jaya Partheesha 
+Sri Ranga Pandareesha
+Sai Ranga Pandareesha
+Jaya Shirdeesha Jaya Partheesha
 Pavana Purusha Jaya Sayeesha
 
 ## Meaning

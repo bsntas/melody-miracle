@@ -25,6 +25,8 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Just Baba
+
+Oh Bhagawan, Oh Swami, Sai Baba (2x)
 Any name you call it doesn’t matter at all
 That He opens your heart, and there He is installed
 Anywhere you pray it doesn’t matter at all

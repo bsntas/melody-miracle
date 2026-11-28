@@ -28,6 +28,8 @@ Om Namah Om Namah Om Karunakara Hey Namah Om
 Om Namah Om Namah Om Gangadhara Hey Namah Om
 Om Namah Om Namah Om Jagadeeshwara Hey Namah Om
 Madanaantaka Hey Namah Om
+
+Om Namah Om Namah Om (3)
 Madanaantaka Hey Namah Om
 
 ## Meaning

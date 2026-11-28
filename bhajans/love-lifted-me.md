@@ -26,20 +26,32 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 ## Lyrics
 
 Love lifted me
+
+I write myself a simple song
 Tell the whole world to sing along
 I’ll call it a Love song for you
 And who knows I’m liable
 To take a song from the Bible
 And then when I’m through..I’ll just sing
+
+Love lifted me ... Love lifted me
 When nothing else would do
 Ya’ know that Love lifted me
+
+Everybody’s lookin’ for a way to say something nobody’s said
 But that’s hard to do
 They’re searchin’ their minds ... tryin’ to find the one-of-a-kind way
 That they could say somethin’ new … well I’ll just say …
+
+Love lifted me ... Love lifted me
 When I was down and out
 Ya’ know that Love lifted me
+
+Love lifted me ... Love lifted me
 When nothing else would do
 Ya’ know that Love lifted me
+
+Love lifted me ... Love lifted me
 When nothing else would do
 Ya’ know that Love lifted me
 

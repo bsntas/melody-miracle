@@ -31,6 +31,8 @@ Jaya Yadu Nandana Parama Niranjana
 Radha Ramana Sri Ranga Mukunda
 Radha Ramana Sri Ranga Mukunda Radha Ramana Sri Ranga
 
+Radha Ramana Hari Govinda Jai Jai Gopala Jai Jai Govinda Jai Jai (3)
+
 ## Meaning
 
 Chant the name of dark-hued Lord Krishna, the Lord of Radha. Victory to the Supreme Lord and Leader of the Yadu Dynasty, Lord Govinda. Victory to the Son of Yadava sect, pure and sublime. Glory to the Lord Govinda, Mukunda - the one who grants liberation.

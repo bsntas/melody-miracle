@@ -26,14 +26,24 @@ S R2 G2 M1 P D2 N1 SS N1 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B♭ C C B�
 ## Lyrics
 
 My Dedication
+
+HERE I AM, LORD
 Use me, guide me, fill me, take me
 Lead me by Your Will
+
+HERE I AM, LORD
 Ready ... to follow, to serve You, to Love You
 To be You in this world
+
+THY WILL IS DONE THROUGH ME THIS DAY (4x)
+
+LORD, YOU CALL
 I answer, I’m open, I listen, I hear You
 I feel You move in me
 LORD, I COME closer, humbled, surrendered,
 Lifted, Committed to Your Way
+
+THY WILL IS DONE THROUGH ME THIS DAY (4x)
 
 ## Audio
 

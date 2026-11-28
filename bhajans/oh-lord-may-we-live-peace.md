@@ -28,10 +28,16 @@ S R2 G1 M1 P D1 N1 SS N1 D1 P M1 G1 R2 SIn the Key of C:C D E♭ F G G# B♭ C C
 
 Oh Lord, may we live in peace
 Oh Lord, may we live in love
+
+(chorus)
 Lord, Lord, Your love flows through the universe
 Lord, Lord, let us merge in You
+
+Oh Lord, may we live in bliss
 Oh Lord, may we live in harmony
 (chorus)
+
+Oh Lord, may we live in joy
 Oh Lord, may we live in truth
 (chorus)
 

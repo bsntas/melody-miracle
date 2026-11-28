@@ -27,7 +27,7 @@ Lowest Note: p / G (lower octave)Highest Note: P / G* Western notes are in the K
 Praise to the Guru a channel of love
 Dispeller of darkness embodiment of
 God's ever present outstretched hands
- 
+
 Praise to the Guru, Jai Guru Jai
 Praise to the Guru, Jai Guru Jai
 

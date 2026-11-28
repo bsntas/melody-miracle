@@ -29,6 +29,8 @@ Hikari to Narite
 Hahanaru Daichi ni
 Mau Yasuragi no Oto
 
+Sai Ram (4)
+
 ## Meaning
 
 Chant the Lord's beautiful name and become one with His light. Dance on Mother Earth and listen to the peaceful sounds.

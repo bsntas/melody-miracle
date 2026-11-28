@@ -28,6 +28,8 @@ Parvathi Nandana Siddhi Vinayaka
 Buddhi Pradayaka Jai Gananayaka
 Sankata Harana Paapa Vinashaka
 Parthi Pureeshwara Shubha Dayaka
+
+Jai Gananayaka Siddhi Vinayaka (3)
 Mangala Dayaka Buddhi Pradayaka
 
 ## Meaning

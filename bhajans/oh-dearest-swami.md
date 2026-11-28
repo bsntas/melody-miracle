@@ -26,7 +26,11 @@ S R2 G2 M1 P D2 N2 SS N2 D2 P M1 G2 R2 SIn the Key of C:C D E F G A B C C B A G 
 
 Oh Dearest Swami, please help me see, the Almighty in everyone
 Help me to spread, Your precious love to everyone, everyone, everyone
+
+Oh Dearest Swami, You’re the best role model, that I’ve ever seen in this whole world
 Wanna be like You, wanna be like You, please help me love and to serve just like You
+
+Oh Dearest Swami, please help me see, that You and I are one
 I know You’re God, That means I’m God, God I am, I am God
 
 ## Audio
