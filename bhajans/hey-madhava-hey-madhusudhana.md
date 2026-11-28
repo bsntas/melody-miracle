@@ -35,7 +35,7 @@ Glory be to the Lord Madhava, who vanquished demon Madhu and who holds the Flute
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-madhava-hey-madhusudhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-madhava-hey-madhusudhana.mp3)
 
 ---
 

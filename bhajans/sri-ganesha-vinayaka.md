@@ -35,7 +35,7 @@ Oh Lord Ganesha, remover of the fear of the materialistic world, you remove obst
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-vinayaka.mp3)
 
 ---
 

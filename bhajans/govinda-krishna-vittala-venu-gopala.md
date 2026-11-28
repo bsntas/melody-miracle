@@ -37,7 +37,7 @@ Chant the names of Lord Govinda, Lord Krishna who plays the flute, Lord Vittala 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittala-venu-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittala-venu-gopala.mp3)
 
 ---
 

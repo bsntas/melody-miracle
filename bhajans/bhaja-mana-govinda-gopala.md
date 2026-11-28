@@ -36,7 +36,7 @@ O Mind, worship and chant the name of Govinda and Gopala (names of Lord Krish
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-govinda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-govinda-gopala.mp3)
 
 ---
 

@@ -36,7 +36,8 @@ Sai Rama Rama, Sai Rama Rama, Sai Ram, Sai Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there-love-within-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there-love-within-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there-love-within-me_1.mp3)
 
 ---
 

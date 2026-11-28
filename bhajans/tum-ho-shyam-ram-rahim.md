@@ -36,7 +36,7 @@ You are the Lord of every religion, O Sai. Devotees adore You as Ram, Rahim, Al
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-shyam-ram-rahim.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-shyam-ram-rahim.mp3)
 
 ---
 

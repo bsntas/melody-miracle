@@ -35,7 +35,7 @@ O Lord Sai, Shirdi and Parthi are Your abodes. You are our loving Sai Baba. Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-ke-sai-parthi-ke.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-ke-sai-parthi-ke.mp3)
 
 ---
 

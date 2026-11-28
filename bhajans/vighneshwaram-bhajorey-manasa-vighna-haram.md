@@ -32,7 +32,7 @@ Oh Mind! Sing the praises of Lord Vighneshwara (Lord Ganesha) who removes all ob
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwaram-bhajorey-manasa-vighna-haram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwaram-bhajorey-manasa-vighna-haram.mp3)
 
 ---
 

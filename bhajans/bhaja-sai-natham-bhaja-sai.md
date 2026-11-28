@@ -39,7 +39,7 @@ O mind, chant the name of Lord Sai who is the sacred form of supreme Lord res
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-sai-natham-bhaja-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-sai-natham-bhaja-sai.mp3)
 
 ---
 

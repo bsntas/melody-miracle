@@ -36,7 +36,8 @@ Oh Lord of the Lords, Ganesha, victory to Thee whose vehicle is a mouse. You a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gananatha-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gananatha-gananatha.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_230_GANANATHA_GANANATHA.mp3)
 
 ---
 

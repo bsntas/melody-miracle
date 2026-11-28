@@ -36,7 +36,7 @@ Sing the glories of the Lord of Dance, Lord Shiva, the Universal and Sovereign L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jayatu-shiva-natana-shiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jayatu-shiva-natana-shiva.mp3)
 
 ---
 

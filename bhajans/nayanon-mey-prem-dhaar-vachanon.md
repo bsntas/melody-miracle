@@ -35,7 +35,7 @@ Glory to Lord Sai, the embodiment of eternal and divine love, who fills our hear
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_478_NAYANO_MEIN_PREM_DHAR_VACHANO_MEIN.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_478_NAYANO_MEIN_PREM_DHAR_VACHANO_MEIN.mp3)
 
 ---
 

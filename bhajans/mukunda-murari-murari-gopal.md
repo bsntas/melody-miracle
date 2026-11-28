@@ -38,7 +38,8 @@ O Lord Krishna, darling son of Nanda, You are the slayer of demon Mura, You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mukunda-murari-murari-gopal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mukunda-murari-murari-gopal.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_421_MUKUNDA_MURARI_MURARI_GOPAL.mp3)
 
 ---
 

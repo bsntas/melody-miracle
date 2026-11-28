@@ -34,7 +34,7 @@ Glory to Lord Sai who resides in Parthi and who is the personification of the pr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shanmukha-shanmukha-sai-sundara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shanmukha-shanmukha-sai-sundara.mp3)
 
 ---
 

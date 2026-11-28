@@ -37,7 +37,9 @@ Chant victory to Lord Sai Baba who is also Lord Ghana Shyama (Krishna), the sav
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-jai-jai-kaar-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bolo-jai-jai-kaar-bolo.mp3)
+- **Karaoke** (Reference Track 2.5 Madhyam / G#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Bolo%20Jai%20Jai%20Kaar.mp3)
+- **Karaoke** (Gents Pitch 2.5 Madhyam / G# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Bolo%20Jai%20Jai%20Kaar%20-%20Karaoke%20-%205.5P%20G%23maj.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ I pray to Lord Shiva, who is the Lord of the three worlds. He is adorned with sn
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/trilokeshwara-mahadeva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/trilokeshwara-mahadeva.mp3)
 
 ---
 

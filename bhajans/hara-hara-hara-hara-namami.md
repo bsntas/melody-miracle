@@ -35,7 +35,7 @@ Sing (chant) the name of Lord Shiva and the name of Sai Ram.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-namami.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-namami.mp3)
 
 ---
 

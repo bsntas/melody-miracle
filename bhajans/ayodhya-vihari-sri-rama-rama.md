@@ -35,7 +35,7 @@ Sing the glory of Rama who is the resident of Ayodhya, Krishna the resident of D
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vihari-sri-rama-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vihari-sri-rama-rama.mp3)
 
 ---
 

@@ -85,7 +85,8 @@ You are full of nectarous love and You shine with the beauty of service. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-kaliyuga-avathaari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-kaliyuga-avathaari.mp3)
+- **Tutorial**: [▶ Listen](https://media.radiosai.org/www/mp3download/Pancharatna-krithi-04.mp3)
 
 ---
 

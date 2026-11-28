@@ -25,7 +25,7 @@ And then you'll win the race.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/if-first-you-dont-succeed.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/if-first-you-dont-succeed.mp3)
 
 ---
 

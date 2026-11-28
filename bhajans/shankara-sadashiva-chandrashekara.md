@@ -36,7 +36,7 @@ Obeisance to Lord Sai who is none other than Lord Shankara (Shiva), the one who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-chandrashekara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-chandrashekara.mp3)
 
 ---
 

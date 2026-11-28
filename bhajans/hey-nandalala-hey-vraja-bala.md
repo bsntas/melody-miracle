@@ -35,7 +35,7 @@ O Lord Krishna, son of Nanda and of Yashoda, You are the one who stole butter fr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nandalala-hey-vraja-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nandalala-hey-vraja-bala.mp3)
 
 ---
 

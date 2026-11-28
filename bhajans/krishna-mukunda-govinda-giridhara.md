@@ -35,7 +35,8 @@ Chant the names of Lord Krishna, Mukunda, Govinda, Giridhara, Murali, Narayana
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-mukunda-govinda-giridhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-mukunda-govinda-giridhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-mukunda-govinda-giridhara_1.mp3)
 
 ---
 

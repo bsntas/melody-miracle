@@ -40,7 +40,7 @@ HE performeth the thing that is given me to do
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-performeth.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-performeth.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Sing in praise of the Atma Lingam, the auspicious and astonishing divine form of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-lingam-bhajorey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-lingam-bhajorey.mp3)
 
 ---
 

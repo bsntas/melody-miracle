@@ -34,7 +34,7 @@ O Lord Sai, Lord of Parthi, please save us and liberate us from the cycle of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paar-karo-uddhar-karo-prabhu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paar-karo-uddhar-karo-prabhu.mp3)
 
 ---
 

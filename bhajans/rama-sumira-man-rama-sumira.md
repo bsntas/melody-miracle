@@ -38,7 +38,8 @@ O mind, chant the name of Lord Rama, the beloved of Sita and the son of King Da
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sumira-man-rama-sumira.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sumira-man-rama-sumira.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_510_RAM_SUMIRA_MANA.mp3)
 
 ---
 

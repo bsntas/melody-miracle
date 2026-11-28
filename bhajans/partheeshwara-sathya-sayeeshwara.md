@@ -36,7 +36,7 @@ Oh Lord Sathya Sai, Lord of Puttaparthi, Oh Lord Sai Narayana, have compassion. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-sathya-sayeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-sathya-sayeeshwara.mp3)
 
 ---
 

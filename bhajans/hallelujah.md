@@ -33,7 +33,7 @@ For the day when all nations stand and sing in one voice.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hallelujah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hallelujah.mp3)
 
 ---
 

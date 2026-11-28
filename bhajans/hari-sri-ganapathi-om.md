@@ -38,7 +38,7 @@ Glory to the Lord of Ganaas (Lord Shiva's army), Lord Ganesha, the valiant one w
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_483_HARI_SHRI_GANAPATHI_OM.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_483_HARI_SHRI_GANAPATHI_OM.mp3)
 
 ---
 

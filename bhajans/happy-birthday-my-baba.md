@@ -40,7 +40,7 @@ May the moonlight fall soft on Your pillow tonight, may Your dreams be of peace 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/happy-birthday-my-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/happy-birthday-my-baba.mp3)
 
 ---
 

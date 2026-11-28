@@ -36,7 +36,8 @@ Chant the different names of Lord Krishna, of Yadava lineage, Madhava, Madhusudh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-harey-madhusudhana-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-harey-madhusudhana-harey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_465_MADHAVA_HARE_MADHUSUDANA_HARE.mp3)
 
 ---
 

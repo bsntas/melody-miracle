@@ -36,7 +36,7 @@ O Lord Krishna, You are adored by Your devotees as well as Your beloved Radha. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-madhusudhana-krishna-giridhara-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-madhusudhana-krishna-giridhara-shyama.mp3)
 
 ---
 

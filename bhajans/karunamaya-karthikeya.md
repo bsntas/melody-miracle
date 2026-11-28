@@ -37,7 +37,7 @@ Karthikeya is epitome of compassion and the One who grants Liberation. The dear 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunamaya-karthikeya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunamaya-karthikeya.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Some may call God as Hari while some others may call Ram. Some may say Durga Kaa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/koi-boley-hari-hari-koi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/koi-boley-hari-hari-koi.mp3)
 
 ---
 

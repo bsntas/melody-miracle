@@ -34,7 +34,7 @@ Lead Us From Darkness, Unto Your Light
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sadguru-pranaam-pranaam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sadguru-pranaam-pranaam.mp3)
 
 ---
 

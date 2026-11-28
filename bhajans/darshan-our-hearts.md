@@ -37,7 +37,7 @@ Love from now on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darshan-our-hearts.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darshan-our-hearts.mp3)
 
 ---
 

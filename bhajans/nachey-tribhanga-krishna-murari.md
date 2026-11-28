@@ -35,7 +35,7 @@ Glory to Lord Krishna who dances in the pose of tribhanga (three bends). Let t
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_431_NACHE_TRIBHANG_KRISHNA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_431_NACHE_TRIBHANG_KRISHNA.mp3)
 
 ---
 

@@ -155,7 +155,7 @@ And destroys the sins of thousands of lifetimes
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bilva-stothram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bilva-stothram.mp3)
 
 ---
 

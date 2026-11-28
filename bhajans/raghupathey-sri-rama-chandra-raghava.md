@@ -33,7 +33,7 @@ O Rama, Lord of the Raghus, who is still and shining as the moon, You are the O
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathey-sri-rama-chandra-raghava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathey-sri-rama-chandra-raghava.mp3)
 
 ---
 

@@ -35,7 +35,9 @@ Salutations to Mother Parvathi, the Goddess of the whole Universe and the conso
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/samba-vinodini-shiva-sai-shankari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/samba-vinodini-shiva-sai-shankari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/samba-vinodini-shiva-sai-shankari_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_269_SAMBA_VINODINI_SHIV_SAI.mp3)
 
 ---
 

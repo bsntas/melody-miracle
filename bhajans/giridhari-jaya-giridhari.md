@@ -35,7 +35,7 @@ Victory to Lord Giridhari (Krishna, who lifted the Govardhana mountain), the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-jaya-giridhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhari-jaya-giridhari.mp3)
 
 ---
 

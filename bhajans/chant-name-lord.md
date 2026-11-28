@@ -48,7 +48,7 @@ Buddha, Buddha, Buddha, Buddha (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chant-name-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chant-name-lord.mp3)
 
 ---
 

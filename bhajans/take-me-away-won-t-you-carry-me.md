@@ -33,7 +33,8 @@ Sai Baba (O Swami) take me away
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-me-away-won-t-you-carry-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-me-away-won-t-you-carry-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-me-away-won-t-you-carry-me_1.mp3)
 
 ---
 

@@ -31,7 +31,7 @@ Let Divine light shine within us, let us live in peace as One
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brothers-sisters-all-god’s-children.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brothers-sisters-all-god’s-children.mp3)
 
 ---
 

@@ -31,7 +31,8 @@ Bow To The Indwelling Lord Our True Guru Sri Sathya Sai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bow-light-within.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bow-light-within.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bow-light-within_1.mp3)
 
 ---
 

@@ -93,7 +93,8 @@ Salutations again and again unto the holy Padukas of the Guru.
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_498_SPECIAL_EDITION_GURU_PADUKA_STOTRAM.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-guru-paduka-stotram.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_498_SPECIAL_EDITION_GURU_PADUKA_STOTRAM.mp3)
 
 ---
 

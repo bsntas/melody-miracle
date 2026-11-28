@@ -36,7 +36,7 @@ Glory to Thee O Lord Krishna who is known by many names - Govinda, Madhava, G
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-madhava-gopala-keshava-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-madhava-gopala-keshava-0.mp3)
 
 ---
 

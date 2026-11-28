@@ -35,7 +35,7 @@ Oh elephant-faced Lord Gajanana, You confer auspiciousness, You are supremely
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-shubhanana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajanana-hey-shubhanana-0.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ O come, our Divine Preceptor Lord Sathya Sai, the embodiment of true bliss, me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-nadane-va-va-va.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-nadane-va-va-va.mp3)
 
 ---
 

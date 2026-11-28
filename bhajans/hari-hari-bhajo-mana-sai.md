@@ -35,7 +35,7 @@ O Mind, sing the glory of Lord Hari who incarnated as Lord Rama, Krishna, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-bhajo-mana-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-bhajo-mana-sai.mp3)
 
 ---
 

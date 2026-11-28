@@ -37,7 +37,7 @@ Kindle the light of wisdom in my heart, O Lord Sai, the indweller of hearts. You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-merey-swami-antaryami.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-merey-swami-antaryami.mp3)
 
 ---
 

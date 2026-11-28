@@ -34,7 +34,8 @@ Oh Mother Sayeeshwari, the protector of the three worlds, one who is always blis
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/triloka-palini-jagadeeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/triloka-palini-jagadeeshwari.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_009_Triloka_Palini_Jagadeeswaree.mp3)
 
 ---
 

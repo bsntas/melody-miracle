@@ -86,7 +86,8 @@ O dispeller of the devotees’ distress, You are the embodiment of Shiva and Sha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-pranamaami-saayeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-pranamaami-saayeesha.mp3)
+- **Tutorial**: [▶ Listen](https://media.radiosai.org/www/mp3download/Pancharatna-krithi-01.mp3)
 
 ---
 

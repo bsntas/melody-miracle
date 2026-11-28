@@ -36,7 +36,8 @@ The entire Universe is permeated with the sound of 'Sai Om' the primordial sound
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-om-sai-om-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-om-sai-om-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-om-sai-om-sai_1.mp3)
 
 ---
 

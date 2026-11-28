@@ -37,7 +37,8 @@ O Lord Sathya Sai Narayana, the three worlds pay obeisance to Thee. You are th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-narayana-sathya-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-narayana-sathya-narayana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_392_SAI_NARAYANA_SATYA.mp3)
 
 ---
 

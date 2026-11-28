@@ -33,7 +33,7 @@ Salutation to thee, O son of mother Anjana, the valorous and powerful. You wande
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjana-nanda-veeram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjana-nanda-veeram.mp3)
 
 ---
 

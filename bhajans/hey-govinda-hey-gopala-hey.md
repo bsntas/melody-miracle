@@ -36,7 +36,7 @@ Come, O dear Lord Gopala (Krishna), the destroyer of the demon Madhu, please c
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-govinda-hey-gopala-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-govinda-hey-gopala-hey.mp3)
 
 ---
 

@@ -34,7 +34,8 @@ Sing the glorious name of Lord Sai, the incarnation of Parameshwara (Shiva). Sin
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-parameshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-parameshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-parameshwara_1.mp3)
 
 ---
 

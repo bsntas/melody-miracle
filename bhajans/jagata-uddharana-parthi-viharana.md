@@ -36,7 +36,8 @@ O Lord Sai, You are the benefactor of the entire Universe, repository of all vi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagata-uddharana-parthi-viharana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagata-uddharana-parthi-viharana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagata-uddharana-parthi-viharana_1.mp3)
 
 ---
 

@@ -34,7 +34,9 @@ Glory to Lord Govinda and Gopala (names of Krishna), the one who enchants with 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-hey_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-hey.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-hey_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey-hey_2.mp3)
 
 ---
 

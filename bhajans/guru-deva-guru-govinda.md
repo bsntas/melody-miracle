@@ -35,7 +35,8 @@ Glory to the Lord Sai of Shirdi and Parthi. Glory to Lord Vishnu, the benevolen
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-guru-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-guru-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-guru-govinda_1.mp3)
 
 ---
 

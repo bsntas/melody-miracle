@@ -30,7 +30,7 @@ Hu Allah, Allah Hu Allah, Allah Hu Allah, Allah Hu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hu-allah-allah-hu-allah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hu-allah-allah-hu-allah.mp3)
 
 ---
 

@@ -37,7 +37,8 @@ Worship the Supreme Teacher, Lord Sai who is verily Goddess Saraswathi, the co
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-sai-saraswathi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-sai-saraswathi.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-sai-saraswathi_1.mp3)
 
 ---
 

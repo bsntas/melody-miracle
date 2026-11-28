@@ -35,7 +35,7 @@ Our innumerable salutations to Lord Sai Ram, the one whose look is the most a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shata-baar-kaho-rey-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shata-baar-kaho-rey-sai.mp3)
 
 ---
 

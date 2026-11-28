@@ -32,7 +32,7 @@ Teach Me Loving Service, Peace And Contentment
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-take-my-hand.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-take-my-hand.mp3)
 
 ---
 

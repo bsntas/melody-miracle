@@ -33,7 +33,8 @@ Chant and remember the name of Lord Hari (Narayana), the Lord of the Universe wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-naam-sumira-hari-naam_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-naam-sumira-hari-naam_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-naam-sumira-hari-naam.mp3)
 
 ---
 

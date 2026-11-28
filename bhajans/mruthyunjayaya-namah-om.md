@@ -35,7 +35,7 @@ Humble salutations to Lord Sayeeshwara who is none other than Lord Shiva also kn
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mruthyunjayaya-namah-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mruthyunjayaya-namah-om.mp3)
 
 ---
 

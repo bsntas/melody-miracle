@@ -37,7 +37,9 @@ Pray to Lord Rama, who shines like the full moon, the compassionate, the attra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sri-ramachandra-jaya-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-sri-ramachandra-jaya-jaya.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Rama%20Sri%20Rama%20Chandra.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Rama%20Sri%20Rama%20Chandra%202P%20Dmin.mp3)
 
 ---
 

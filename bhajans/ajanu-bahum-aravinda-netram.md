@@ -37,7 +37,9 @@ Meditate on the form of Lord Rama, whose abode is the heart of devotees, whose a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ajanu-bahum-aravinda-netram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ajanu-bahum-aravinda-netram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ajanu-bahum-aravinda-netram_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_489_AJANU_BAHUM_ARARAVINDA_NETRAM.mp3)
 
 ---
 

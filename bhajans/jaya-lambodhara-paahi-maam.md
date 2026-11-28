@@ -37,7 +37,8 @@ Protect me O Lord Ganesha, the one with a big belly and the son of Universal 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-lambodhara-paahi-maam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-lambodhara-paahi-maam.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-lambodhara-paahi-maam_1.mp3)
 
 ---
 

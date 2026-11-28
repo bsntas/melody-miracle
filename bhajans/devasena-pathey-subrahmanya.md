@@ -38,7 +38,7 @@ Lord Subrahmanya is the consort of Valli and Devasena, and the son of Mother Gow
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devasena-pathey-subrahmanya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devasena-pathey-subrahmanya.mp3)
 
 ---
 

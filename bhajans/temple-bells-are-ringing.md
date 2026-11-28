@@ -35,7 +35,7 @@ Blessed are we to have His love and grace (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/temple-bells-are-ringing.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/temple-bells-are-ringing.mp3)
 
 ---
 

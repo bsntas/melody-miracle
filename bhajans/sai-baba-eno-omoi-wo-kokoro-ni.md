@@ -36,7 +36,7 @@ Thoughts of Sai Baba rest in my heart. I am guided to Him by the path of love. I
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-eno-omoi-wo-kokoro-ni.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-eno-omoi-wo-kokoro-ni.mp3)
 
 ---
 

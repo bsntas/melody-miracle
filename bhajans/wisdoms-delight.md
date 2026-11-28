@@ -37,7 +37,7 @@ Om, Lord, Sri Sathya Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/wisdoms-delight.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/wisdoms-delight.mp3)
 
 ---
 

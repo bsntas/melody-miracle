@@ -35,7 +35,7 @@ Glory to Lord Shiva who bears the Holy river Ganga and who is the Lord of the Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shankara-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shankara-deva.mp3)
 
 ---
 

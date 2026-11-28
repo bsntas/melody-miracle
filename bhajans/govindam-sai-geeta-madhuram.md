@@ -36,7 +36,7 @@ Lord Sai is my Lord Govinda (Narayana). Singing His name is sweet as nectar. O L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindam-sai-geeta-madhuram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govindam-sai-geeta-madhuram.mp3)
 
 ---
 

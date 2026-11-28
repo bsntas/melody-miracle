@@ -37,7 +37,8 @@ Let us chant the divine name of Lord Govinda (Krishna) reverberating in the mi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-bhaja-mana-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-bhaja-mana-radhey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_470_GOVINDA_GOVINDA_BHAJMAN_RADHE.mp3)
 
 ---
 

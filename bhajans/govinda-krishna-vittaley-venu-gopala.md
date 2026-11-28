@@ -33,7 +33,7 @@ Sing the Glory of Govinda, Krishna, Vittala. Sing the Glory of Venugopala, the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittaley-venu-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-vittaley-venu-gopala.mp3)
 
 ---
 

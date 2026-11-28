@@ -34,7 +34,7 @@ You are love, love, love (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-name-so-sweet.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-name-so-sweet.mp3)
 
 ---
 

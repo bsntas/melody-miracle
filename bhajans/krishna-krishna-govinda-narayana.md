@@ -35,7 +35,7 @@ Chant the Name of Krishna, Govinda, Narayana, Sai Rama, Sai Shyama and Sai Krish
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-govinda-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-govinda-narayana.mp3)
 
 ---
 

@@ -35,7 +35,9 @@ Chant incessantly the holy names of Lord Hari, Lord Rama and Lord Krishna. Good
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-rama-harey-rama-rama-0_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-rama-harey-rama-rama-0.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-rama-harey-rama-rama-0_1.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-rama-harey-rama-rama-0_2.mp3)
 
 ---
 

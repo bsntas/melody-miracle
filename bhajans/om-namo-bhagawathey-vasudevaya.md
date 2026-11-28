@@ -34,7 +34,7 @@ I bow down to Thee, O Lord Krishna, son of Vasudeva. I bow down to Lord Shiva, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namo-bhagawathey-vasudevaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namo-bhagawathey-vasudevaya.mp3)
 
 ---
 

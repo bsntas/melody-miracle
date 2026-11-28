@@ -35,7 +35,7 @@ Recite the name of Lord Shiva who rides on the celestial Bull Nandi, has the thi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandi-vahana-nataraja-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandi-vahana-nataraja-namo.mp3)
 
 ---
 

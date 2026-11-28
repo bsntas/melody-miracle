@@ -33,7 +33,7 @@ Guru Zohrashtra, Mahavira, Jehovah naam
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one-guru-one-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one-guru-one-guru.mp3)
 
 ---
 

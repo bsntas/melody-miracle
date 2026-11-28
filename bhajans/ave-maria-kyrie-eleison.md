@@ -35,7 +35,9 @@ Hail Mary, Christ Have Mercy On Us.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ave-maria-kyrie-eleison_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ave-maria-kyrie-eleison_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ave-maria-kyrie-eleison.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ave-maria-kyrie-eleison_2.mp3)
 
 ---
 

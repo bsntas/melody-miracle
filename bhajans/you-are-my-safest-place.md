@@ -32,7 +32,7 @@ Yes I believe in You, and I know that I am strong in the Love of my Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-my-safest-place.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-my-safest-place.mp3)
 
 ---
 

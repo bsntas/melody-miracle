@@ -42,7 +42,7 @@ Love, love, love, love, love, Love everyone (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/whispering-wind.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/whispering-wind.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ O mind, sing the glories of the Lotus Feet of the Preceptor that bestow the supr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-manasa-guru-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-manasa-guru-charanam.mp3)
 
 ---
 

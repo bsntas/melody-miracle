@@ -36,7 +36,7 @@ Victory to Lord Narayana (Hari) who is worshipped by even the Lord of creati
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-narayana-jaya-hari-om-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-narayana-jaya-hari-om-0.mp3)
 
 ---
 

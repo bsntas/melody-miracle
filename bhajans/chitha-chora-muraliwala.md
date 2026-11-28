@@ -39,7 +39,7 @@ Chant the many names of Lord Krishna, the stealer of hearts, the seat of conscio
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-muraliwala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chitha-chora-muraliwala.mp3)
 
 ---
 

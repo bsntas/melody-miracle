@@ -37,7 +37,7 @@ May all beings in all worlds have peace and happiness. ‘Samastha loka sukhino 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/que-todos-los-seres-de.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/que-todos-los-seres-de.mp3)
 
 ---
 

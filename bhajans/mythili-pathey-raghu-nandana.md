@@ -35,7 +35,7 @@ Glory to the descendant of the Raghu dynasty, Lord Rama, the Lord of Sita, th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mythili-pathey-raghu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mythili-pathey-raghu-nandana.mp3)
 
 ---
 

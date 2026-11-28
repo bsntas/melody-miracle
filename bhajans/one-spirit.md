@@ -43,7 +43,7 @@ One spirit, one love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one-spirit.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/one-spirit.mp3)
 
 ---
 

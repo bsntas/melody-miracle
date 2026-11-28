@@ -38,7 +38,7 @@ Chant the names of Lord Rama, Krishna, Hari, Mukunda, the one who liberates and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-hari-mukunda-murari-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-hari-mukunda-murari-0.mp3)
 
 ---
 

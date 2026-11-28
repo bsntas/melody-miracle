@@ -35,7 +35,7 @@ O mind, meditate and sing the glory of Mother Sita and Lord Rama of Raghu d
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-sita-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-sita-ram.mp3)
 
 ---
 

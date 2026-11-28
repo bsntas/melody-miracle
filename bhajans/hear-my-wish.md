@@ -35,7 +35,7 @@ And You will be installed in it, wherever I may roam.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hear-my-wish.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hear-my-wish.mp3)
 
 ---
 

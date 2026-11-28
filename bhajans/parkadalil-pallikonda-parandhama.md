@@ -37,7 +37,7 @@ Glory to Lord Vishnu reclining on the ocean of milk (consciousness), who has inc
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parkadalil-pallikonda-parandhama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parkadalil-pallikonda-parandhama.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Our dearest Baba of Parthi, the indweller of all beings, has a charming face and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-bangaru-parthi-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-bangaru-parthi-baba.mp3)
 
 ---
 

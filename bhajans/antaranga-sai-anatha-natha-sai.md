@@ -35,7 +35,8 @@ O Lord Sai, You are love and bliss personified, repository of compassion and ki
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antaranga-sai-anatha-natha-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antaranga-sai-anatha-natha-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_189_ANTARANGA_SAI.mp3)
 
 ---
 

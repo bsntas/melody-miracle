@@ -38,7 +38,7 @@ Chant the divine name of Lord Shiva, whose throat is dark blue in color (due to 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-om-shivaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-om-shivaya.mp3)
 
 ---
 

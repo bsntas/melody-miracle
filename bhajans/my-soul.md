@@ -40,7 +40,7 @@ Is the same flame that burns within me [ In my soul ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-soul-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-soul-0.mp3)
 
 ---
 

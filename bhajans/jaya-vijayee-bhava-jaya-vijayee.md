@@ -37,7 +37,7 @@ Victory to the Lord Hanuman, the one who removes the fear of repetitive Births. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-vijayee-bhava-jaya-vijayee.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-vijayee-bhava-jaya-vijayee.mp3)
 
 ---
 

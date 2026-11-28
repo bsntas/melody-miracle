@@ -35,7 +35,7 @@ Oh Universal Mother Durga! Awaken us from the slumber of ignorance. You are Moth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadodharini-mata-durga-jagadodharini-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadodharini-mata-durga-jagadodharini-ma.mp3)
 
 ---
 

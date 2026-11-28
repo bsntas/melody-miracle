@@ -35,7 +35,9 @@ O Lord Narayana, You are the beloved son of Mother Eshwaramba, to whom You are S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-tanaya-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-tanaya-sai-narayana.mp3)
+- **Karaoke** (Reference Track 1 Pancham / C): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Eashwaramma%20Priya%20Tanaya.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Eashwaramma%20Priya%20Tanaya%20-%20Karaoke%20-%201P%20Cmaj.mp3)
 
 ---
 

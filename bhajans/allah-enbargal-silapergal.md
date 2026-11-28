@@ -40,7 +40,7 @@ O Lord Sai, some people call You Allah, others call You Jesus. Many call You God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-enbargal-silapergal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-enbargal-silapergal.mp3)
 
 ---
 

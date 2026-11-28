@@ -34,7 +34,7 @@ Victory to the enchanter with the flute, Lord Govinda, who lifted the mountain t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-murali-govinda-jaya-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-murali-govinda-jaya-radhey.mp3)
 
 ---
 

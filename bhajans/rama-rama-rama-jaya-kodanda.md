@@ -37,7 +37,7 @@ Victory to Lord Rama, the one with the famous bow, Kodanda. Victory to Him, the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-jaya-kodanda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-jaya-kodanda.mp3)
 
 ---
 

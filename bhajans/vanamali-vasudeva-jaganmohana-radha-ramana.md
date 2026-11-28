@@ -34,7 +34,8 @@ Oh Lord Krishna, adorning the garland made of forest flowers, You attract all mi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vanamali-vasudeva-jaganmohana-radha-ramana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vanamali-vasudeva-jaganmohana-radha-ramana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_277_VANAMALI_VASUDEVA_JAGANMOHAN.mp3)
 
 ---
 

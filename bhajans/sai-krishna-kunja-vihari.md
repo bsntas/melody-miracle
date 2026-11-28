@@ -36,7 +36,7 @@ Chant the name of Lord Krishna, the beloved of Radha, who walked the gardens (Br
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-krishna-kunja-vihari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-krishna-kunja-vihari.mp3)
 
 ---
 

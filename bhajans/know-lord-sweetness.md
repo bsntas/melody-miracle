@@ -34,7 +34,7 @@ Knowing Him As An Intimate Friend
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/know-lord-sweetness.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/know-lord-sweetness.mp3)
 
 ---
 

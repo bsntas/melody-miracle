@@ -35,7 +35,7 @@ Please listen to my pleadings Oh my Lord Sai, have compassion on me, you are the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinati-suno-merey-sai-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinati-suno-merey-sai-bhagawan.mp3)
 
 ---
 

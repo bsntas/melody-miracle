@@ -36,7 +36,7 @@ Chant the names of the Lord Krishna, Rama, Gopala, Govinda, Madhava and Mukunda�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-ram-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-ram-sai.mp3)
 
 ---
 

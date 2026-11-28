@@ -16,7 +16,7 @@ Every day in every way, I'm getting better, this I pray.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/getting-better.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/getting-better.mp3)
 
 ---
 

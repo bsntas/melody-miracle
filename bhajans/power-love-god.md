@@ -58,7 +58,7 @@ That the Power of the Love of God will set you free
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/power-love-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/power-love-god.mp3)
 
 ---
 

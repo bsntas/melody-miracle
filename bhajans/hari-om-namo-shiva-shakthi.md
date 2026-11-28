@@ -36,7 +36,7 @@ Let us offer our salutations to our sacred preceptor Sathya Sai who is none othe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-namo-shiva-shakthi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-namo-shiva-shakthi.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Constantly remember the name of Sathya Sai - the Lord of Parthi, the one who sus
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-smaranam-smaranam-parthi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-sai-smaranam-smaranam-parthi.mp3)
 
 ---
 

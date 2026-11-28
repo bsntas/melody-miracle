@@ -40,7 +40,7 @@ Om, Om, Om, Hari Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-gave-world.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-gave-world.mp3)
 
 ---
 

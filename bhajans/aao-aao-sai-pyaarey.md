@@ -35,7 +35,7 @@ Welcome, O beloved Lord Sai, I sing Your glory. O Supreme Lord, You are the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-sai-pyaarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-sai-pyaarey.mp3)
 
 ---
 

@@ -40,7 +40,7 @@ We worship Lord Subrahmanya, who bears the golden spear (Vel). He leads the army
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/velava-velava-vel-muruga-va.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/velava-velava-vel-muruga-va.mp3)
 
 ---
 

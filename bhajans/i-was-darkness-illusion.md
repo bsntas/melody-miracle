@@ -37,7 +37,7 @@ You came to me, Baba you came to me (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-was-darkness-illusion.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-was-darkness-illusion.mp3)
 
 ---
 

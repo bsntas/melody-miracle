@@ -39,7 +39,7 @@ Atma Vichara, liberation (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-vichara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-vichara.mp3)
 
 ---
 

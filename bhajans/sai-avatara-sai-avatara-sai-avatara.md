@@ -38,7 +38,7 @@ To show us how to love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-sai-avatara-sai-avatara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-sai-avatara-sai-avatara.mp3)
 
 ---
 

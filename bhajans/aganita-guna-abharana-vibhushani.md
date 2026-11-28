@@ -34,7 +34,7 @@ O Supreme Goddess Shakthi (Parvathi), salutations to Thee, who has immeasurable
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aganita-guna-abharana-vibhushani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aganita-guna-abharana-vibhushani.mp3)
 
 ---
 

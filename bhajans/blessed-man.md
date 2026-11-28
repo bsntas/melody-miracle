@@ -43,7 +43,7 @@ He’s content and resting without doubt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/blessed-man.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/blessed-man.mp3)
 
 ---
 

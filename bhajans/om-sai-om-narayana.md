@@ -32,7 +32,8 @@ Work On Us, Be Kind To Us, Show Us The Right Path [ Om Sai ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-om-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-om-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-om-narayana_1.mp3)
 
 ---
 

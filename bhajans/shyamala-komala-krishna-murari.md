@@ -36,7 +36,7 @@ Chant the name of the dark complexioned and soft natured Krishna, who is also kn
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyamala-komala-krishna-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyamala-komala-krishna-murari.mp3)
 
 ---
 

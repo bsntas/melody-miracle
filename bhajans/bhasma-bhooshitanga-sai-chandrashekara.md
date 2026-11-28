@@ -37,7 +37,16 @@ Glory to Lord Shiva who is besmeared with sacred ash, who is adorned with the mo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhasma-bhooshitanga-sai-chandrashekara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhasma-bhooshitanga-sai-chandrashekara.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhasma-bhooshitanga-sai-chandrashekara_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_035_Bhasma_Bhooshitanga_Sai_Chandrashekara.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Ladies_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Ladies_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Bhasmabhushitanga_Sai_Ladies_Karaoke_F_Sharp_Pancham.mp3)
 
 ---
 

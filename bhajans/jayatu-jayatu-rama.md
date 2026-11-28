@@ -35,7 +35,8 @@ Victory to Lord Rama, consort of Mother Janaki, the one who destroys the fear of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jayatu-jayatu-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jayatu-jayatu-rama.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_381_JAYATU_JAYATU_RAMA.mp3)
 
 ---
 

@@ -33,7 +33,8 @@ May We Be Blessed With The Grace Of Sai Wholly Immersed In Him
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gentle-lord-we-crave-bliss.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gentle-lord-we-crave-bliss.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gentle-lord-we-crave-bliss_1.mp3)
 
 ---
 

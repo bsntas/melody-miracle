@@ -34,7 +34,14 @@ Chant the names of Lord Rama, Krishna, Vasudeva, Hari, Narayana, the all-pervadi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-vasudeva-narayana-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-vasudeva-narayana-hari.mp3)
+- **Karaoke** (Reference Track 5.5 Pancham / G#): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Gents_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Gents_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Gents_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2.5 Pancham / E Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Ladies_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Ladies_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ramakrishna_Vasudeva_Ladies_Karaoke_C_Sharp_Pancham.mp3)
 
 ---
 

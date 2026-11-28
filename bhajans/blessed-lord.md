@@ -32,7 +32,7 @@ In a flash of love and joy you and I unite
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/blessed-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/blessed-lord.mp3)
 
 ---
 

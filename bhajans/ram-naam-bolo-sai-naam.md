@@ -34,7 +34,8 @@ Chant the names of Lord Rama, Lord Krishna and Lord Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-naam-bolo-sai-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-naam-bolo-sai-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-naam-bolo-sai-naam_1.mp3)
 
 ---
 

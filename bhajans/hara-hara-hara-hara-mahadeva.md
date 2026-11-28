@@ -37,7 +37,8 @@ Glory to the Lord of the Lords, Lord Shiva. Chant the auspicious name of "Shiv
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-mahadeva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-mahadeva.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-hara-hara-mahadeva_1.mp3)
 
 ---
 

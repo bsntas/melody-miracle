@@ -36,7 +36,7 @@ Glory to You, O Lord Sai Kanhaiya (Krishna), ferry us across the ocean of Life
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-kanhaiya-sai-kanhaiya-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-kanhaiya-sai-kanhaiya-0.mp3)
 
 ---
 

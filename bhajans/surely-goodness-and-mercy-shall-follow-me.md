@@ -36,7 +36,7 @@ I will dwell in the House of The Lord now and forevermore…
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/surely-goodness-and-mercy-shall-follow-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/surely-goodness-and-mercy-shall-follow-me.mp3)
 
 ---
 

@@ -38,7 +38,8 @@ Victory to the Lord of Parthi, Lord Sathya Sai, the Supreme Lord. Salutations to
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-partheesha-jaya-paramesha-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-partheesha-jaya-paramesha-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_425_JAYA_PARTISHA_JAYA_PARAMESHA.mp3)
 
 ---
 

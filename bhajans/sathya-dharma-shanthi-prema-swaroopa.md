@@ -36,7 +36,15 @@ Salutations to the Lord of Prashanthi, Lord Sai, who is the embodiment of Truth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-dharma-shanthi-prema-swaroopa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sathya-dharma-shanthi-prema-swaroopa.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_127_Sathya_Dharma_Shanthi_Prema_Swarupa.mp3)
+- **Karaoke** (Reference Track 2.5 Pancham / E Flat): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Gents_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Ladies_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Ladies_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Sathya_Dharma_Shanthi_Prema_Swaroopa_Ladies_Karaoke_F_Sharp_Pancham.mp3)
 
 ---
 

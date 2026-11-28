@@ -49,7 +49,7 @@ And Wonders, Wonders, Of His Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joy-world.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joy-world.mp3)
 
 ---
 

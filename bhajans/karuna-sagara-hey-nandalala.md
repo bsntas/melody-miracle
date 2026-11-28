@@ -35,7 +35,7 @@ Glory to the son of Nanda, Lord Krishna (Gopala), who is an ocean of mercy, pla
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sagara-hey-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-sagara-hey-nandalala.mp3)
 
 ---
 

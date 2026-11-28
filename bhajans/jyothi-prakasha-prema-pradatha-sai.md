@@ -35,7 +35,7 @@ Salutations to the Lord of Lords, Sai, who is verily the effulgence of Divine Li
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jyothi-prakasha-prema-pradatha-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jyothi-prakasha-prema-pradatha-sai.mp3)
 
 ---
 

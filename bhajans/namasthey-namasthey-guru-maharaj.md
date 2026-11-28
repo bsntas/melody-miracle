@@ -34,7 +34,7 @@ Oh King of Preceptors! I bow down to You. You are the Eternal Preceptor Sathya S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namasthey-namasthey-guru-maharaj.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namasthey-namasthey-guru-maharaj.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Glory to the beloved of Radha, Lord Krishna who has the complexion of dark cl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyama-hey-ghana-shyama-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-shyama-hey-ghana-shyama-0.mp3)
 
 ---
 

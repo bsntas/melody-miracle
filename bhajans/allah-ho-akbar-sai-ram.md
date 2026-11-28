@@ -34,7 +34,7 @@ Chant the divine names Allah, Maulah, Rama, Mahavir and Yesu. Victory unto them 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar-sai-ram.mp3)
 
 ---
 

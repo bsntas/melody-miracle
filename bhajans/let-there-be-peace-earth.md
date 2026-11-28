@@ -34,7 +34,7 @@ Let There Be Peace On Earth, And Let It Begin With Me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-there-be-peace-earth.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-there-be-peace-earth.mp3)
 
 ---
 

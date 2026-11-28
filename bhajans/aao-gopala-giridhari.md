@@ -35,7 +35,7 @@ Welcome Lord Gopala (Krishna), the one who lifted the Govardhana hill, the indw
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-gopala-giridhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-gopala-giridhari.mp3)
 
 ---
 

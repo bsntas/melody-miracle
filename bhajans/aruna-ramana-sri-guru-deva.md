@@ -36,7 +36,8 @@ O Lord Sai, the divine Preceptor, You are the one who protects us from fear a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aruna-ramana-sri-guru-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aruna-ramana-sri-guru-deva.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_272_ARUNA_RAMANA.mp3)
 
 ---
 

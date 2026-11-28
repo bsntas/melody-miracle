@@ -37,7 +37,7 @@ Glory to the son of Eshwaramba, Lord Sathya Sai, who is verily Lord Krishna, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwari-nandana-sai-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwari-nandana-sai-gopala.mp3)
 
 ---
 

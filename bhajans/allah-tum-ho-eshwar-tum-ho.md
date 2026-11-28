@@ -40,7 +40,7 @@ Oh Lord! You are Allah, Eshwar, Rama, Rahim, Jesus, Guru Nanak, Zohrashtra, Maha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-tum-ho-eshwar-tum-ho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-tum-ho-eshwar-tum-ho.mp3)
 
 ---
 

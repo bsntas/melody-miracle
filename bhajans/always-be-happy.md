@@ -35,7 +35,7 @@ Rainbow and sunshine will come into your life (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/always-be-happy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/always-be-happy.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ O Lord Sai Rama of Prashanthi, from whom the entire world seeks solace and libe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-rama-sundara-naama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-rama-sundara-naama.mp3)
 
 ---
 

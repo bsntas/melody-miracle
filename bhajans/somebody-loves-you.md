@@ -35,7 +35,7 @@ If you love Him truly, then show Him that you care
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/somebody-loves-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/somebody-loves-you.mp3)
 
 ---
 

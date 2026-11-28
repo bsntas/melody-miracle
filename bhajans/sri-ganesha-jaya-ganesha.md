@@ -35,7 +35,7 @@ Glory to Lord Ganesha, son of Mother Parvathi and Lord Shiva. O Lord Ganesha, Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-jaya-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ganesha-jaya-ganesha.mp3)
 
 ---
 

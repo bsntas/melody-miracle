@@ -33,7 +33,7 @@ Glory to the revered preceptor Mahadeva, who is the embodiment of Mother, Father
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-guru-deva-sri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-guru-deva-sri.mp3)
 
 ---
 

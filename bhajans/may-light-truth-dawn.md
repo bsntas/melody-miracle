@@ -37,7 +37,7 @@ May the Light of Truth be known to you and me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-light-truth-dawn.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-light-truth-dawn.mp3)
 
 ---
 

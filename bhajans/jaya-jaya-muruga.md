@@ -43,7 +43,7 @@ Salutations to Thee, O Lord Karthikeya who has incarnated as Lord Sai.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-muruga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-muruga.mp3)
 
 ---
 

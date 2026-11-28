@@ -34,7 +34,7 @@ Understanding of love, understanding of Atma within me, within me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-you-give-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-you-give-me.mp3)
 
 ---
 

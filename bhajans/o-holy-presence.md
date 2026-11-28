@@ -46,7 +46,7 @@ O Holy Presence of my soul
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-holy-presence.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-holy-presence.mp3)
 
 ---
 

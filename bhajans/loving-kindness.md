@@ -17,7 +17,7 @@ Sharing with our fellow men, we are one small world.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/loving-kindness.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/loving-kindness.mp3)
 
 ---
 

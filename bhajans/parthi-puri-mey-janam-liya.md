@@ -35,7 +35,8 @@ O Lord Krishna, You are the one who is adorned with the crown of peacock feath
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-puri-mey-janam-liya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-puri-mey-janam-liya.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-puri-mey-janam-liya_1.mp3)
 
 ---
 

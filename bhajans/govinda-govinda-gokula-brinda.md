@@ -35,7 +35,7 @@ Glory to Lord Govinda (Krishna) of Brindavan and Gokula, who is the existence
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-gokula-brinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-gokula-brinda.mp3)
 
 ---
 

@@ -39,7 +39,8 @@ Chant the name of Lord Sai Rama. O Lord, You are the salvation of the fallen a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathi-raghava-raja-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathi-raghava-raja-ram.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathi-raghava-raja-ram_1.mp3)
 
 ---
 

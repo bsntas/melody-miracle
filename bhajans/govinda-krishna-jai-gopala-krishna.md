@@ -36,7 +36,9 @@ Victory be to Krishna, the Lord of Radha; Victory be to the beloved Lord who wea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-jai-gopala-krishna_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-jai-gopala-krishna.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-krishna-jai-gopala-krishna_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_305_GOVIND_KRISHNA_JAI.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Victory to Lord Krishna who is known by many names: Gopala, Madhava and Keshav
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-mana-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-mana-mohana.mp3)
 
 ---
 

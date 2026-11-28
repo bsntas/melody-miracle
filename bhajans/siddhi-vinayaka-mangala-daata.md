@@ -35,7 +35,7 @@ Oh Lord Vinayaka (Lord Ganesha), You fulfill our wishes and bestow auspiciousnes
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-vinayaka-mangala-daata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-vinayaka-mangala-daata.mp3)
 
 ---
 

@@ -90,7 +90,8 @@ The One whose enchanting voice is full of compassion and charm. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-charana-sevanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-pancharatna-kritis-charana-sevanam.mp3)
+- **Tutorial**: [▶ Listen](https://media.radiosai.org/www/mp3download/Pancharatna-krithi-03.mp3)
 
 ---
 

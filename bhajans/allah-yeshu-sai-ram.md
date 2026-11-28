@@ -36,7 +36,7 @@ O Lord Sai, You are Allah, Yeshu, Buddha and Mahavira. In Treta era, You incarna
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-yeshu-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-yeshu-sai-ram.mp3)
 
 ---
 

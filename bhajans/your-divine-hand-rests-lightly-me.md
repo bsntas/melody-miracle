@@ -34,7 +34,7 @@ Sri Sathya Sai, Sri Sathya Sai, Sri Sathya Sai Avatar
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-divine-hand-rests-lightly-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-divine-hand-rests-lightly-me.mp3)
 
 ---
 

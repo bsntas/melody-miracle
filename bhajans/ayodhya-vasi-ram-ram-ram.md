@@ -34,7 +34,7 @@ Chant the name of Rama, the Lord of Ayodhya, the Son of Dasharatha and the conso
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vasi-ram-ram-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vasi-ram-ram-ram.mp3)
 
 ---
 

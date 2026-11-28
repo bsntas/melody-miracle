@@ -34,7 +34,7 @@ Vigneshwarudu atu itu thirugaga avignamuga aadera harudu [ Thaandava keLi ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thaandava-keli-salpene.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thaandava-keli-salpene.mp3)
 
 ---
 

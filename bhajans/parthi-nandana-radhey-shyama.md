@@ -36,7 +36,7 @@ Come O beautiful and charming Lord Krishna, the dark-hued one who has incarnat
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-nandana-radhey-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parthi-nandana-radhey-shyama.mp3)
 
 ---
 

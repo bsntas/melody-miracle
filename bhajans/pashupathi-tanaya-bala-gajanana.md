@@ -37,7 +37,7 @@ Chant the name of the darling son of Lord Shiva (Pashupathi), the elephant-faced
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pashupathi-tanaya-bala-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pashupathi-tanaya-bala-gajanana.mp3)
 
 ---
 

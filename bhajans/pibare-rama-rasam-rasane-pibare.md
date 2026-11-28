@@ -34,7 +34,8 @@ Drinking in the nectar of Lord Rama's name by chanting His name helps us escape 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pibare-rama-rasam-rasane-pibare_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pibare-rama-rasam-rasane-pibare.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pibare-rama-rasam-rasane-pibare_1.mp3)
 
 ---
 

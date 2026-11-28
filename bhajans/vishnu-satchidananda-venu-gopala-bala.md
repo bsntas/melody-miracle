@@ -33,7 +33,7 @@ Chant the various names of the Lord Vishnu, namely Rama, Govinda, Hari and the s
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vishnu-satchidananda-venu-gopala-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vishnu-satchidananda-venu-gopala-bala.mp3)
 
 ---
 

@@ -41,7 +41,7 @@ Never follow the one that brings the doubt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/follow-your-spirit-only.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/follow-your-spirit-only.mp3)
 
 ---
 

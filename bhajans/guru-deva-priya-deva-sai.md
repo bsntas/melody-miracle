@@ -38,7 +38,8 @@ Lord Sai is the merciful and enchanting Guru who is verily Lord Shiva, adorned 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-priya-deva-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-priya-deva-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-priya-deva-sai_1.mp3)
 
 ---
 

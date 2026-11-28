@@ -57,7 +57,7 @@ Thy Will not mine be done
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thy-will.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thy-will.mp3)
 
 ---
 

@@ -39,7 +39,14 @@ Victory to Lord Sai who protects the destitute and who is the real friend in tim
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-sai-ram-jai-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-sai-ram-jai-sai.mp3)
+- **Karaoke** (Reference Track 5 Madhyam / C): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 5 Madhyam / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4.5 Madhyam / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Gents_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Gents Pitch 4 Madhyam / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Gents_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Madhyam / F (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Ladies_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Madhyam / E (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Ladies_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Madhyam / E Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Jai_Sai_Ram_Jai_Sai_Ram_Ladies_Karaoke_D_Sharp_Pancham.mp3)
 
 ---
 

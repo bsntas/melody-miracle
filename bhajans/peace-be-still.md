@@ -46,7 +46,7 @@ Peace be still I am fulfilled (3x) Om Peace Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-be-still.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-be-still.mp3)
 
 ---
 

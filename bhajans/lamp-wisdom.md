@@ -20,7 +20,7 @@ Filling everything with light.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lamp-wisdom.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lamp-wisdom.mp3)
 
 ---
 

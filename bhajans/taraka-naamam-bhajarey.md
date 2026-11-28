@@ -36,7 +36,7 @@ O Mind, chant the Holy Name of Lord Sai Rama that liberates one from the cycle o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/taraka-naamam-bhajarey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/taraka-naamam-bhajarey.mp3)
 
 ---
 

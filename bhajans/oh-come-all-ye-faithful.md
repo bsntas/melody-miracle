@@ -43,7 +43,7 @@ Oh come let us adore Him, Christ the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-come-all-ye-faithful.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-come-all-ye-faithful.mp3)
 
 ---
 

@@ -36,7 +36,8 @@ Sing the glory of Lord Krishna, beloved son of Nanda and stealer of butter (devo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-navaneetha-chora-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-navaneetha-chora-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_404_NAND_KISHORA_NAVNEET_CHORA.mp3)
 
 ---
 

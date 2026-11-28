@@ -40,7 +40,14 @@ Allah is the Supreme. He is also Jesus Christ, Shirdi Sai, Parthi Sai, Guru Nana
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-akbar.mp3)
+- **Karaoke** (Reference Track 6.5 Pancham / B Flat): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_Ho_Akbar_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 6.5 Pancham / B Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_akbar_Gents_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_Akbar_Gents_Karaoke_A_Pancham.mp3)
+- **Karaoke** (Gents Pitch 5.5 Pancham / G# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_Akbar_Gents_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_Akbar_Ladies_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4 Pancham / F (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_Akbar_Ladies_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Allah_ho_Akbar_Ladies_Karaoke_E_Pancham.mp3)
 
 ---
 

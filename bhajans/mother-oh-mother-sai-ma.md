@@ -36,7 +36,9 @@ For All Your Patience And Love Sai Ma [ Ma Sai Ma ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mother-oh-mother-sai-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mother-oh-mother-sai-ma.mp3)
+- **Karaoke** (Reference Track 2.5 Pancham / E Flat - Unison): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Mother%20O%20Mother%20Sai%20Maa%20-%20Unison.mp3)
+- **Karaoke** (Ladies Pitch 2.5 Pancham / E Flat (unison)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Mother%20O%20Mother%20Sai%20Maa%20-%20Unison%20-%202.5P%20D%23min.mp3)
 
 ---
 

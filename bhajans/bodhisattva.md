@@ -41,7 +41,7 @@ Selfless servant, you’re the Lord’s true friend (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bodhisattva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bodhisattva.mp3)
 
 ---
 

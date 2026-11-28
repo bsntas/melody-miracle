@@ -35,7 +35,7 @@ I worship Lord Ganesha, the elephant-faced one who is the son of Lord Shiva and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-gajendra-vadana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-gajendra-vadana.mp3)
 
 ---
 

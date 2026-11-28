@@ -36,7 +36,7 @@ Worship and chant the Holy names Ram, Panduranga, Madhava, Keshava, Mukunda, Gov
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-ram.mp3)
 
 ---
 

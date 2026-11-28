@@ -35,7 +35,7 @@ Sing the glory of Mother Durga, the eternal joy of Lord Shiva, the giver of life
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_451_SADA_SHIV_RANJANI_SAI.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_451_SADA_SHIV_RANJANI_SAI.mp3)
 
 ---
 

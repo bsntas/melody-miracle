@@ -37,7 +37,8 @@ Sing the name of Sai who is the embodiment of Love, the inner purifier who is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-sai-parthi-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-sai-parthi-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_389_PREM_SAI_PARTI_SAI.mp3)
 
 ---
 

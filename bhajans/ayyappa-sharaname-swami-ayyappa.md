@@ -34,7 +34,7 @@ Take refuge in Ayyappa, the Lord of Sabari mountain and Puttaparthi, who bestows
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayyappa-sharaname-swami-ayyappa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayyappa-sharaname-swami-ayyappa.mp3)
 
 ---
 

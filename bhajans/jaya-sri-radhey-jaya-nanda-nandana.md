@@ -38,7 +38,7 @@ Victory to Lord Krishna, the Lord of Radha and the son of Nanda of the Yadu clan
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_460_JAI_SHRI_RADHE_JAI.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_460_JAI_SHRI_RADHE_JAI.mp3)
 
 ---
 

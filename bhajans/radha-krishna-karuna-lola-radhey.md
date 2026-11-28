@@ -33,7 +33,7 @@ Chant the name of the merciful Lord, Radha Krishna. He is Radhey Govinda and Mur
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-krishna-karuna-lola-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-krishna-karuna-lola-radhey.mp3)
 
 ---
 

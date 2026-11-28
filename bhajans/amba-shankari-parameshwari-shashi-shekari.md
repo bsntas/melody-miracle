@@ -35,7 +35,8 @@ Glory to Mother Shankari (Parvathi), the consort of Shiva who is adorned wit
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-shankari-parameshwari-shashi-shekari_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-shankari-parameshwari-shashi-shekari.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-shankari-parameshwari-shashi-shekari_1.mp3)
 
 ---
 

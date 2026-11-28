@@ -37,7 +37,7 @@ Oh Mother Sai! You have neither beginning nor end. Kindly illumine our soul and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antar-jyothi-jalao-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antar-jyothi-jalao-sai.mp3)
 
 ---
 

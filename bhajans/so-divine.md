@@ -44,7 +44,7 @@ And when You speak the whole world is in tune
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/so-divine.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/so-divine.mp3)
 
 ---
 

@@ -36,6 +36,10 @@ Ghat Ghat Vasi Antaryami
 
 Welcome O Lord Sai. Bless and grant auspiciousness and peace. You are the ocean of compassion, the temple of virtues. You are the Truth and Eternal Bliss and the one who is omnipresent in every being.
 
+## Audio
+
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-hey-bhagawan.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

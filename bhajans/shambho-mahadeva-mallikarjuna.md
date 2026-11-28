@@ -36,7 +36,7 @@ Our salutations at the sacred feet of Lord Shiva, (also known as Shambho, Mahade
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-mallikarjuna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-mallikarjuna.mp3)
 
 ---
 

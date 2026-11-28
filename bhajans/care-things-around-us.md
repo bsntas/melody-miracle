@@ -17,7 +17,7 @@ No matter what the value is, it’s there for us to share.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/care-things-around-us.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/care-things-around-us.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ O Baba, the ocean of compassion, You are the kinsman to destitute, uplifter of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhava-baba-daya-sagara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-bandhava-baba-daya-sagara.mp3)
 
 ---
 

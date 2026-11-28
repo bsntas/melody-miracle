@@ -36,7 +36,7 @@ Glory to Lord Sai, the very embodiment of Supreme Bliss. In the incarnation as 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brahmananda-roopa-sri-sai-deva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/brahmananda-roopa-sri-sai-deva.mp3)
 
 ---
 

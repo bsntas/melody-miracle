@@ -35,7 +35,7 @@ Shiva Is The Key, So Open The Door
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/follow-follow-follow-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/follow-follow-follow-lord.mp3)
 
 ---
 

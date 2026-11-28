@@ -25,7 +25,7 @@ Love all, serve all (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-only-have-one-message-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-only-have-one-message-you.mp3)
 
 ---
 

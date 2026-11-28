@@ -35,7 +35,7 @@ Victory to the Universal Lord Mahesha (Shiva), who dwells at Mountain Kailasa a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-hey-jagadeesha-mahesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-hey-jagadeesha-mahesha.mp3)
 
 ---
 

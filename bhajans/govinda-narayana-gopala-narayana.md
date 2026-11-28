@@ -37,7 +37,7 @@ Chant the names of Lord Krishna - Govinda, Gopala and Lord Narayana.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-narayana-gopala-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-narayana-gopala-narayana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ The elephant faced Lord Ganesha is the leader of ganaas (the attendants of Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-vinashaka-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-vinashaka-gananatha.mp3)
 
 ---
 

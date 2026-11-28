@@ -37,7 +37,8 @@ Pranaams to the elephant-faced Lord of the Ganaas, who receives the first prayer
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-namostuthey-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-namostuthey-0.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-namostuthey-0_1.mp3)
 
 ---
 

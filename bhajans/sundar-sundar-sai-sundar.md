@@ -37,7 +37,7 @@ Salutations to the most beautiful Lord Sai Ram, the one with lotus-petal eyes wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundar-sundar-sai-sundar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundar-sundar-sai-sundar.mp3)
 
 ---
 

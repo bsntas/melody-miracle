@@ -36,7 +36,7 @@ O Lord Sai of Parthi and Shirdi, You are Lord Shankara and Lord Narayana, You a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-shankara.mp3)
 
 ---
 

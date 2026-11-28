@@ -38,7 +38,7 @@ Sing the praises of Lord Rama (Raghava) of Raghu lineage, the Lord of Saint Tula
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-raghuvara-rama-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-raghuvara-rama-bhajo.mp3)
 
 ---
 

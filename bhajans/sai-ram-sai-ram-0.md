@@ -37,7 +37,8 @@ O Lord Sai Ram, we sing forever Your glory from dawn to dusk. We sing Your glor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_238_SAI_RAM_SAI_RAM_GAYEN_GEET.mp3)
 
 ---
 

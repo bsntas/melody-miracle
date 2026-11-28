@@ -34,7 +34,7 @@ The beauty of the dark clouds reflects in immensely charming Krishna. The holder
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neela-megha-shyamala-ghana-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neela-megha-shyamala-ghana-shyama.mp3)
 
 ---
 

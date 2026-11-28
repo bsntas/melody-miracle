@@ -39,7 +39,7 @@ Lord Vinayaka, You are the embodiment of Om. O son of Uma and Shiva, praised by 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-ennum-pranava-roopa-nayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-ennum-pranava-roopa-nayaka.mp3)
 
 ---
 

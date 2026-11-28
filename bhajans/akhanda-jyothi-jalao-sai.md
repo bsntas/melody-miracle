@@ -39,7 +39,8 @@ O Lord Sai! Illumine the temple of my mind so that the flame of knowledge may gl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhanda-jyothi-jalao-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/akhanda-jyothi-jalao-sai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_288_AKHANDA_JYOTI_JALAO.mp3)
 
 ---
 

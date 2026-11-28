@@ -37,7 +37,7 @@ Salutations to You O Lord Sai, the Lord of Puttaparthi, please have compassion o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-bhagawan-sai-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-bhagawan-sai-bhagawan.mp3)
 
 ---
 

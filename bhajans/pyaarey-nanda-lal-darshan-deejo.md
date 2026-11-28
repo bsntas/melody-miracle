@@ -35,7 +35,7 @@ O loving Lord Krishna, kindly present Thyself. O the beloved Prince of Nanda 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pyaarey-nanda-lal-darshan-deejo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pyaarey-nanda-lal-darshan-deejo.mp3)
 
 ---
 

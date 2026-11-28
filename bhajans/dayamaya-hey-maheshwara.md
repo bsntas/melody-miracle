@@ -35,7 +35,7 @@ Hey Maheshwara (Shiva) you are full of compassion. You are also Shiva the embodi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dayamaya-hey-maheshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dayamaya-hey-maheshwara.mp3)
 
 ---
 

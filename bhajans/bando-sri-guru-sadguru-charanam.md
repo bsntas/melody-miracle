@@ -35,7 +35,7 @@ Let us bow down at the Lotus Feet of Lord Sai, our Divine Preceptor who removes 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bando-sri-guru-sadguru-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bando-sri-guru-sadguru-charanam.mp3)
 
 ---
 

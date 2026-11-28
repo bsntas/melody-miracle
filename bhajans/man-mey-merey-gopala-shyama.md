@@ -38,7 +38,7 @@ O Lord Krishna, the dark-hued son of Nanda and Yashoda, You are enshrined in 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mey-merey-gopala-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mey-merey-gopala-shyama.mp3)
 
 ---
 

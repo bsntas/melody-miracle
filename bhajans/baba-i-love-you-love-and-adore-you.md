@@ -40,7 +40,7 @@ How can I falter?... Baba I love You...
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-i-love-you-love-and-adore-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-i-love-you-love-and-adore-you.mp3)
 
 ---
 

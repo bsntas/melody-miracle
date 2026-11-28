@@ -35,7 +35,7 @@ Worship Lord Rama of Raghu Dynasty. Worship the lotus-eyed Lord Rama, who is the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghu-nandana-raghava-ram-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghu-nandana-raghava-ram-harey.mp3)
 
 ---
 

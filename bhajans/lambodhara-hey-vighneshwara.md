@@ -35,7 +35,7 @@ Sing the glory of Lord Ganesha who removes obstacles, the son of Shambho (Shiva)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-hey-vighneshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-hey-vighneshwara.mp3)
 
 ---
 

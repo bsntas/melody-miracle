@@ -34,7 +34,7 @@ That you express through that song
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-your-whole-life-be-song.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-your-whole-life-be-song.mp3)
 
 ---
 

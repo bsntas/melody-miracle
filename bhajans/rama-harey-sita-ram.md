@@ -35,7 +35,7 @@ Chant the name of Lord Rama, the Lord of Sita, Radhey Shyam, the Lord of Radha. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-harey-sita-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-harey-sita-ram.mp3)
 
 ---
 

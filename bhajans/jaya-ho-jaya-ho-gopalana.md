@@ -35,7 +35,8 @@ Victory to Lord Krishna who fosters cowherds, victory to the one whom man is a p
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-gopalana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-jaya-ho-gopalana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_411_JAYA_HO_JAYA_HO_GOPALANA.mp3)
 
 ---
 

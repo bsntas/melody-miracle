@@ -53,7 +53,7 @@ Your love, Your sweet, sweet love (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-sweet-sweet-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/your-sweet-sweet-love.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ There’s the love in my heart of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-love-my-heart-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-love-my-heart-lord.mp3)
 
 ---
 

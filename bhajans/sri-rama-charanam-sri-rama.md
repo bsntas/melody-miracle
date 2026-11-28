@@ -36,7 +36,7 @@ Worship the feet of Lord Sri Rama, Lord of Vaidehi, whose abode is Vaikunta. Lik
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-charanam-sri-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-rama-charanam-sri-rama.mp3)
 
 ---
 

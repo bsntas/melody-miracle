@@ -47,7 +47,7 @@ Sweet Ganesha, sweet Ganesha, dancing in my heart
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweet-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweet-ganesha.mp3)
 
 ---
 

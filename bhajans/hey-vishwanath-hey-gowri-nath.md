@@ -34,7 +34,7 @@ Show mercy on us, Oh Lord of the Universe and of Mother Gowri. Lord Sai is the r
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwanath-hey-gowri-nath.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwanath-hey-gowri-nath.mp3)
 
 ---
 

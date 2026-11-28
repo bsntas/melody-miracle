@@ -34,7 +34,7 @@ Protect me Oh Lord Ganesha, the destroyer of all obstacles, the son of Parvathi,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-vighna-vinasha-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-vighna-vinasha-ganesha.mp3)
 
 ---
 

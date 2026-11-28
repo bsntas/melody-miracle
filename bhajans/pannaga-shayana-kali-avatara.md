@@ -39,7 +39,7 @@ Salutations to Lord Narayana who rests on the multi-headed cobra. O Lord Sai, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pannaga-shayana-kali-avatara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pannaga-shayana-kali-avatara.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Sing the glory of Lord Rama, the friend of the afflicted and the Lord of the Wo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-ram-jagadabhi-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-ram-jagadabhi-ram.mp3)
 
 ---
 

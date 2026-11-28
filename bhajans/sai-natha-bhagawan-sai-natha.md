@@ -38,7 +38,7 @@ O Lord Sai, You are the Truth, Auspiciousness and Beauty. I take refuge in Budd
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-natha-bhagawan-sai-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-natha-bhagawan-sai-natha.mp3)
 
 ---
 

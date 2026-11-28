@@ -34,7 +34,7 @@ Salutations to the great Lord of Ganaas, Ganesha, the elephant headed son of Par
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-namostuthey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-namostuthey.mp3)
 
 ---
 

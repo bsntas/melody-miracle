@@ -35,7 +35,8 @@ Victory to Lord Rama who is difficult to attain when sought externally but easi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-rama-jai-jai-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-rama-jai-jai-gopala.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-rama-jai-jai-gopala_1.mp3)
 
 ---
 

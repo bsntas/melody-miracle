@@ -35,7 +35,7 @@ Victory to the the Lord Krishna, the beautiful cowherd who is the beloved of Rad
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohanam-madhusudanam-jaya-radha-govindam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohanam-madhusudanam-jaya-radha-govindam.mp3)
 
 ---
 

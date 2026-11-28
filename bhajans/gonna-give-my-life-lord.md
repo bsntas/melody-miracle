@@ -49,7 +49,7 @@ I’m gonna give my life to the Lord, to the Lord again.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-give-my-life-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gonna-give-my-life-lord.mp3)
 
 ---
 

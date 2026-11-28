@@ -37,7 +37,7 @@ Glory to the Divine Mother, who is the bestower of ultimate, Divine peace. She r
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shanthi-pradayini-ma-jaya-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shanthi-pradayini-ma-jaya-ma.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Chant the name of Lord Rama, also known as Raghava, who is the champion of the R
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-rama-raghuveera.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghava-rama-raghuveera.mp3)
 
 ---
 

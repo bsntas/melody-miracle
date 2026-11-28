@@ -32,7 +32,7 @@ Chant "Hari Om Namah Shivaya". Lord Shiva is the embodiment of auspiciousness a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-namah-shivaya-2.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-om-namah-shivaya-2.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Oh son of Nanda, the cowherd chieftain, You are the son who grants liberation! Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-nandalala-0.mp3)
 
 ---
 

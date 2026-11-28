@@ -36,7 +36,7 @@ Chant the names of Lord Srinivasa of Tirupati also hailed as Venkatesha, Bala
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-sri-venkatesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-sri-venkatesha.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Glory to Lord Shiva, the Lord of Lords, Sovereign Lord, with braided Hair on His
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahadeva-shiva-shambho-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahadeva-shiva-shambho-shankara.mp3)
 
 ---
 

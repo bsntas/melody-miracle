@@ -31,7 +31,7 @@ Chant the sacred mantra, Om Nama Shivaya; Chant the sacred name Narayana and bow
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-namo-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-namo-narayana.mp3)
 
 ---
 

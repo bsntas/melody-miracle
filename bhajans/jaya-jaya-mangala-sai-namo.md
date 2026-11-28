@@ -35,7 +35,7 @@ Prostrations to Lord Sai, the Lord of Parthi, the embodiment of Shiva and Shakth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-mangala-sai-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-mangala-sai-namo.mp3)
 
 ---
 

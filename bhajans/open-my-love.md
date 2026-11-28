@@ -53,7 +53,7 @@ Open, open, open to My l---o---v---e...
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/open-my-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/open-my-love.mp3)
 
 ---
 

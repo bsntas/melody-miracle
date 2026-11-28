@@ -34,7 +34,7 @@ Always chant the name of Lord Rama, Krishna Govinda and Sai Ram. The Lord's name
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-sada-bhajo-rama-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-sada-bhajo-rama-krishna.mp3)
 
 ---
 

@@ -73,7 +73,7 @@ God’s love has the power to heal.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/god’s-love-has-power-heal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/god’s-love-has-power-heal.mp3)
 
 ---
 

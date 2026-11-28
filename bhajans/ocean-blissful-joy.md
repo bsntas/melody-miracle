@@ -32,7 +32,7 @@ Ocean of Blissful Joy where Lord Sai shares with care
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ocean-blissful-joy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ocean-blissful-joy.mp3)
 
 ---
 

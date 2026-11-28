@@ -36,7 +36,7 @@ O Lord Sai, I offer a million salutations at Thy Lotus feet, please take me in Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-terey-charanon-mey-koti.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-terey-charanon-mey-koti.mp3)
 
 ---
 

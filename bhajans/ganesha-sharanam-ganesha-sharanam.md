@@ -34,7 +34,7 @@ You Are Always Guiding Me ... Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-sharanam-ganesha-sharanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-sharanam-ganesha-sharanam.mp3)
 
 ---
 

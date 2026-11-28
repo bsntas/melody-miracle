@@ -37,7 +37,7 @@ That’s the way to God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/scatter-seeds-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/scatter-seeds-love.mp3)
 
 ---
 

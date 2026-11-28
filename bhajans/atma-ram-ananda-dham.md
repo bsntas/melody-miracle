@@ -36,7 +36,9 @@ Worship the beautiful Form of Lord Rama, the resident of Ayodhya who is indwel
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-ram-ananda-dham.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-ram-ananda-dham.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-ram-ananda-dham_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_445_ATMARAM_ANAND_DHAM.mp3)
 
 ---
 

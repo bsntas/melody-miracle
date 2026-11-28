@@ -38,7 +38,7 @@ Glory to Lord Sai, the Lord of divine music, the one who is eternally pure, the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahmam-sayeeshwaram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahmam-sayeeshwaram.mp3)
 
 ---
 

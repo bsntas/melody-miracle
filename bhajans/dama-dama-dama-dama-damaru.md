@@ -37,7 +37,7 @@ O Lord Shankara (Shiva), dance in rhythm with the Damaru (drum), You are the on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dama-dama-dama-dama-damaru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dama-dama-dama-dama-damaru.mp3)
 
 ---
 

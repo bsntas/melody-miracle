@@ -37,7 +37,7 @@ Victory to Lord Rama, Lakshmana, Sita and Hanuman. Victory to the mighty son of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-lakshmana-janaki-jai-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-lakshmana-janaki-jai-bolo.mp3)
 
 ---
 

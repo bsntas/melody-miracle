@@ -33,7 +33,7 @@ Guide us all the way, Om Sai Ganapathi Jai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ganapathi-jai-please-help-us-find-our-way.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ganapathi-jai-please-help-us-find-our-way.mp3)
 
 ---
 

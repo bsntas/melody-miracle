@@ -35,7 +35,7 @@ Glory to Thee O Lord Sai of Parthi, You are none other than Lord Shiva. You ho
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shiva-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shiva-shankara.mp3)
 
 ---
 

@@ -36,7 +36,8 @@ Glory to Lord Sai Shankara who is the embodiment of Shirdi Baba and Parthi Baba,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-nivasa-sai-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-nivasa-sai-shankara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_064_Shirdi_Nivasa_Sai_Shankara.mp3)
 
 ---
 

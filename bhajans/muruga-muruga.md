@@ -33,7 +33,7 @@ You're My Swami, Muruga, Give Me Life Muruga, Va Va Vadi Velava
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muruga-muruga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muruga-muruga.mp3)
 
 ---
 

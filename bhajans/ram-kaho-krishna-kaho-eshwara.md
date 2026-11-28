@@ -36,7 +36,14 @@ Chant the name of all the Gods - Rama, Krishna, Eshwara (Shiva) or Allah. Chan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-kaho-krishna-kaho-eshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-kaho-krishna-kaho-eshwara.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Ladies_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Ladies_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Kaho_Krishna_Kaho_Ladies_Karaoke_F_Sharp_Pancham.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to Lord Sai, the Lord of Shirdi and Parthi, is also Lord of the world an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-merey-bhagawan-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-merey-bhagawan-baba.mp3)
 
 ---
 

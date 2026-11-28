@@ -36,7 +36,7 @@ Sai we are one, we are one with You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/alleluia-allelu-alleluia.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/alleluia-allelu-alleluia.mp3)
 
 ---
 

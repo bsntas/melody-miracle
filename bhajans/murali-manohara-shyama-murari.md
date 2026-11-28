@@ -34,7 +34,7 @@ Salutations to you Oh Lord Gopala (Krishna) you are fond of the music on flute, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-manohara-shyama-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-manohara-shyama-murari.mp3)
 
 ---
 

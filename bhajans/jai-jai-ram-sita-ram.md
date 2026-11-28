@@ -40,7 +40,7 @@ Victory to Lord Rama, the consort of Sita. Victory to the one who is the very em
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-ram-sita-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-ram-sita-ram.mp3)
 
 ---
 

@@ -37,7 +37,8 @@ O mind, chant the names of Allah, Eshwar, Guru Nanak, Buddha, Jesus, Mahavira, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-eshwar-ek-hi-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-eshwar-ek-hi-naam.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_494_ALLAH_ESHWAR_EK_HI_NAAM.mp3)
 
 ---
 

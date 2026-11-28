@@ -37,7 +37,7 @@ I bow down to Lord Sai who is the incarnation of Lord Vishnu - the ultimate abod
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-namo-hari-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-namo-hari-narayana.mp3)
 
 ---
 

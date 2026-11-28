@@ -36,7 +36,7 @@ Glory to the Lord of Ganaas, Ganesha, the destroyer of obstacles, who has the h
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sri-ganesha-vighna-nasha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sri-ganesha-vighna-nasha.mp3)
 
 ---
 

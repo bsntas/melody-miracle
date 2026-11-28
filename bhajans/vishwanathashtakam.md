@@ -105,7 +105,7 @@ Shiva Loka Mavaapnoti Shivena Saha Modathe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vishwanathashtakam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vishwanathashtakam.mp3)
 
 ---
 

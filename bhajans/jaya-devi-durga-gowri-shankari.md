@@ -37,7 +37,7 @@ Voctory to Mother Durga who is also known as Gowri, Shankari, Parvathi and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-durga-gowri-shankari.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-devi-durga-gowri-shankari.mp3)
 
 ---
 

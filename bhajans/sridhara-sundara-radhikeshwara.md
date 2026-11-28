@@ -34,7 +34,7 @@ The beautiful Lord Vishnu - who is the Lord of Lakshmi and adored by Radha, the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sridhara-sundara-radhikeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sridhara-sundara-radhikeshwara.mp3)
 
 ---
 

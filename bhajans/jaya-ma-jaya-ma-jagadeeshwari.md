@@ -35,7 +35,7 @@ Victory to Mother Sai who is the Goddess of the Universe. She is the Supreme One
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-jaya-ma-jagadeeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-jaya-ma-jagadeeshwari.mp3)
 
 ---
 

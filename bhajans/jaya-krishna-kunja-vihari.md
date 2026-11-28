@@ -37,7 +37,7 @@ Victory to Lord Krishna, the one who moves about through thick shrubs, on the ba
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-krishna-kunja-vihari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-krishna-kunja-vihari.mp3)
 
 ---
 

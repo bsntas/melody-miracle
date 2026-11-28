@@ -34,7 +34,7 @@ Chant the names of the Lord Krishna - Gopala, Giridhara. Glory to the One with
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-muralidhara-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-muralidhara-harey.mp3)
 
 ---
 

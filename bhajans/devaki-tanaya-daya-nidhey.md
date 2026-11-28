@@ -35,7 +35,7 @@ Worship the merciful and compassionate Son of Mother Devaki, Lord Krishna. O Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devaki-tanaya-daya-nidhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/devaki-tanaya-daya-nidhey.mp3)
 
 ---
 

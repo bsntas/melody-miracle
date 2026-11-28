@@ -37,7 +37,7 @@ Chant the Holy name of Lord Sai Ram with love. Chant the name of Lord Rama, of t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-bolo-ek-baar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-se-bolo-ek-baar.mp3)
 
 ---
 

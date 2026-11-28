@@ -37,7 +37,7 @@ This song praises Lord Sai Krishna as the one who is most charming, the one who
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-shyama-sundara-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-shyama-sundara-nandalala.mp3)
 
 ---
 

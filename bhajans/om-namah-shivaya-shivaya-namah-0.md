@@ -36,7 +36,14 @@ Chant the mantra "Om Namah Shivaya". I bow down to Lord Shiva, who confers auspi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-shivaya-namah-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namah-shivaya-shivaya-namah-0.mp3)
+- **Karaoke** (Reference Track 2 Madhyam / G): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Madhyam / G (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Gents_Karaoke_D_Madhyam.mp3)
+- **Karaoke** (Gents Pitch 1.5 Madhyam / F# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Gents_Karaoke_C_Sharp_Madhyam.mp3)
+- **Karaoke** (Gents Pitch 1 Madhyam / F (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Gents_Karaoke_C_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Madhyam / C# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Ladies_Karaoke_G_Sharp_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 5 Madhyam / C (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Ladies_Karaoke_G_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Madhyam / B (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Om_Namah_Shivaya_Shivaya_Namah_Om_Ladies_Karaoke_F_Sharp_Madhyam.mp3)
 
 ---
 

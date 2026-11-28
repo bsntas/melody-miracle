@@ -39,7 +39,7 @@ PRAISE BE TO THE LORD
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-thee-o-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/praise-be-thee-o-lord.mp3)
 
 ---
 

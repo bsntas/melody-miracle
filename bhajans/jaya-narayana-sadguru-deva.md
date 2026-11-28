@@ -36,7 +36,7 @@ Victory to the Divine Preceptor Sai who is none other than Lord Narayana and L
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_330_JAYA_NARAYAN_SADGURU_DEVA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_330_JAYA_NARAYAN_SADGURU_DEVA.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Glory be to the Mother of the Universe Shankari, Parvathi, Bhavani, the one who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagat-janani-shiva-sai-shankari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagat-janani-shiva-sai-shankari.mp3)
 
 ---
 

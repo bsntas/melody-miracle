@@ -31,7 +31,7 @@ I know You’re God, That means I’m God, God I am, I am God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-dearest-swami.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-dearest-swami.mp3)
 
 ---
 

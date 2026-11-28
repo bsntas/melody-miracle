@@ -35,7 +35,7 @@ Our salutations at Your divine Lotus feet, Oh Lord Sai. You are our divine prece
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sakshath-parabrahma-sai-guru-vandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sakshath-parabrahma-sai-guru-vandana.mp3)
 
 ---
 

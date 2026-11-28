@@ -36,7 +36,7 @@ Glory be to Lord Krishna, the one who vanquished the demon Madhu. Glory to the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-madhusudhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-madhusudhana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ O Mind, worship the name of Lord Krishna and Gopala. The son of Yadu dynasty 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-krishna-gopal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-krishna-gopal.mp3)
 
 ---
 

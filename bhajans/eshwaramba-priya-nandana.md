@@ -38,7 +38,9 @@ O Lord Sai, You are the beloved son of Mother Eshwaramba. You are worshipped b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-nandana.mp3)
+- **Karaoke** (Reference Track 5.5 Pancham / G#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Eshwaramba%20Priya%20Nandana.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Eshwaramba%20Priya%20Nandana%20-%20Karaoke%20-%205.5P%20G%23maj.mp3)
 
 ---
 

@@ -36,7 +36,9 @@ Victory to Mother Sai, Mother of the Universe. She is none other than Mother Vai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-vaishnavi-devi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-vaishnavi-devi.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Jai%20Jai%20Vaishnavi%20Devi%20Maa.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Jai%20Jai%20Vaishnavi%20Devi%20Maa%20-%20Karaoke%20-%202P%20Dmin.mp3)
 
 ---
 

@@ -42,7 +42,8 @@ Krishna, Sai Krishna
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/where-are-you-oh-my-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/where-are-you-oh-my-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/where-are-you-oh-my-krishna_1.mp3)
 
 ---
 

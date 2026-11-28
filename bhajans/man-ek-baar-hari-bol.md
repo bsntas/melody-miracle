@@ -36,7 +36,7 @@ O Mind, chant the name of Lord Hari at least once. He is the Mother, Fathe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-ek-baar-hari-bol.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-ek-baar-hari-bol.mp3)
 
 ---
 

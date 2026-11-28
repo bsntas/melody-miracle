@@ -35,7 +35,14 @@ Chant the name of Lord Rama, Krishna, Narayana and Hari. Lord Narayana, who is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-hari-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-krishna-hari-narayana.mp3)
+- **Karaoke** (Reference Track 1 Pancham / C): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Gents_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Gents Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Gents_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Gents_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Ladies_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4 Pancham / F (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Ladies_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 3 Pancham / E (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Rama_Krishna_Hari_Narayana_Ladies_Karaoke_E_Pancham.mp3)
 
 ---
 

@@ -39,7 +39,7 @@ I pray to Mother Durga, the Divine Mother. She is Mother Ambe, born out of the f
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-devi-durga-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-devi-durga-janani.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ O lotus-eyed Lord Narayana, You are the protector of the deprived and distresse
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aravinda-lochana-aartha-janavana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aravinda-lochana-aartha-janavana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_308_ARVIND_LOCHAN.mp3)
 
 ---
 

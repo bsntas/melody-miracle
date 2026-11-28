@@ -36,7 +36,7 @@ Always think about the God of Love with all your heart. Oh God of Love Sai, You 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tada-hitasura-kami-no-ai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tada-hitasura-kami-no-ai.mp3)
 
 ---
 

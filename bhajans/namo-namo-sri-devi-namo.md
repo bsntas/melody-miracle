@@ -36,7 +36,7 @@ Salutations to the Divine Mother Sai, the Goddess of Parthi, the embodiment of p
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_456_NAMO_NAMO_SHRI_DEVI_NAMO.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_456_NAMO_NAMO_SHRI_DEVI_NAMO.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Victory to the Sovereign Lord and Lord of the Universe Esha (Shiva) who Himself 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-jaya-paramesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-jaya-paramesha.mp3)
 
 ---
 

@@ -40,7 +40,7 @@ O Lord Sai, we bow to You a million times on Your Birthday. We, brothers and sis
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/terey-janam-din-me-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/terey-janam-din-me-sai.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Glory to Lord Govinda who resides on Mount Tirupati and who is the remover of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirupati-malaimel-iruppavane.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirupati-malaimel-iruppavane.mp3)
 
 ---
 

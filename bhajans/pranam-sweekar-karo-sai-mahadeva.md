@@ -35,7 +35,7 @@ Accept our salutations O Sai, the Lord of Gods, You are verily the Supreme One,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranam-sweekar-karo-sai-mahadeva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranam-sweekar-karo-sai-mahadeva.mp3)
 
 ---
 

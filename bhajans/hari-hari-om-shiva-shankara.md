@@ -37,7 +37,7 @@ Meditate on the primordial sound Om and chant the divine names of the Lord - Ha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-om-shiva-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-hari-om-shiva-shankara.mp3)
 
 ---
 

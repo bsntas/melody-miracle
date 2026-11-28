@@ -40,7 +40,7 @@ Glory to the Lord of Kailasa Mountains, Lord Shiva, who is Shiva and Shakthi (
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-kailasa-pathey-shiva-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-kailasa-pathey-shiva-shankara.mp3)
 
 ---
 

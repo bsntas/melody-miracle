@@ -17,7 +17,7 @@ And our life is filled with happiness, peace, love and good cheer.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-have-light-inside-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-have-light-inside-me.mp3)
 
 ---
 

@@ -35,7 +35,9 @@ Our salutations to the lotus-eyed Lord who is the consort of Kamala (Goddess Lak
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-prabhu-kamala-pathey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-prabhu-kamala-pathey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-prabhu-kamala-pathey_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_463_KAMAL_NAYAN_PRABHU.mp3)
 
 ---
 

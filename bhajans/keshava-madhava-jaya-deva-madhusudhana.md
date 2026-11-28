@@ -35,7 +35,7 @@ Chant the various names of Lord Krishna (Keshava, Madhava, Madhusudhana), the on
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/keshava-madhava-jaya-deva-madhusudhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/keshava-madhava-jaya-deva-madhusudhana.mp3)
 
 ---
 

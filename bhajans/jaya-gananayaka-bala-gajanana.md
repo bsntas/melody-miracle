@@ -36,7 +36,7 @@ Victory to Lord Ganesh, the leader of the Shiva's army (Ganas). Protect us O L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-gananayaka-bala-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-gananayaka-bala-gajanana.mp3)
 
 ---
 

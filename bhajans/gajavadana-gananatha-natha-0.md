@@ -35,7 +35,7 @@ Glory to the elephant-faced Lord Ganesha, the Lord of the demigods and the be
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha-natha-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gananatha-natha-0.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ O mind, worship Lord Krishna, the beautiful one with His flute, son of Nanda.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-radhey-shyama-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-radhey-shyama-gopala.mp3)
 
 ---
 

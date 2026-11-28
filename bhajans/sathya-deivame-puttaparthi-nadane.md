@@ -35,7 +35,8 @@ Lord of Truth, Lord of Parthi, bless our lives with Your love; we meditate on Yo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sathya%20Deivame.mp3)
+- **Karaoke** (Reference Track 2.5 Pancham / E Flat): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Sathya%20Deivame.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Sathya%20Deivame%202.5P%20D%23maj.mp3)
 
 ---
 

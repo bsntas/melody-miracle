@@ -36,7 +36,7 @@ Glory to Lord Sai, the compassionate one who is the incarnation of Lord Vishnu 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shrivatsankitha-sri-kaustubha-dhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shrivatsankitha-sri-kaustubha-dhara.mp3)
 
 ---
 

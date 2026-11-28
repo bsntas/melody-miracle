@@ -36,7 +36,7 @@ Glory to the son of Nanda, Lord Krishna, the one who stole butter and who played
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-navaneetha-chora-brindavana.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-navaneetha-chora-brindavana.mp3)
 
 ---
 

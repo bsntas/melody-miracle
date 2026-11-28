@@ -37,7 +37,7 @@ Chant the many names of the supremely merciful, sweet and beautiful Lord Krishna
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-hari-parama-dayala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-dayala-hari-parama-dayala.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ O mind, chant the name of Hari, Keshava, Madhava, Govinda and Gopala incessantl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/keshava-madhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/keshava-madhava.mp3)
 
 ---
 

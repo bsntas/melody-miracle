@@ -35,7 +35,7 @@ Victory to Mother Sai who is verily Mother Durga (Parvathi). Victory to the Divi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durga-bhavani-ma-jaya-jaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durga-bhavani-ma-jaya-jaya.mp3)
 
 ---
 

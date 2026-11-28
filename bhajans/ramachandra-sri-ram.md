@@ -36,7 +36,7 @@ Victory to the merciful Lord Ramachandra, the darling son of Dasharatha. Glory t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ramachandra-sri-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ramachandra-sri-ram.mp3)
 
 ---
 

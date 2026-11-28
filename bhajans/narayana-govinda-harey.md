@@ -35,7 +35,7 @@ O Lord Narayana, the refuge of all beings, You are the protector of cows (meek
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-govinda-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-govinda-harey.mp3)
 
 ---
 

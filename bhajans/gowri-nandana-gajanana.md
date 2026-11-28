@@ -35,7 +35,8 @@ O Lord Ganesha, the elephant-faced one, You are the beloved son of Mother Gowr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-gajanana.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-gajanana_1.mp3)
 
 ---
 

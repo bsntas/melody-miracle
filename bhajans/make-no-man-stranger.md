@@ -40,7 +40,7 @@ For I know that I, too, Am truly God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/make-no-man-stranger.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/make-no-man-stranger.mp3)
 
 ---
 

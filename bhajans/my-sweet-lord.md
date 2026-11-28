@@ -43,7 +43,7 @@ My sweet Lord, my sweet Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-sweet-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/my-sweet-lord.mp3)
 
 ---
 

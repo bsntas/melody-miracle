@@ -36,7 +36,7 @@ My sweet Lord, Sathya Sai Bhagawan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-ram-om-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-sai-ram-om-sai-ram.mp3)
 
 ---
 

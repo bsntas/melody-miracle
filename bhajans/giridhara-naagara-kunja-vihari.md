@@ -35,7 +35,7 @@ Chant the name of the Lord Giridhara who roams in the garden and in the forest o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-naagara-kunja-vihari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-naagara-kunja-vihari.mp3)
 
 ---
 

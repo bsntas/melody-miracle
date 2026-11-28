@@ -36,7 +36,7 @@ Bow to Lord Narayana in reverence and humility, revere Him as He is the source o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namo-namah-om-namah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-namo-namah-om-namah.mp3)
 
 ---
 

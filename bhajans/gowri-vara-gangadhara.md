@@ -36,7 +36,7 @@ Salutation to Shiva, the embodiment of Aum, who is the consort of Gowri. You are
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-vara-gangadhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-vara-gangadhara.mp3)
 
 ---
 

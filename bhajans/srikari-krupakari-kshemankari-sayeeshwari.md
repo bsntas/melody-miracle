@@ -35,7 +35,8 @@ Glory be to the beautiful, compassionate and all pervading goddess Parvathi, th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srikari-krupakari-kshemankari-sayeeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srikari-krupakari-kshemankari-sayeeshwari.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srikari-krupakari-kshemankari-sayeeshwari_1.mp3)
 
 ---
 

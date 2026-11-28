@@ -35,7 +35,7 @@ Glory to Lord Krishna of the Yadu dynasty, the beautiful dark blue colored one w
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-yadu-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-yadu-nandana.mp3)
 
 ---
 

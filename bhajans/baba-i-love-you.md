@@ -32,7 +32,7 @@ Avatar, Avatar, sweet Avatar (2x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-i-love-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-i-love-you.mp3)
 
 ---
 

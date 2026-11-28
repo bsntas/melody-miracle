@@ -35,7 +35,7 @@ Chant the Names of the Radha's Lord Govinda and Gopala, Radhey Gopala and Radhey
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-radhey-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-radhey-govinda.mp3)
 
 ---
 

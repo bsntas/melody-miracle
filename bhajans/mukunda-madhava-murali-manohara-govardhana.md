@@ -34,7 +34,7 @@ Salutations to you Oh beautiful Lord Sai Krishna. you were worshipped by Gopikas
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mukunda-madhava-murali-manohara-govardhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mukunda-madhava-murali-manohara-govardhana.mp3)
 
 ---
 

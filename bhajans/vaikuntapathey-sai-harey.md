@@ -35,7 +35,7 @@ Glory to Lord Sai who is verily Lord Narayana of Vaikunta, who wears the Vaijay
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaikuntapathey-sai-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaikuntapathey-sai-harey.mp3)
 
 ---
 

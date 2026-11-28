@@ -37,7 +37,7 @@ Glory to the Lord of the Ganas, Lord Ganesha, the elephant-faced one, the destro
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-ganeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-ganeshwara.mp3)
 
 ---
 

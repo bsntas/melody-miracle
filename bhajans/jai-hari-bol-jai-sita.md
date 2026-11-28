@@ -34,7 +34,7 @@ Victory to Lord Hari, Lord Rama, chant the name of Lord Gopala. Lord Rama bel
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-hari-bol-jai-sita.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-hari-bol-jai-sita.mp3)
 
 ---
 

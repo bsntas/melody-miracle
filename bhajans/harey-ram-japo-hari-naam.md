@@ -38,7 +38,7 @@ Chant the names of Radha and Krishna, Sita and Rama. Krishna's complexion is tha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-ram-japo-hari-naam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-ram-japo-hari-naam.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Sing the Glory of Sovereign Lord Shankara (Shiva) who adorns the crescent moon o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-indushekara-raja-shiva-raja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-indushekara-raja-shiva-raja.mp3)
 
 ---
 

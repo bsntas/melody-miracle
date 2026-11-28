@@ -36,7 +36,7 @@ Glory to Thee, O Lord Rama, the darling son of King Dasharatha, You are an ocea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-rama-daya-sagara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-rama-daya-sagara.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Lord Krishna, who has captured our hearts, play Your flute and spread Your ocean
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shifuku-no-umi-yo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shifuku-no-umi-yo.mp3)
 
 ---
 

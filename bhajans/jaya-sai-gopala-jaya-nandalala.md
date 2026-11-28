@@ -36,7 +36,7 @@ This song extols the virtues of Lord Sai Krishna as the one who enchants and ste
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-gopala-jaya-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-sai-gopala-jaya-nandalala.mp3)
 
 ---
 

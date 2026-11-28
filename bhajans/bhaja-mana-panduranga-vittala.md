@@ -34,7 +34,7 @@ Oh Mind! Worship Lord Panduranga Vittala, Lord Purandara Vittala. Victory to Vit
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-panduranga-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-panduranga-vittala.mp3)
 
 ---
 

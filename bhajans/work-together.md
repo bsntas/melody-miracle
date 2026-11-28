@@ -17,7 +17,7 @@ If we can work together, how happy we will be.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/work-together.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/work-together.mp3)
 
 ---
 

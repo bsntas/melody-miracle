@@ -33,7 +33,7 @@ We will always belong to You dearest Sai [ My Sai ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/when-my-heart-was-full-fear-and-sorrow.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/when-my-heart-was-full-fear-and-sorrow.mp3)
 
 ---
 

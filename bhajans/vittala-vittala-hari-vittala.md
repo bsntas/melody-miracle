@@ -37,7 +37,14 @@ Chant the name and sing the glory of Lord Panduranga Vittala and Lord Sai who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vittala-vittala-hari-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vittala-vittala-hari-vittala.mp3)
+- **Karaoke** (Reference Track 7 Pancham / B): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 7 Pancham / B (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_Gents_B_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6.5 Pancham / B Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_Gents_A_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 6 Pancham / A (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_Gents_A_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_Ladies_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Vitthala_Vitthala_Hari_Vitthala_Karaoke_Ladies_C_Pancham.mp3)
 
 ---
 

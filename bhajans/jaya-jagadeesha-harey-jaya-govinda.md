@@ -37,7 +37,8 @@ Glory to the Lord of the Universe, Govinda, Gopala who is the personification of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-harey-jaya-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-harey-jaya-govinda.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jagadeesha-harey-jaya-govinda_1.mp3)
 
 ---
 

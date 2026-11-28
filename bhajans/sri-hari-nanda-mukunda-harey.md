@@ -38,7 +38,7 @@ Chant the names Lord Hari (Krishna), Nanda's son and the name of Dasaratha's son
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-hari-nanda-mukunda-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-hari-nanda-mukunda-harey.mp3)
 
 ---
 

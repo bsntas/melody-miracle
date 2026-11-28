@@ -32,7 +32,7 @@ Step By Step We'll Reach The Light
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-way-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-way-love.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ O Lord Sai, please come as we sing Your Name. You are our mother, father and p
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/varuvai-niye-sai-nada.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/varuvai-niye-sai-nada.mp3)
 
 ---
 

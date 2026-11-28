@@ -35,7 +35,7 @@ The enchanting Rama is our Sai Rama. The blessed name of Prashanthi Rama, the Co
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-rama-hey-sai-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-rama-hey-sai-rama.mp3)
 
 ---
 

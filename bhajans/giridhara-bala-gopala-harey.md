@@ -36,7 +36,8 @@ Glory to Lord Krishna, the cowherd boy who danced with the Gopis and the one wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-bala-gopala-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-bala-gopala-harey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_444_GIRIDHAR_BALA_GOPALA.mp3)
 
 ---
 

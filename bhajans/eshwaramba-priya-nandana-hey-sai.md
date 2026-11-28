@@ -37,7 +37,7 @@ Glory to Lord Sai, the darling son of Mother Eshwaramba who incarnated as Lord R
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-nandana-hey-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-nandana-hey-sai.mp3)
 
 ---
 

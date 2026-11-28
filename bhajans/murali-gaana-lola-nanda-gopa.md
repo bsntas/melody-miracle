@@ -35,7 +35,8 @@ Welcome O Lord Krishna, Nanda's Son, the beloved of Radha. In the Age of Treta
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-gaana-lola-nanda-gopa_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-gaana-lola-nanda-gopa.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-gaana-lola-nanda-gopa_1.mp3)
 
 ---
 

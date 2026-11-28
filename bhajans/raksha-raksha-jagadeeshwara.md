@@ -34,7 +34,7 @@ Protect us, O Lord of the Universe, Lord Sai. Protect us, O Lord of Parthi a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raksha-raksha-jagadeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raksha-raksha-jagadeeshwara.mp3)
 
 ---
 

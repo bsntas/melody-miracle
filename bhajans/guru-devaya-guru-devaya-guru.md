@@ -35,7 +35,7 @@ Praise be to the Guru who is the Supreme Lord. Lord Sai is my own Guru. O Lord, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-devaya-guru-devaya-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-devaya-guru-devaya-guru.mp3)
 
 ---
 

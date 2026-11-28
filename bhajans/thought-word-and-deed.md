@@ -23,7 +23,7 @@ In thought, word, and deed.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thought-word-and-deed.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/thought-word-and-deed.mp3)
 
 ---
 

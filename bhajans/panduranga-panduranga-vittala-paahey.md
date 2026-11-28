@@ -35,7 +35,7 @@ Protect us, O Lord Panduranga. O Lord Vittala, You are the protector of the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-panduranga-vittala-paahey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-panduranga-vittala-paahey.mp3)
 
 ---
 

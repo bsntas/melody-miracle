@@ -33,7 +33,7 @@ Together we yield to You, bow to You Ganesha (Gajanana)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joyful-praise-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/joyful-praise-ganesha.mp3)
 
 ---
 

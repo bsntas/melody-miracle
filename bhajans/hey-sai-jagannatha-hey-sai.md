@@ -36,7 +36,8 @@ Repeat the sacred name of Sai, the Lord of the Universe, the refuge of the forlo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-sai-jagannatha-hey-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-sai-jagannatha-hey-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-sai-jagannatha-hey-sai_1.mp3)
 
 ---
 

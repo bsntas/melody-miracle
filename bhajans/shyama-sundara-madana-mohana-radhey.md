@@ -36,7 +36,7 @@ Chant the various names of Lord Krishna such as, Shyama Sundara, Madana Mohana, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-sundara-madana-mohana-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyama-sundara-madana-mohana-radhey.mp3)
 
 ---
 

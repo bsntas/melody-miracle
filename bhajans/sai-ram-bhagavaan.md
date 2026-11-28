@@ -34,7 +34,7 @@ O Stream of Mercy Divine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-bhagavaan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-bhagavaan.mp3)
 
 ---
 

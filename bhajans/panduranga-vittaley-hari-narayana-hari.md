@@ -32,7 +32,7 @@ Sing the glory of Panduranga Vittala, the incarnation of Lord Narayana, the prot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittaley-hari-narayana-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittaley-hari-narayana-hari.mp3)
 
 ---
 

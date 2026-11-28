@@ -34,7 +34,7 @@ Surrender to our Lord Sai who is our Divine Preceptor and whose abode is Prasha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharanam-sharanam-sayeesha-sharanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sharanam-sharanam-sayeesha-sharanam.mp3)
 
 ---
 

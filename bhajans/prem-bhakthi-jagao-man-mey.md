@@ -35,7 +35,8 @@ Oh Lord Sai Baba! Welcome to my heart and please awake within me the love and de
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-bhakthi-jagao-man-mey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prem-bhakthi-jagao-man-mey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_418_PREM_BHAKTI_JAGAO_MAN_ME.mp3)
 
 ---
 

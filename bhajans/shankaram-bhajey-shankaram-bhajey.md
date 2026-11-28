@@ -36,7 +36,8 @@ Chant the name of Lord Sai who resides at Parthi, who is none other than Lord S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankaram-bhajey-shankaram-bhajey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankaram-bhajey-shankaram-bhajey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_474_SHANKARAM_BHAJE.mp3)
 
 ---
 

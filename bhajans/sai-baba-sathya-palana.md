@@ -37,7 +37,8 @@ Glory to You Lord Sai Baba, the Embodiment of Truth. Glory to You, Lord of Shird
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sathya-palana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sathya-palana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_468_SAI_SATYA_PALANA.mp3)
 
 ---
 

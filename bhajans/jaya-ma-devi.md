@@ -41,7 +41,7 @@ Glory to the Divine Mother! Surrender to the Divine Mother, who revels in the ex
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-devi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-devi.mp3)
 
 ---
 

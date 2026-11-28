@@ -35,7 +35,8 @@ Glory be to You, Oh Lord Krishna, the son of Yadu dynasty, the son of Yashoda, Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-yashoda-bala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/yadu-nandana-yashoda-bala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_446_YADU_NANDANA_YASHODA_BALA.mp3)
 
 ---
 

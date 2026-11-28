@@ -52,7 +52,7 @@ And show me You’re the light inside of me.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/reveal-yourself.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/reveal-yourself.mp3)
 
 ---
 

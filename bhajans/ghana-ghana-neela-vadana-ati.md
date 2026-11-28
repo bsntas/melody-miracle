@@ -35,7 +35,7 @@ Lord Krishna is described as the one having a dark blue complexion like that of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-vadana-ati.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-ghana-neela-vadana-ati.mp3)
 
 ---
 

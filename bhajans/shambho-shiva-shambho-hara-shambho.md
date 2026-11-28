@@ -36,7 +36,7 @@ Chant the name of Lord Shiva, who is also known as Shambho, Shekhara, and Hara. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shiva-shambho-hara-shambho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-shiva-shambho-hara-shambho.mp3)
 
 ---
 

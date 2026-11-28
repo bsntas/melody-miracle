@@ -35,7 +35,7 @@ Sing the name of Lord Narayana and Hari, the ultimate shelter for all creature
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-naama-bhajorey-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-naama-bhajorey-narayana.mp3)
 
 ---
 

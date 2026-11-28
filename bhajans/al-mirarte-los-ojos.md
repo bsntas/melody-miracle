@@ -36,7 +36,7 @@ When I looked into Your eyes, Sai Baba, all the love within me blossomed. That l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/al-mirarte-los-ojos.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/al-mirarte-los-ojos.mp3)
 
 ---
 

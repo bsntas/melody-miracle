@@ -38,7 +38,7 @@ I bow down to the Lord in the form of Krishna, son of Vasudeva, I worship the Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-bhagawathey-vasudevaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-bhagawathey-vasudevaya.mp3)
 
 ---
 

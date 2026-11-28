@@ -35,7 +35,7 @@ Chant the different names of the imperishable Lord Krishna - Mukunda, Janardhan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-mukunda-janardhana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-mukunda-janardhana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ O the most beautiful, dark-complexioned Lord Krishna, it is a treat for the e
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-nachey-sundara-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-nachey-sundara-sai.mp3)
 
 ---
 

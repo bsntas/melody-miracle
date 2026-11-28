@@ -38,7 +38,7 @@ Sai, Sathya Sai, Sathya Sai, Sathya Sai, Sathya Sai Baba
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-oh-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-oh-sai.mp3)
 
 ---
 

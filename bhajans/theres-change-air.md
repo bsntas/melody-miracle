@@ -45,7 +45,8 @@ Let's open our hearts and go out and do it [ Sathya Sai, to You we pray ... we'l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-change-air_1.mp3)
 
 ---
 

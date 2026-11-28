@@ -36,7 +36,7 @@ Victory to the son of Gowri, Lord Ganesha, who is adorned with white garment a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-ganesha-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-ganesha-vinayaka.mp3)
 
 ---
 

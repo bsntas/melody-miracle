@@ -36,7 +36,7 @@ Make the temple in your heart the place where He resides
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lead-kindly-light-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lead-kindly-light-sathya-sai.mp3)
 
 ---
 

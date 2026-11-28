@@ -34,7 +34,7 @@ You are the son of Nanda and are Lord Vishnu, who is the refuge for all beings, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-kishora-narayana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ For You are my Lord, for You are my Life
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/more-love-more-power-more.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/more-love-more-power-more.mp3)
 
 ---
 

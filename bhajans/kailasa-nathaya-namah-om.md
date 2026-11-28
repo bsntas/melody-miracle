@@ -35,7 +35,7 @@ Salutations to Lord Sai, Lord of Puttaparthi, who is verily Lord Shiva, the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-nathaya-namah-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-nathaya-namah-om.mp3)
 
 ---
 

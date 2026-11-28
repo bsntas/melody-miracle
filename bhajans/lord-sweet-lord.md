@@ -40,7 +40,7 @@ You Are the Mystery that fills my heart with Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-sweet-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-sweet-lord.mp3)
 
 ---
 

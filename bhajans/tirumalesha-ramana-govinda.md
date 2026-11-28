@@ -35,7 +35,7 @@ Glory to Lord Sai, the Lord of Parthi. O Sai, You are verily Lord Govinda, the b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalesha-ramana-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tirumalesha-ramana-govinda.mp3)
 
 ---
 

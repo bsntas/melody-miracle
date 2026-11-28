@@ -37,7 +37,8 @@ Glory to Lord Rama of Raghu lineage. The entire world meditates on Rama, the dea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-jayam-hari-rama-jayam_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-jayam-hari-rama-jayam.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-jayam-hari-rama-jayam_1.mp3)
 
 ---
 

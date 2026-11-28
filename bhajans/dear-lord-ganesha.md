@@ -39,7 +39,7 @@ My Swami, lotus of my heart
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dear-lord-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dear-lord-ganesha.mp3)
 
 ---
 

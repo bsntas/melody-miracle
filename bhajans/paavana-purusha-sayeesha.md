@@ -41,7 +41,7 @@ Salutations to the Supreme Lord, Sai, who protects all those who surrender to H
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paavana-purusha-sayeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/paavana-purusha-sayeesha.mp3)
 
 ---
 

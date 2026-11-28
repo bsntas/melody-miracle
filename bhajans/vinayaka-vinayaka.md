@@ -35,7 +35,7 @@ Salutations to Lord Vinayaka (Lord Ganesha) who gives sustenance to the Universe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinayaka-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinayaka-vinayaka.mp3)
 
 ---
 

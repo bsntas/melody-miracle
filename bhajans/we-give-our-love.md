@@ -34,7 +34,7 @@ We give our all to You Lord Sai (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-give-our-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-give-our-love.mp3)
 
 ---
 

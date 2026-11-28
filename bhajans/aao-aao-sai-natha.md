@@ -39,7 +39,9 @@ Welcome O Sai, Lord of the Universe, our eyes are eager to see Your Divine for
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-sai-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-aao-sai-natha.mp3)
+- **Karaoke** (Reference Track 1 Madhyam / F): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Aao%20Aao%20Sai%20Natha.mp3)
+- **Karaoke** (Ladies Pitch 1 Madhyam / F (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Aao%20Aao%20Sai%20Natha%204P%20Fmin.mp3)
 
 ---
 

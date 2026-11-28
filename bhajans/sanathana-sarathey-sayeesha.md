@@ -37,7 +37,7 @@ Salutations at Your divine lotus feet Oh Lord Sai, You are the upholder of the "
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sanathana-sarathey-sayeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sanathana-sarathey-sayeesha.mp3)
 
 ---
 

@@ -37,7 +37,8 @@ Chant the name of the enchanting Lord Rama of Raghu dynasty, the ever beautifu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-raghurama-ati-sundara-sri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mohana-raghurama-ati-sundara-sri.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_437_MOHAN_RAGHURAMA.mp3)
 
 ---
 

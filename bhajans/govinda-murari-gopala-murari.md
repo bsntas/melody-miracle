@@ -34,7 +34,7 @@ Glory be to Lord Govinda, the protector of cows (Veda, senses), who slayed the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-murari-gopala-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-murari-gopala-murari.mp3)
 
 ---
 

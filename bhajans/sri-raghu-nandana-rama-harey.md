@@ -36,7 +36,7 @@ Glory to Lord Rama of Raghu dynasty and the beloved of Mother Sita. Glory to Lor
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_490_SHRI_RAGHUNANDANA_RAMA_HARE.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_490_SHRI_RAGHUNANDANA_RAMA_HARE.mp3)
 
 ---
 

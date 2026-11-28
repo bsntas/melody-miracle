@@ -35,7 +35,7 @@ Worship the elephant-faced Lord Ganesh, son of Lord Shiva. He confers auspicious
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-gananayaka-gajavadana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-gananayaka-gajavadana.mp3)
 
 ---
 

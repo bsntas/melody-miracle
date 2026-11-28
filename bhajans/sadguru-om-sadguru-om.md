@@ -38,7 +38,7 @@ Chant the name of the Universal Guru, Lord Sai, who is the embodiment of 'Om'. 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-om-sadguru-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-om-sadguru-om.mp3)
 
 ---
 

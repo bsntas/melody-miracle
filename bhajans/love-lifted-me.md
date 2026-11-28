@@ -45,7 +45,7 @@ Ya’ know that Love lifted me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-lifted-me.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-lifted-me.mp3)
 
 ---
 

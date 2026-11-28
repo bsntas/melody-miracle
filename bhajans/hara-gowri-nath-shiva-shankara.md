@@ -36,7 +36,7 @@ Chant and celebrate the many names of Lord Shiva. He is the consort of Gowri an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-gowri-nath-shiva-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-gowri-nath-shiva-shankara.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Chant the name of Lord Krishna, the one holding the flute, the consort of Radh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-bhajo-krishna-bhajo-murali.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-bhajo-krishna-bhajo-murali.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Glory to the ever blissful Lord Narayana, the embodiment of Truth, Awareness an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nithyanandam-satchidanandam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nithyanandam-satchidanandam.mp3)
 
 ---
 

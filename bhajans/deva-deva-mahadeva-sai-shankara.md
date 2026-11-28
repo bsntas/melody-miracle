@@ -37,7 +37,7 @@ God of gods O Mahadeva, You are Sai Shankara, the resident of Shirdi. You are 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-deva-mahadeva-sai-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-deva-mahadeva-sai-shankara.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Chant the different names of the Lord Krishna, Madhava the valorous one, Murali 
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_394_JAYA_MURALI_MADHAVA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_394_JAYA_MURALI_MADHAVA.mp3)
 
 ---
 

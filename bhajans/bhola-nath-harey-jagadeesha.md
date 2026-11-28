@@ -38,7 +38,7 @@ Chant the name of the easy-to-please Lord of the Universe, Lord Shiva, who grant
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-nath-harey-jagadeesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhola-nath-harey-jagadeesha.mp3)
 
 ---
 

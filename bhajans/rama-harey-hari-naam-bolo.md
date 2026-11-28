@@ -40,7 +40,7 @@ Sing the many names of the Lord Rama, Hari, Govinda. Chant the name of Guru Nana
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-harey-hari-naam-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-harey-hari-naam-bolo.mp3)
 
 ---
 

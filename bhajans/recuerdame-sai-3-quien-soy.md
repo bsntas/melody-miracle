@@ -38,7 +38,8 @@ Remind me my Lord who I am; I am Om, the eternal Om; Through this life of distra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Remind%20Me%20My%20Lord%20-%20Unison.mp3)
+- **Karaoke** (Reference Track 6 Pancham / A - Unison): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Remind%20Me%20My%20Lord%20-%20Unison.mp3)
+- **Karaoke** (Ladies Pitch 6 Pancham / A (unison)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Remind%20Me%20My%20Lord%20-%20Unison%206P%20Amin.mp3)
 
 ---
 

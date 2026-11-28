@@ -37,7 +37,7 @@ Glory to Lord Shiva, the Lord of Lords, the eternally blissful one who is besmea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sundara-sai-nath-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sundara-sai-nath-hara.mp3)
 
 ---
 

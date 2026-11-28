@@ -50,7 +50,7 @@ Be willing to see The One in your fellowman
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-serve-all-0.mp3)
 
 ---
 

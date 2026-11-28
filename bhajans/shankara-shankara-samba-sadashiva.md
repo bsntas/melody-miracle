@@ -36,7 +36,7 @@ Glory to Lord Shiva, the most auspicious one who is adorned with the crescent mo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-samba-sadashiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-samba-sadashiva.mp3)
 
 ---
 

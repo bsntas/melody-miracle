@@ -35,7 +35,7 @@ The dear son of Uma (Mother Parvathi) is the elephant-faced Lord Ganesha, the L
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/maha-ganapathey-gajanana.mp3)
 
 ---
 

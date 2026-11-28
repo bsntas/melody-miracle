@@ -38,7 +38,7 @@ Praise be to Lord Shiva, the Lord of Lords, the dweller of Mount Kailasa and the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-pathey-mahadeva-shambho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kailasa-pathey-mahadeva-shambho.mp3)
 
 ---
 

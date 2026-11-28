@@ -34,7 +34,7 @@ Salutations of the Lord of dance form, Nataraja (Lord Shiva), who enacts the en
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-nataraja-narthana-sundara-nataraja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nataraja-nataraja-narthana-sundara-nataraja.mp3)
 
 ---
 

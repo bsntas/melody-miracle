@@ -36,7 +36,7 @@ O Lord Narayana, You are the Lord Sai who is the incarnation of Hari. You are 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-om-hari-om-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-om-hari-om-0.mp3)
 
 ---
 

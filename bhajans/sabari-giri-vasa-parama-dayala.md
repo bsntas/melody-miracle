@@ -34,7 +34,7 @@ Take refuge in Lord Ayyappa adorned with a necklace of precious gems. He resides
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sabari-giri-vasa-parama-dayala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sabari-giri-vasa-parama-dayala.mp3)
 
 ---
 

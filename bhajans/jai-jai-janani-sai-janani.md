@@ -37,7 +37,7 @@ Victory to Mother Bhavani who has the lion as Her vehicle, who holds the Tride
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-janani-sai-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-janani-sai-janani.mp3)
 
 ---
 

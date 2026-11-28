@@ -36,7 +36,7 @@ End the day with love, that’s the way to God
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-lords-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-lords-sathya-sai.mp3)
 
 ---
 

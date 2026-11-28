@@ -35,7 +35,7 @@ Sing the glory of the mischievous child Lord Krishna, the protector of Gokula, t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/natavara-lal-giridhara-gopal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/natavara-lal-giridhara-gopal.mp3)
 
 ---
 

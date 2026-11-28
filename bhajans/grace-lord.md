@@ -46,7 +46,7 @@ Now I live for the Grace, The Grace of the Lord.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/grace-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/grace-lord.mp3)
 
 ---
 

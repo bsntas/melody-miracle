@@ -35,7 +35,7 @@ Glory to the lotus-eyed and compassionate Lord Sai Rama, the one who saved the e
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunanta-ranga-kariraja-varada-kamalesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karunanta-ranga-kariraja-varada-kamalesha.mp3)
 
 ---
 

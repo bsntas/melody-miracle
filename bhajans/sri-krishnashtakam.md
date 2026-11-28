@@ -73,7 +73,7 @@ Kōṭi janma kṛtaṃ pāpaṃ smaraṇēna vinaśyati ॥
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-krishnashtakam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-krishnashtakam.mp3)
 
 ---
 

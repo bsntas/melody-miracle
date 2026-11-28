@@ -35,7 +35,7 @@ Worship the lotus-eyed Lord Narayana, who has incarnated as Lord Sathya Sai, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rajeeva-lochana-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rajeeva-lochana-sai-narayana.mp3)
 
 ---
 

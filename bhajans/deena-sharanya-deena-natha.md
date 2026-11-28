@@ -38,7 +38,7 @@ Oh radiant Lord Sai, You are the protector of needy and downtrodden, the ocean o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-sharanya-deena-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-sharanya-deena-natha.mp3)
 
 ---
 

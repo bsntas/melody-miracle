@@ -24,7 +24,7 @@ May this Almighty Personality Lead us on the path of liberation.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-gayathri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-gayathri.mp3)
 
 ---
 

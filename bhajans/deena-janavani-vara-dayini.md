@@ -36,7 +36,7 @@ O Mother Sai, the goddess of the universe, You are the refuge to the destitute
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-janavani-vara-dayini.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deena-janavani-vara-dayini.mp3)
 
 ---
 

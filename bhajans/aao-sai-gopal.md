@@ -36,7 +36,7 @@ Welcome O Sai Gopal, the most merciful Lord who is who is the form of Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-sai-gopal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-sai-gopal.mp3)
 
 ---
 

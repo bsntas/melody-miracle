@@ -39,7 +39,8 @@ Lord Sai Ram is our sacred Preceptor who dwells in Prashanthi Nilayam in Parthi 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-parthi-pureesha-prashanthi-vasa.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-parthi-pureesha-prashanthi-vasa.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-parthi-pureesha-prashanthi-vasa_1.mp3)
 
 ---
 

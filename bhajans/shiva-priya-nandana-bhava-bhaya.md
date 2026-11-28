@@ -36,7 +36,7 @@ We pray to Lord Shanmukha who is the son of Lord Shiva and Mother Gowri and the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-priya-nandana-bhava-bhaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-priya-nandana-bhava-bhaya.mp3)
 
 ---
 

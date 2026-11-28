@@ -37,7 +37,8 @@ Victory to Lord Rama of Raghu clan, whose consort is Janaki, also known as S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-janaki-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-janaki-rama.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_473_JAYA_RAM_JANAKI_RAMA.mp3)
 
 ---
 

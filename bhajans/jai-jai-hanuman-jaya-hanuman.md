@@ -38,7 +38,7 @@ Victory to Hanuman, the son of Maruti and Anjana devi. He is the one who has th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-hanuman-jaya-hanuman.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-hanuman-jaya-hanuman.mp3)
 
 ---
 

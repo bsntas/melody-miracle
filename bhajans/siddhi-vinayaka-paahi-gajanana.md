@@ -35,7 +35,7 @@ Salutations to the elephant-faced son of Gowri, Lord Ganesha, bestower of auspic
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-vinayaka-paahi-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/siddhi-vinayaka-paahi-gajanana.mp3)
 
 ---
 

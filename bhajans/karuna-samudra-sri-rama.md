@@ -34,7 +34,7 @@ Oh Rama the son of Kausalya, you are verily the ocean of compassion. Oh Sai Rama
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-samudra-sri-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/karuna-samudra-sri-rama.mp3)
 
 ---
 

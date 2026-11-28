@@ -36,7 +36,7 @@ Always sing the glory of our Lord; Let them resound with love and devotion; Com
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sada-nirantara-hari-guna-gao.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sada-nirantara-hari-guna-gao.mp3)
 
 ---
 

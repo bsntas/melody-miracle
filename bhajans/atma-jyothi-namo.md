@@ -35,7 +35,8 @@ Bow to the omnipresent light, the light of God within. Bow to the never-ending l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-jyothi-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/atma-jyothi-namo.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_472_ATMA_JYOTI_NAMO.mp3)
 
 ---
 

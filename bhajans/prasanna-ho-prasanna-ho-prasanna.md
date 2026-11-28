@@ -33,7 +33,7 @@ O Lord Sathya Sai Rama! Be pleased with us and shower Your grace and mercy on us
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prasanna-ho-prasanna-ho-prasanna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prasanna-ho-prasanna-ho-prasanna.mp3)
 
 ---
 

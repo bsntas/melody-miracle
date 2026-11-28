@@ -36,7 +36,7 @@ O Lord Sai, chanting Your name purifies the downtrodden. O the ever merciful
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-patitha-pavana-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-patitha-pavana-ram.mp3)
 
 ---
 

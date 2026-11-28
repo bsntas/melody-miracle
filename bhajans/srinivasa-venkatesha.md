@@ -38,7 +38,8 @@ Sing the names of Lord Srinivasa, Venkatesha (names of Lord Vishnu) and Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-venkatesha_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-venkatesha_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-venkatesha.mp3)
 
 ---
 

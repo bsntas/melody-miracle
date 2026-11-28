@@ -35,7 +35,8 @@ Chant the name of Sathya Sai Ram, who is the same Lord who incarnated in Ayodhya
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vasi-ram-hai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-vasi-ram-hai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_500_AYODHYAVASI_RAM.mp3)
 
 ---
 

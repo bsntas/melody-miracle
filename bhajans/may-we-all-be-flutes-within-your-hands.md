@@ -33,7 +33,7 @@ Song of Love, Song of Truth, may our lives be one with You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-we-all-be-flutes-within-your-hands.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-we-all-be-flutes-within-your-hands.mp3)
 
 ---
 

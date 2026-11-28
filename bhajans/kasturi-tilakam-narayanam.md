@@ -36,7 +36,7 @@ Glory to the lotus-eyed Lord Narayana adorning the scented vermillion who is t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kasturi-tilakam-narayanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kasturi-tilakam-narayanam.mp3)
 
 ---
 

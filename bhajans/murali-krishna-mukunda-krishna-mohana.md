@@ -35,7 +35,7 @@ This song extols Lord Krishna's beauty and glory by chanting His various names�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-krishna-mukunda-krishna-mohana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-krishna-mukunda-krishna-mohana.mp3)
 
 ---
 

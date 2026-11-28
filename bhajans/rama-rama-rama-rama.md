@@ -36,7 +36,8 @@ Chant the sacred name of Lord Rama which liberates one from the cycle of birth a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-rama-rama-rama.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_393_RAM_RAM_RAM_RAM_RAM_NAM_TARAKAM.mp3)
 
 ---
 

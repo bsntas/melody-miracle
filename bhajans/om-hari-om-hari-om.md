@@ -35,7 +35,7 @@ Chant incessantly the divine names of Lord Hari, Narayana and Sai. Lord Sathy
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-hari-om-hari-om.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-hari-om-hari-om.mp3)
 
 ---
 

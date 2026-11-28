@@ -34,7 +34,7 @@ Effulgent and beautiful Goddess Amba enchants the world and bestows auspiciousne
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raja-rajeshwari-jaganmohini-amba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raja-rajeshwari-jaganmohini-amba.mp3)
 
 ---
 

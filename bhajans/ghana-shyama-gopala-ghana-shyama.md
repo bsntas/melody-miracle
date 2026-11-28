@@ -36,7 +36,7 @@ Glory to Lord Gopala, the dark complexioned one who captivates the mind and t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-shyama-gopala-ghana-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ghana-shyama-gopala-ghana-shyama.mp3)
 
 ---
 

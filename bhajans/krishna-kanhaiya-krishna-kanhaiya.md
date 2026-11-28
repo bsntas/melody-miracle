@@ -36,7 +36,7 @@ Glory to Lord Krishna who holds the flute, is the supreme actor, the beloved so
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-kanhaiya-krishna-kanhaiya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-kanhaiya-krishna-kanhaiya.mp3)
 
 ---
 

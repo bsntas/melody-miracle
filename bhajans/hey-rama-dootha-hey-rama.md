@@ -36,7 +36,7 @@ Salutations to Hanuman, the messenger, devotee and the servant of Lord Rama. Sa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-rama-dootha-hey-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-rama-dootha-hey-rama.mp3)
 
 ---
 

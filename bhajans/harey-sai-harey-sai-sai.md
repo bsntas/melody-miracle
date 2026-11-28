@@ -37,7 +37,7 @@ Chant various names of the Lord Krishna - Achyutha, Keshava, Rama, Narayana, Da
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-sai-harey-sai-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-sai-harey-sai-sai.mp3)
 
 ---
 

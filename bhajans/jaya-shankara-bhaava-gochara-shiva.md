@@ -33,7 +33,7 @@ Glory to Shankara who is beyond senses, Lord of Chidambaram (Holy place in India
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-shankara-bhaava-gochara-shiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-shankara-bhaava-gochara-shiva.mp3)
 
 ---
 

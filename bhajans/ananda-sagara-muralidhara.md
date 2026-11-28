@@ -36,7 +36,7 @@ O Lord Krishna, You are the ocean of bliss and the one who plays captivating mu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-sagara-muralidhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ananda-sagara-muralidhara.mp3)
 
 ---
 

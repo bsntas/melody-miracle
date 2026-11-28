@@ -35,7 +35,7 @@ Chant the name of Govinda, who is of dark blue complexion, holding the enchantin
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-harey-gopala-harey.mp3)
 
 ---
 

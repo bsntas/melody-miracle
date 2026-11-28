@@ -38,7 +38,8 @@ O beloved Prince of King Dasharatha, Lord Rama, You are the crown jewel of th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chanda-kirana-kula-mandana-ram_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chanda-kirana-kula-mandana-ram.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/chanda-kirana-kula-mandana-ram_1.mp3)
 
 ---
 

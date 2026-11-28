@@ -33,7 +33,7 @@ Salutations to Lord Vinayaka, the destroyer of obstacles, protector of the downt
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinayaka-vighna-nashaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vinayaka-vighna-nashaka.mp3)
 
 ---
 

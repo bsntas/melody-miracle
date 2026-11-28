@@ -35,7 +35,8 @@ Victory to Lord Narayana and Lord Krishna also known as Govinda and Gopala.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-narayana-jaya-govinda-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-narayana-jaya-govinda-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-narayana-jaya-govinda-harey_1.mp3)
 
 ---
 

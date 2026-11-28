@@ -34,7 +34,8 @@ Oh Lord Sai, be with us through many lives. You are the Formless Allah, Guru Nan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nirakari-allah-hey-avatari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-nirakari-allah-hey-avatari.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_258_HEY_NIRAKARI_ALLAH.mp3)
 
 ---
 

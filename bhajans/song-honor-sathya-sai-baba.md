@@ -32,7 +32,7 @@ Sathya Sai, Poorna Avatar (4x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/song-honor-sathya-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/song-honor-sathya-sai-baba.mp3)
 
 ---
 

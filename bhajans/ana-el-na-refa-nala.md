@@ -36,7 +36,7 @@ Awaken our minds, (El) Schechina
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ana-el-na-refa-nala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ana-el-na-refa-nala.mp3)
 
 ---
 

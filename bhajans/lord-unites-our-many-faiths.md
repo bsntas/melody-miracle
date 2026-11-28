@@ -33,7 +33,7 @@ The Lord unites our many faiths
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-unites-our-many-faiths.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lord-unites-our-many-faiths.mp3)
 
 ---
 

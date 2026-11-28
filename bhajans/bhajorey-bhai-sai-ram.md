@@ -35,7 +35,7 @@ Let us chant the name Sai Ram who is the Lord of all. He is Lord Rama, Lord Kri
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhai-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhai-sai-ram.mp3)
 
 ---
 

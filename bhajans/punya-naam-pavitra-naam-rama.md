@@ -34,7 +34,14 @@ Recite the pure and holy name of Lord Sai Rama. Glory to the names of the Lord R
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/punya-naam-pavitra-naam-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/punya-naam-pavitra-naam-rama.mp3)
+- **Karaoke** (Reference Track 3 Pancham / E): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Gents_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Gents_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Ladies_Karaoke_A_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6 Pancham / A (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Ladies_Karaoke_A_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Punya_Naam_Pavitra_Naam_Ladies_Karaoke_G_Sharp_Pancham.mp3)
 
 ---
 

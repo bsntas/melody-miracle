@@ -36,7 +36,7 @@ Chant the name of Lord Shiva who is none other than Lord Sai of Parthi. The Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-shiva-shankara-bholey-nath.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-shiva-shankara-bholey-nath.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Chant the name of Lord Ganesha, the one with a curved trunk, a single tusk and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vakratunda-bhajey-eka-dantha-bhajey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vakratunda-bhajey-eka-dantha-bhajey.mp3)
 
 ---
 

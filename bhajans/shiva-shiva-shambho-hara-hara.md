@@ -35,7 +35,7 @@ Sing the glory of Lord Shiva, the one who wears the tiger skin, who besmears as
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-hara-hara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shambho-hara-hara.mp3)
 
 ---
 

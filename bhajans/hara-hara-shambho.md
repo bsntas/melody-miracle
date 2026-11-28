@@ -36,7 +36,8 @@ Salutations to Lord Shiva, the ocean of compassion and the Lord of the world. O 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-shambho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-shambho.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_373_HARA_HARA_SHAMBHO.mp3)
 
 ---
 

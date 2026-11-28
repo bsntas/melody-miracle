@@ -36,7 +36,7 @@ Glory to Lord Sai Shankara who is the embodiment of Music and the Vedas and who 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-1.mp3)
 
 ---
 

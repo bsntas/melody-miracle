@@ -36,7 +36,7 @@ Sing the glory of the lotus-eyed Lord Rama, the son of Dasharatha and the crown 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-shiromani-dasharatha-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ayodhya-shiromani-dasharatha-rama.mp3)
 
 ---
 

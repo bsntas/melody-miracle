@@ -35,7 +35,7 @@ Please keep us near, please keep us near
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-baba-om-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/baba-baba-om-sai-baba.mp3)
 
 ---
 

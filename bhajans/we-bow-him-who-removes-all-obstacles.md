@@ -32,7 +32,7 @@ We bow to Him who removes all obstacles,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-bow-him-who-removes-all-obstacles.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-bow-him-who-removes-all-obstacles.mp3)
 
 ---
 

@@ -37,7 +37,8 @@ The divine names of Sai Narayana and Sathya Narayana are most auspicious. Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-narayana-narayana-mangala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-narayana-narayana-mangala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_479_SAI_NARAYANA_NARAYANA_MANGALA_NAM.mp3)
 
 ---
 

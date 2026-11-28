@@ -39,7 +39,8 @@ May All The Beings In All The Worlds Be Happy
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-love-were-sharing.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-love-were-sharing.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/may-love-were-sharing_1.mp3)
 
 ---
 

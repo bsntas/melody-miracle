@@ -36,7 +36,8 @@ Glory to You O Lord Narayana, You are the final refuge of all beings, the lion
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_401_NARAYANA_HARI_NARAYANA.mp3)
 
 ---
 

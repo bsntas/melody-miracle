@@ -37,7 +37,7 @@ Salutations to Lord Sai Rama, You are the most compassionate, the virtuous one 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-rama-hey-ghana-shyama-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-rama-hey-ghana-shyama-0.mp3)
 
 ---
 

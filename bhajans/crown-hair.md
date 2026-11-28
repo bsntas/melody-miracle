@@ -34,7 +34,7 @@ A million hearts in sweet devotion filled with the love of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/crown-hair.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/crown-hair.mp3)
 
 ---
 

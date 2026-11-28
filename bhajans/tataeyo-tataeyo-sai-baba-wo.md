@@ -40,7 +40,7 @@ Praise our beloved Sai, the incarnation of love, who is filled with an ocean of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tataeyo-tataeyo-sai-baba-wo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tataeyo-tataeyo-sai-baba-wo.mp3)
 
 ---
 

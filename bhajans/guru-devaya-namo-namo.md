@@ -37,7 +37,9 @@ Salutations to the Supreme Noble Teacher, Lord Sai, the Supreme Lord, the Lord w
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-devaya-namo-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-devaya-namo-namo.mp3)
+- **Karaoke** (Reference Track 6 Pancham / A): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Guru%20Devaya%20Namo%20Namo.mp3)
+- **Karaoke** (Ladies Pitch 6 Pancham / A (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Guru%20Devaya%20Namo%20Namo%206P%20Amaj.mp3)
 
 ---
 

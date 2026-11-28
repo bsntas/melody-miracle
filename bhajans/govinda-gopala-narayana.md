@@ -36,7 +36,7 @@ Glory to Lord Govinda (Vishnu) who is known by many names - Gopala, the prot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-narayana.mp3)
 
 ---
 

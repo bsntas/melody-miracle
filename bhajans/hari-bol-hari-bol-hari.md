@@ -35,7 +35,7 @@ Contemplate on the name and meditate on the Lotus Feet of Lord Hari. Worship th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bol-hari-bol-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-bol-hari-bol-hari.mp3)
 
 ---
 

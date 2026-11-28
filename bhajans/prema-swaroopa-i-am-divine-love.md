@@ -46,7 +46,7 @@ Sat Chit Ananda Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-swaroopa-i-am-divine-love.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-swaroopa-i-am-divine-love.mp3)
 
 ---
 

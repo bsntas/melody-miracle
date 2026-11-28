@@ -36,7 +36,7 @@ Chant the name of Lord Sriranga (Narayana) who resides on the banks of river Ka
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ranga-sri-ranga-ranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ranga-sri-ranga-ranga.mp3)
 
 ---
 

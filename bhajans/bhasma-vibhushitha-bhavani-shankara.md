@@ -35,7 +35,7 @@ Worship Lord Shankara, the Lord of Bhavani(Parvathi), who has sacred ashes smear
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhasma-vibhushitha-bhavani-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhasma-vibhushitha-bhavani-shankara.mp3)
 
 ---
 

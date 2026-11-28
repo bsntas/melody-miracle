@@ -37,7 +37,7 @@ O mind, chant the names of Rama, Krishna, and our beautiful Lord, Sai Baba.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-raghava-rama-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhaja-mana-raghava-rama-hey.mp3)
 
 ---
 

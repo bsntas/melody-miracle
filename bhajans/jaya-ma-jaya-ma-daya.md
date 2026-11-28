@@ -35,7 +35,7 @@ Glory to Mother who confers Love and Peace and grants Liberation. Shower your me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-jaya-ma-daya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ma-jaya-ma-daya.mp3)
 
 ---
 

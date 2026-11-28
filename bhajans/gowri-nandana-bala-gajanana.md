@@ -35,7 +35,8 @@ Victory to the son of Mother Gowri (Parvathi), the little Lord Ganesha, who h
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-bala-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gowri-nandana-bala-gajanana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_260_GOURI_NANDANA_BAAL_GAJANANA.mp3)
 
 ---
 

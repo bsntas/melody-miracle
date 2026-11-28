@@ -36,7 +36,7 @@ Chant the name of Lord Sai, the incarnation of the Supreme Lord. He is the susta
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/poorna-brahma-avatara-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/poorna-brahma-avatara-sai.mp3)
 
 ---
 

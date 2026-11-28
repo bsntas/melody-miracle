@@ -36,7 +36,9 @@ Protect us O Mother Sai, You are the creator of this Earth, the sustainer of th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwa-janani-sri-sai-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwa-janani-sri-sai-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-vishwa-janani-sri-sai-janani_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_292_HE_VISHWA_JANANI.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Worship by chanting the many names of the Lord Krishna - Govinda, Gopala, Murah
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-radhey-govinda-bhajo-shyama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-radhey-govinda-bhajo-shyama.mp3)
 
 ---
 

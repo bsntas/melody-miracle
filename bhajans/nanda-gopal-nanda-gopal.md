@@ -37,7 +37,7 @@ Glory to the son of Nanda, Lord Krishna, whose is dark-complexioned, the one who
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_453_NANDAGOPAL_NANDAGOPAL.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_453_NANDAGOPAL_NANDAGOPAL.mp3)
 
 ---
 

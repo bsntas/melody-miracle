@@ -37,7 +37,15 @@ Salutations to Lord Shiva, also known as Maheshwara, who resides in the holy mou
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-maheshwara-shiva-maheshwara-shiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-maheshwara-shiva-maheshwara-shiva.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-maheshwara-shiva-maheshwara-shiva_1.mp3)
+- **Karaoke** (Reference Track 1.5 Madhyam / F#): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 1.5 Madhyam / F# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Gents_Karaoke_C_Sharp_Madhyam.mp3)
+- **Karaoke** (Gents Pitch 1 Madhyam / F (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Gents_Karaoke_C_Madhyam.mp3)
+- **Karaoke** (Gents Pitch 7 Madhyam / E (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Gents_Karaoke_B_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 2.5 Madhyam / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Ladies_Karaoke_D_Sharp_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 2 Madhyam / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Ladies_Karaoke_D_Madhyam.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Madhyam / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Shiva_Maheshwara_Shiva_Maheshwara_Shiva_Maheshwara_Sairam_Ladies_Karaoke_C_Sharp_Madhyam.mp3)
 
 ---
 

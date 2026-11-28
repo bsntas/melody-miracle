@@ -33,7 +33,7 @@ O Lord Narayana, the one who is free of all blemishes and the remover of fear a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/alakh-niranjana-bhava-bhaya-bhanjana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/alakh-niranjana-bhava-bhaya-bhanjana.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ We are one, Sai Baba, Sai Baba we are one (3x)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-one.mp3)
 
 ---
 

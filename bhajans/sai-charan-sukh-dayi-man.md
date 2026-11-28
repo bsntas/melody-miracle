@@ -36,7 +36,7 @@ Know O Mind, there is no greater peace and bliss than when you surrender at the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-charan-sukh-dayi-man.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-charan-sukh-dayi-man.mp3)
 
 ---
 

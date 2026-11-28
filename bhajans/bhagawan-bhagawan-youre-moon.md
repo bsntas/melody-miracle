@@ -34,7 +34,7 @@ And We All Shine Bright As The Sun, In The Kingdom Of Sri Bhagawan
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-you’re-moon.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-you’re-moon.mp3)
 
 ---
 

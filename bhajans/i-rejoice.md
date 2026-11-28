@@ -32,7 +32,7 @@ And I rejoice in the Love of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-rejoice.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-rejoice.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ O Lord Sai of Shirdi and Puttaparthi, please let the perennial stream of Love f
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-parthi-sai-hum.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-parthi-sai-hum.mp3)
 
 ---
 

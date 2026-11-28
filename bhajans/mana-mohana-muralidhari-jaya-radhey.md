@@ -35,7 +35,7 @@ Glory be to Lord Krishna (Govinda) who is a delight to the Mind, the player of F
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-muralidhari-jaya-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-muralidhari-jaya-radhey.mp3)
 
 ---
 

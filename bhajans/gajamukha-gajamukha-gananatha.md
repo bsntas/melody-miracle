@@ -35,7 +35,7 @@ We chant the glory of Gajamukha, the elephant faced Lord Ganesha, who is the le
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajamukha-gajamukha-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajamukha-gajamukha-gananatha.mp3)
 
 ---
 

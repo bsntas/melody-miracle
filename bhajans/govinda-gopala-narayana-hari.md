@@ -38,7 +38,7 @@ Chant the names of Lord Krishna - Govinda, Gopala and Lord Narayana, the sust
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-narayana-hari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala-narayana-hari.mp3)
 
 ---
 

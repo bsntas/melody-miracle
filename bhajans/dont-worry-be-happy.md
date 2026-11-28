@@ -31,7 +31,7 @@ That God Is Love And Love Is God And God And Man Are One
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dont-worry-be-happy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dont-worry-be-happy.mp3)
 
 ---
 

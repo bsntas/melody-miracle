@@ -39,7 +39,8 @@ O Sai, Lord of Parthi, the one with eyes like Lotus, the one who has a beautif
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadana-sarasija-nayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadana-sarasija-nayana.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadana-sarasija-nayana_1.mp3)
 
 ---
 

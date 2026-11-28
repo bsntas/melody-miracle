@@ -36,7 +36,7 @@ Chant the name of Lord Rama in the dawn, the Lord who is worshipped by the sage
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-sri-ramam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-sri-ramam.mp3)
 
 ---
 

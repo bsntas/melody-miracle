@@ -36,7 +36,7 @@ Chant the name of Lord Shiva, the destroyer of sins and the cycle of birth an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shiva-shiva-shivaya-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-shiva-shiva-shiva-shivaya-1.mp3)
 
 ---
 

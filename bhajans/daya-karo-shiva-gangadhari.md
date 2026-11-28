@@ -36,7 +36,7 @@ O Lord Shiva, the one who holds the Holy Ganges in Your locks of hair, shower Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-shiva-gangadhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-shiva-gangadhari.mp3)
 
 ---
 

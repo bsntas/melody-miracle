@@ -34,7 +34,8 @@ Salutations to Lord Shankara (Shiva) the master of stage, the one who holds the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-sabha-pathey-manohara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-sadashiva-sabha-pathey-manohara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_217_SHANKARA_SADASHIVA_SABHAPATE.mp3)
 
 ---
 

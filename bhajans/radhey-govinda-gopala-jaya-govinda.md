@@ -36,7 +36,8 @@ Chant the names of Lord Gopala (Krishna), the one who tends to cows, Lord of Ra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-gopala-jaya-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-gopala-jaya-govinda.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radhey-govinda-gopala-jaya-govinda_1.mp3)
 
 ---
 

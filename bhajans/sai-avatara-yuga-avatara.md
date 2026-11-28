@@ -37,7 +37,8 @@ O Supreme Lord Sai, O Incarnation of this Kali Age, You are the protector of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-yuga-avatara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-yuga-avatara.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-avatara-yuga-avatara_1.mp3)
 
 ---
 

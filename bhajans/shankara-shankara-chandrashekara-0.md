@@ -38,7 +38,7 @@ Glory to Lord Shankara (shiva), the blue-throated one who is adorned with the c
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-chandrashekara-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankara-shankara-chandrashekara-0.mp3)
 
 ---
 

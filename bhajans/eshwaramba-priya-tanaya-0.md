@@ -34,7 +34,8 @@ Glory to the loving son of Mother Eshwaramba, Lord Sai, the embodiment of Lord 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-tanaya-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/eshwaramba-priya-tanaya-0.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_347_EISHWARAMBA_PRIYA_TANAYA_EISHA_MAHESHA.mp3)
 
 ---
 

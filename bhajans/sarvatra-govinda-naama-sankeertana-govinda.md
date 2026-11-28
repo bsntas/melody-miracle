@@ -38,7 +38,7 @@ Chant the name of Lord Govinda, the Supreme Lord who is extolled in the Vedas,�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarvatra-govinda-naama-sankeertana-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sarvatra-govinda-naama-sankeertana-govinda.mp3)
 
 ---
 

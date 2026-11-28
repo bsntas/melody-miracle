@@ -34,7 +34,7 @@ Always worship the Mother of the Universe, Durga (Parvathi), the bestower of au
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhajo-sada-durga-bhavani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-bhajo-sada-durga-bhavani.mp3)
 
 ---
 

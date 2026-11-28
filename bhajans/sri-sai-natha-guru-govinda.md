@@ -34,7 +34,7 @@ Sing the name of Lord Sai who is our Guru, the Lord Govinda who resides in Parth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-natha-guru-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-sai-natha-guru-govinda.mp3)
 
 ---
 

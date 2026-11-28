@@ -35,7 +35,7 @@ Oh Lord Krishna with the flute in one hand, you have lifted the Govardhana Mount
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-mukunda-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/muralidhara-mukunda-murari.mp3)
 
 ---
 

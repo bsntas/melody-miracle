@@ -34,7 +34,7 @@ Oh Mother, you are the one who bestows protection from fear, you are bliss perso
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhaya-pradayini-ananda-roopini.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/abhaya-pradayini-ananda-roopini.mp3)
 
 ---
 

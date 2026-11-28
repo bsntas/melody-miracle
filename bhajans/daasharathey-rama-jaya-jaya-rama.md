@@ -34,7 +34,7 @@ Victory to Lord Rama, the Prince of King Dasharatha. Lord Rama is the Jewel of t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daasharathey-rama-jaya-jaya-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daasharathey-rama-jaya-jaya-rama.mp3)
 
 ---
 

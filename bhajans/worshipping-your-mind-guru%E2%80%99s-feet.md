@@ -38,7 +38,7 @@ Om, Baba, You are the Form of Om
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/worshipping-your-mind-guru’s-feet.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/worshipping-your-mind-guru’s-feet.mp3)
 
 ---
 

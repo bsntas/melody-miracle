@@ -35,7 +35,7 @@ Part of a Love Divine
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-only-one-light.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there’s-only-one-light.mp3)
 
 ---
 

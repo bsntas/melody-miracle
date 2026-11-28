@@ -36,7 +36,8 @@ Glory to Lord Sai, the Lord of divine Music, the very embodiment of Lord Shiv
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahma-sayeeshwara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahma-sayeeshwara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_166_NADA_BRAMHA_SAISHWARA.mp3)
 
 ---
 

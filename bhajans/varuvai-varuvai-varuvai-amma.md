@@ -40,7 +40,7 @@ O Mother Sai, please come in the form of grace to remove darkness. You are the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/varuvai-varuvai-varuvai-amma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/varuvai-varuvai-varuvai-amma.mp3)
 
 ---
 

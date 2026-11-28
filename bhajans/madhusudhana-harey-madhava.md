@@ -38,7 +38,7 @@ Chant the names of Lord Krishna - Madhusudhana, Madhava, Vasudeva, Janardhana, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhusudhana-harey-madhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhusudhana-harey-madhava.mp3)
 
 ---
 

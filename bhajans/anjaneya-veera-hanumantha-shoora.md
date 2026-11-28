@@ -35,7 +35,7 @@ Victory to the brave and powerful Lord Anjaneya (Hanuman), the offspring of t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjaneya-veera-hanumantha-shoora.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjaneya-veera-hanumantha-shoora.mp3)
 
 ---
 

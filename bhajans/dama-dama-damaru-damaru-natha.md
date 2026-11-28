@@ -37,7 +37,7 @@ Glory to Lord Shiva who loves the sound of the Drum "Dum Dum Dum", "Dhim Dhim
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dama-dama-damaru-damaru-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dama-dama-damaru-damaru-natha.mp3)
 
 ---
 

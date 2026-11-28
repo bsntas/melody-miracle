@@ -36,7 +36,9 @@ You are embodiment of Divine Love, O Sai, Mother of the Universe. Humble saluta
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-swaroopini-janani-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prema-swaroopini-janani-ma.mp3)
+- **Karaoke** (Reference Track 1 Pancham / C): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Prema%20Swaroopini%20Janani%20Maa.mp3)
+- **Karaoke** (Gents Pitch 1 Pancham / C (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Prema%20Swaroopini%20Janani%20Maa%201P%20Cmaj.mp3)
 
 ---
 

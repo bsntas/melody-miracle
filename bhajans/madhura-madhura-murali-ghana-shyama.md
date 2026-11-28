@@ -36,7 +36,8 @@ Glory to the dark-complexioned Krishna, Lord of Mathura, the one who resides in
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-murali-ghana-shyama_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-murali-ghana-shyama.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-murali-ghana-shyama_1.mp3)
 
 ---
 

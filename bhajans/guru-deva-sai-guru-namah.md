@@ -36,7 +36,7 @@ I bow to the supreme Guru Sai, the Guru of Gurus, the most real one; He is the c
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-sai-guru-namah.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-deva-sai-guru-namah.mp3)
 
 ---
 

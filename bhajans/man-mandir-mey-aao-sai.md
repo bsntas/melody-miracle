@@ -35,7 +35,9 @@ Come and grant me Your Vision in the altar of my mind, O Sai Bhagawan. Chant th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mandir-mey-aao-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mandir-mey-aao-sai.mp3)
+- **Karaoke** (Reference Track 5 Pancham / G): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Man%20Mandir%20Mein%20Aao%20Sai.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Man%20Mandir%20Mein%20Ao%20Sai%20-%20Karaoke%20-%205P%20Gmaj.mp3)
 
 ---
 

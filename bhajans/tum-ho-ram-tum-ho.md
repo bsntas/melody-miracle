@@ -34,7 +34,7 @@ O Lord Sai, You are the very life of Your devotees, all forms blended in one, t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-ram-tum-ho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tum-ho-ram-tum-ho.mp3)
 
 ---
 

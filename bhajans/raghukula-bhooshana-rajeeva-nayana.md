@@ -37,7 +37,8 @@ Glory to the jewel of the Raghu dynasty, the lotus-eyed Lord Rama. He is none o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghukula-bhooshana-rajeeva-nayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghukula-bhooshana-rajeeva-nayana.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghukula-bhooshana-rajeeva-nayana_1.mp3)
 
 ---
 

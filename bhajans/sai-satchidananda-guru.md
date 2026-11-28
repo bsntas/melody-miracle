@@ -37,7 +37,7 @@ Sing the praises of our divine Preceptor, Sai Baba, who is verily truth, conscio
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-satchidananda-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-satchidananda-guru.mp3)
 
 ---
 

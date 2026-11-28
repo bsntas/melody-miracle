@@ -38,7 +38,7 @@ Chant Victory to our Divine Preceptor Sai Ram who is our mother, father, lord, r
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-sai-ram-jai-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-sai-ram-jai-bolo.mp3)
 
 ---
 

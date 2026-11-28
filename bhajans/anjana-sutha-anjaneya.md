@@ -34,7 +34,7 @@ Oh Anjaneya, the son of Mother Anjana and Vayu, You are the supreme among the Va
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjana-sutha-anjaneya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anjana-sutha-anjaneya.mp3)
 
 ---
 

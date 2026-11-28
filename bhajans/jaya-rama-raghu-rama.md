@@ -34,7 +34,8 @@ Victory to the lotus-eyed Lord Rama, the mighty and valorous yet so tender natu
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-raghu-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-raghu-rama.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_433_JAYA_RAMA_RAGHURAMA.mp3)
 
 ---
 

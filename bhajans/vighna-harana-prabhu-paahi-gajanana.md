@@ -35,7 +35,7 @@ Protect us, O elephant-faced Lord Ganesha, the remover of obstacles, the most co
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-harana-prabhu-paahi-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighna-harana-prabhu-paahi-gajanana.mp3)
 
 ---
 

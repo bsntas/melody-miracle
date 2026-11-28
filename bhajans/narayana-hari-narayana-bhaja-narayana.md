@@ -35,7 +35,7 @@ Worship Lord Narayana, the refuge of all beings. Victory be to You, O Lord Ha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-bhaja-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/narayana-hari-narayana-bhaja-narayana.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ The son of Nanda Who stole butter. The child of the cowherd land Gokula, the One
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-navaneetha-chora.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-navaneetha-chora.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ The Lord of Parthi, Sai, the resident of Prashanthi Nilayam, is the indweller o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-parthi-pureesha-prashanthi-vasa-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-parthi-pureesha-prashanthi-vasa-0.mp3)
 
 ---
 

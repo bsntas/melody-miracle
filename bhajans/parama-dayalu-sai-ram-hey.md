@@ -37,7 +37,7 @@ O Lord Sai, You are the most merciful Lord who incarnated as Rama, son of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parama-dayalu-sai-ram-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/parama-dayalu-sai-ram-hey.mp3)
 
 ---
 

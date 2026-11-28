@@ -36,7 +36,7 @@ Chant victory to Lord Rama, the consort of Mother Sita. Victory to the valorous 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ramachandra-ki.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ramachandra-ki.mp3)
 
 ---
 

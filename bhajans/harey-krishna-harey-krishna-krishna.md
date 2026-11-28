@@ -36,7 +36,14 @@ Chant the names of Lord Krishna and Lord Rama.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-krishna-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-krishna-harey-krishna-krishna.mp3)
+- **Karaoke** (Reference Track 3 Pancham / E): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Krishna_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 3 Pancham / E (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Krishna_Gents_Karaoke_E_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Gents_Karaoke_D_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 1 Pancham / C (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Krishna_Ladies_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 7 Pancham / B (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Ladies_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 6.5 Pancham / B Flat (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Hare_Krishna_Hare_Krishna_Krishna_Ladies_Karaoke_A_Sharp_Pancham.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Salutations to Lord Krishna and to Lord Rama, who is the saviour and uplifter of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-krishna-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-krishna-namo.mp3)
 
 ---
 

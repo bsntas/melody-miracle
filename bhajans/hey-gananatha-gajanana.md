@@ -34,7 +34,7 @@ Glory to Lord Ganesha, Lord of the Ganaas (Shiva's army) and the dear son of Mo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-gananatha-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-gananatha-gajanana.mp3)
 
 ---
 

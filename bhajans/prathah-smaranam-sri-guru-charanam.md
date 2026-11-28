@@ -34,7 +34,7 @@ Meditate on the Lotus Feet of the Guru (Lord Sai) in the early hours of dawn. Me
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-sri-guru-charanam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prathah-smaranam-sri-guru-charanam.mp3)
 
 ---
 

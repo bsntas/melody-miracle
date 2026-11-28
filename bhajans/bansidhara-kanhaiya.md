@@ -35,7 +35,7 @@ Chant the various names of Lord Krishna - Govinda, Madhava, Madhusudhana, Mukund
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bansidhara-kanhaiya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bansidhara-kanhaiya.mp3)
 
 ---
 

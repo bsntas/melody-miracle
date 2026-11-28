@@ -37,7 +37,7 @@ Sai Baba, Light The Spark, The Spark Of Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-shanthi-peace-earth.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/peace-shanthi-peace-earth.mp3)
 
 ---
 

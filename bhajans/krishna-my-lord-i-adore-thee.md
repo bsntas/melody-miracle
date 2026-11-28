@@ -46,7 +46,7 @@ Krishna, my love, come to me [ Dance through ... never be apart ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-my-lord-i-adore-thee.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-my-lord-i-adore-thee.mp3)
 
 ---
 

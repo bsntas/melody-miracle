@@ -35,7 +35,7 @@ Worship the auspicious Mother of the Universe, Mother Sai who has an enchanting 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-manda-haasa-vadani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/amba-manda-haasa-vadani.mp3)
 
 ---
 

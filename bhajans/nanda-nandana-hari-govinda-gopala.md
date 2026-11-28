@@ -35,7 +35,7 @@ The son of Nanda, Oh Vishnu! You are the protector of cows. You are the blue col
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-hari-govinda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nandana-hari-govinda-gopala.mp3)
 
 ---
 

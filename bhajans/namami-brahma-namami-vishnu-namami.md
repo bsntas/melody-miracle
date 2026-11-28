@@ -34,7 +34,7 @@ I salute Brahma, the God of Creation, prostrate to Lord Vishnu, the God of suste
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-brahma-namami-vishnu-namami.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-brahma-namami-vishnu-namami.mp3)
 
 ---
 

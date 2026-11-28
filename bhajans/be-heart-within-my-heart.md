@@ -32,7 +32,7 @@ Let my words and thoughts be guided by Your love.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/be-heart-within-my-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/be-heart-within-my-heart.mp3)
 
 ---
 

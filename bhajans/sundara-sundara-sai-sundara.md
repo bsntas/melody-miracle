@@ -37,7 +37,7 @@ Salutations to the enchanting son of Nanda, Lord Gopala (Krishna), the one who l
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-sai-sundara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-sundara-sai-sundara.mp3)
 
 ---
 

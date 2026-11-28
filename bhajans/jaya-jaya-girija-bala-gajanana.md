@@ -37,7 +37,7 @@ Victory to Lord Ganesha, son of Girija (Mother Parvathi) and Lord Shankara. W
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-girija-bala-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-girija-bala-gajanana.mp3)
 
 ---
 

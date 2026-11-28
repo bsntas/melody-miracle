@@ -32,7 +32,7 @@ That which Permeates the three worlds – Body, Mind and Soul. We Meditate on th
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gayathri-mantra.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gayathri-mantra.mp3)
 
 ---
 

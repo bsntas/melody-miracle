@@ -35,7 +35,7 @@ We offer our obeisance to our Universal Mother who confers all that is sublime a
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-jaya-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-jaya-ma.mp3)
 
 ---
 

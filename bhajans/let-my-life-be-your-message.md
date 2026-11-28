@@ -61,7 +61,7 @@ Be Still … so I can come through
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-my-life-be-your-message.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/let-my-life-be-your-message.mp3)
 
 ---
 

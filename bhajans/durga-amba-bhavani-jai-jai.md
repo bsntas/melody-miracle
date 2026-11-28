@@ -35,7 +35,8 @@ Victory to goddess Durga, glorified by the names Amba and Bhavani, the annihilat
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durga-amba-bhavani-jai-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/durga-amba-bhavani-jai-jai.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_443_DURGA_AMBA_BHAVANI.mp3)
 
 ---
 

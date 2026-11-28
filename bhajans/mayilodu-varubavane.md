@@ -39,7 +39,7 @@ O Lord Muruga, You rush to us on Your blessed peacock wielding the divine sacred
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mayilodu-varubavane.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mayilodu-varubavane.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Chant the name of the Lord of Swami Malai - Lord Muruga, worshipped as Swaminath
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swamimalai-natha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swamimalai-natha.mp3)
 
 ---
 

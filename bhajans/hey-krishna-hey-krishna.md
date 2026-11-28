@@ -37,7 +37,7 @@ Chant the names of Panduranga, Vittala, and of the dark complexioned, enchanting
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-krishna-hey-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-krishna-hey-krishna.mp3)
 
 ---
 

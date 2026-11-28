@@ -38,7 +38,7 @@ Chant the name of Lord Sai Ram who resides in Parthi. He is Lord Rama, the conso
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ram-sai-ram.mp3)
 
 ---
 

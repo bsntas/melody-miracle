@@ -35,7 +35,7 @@ O mind, worship and chant the name of Sai, the Lord of Parthi and Shirdi. Eshw
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-manasa-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajorey-manasa-sai-ram.mp3)
 
 ---
 

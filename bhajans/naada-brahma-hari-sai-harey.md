@@ -36,7 +36,7 @@ Salutations to Lord Sai, the one who exists in the form of divine music, the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahma-hari-sai-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naada-brahma-hari-sai-harey.mp3)
 
 ---
 

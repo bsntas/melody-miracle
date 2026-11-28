@@ -44,7 +44,7 @@ You Are the Love of this heart and You are the bright light that is inside me. Y
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tu-eres-el-amor.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tu-eres-el-amor.mp3)
 
 ---
 

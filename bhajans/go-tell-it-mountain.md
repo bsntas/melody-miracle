@@ -47,7 +47,7 @@ That Jesus Christ is born (Slow)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/go-tell-it-mountain.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/go-tell-it-mountain.mp3)
 
 ---
 

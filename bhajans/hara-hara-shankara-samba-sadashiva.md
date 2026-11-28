@@ -35,7 +35,7 @@ Chant the many names of the Lord Shiva - Shankara, Sadashiva and Mahesha. O Lo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-shankara-samba-sadashiva.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hara-hara-shankara-samba-sadashiva.mp3)
 
 ---
 

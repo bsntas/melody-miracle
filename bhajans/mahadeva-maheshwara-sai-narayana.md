@@ -35,7 +35,7 @@ Glory to Lord Sai, the Lord of all worlds, the epitome of compassion, the destr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahadeva-maheshwara-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mahadeva-maheshwara-sai-narayana.mp3)
 
 ---
 

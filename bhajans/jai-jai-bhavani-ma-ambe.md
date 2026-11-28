@@ -35,7 +35,7 @@ Victory to Divine Mother Parvathi who is hailed as Ambe and Bhavani and who is�
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-bhavani-ma-ambe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-bhavani-ma-ambe.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ Salutations and surrender to Lord Vighneshwara (Ganesha) who sustains the Univer
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-vinayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vighneshwara-vinayaka.mp3)
 
 ---
 

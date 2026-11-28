@@ -38,7 +38,15 @@ Glory to Guru Nanak; whoever sings thus, that person becomes liberated. Accept m
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-nanak-ji-ki-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-nanak-ji-ki-jai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/guru-nanak-ji-ki-jai_1.mp3)
+- **Karaoke** (Reference Track G Pancham): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch G Pancham (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Gents_Karaoke_G_Pancham.mp3)
+- **Karaoke** (Gents Pitch F# Pancham (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Gents_Karaoke_F_Sharp_Pancham.mp3)
+- **Karaoke** (Gents Pitch F Pancham (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Gents_Karaoke_F_Pancham.mp3)
+- **Karaoke** (Ladies Pitch C Pancham (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Ladies_Karaoke_C_Pancham.mp3)
+- **Karaoke** (Ladies Pitch B Pancham (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Ladies_Karaoke_B_Pancham.mp3)
+- **Karaoke** (Ladies Pitch A# Pancham (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Guru_Nanak_Ji_Ki_Jai_Jai_Kar_Ladies_Karaoke_A_Sharp_Pancham.mp3)
 
 ---
 

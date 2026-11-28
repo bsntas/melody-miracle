@@ -37,7 +37,7 @@ Victory to the enchantingly beautiful Lord Govinda (Krishna) who is also glorifi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyam-govinda-jaya-radhey-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shyam-govinda-jaya-radhey-govinda.mp3)
 
 ---
 

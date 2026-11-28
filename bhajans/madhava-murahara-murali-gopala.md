@@ -34,7 +34,7 @@ Victory to Govinda and Gopala (names of Lord Krishna), the one of unbounded com
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-murali-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhava-murahara-murali-gopala.mp3)
 
 ---
 

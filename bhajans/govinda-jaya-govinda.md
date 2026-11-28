@@ -36,7 +36,7 @@ Glory to Lord Govinda (Krishna), the beloved child of Gokula, whose complexion 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-jaya-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-jaya-govinda.mp3)
 
 ---
 

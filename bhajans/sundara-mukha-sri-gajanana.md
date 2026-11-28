@@ -36,7 +36,7 @@ Salutations to Lord Ganesh, the beautiful elephant-faced Lord with a single tusk
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-mukha-sri-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-mukha-sri-gajanana.mp3)
 
 ---
 

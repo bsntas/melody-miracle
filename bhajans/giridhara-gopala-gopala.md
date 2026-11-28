@@ -34,7 +34,7 @@ Chant the divine name of Lord Krishna, Giridhara Gopala and of Lord Sai, the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-gopala-gopala.mp3)
 
 ---
 

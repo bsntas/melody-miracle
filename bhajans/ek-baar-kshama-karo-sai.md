@@ -36,7 +36,7 @@ O dear Lord Sathya Sai Baba, the Merciful One, please forgive me. You are full o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ek-baar-kshama-karo-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ek-baar-kshama-karo-sai.mp3)
 
 ---
 

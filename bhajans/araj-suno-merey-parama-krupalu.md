@@ -36,7 +36,7 @@ O Supremely merciful Lord of Parthi! Kindly listen to my prayer and help me come
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/araj-suno-merey-parama-krupalu.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/araj-suno-merey-parama-krupalu.mp3)
 
 ---
 

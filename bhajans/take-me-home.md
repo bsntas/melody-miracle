@@ -34,7 +34,7 @@ Take me home into eternity
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-me-home.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/take-me-home.mp3)
 
 ---
 

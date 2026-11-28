@@ -46,7 +46,7 @@ We're just beads on the string of the Lord
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-god-and-you-are-god.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-god-and-you-are-god.mp3)
 
 ---
 

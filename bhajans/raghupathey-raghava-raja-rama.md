@@ -39,7 +39,7 @@ Pray and chant the name of Lord Rama, the handsome Prince of King Dasharatha and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathey-raghava-raja-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/raghupathey-raghava-raja-rama.mp3)
 
 ---
 

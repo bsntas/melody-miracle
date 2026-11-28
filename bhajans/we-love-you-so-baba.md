@@ -53,7 +53,7 @@ Sathya Sai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-love-you-so-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-love-you-so-baba.mp3)
 
 ---
 

@@ -34,7 +34,8 @@ O Lord Sai who is verily Lord Ganesha, the one who removes all obstacles from 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-deva-sri-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-deva-sri-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-deva-sri-ganesha_1.mp3)
 
 ---
 

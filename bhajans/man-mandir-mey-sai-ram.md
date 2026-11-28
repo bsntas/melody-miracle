@@ -37,7 +37,7 @@ The dark complexioned Lord Krishna, Radha's consort is the same as Lord Sathya 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mandir-mey-sai-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/man-mandir-mey-sai-ram.mp3)
 
 ---
 

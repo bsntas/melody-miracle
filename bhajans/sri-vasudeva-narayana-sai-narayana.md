@@ -35,7 +35,7 @@ Worship and chant the Holy names of Lord Krishna - Vasudeva, Janardhana, Madhus
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-vasudeva-narayana-sai-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-vasudeva-narayana-sai-narayana.mp3)
 
 ---
 

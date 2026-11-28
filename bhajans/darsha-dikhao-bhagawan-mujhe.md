@@ -37,7 +37,8 @@ Show me Your Divine Form, O Lord Sai, You are omniscient, You are the in-dwell
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darsha-dikhao-bhagawan-mujhe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darsha-dikhao-bhagawan-mujhe.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darsha-dikhao-bhagawan-mujhe_1.mp3)
 
 ---
 

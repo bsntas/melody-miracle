@@ -41,7 +41,9 @@ You are called Sai Baba, Sathya Sai Baba! You are Brahma (Creator) and Vishnu (S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-tera-naam-sathya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-tera-naam-sathya.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-tera-naam-sathya_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_442_SAI_BABA_TERA_NAM.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ Worship the Holy Feet of Lord Rama, the son of Kausalya and the enchanter of Vai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kausalyatmaja-rama-charan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kausalyatmaja-rama-charan.mp3)
 
 ---
 

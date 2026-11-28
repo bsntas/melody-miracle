@@ -36,7 +36,8 @@ O Lord Sai Ranga, You are infinitely merciful. Reciting Your name creates wave
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-sai-ranga-hey-panduranga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-sai-ranga-hey-panduranga.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_497_HEY_SAI_RANGA.mp3)
 
 ---
 

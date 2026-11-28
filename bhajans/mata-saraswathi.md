@@ -36,7 +36,7 @@ O Mother Saraswathi, playing divine music with the Veena, You are the Mother of 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-saraswathi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-saraswathi.mp3)
 
 ---
 

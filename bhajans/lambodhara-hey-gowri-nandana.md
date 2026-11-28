@@ -36,7 +36,8 @@ Glory to Lord Vinayaka (Ganesha), the son of Gowri, the one who removes obstac
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-hey-gowri-nandana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/lambodhara-hey-gowri-nandana.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_513_LAMBODARA_HEY_GOWRI_NANDANA.mp3)
 
 ---
 

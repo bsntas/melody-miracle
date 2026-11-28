@@ -36,7 +36,7 @@ Grant me the vision of Your Divine Form O Lord, the supremely merciful Sai, Yo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darshana-deejo-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/darshana-deejo-bhagawan.mp3)
 
 ---
 

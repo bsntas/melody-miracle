@@ -36,7 +36,8 @@ Lord Krishna is extolled with different names as the one who lifted the Govardha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-bala-hey-nandalala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-bala-hey-nandalala.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/giridhara-bala-hey-nandalala_1.mp3)
 
 ---
 

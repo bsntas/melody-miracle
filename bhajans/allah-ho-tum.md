@@ -34,7 +34,7 @@ O Sai who dwells in the sacred abode of Brindavan, You are Allah, Eshwar, Mahav
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-tum.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-ho-tum.mp3)
 
 ---
 

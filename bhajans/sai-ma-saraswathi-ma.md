@@ -37,7 +37,7 @@ Glory to Mother Saraswathi, the bestower of Divine knowledge, who is none other 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ma-saraswathi-ma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ma-saraswathi-ma.mp3)
 
 ---
 

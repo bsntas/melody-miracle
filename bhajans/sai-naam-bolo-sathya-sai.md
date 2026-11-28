@@ -35,7 +35,7 @@ Chant the name of our dear Lord Sathya Sai. Chant the divine names Madhava, Ke
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naam-bolo-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-naam-bolo-sathya-sai.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Let us chant the name of Sai Ram, so all our ills and troubles will pass. May tr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ramanin-naamam-solvom.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-ramanin-naamam-solvom.mp3)
 
 ---
 

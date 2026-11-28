@@ -36,7 +36,7 @@ Sing the name of Lord Ranga (Narayana) with the scented vermillion on His for
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kasturi-ranga-kaveri-ranga-sri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kasturi-ranga-kaveri-ranga-sri.mp3)
 
 ---
 

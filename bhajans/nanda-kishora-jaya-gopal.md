@@ -36,7 +36,7 @@ Victory be to the beloved son of Nanda, the dark-hued Lord Krishna, the one who 
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_408_NAND_KISHORA_JAI_GOPAL.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_408_NAND_KISHORA_JAI_GOPAL.mp3)
 
 ---
 

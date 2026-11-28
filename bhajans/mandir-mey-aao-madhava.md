@@ -40,7 +40,7 @@ I invite You in the temple of my heart, O Madhava, Keshava (names of Lord Kris
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandir-mey-aao-madhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandir-mey-aao-madhava.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ God Is Love, We Are Love Ever Expanding (4)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-jehovah-jesus-christ-our-lord.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-jehovah-jesus-christ-our-lord.mp3)
 
 ---
 

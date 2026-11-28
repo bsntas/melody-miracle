@@ -38,7 +38,7 @@ Lord Sai, residing in Vaikunta, is the bestower of bliss. He is unstained from t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaikunta-natha-ananda-daata.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vaikunta-natha-ananda-daata.mp3)
 
 ---
 

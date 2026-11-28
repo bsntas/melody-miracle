@@ -33,7 +33,8 @@ Jai bolo Bhagawan, Bhagawan, Jai bolo Bhagawan.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-bolo-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-bolo-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-bolo-bhagawan_1.mp3)
 
 ---
 

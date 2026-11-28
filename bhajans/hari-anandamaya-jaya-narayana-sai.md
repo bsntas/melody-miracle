@@ -35,7 +35,8 @@ Praise be to Lord Narayana who is Supreme Bliss personified, who incarnated as 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-anandamaya-jaya-narayana-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-anandamaya-jaya-narayana-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-anandamaya-jaya-narayana-sai_1.mp3)
 
 ---
 

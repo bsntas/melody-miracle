@@ -34,7 +34,7 @@ We Are Born In The Golden Age Of Sai [ We Are Blessed ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-blessed.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-are-blessed.mp3)
 
 ---
 

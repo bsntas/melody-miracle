@@ -36,7 +36,8 @@ Victory to Lord Rama, the descendant of the Raghu clan, the son of Dasharatha. V
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ram-jaya-ram-jaya-jaya-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sri-ram-jaya-ram-jaya-jaya-ram.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_375_SHRI_RAM_JAI_RAM_JAI.mp3)
 
 ---
 

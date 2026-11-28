@@ -35,7 +35,7 @@ O Lord Ganesha, You are the son of Shiva who is hailed as Neelakanta (blue-
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neelagriva-kumara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/neelagriva-kumara.mp3)
 
 ---
 

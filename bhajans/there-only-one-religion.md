@@ -32,7 +32,7 @@ There Is Only One Religion, The Religion Of Love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there-only-one-religion.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/there-only-one-religion.mp3)
 
 ---
 

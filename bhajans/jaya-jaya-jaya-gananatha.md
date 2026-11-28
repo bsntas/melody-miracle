@@ -35,7 +35,7 @@ Victory to the Lord of the Ganas, Lord Ganesha, the son of Lord Shiva and Mothe
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-gananatha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-gananatha.mp3)
 
 ---
 

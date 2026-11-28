@@ -36,7 +36,9 @@ Many repeated salutations to You Lord Sai, the refuge of the forlorn. You were 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/koti-pranam-shata-koti-pranam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/koti-pranam-shata-koti-pranam.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/koti-pranam-shata-koti-pranam_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_044_Koti_Pranam_Shathah_Koti_Pranam.mp3)
 
 ---
 

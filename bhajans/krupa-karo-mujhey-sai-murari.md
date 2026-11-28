@@ -35,7 +35,7 @@ Show mercy on me O Lord Sai Murari, I feel depressed without Your vision. Grant 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krupa-karo-mujhey-sai-murari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krupa-karo-mujhey-sai-murari.mp3)
 
 ---
 

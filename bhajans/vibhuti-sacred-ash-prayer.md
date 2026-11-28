@@ -81,7 +81,8 @@ Vibhuti, or Sacred Ash, is distributed at the end of a devotional meeting sessio
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/paramam_pavithram/Sacred_Holy_and_Supreme.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vibhuti-sacred-ash-prayer.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/paramam_pavithram/Sacred_Holy_and_Supreme.mp3)
 
 ---
 

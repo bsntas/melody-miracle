@@ -45,7 +45,8 @@ Whoa, sweet, sweet Sathya Sai
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/who-man-all-clothed-red.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/who-man-all-clothed-red.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/who-man-all-clothed-red_1.mp3)
 
 ---
 

@@ -34,7 +34,8 @@ Glory be to Lord Sai Ram, the one who is supremely auspicious who is glorified b
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-murarey-sai-ram-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-murarey-sai-ram-harey.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/harey-murarey-sai-ram-harey_1.mp3)
 
 ---
 

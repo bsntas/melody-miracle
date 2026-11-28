@@ -36,7 +36,7 @@ Sing the glory of the Lord of Parthi, Sri Sai The darling son of Mother Eshwaram
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-sri-sai-prabho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/partheeshwara-sri-sai-prabho.mp3)
 
 ---
 

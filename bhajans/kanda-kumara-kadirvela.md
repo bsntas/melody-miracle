@@ -39,7 +39,7 @@ O Lord Skanda, the compassionate Lord Subrahmanya, son of Lord Shiva and the ne
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanda-kumara-kadirvela.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanda-kumara-kadirvela.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Oh Lord Sai Govinda! Oh Lord Sai Gopala! Without Thee, there is no one to lead u
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-govinda-sai-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-govinda-sai-gopala.mp3)
 
 ---
 

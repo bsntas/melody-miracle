@@ -37,7 +37,7 @@ Glory to Lord Sai who is none other than Lord Shiva who wears the crescent moon
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_399_CHANDRASHEKHARA_SAISHAWARA.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_399_CHANDRASHEKHARA_SAISHAWARA.mp3)
 
 ---
 

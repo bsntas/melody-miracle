@@ -36,7 +36,7 @@ Chant the name of Lord Hari who incarnated as Lord Krishna, the adorable son 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naam-bhajo-hari-naam-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/naam-bhajo-hari-naam-bhajo.mp3)
 
 ---
 

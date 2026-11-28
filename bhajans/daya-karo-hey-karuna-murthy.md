@@ -36,7 +36,7 @@ Show mercy on us Oh compassionate Lord, no one but You care for us, You are our 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hey-karuna-murthy.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/daya-karo-hey-karuna-murthy.mp3)
 
 ---
 

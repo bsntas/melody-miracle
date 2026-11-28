@@ -37,7 +37,7 @@ Chant the name of Mother Bhavani, Maheshwari, who is none other than our Mother 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-bhavani-maheshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-bhavani-maheshwari.mp3)
 
 ---
 

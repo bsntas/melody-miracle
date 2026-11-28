@@ -35,7 +35,14 @@ The name of Ram is highly auspicious. Lord Rama is the life of the universal Mot
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-ram-ram-parama-sumangala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ram-ram-ram-parama-sumangala.mp3)
+- **Karaoke** (Reference Track 2.5 Pancham / E Flat): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2.5 Pancham / E Flat (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Gents_Karaoke_D_Sharp_Panchama.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Gents_Karaoke_D_Pancham.mp3)
+- **Karaoke** (Gents Pitch 1.5 Pancham / C# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Gents_Karaoke_C_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5.5 Pancham / G# (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Ladies_Karaoke_G_Sharp_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 5 Pancham / G (half note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Ladies_Karoake_G_Pancham.mp3)
+- **Karaoke** (Ladies Pitch 4.5 Pancham / F# (one note lower)): [▶ Listen](https://media.radiosai.org/www/mp3download/Ram_Ram_Ram_Paramasumangala_Ladies_Karoake_F_Sharp_Pancham.mp3)
 
 ---
 

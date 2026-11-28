@@ -35,7 +35,7 @@ Chant the divine name of Sai Baba who is also Allah, Yesu, Nanak, Zohrashtra and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-allah-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-allah-sai-baba.mp3)
 
 ---
 

@@ -73,7 +73,8 @@ def make_track(row_label, url, caption=''):
     kind = TRACK_TYPES.get(row_label)
     if not kind:
         return None
-    caption = re.sub(r'\s*Karaoke Tracks?\b', '', caption or '').strip()
+    caption = re.sub(r'\s*Karaoke Tracks?\b', '', caption or '')
+    caption = re.sub(r'^\s*source:\s*\S+\s*', '', caption).strip()   # "source: https://… Reference Track …"
     return {'type': kind, 'label': caption, 'url': url}
 
 
@@ -92,7 +93,7 @@ def audio_tracks(page):
             if t and url not in seen:
                 seen.add(url); tracks.append(t)
     order = list(TRACK_HEADINGS)   # main recording first, then Swami's Voice, …
-    return sorted(tracks, key=lambda t: order.index(t['type']))
+    return sorted(carry_voice(tracks), key=lambda t: order.index(t['type']))
 
 
 # Tags that describe the recordings rather than the song (covered by audio tracks)
@@ -106,6 +107,24 @@ def song_tags(page):
         return []
     names = [text(t) for t in re.findall(r"<a [^>]*href=['\"][^'\"]*/tags/[^'\"]*['\"][^>]*>(.*?)</a>", m.group(1), re.S)]
     return [n for n in dict.fromkeys(names) if n and n.lower() not in MEDIA_TAGS]
+
+
+def carry_voice(tracks):
+    """Karaoke rows caption only the first track of each set "Gents Pitch 1 Pancham / C
+    (reference)"; the following "7 Pancham / B (half note lower)" ones get the same
+    Gents/Ladies prefix."""
+    voice = ''
+    for t in tracks:
+        if t['type'] != 'karaoke' or not t['label']:
+            continue
+        m = re.match(r'(Gents|Ladies) Pitch\b', t['label'])
+        if m:
+            voice = m.group(0)
+        elif t['label'].startswith('Reference Track'):
+            voice = ''
+        elif voice:
+            t['label'] = f"{voice} {t['label']}"
+    return tracks
 
 
 def tracks_markdown(tracks):

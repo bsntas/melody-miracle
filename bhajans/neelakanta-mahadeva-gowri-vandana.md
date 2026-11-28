@@ -36,7 +36,7 @@ O God of Gods, Mahadeva (Shiva), the blue-throated one, You are worshipped by 
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_432_NEELAKANTHA_MAHADEV.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_432_NEELAKANTHA_MAHADEV.mp3)
 
 ---
 

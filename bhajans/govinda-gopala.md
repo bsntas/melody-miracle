@@ -38,7 +38,7 @@ Chant the name of Lord Krishna, also known as Govinda and Gopala, the one who
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-gopala.mp3)
 
 ---
 

@@ -35,7 +35,8 @@ Glory to Lord Narayana, who bears the Conch and the Discus, who wears yellow sil
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankha-chakra-peetambara-dhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shankha-chakra-peetambara-dhari.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_380_SHANKH_CHAKRA_PITAMBAR.mp3)
 
 ---
 

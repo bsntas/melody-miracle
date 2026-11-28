@@ -35,7 +35,7 @@ The mother of three worlds, Maheshwari (who is Parvathi the Consort of Shiva) wh
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-maheshwari-tribhuvana-janani.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mata-maheshwari-tribhuvana-janani.mp3)
 
 ---
 

@@ -32,7 +32,7 @@ We are children of the light, yes we are, children of the light.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-fear-none.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/love-all-fear-none.mp3)
 
 ---
 

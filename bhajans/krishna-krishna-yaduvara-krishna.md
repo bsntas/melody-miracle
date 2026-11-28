@@ -35,7 +35,8 @@ Glory to Lord Krishna, born of Yadava clan, the dark complexioned one, the sla
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-yaduvara-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-yaduvara-krishna.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-krishna-yaduvara-krishna_1.mp3)
 
 ---
 

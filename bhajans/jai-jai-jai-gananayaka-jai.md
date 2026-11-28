@@ -36,7 +36,8 @@ Let us sing the glory of Lord Ganesha, the leader of Ganaas (Shiva's army) and t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-gananayaka-jai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-gananayaka-jai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jai-jai-jai-gananayaka-jai_1.mp3)
 
 ---
 

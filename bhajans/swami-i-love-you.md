@@ -49,7 +49,7 @@ I’m at 40 thousand feet, I’m coming to see You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-i-love-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/swami-i-love-you.mp3)
 
 ---
 

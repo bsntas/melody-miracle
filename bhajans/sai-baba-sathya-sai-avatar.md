@@ -33,7 +33,7 @@ I Surrender to You, I Surrender to You, Lord Sri Sai Ram (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sathya-sai-avatar.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-sathya-sai-avatar.mp3)
 
 ---
 

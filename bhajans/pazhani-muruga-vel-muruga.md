@@ -39,7 +39,7 @@ We surrender to You Lord Muruga, the Lord of Pazhani Hills, the one who holds t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pazhani-muruga-vel-muruga.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pazhani-muruga-vel-muruga.mp3)
 
 ---
 

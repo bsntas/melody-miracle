@@ -37,7 +37,8 @@ Chant the divine names of the Lord - Allah, Rama, Krishna, Guru Nanak, Buddha, Z
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-bhajo-maulah-bhajo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-bhajo-maulah-bhajo.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_066_Allah_Bhajo_Maulah_Bhajo.mp3)
 
 ---
 

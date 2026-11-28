@@ -36,7 +36,7 @@ Oh Indweller Sai, You have descended from the Supreme unmanifested state (Brah
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antaryami-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/antaryami-sai.mp3)
 
 ---
 

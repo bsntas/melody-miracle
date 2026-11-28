@@ -34,7 +34,7 @@ Chant the names of the Lord Govinda and Gopala, the handsome boy Krishna who is 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-radhey-krishna-govinda-govinda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-radhey-krishna-govinda-govinda.mp3)
 
 ---
 

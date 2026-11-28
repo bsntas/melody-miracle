@@ -34,7 +34,7 @@ Salutations to Lord Ganesha, the son of Lord Shiva (Shambhu) and Mother Parvath
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambhu-kumara-gowri-tanaya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambhu-kumara-gowri-tanaya.mp3)
 
 ---
 

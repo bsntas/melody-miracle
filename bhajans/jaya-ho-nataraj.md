@@ -36,7 +36,7 @@ Victory to the Lord of dance, Lord Shiva, who holds Mother Ganges in His matted 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-nataraj.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-ho-nataraj.mp3)
 
 ---
 

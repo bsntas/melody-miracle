@@ -35,7 +35,8 @@ Oh Lord Sai! Chanting Your divine name is true bliss and singing Your glory con
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anandamey-sai-naamamey.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/anandamey-sai-naamamey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_426_ANANDAME_SAI_NAMAME.mp3)
 
 ---
 

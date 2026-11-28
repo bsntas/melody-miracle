@@ -37,7 +37,8 @@ Glory to Lord Shiva, the one who has the river Ganges on His head and the cons
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-hara-gowri-shiva-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-hara-gowri-shiva-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gangadhara-hara-gowri-shiva-0_1.mp3)
 
 ---
 

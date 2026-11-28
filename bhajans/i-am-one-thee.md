@@ -31,7 +31,7 @@ I Am Because Thou Art
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-one-thee.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-am-one-thee.mp3)
 
 ---
 

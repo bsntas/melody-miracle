@@ -34,7 +34,8 @@ Salutations to the Lord of all beings, Lord Narayana, from whose navel springs 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/padmanabha-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/padmanabha-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/padmanabha-narayana_1.mp3)
 
 ---
 

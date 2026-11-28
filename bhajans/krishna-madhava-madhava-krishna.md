@@ -35,7 +35,7 @@ Oh Krishna, the dark complexioned son of Nanda, the one who moved about in Brind
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-madhava-madhava-krishna.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/krishna-madhava-madhava-krishna.mp3)
 
 ---
 

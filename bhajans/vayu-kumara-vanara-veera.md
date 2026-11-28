@@ -35,7 +35,7 @@ O Lord Hanuman, the son of Kesari and Anjana, You are the most powerful. Victo
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vayu-kumara-vanara-veera.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/vayu-kumara-vanara-veera.mp3)
 
 ---
 

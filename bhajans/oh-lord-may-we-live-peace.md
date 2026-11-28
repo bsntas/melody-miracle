@@ -37,7 +37,7 @@ Oh Lord, may we live in truth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-lord-may-we-live-peace.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/oh-lord-may-we-live-peace.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to the son of Kausalya, One of Supreme Bliss, who dwells in Shirdi and Pra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-kausalya-nandana-ram-paramananda.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-kausalya-nandana-ram-paramananda.mp3)
 
 ---
 

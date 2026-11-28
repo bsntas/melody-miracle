@@ -34,7 +34,8 @@ Salutations to Lord Shiva Shankara (also known as Mahadeva) who holds the sacred
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-gangadhara-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-gangadhara-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shambho-mahadeva-gangadhara-0_1.mp3)
 
 ---
 

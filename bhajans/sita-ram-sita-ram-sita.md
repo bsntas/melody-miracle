@@ -36,7 +36,8 @@ Victory to Lord Rama, who is the crown jewel of Raghu Dynasty, who is the consor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ram-sita-ram-sita.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sita-ram-sita-ram-sita.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_384_SITA_RAM.mp3)
 
 ---
 

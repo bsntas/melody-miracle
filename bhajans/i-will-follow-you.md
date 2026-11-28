@@ -34,7 +34,7 @@ Take me home in Your love forever
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-will-follow-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-will-follow-you.mp3)
 
 ---
 

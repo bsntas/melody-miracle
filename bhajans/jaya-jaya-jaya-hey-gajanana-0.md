@@ -35,7 +35,7 @@ Glory to the elephant-faced Lord Ganesha, the son of Mother Parvathi and Lord S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-gajanana-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-jaya-jaya-hey-gajanana-0.mp3)
 
 ---
 

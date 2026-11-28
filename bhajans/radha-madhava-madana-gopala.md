@@ -34,7 +34,7 @@ Sing the glory of Lord Krishna - Madhava, Gopala, Govinda, beloved of Radha. He 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-madhava-madana-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-madhava-madana-gopala.mp3)
 
 ---
 

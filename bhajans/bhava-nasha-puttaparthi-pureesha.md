@@ -37,7 +37,7 @@ Glory to Thee, Lord Sai, Lord of Puttaparthi, You destroy the cycle of birth an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-nasha-puttaparthi-pureesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-nasha-puttaparthi-pureesha.mp3)
 
 ---
 

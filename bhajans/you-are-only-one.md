@@ -37,7 +37,7 @@ We feel You're perfect love, flowing to us from above.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-only-one.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-are-only-one.mp3)
 
 ---
 

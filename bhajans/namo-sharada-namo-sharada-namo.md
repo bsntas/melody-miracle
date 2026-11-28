@@ -38,7 +38,8 @@ I bow down to Mother Sharada (Saraswathi), the one who bestows education, knowl
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-sharada-namo-sharada-namo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namo-sharada-namo-sharada-namo.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_303_NAMO_SHARDA.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Ganesha Ganesha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-bow-down-feet-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-bow-down-feet-ganesha.mp3)
 
 ---
 

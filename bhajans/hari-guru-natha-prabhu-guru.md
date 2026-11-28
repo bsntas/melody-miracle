@@ -37,7 +37,7 @@ Let us worship Sri Sathya Sai as our preceptor, the one who is both Mother and F
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-guru-natha-prabhu-guru.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-guru-natha-prabhu-guru.mp3)
 
 ---
 

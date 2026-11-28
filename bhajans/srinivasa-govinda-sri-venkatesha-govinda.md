@@ -36,7 +36,8 @@ Chant the divine names Srinivasa, Govinda, Venkatesha - various names of Lor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-govinda-sri-venkatesha-govinda_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-govinda-sri-venkatesha-govinda.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/srinivasa-govinda-sri-venkatesha-govinda_1.mp3)
 
 ---
 

@@ -39,7 +39,8 @@ Salutations to the lotus-eyed Lord Sathya Sai who dwells at Parthi, who is the 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kamala-nayana-bhagawan.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_424_HE_KAMAL_NAYAN_BHAGVAN.mp3)
 
 ---
 

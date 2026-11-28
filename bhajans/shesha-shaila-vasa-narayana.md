@@ -36,7 +36,7 @@ Salutations to Lord Narayana who is reclining on the Celestial Serpent Adi Sesha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shesha-shaila-vasa-narayana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shesha-shaila-vasa-narayana.mp3)
 
 ---
 

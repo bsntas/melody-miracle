@@ -36,7 +36,7 @@ Lord Sathya Sai is the boundless ocean of mercy. Lord Sai's attributes are beyon
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/apaara-karuna-sindho-krupa-sindho.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/apaara-karuna-sindho-krupa-sindho.mp3)
 
 ---
 

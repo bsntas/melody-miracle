@@ -38,7 +38,7 @@ Glory to Lord Krishna, who is the son of Vasudeva and Nanda. He is beautiful and
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-deva-vasudeva-kumara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/deva-deva-vasudeva-kumara.mp3)
 
 ---
 

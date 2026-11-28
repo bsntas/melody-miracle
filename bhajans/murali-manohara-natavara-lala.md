@@ -36,7 +36,8 @@ Victory to the enchanting Flutist, Lord Krishna, the dark-hued son of Nanda and 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-manohara-natavara-lala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/murali-manohara-natavara-lala.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_434_MURALI_MANOHAR_NATAVARALAL.mp3)
 
 ---
 

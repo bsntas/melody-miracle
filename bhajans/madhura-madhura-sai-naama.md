@@ -37,7 +37,7 @@ Sing the glories of Lord Sai whose name, contemplation, song, teachings are all 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-sai-naama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-sai-naama.mp3)
 
 ---
 

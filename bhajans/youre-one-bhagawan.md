@@ -37,7 +37,7 @@ You’re the One, Bhagawan (2)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you’re-one-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you’re-one-bhagawan.mp3)
 
 ---
 

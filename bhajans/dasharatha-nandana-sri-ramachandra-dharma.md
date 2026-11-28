@@ -39,7 +39,7 @@ Glory to the son of Dasharatha, Lord Rama, who has a blissful and serene fa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-sri-ramachandra-dharma.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/dasharatha-nandana-sri-ramachandra-dharma.mp3)
 
 ---
 

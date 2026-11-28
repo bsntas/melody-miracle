@@ -39,7 +39,8 @@ Worship the most merciful Divine Preceptor, Lord Sai, who is the Supreme Soul 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-brahma-sanathana-hey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sadguru-brahma-sanathana-hey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_056_Sadguru_Bramha_Sanathana_Hey.mp3)
 
 ---
 

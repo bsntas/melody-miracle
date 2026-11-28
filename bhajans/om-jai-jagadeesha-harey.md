@@ -74,7 +74,10 @@ Chant the name of Lord Sathya Sai Narayana, Whose Form is Pranava. Victory to No
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jai-jagadeesha-harey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/om-jai-jagadeesha-harey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_348_ARATI_PART_01.mp3)
+- **Karaoke** (Reference Track 2 Pancham / D): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Karaoke_D_Pancham.mp3)
 
 ---
 

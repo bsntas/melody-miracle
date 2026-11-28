@@ -38,7 +38,7 @@ Grace us with Your presence, O Lord Shanmukha, son of Shiva and Shakthi (Parva
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-kumarane-shakthi-balane-va.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shiva-kumarane-shakthi-balane-va.mp3)
 
 ---
 

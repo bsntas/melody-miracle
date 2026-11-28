@@ -36,7 +36,9 @@ Lord Sai Narayana, the incarnation of Kali age is the compassionate Lord who wor
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prabhu-leela-prabhu-mahima.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prabhu-leela-prabhu-mahima.mp3)
+- **Karaoke** (Reference Track 1.5 Pancham / C#): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/reference/Prabhu%20Leela%20Prabhu%20Mahima.mp3)
+- **Karaoke** (Ladies Pitch 1.5 Pancham / C# (reference)): [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/recordings/published/karaoke_tracks/karaoke/Prabhu%20Leela%20Prabhu%20Mahima%201.5P%20C%23maj.mp3)
 
 ---
 

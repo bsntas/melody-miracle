@@ -36,7 +36,8 @@ O Lord Krishna, child of Nanda, You are the darling of the Yadava (cowherd) ch
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-yadu-nandalala_1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-yadu-nandalala.mp3)
+- **Swami's Voice**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandalala-yadu-nandalala_1.mp3)
 
 ---
 

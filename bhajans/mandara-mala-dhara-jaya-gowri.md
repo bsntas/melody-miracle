@@ -35,7 +35,7 @@ Victory to Lord Shankara, the consort of Gowri, who adorns the garland of 'Manda
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandara-mala-dhara-jaya-gowri.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mandara-mala-dhara-jaya-gowri.mp3)
 
 ---
 

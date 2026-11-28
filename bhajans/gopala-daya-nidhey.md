@@ -35,7 +35,9 @@ Sing the glory of Lord Gopala (Krishna), the treasure house of compassion who is
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-daya-nidhey-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-daya-nidhey-1.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gopala-daya-nidhey.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_379_GOPAL_DAYA_NIDHE.mp3)
 
 ---
 

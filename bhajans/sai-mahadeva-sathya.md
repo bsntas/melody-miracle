@@ -36,7 +36,7 @@ Praise be to our Lord Sathya Sai, who is the very embodiment of Lord Mahadeva (S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-mahadeva-sathya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-mahadeva-sathya.mp3)
 
 ---
 

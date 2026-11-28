@@ -36,7 +36,7 @@ Lord Krishna (Kanhaiya), the Lord of Radha and Meera (devotees), the child of Go
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-ke-natavara-lal-kanhaiya.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/radha-ke-natavara-lal-kanhaiya.mp3)
 
 ---
 

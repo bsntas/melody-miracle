@@ -37,7 +37,9 @@ Chant the name of Lord Sai, the Lord of this Universe. O Sai, You are my moth
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhuvana-bandhava-sai-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhuvana-bandhava-sai-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhuvana-bandhava-sai-bhagawan_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_226_BHUVANA_BANDHAVA_SAI.mp3)
 
 ---
 

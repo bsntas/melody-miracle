@@ -31,7 +31,7 @@ You sweep me away with Your love
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweep-me-away.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sweep-me-away.mp3)
 
 ---
 

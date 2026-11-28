@@ -35,7 +35,7 @@ Oh Lord of Nandi, the divine bull, You are the Lord of cosmic dance, Shiva. You 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandeeshwara-hey-nataraja.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nandeeshwara-hey-nataraja.mp3)
 
 ---
 

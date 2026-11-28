@@ -31,7 +31,7 @@ Bless Us Ganesha, Our Lord (3)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-pray-you-ganesha.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/we-pray-you-ganesha.mp3)
 
 ---
 

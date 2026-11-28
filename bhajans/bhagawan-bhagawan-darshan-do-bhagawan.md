@@ -35,7 +35,7 @@ O Lord Sai, please grant us Your Divine Vision. Bless us to realize that Allah, 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-darshan-do-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhagawan-bhagawan-darshan-do-bhagawan.mp3)
 
 ---
 

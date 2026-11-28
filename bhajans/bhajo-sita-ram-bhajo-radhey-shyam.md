@@ -35,7 +35,7 @@ Worship the Lord of Sita, Lord Rama. Worship the Lord of Radha, Lord Shyama. Cha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-sita-ram-bhajo-radhey-shyam.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajo-sita-ram-bhajo-radhey-shyam.mp3)
 
 ---
 

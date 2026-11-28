@@ -38,7 +38,7 @@ Salutations to Lord Shankara (Shiva), the consort of Mother Uma (Parvathi). Surr
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-shankara-bhavani-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/namami-shankara-bhavani-shankara.mp3)
 
 ---
 

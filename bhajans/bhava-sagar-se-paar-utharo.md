@@ -35,7 +35,8 @@ Oh Sainath Bhagawan! Help me to cross the ocean of continuous passage of life an
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-sagar-se-paar-utharo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhava-sagar-se-paar-utharo.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_190_BHAVASAGAR_SE_PAAR_UTAARO.mp3)
 
 ---
 

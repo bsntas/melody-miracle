@@ -36,7 +36,8 @@ O Lord Sai, You are Allah, the all pervading Divine Teacher, You are Guru Nanak
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-sai-maulah-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-sai-maulah-sai.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-sai-maulah-sai_1.mp3)
 
 ---
 

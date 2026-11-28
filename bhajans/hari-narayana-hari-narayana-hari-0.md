@@ -37,7 +37,8 @@ O Mind, sing the Glory of Lord Narayana also known as Hari, who has descended 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-hari-narayana-hari-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-hari-narayana-hari-0.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hari-narayana-hari-narayana-hari-0_1.mp3)
 
 ---
 

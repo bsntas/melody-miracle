@@ -35,7 +35,7 @@ Victory to the Lord Panduranga Vittala, the shining one who attracts like the f
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittala-jaya-panduranga-vittala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/panduranga-vittala-jaya-panduranga-vittala.mp3)
 
 ---
 

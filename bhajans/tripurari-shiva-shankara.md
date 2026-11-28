@@ -35,7 +35,8 @@ Oh Lord Shiva (also called Shankara), the slayer of the demons of Tripura, the o
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tripurari-shiva-shankara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/tripurari-shiva-shankara.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_407_TRIPURARI_SHIV_SHANKARA.mp3)
 
 ---
 

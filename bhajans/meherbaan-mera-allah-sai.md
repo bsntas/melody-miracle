@@ -36,7 +36,7 @@ O Lord Sai, You are the most compassionate Allah. You are Jesus, Buddha, Zohrash
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/meherbaan-mera-allah-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/meherbaan-mera-allah-sai.mp3)
 
 ---
 

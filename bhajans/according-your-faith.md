@@ -40,7 +40,7 @@ The Truth of God it is your life..it’s in Him we forever dwell
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/according-your-faith.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/according-your-faith.mp3)
 
 ---
 

@@ -32,7 +32,7 @@ He is in one, He is in all, you can see Him in everything
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-you-are-my-heart-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-you-are-my-heart-0.mp3)
 
 ---
 

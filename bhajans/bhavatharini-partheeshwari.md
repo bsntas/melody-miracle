@@ -37,7 +37,8 @@ O Mother Sai, residing in Parthi, You help us cross the worldly existence. O Sa
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhavatharini-partheeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhavatharini-partheeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhavatharini-partheeshwari_1.mp3)
 
 ---
 

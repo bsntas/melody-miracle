@@ -34,7 +34,7 @@ Our Salutations to the Preceptor and Lord of Lords Sathya Sai. Protect me O Shi
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-deva-prabhu-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-guru-deva-prabhu-sai.mp3)
 
 ---
 

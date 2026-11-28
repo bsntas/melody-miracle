@@ -36,7 +36,7 @@ Glory be to the Mother of the Universe, Mother of Lord Ganesh and Subrahmanya;
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadambige-jaya-jagadeeshwari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jagadambige-jaya-jagadeeshwari.mp3)
 
 ---
 

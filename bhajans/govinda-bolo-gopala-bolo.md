@@ -40,7 +40,9 @@ Sing the glorious names of Govinda, Gopala, Rama, Hari, Allah, Sai, Yesu, Nanak,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-bolo-gopala-bolo.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-bolo-gopala-bolo.mp3)
+- **Instrumental**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-bolo-gopala-bolo_1.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/Radio_Sai_Bhajan_Classroom_006_Govinda_Bolo_Gopala_Bolo.mp3)
 
 ---
 

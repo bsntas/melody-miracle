@@ -36,7 +36,7 @@ O entrancing Lord Krishna, the son of Nanda, You are the slayer of the demon 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-nandalal.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/mana-mohana-nandalal.mp3)
 
 ---
 

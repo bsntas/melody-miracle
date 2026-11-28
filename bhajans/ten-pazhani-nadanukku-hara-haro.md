@@ -41,7 +41,7 @@ Glory be to the Lord of Pazhani (Lord Subrahmanya), the one who rides on the pea
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ten-pazhani-nadanukku-hara-haro.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ten-pazhani-nadanukku-hara-haro.mp3)
 
 ---
 

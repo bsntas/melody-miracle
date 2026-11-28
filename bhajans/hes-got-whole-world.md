@@ -32,7 +32,7 @@ His Name Is Sathya Sai Baba, He Is God (3) [ He's Got The ... ]
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hes-got-whole-world.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hes-got-whole-world.mp3)
 
 ---
 

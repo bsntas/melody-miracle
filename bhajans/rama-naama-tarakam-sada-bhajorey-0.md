@@ -36,7 +36,7 @@ Incessantly worship Lord Rama who helps attain liberation. Victory to Lord Rama,
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-naama-tarakam-sada-bhajorey-0.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/rama-naama-tarakam-sada-bhajorey-0.mp3)
 
 ---
 

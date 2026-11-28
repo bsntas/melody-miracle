@@ -50,7 +50,7 @@ I loa’a e ke ola mau (ia oe)
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanaka-wai-wai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kanaka-wai-wai.mp3)
 
 ---
 

@@ -34,7 +34,7 @@ Glory to the Lord Sai who has charming looks and is the Lord of Parthi. He has t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shyama-sundara-hey-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/hey-shyama-sundara-hey-sai.mp3)
 
 ---
 

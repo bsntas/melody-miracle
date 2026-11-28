@@ -36,7 +36,7 @@ Sing to the Lord (3X), He's always with You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sing-love-your-heart.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sing-love-your-heart.mp3)
 
 ---
 

@@ -38,7 +38,7 @@ O Lord Sai, hear my prayers, You are the boon bestowing Lord of Parthi and Bri
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-bhagawan-o-bhagawan-araj.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-bhagawan-o-bhagawan-araj.mp3)
 
 ---
 

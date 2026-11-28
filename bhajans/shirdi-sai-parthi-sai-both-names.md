@@ -32,7 +32,7 @@ Grant us more sweet Love, with delightful Joy, Prema Sai is the One, Prema Sai i
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-parthi-sai-both-names.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/shirdi-sai-parthi-sai-both-names.mp3)
 
 ---
 

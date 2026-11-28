@@ -34,7 +34,7 @@ Sing the name of Lord Krishna - Govinda, Gopala and worship the Lord of Radha.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-gayiyere-bhajo-radhey.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-govinda-gayiyere-bhajo-radhey.mp3)
 
 ---
 

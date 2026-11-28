@@ -33,7 +33,7 @@ The nectarine words of wisdom and the melodies that flow from Lord Sai Baba conf
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-geeta-sudha-madhuram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sai-baba-geeta-sudha-madhuram.mp3)
 
 ---
 

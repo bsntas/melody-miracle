@@ -35,7 +35,7 @@ Allah is merciful and kind. We worship Allah by meditatively singing His name.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-hi-rehman-maulah-hi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/allah-hi-rehman-maulah-hi.mp3)
 
 ---
 

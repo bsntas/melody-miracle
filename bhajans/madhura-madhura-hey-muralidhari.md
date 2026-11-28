@@ -35,7 +35,7 @@ Salutations to Lord Hari who incarnated as Lord Krishna, the sweet one with the
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-hey-muralidhari.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhura-madhura-hey-muralidhari.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ O Lord Sathya Sai, You are the very embodiment of the Primordial sound 'Om'. You
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranava-swaroopa-hari-om-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/pranava-swaroopa-hari-om-sai.mp3)
 
 ---
 

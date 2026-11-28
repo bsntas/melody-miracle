@@ -33,7 +33,7 @@ Much of our fears disappear, whenever God is here - Sathya Sai Lord, our dearest
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-we-ask-you.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganesha-we-ask-you.mp3)
 
 ---
 

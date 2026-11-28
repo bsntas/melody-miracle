@@ -35,7 +35,7 @@ O Lord Ganesha, the Lord of the Ganas, You are the embodiment of the Primodial S
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganapathi-deva-hey-gananayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/ganapathi-deva-hey-gananayaka.mp3)
 
 ---
 

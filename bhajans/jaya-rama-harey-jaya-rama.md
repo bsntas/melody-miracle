@@ -33,7 +33,7 @@ Sing the Glory of Rama whose consort is Mother Sita, Krishna whose consort is Ra
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-harey-jaya-rama.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-rama-harey-jaya-rama.mp3)
 
 ---
 

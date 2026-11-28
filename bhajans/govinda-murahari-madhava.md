@@ -35,7 +35,7 @@ Glory to Lord Narayana who is known by many names - Govinda, Gopala, Madhava, Ke
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-murahari-madhava.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/govinda-murahari-madhava.mp3)
 
 ---
 

@@ -52,6 +52,11 @@ Om Jai Sadguru Deva
 
 1. Sri Sathya Sai Baba, You are our precious Lord from Parthi who protects and guides. We devote ourselves to You.   2. You look over all living things with oyur kind smile and loving gaze. You fulfill the wishes of the righteous with Your supreme power.   3. Swami, You are Mother, Father, and the love of Buddha. You rule over all the universe with Your wisdom and the eternal Om.   4. Please receive this pure, holy flame in Aarathi. You bless everything with Your love and wisdom. We bow down at Your beautiful lotus feet.   5. Chant the name of Lord Sathya Sai Narayana, Whose Form is Pranava. Victory to Noble Teacher and Supreme Lord Sai, Sathya Sai.
 
+## Audio
+
+- **Karaoke** (Reference Track 2 Pancham D): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Reference_Track.mp3)
+- **Karaoke** (Gents Pitch 2 Pancham / D (reference)): [▶ Listen](https://media.radiosai.org/www/mp3download/Mangala_Aarathi_Karaoke_D_Pancham.mp3)
+
 ---
 
 *Scraped from [sairhythms.sathyasai.org](https://sairhythms.sathyasai.org) — Sri Sathya Sai International Organization*

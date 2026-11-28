@@ -32,7 +32,7 @@ When we start off the day with Your name, O Lord Gananatha
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-take-all-obstacles-away.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/you-take-all-obstacles-away.mp3)
 
 ---
 

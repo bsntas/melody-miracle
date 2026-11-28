@@ -19,7 +19,7 @@ Oh no, not any way.
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-will-keep-my-word-every-day.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/i-will-keep-my-word-every-day.mp3)
 
 ---
 

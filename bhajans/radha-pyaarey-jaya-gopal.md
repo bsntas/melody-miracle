@@ -37,7 +37,7 @@ Victory to Lord Krishna, the universal Protector and the beloved of Radha. Vi
 
 ## Audio
 
-[▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_398_RADHA_PYARE_JAYA_GOPAL.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_398_RADHA_PYARE_JAYA_GOPAL.mp3)
 
 ---
 

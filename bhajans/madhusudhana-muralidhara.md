@@ -37,7 +37,7 @@ Glory to Lord Krishna, the slayer of demon Madhu and the one who holds the flute
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhusudhana-muralidhara.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/madhusudhana-muralidhara.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Glory to Lord Krishna, the son of Nanda. Glory to the cowherd boy Krishna who g
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nanda-mukunda-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/nanda-nanda-mukunda-gopala.mp3)
 
 ---
 

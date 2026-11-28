@@ -34,7 +34,7 @@ Oh Lord Gopala (Krishna), You are most enchanting with beautiful eyes. Oh son of
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadana-gopala.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/sundara-vadana-gopala.mp3)
 
 ---
 

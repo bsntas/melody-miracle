@@ -36,7 +36,7 @@ Glory to Lord Sai Rama of Puttaparthi, the Lord of Prashanthi Nilayam. Glory to 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prashanthi-nilaya-ram-hey-parthi.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/prashanthi-nilaya-ram-hey-parthi.mp3)
 
 ---
 

@@ -36,7 +36,7 @@ O Lord Sai Baba, please remove the miseries of the meek. You are none other t
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-baba-sai-baba.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/o-baba-sai-baba.mp3)
 
 ---
 

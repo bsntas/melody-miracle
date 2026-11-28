@@ -36,7 +36,8 @@ Glory to the Lord of Ganaas, Lord Ganesha, the brother of Guha (Lord Subrahman
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-vallabha-gananayaka.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/jaya-vallabha-gananayaka.mp3)
+- **Tutorial**: [▶ Listen](https://dl.radiosai.org/RADIO_SAI_BHAJAN_CLASSROOM_429_JAYA_VALLABHA_GANANAYAKA.mp3)
 
 ---
 

@@ -37,7 +37,7 @@ Welcome, O Lord Sathya Sai, You endow everyone with purity of life, truth, rig
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-prabhu-aao-sai-bhagawan.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/aao-prabhu-aao-sai-bhagawan.mp3)
 
 ---
 

@@ -35,7 +35,7 @@ Victory to the Lords of Lords, Lord Gajanana, the elephant-faced Lord, the belov
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gajanana.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/gajavadana-gajanana.mp3)
 
 ---
 

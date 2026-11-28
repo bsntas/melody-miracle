@@ -34,7 +34,7 @@ We're Golden Hearts All Shining Bright
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-s-river-light.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/he-s-river-light.mp3)
 
 ---
 

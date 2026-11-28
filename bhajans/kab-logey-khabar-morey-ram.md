@@ -35,7 +35,7 @@ When will you take notice of me Oh Lord Ram? Let me merge in you Oh dark complex
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kab-logey-khabar-morey-ram.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/kab-logey-khabar-morey-ram.mp3)
 
 ---
 

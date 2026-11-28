@@ -36,7 +36,7 @@ The name of Lord Sathya Sai itself gives rise to an entire ocean of Bhajans. In 
 
 ## Audio
 
-[▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajana-sagara-sathya-sai.mp3)
+- **Audio**: [▶ Listen](https://sairhythms.sathyasai.org/sites/default/files/pages/songs/audio/bhajana-sagara-sathya-sai.mp3)
 
 ---
 
